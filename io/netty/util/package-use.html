@@ -1,0 +1,1637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Package io.netty.util (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Package io.netty.util (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-util-package-use.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/package-use.html" target="_top">框架</a></li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-use.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Uses of Package io.netty.util" class="title">Uses of Package<br>io.netty.util</h1> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.bootstrap">io.netty.bootstrap</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           带有流畅API的助手类可以轻松实现典型的客户端和服务器端通道初始化。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.buffer">io.netty.buffer</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象字节缓冲区 - 表示低级二进制和文本消息的基本数据结构。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel">io.netty.channel</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           核心通道API是异步和事件驱动的各种传输（如 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O#Channels'" tppabs="http://en.wikipedia.org/wiki/New_I/O#Channels">NIO Channel）的抽象</a> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.embedded">io.netty.channel.embedded</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个虚拟的<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，帮助包装一系列处理程序来单元测试处理程序或在非I / O上下文中使用它们。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.epoll">io.netty.channel.epoll</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           针对Linux的优化传输，使用 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Epoll  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Epoll'" tppabs="http://en.wikipedia.org/wiki/Epoll">EPOLL Edge-Triggered Mode</a>获得最高性能。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.kqueue">io.netty.channel.kqueue</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           BSD专用运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.local">io.netty.channel.local</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一种虚拟传输，可在同一虚拟机中实现双方之间的通信。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.nio">io.netty.channel.nio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O'" tppabs="http://en.wikipedia.org/wiki/New_I/O">NIO</a>的通道API实现 - 推荐用于大量连接（&gt; = 1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.oio">io.netty.channel.oio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           旧阻止基于I / O的通道API实现 - 建议用于少量连接（&lt;1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.rxtx">io.netty.channel.rxtx</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://rxtx.qbang.org/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://rxtx.qbang.org/'" tppabs="http://rxtx.qbang.org/">RXTX的</a>串行和并行端口通信传输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.sctp">io.netty.channel.sctp</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象扩展核心通道API的SCTP套接字接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.sctp.nio">io.netty.channel.sctp.nio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O'" tppabs="http://en.wikipedia.org/wiki/New_I/O">NIO</a>的SCTP通道API实现 - 推荐用于大量连接（&gt; = 1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.sctp.oio">io.netty.channel.sctp.oio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           旧的阻止基于I / O的SCTP通道API实现 - 建议用于少量连接（&lt;1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket">io.netty.channel.socket</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象扩展核心通道API的TCP和UDP套接字接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket.nio">io.netty.channel.socket.nio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O'" tppabs="http://en.wikipedia.org/wiki/New_I/O">NIO</a>的套接字通道API实现 - 建议用于大量连接（&gt; = 1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket.oio">io.netty.channel.socket.oio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           旧阻塞基于I / O的套接字通道API实现 - 建议少量连接（&lt;1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.udt">io.netty.channel.udt</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           UDT运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.udt.nio">io.netty.channel.udt.nio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于NIO通道的UDT传输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.unix">io.netty.channel.unix</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Unix专用传输。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec">io.netty.handler.codec</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           可扩展解码器及其常见实现，用于处理基于流的传输（如TCP / IP）中发现的数据包碎片和重新组装问题。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.dns">io.netty.handler.codec.dns</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           DNS编解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.haproxy">io.netty.handler.codec.haproxy</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           解码HAProxy代理协议标头 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http">io.netty.handler.codec.http</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，解码器及其相关的HTTP消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http.multipart">io.netty.handler.codec.http.multipart</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           HTTP多部分支持。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http.websocketx">io.netty.handler.codec.http.websocketx</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Web_Sockets  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Web_Sockets'" tppabs="http://en.wikipedia.org/wiki/Web_Sockets">Web Socket</a>数据帧的编码器，解码器，握手及其相关消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http2">io.netty.handler.codec.http2</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于发送和接收HTTP / 2帧的处理程序。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.memcache">io.netty.handler.codec.memcache</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           ascii和二进制类的通用超集。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.memcache.binary">io.netty.handler.codec.memcache.binary</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Memcache二进制协议的实现和接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.mqtt">io.netty.handler.codec.mqtt</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，解码器和MQTT的不同消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.redis">io.netty.handler.codec.redis</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，Redis解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.rtsp">io.netty.handler.codec.rtsp</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于HTTP编解码器的 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol'" tppabs="http://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol">RTSP</a>扩展。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.smtp">io.netty.handler.codec.smtp</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('https://www.ietf.org/rfc/rfc2821.txt  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://www.ietf.org/rfc/rfc2821.txt'" tppabs="https://www.ietf.org/rfc/rfc2821.txt">SMTP</a>编解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.spdy">io.netty.handler.codec.spdy</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           SPDY协议的编码器，解码器，会话处理程序及其相关的消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.stomp">io.netty.handler.codec.stomp</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol'" tppabs="http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol">STOMP</a>编解码器 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.ssl">io.netty.handler.ssl</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Transport_Layer_Security  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Transport_Layer_Security'" tppabs="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL · TLS的</a>实现依据 
+          <code>SSLEngine</code> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.util">io.netty.util</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           在多个包中使用的实用程序类。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.bootstrap"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../bootstrap/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-summary.html">io.netty.bootstrap</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeKey.html#io.netty.bootstrap" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeKey.html#io.netty.bootstrap">AttributeKey</a> 
+         <div class="block"> 
+          <span>在<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>之外可用来访问<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a>的<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口">密钥</a> 。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.buffer"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../buffer/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.buffer" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.buffer">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ByteProcessor.html#io.netty.buffer" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ByteProcessor.html#io.netty.buffer">ByteProcessor</a> 
+         <div class="block">
+           提供了一种迭代字节集合的机制。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.buffer" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.buffer">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.channel">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Attribute.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Attribute.html#io.netty.channel">Attribute</a> 
+         <div class="block">
+           一个允许存储值引用的属性。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeKey.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeKey.html#io.netty.channel">AttributeKey</a> 
+         <div class="block"> 
+          <span>可用于访问<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>中的<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>Attribute</code>的密钥</a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>操作员比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/IntSupplier.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/IntSupplier.html#io.netty.channel">IntSupplier</a> 
+         <div class="block">
+           代表 
+          <code>int</code>结果的供应商。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.channel">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/UncheckedBooleanSupplier.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/UncheckedBooleanSupplier.html#io.netty.channel">UncheckedBooleanSupplier</a> 
+         <div class="block">
+           代表 
+          <code>boolean</code>结果的供应商，它不会抛出任何检查的异常。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.embedded"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/embedded/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/embedded/package-summary.html">io.netty.channel.embedded</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.embedded" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.embedded">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> s，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.embedded" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.embedded">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.epoll"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel.epoll">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.epoll">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel.epoll">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>运营商比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.epoll">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.kqueue"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel.kqueue">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.kqueue">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel.kqueue">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>操作员比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.kqueue">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.local"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/local/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/local/package-summary.html">io.netty.channel.local</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.local" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.local">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.local" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.local">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.nio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/package-summary.html">io.netty.channel.nio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.nio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.nio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.channel.nio">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.oio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/oio/package-summary.html">io.netty.channel.oio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.oio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.oio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.oio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.oio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.rxtx"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/rxtx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/package-summary.html">io.netty.channel.rxtx</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel.rxtx" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel.rxtx">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.rxtx" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.rxtx">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel.rxtx" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel.rxtx">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>运营商比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.rxtx" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.rxtx">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.sctp"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/sctp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html">io.netty.channel.sctp</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel.sctp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel.sctp">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.sctp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.sctp">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel.sctp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel.sctp">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>运营商比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.channel.sctp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.channel.sctp">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.sctp.nio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/sctp/nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/nio/package-summary.html">io.netty.channel.sctp.nio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.sctp.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.sctp.nio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.sctp.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.sctp.nio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.sctp.oio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/sctp/oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/oio/package-summary.html">io.netty.channel.sctp.oio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.sctp.oio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.sctp.oio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.sctp.oio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.sctp.oio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认的<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.socket"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/socket/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">io.netty.channel.socket</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.socket" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.socket">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.channel.socket" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.channel.socket">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.socket.nio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/socket/nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/nio/package-summary.html">io.netty.channel.socket.nio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.socket.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.socket.nio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.socket.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.socket.nio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.socket.oio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/socket/oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/package-summary.html">io.netty.channel.socket.oio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.socket.oio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.socket.oio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.socket.oio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.socket.oio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.udt"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/udt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/package-summary.html">io.netty.channel.udt</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel.udt" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel.udt">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.udt" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.udt">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel.udt" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel.udt">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>操作员比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.channel.udt" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.channel.udt">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.udt.nio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/udt/nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/package-summary.html">io.netty.channel.udt.nio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.udt.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.udt.nio">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultAttributeMap.html#io.netty.channel.udt.nio" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DefaultAttributeMap.html#io.netty.channel.udt.nio">DefaultAttributeMap</a> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.unix"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../channel/unix/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">io.netty.channel.unix</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.channel.unix" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.channel.unix">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.channel.unix" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.channel.unix">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.channel.unix" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.channel.unix">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>操作员比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">io.netty.handler.codec</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/HashingStrategy.html#io.netty.handler.codec" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/HashingStrategy.html#io.netty.handler.codec">HashingStrategy</a> 
+         <div class="block">
+           哈希码生成和相等比较的抽象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Signal.html#io.netty.handler.codec" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Signal.html#io.netty.handler.codec">Signal</a> 
+         <div class="block">
+           一个特殊的 
+          <code>Error</code> ，用于通过投掷来发信号通知某个状态或请求。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.dns"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/dns/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-summary.html">io.netty.handler.codec.dns</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.handler.codec.dns" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.handler.codec.dns">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.dns" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.dns">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.haproxy"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/haproxy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/package-summary.html">io.netty.handler.codec.haproxy</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.haproxy" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.haproxy">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.http"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/http/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">io.netty.handler.codec.http</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.http" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.http">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.http" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.http">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.http.multipart"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/http/multipart/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-summary.html">io.netty.handler.codec.http.multipart</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.handler.codec.http.multipart" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.handler.codec.http.multipart">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.http.multipart" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.http.multipart">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.http.websocketx"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.http.websocketx" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.http.websocketx">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.http.websocketx" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.http.websocketx">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.http2"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/http2/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">io.netty.handler.codec.http2</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.http2">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeKey.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeKey.html#io.netty.handler.codec.http2">AttributeKey</a> 
+         <div class="block"> 
+          <span>可用于访问<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a>中的<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口">关键字<code>AttributeMap</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.handler.codec.http2">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.http2">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.memcache"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/memcache/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/package-summary.html">io.netty.handler.codec.memcache</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.handler.codec.memcache" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.handler.codec.memcache">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.memcache" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.memcache">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.memcache.binary"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/memcache/binary/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html">io.netty.handler.codec.memcache.binary</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.handler.codec.memcache.binary" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.handler.codec.memcache.binary">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.memcache.binary" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.memcache.binary">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.mqtt"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/mqtt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/mqtt/package-summary.html">io.netty.handler.codec.mqtt</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.mqtt" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.mqtt">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.redis"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/redis/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/package-summary.html">io.netty.handler.codec.redis</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.handler.codec.redis" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.handler.codec.redis">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.redis" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.redis">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.rtsp"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/rtsp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/package-summary.html">io.netty.handler.codec.rtsp</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.rtsp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.rtsp">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.smtp"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/smtp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/package-summary.html">io.netty.handler.codec.smtp</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.smtp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.smtp">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.smtp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.smtp">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.spdy"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/spdy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/package-summary.html">io.netty.handler.codec.spdy</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.spdy" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.spdy">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.spdy" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.spdy">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.stomp"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/codec/stomp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/package-summary.html">io.netty.handler.codec.stomp</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.handler.codec.stomp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.handler.codec.stomp">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.codec.stomp" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.codec.stomp">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.ssl"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="../handler/ssl/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">io.netty.handler.ssl</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractReferenceCounted.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractReferenceCounted.html#io.netty.handler.ssl">AbstractReferenceCounted</a> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AsyncMapping.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsyncMapping.html#io.netty.handler.ssl">AsyncMapping</a>&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/DomainNameMapping.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DomainNameMapping.html#io.netty.handler.ssl">DomainNameMapping</a> 
+         <div class="block">
+           将域名映射到其关联的值对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Mapping.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Mapping.html#io.netty.handler.ssl">Mapping</a> 
+         <div class="block">
+           保持从一种类型的对象到另一种类型的对象的映射。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.handler.ssl">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.util"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a> used by <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractConstant.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AbstractConstant.html#io.netty.util">AbstractConstant</a> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AsciiString.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AsciiString.html#io.netty.util">AsciiString</a> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Attribute.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Attribute.html#io.netty.util">Attribute</a> 
+         <div class="block">
+           一个允许存储值引用的属性。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AttributeKey.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeKey.html#io.netty.util">AttributeKey</a> 
+         <div class="block"> 
+          <span>可用于访问<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a>中的<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口">密钥<code>AttributeMap</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AttributeMap.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/AttributeMap.html#io.netty.util">AttributeMap</a> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/BooleanSupplier.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/BooleanSupplier.html#io.netty.util">BooleanSupplier</a> 
+         <div class="block">
+           代表 
+          <code>boolean</code>结果的供应商。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ByteProcessor.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ByteProcessor.html#io.netty.util">ByteProcessor</a> 
+         <div class="block">
+           提供了一种迭代字节集合的机制。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Constant.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Constant.html#io.netty.util">Constant</a> 
+         <div class="block">
+           通过 
+          <code>==</code>操作员比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/DomainMappingBuilder.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DomainMappingBuilder.html#io.netty.util">DomainMappingBuilder</a> 
+         <div class="block"> 
+          <span><span class="deprecatedLabel">已过时。</span></span> 
+          <div class="block"> 
+           <span><span class="deprecationComment">改为使用<a href="DomainNameMappingBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainNameMappingBuilder.html" title="在io.netty.util中的类"><code>DomainNameMappingBuilder</code></a> 。</span></span> 
+          </div> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DomainNameMapping.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DomainNameMapping.html#io.netty.util">DomainNameMapping</a> 
+         <div class="block">
+           将域名映射到其关联的值对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/DomainNameMappingBuilder.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/DomainNameMappingBuilder.html#io.netty.util">DomainNameMappingBuilder</a> 
+         <div class="block"> 
+          <span>用于不可变<a href="DomainNameMapping.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainNameMapping.html" title="在io.netty.util中的类"><code>DomainNameMapping</code></a>实例的生成器。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/HashingStrategy.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/HashingStrategy.html#io.netty.util">HashingStrategy</a> 
+         <div class="block">
+           哈希码生成和相等比较的抽象。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Mapping.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Mapping.html#io.netty.util">Mapping</a> 
+         <div class="block">
+           保持从一种类型的对象到另一种类型的对象的映射。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Recycler.Handle.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Recycler.Handle.html#io.netty.util">Recycler.Handle</a>&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ReferenceCounted.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ReferenceCounted.html#io.netty.util">ReferenceCounted</a> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ResourceLeak.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ResourceLeak.html#io.netty.util">ResourceLeak</a> 
+         <div class="block"> 
+          <span><span class="deprecatedLabel">已过时。</span></span> 
+          <div class="block"> 
+           <span><span class="deprecationComment">请使用<a href="ResourceLeakTracker.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakTracker.html" title="io.netty.util中的接口"><code>ResourceLeakTracker</code>，</a>因为这可能会导致误报。</span></span> 
+          </div> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ResourceLeakDetector.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ResourceLeakDetector.html#io.netty.util">ResourceLeakDetector</a>&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ResourceLeakDetector.Level.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ResourceLeakDetector.Level.html#io.netty.util">ResourceLeakDetector.Level</a> 
+         <div class="block">
+           代表资源泄漏检测的级别。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ResourceLeakDetectorFactory.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ResourceLeakDetectorFactory.html#io.netty.util">ResourceLeakDetectorFactory</a> 
+         <div class="block"> 
+          <span>这个静态工厂应该用于根据需要加载<a href="ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ResourceLeakTracker.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/ResourceLeakTracker.html#io.netty.util">ResourceLeakTracker</a>&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Signal.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Signal.html#io.netty.util">Signal</a> 
+         <div class="block">
+           一个特殊的 
+          <code>Error</code> ，用于通过投掷来发信号通知某个状态或请求。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Timeout.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Timeout.html#io.netty.util">Timeout</a> 
+         <div class="block"> 
+          <span>与<a href="TimerTask.html" tppabs="http://netty.io/4.1/api/io/netty/util/TimerTask.html" title="io.netty.util中的接口"><code>TimerTask</code></a>关联的<a href="TimerTask.html" tppabs="http://netty.io/4.1/api/io/netty/util/TimerTask.html" title="io.netty.util中的接口">句柄</a> ，由<a href="Timer.html" tppabs="http://netty.io/4.1/api/io/netty/util/Timer.html" title="io.netty.util中的接口"><code>Timer</code></a>返回。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Timer.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Timer.html#io.netty.util">Timer</a> 
+         <div class="block"> 
+          <span>时间表<a href="TimerTask.html" tppabs="http://netty.io/4.1/api/io/netty/util/TimerTask.html" title="io.netty.util中的接口"><code>TimerTask</code></a>用于后台线程中的一次性未来执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/TimerTask.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/TimerTask.html#io.netty.util">TimerTask</a> 
+         <div class="block">
+           在 
+          <a href="Timer.html#newTimeout-io.netty.util.TimerTask-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/Timer.html#newTimeout-io.netty.util.TimerTask-long-java.util.concurrent.TimeUnit-"><code>Timer.newTimeout(TimerTask, long, TimeUnit)</code></a>指定的延迟后执行的任务。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/UncheckedBooleanSupplier.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/UncheckedBooleanSupplier.html#io.netty.util">UncheckedBooleanSupplier</a> 
+         <div class="block">
+           代表 
+          <code>boolean</code>结果的供应商，它不会抛出任何检查的异常。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Version.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/class-use/Version.html#io.netty.util">Version</a> 
+         <div class="block">
+           检索可用Netty工件的版本信息。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-util-package-use.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/package-use.html" target="_top">框架</a></li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-use.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

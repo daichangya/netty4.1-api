@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>CorsConfig.Builder (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http.cors.CorsConfig.Builder class"> 
+  <meta name="keywords" content="allowNullOrigin()"> 
+  <meta name="keywords" content="disable()"> 
+  <meta name="keywords" content="exposeHeaders()"> 
+  <meta name="keywords" content="allowCredentials()"> 
+  <meta name="keywords" content="maxAge()"> 
+  <meta name="keywords" content="allowedRequestMethods()"> 
+  <meta name="keywords" content="allowedRequestHeaders()"> 
+  <meta name="keywords" content="preflightResponseHeader()"> 
+  <meta name="keywords" content="noPreflightResponseHeaders()"> 
+  <meta name="keywords" content="build()"> 
+  <meta name="keywords" content="shortCurcuit()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="CorsConfig.Builder (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/class-use/CorsConfig.Builder.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="CorsConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.html" title="class in io.netty.handler.codec.http.cors"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="CorsConfig.DateValueGenerator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.DateValueGenerator.html" title="class in io.netty.handler.codec.http.cors"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-http-cors-CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/cors/CorsConfig.Builder.html" target="_top">框架</a></li> 
+    <li><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http.cors 
+   </div> 
+   <h2 title="Class CorsConfig.Builder" class="title">Class CorsConfig.Builder</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.http.cors.CorsConfig.Builder</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         Enclosing class: 
+       </dt> 
+       <dd> 
+        <span><a href="CorsConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.html" title="class in io.netty.handler.codec.http.cors">CorsConfig</a></span> 
+       </dd> 
+      </dl> 
+      <hr> 
+      <div class="block"> 
+       <span><span class="deprecatedLabel">已过时。</span></span> 
+       <div class="block"> 
+        <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html" title="class in io.netty.handler.codec.http.cors"><code>CorsConfigBuilder</code></a> 。</span></span> 
+       </div> 
+      </div> <br> <pre>@Deprecated
+public static class <span class="typeNameLabel">CorsConfig.Builder</span>
+extends java.lang.Object</pre> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#Builder--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#Builder--">Builder</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html" title="class in io.netty.handler.codec.http.cors"><code>CorsConfigBuilder</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#Builder-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#Builder-java.lang.String...-">Builder</a></span>(java.lang.String...&nbsp;origins)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html" title="class in io.netty.handler.codec.http.cors"><code>CorsConfigBuilder</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#allowCredentials--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#allowCredentials--">allowCredentials</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowCredentials--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowCredentials--"><code>CorsConfigBuilder.allowCredentials()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#allowedRequestHeaders-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#allowedRequestHeaders-java.lang.String...-">allowedRequestHeaders</a></span>(java.lang.String...&nbsp;headers)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowedRequestHeaders-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowedRequestHeaders-java.lang.String...-"><code>CorsConfigBuilder.allowedRequestHeaders(String...)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-">allowedRequestMethods</a></span>(<a href="../HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>...&nbsp;methods)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-"><code>CorsConfigBuilder.allowedRequestMethods(HttpMethod...)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#allowNullOrigin--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#allowNullOrigin--">allowNullOrigin</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowNullOrigin--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowNullOrigin--"><code>CorsConfigBuilder.allowNullOrigin()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.html" title="class in io.netty.handler.codec.http.cors">CorsConfig</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#build--">build</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#build--"><code>CorsConfigBuilder.build()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#disable--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#disable--">disable</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#disable--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#disable--"><code>CorsConfigBuilder.disable()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#exposeHeaders-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#exposeHeaders-java.lang.String...-">exposeHeaders</a></span>(java.lang.String...&nbsp;headers)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#exposeHeaders-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#exposeHeaders-java.lang.String...-"><code>CorsConfigBuilder.exposeHeaders(String...)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#maxAge-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#maxAge-long-">maxAge</a></span>(long&nbsp;max)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#maxAge-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#maxAge-long-"><code>CorsConfigBuilder.maxAge(long)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#noPreflightResponseHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#noPreflightResponseHeaders--">noPreflightResponseHeaders</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#noPreflightResponseHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#noPreflightResponseHeaders--"><code>CorsConfigBuilder.noPreflightResponseHeaders()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-">preflightResponseHeader</a></span>(java.lang.CharSequence&nbsp;name, java.lang.Iterable&lt;T&gt;&nbsp;value)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-"><code>CorsConfigBuilder.preflightResponseHeader(CharSequence, Iterable)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-">preflightResponseHeader</a></span>(java.lang.CharSequence&nbsp;name, java.lang.Object...&nbsp;values)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-"><code>CorsConfigBuilder.preflightResponseHeader(CharSequence, Object...)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#preflightResponseHeader-java.lang.String-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#preflightResponseHeader-java.lang.String-java.util.concurrent.Callable-">preflightResponseHeader</a></span>(java.lang.String&nbsp;name, java.util.concurrent.Callable&lt;T&gt;&nbsp;valueGenerator)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.util.concurrent.Callable-"><code>CorsConfigBuilder.preflightResponseHeader(CharSequence, Callable)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="CorsConfig.Builder.html#shortCurcuit--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html#shortCurcuit--">shortCurcuit</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#shortCircuit--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#shortCircuit--"><code>CorsConfigBuilder.shortCircuit()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="Builder-java.lang.String...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Builder</h4> <pre>@Deprecated
+public&nbsp;Builder(java.lang.String...&nbsp;origins)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html" title="class in io.netty.handler.codec.http.cors"><code>CorsConfigBuilder</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="Builder--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>Builder</h4> <pre>@Deprecated
+public&nbsp;Builder()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html" title="class in io.netty.handler.codec.http.cors"><code>CorsConfigBuilder</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="allowNullOrigin--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>allowNullOrigin</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;allowNullOrigin()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowNullOrigin--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowNullOrigin--"><code>CorsConfigBuilder.allowNullOrigin()</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="disable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>disable</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;disable()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#disable--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#disable--"><code>CorsConfigBuilder.disable()</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="exposeHeaders-java.lang.String...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>exposeHeaders</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;exposeHeaders(java.lang.String...&nbsp;headers)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#exposeHeaders-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#exposeHeaders-java.lang.String...-"><code>CorsConfigBuilder.exposeHeaders(String...)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="allowCredentials--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>allowCredentials</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;allowCredentials()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowCredentials--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowCredentials--"><code>CorsConfigBuilder.allowCredentials()</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="maxAge-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxAge</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;maxAge(long&nbsp;max)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#maxAge-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#maxAge-long-"><code>CorsConfigBuilder.maxAge(long)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>allowedRequestMethods</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;allowedRequestMethods(<a href="../HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>...&nbsp;methods)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowedRequestMethods-io.netty.handler.codec.http.HttpMethod...-"><code>CorsConfigBuilder.allowedRequestMethods(HttpMethod...)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="allowedRequestHeaders-java.lang.String...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>allowedRequestHeaders</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;allowedRequestHeaders(java.lang.String...&nbsp;headers)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#allowedRequestHeaders-java.lang.String...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#allowedRequestHeaders-java.lang.String...-"><code>CorsConfigBuilder.allowedRequestHeaders(String...)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>preflightResponseHeader</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;preflightResponseHeader(java.lang.CharSequence&nbsp;name,
+                                                              java.lang.Object...&nbsp;values)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Object...-"><code>CorsConfigBuilder.preflightResponseHeader(CharSequence, Object...)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>preflightResponseHeader</h4> <pre>@Deprecated
+public&nbsp;&lt;T&gt;&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;preflightResponseHeader(java.lang.CharSequence&nbsp;name,
+                                                                  java.lang.Iterable&lt;T&gt;&nbsp;value)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.lang.Iterable-"><code>CorsConfigBuilder.preflightResponseHeader(CharSequence, Iterable)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="preflightResponseHeader-java.lang.String-java.util.concurrent.Callable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>preflightResponseHeader</h4> <pre>@Deprecated
+public&nbsp;&lt;T&gt;&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;preflightResponseHeader(java.lang.String&nbsp;name,
+                                                                  java.util.concurrent.Callable&lt;T&gt;&nbsp;valueGenerator)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#preflightResponseHeader-java.lang.CharSequence-java.util.concurrent.Callable-"><code>CorsConfigBuilder.preflightResponseHeader(CharSequence, Callable)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="noPreflightResponseHeaders--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>noPreflightResponseHeaders</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;noPreflightResponseHeaders()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#noPreflightResponseHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#noPreflightResponseHeaders--"><code>CorsConfigBuilder.noPreflightResponseHeaders()</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="build--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>build</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.html" title="class in io.netty.handler.codec.http.cors">CorsConfig</a>&nbsp;build()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#build--"><code>CorsConfigBuilder.build()</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="shortCurcuit--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>shortCurcuit</h4> <pre>@Deprecated
+public&nbsp;<a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" title="class in io.netty.handler.codec.http.cors">CorsConfig.Builder</a>&nbsp;shortCurcuit()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="CorsConfigBuilder.html#shortCircuit--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfigBuilder.html#shortCircuit--"><code>CorsConfigBuilder.shortCircuit()</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/class-use/CorsConfig.Builder.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="CorsConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.html" title="class in io.netty.handler.codec.http.cors"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="CorsConfig.DateValueGenerator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.DateValueGenerator.html" title="class in io.netty.handler.codec.http.cors"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-http-cors-CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/cors/CorsConfig.Builder.html" target="_top">框架</a></li> 
+    <li><a href="CorsConfig.Builder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsConfig.Builder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http/cors/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

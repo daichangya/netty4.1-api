@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ChannelGroup (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.group.ChannelGroup interface"> 
+  <meta name="keywords" content="name()"> 
+  <meta name="keywords" content="find()"> 
+  <meta name="keywords" content="write()"> 
+  <meta name="keywords" content="flush()"> 
+  <meta name="keywords" content="writeAndFlush()"> 
+  <meta name="keywords" content="flushAndWrite()"> 
+  <meta name="keywords" content="disconnect()"> 
+  <meta name="keywords" content="close()"> 
+  <meta name="keywords" content="deregister()"> 
+  <meta name="keywords" content="newCloseFuture()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ChannelGroup (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":38,"i3":38,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":38,"i10":38,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6,"i18":6,"i19":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/class-use/ChannelGroup.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>上一个</li> 
+    <li><a href="ChannelGroupException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupException.html" title="class in io.netty.channel.group"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-group-ChannelGroup.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/group/ChannelGroup.html" target="_top">框架</a></li> 
+    <li><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.group 
+   </div> 
+   <h2 title="Interface ChannelGroup" class="title">Interface ChannelGroup</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Superinterfaces: 
+       </dt> 
+       <dd> 
+        <span>java.util.Collection &lt; <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">Channel</a> &gt;，java.lang.Comparable &lt; <a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口">ChannelGroup</a> &gt;，java.lang.Iterable &lt; <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">Channel</a> &gt;，java.util.Set &lt; <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">Channel</a> &gt;</span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        所有已知实现类：
+       </dt> 
+       <dd> 
+        <span><a href="DefaultChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/DefaultChannelGroup.html" title="class in io.netty.channel.group">DefaultChannelGroup</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public interface <span class="typeNameLabel">ChannelGroup</span>
+extends java.util.Set&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;, java.lang.Comparable&lt;<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group">ChannelGroup</a>&gt;</pre> 
+      <div class="block"> 
+       <span>一个线程安全的<code>Set</code> ，包含开放<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并提供各种批量操作。</span> 
+       <span>使用<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code></a> ，可以将<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>分类为有意义的组（例如，基于每个服务或每个状态）。关闭的<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>会自动从集合中删除，以便您不必担心生命周期添加<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+       <span>A <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>可以属于多个<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code></a> 。</span> 
+       <h3> <span>将消息广播到多个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a></span> </h3> 
+       <p> <span>如果您需要将消息广播到多个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，则可以添加与收件人关联的<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，并呼叫<a href="ChannelGroup.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-"><code>write(Object)</code></a> ：</span> </p> 
+       <pre>  <span><strong><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group"><code>ChannelGroup</code></a> recipients = new <a href="DefaultChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/DefaultChannelGroup.html" title="class in io.netty.channel.group"><code>DefaultChannelGroup</code></a>(<a href="../../util/concurrent/GlobalEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GlobalEventExecutor.html" title="class in io.netty.util.concurrent"><code>GlobalEventExecutor</code></a>.INSTANCE);</strong>
+ recipients.add(channelA);
+ recipients.add(channelB);
+ ..
+ <strong>recipients.write(<a href="../../buffer/Unpooled.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/Unpooled.html" title="class in io.netty.buffer"><code>Unpooled</code></a>.copiedBuffer( "Service will shut down for maintenance in 5 minutes.", <a href="../../util/CharsetUtil.html" tppabs="http://netty.io/4.1/api/io/netty/util/CharsetUtil.html" title="class in io.netty.util"><code>CharsetUtil</code></a>.UTF_8));</strong></span> </pre> 
+       <h3> <span>通过<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code></a>简化关闭过程</span> </h3> 
+       <p> <span>如果<a href="../ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code></a>和<a href="../ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code>都</a>存在于同一个<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code>中</a> ，则该组的任何所请求的I / O操作首先针对<a href="../ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code></a>进行，然后针对其他针对<a href="../ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code></a>进行。</span> </p> 
+       <p> <span>当您关闭一台服务器时，此规则非常有用：</span> </p> 
+       <pre>  <span><strong><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group"><code>ChannelGroup</code></a> allChannels = new <a href="DefaultChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/DefaultChannelGroup.html" title="class in io.netty.channel.group"><code>DefaultChannelGroup</code></a>(<a href="../../util/concurrent/GlobalEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GlobalEventExecutor.html" title="class in io.netty.util.concurrent"><code>GlobalEventExecutor</code></a>.INSTANCE);</strong>
+
+ public static void main(String[] args) throws Exception {
+     <a href="../../bootstrap/ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap"><code>ServerBootstrap</code></a> b = new <a href="../../bootstrap/ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap"><code>ServerBootstrap</code></a>(..);
+     ...
+     b.childHandler(new MyHandler());
+
+     // Start the server
+     b.getPipeline().addLast("handler", new MyHandler());
+     <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel"><code>Channel</code></a> serverChannel = b.bind(..).sync();
+     <strong>allChannels.add(serverChannel);</strong>
+
+     ... Wait until the shutdown signal reception ...
+
+     // Close the serverChannel and then all accepted connections.
+     <strong>allChannels.close().awaitUninterruptibly();</strong>
+ }
+
+ public class MyHandler extends <a href="../ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel"><code>ChannelInboundHandlerAdapter</code></a> {
+     <code> @Override</code>
+     public void channelActive(<a href="../ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel"><code>ChannelHandlerContext</code></a> ctx) {
+         // closed on shutdown.
+         <strong>allChannels.add(ctx.channel());</strong>
+         super.channelActive(ctx);
+     }
+ }</span> </pre> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#close--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#close--">close</a></span>()</code> 
+            <div class="block"> 
+             <span>关闭此组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#close-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#close-io.netty.channel.group.ChannelMatcher-">close</a></span>(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span>关闭所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#deregister--">deregister</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">该方法将在下一个主要功能版本中删除。</span></span> 
+              <span><span class="deprecationComment">注销所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s该组中从他们<a href="../EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a> 。</span></span> 
+              <span><span class="deprecationComment">请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#deregister--"><code>ChannelOutboundInvoker.deregister()</code></a>是。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#deregister-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#deregister-io.netty.channel.group.ChannelMatcher-">deregister</a></span>(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">该方法将在下一个主要功能版本中删除。</span></span> 
+              <span><span class="deprecationComment">从<a href="../EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>注销该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s，它们与给定的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a>相匹配。</span></span> 
+              <span><span class="deprecationComment">请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#deregister--"><code>ChannelOutboundInvoker.deregister()</code></a>是。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#disconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#disconnect--">disconnect</a></span>()</code> 
+            <div class="block"> 
+             <span>将该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从远程对等端断开。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#disconnect-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#disconnect-io.netty.channel.group.ChannelMatcher-">disconnect</a></span>(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span>将该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>与远程对等设备断开连接，并与给定的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a>匹配。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#find-io.netty.channel.ChannelId-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#find-io.netty.channel.ChannelId-">find</a></span>(<a href="../ChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelId.html" title="interface in io.netty.channel">ChannelId</a>&nbsp;id)</code> 
+            <div class="block"> 
+             <span>返回<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>其中有指定的<a href="../ChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelId.html" title="io.netty.channel中的接口"><code>ChannelId</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group">ChannelGroup</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--">flush</a></span>()</code> 
+            <div class="block"> 
+             <span>冲洗此组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group">ChannelGroup</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#flush-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush-io.netty.channel.group.ChannelMatcher-">flush</a></span>(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span>冲洗该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s，它们与给定的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a>相匹配。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#flushAndWrite-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flushAndWrite-java.lang.Object-">flushAndWrite</a></span>(java.lang.Object&nbsp;message)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="ChannelGroup.html#writeAndFlush-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-"><code>writeAndFlush(Object)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#flushAndWrite-java.lang.Object-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flushAndWrite-java.lang.Object-io.netty.channel.group.ChannelMatcher-">flushAndWrite</a></span>(java.lang.Object&nbsp;message, <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-"><code>writeAndFlush(Object, ChannelMatcher)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#name--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#name--">name</a></span>()</code> 
+            <div class="block">
+              返回此组的名称。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#newCloseFuture--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#newCloseFuture--">newCloseFuture</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>当所有这一切将被通知<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>个</a> S中的这部分<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code></a> ，在调用的时候，被关闭。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#newCloseFuture-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#newCloseFuture-io.netty.channel.group.ChannelMatcher-">newCloseFuture</a></span>(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span>返回<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a> ，当<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">呼叫</a>时，所有属于此<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code>的<code>Channel</code></a>都关闭时，将会收到通知。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-">write</a></span>(java.lang.Object&nbsp;message)</code> 
+            <div class="block"> 
+             <span>将指定的<code>message</code>写入该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-">write</a></span>(java.lang.Object&nbsp;message, <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span>将指定的<code>message</code>所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定的匹配<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-">write</a></span>(java.lang.Object&nbsp;message, <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher, boolean&nbsp;voidPromise)</code> 
+            <div class="block"> 
+             <span>将指定的<code>message</code>所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定的匹配<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#writeAndFlush-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-">writeAndFlush</a></span>(java.lang.Object&nbsp;message)</code> 
+            <div class="block">
+              拨打 
+             <a href="ChannelGroup.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-"><code>write(Object)</code></a>和 
+             <a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--"><code>flush()</code>的</a>快捷方式。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-">writeAndFlush</a></span>(java.lang.Object&nbsp;message, <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</code> 
+            <div class="block"> 
+             <span>用于拨打<a href="ChannelGroup.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-"><code>write(Object)</code></a>和<a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--"><code>flush()</code>的</a>快捷方式，仅适用于与<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelMatcher</code></a>匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-">writeAndFlush</a></span>(java.lang.Object&nbsp;message, <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher, boolean&nbsp;voidPromise)</code> 
+            <div class="block"> 
+             <span>用于拨打<a href="ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-"><code>write(Object, ChannelMatcher, boolean)</code></a>和<a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--"><code>flush()</code>的</a>快捷方式，仅适用于与<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelMatcher</code></a>匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.util.Set"> </a> <h3>Methods inherited from interface&nbsp;java.util.Set</h3> <code>add, addAll, clear, contains, containsAll, equals, hashCode, isEmpty, iterator, remove, removeAll, retainAll, size, spliterator, toArray, toArray</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.util.Collection"> </a> <h3>Methods inherited from interface&nbsp;java.util.Collection</h3> <code>parallelStream, removeIf, stream</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3> <code>forEach</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Comparable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Comparable</h3> <code>compareTo</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="name--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>name</h4> <pre>java.lang.String&nbsp;name()</pre> 
+          <div class="block"> 
+           <span>返回此组的名称。</span> 
+           <span>团体名称纯粹是为了帮助您将一个团体与其他团体区分开来。</span> 
+          </div> </li> 
+        </ul> <a name="find-io.netty.channel.ChannelId-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>find</h4> <pre><a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;find(<a href="../ChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelId.html" title="interface in io.netty.channel">ChannelId</a>&nbsp;id)</pre> 
+          <div class="block"> 
+           <span>返回<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>其中有指定的<a href="../ChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelId.html" title="io.netty.channel中的接口"><code>ChannelId</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>匹配<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>如果找到。</span> 
+            <span><code>null</code>否则。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="write-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>write</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;write(java.lang.Object&nbsp;message)</pre> 
+          <div class="block"> 
+           <span>将指定的<code>message</code>写入此组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+           <span>如果指定的<code>message</code>是一个实例<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，它会自动为<a href="../../buffer/ByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#duplicate--">duplicated</a> ，以避免出现竞争状况。</span> 
+           <span><a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>也是如此。</span> 
+           <span>请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-"><code>ChannelOutboundInvoker.write(Object)</code></a>是。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             本身 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="write-java.lang.Object-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>write</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;write(java.lang.Object&nbsp;message,
+                         <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span>将指定的<code>message</code>所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定的匹配<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+           <span>如果指定的<code>message</code>是<code>message</code>的实例， <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">则会</a>自动为<a href="../../buffer/ByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#duplicate--">duplicated</a>来避免竞争状况。</span> 
+           <span><a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>也是如此。</span> 
+           <span>请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-"><code>ChannelOutboundInvoker.write(Object)</code></a>是。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>write</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;write(java.lang.Object&nbsp;message,
+                         <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher,
+                         boolean&nbsp;voidPromise)</pre> 
+          <div class="block"> 
+           <span>将指定的<code>message</code>所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定的匹配<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+           <span>如果指定的<code>message</code>是<code>message</code>的一个实例， <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">则会</a>自动为<a href="../../buffer/ByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#duplicate--">duplicated</a>避免竞争状况。</span> 
+           <span><a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>也是如此。</span> 
+           <span>请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-"><code>ChannelOutboundInvoker.write(Object)</code></a>是。</span> 
+           <span>如果<code>voidPromise</code>是<code>true</code> <a href="../ChannelOutboundInvoker.html#voidPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#voidPromise--"><code>ChannelOutboundInvoker.voidPromise()</code></a>用于写入，因此对返回的<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>的相同限制适用于无效承诺。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>通知所有通道何时完成操作的<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="flush--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flush</h4> <pre><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group">ChannelGroup</a>&nbsp;flush()</pre> 
+          <div class="block"> 
+           <span>冲洗此组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+           <span>如果指定的<code>messages</code>是一个实例<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，它会自动为<a href="../../buffer/ByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#duplicate--">duplicated</a> ，以避免出现竞争状况。</span> 
+           <span>请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-"><code>ChannelOutboundInvoker.write(Object)</code></a>是。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="flush-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flush</h4> <pre><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="interface in io.netty.channel.group">ChannelGroup</a>&nbsp;flush(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span>刷新所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+           <span>如果指定的<code>messages</code>是一个实例<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，它会自动为<a href="../../buffer/ByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#duplicate--">duplicated</a> ，以避免出现竞争状况。</span> 
+           <span>请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-"><code>ChannelOutboundInvoker.write(Object)</code></a>是。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="writeAndFlush-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>writeAndFlush</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;writeAndFlush(java.lang.Object&nbsp;message)</pre> 
+          <div class="block">
+            快捷方式拨打 
+           <a href="ChannelGroup.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-"><code>write(Object)</code></a>和 
+           <a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--"><code>flush()</code></a> 。 
+          </div> </li> 
+        </ul> <a name="flushAndWrite-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flushAndWrite</h4> <pre>@Deprecated
+<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;flushAndWrite(java.lang.Object&nbsp;message)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="ChannelGroup.html#writeAndFlush-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-"><code>writeAndFlush(Object)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>writeAndFlush</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;writeAndFlush(java.lang.Object&nbsp;message,
+                                 <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span>用于拨打<a href="ChannelGroup.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-"><code>write(Object)</code></a>和<a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--"><code>flush()</code>的</a>快捷方式，仅适用于与<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelMatcher</code></a>匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>Channel</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>writeAndFlush</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;writeAndFlush(java.lang.Object&nbsp;message,
+                                 <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher,
+                                 boolean&nbsp;voidPromise)</pre> 
+          <div class="block"> 
+           <span>拨打<a href="ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#write-java.lang.Object-io.netty.channel.group.ChannelMatcher-boolean-"><code>write(Object, ChannelMatcher, boolean)</code></a>和<a href="ChannelGroup.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#flush--"><code>flush()</code>的</a>快捷方式，仅适用于与<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelMatcher</code></a>匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>Channel</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="flushAndWrite-java.lang.Object-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flushAndWrite</h4> <pre>@Deprecated
+<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;flushAndWrite(java.lang.Object&nbsp;message,
+                                             <a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html#writeAndFlush-java.lang.Object-io.netty.channel.group.ChannelMatcher-"><code>writeAndFlush(Object, ChannelMatcher)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="disconnect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>disconnect</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;disconnect()</pre> 
+          <div class="block"> 
+           <span>断开此组中所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>与远程对等方的连接。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>通知所有通道何时完成操作的<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="disconnect-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>disconnect</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;disconnect(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span>将该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>与远程对等设备断开连接，并与给定的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a>相匹配。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="close--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>close</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;close()</pre> 
+          <div class="block"> 
+           <span>关闭此组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+           <span>如果<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>连接到远程对等端或绑定到本地地址，则会自动断开连接并解除绑定。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="close-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>close</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;close(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span>关闭所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s此组由给定匹配的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a> 。</span> 
+           <span>如果<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>连接到远程对等端或绑定到本地地址，它将自动断开连接并解除绑定。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="deregister--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>deregister</h4> <pre>@Deprecated
+<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;deregister()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">该方法将在下一个主要功能版本中删除。</span></span> 
+           <span><span class="deprecationComment">从<a href="../EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>注销该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> s。</span></span> 
+           <span><span class="deprecationComment">请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#deregister--"><code>ChannelOutboundInvoker.deregister()</code></a>是。</span></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="deregister-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>deregister</h4> <pre>@Deprecated
+<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;deregister(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">该方法将在下一个主要功能版本中删除。</span></span> 
+           <span><span class="deprecationComment">从<a href="../EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>注销该组中的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，它们与给定的<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="io.netty.channel.group中的接口"><code>ChannelMatcher</code></a>相匹配。</span></span> 
+           <span><span class="deprecationComment">请注意，此操作是异步的，因为<a href="../ChannelOutboundInvoker.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#deregister--"><code>ChannelOutboundInvoker.deregister()</code></a>是。</span></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>实例通知所有通道何时完成操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newCloseFuture--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newCloseFuture</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;newCloseFuture()</pre> 
+          <div class="block"> 
+           <span>返回<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a>当所有这一切将被通知<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>个</a> S中的这部分<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroup</code></a> ，在调用的时候，被关闭。</span> 
+          </div> </li> 
+        </ul> <a name="newCloseFuture-io.netty.channel.group.ChannelMatcher-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>newCloseFuture</h4> <pre><a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="interface in io.netty.channel.group">ChannelGroupFuture</a>&nbsp;newCloseFuture(<a href="ChannelMatcher.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelMatcher.html" title="interface in io.netty.channel.group">ChannelMatcher</a>&nbsp;matcher)</pre> 
+          <div class="block"> 
+           <span>返回<a href="ChannelGroupFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupFuture.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a> ，当<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">呼叫</a>时<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelGroup</code>中</a>的所有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>都关闭时，将会通知该<a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" title="io.netty.channel.group中的接口"><code>ChannelGroupFuture</code></a> 。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/class-use/ChannelGroup.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>上一个</li> 
+    <li><a href="ChannelGroupException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroupException.html" title="class in io.netty.channel.group"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-group-ChannelGroup.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/group/ChannelGroup.html" target="_top">框架</a></li> 
+    <li><a href="ChannelGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/ChannelGroup.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/group/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

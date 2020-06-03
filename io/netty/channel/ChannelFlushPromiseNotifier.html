@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ChannelFlushPromiseNotifier (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.ChannelFlushPromiseNotifier class"> 
+  <meta name="keywords" content="add()"> 
+  <meta name="keywords" content="increaseWriteCounter()"> 
+  <meta name="keywords" content="writeCounter()"> 
+  <meta name="keywords" content="notifyPromises()"> 
+  <meta name="keywords" content="notifyFlushFutures()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ChannelFlushPromiseNotifier (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":10,"i2":10,"i3":42,"i4":42,"i5":42,"i6":10,"i7":10,"i8":10,"i9":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/ChannelFlushPromiseNotifier.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFactory.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/ChannelFlushPromiseNotifier.html" target="_top">框架</a></li> 
+    <li><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Class ChannelFlushPromiseNotifier" class="title">Class ChannelFlushPromiseNotifier</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.ChannelFlushPromiseNotifier</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">ChannelFlushPromiseNotifier</span>
+extends java.lang.Object</pre> 
+      <div class="block"> 
+       <span>该实现允许注册<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>实例，一旦写入了一定数量的数据，就会得到通知，并且达到了检查点。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#ChannelFlushPromiseNotifier--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#ChannelFlushPromiseNotifier--">ChannelFlushPromiseNotifier</a></span>()</code> 
+            <div class="block"> 
+             <span>创建一个将使用<a href="ChannelPromise.html#setSuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setSuccess--"><code>ChannelPromise.setSuccess()</code></a>和<a href="ChannelPromise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setFailure-java.lang.Throwable-"><code>ChannelPromise.setFailure(Throwable)</code></a>通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的新实例。</span> 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#ChannelFlushPromiseNotifier-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#ChannelFlushPromiseNotifier-boolean-">ChannelFlushPromiseNotifier</a></span>(boolean&nbsp;tryNotify)</code> 
+            <div class="block">
+              创建一个新的实例 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-">add</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise, int&nbsp;pendingDataSize)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-long-"><code>add(ChannelPromise, long)</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-long-">add</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise, long&nbsp;pendingDataSize)</code> 
+            <div class="block"> 
+             <span>将<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>添加到此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code></a> ，在达到给定的<code>pendingDataSize</code>后会通知您。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#increaseWriteCounter-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#increaseWriteCounter-long-">increaseWriteCounter</a></span>(long&nbsp;delta)</code> 
+            <div class="block">
+              按给定的增量增加当前的写计数器 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#notifyFlushFutures--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyFlushFutures--">notifyFlushFutures</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#notifyPromises--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises--"><code>notifyPromises()</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#notifyFlushFutures-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyFlushFutures-java.lang.Throwable-">notifyFlushFutures</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-"><code>notifyPromises(Throwable)</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#notifyFlushFutures-java.lang.Throwable-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyFlushFutures-java.lang.Throwable-java.lang.Throwable-">notifyFlushFutures</a></span>(java.lang.Throwable&nbsp;cause1, java.lang.Throwable&nbsp;cause2)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-java.lang.Throwable-"><code>notifyPromises(Throwable, Throwable)</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#notifyPromises--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises--">notifyPromises</a></span>()</code> 
+            <div class="block"> 
+             <span>通知所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code>个</a>认为登记与S <a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-"><code>add(ChannelPromise, int)</code></a>及其pendingDatasize是返回当前writeCounter后小<a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--"><code>writeCounter()</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-">notifyPromises</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block"> 
+             <span>通知所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a> s已注册<a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-"><code>add(ChannelPromise, int)</code></a> ，其pendingDatasize isis小于当前writeCounter返回的<a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--"><code>writeCounter()</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-java.lang.Throwable-">notifyPromises</a></span>(java.lang.Throwable&nbsp;cause1, java.lang.Throwable&nbsp;cause2)</code> 
+            <div class="block"> 
+             <span>通知所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code>个</a>认为登记与S <a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-"><code>add(ChannelPromise, int)</code></a>及其pendingDatasize较小然后返回当前writeCounter <a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--"><code>writeCounter()</code></a>使用给定的原因1。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--">writeCounter</a></span>()</code> 
+            <div class="block"> 
+             <span>返回此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code></a>的当前写入计数器</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="ChannelFlushPromiseNotifier-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ChannelFlushPromiseNotifier</h4> <pre>public&nbsp;ChannelFlushPromiseNotifier(boolean&nbsp;tryNotify)</pre> 
+          <div class="block">
+            创建一个新的实例 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>tryNotify</code> - 如果<code>true</code> <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> s将收到通知<a href="ChannelPromise.html#trySuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#trySuccess--"><code>ChannelPromise.trySuccess()</code></a>和<a href="../util/concurrent/Promise.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#tryFailure-java.lang.Throwable-"><code>Promise.tryFailure(Throwable)</code></a> 。</span> 
+            <span>否则使用<a href="ChannelPromise.html#setSuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setSuccess--"><code>ChannelPromise.setSuccess()</code></a>和<a href="ChannelPromise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setFailure-java.lang.Throwable-"><code>ChannelPromise.setFailure(Throwable)</code></a></span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="ChannelFlushPromiseNotifier--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>ChannelFlushPromiseNotifier</h4> <pre>public&nbsp;ChannelFlushPromiseNotifier()</pre> 
+          <div class="block"> 
+           <span>创建一个将使用<a href="ChannelPromise.html#setSuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setSuccess--"><code>ChannelPromise.setSuccess()</code></a>和<a href="ChannelPromise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setFailure-java.lang.Throwable-"><code>ChannelPromise.setFailure(Throwable)</code></a>通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的新实例。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="add-io.netty.channel.ChannelPromise-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>add</h4> <pre>@Deprecated
+public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;add(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise,
+                                                   int&nbsp;pendingDataSize)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-long-"><code>add(ChannelPromise, long)</code></a></span></span> 
+          </div> </li> 
+        </ul> <a name="add-io.netty.channel.ChannelPromise-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>add</h4> <pre>public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;add(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise,
+                                       long&nbsp;pendingDataSize)</pre> 
+          <div class="block"> 
+           <span>将<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>添加到此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code></a> ，在达到给定的<code>pendingDataSize</code>后会通知您。</span> 
+          </div> </li> 
+        </ul> <a name="increaseWriteCounter-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>increaseWriteCounter</h4> <pre>public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;increaseWriteCounter(long&nbsp;delta)</pre> 
+          <div class="block">
+            按给定的增量增加当前的写计数器 
+          </div> </li> 
+        </ul> <a name="writeCounter--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>writeCounter</h4> <pre>public&nbsp;long&nbsp;writeCounter()</pre> 
+          <div class="block"> 
+           <span>返回此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code></a>的当前写入计数器</span> 
+          </div> </li> 
+        </ul> <a name="notifyPromises--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>notifyPromises</h4> <pre>public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;notifyPromises()</pre> 
+          <div class="block"> 
+           <span>通知所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a> s已注册<a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-"><code>add(ChannelPromise, int)</code>，</a>并且在当前writeCounter返回<a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--"><code>writeCounter()</code></a>之后，其pendingDatasize更小。</span> 
+           <span>在通知<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>之后，它将从此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code>中</a>删除，因此不会再收到通知。</span> 
+          </div> </li> 
+        </ul> <a name="notifyFlushFutures--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>notifyFlushFutures</h4> <pre>@Deprecated
+public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;notifyFlushFutures()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#notifyPromises--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises--"><code>notifyPromises()</code></a></span></span> 
+          </div> </li> 
+        </ul> <a name="notifyPromises-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>notifyPromises</h4> <pre>public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;notifyPromises(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span>通知所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a> s已注册<a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-"><code>add(ChannelPromise, int)</code>，</a>并且其pendingDatasize isis小于当前writeCounter返回的<a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--"><code>writeCounter()</code></a> 。</span> 
+           <span>在通知<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>后，它将从此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code>中</a>删除，因此不会再收到通知。</span> 
+           <span>其余的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a> s将会以给定的<code>Throwable</code>失败。</span> 
+           <span>所以在这个操作之后，这个<a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="io.netty.channel中的接口"><code>ChannelFutureListener</code></a>是空的。</span> 
+          </div> </li> 
+        </ul> <a name="notifyFlushFutures-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>notifyFlushFutures</h4> <pre>@Deprecated
+public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;notifyFlushFutures(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-"><code>notifyPromises(Throwable)</code></a></span></span> 
+          </div> </li> 
+        </ul> <a name="notifyPromises-java.lang.Throwable-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>notifyPromises</h4> <pre>public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;notifyPromises(java.lang.Throwable&nbsp;cause1,
+                                                  java.lang.Throwable&nbsp;cause2)</pre> 
+          <div class="block"> 
+           <span>通知所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code>个</a>认为登记与S <a href="ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#add-io.netty.channel.ChannelPromise-int-"><code>add(ChannelPromise, int)</code></a>及其pendingDatasize较小然后返回当前writeCounter <a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--"><code>writeCounter()</code></a>使用给定的原因1。</span> 
+           <span>在通知<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>后，它将从此<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="在io.netty.channel中的类"><code>ChannelFlushPromiseNotifier</code>中</a>删除，因此不会再收到通知。</span> 
+           <span>剩余的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>的其余<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口">部分</a>将以给定的<code>Throwable</code>失败。</span> 
+           <span>所以在这个操作之后，这个<a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="io.netty.channel中的接口"><code>ChannelFutureListener</code></a>是空的。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>cause1</code> - <code>Throwable</code>将用于使所有<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>失败，其中pendingDataSize小于<code>writeCounter()</code>返回的当前<a href="ChannelFlushPromiseNotifier.html#writeCounter--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#writeCounter--">writeCounter</a></span> 
+           </dd> 
+           <dd> 
+            <span><code>cause2</code> - <code>Throwable</code>将用于使剩余的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>失败</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="notifyFlushFutures-java.lang.Throwable-java.lang.Throwable-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>notifyFlushFutures</h4> <pre>@Deprecated
+public&nbsp;<a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a>&nbsp;notifyFlushFutures(java.lang.Throwable&nbsp;cause1,
+                                                                  java.lang.Throwable&nbsp;cause2)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html#notifyPromises-java.lang.Throwable-java.lang.Throwable-"><code>notifyPromises(Throwable, Throwable)</code></a></span></span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/ChannelFlushPromiseNotifier.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFactory.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/ChannelFlushPromiseNotifier.html" target="_top">框架</a></li> 
+    <li><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

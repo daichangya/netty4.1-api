@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>HttpConversionUtil (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http2.HttpConversionUtil class"> 
+  <meta name="keywords" content="OUT_OF_MESSAGE_SEQUENCE_METHOD"> 
+  <meta name="keywords" content="OUT_OF_MESSAGE_SEQUENCE_PATH"> 
+  <meta name="keywords" content="OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE"> 
+  <meta name="keywords" content="parseStatus()"> 
+  <meta name="keywords" content="toFullHttpResponse()"> 
+  <meta name="keywords" content="toFullHttpRequest()"> 
+  <meta name="keywords" content="toHttpRequest()"> 
+  <meta name="keywords" content="toHttpResponse()"> 
+  <meta name="keywords" content="addHttp2ToHttpHeaders()"> 
+  <meta name="keywords" content="toHttp2Headers()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="HttpConversionUtil (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/HttpConversionUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/HttpConversionUtil.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2WindowUpdateFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2WindowUpdateFrame.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="HttpConversionUtil.ExtensionHeaderNames.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.ExtensionHeaderNames.html" title="enum in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-HttpConversionUtil.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/HttpConversionUtil.html" target="_top">框架</a></li> 
+    <li><a href="HttpConversionUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http2 
+   </div> 
+   <h2 title="Class HttpConversionUtil" class="title">Class HttpConversionUtil</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.http2.HttpConversionUtil</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>@UnstableApi
+public final class <span class="typeNameLabel">HttpConversionUtil</span>
+extends java.lang.Object</pre> 
+      <div class="block">
+        提供HTTP / 2到HTTP转换的实用方法和常量 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation"> 
+         <caption> 
+          <span>Nested Classes</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Class and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static class&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.ExtensionHeaderNames.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.ExtensionHeaderNames.html" title="enum in io.netty.handler.codec.http2">HttpConversionUtil.ExtensionHeaderNames</a></span></code> 
+            <div class="block">
+              提供用于在HTTP对象中携带HTTP / 2信息的HTTP标头扩展 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#OUT_OF_MESSAGE_SEQUENCE_METHOD" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#OUT_OF_MESSAGE_SEQUENCE_METHOD">OUT_OF_MESSAGE_SEQUENCE_METHOD</a></span></code> 
+            <div class="block"> 
+             <span>这将是用于<a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpRequest</code></a>对象的方法， <a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口">这些</a>对象由<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1." < div>中</a>定义的HTTP消息流<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1." < div>生成</a></span> 
+            </div></td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#OUT_OF_MESSAGE_SEQUENCE_PATH" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#OUT_OF_MESSAGE_SEQUENCE_PATH">OUT_OF_MESSAGE_SEQUENCE_PATH</a></span></code> 
+            <div class="block"> 
+             <span>这将是用于<a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpRequest</code></a>对象的路径， <a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口">该</a>对象由<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1." < div>中</a>定义的HTTP消息流<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1." < div>生成</a></span> 
+            </div></td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE">OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE</a></span></code> 
+            <div class="block"> 
+             <span>这将是用于<a href="../http/HttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponse.html" title="io.netty.handler.codec.http中的接口"><code>HttpResponse</code></a>对象的状态代码， <a href="../http/HttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponse.html" title="io.netty.handler.codec.http中的接口">该</a>对象由<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1." < div>中</a>定义的HTTP消息流<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1." < div>生成</a></span> 
+            </div></td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-">addHttp2ToHttpHeaders</a></span>(int&nbsp;streamId, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;sourceHeaders, <a href="../http/FullHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpMessage.html" title="interface in io.netty.handler.codec.http">FullHttpMessage</a>&nbsp;destinationMessage, boolean&nbsp;addToTrailer)</code> 
+            <div class="block">
+              将HTTP / 2标头翻译并添加到HTTP / 1.x标头。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-">addHttp2ToHttpHeaders</a></span>(int&nbsp;streamId, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;inputHeaders, <a href="../http/HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;outputHeaders, <a href="../http/HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion, boolean&nbsp;isTrailer, boolean&nbsp;isRequest)</code> 
+            <div class="block">
+              将HTTP / 2标头翻译并添加到HTTP / 1.x标头。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#parseStatus-java.lang.CharSequence-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#parseStatus-java.lang.CharSequence-">parseStatus</a></span>(java.lang.CharSequence&nbsp;status)</code> 
+            <div class="block"> 
+             <span>在将状态代码翻译为<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http"><code>HttpResponseStatus</code>的</a>同时应用HTTP / 2规则</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/FullHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpRequest.html" title="interface in io.netty.handler.codec.http">FullHttpRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toFullHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toFullHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-">toFullHttpRequest</a></span>(int&nbsp;streamId, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers, <a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;validateHttpHeaders)</code> 
+            <div class="block">
+              创建一个新的对象来包含请求数据 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/FullHttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpResponse.html" title="interface in io.netty.handler.codec.http">FullHttpResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toFullHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toFullHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-">toFullHttpResponse</a></span>(int&nbsp;streamId, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers, <a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;validateHttpHeaders)</code> 
+            <div class="block">
+              创建一个新的对象来包含响应数据 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toHttp2Headers-io.netty.handler.codec.http.HttpHeaders-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toHttp2Headers-io.netty.handler.codec.http.HttpHeaders-boolean-">toHttp2Headers</a></span>(<a href="../http/HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;inHeaders, boolean&nbsp;validateHeaders)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toHttp2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http2.Http2Headers-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toHttp2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http2.Http2Headers-">toHttp2Headers</a></span>(<a href="../http/HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;inHeaders, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;out)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toHttp2Headers-io.netty.handler.codec.http.HttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toHttp2Headers-io.netty.handler.codec.http.HttpMessage-boolean-">toHttp2Headers</a></span>(<a href="../http/HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;in, boolean&nbsp;validateHeaders)</code> 
+            <div class="block">
+              将给定的HTTP / 1.x标头转换为HTTP / 2标头。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-boolean-">toHttpRequest</a></span>(int&nbsp;streamId, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers, boolean&nbsp;validateHttpHeaders)</code> 
+            <div class="block">
+              创建一个新的对象来包含请求数据。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponse.html" title="interface in io.netty.handler.codec.http">HttpResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpConversionUtil.html#toHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-boolean-">toHttpResponse</a></span>(int&nbsp;streamId, <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers, boolean&nbsp;validateHttpHeaders)</code> 
+            <div class="block">
+              创建一个新的对象来包含响应数据。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="OUT_OF_MESSAGE_SEQUENCE_METHOD"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>OUT_OF_MESSAGE_SEQUENCE_METHOD</h4> <pre>public static final&nbsp;<a href="../http/HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a> OUT_OF_MESSAGE_SEQUENCE_METHOD</pre> 
+          <div class="block"> 
+           <span>这将是用于<a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpRequest</code></a>对象的方法， <a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口">该</a>对象由<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.">HTTP/2 Spec Message Flow中</a>定义的HTTP消息流<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.">生成</a></span> 
+          </div> </li> 
+        </ul> <a name="OUT_OF_MESSAGE_SEQUENCE_PATH"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>OUT_OF_MESSAGE_SEQUENCE_PATH</h4> <pre>public static final&nbsp;java.lang.String OUT_OF_MESSAGE_SEQUENCE_PATH</pre> 
+          <div class="block"> 
+           <span>这将是用于<a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpRequest</code></a>对象的路径， <a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口">该</a>对象由<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.">HTTP/2 Spec Message Flow中</a>定义的HTTP消息流<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.">生成</a></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../constant-values.html#io.netty.handler.codec.http2.HttpConversionUtil.OUT_OF_MESSAGE_SEQUENCE_PATH" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.http2.HttpConversionUtil.OUT_OF_MESSAGE_SEQUENCE_PATH">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> OUT_OF_MESSAGE_SEQUENCE_RETURN_CODE</pre> 
+          <div class="block"> 
+           <span>这将是用于该状态码<a href="../http/HttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponse.html" title="io.netty.handler.codec.http中的接口"><code>HttpResponse</code></a>名HTTP消息流的生成的对象中所定义<a href="javascript:if(confirm('http://tools.ietf.org/html/draft-ietf-httpbis-http2-16  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.'" tppabs="http://tools.ietf.org/html/draft-ietf-httpbis-http2-16#section-8.1.">HTTP/2 Spec Message Flow</a></span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="parseStatus-java.lang.CharSequence-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>parseStatus</h4> <pre>public static&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a>&nbsp;parseStatus(java.lang.CharSequence&nbsp;status)
+                                      throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block"> 
+           <span>在将状态代码翻译成<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http"><code>HttpResponseStatus</code></a>时应用HTTP / 2规则</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>status</code> - 来自HTTP / 2帧的状态 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             HTTP / 1.x状态 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 如果从HTTP / 2转换为HTTP / 1.x时出现问题 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toFullHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toFullHttpResponse</h4> <pre>public static&nbsp;<a href="../http/FullHttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpResponse.html" title="interface in io.netty.handler.codec.http">FullHttpResponse</a>&nbsp;toFullHttpResponse(int&nbsp;streamId,
+                                                  <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers,
+                                                  <a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                                                  boolean&nbsp;validateHttpHeaders)
+                                           throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block">
+            创建一个新的对象来包含响应数据 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 与响应关联的流 
+           </dd> 
+           <dd> 
+            <code>http2Headers</code> - 用来创建响应的最初一组HTTP / 2头 
+           </dd> 
+           <dd> 
+            <span><code>alloc</code> - <a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>用于生成消息的内容</span> 
+           </dd> 
+           <dd> 
+            <span><code>validateHttpHeaders</code> -</span> 
+            <ul> 
+             <li> <span><code>true</code>验证http-codec中的HTTP标头</span> </li> 
+             <li> <span><code>false</code>不要验证http-codec中的HTTP标头</span> </li> 
+            </ul> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             表示标题/数据的新响应对象 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 见 
+            <a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-"><code>addHttp2ToHttpHeaders(int, Http2Headers, FullHttpMessage, boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toFullHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toFullHttpRequest</h4> <pre>public static&nbsp;<a href="../http/FullHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpRequest.html" title="interface in io.netty.handler.codec.http">FullHttpRequest</a>&nbsp;toFullHttpRequest(int&nbsp;streamId,
+                                                <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers,
+                                                <a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                                                boolean&nbsp;validateHttpHeaders)
+                                         throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block">
+            创建一个新的对象来包含请求数据 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 与请求关联的流 
+           </dd> 
+           <dd> 
+            <code>http2Headers</code> - 用来创建请求的最初一组HTTP / 2头 
+           </dd> 
+           <dd> 
+            <span><code>alloc</code> - 用于生成消息内容的<a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>validateHttpHeaders</code> -</span> 
+            <ul> 
+             <li> <span><code>true</code>来验证http-codec中的HTTP标头</span> </li> 
+             <li> <span><code>false</code>不要验证http-codec中的HTTP标头</span> </li> 
+            </ul> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             表示标头/数据的新请求对象 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 见 
+            <a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-"><code>addHttp2ToHttpHeaders(int, Http2Headers, FullHttpMessage, boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toHttpRequest</h4> <pre>public static&nbsp;<a href="../http/HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a>&nbsp;toHttpRequest(int&nbsp;streamId,
+                                        <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers,
+                                        boolean&nbsp;validateHttpHeaders)
+                                 throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block">
+            创建一个新的对象来包含请求数据。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 与请求关联的流 
+           </dd> 
+           <dd> 
+            <code>http2Headers</code> - 用来创建请求的最初一组HTTP / 2头 
+           </dd> 
+           <dd> 
+            <span><code>validateHttpHeaders</code> -</span> 
+            <ul> 
+             <li> <span><code>true</code>验证http-codec中的HTTP标头</span> </li> 
+             <li> <span><code>false</code>不要验证http-codec中的HTTP标头</span> </li> 
+            </ul> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             表示分块请求标头的新请求对象 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 见 
+            <a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-"><code>addHttp2ToHttpHeaders(int, Http2Headers, FullHttpMessage, boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toHttpResponse</h4> <pre>public static&nbsp;<a href="../http/HttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponse.html" title="interface in io.netty.handler.codec.http">HttpResponse</a>&nbsp;toHttpResponse(int&nbsp;streamId,
+                                          <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers,
+                                          boolean&nbsp;validateHttpHeaders)
+                                   throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block">
+            创建一个新的对象来包含响应数据。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 与响应关联的流 
+           </dd> 
+           <dd> 
+            <code>http2Headers</code> - 用于创建响应的最初一组HTTP / 2头 
+           </dd> 
+           <dd> 
+            <span><code>validateHttpHeaders</code> -</span> 
+            <ul> 
+             <li> <span><code>true</code>验证http-codec中的HTTP标头</span> </li> 
+             <li> <span><code>false</code>不要验证http-codec中的HTTP标头</span> </li> 
+            </ul> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             表示分块响应标题的新响应对象 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 见 
+            <a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-"><code>addHttp2ToHttpHeaders(int, Http2Headers, HttpHeaders, HttpVersion, boolean, boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.FullHttpMessage-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addHttp2ToHttpHeaders</h4> <pre>public static&nbsp;void&nbsp;addHttp2ToHttpHeaders(int&nbsp;streamId,
+                                         <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;sourceHeaders,
+                                         <a href="../http/FullHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpMessage.html" title="interface in io.netty.handler.codec.http">FullHttpMessage</a>&nbsp;destinationMessage,
+                                         boolean&nbsp;addToTrailer)
+                                  throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block">
+            将HTTP / 2标头翻译并添加到HTTP / 1.x标头。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 与 
+            <code>sourceHeaders</code>相关的流。 
+           </dd> 
+           <dd> 
+            <code>sourceHeaders</code> - 要转换的HTTP / 2头。 
+           </dd> 
+           <dd> 
+            <code>destinationMessage</code> - 将包含生成的HTTP / 1.x标头的对象。 
+           </dd> 
+           <dd> 
+            <span><code>addToTrailer</code> - <code>true</code>添加到尾部标题。</span> 
+            <span><code>false</code>添加到初始标题。</span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 如果不是所有HTTP / 2标头都可以转换为HTTP / 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> 
+           </dd> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-"><code>addHttp2ToHttpHeaders(int, Http2Headers, HttpHeaders, HttpVersion, boolean, boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addHttp2ToHttpHeaders-int-io.netty.handler.codec.http2.Http2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addHttp2ToHttpHeaders</h4> <pre>public static&nbsp;void&nbsp;addHttp2ToHttpHeaders(int&nbsp;streamId,
+                                         <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;inputHeaders,
+                                         <a href="../http/HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;outputHeaders,
+                                         <a href="../http/HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion,
+                                         boolean&nbsp;isTrailer,
+                                         boolean&nbsp;isRequest)
+                                  throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block">
+            将HTTP / 2标头翻译并添加到HTTP / 1.x标头。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 与 
+            <code>sourceHeaders</code>关联的流。 
+           </dd> 
+           <dd> 
+            <code>inputHeaders</code> - 要转换的HTTP / 2头。 
+           </dd> 
+           <dd> 
+            <code>outputHeaders</code> - 将包含生成的HTTP / 1.x标头的对象。 
+           </dd> 
+           <dd> 
+            <code>httpVersion</code> - 在执行转换时应将HTTP / 1.x版本 
+            <code>outputHeaders</code>视为什么。 
+           </dd> 
+           <dd> 
+            <span><code>isTrailer</code> - <code>true</code>如果<code>outputHeaders</code>应视为尾部标题。</span> 
+            <span>否则为<code>false</code> 。</span> 
+           </dd> 
+           <dd> 
+            <span><code>isRequest</code> - <code>true</code>如果<code>outputHeaders</code>将用于请求消息。</span> 
+            <span><code>false</code>用于回复消息。</span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> - 如果不是所有HTTP / 2标头都可以转换为HTTP / 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toHttp2Headers-io.netty.handler.codec.http.HttpMessage-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toHttp2Headers</h4> <pre>public static&nbsp;<a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;toHttp2Headers(<a href="../http/HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;in,
+                                          boolean&nbsp;validateHeaders)</pre> 
+          <div class="block"> 
+           <span>将给定的HTTP / 1.x标头转换为HTTP / 2标头。</span> 
+           <span>以下标题仅在来自<code>HOST</code>标题或<code>HOST</code>标题中的<code>Request-Line</code>定义的<a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7230  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7230'" tppabs="https://tools.ietf.org/html/rfc7230">标题中找不到</a></span> 
+           <ul> 
+            <li> <span><a href="HttpConversionUtil.ExtensionHeaderNames.html#SCHEME" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.ExtensionHeaderNames.html#SCHEME"><code>HttpConversionUtil.ExtensionHeaderNames.SCHEME</code></a></span> </li> 
+           </ul> 
+           <span><a href="HttpConversionUtil.ExtensionHeaderNames.html#PATH" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.ExtensionHeaderNames.html#PATH"><code>HttpConversionUtil.ExtensionHeaderNames.PATH</code></a>被忽略，而是从<code>Request-Line</code>提取。</span> 
+          </div> </li> 
+        </ul> <a name="toHttp2Headers-io.netty.handler.codec.http.HttpHeaders-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toHttp2Headers</h4> <pre>public static&nbsp;<a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;toHttp2Headers(<a href="../http/HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;inHeaders,
+                                          boolean&nbsp;validateHeaders)</pre> </li> 
+        </ul> <a name="toHttp2Headers-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http2.Http2Headers-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toHttp2Headers</h4> <pre>public static&nbsp;void&nbsp;toHttp2Headers(<a href="../http/HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;inHeaders,
+                                  <a href="Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;out)</pre> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/HttpConversionUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/HttpConversionUtil.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2WindowUpdateFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2WindowUpdateFrame.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="HttpConversionUtil.ExtensionHeaderNames.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.ExtensionHeaderNames.html" title="enum in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-HttpConversionUtil.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/HttpConversionUtil.html" target="_top">框架</a></li> 
+    <li><a href="HttpConversionUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http2/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

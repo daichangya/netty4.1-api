@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ChannelOutboundBuffer (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.ChannelOutboundBuffer class"> 
+  <meta name="keywords" content="addMessage()"> 
+  <meta name="keywords" content="addFlush()"> 
+  <meta name="keywords" content="current()"> 
+  <meta name="keywords" content="progress()"> 
+  <meta name="keywords" content="remove()"> 
+  <meta name="keywords" content="removeBytes()"> 
+  <meta name="keywords" content="nioBuffers()"> 
+  <meta name="keywords" content="nioBufferCount()"> 
+  <meta name="keywords" content="nioBufferSize()"> 
+  <meta name="keywords" content="isWritable()"> 
+  <meta name="keywords" content="getUserDefinedWritability()"> 
+  <meta name="keywords" content="setUserDefinedWritability()"> 
+  <meta name="keywords" content="size()"> 
+  <meta name="keywords" content="isEmpty()"> 
+  <meta name="keywords" content="recycle()"> 
+  <meta name="keywords" content="totalPendingWriteBytes()"> 
+  <meta name="keywords" content="bytesBeforeUnwritable()"> 
+  <meta name="keywords" content="bytesBeforeWritable()"> 
+  <meta name="keywords" content="forEachFlushedMessage()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ChannelOutboundBuffer (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":42,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/ChannelOutboundBuffer.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="class in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/ChannelOutboundBuffer.html" target="_top">框架</a></li> 
+    <li><a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Class ChannelOutboundBuffer" class="title">Class ChannelOutboundBuffer</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.ChannelOutboundBuffer</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">ChannelOutboundBuffer</span>
+extends java.lang.Object</pre> 
+      <div class="block"> 
+       <span>（仅限传输实现者） <a href="AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="在io.netty.channel中的类"><code>AbstractChannel</code></a>使用的内部数据结构来存储其挂起的出站写入请求。</span> 
+       <p> <span>所有方法必须由I / O线程的传输实现调用，除了以下几点：</span> </p> 
+       <ul> 
+        <li> <span><a href="ChannelOutboundBuffer.html#size--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#size--"><code>size()</code></a>和<a href="ChannelOutboundBuffer.html#isEmpty--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isEmpty--"><code>isEmpty()</code></a></span> </li> 
+        <li> <span><a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a></span> </li> 
+        <li> <span><a href="ChannelOutboundBuffer.html#getUserDefinedWritability-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#getUserDefinedWritability-int-"><code>getUserDefinedWritability(int)</code></a>和<a href="ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-"><code>setUserDefinedWritability(int, boolean)</code></a></span> </li> 
+       </ul> 
+       <p></p> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation"> 
+         <caption> 
+          <span>Nested Classes</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Class and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static interface&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel">ChannelOutboundBuffer.MessageProcessor</a></span></code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#addFlush--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#addFlush--">addFlush</a></span>()</code> 
+            <div class="block"> 
+             <span>添加一个刷新到这个<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#addMessage-java.lang.Object-int-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#addMessage-java.lang.Object-int-io.netty.channel.ChannelPromise-">addMessage</a></span>(java.lang.Object&nbsp;msg, int&nbsp;size, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>给此消息添加<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#bytesBeforeUnwritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#bytesBeforeUnwritable--">bytesBeforeUnwritable</a></span>()</code> 
+            <div class="block">
+              获取可以写入多少个字节，直到 
+             <a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a>返回 
+             <code>false</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#bytesBeforeWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#bytesBeforeWritable--">bytesBeforeWritable</a></span>()</code> 
+            <div class="block">
+              获取必须从底层缓冲区中消耗多少字节，直到 
+             <a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a>返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>java.lang.Object</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#current--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#current--">current</a></span>()</code> 
+            <div class="block">
+              如果以前没有刷新任何内容，则返回当前消息以写入或 
+             <code>null</code> ，因此准备写入。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#forEachFlushedMessage-io.netty.channel.ChannelOutboundBuffer.MessageProcessor-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#forEachFlushedMessage-io.netty.channel.ChannelOutboundBuffer.MessageProcessor-">forEachFlushedMessage</a></span>(<a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel">ChannelOutboundBuffer.MessageProcessor</a>&nbsp;processor)</code> 
+            <div class="block"> 
+             <span>呼叫<a href="ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-"><code>ChannelOutboundBuffer.MessageProcessor.processMessage(Object)</code></a>每个冲洗消息在这个<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>至<a href="ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-"><code>ChannelOutboundBuffer.MessageProcessor.processMessage(Object)</code></a>回报<code>false</code>或没有更多的消息冲洗处理。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#getUserDefinedWritability-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#getUserDefinedWritability-int-">getUserDefinedWritability</a></span>(int&nbsp;index)</code> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当该指定的索引在所述用户定义的可写性标志被设置为 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#isEmpty--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isEmpty--">isEmpty</a></span>()</code> 
+            <div class="block"> 
+             <span>如果<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>或<code>false</code>有消息存在，则返回<code>true</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--">isWritable</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<code>true</code>当且仅当<a href="ChannelOutboundBuffer.html#totalPendingWriteBytes--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#totalPendingWriteBytes--">the total number of pending bytes</a>未超过的写入水印<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>并没有<a href="ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-">user-defined writability flag</a>已被设置为<code>false</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBufferCount--">nioBufferCount</a></span>()</code> 
+            <div class="block">
+              返回的数量 
+             <code>ByteBuffer</code>可写入出的 
+             <code>ByteBuffer</code>这是通过获得阵列 
+             <a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--"><code>nioBuffers()</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>java.nio.ByteBuffer[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--">nioBuffers</a></span>()</code> 
+            <div class="block"> 
+             <span>如果当前未决消息仅由<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>组成，则返回直接NIO缓冲区的数组。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.nio.ByteBuffer[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#nioBuffers-int-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers-int-long-">nioBuffers</a></span>(int&nbsp;maxCount, long&nbsp;maxBytes)</code> 
+            <div class="block"> 
+             <span>如果当前未决消息仅由<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>组成，则返回直接NIO缓冲区数组。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#nioBufferSize--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBufferSize--">nioBufferSize</a></span>()</code> 
+            <div class="block">
+              返回可以被写出的字节数 
+             <code>ByteBuffer</code> ，其通过获得阵列 
+             <a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--"><code>nioBuffers()</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#progress-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#progress-long-">progress</a></span>(long&nbsp;amount)</code> 
+            <div class="block"> 
+             <span>通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>关于写入进度的当前消息。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#recycle--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#recycle--">recycle</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#remove--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#remove--">remove</a></span>()</code> 
+            <div class="block"> 
+             <span>将删除当前消息，将其<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>标记为成功，并返回<code>true</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#remove-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#remove-java.lang.Throwable-">remove</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block"> 
+             <span>将删除当前消息，使用给定的<code>Throwable</code>将它的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>标记为失败并返回<code>true</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#removeBytes-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#removeBytes-long-">removeBytes</a></span>(long&nbsp;writtenBytes)</code> 
+            <div class="block">
+              删除完整书写的条目并更新部分书写条目的阅读器索引。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-">setUserDefinedWritability</a></span>(int&nbsp;index, boolean&nbsp;writable)</code> 
+            <div class="block">
+              在指定的索引处设置用户定义的可写性标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#size--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#size--">size</a></span>()</code> 
+            <div class="block"> 
+             <span>返回此<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>中刷新消息的数量。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundBuffer.html#totalPendingWriteBytes--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#totalPendingWriteBytes--">totalPendingWriteBytes</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="addMessage-java.lang.Object-int-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addMessage</h4> <pre>public&nbsp;void&nbsp;addMessage(java.lang.Object&nbsp;msg,
+                       int&nbsp;size,
+                       <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>给此消息添加<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a> 。</span> 
+           <span>给定的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>将在消息写入后通知。</span> 
+          </div> </li> 
+        </ul> <a name="addFlush--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addFlush</h4> <pre>public&nbsp;void&nbsp;addFlush()</pre> 
+          <div class="block"> 
+           <span>添加一个刷新到这个<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a> 。</span> 
+           <span>这意味着所有之前添加的消息都被标记为刷新，因此您将能够处理它们。</span> 
+          </div> </li> 
+        </ul> <a name="current--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>current</h4> <pre>public&nbsp;java.lang.Object&nbsp;current()</pre> 
+          <div class="block">
+            如果之前没有刷新任何内容，则返回当前消息以写入或 
+           <code>null</code> ，因此准备写入。 
+          </div> </li> 
+        </ul> <a name="progress-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>progress</h4> <pre>public&nbsp;void&nbsp;progress(long&nbsp;amount)</pre> 
+          <div class="block"> 
+           <span>通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>关于写入进度的当前消息。</span> 
+          </div> </li> 
+        </ul> <a name="remove--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remove</h4> <pre>public&nbsp;boolean&nbsp;remove()</pre> 
+          <div class="block"> 
+           <span>将删除当前消息，将其<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>标记为成功，并返回<code>true</code> 。</span> 
+           <span>如果在调用此方法时不存在刷新的消息，它将返回<code>false</code> ，表示没有更多的消息准备好处理。</span> 
+          </div> </li> 
+        </ul> <a name="remove-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remove</h4> <pre>public&nbsp;boolean&nbsp;remove(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span>将删除当前消息，使用给定的<code>Throwable</code>将它的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>标记为失败并返回<code>true</code> 。</span> 
+           <span>如果在调用此方法时不存在刷新的消息，它将返回<code>false</code> ，表示没有更多消息准备好处理。</span> 
+          </div> </li> 
+        </ul> <a name="removeBytes-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeBytes</h4> <pre>public&nbsp;void&nbsp;removeBytes(long&nbsp;writtenBytes)</pre> 
+          <div class="block"> 
+           <span>删除完整书写的条目并更新部分书写条目的阅读器索引。</span> 
+           <span>该操作假定此缓冲区中的所有消息都是<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="nioBuffers--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBuffers</h4> <pre>public&nbsp;java.nio.ByteBuffer[]&nbsp;nioBuffers()</pre> 
+          <div class="block"> 
+           <span>如果当前挂起的消息仅由<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>组成，则返回直接NIO缓冲区的数组。</span> 
+           <span><a href="ChannelOutboundBuffer.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBufferCount--"><code>nioBufferCount()</code></a>和<a href="ChannelOutboundBuffer.html#nioBufferSize--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBufferSize--"><code>nioBufferSize()</code></a>将分别返回返回数组中NIO缓冲区的数量和可读字节的总数。</span> 
+           <p> <span>请注意，返回的数组将被重用，因此不应该转义<a href="AbstractChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-"><code>AbstractChannel.doWrite(ChannelOutboundBuffer)</code></a> 。</span> <span>例如，请参阅<a href="socket/nio/NioSocketChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/nio/NioSocketChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-"><code>NioSocketChannel.doWrite(ChannelOutboundBuffer)</code></a> 。</span> </p> 
+          </div> </li> 
+        </ul> <a name="nioBuffers-int-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBuffers</h4> <pre>public&nbsp;java.nio.ByteBuffer[]&nbsp;nioBuffers(int&nbsp;maxCount,
+                                        long&nbsp;maxBytes)</pre> 
+          <div class="block"> 
+           <span>如果当前未决消息仅由<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>组成，则返回直接NIO缓冲区的数组。</span> 
+           <span><a href="ChannelOutboundBuffer.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBufferCount--"><code>nioBufferCount()</code></a>和<a href="ChannelOutboundBuffer.html#nioBufferSize--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBufferSize--"><code>nioBufferSize()</code></a>将分别返回返回数组中NIO缓冲区的数量和NIO缓冲区的可读字节总数。</span> 
+           <p> <span>请注意，返回的数组将被重用，因此不应该转义<a href="AbstractChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-"><code>AbstractChannel.doWrite(ChannelOutboundBuffer)</code></a> 。</span> <span>例如，请参阅<a href="socket/nio/NioSocketChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/nio/NioSocketChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-"><code>NioSocketChannel.doWrite(ChannelOutboundBuffer)</code></a> 。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>maxCount</code> - 将被添加到返回值的最大缓冲区数量。 
+           </dd> 
+           <dd> 
+            <span><code>maxBytes</code> - 提示作为返回值的一部分包含的最大字节数。</span> 
+            <span>请注意，可能会超出此值，因为我们尽最大努力在返回值中包含至少1 <code>ByteBuffer</code>以确保写入进度。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="nioBufferCount--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBufferCount</h4> <pre>public&nbsp;int&nbsp;nioBufferCount()</pre> 
+          <div class="block"> 
+           <span>返回的数量<code>ByteBuffer</code>可写入出的<code>ByteBuffer</code>这是通过获得阵列<a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--"><code>nioBuffers()</code></a> 。</span> 
+           <span>调用<a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--"><code>nioBuffers()</code></a>后， <strong>必须</strong>调用此方法。</span> 
+          </div> </li> 
+        </ul> <a name="nioBufferSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBufferSize</h4> <pre>public&nbsp;long&nbsp;nioBufferSize()</pre> 
+          <div class="block"> 
+           <span>返回可以被写出的字节数<code>ByteBuffer</code> ，其通过获得阵列<a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--"><code>nioBuffers()</code></a> 。</span> 
+           <span><strong>必须</strong>在调用<a href="ChannelOutboundBuffer.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#nioBuffers--"><code>nioBuffers()</code></a>之后调用此方法。</span> 
+          </div> </li> 
+        </ul> <a name="isWritable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isWritable</h4> <pre>public&nbsp;boolean&nbsp;isWritable()</pre> 
+          <div class="block"> 
+           <span>返回<code>true</code>当且仅当<a href="ChannelOutboundBuffer.html#totalPendingWriteBytes--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#totalPendingWriteBytes--">the total number of pending bytes</a>未超过的写入水印<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>并没有<a href="ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#setUserDefinedWritability-int-boolean-">user-defined writability flag</a>已被设置为<code>false</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="getUserDefinedWritability-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getUserDefinedWritability</h4> <pre>public&nbsp;boolean&nbsp;getUserDefinedWritability(int&nbsp;index)</pre> 
+          <div class="block">
+            返回 
+           <code>true</code>当且仅当该指定的索引在所述用户定义的可写性标志被设置为 
+           <code>true</code> 。 
+          </div> </li> 
+        </ul> <a name="setUserDefinedWritability-int-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setUserDefinedWritability</h4> <pre>public&nbsp;void&nbsp;setUserDefinedWritability(int&nbsp;index,
+                                      boolean&nbsp;writable)</pre> 
+          <div class="block">
+            在指定的索引处设置用户定义的可写性标志。 
+          </div> </li> 
+        </ul> <a name="size--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>size</h4> <pre>public&nbsp;int&nbsp;size()</pre> 
+          <div class="block"> 
+           <span>返回此<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>中刷新消息的数量。</span> 
+          </div> </li> 
+        </ul> <a name="isEmpty--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isEmpty</h4> <pre>public&nbsp;boolean&nbsp;isEmpty()</pre> 
+          <div class="block"> 
+           <span>如果在此<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>或<code>false</code>存在清除的消息，则返回<code>true</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="recycle--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>recycle</h4> <pre>@Deprecated
+public&nbsp;void&nbsp;recycle()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> </li> 
+        </ul> <a name="totalPendingWriteBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>totalPendingWriteBytes</h4> <pre>public&nbsp;long&nbsp;totalPendingWriteBytes()</pre> </li> 
+        </ul> <a name="bytesBeforeUnwritable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>bytesBeforeUnwritable</h4> <pre>public&nbsp;long&nbsp;bytesBeforeUnwritable()</pre> 
+          <div class="block"> 
+           <span>获取可以写入多少个字节，直到<a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a>返回<code>false</code> 。</span> 
+           <span>这个数量永远是非负的。</span> 
+           <span>如果<a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a>是<code>false</code> 0。</span> 
+          </div> </li> 
+        </ul> <a name="bytesBeforeWritable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>bytesBeforeWritable</h4> <pre>public&nbsp;long&nbsp;bytesBeforeWritable()</pre> 
+          <div class="block"> 
+           <span>获取必须从底层缓冲区中消耗多少字节，直到<a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a>返回<code>true</code> 。</span> 
+           <span>这个数量永远是非负的。</span> 
+           <span>如果<a href="ChannelOutboundBuffer.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html#isWritable--"><code>isWritable()</code></a>是<code>true</code> 0。</span> 
+          </div> </li> 
+        </ul> <a name="forEachFlushedMessage-io.netty.channel.ChannelOutboundBuffer.MessageProcessor-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>forEachFlushedMessage</h4> <pre>public&nbsp;void&nbsp;forEachFlushedMessage(<a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel">ChannelOutboundBuffer.MessageProcessor</a>&nbsp;processor)
+                           throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>呼叫<a href="ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-"><code>ChannelOutboundBuffer.MessageProcessor.processMessage(Object)</code></a>每个冲洗消息在这个<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>至<a href="ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-"><code>ChannelOutboundBuffer.MessageProcessor.processMessage(Object)</code></a>回报<code>false</code>或没有更多的消息冲洗处理。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/ChannelOutboundBuffer.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="class in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/ChannelOutboundBuffer.html" target="_top">框架</a></li> 
+    <li><a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

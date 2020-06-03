@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DefaultHttp2Connection (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http2.DefaultHttp2Connection class"> 
+  <meta name="keywords" content="close()"> 
+  <meta name="keywords" content="addListener()"> 
+  <meta name="keywords" content="removeListener()"> 
+  <meta name="keywords" content="isServer()"> 
+  <meta name="keywords" content="connectionStream()"> 
+  <meta name="keywords" content="stream()"> 
+  <meta name="keywords" content="streamMayHaveExisted()"> 
+  <meta name="keywords" content="numActiveStreams()"> 
+  <meta name="keywords" content="forEachActiveStream()"> 
+  <meta name="keywords" content="local()"> 
+  <meta name="keywords" content="remote()"> 
+  <meta name="keywords" content="goAwayReceived()"> 
+  <meta name="keywords" content="goAwaySent()"> 
+  <meta name="keywords" content="newKey()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultHttp2Connection (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultHttp2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/DefaultHttp2Connection.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DecoratingHttp2FrameWriter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DecoratingHttp2FrameWriter.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultHttp2ConnectionDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2ConnectionDecoder.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-DefaultHttp2Connection.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/DefaultHttp2Connection.html" target="_top">框架</a></li> 
+    <li><a href="DefaultHttp2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http2 
+   </div> 
+   <h2 title="Class DefaultHttp2Connection" class="title">Class DefaultHttp2Connection</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.http2.DefaultHttp2Connection</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口">Http2Connection</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public class <span class="typeNameLabel">DefaultHttp2Connection</span>
+extends java.lang.Object
+implements <a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></pre> 
+      <div class="block"> 
+       <span>简单的执行<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a> 。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.handler.codec.http2.Http2Connection"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.handler.codec.http2.<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></h3> <code><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="type parameter in Http2Connection.Endpoint">F</a> extends <a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2">Http2FlowController</a>&gt;, <a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Listener</a>, <a href="Http2Connection.PropertyKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.PropertyKey.html" title="interface in io.netty.handler.codec.http2">Http2Connection.PropertyKey</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#DefaultHttp2Connection-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#DefaultHttp2Connection-boolean-">DefaultHttp2Connection</a></span>(boolean&nbsp;server)</code> 
+            <div class="block">
+              用给定的设置创建一个新的连接。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#DefaultHttp2Connection-boolean-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#DefaultHttp2Connection-boolean-int-">DefaultHttp2Connection</a></span>(boolean&nbsp;server, int&nbsp;maxReservedStreams)</code> 
+            <div class="block">
+              用给定的设置创建一个新的连接。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#addListener-io.netty.handler.codec.http2.Http2Connection.Listener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#addListener-io.netty.handler.codec.http2.Http2Connection.Listener-">addListener</a></span>(<a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Listener</a>&nbsp;listener)</code> 
+            <div class="block">
+              添加流生命周期事件的侦听器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="../../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;java.lang.Void&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#close-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#close-io.netty.util.concurrent.Promise-">close</a></span>(<a href="../../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;&nbsp;promise)</code> 
+            <div class="block">
+              关闭此连接。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#connectionStream--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#connectionStream--">connectionStream</a></span>()</code> 
+            <div class="block">
+              获取表示连接本身的流对象（即流零）。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-">forEachActiveStream</a></span>(<a href="Http2StreamVisitor.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2StreamVisitor.html" title="interface in io.netty.handler.codec.http2">Http2StreamVisitor</a>&nbsp;visitor)</code> 
+            <div class="block">
+              提供一种迭代活动流集合的方法。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#goAwayReceived--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#goAwayReceived--">goAwayReceived</a></span>()</code> 
+            <div class="block">
+              指示是否从远程端点接收到 
+             <code>GOAWAY</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#goAwayReceived-int-long-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#goAwayReceived-int-long-io.netty.buffer.ByteBuf-">goAwayReceived</a></span>(int&nbsp;lastKnownStream, long&nbsp;errorCode, <a href="../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;debugData)</code> 
+            <div class="block">
+              表示从远程端点接收到 
+             <code>GOAWAY</code>并设置最后一个已知流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#goAwaySent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#goAwaySent--">goAwaySent</a></span>()</code> 
+            <div class="block">
+              指示是否将 
+             <code>GOAWAY</code>发送到远程端点。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#goAwaySent-int-long-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#goAwaySent-int-long-io.netty.buffer.ByteBuf-">goAwaySent</a></span>(int&nbsp;lastKnownStream, long&nbsp;errorCode, <a href="../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;debugData)</code> 
+            <div class="block">
+              表示 
+             <code>GOAWAY</code>已发送到远程端点并设置最后一个已知流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#isServer--">isServer</a></span>()</code> 
+            <div class="block">
+              指示此连接的本地端点是否为服务器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;<a href="Http2LocalFlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2LocalFlowController.html" title="interface in io.netty.handler.codec.http2">Http2LocalFlowController</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#local--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#local--">local</a></span>()</code> 
+            <div class="block"> 
+             <span>从当地<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Endpoint</code></a>获取此连接的视图。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Connection.PropertyKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.PropertyKey.html" title="interface in io.netty.handler.codec.http2">Http2Connection.PropertyKey</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#newKey--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#newKey--">newKey</a></span>()</code> 
+            <div class="block"> 
+             <span>创建一个在此<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a>内唯一的新密钥。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#numActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#numActiveStreams--">numActiveStreams</a></span>()</code> 
+            <div class="block">
+              获取正在使用的流的数量（即 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;<a href="Http2RemoteFlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2RemoteFlowController.html" title="interface in io.netty.handler.codec.http2">Http2RemoteFlowController</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#remote--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#remote--">remote</a></span>()</code> 
+            <div class="block"> 
+             <span>从远程<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Endpoint</code></a>获取此连接的视图。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-">removeListener</a></span>(<a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Listener</a>&nbsp;listener)</code> 
+            <div class="block">
+              删除流生命周期事件的监听器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#stream-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#stream-int-">stream</a></span>(int&nbsp;streamId)</code> 
+            <div class="block">
+              获取流如果存在。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttp2Connection.html#streamMayHaveExisted-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html#streamMayHaveExisted-int-">streamMayHaveExisted</a></span>(int&nbsp;streamId)</code> 
+            <div class="block">
+              指示给定流是否可能存在于此连接中。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DefaultHttp2Connection-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultHttp2Connection</h4> <pre>public&nbsp;DefaultHttp2Connection(boolean&nbsp;server)</pre> 
+          <div class="block">
+            用给定的设置创建一个新的连接。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>server</code> - 该端点是否是HTTP / 2连接的服务器端。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultHttp2Connection-boolean-int-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DefaultHttp2Connection</h4> <pre>public&nbsp;DefaultHttp2Connection(boolean&nbsp;server,
+                              int&nbsp;maxReservedStreams)</pre> 
+          <div class="block">
+            用给定的设置创建一个新的连接。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>server</code> - 此端点是否是HTTP / 2连接的服务器端。 
+           </dd> 
+           <dd> 
+            <code>maxReservedStreams</code> - 每个端点在保留状态下可以存在的最大流量。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="close-io.netty.util.concurrent.Promise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>close</h4> <pre>public&nbsp;<a href="../../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;java.lang.Void&gt;&nbsp;close(<a href="../../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Http2Connection.html#close-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#close-io.netty.util.concurrent.Promise-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>关闭此连接。</span> 
+           <span>在此点之后不能创建更多的新流，并且所有存在的流（活动或其他）都将被关闭并删除。</span> 
+           <p> <span>请注意，如果通过<a href="Http2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-"><code>Http2Connection.forEachActiveStream(Http2StreamVisitor)</code></a>迭代活动流并抛出异常，则需要再次调用此方法以确保关闭完成。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#close-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#close-io.netty.util.concurrent.Promise-">close</a></code> ，界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>promise</code> - 将在所有流都被删除并且收到通知时完成。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             未来将在所有流都被删除并且听众已被通知时完成。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addListener-io.netty.handler.codec.http2.Http2Connection.Listener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addListener</h4> <pre>public&nbsp;void&nbsp;addListener(<a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Listener</a>&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Http2Connection.html#addListener-io.netty.handler.codec.http2.Http2Connection.Listener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#addListener-io.netty.handler.codec.http2.Http2Connection.Listener-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            添加流生命周期事件的侦听器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#addListener-io.netty.handler.codec.http2.Http2Connection.Listener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#addListener-io.netty.handler.codec.http2.Http2Connection.Listener-">addListener</a></code>接口 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeListener</h4> <pre>public&nbsp;void&nbsp;removeListener(<a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Listener</a>&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>删除流生命周期事件的监听器。</span> 
+           <span>如果同一个侦听器被多次添加，那么只有第一个事件被删除。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#removeListener-io.netty.handler.codec.http2.Http2Connection.Listener-">removeListener</a></code> ，界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isServer--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isServer</h4> <pre>public&nbsp;boolean&nbsp;isServer()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#isServer--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            指示此连接的本地端点是否为服务器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#isServer--">isServer</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="connectionStream--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connectionStream</h4> <pre>public&nbsp;<a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;connectionStream()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#connectionStream--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#connectionStream--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>获取表示连接本身的流对象（即流零）。</span> 
+           <span>该对象始终存在。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#connectionStream--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#connectionStream--">connectionStream</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="stream-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>stream</h4> <pre>public&nbsp;<a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;stream(int&nbsp;streamId)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#stream-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#stream-int-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>获取流如果存在。</span> 
+           <span>如果不是，则返回<code>null</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#stream-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#stream-int-">stream</a></code> ，界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="streamMayHaveExisted-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>streamMayHaveExisted</h4> <pre>public&nbsp;boolean&nbsp;streamMayHaveExisted(int&nbsp;streamId)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Http2Connection.html#streamMayHaveExisted-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#streamMayHaveExisted-int-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>指示给定流是否可能存在于此连接中。</span> 
+           <span>这是在两个端点上调用<a href="Http2Connection.Endpoint.html#mayHaveCreatedStream-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#mayHaveCreatedStream-int-"><code>Http2Connection.Endpoint.mayHaveCreatedStream(int)</code></a>的简短形式。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#streamMayHaveExisted-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#streamMayHaveExisted-int-">streamMayHaveExisted</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="numActiveStreams--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>numActiveStreams</h4> <pre>public&nbsp;int&nbsp;numActiveStreams()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#numActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#numActiveStreams--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            获取正在使用的流的数量（即 
+           <code>OPEN</code>或 
+           <code>HALF CLOSED</code> ）。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#numActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#numActiveStreams--">numActiveStreams</a></code>接口 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>forEachActiveStream</h4> <pre>public&nbsp;<a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;forEachActiveStream(<a href="Http2StreamVisitor.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2StreamVisitor.html" title="interface in io.netty.handler.codec.http2">Http2StreamVisitor</a>&nbsp;visitor)
+                                throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Http2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            提供一种迭代活动流集合的方法。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#forEachActiveStream-io.netty.handler.codec.http2.Http2StreamVisitor-">forEachActiveStream</a></code> ，界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>visitor</code> - 将访问每个活动流的访问者。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果迭代结束，迭代之前的流停止或 
+            <code>null</code> 。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="local--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>local</h4> <pre>public&nbsp;<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;<a href="Http2LocalFlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2LocalFlowController.html" title="interface in io.netty.handler.codec.http2">Http2LocalFlowController</a>&gt;&nbsp;local()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#local--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#local--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>从当地<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Endpoint</code></a>获取此连接的视图。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#local--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#local--">local</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remote--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remote</h4> <pre>public&nbsp;<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;<a href="Http2RemoteFlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2RemoteFlowController.html" title="interface in io.netty.handler.codec.http2">Http2RemoteFlowController</a>&gt;&nbsp;remote()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#remote--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#remote--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>从远程<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Endpoint</code></a>获取此连接的视图。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#remote--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#remote--">remote</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="goAwayReceived--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>goAwayReceived</h4> <pre>public&nbsp;boolean&nbsp;goAwayReceived()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Http2Connection.html#goAwayReceived--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwayReceived--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            指示是否从远程端点接收到 
+           <code>GOAWAY</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#goAwayReceived--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwayReceived--">goAwayReceived</a></code>接口 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="goAwayReceived-int-long-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>goAwayReceived</h4> <pre>public&nbsp;void&nbsp;goAwayReceived(int&nbsp;lastKnownStream,
+                           long&nbsp;errorCode,
+                           <a href="../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;debugData)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#goAwayReceived-int-long-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwayReceived-int-long-io.netty.buffer.ByteBuf-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            表示从远程端点接收到 
+           <code>GOAWAY</code>并设置最后一个已知流。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#goAwayReceived-int-long-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwayReceived-int-long-io.netty.buffer.ByteBuf-">goAwayReceived</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="goAwaySent--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>goAwaySent</h4> <pre>public&nbsp;boolean&nbsp;goAwaySent()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#goAwaySent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwaySent--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            指示是否将 
+           <code>GOAWAY</code>发送到远程端点。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#goAwaySent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwaySent--">goAwaySent</a></code> ，界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="goAwaySent-int-long-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>goAwaySent</h4> <pre>public&nbsp;void&nbsp;goAwaySent(int&nbsp;lastKnownStream,
+                       long&nbsp;errorCode,
+                       <a href="../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;debugData)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Http2Connection.html#goAwaySent-int-long-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwaySent-int-long-io.netty.buffer.ByteBuf-">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block">
+            指示已将 
+           <code>GOAWAY</code>发送到远程端点并设置最后一个已知流。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#goAwaySent-int-long-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#goAwaySent-int-long-io.netty.buffer.ByteBuf-">goAwaySent</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newKey--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>newKey</h4> <pre>public&nbsp;<a href="Http2Connection.PropertyKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.PropertyKey.html" title="interface in io.netty.handler.codec.http2">Http2Connection.PropertyKey</a>&nbsp;newKey()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Http2Connection.html#newKey--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#newKey--">Http2Connection</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建一个在此<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a>内唯一的新密钥。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Connection.html#newKey--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html#newKey--">newKey</a></code>在界面 
+            <code><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2">Http2Connection</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultHttp2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/DefaultHttp2Connection.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DecoratingHttp2FrameWriter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DecoratingHttp2FrameWriter.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultHttp2ConnectionDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2ConnectionDecoder.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-DefaultHttp2Connection.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/DefaultHttp2Connection.html" target="_top">框架</a></li> 
+    <li><a href="DefaultHttp2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2Connection.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http2/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

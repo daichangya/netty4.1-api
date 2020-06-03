@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>IovArray (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.unix.IovArray class"> 
+  <meta name="keywords" content="clear()"> 
+  <meta name="keywords" content="add()"> 
+  <meta name="keywords" content="count()"> 
+  <meta name="keywords" content="size()"> 
+  <meta name="keywords" content="maxBytes()"> 
+  <meta name="keywords" content="memoryAddress()"> 
+  <meta name="keywords" content="release()"> 
+  <meta name="keywords" content="processMessage()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="IovArray (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/class-use/IovArray.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="FileDescriptor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html" title="class in io.netty.channel.unix"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Limits.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Limits.html" title="class in io.netty.channel.unix"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-unix-IovArray.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/unix/IovArray.html" target="_top">框架</a></li> 
+    <li><a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.unix 
+   </div> 
+   <h2 title="Class IovArray" class="title">Class IovArray</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.unix.IovArray</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="io.netty.channel中的接口">ChannelOutboundBuffer.MessageProcessor</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">IovArray</span>
+extends java.lang.Object
+implements <a href="../ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel">ChannelOutboundBuffer.MessageProcessor</a></pre> 
+      <div class="block"> 
+       <span>表示一个结构数组的数组，因此可以通过JNI直接传递，而不需要再做任何数组拷贝。</span> 
+       <span>缓冲区直接写入直接内存以匹配struct iov。</span> 
+       <span>也参见<code>man writev</code> 。</span> 
+       <pre>  <span>struct iovec {
+   void  *iov_base;
+   size_t iov_len;
+ };</span> </pre> 
+       <span>另见<a href="javascript:if(confirm('http://rkennke.wordpress.com/2007/07/30/efficient-jni-programming-iv-wrapping-native-data-objects/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://rkennke.wordpress.com/2007/07/30/efficient-jni-programming-iv-wrapping-native-data-objects/'" tppabs="http://rkennke.wordpress.com/2007/07/30/efficient-jni-programming-iv-wrapping-native-data-objects/">Efficient JNI programming IV: Wrapping native data objects</a> 。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="IovArray.html#IovArray--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#IovArray--">IovArray</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">add</a></span>(<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf)</code> 
+            <div class="block"> 
+             <span>将<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#clear--">clear</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#count--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#count--">count</a></span>()</code> 
+            <div class="block">
+              返回iov条目的数字。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#maxBytes--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#maxBytes--">maxBytes</a></span>()</code> 
+            <div class="block"> 
+             <span>获取可通过<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的最大字节<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">数</a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#maxBytes-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#maxBytes-long-">maxBytes</a></span>(long&nbsp;maxBytes)</code> 
+            <div class="block"> 
+             <span>通过<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>设置可以添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的最大字节<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">数</a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#memoryAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#memoryAddress-int-">memoryAddress</a></span>(int&nbsp;offset)</code> 
+            <div class="block">
+              返回 
+             <code>memoryAddress</code>为给定 
+             <code>offset</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#processMessage-java.lang.Object-">processMessage</a></span>(java.lang.Object&nbsp;msg)</code> 
+            <div class="block">
+              将调用每个刷新的消息，直到它没有更多刷新消息或此方法返回 
+             <code>false</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#release--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#release--">release</a></span>()</code> 
+            <div class="block"> 
+             <span>释放<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="IovArray.html#size--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#size--">size</a></span>()</code> 
+            <div class="block">
+              以字节为单位返回大小 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="IovArray--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>IovArray</h4> <pre>public&nbsp;IovArray()</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="clear--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>clear</h4> <pre>public&nbsp;void&nbsp;clear()</pre> </li> 
+        </ul> <a name="add-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>add</h4> <pre>public&nbsp;boolean&nbsp;add(<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf)</pre> 
+          <div class="block"> 
+           <span>将<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>buf</code> - <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>添加。</span> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>如果整个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>已被添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a> 。</span> 
+            <span>请注意，如果<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>是<a href="../../buffer/CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a> <code>false</code>即使已添加某些组件，也可能会返回。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="count--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>count</h4> <pre>public&nbsp;int&nbsp;count()</pre> 
+          <div class="block">
+            返回iov条目的数字。 
+          </div> </li> 
+        </ul> <a name="size--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>size</h4> <pre>public&nbsp;long&nbsp;size()</pre> 
+          <div class="block">
+            以字节为单位返回大小 
+          </div> </li> 
+        </ul> <a name="maxBytes-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxBytes</h4> <pre>public&nbsp;void&nbsp;maxBytes(long&nbsp;maxBytes)</pre> 
+          <div class="block"> 
+           <span>设置可通过<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的最大字节<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">数</a> 。</span> 
+           <p> <span>这不会影响<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的现有状态，仅适用于后续调用<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a> 。</span> </p> 
+           <p> <span>为了确保取得一些进展，即使尺寸超过此值，至少也会接受一个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>maxBytes</code> - 可通过<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的最大字节<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">数</a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="maxBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxBytes</h4> <pre>public&nbsp;long&nbsp;maxBytes()</pre> 
+          <div class="block"> 
+           <span>获取可通过<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的最大字节<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">数</a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>可通过<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>添加到此<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a>的最大字节<a href="IovArray.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html#add-io.netty.buffer.ByteBuf-">数</a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="memoryAddress-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>memoryAddress</h4> <pre>public&nbsp;long&nbsp;memoryAddress(int&nbsp;offset)</pre> 
+          <div class="block">
+            返回 
+           <code>memoryAddress</code>为给定 
+           <code>offset</code> 。 
+          </div> </li> 
+        </ul> <a name="release--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>release</h4> <pre>public&nbsp;void&nbsp;release()</pre> 
+          <div class="block"> 
+           <span>释放<a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" title="class in io.netty.channel.unix"><code>IovArray</code></a> 。</span> 
+           <span>一旦释放进一步使用它可能会导致JVM崩溃！</span> 
+          </div> </li> 
+        </ul> <a name="processMessage-java.lang.Object-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>processMessage</h4> <pre>public&nbsp;boolean&nbsp;processMessage(java.lang.Object&nbsp;msg)
+                       throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-">ChannelOutboundBuffer.MessageProcessor</a></code></span> 
+          </div> 
+          <div class="block">
+            将调用每个刷新的消息，直到它没有更多刷新消息或此方法返回 
+           <code>false</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html#processMessage-java.lang.Object-">processMessage</a></code>在界面 
+            <code><a href="../ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel">ChannelOutboundBuffer.MessageProcessor</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/class-use/IovArray.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="FileDescriptor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html" title="class in io.netty.channel.unix"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Limits.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Limits.html" title="class in io.netty.channel.unix"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-unix-IovArray.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/unix/IovArray.html" target="_top">框架</a></li> 
+    <li><a href="IovArray.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/IovArray.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/unix/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

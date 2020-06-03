@@ -1,0 +1,1047 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DefaultPromise (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.util.concurrent.DefaultPromise class"> 
+  <meta name="keywords" content="setSuccess()"> 
+  <meta name="keywords" content="trySuccess()"> 
+  <meta name="keywords" content="setFailure()"> 
+  <meta name="keywords" content="tryFailure()"> 
+  <meta name="keywords" content="setUncancellable()"> 
+  <meta name="keywords" content="isSuccess()"> 
+  <meta name="keywords" content="isCancellable()"> 
+  <meta name="keywords" content="cause()"> 
+  <meta name="keywords" content="addListener()"> 
+  <meta name="keywords" content="addListeners()"> 
+  <meta name="keywords" content="removeListener()"> 
+  <meta name="keywords" content="removeListeners()"> 
+  <meta name="keywords" content="await()"> 
+  <meta name="keywords" content="awaitUninterruptibly()"> 
+  <meta name="keywords" content="getNow()"> 
+  <meta name="keywords" content="cancel()"> 
+  <meta name="keywords" content="isCancelled()"> 
+  <meta name="keywords" content="isDone()"> 
+  <meta name="keywords" content="sync()"> 
+  <meta name="keywords" content="syncUninterruptibly()"> 
+  <meta name="keywords" content="toString()"> 
+  <meta name="keywords" content="toStringBuilder()"> 
+  <meta name="keywords" content="executor()"> 
+  <meta name="keywords" content="checkDeadLock()"> 
+  <meta name="keywords" content="notifyListener()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultPromise (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":9,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/DefaultPromise.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultProgressivePromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultProgressivePromise.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultThreadFactory.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultThreadFactory.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-DefaultPromise.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/DefaultPromise.html" target="_top">框架</a></li> 
+    <li><a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.util.concurrent 
+   </div> 
+   <h2 title="Class DefaultPromise" class="title">Class DefaultPromise&lt;V&gt;</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="AbstractFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.AbstractFuture</a>&lt;V&gt;</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.util.concurrent.DefaultPromise&lt;V&gt;</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="io.netty.util.concurrent中的接口">Promise</a> &lt;V&gt;，java.util.concurrent.Future &lt;V&gt;</span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="../../channel/DefaultChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelPromise.html" title="在io.netty.channel中的类">DefaultChannelPromise</a> ， <a href="DefaultProgressivePromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultProgressivePromise.html" title="class in io.netty.util.concurrent">DefaultProgressivePromise</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">DefaultPromise&lt;V&gt;</span>
+extends <a href="AbstractFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html" title="class in io.netty.util.concurrent">AbstractFuture</a>&lt;V&gt;
+implements <a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;V&gt;</pre> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier</th> 
+           <th class="colLast" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#DefaultPromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#DefaultPromise--">DefaultPromise</a></span>()</code> 
+            <div class="block"> 
+             <a href="DefaultPromise.html#executor--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#executor--">执行人</a>的期望见 
+             <a href="DefaultPromise.html#executor--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#executor--"><code>executor()</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#DefaultPromise-io.netty.util.concurrent.EventExecutor-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#DefaultPromise-io.netty.util.concurrent.EventExecutor-">DefaultPromise</a></span>(<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;executor)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a></span>(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;&nbsp;listener)</code> 
+            <div class="block">
+              将指定的侦听器添加到此将来。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a></span>(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;...&nbsp;listeners)</code> 
+            <div class="block">
+              将指定的侦听器添加到此将来。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#await--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#await--">await</a></span>()</code> 
+            <div class="block">
+              等待这个未来的完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#await-long-">await</a></span>(long&nbsp;timeoutMillis)</code> 
+            <div class="block">
+              等待这个未来在规定的时限内完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#await-long-java.util.concurrent.TimeUnit-">await</a></span>(long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code> 
+            <div class="block">
+              等待这个未来在规定的时限内完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#awaitUninterruptibly--">awaitUninterruptibly</a></span>()</code> 
+            <div class="block">
+              等待这个未来不中断地完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#awaitUninterruptibly-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#awaitUninterruptibly-long-">awaitUninterruptibly</a></span>(long&nbsp;timeoutMillis)</code> 
+            <div class="block">
+              等待这个未来在规定的时间内完成而不会中断。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-">awaitUninterruptibly</a></span>(long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code> 
+            <div class="block">
+              等待这个未来在规定的时间内完成而不会中断。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#cancel-boolean-">cancel</a></span>(boolean&nbsp;mayInterruptIfRunning)</code> 
+            <div class="block">
+              如果取消成功，将会以 
+             <code>CancellationException</code>失败。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.Throwable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#cause--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#cause--">cause</a></span>()</code> 
+            <div class="block">
+              如果I / O操作失败，则返回失败的I / O操作的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#checkDeadLock--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#checkDeadLock--">checkDeadLock</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>protected <a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#executor--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#executor--">executor</a></span>()</code> 
+            <div class="block">
+              当这个承诺完成时，让执行者用来通知监听者。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#getNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#getNow--">getNow</a></span>()</code> 
+            <div class="block">
+              无阻塞地返回结果。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#isCancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#isCancellable--">isCancellable</a></span>()</code> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当该操作可通过取消 
+             <a href="Future.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cancel-boolean-"><code>Future.cancel(boolean)</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#isCancelled--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#isCancelled--">isCancelled</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#isDone--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#isDone--">isDone</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#isSuccess--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#isSuccess--">isSuccess</a></span>()</code> 
+            <div class="block">
+              当且仅当I / O操作成功完成时才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>protected static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#notifyListener-io.netty.util.concurrent.EventExecutor-io.netty.util.concurrent.Future-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#notifyListener-io.netty.util.concurrent.EventExecutor-io.netty.util.concurrent.Future-io.netty.util.concurrent.GenericFutureListener-">notifyListener</a></span>(<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;eventExecutor, <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;?&gt;&nbsp;future, <a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;?&gt;&nbsp;listener)</code> 
+            <div class="block">
+              通知听众未来已完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a></span>(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;&nbsp;listener)</code> 
+            <div class="block">
+              从此将来删除指定侦听器的第一个匹配项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></span>(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;...&nbsp;listeners)</code> 
+            <div class="block">
+              为将来的每个听众删除第一个匹配项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#setFailure-java.lang.Throwable-">setFailure</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block">
+              将这个未来标志为失败并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#setSuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#setSuccess-V-">setSuccess</a></span>(<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&nbsp;result)</code> 
+            <div class="block">
+              将这个未来标志为成功并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#setUncancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#setUncancellable--">setUncancellable</a></span>()</code> 
+            <div class="block">
+              使这个未来无法取消。 
+            </div> </td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#sync--">sync</a></span>()</code> 
+            <div class="block">
+              等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#syncUninterruptibly--">syncUninterruptibly</a></span>()</code> 
+            <div class="block">
+              等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.StringBuilder</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#toStringBuilder--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#toStringBuilder--">toStringBuilder</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#tryFailure-java.lang.Throwable-">tryFailure</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block">
+              将这个未来标志为失败并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultPromise.html#trySuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#trySuccess-V-">trySuccess</a></span>(<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&nbsp;result)</code> 
+            <div class="block">
+              将这个未来标志为成功并通知所有听众。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.AbstractFuture"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="AbstractFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html" title="class in io.netty.util.concurrent">AbstractFuture</a></h3> <code><a href="AbstractFuture.html#get--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html#get--">get</a>, <a href="AbstractFuture.html#get-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html#get-long-java.util.concurrent.TimeUnit-">get</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.util.concurrent.Future"> </a> <h3>Methods inherited from interface&nbsp;java.util.concurrent.Future</h3> <code>get, get</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DefaultPromise-io.netty.util.concurrent.EventExecutor-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultPromise</h4> <pre>public&nbsp;DefaultPromise(<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;executor)</pre> 
+          <div class="block"> 
+           <span>创建一个新的实例。</span> 
+           <span>最好使用<a href="EventExecutor.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newPromise--"><code>EventExecutor.newPromise()</code></a>来创造新的承诺</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - <a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>用于在完成后通知承诺。</span> 
+            <span>假定这个执行者将防止<code>StackOverflowError</code>例外。</span> 
+            <span>如果堆栈深度超过阈值，执行程序可以通过执行<code>Runnable</code>来避免<code>StackOverflowError</code> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultPromise--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DefaultPromise</h4> <pre>protected&nbsp;DefaultPromise()</pre> 
+          <div class="block"> 
+           <a href="DefaultPromise.html#executor--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#executor--">执行人</a>的期望见 
+           <a href="DefaultPromise.html#executor--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#executor--"><code>executor()</code></a> 。 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="setSuccess-java.lang.Object-"> </a><a name="setSuccess-V-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSuccess</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;setSuccess(<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&nbsp;result)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="Promise.html#setSuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setSuccess-V-">Promise</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>将这个未来标志为成功并通知所有听众。</span> 
+           <span>如果它已经成功或失败，它会抛出一个<code>IllegalStateException</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#setSuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setSuccess-V-">setSuccess</a></code> ，界面 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="trySuccess-java.lang.Object-"> </a><a name="trySuccess-V-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>trySuccess</h4> <pre>public&nbsp;boolean&nbsp;trySuccess(<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&nbsp;result)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Promise.html#trySuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#trySuccess-V-">Promise</a></code></span> 
+          </div> 
+          <div class="block">
+            将这个未来标志为成功并通知所有听众。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#trySuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#trySuccess-V-">trySuccess</a></code>在界面 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>当且仅当成功标记这个未来。</span> 
+            <span>否则<code>false</code>因为这个未来已经被标记为成功或失败。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setFailure-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setFailure</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;setFailure(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Promise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setFailure-java.lang.Throwable-">Promise</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将这个未来标志为失败并通知所有听众。</span> 
+           <span>如果它已经成功或失败，它会抛出一个<code>IllegalStateException</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setFailure-java.lang.Throwable-">setFailure</a></code> ，界面 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="tryFailure-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>tryFailure</h4> <pre>public&nbsp;boolean&nbsp;tryFailure(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制而来的描述： <code><a href="Promise.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#tryFailure-java.lang.Throwable-">Promise</a></code></span> 
+          </div> 
+          <div class="block">
+            将这个未来标志为失败并通知所有听众。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#tryFailure-java.lang.Throwable-">tryFailure</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>当且仅当成功将这个未来标记为失败。</span> 
+            <span>否则<code>false</code>因为这个未来已经被标记为成功或失败。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setUncancellable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setUncancellable</h4> <pre>public&nbsp;boolean&nbsp;setUncancellable()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Promise.html#setUncancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setUncancellable--">Promise</a></code></span> 
+          </div> 
+          <div class="block">
+            使这个未来无法取消。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#setUncancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setUncancellable--">setUncancellable</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>当且仅当成功地将这个未来标记为不可撤销或已经完成而未被取消。</span> 
+            <span><code>false</code>如果这个未来已经被取消了。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isSuccess--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isSuccess</h4> <pre>public&nbsp;boolean&nbsp;isSuccess()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#isSuccess--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#isSuccess--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当I / O操作成功完成时返回 
+           <code>true</code> 。 
+          </div> </li> 
+        </ul> <a name="isCancellable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isCancellable</h4> <pre>public&nbsp;boolean&nbsp;isCancellable()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#isCancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#isCancellable--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            返回 
+           <code>true</code>当且仅当该操作可通过取消 
+           <a href="Future.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cancel-boolean-"><code>Future.cancel(boolean)</code></a> 。 
+          </div> </li> 
+        </ul> <a name="cause--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cause</h4> <pre>public&nbsp;java.lang.Throwable&nbsp;cause()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#cause--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cause--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            如果I / O操作失败，则返回失败的I / O操作的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>失败的原因。</span> 
+            <span><code>null</code>如果成功或未来尚未完成。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addListener-io.netty.util.concurrent.GenericFutureListener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addListener</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;addListener(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#addListener-io.netty.util.concurrent.GenericFutureListener-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的侦听器添加到此将来。</span> 
+           <span>当这个未来完成时，通知指定的监听器。</span> 
+           <span>如果这个未来已经完成，立即通知指定的监听器。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a></code> ，界面 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addListeners-io.netty.util.concurrent.GenericFutureListener...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addListeners</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;addListeners(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;...&nbsp;listeners)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制而来的描述： <code><a href="Future.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的侦听器添加到此将来。</span> 
+           <span>这个未来完成时，通知指定的监听者。</span> 
+           <span>如果这个未来已经完成，则立即通知指定的监听者。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeListener-io.netty.util.concurrent.GenericFutureListener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeListener</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;removeListener(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>从此将来删除指定侦听器的第一个匹配项。</span> 
+           <span>未来完成时，指定的监听器不再通知。</span> 
+           <span>如果指定的侦听器未与此将来关联，则此方法不执行任何操作并以静默方式返回。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a></code> ，界面 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeListeners-io.netty.util.concurrent.GenericFutureListener...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeListeners</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;removeListeners(<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super <a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&gt;...&nbsp;listeners)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>为将来的每个听众删除第一个匹配项。</span> 
+           <span>未来完成时，指定的监听器不再通知。</span> 
+           <span>如果指定的侦听器未与此将来关联，则此方法不执行任何操作并以静默方式返回。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></code> ，界面 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="await--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>await</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;await()
+                 throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#await--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来的完成。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#await--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#await--">await</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> - 如果当前线程中断 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="awaitUninterruptibly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitUninterruptibly</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;awaitUninterruptibly()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#awaitUninterruptibly--">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>等待这个未来不中断地完成。</span> 
+           <span>此方法捕获<code>InterruptedException</code>并以<code>InterruptedException</code>提示方式丢弃它。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#awaitUninterruptibly--">awaitUninterruptibly</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="await-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>await</h4> <pre>public&nbsp;boolean&nbsp;await(long&nbsp;timeout,
+                     java.util.concurrent.TimeUnit&nbsp;unit)
+              throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来在规定的时限内完成。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             当且仅当未来在指定的时间限制内完成时才会 
+            <code>true</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> - 如果当前线程中断 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="await-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>await</h4> <pre>public&nbsp;boolean&nbsp;await(long&nbsp;timeoutMillis)
+              throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来在规定的时限内完成。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来是在规定的期限内完成 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> - 如果当前线程中断 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="awaitUninterruptibly-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitUninterruptibly</h4> <pre>public&nbsp;boolean&nbsp;awaitUninterruptibly(long&nbsp;timeout,
+                                    java.util.concurrent.TimeUnit&nbsp;unit)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>等待这个未来在规定的时间内完成而不会中断。</span> 
+           <span>此方法捕获<code>InterruptedException</code>并以静默方式丢弃它。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来是在规定的期限内完成 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="awaitUninterruptibly-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitUninterruptibly</h4> <pre>public&nbsp;boolean&nbsp;awaitUninterruptibly(long&nbsp;timeoutMillis)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#awaitUninterruptibly-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#awaitUninterruptibly-long-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>等待这个未来在规定的时间内完成而不会中断。</span> 
+           <span>此方法捕获<code>InterruptedException</code>并以静默方式丢弃它。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来是在规定的期限内完成 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getNow--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getNow</h4> <pre>public&nbsp;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&nbsp;getNow()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#getNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#getNow--">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>无阻塞地返回结果。</span> 
+           <span>如果未来还没有完成，这将返回<code>null</code> 。</span> 
+           <span>由于<code>null</code>值可能用于标记未来成功，因此您还需要检查未来是否真的用<code>Future.isDone()</code>完成，而不是在返回的<code>null</code>值上进行中继。</span> 
+          </div> </li> 
+        </ul> <a name="cancel-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cancel</h4> <pre>public&nbsp;boolean&nbsp;cancel(boolean&nbsp;mayInterruptIfRunning)</pre> 
+          <div class="block">
+            如果取消成功，将会以 
+           <code>CancellationException</code>失败。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>cancel</code>在界面 
+            <code>java.util.concurrent.Future&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>mayInterruptIfRunning</code> - 此值在此实现中不起作用。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isCancelled--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isCancelled</h4> <pre>public&nbsp;boolean&nbsp;isCancelled()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isCancelled</code> ，界面 
+            <code>java.util.concurrent.Future&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isDone--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isDone</h4> <pre>public&nbsp;boolean&nbsp;isDone()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isDone</code>接口 
+            <code>java.util.concurrent.Future&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sync--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sync</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;sync()
+                throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制而来的描述： <code><a href="Future.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#sync--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#sync--">sync</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="syncUninterruptibly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>syncUninterruptibly</h4> <pre>public&nbsp;<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;&nbsp;syncUninterruptibly()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#syncUninterruptibly--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Promise.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#syncUninterruptibly--">syncUninterruptibly</a></code>接口 
+            <code><a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" title="type parameter in DefaultPromise">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课堂 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toStringBuilder--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toStringBuilder</h4> <pre>protected&nbsp;java.lang.StringBuilder&nbsp;toStringBuilder()</pre> </li> 
+        </ul> <a name="executor--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>executor</h4> <pre>protected&nbsp;<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;executor()</pre> 
+          <div class="block"> 
+           <span>当这个承诺完成时，让执行者用来通知监听者。</span> 
+           <p> <span>假定这个执行者将防止<code>StackOverflowError</code>例外。</span> <span>如果堆栈深度超过阈值，执行程序可以通过执行<code>Runnable</code>来避免<code>StackOverflowError</code> 。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             执行者用于在完成此承诺时通知监听者。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="checkDeadLock--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>checkDeadLock</h4> <pre>protected&nbsp;void&nbsp;checkDeadLock()</pre> </li> 
+        </ul> <a name="notifyListener-io.netty.util.concurrent.EventExecutor-io.netty.util.concurrent.Future-io.netty.util.concurrent.GenericFutureListener-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>notifyListener</h4> <pre>protected static&nbsp;void&nbsp;notifyListener(<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;eventExecutor,
+                                     <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;?&gt;&nbsp;future,
+                                     <a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;?&gt;&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span>通知听众未来已完成。</span> 
+           <p> <span>此方法的固定深度为<a href="DefaultPromise.html#MAX_LISTENER_STACK_DEPTH" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html#MAX_LISTENER_STACK_DEPTH"><code>MAX_LISTENER_STACK_DEPTH</code></a> ，将限制递归以阻止<code>StackOverflowError</code>并且将在超过此阈值后停止通知侦听器。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>eventExecutor</code> - 执行者用来通知聆听者 
+            <code>listener</code> 。 
+           </dd> 
+           <dd> 
+            <code>future</code> - 完成的未来。 
+           </dd> 
+           <dd> 
+            <code>listener</code> - 听众通知。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/DefaultPromise.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultProgressivePromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultProgressivePromise.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultThreadFactory.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultThreadFactory.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-DefaultPromise.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/DefaultPromise.html" target="_top">框架</a></li> 
+    <li><a href="DefaultPromise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultPromise.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/concurrent/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

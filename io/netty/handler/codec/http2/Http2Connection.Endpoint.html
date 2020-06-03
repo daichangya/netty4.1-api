@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Http2Connection.Endpoint (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http2.Http2Connection.Endpoint interface"> 
+  <meta name="keywords" content="incrementAndGetNextStreamId()"> 
+  <meta name="keywords" content="isValidStreamId()"> 
+  <meta name="keywords" content="mayHaveCreatedStream()"> 
+  <meta name="keywords" content="created()"> 
+  <meta name="keywords" content="canOpenStream()"> 
+  <meta name="keywords" content="createStream()"> 
+  <meta name="keywords" content="reservePushStream()"> 
+  <meta name="keywords" content="isServer()"> 
+  <meta name="keywords" content="allowPushTo()"> 
+  <meta name="keywords" content="numActiveStreams()"> 
+  <meta name="keywords" content="maxActiveStreams()"> 
+  <meta name="keywords" content="lastStreamCreated()"> 
+  <meta name="keywords" content="lastStreamKnownByPeer()"> 
+  <meta name="keywords" content="flowController()"> 
+  <meta name="keywords" content="opposite()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Http2Connection.Endpoint (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6,"i15":6,"i16":6,"i17":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2Connection.Endpoint.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2Connection.Endpoint.html" target="_top">框架</a></li> 
+    <li><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http2 
+   </div> 
+   <h2 title="Interface Http2Connection.Endpoint" class="title">Interface Http2Connection.Endpoint&lt;F extends <a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2">Http2FlowController</a>&gt;</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         Enclosing interface: 
+       </dt> 
+       <dd> 
+        <span><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口">Http2Connection</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public static interface <span class="typeNameLabel">Http2Connection.Endpoint&lt;F extends <a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2">Http2FlowController</a>&gt;</span></pre> 
+      <div class="block">
+        从一个端点（本地或远程）连接的视图。 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#allowPushTo--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#allowPushTo--">allowPushTo</a></span>()</code> 
+            <div class="block">
+              这是从相反端点发送的值 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_ENABLE_PUSH</a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#allowPushTo-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#allowPushTo-boolean-">allowPushTo</a></span>(boolean&nbsp;allow)</code> 
+            <div class="block">
+              这是从相反端点发送的值 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_ENABLE_PUSH</a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#canOpenStream--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#canOpenStream--">canOpenStream</a></span>()</code> 
+            <div class="block">
+              指示是否可以在不违反 
+             <a href="Http2Connection.Endpoint.html#maxActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#maxActiveStreams--"><code>maxActiveStreams()</code>的</a>情况下打开由此端点创建的流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#created-io.netty.handler.codec.http2.Http2Stream-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#created-io.netty.handler.codec.http2.Http2Stream-">created</a></span>(<a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;stream)</code> 
+            <div class="block">
+              指示此端点是否创建了给定的流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#createStream-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#createStream-int-boolean-">createStream</a></span>(int&nbsp;streamId, boolean&nbsp;halfClosed)</code> 
+            <div class="block">
+              创建由此端点启动的流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="type parameter in Http2Connection.Endpoint">F</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#flowController--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#flowController--">flowController</a></span>()</code> 
+            <div class="block">
+              获取此端点的流量控制器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#flowController-F-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#flowController-F-">flowController</a></span>(<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="type parameter in Http2Connection.Endpoint">F</a>&nbsp;flowController)</code> 
+            <div class="block">
+              设置此端点的流量控制器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#incrementAndGetNextStreamId--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#incrementAndGetNextStreamId--">incrementAndGetNextStreamId</a></span>()</code> 
+            <div class="block">
+              递增并获取下一个生成的流ID这个端点。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#isServer--">isServer</a></span>()</code> 
+            <div class="block">
+              指示此端点是否是连接的服务器端。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#isValidStreamId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#isValidStreamId-int-">isValidStreamId</a></span>(int&nbsp;streamId)</code> 
+            <div class="block">
+              指示给定的streamId是否来自此端点用来创建新流的一组ID。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#lastStreamCreated--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#lastStreamCreated--">lastStreamCreated</a></span>()</code> 
+            <div class="block">
+              获取由此端点成功创建的流的标识。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#lastStreamKnownByPeer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#lastStreamKnownByPeer--">lastStreamKnownByPeer</a></span>()</code> 
+            <div class="block">
+              如果此端点收到GOAWAY，这将是GOAWAY帧中的最后一个流ID。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#maxActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#maxActiveStreams--">maxActiveStreams</a></span>()</code> 
+            <div class="block">
+              获取允许同时处于活动状态的最大数量的流（由此端点创建）。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#maxActiveStreams-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#maxActiveStreams-int-">maxActiveStreams</a></span>(int&nbsp;maxActiveStreams)</code> 
+            <div class="block">
+              设置 
+             <code>SETTINGS_MAX_CONCURRENT_STREAMS</code>的限制。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#mayHaveCreatedStream-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#mayHaveCreatedStream-int-">mayHaveCreatedStream</a></span>(int&nbsp;streamId)</code> 
+            <div class="block">
+              指示此端点是否可能创建了给定的流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#numActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#numActiveStreams--">numActiveStreams</a></span>()</code> 
+            <div class="block">
+              获取活动流的数量（即 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;? extends <a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2">Http2FlowController</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#opposite--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#opposite--">opposite</a></span>()</code> 
+            <div class="block"> 
+             <span>获取与此相对的<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Endpoint</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Connection.Endpoint.html#reservePushStream-int-io.netty.handler.codec.http2.Http2Stream-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#reservePushStream-int-io.netty.handler.codec.http2.Http2Stream-">reservePushStream</a></span>(int&nbsp;streamId, <a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;parent)</code> 
+            <div class="block">
+              在此端点的保留状态中创建推送流并通知所有监听者。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="incrementAndGetNextStreamId--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>incrementAndGetNextStreamId</h4> <pre>int&nbsp;incrementAndGetNextStreamId()</pre> 
+          <div class="block"> 
+           <span>递增并获取下一个生成的流ID这个端点。</span> 
+           <span>如果为负数，则此端点的流ID将耗尽，并且不会创建更多流。</span> 
+          </div> </li> 
+        </ul> <a name="isValidStreamId-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isValidStreamId</h4> <pre>boolean&nbsp;isValidStreamId(int&nbsp;streamId)</pre> 
+          <div class="block">
+            指示给定的streamId是否来自此端点用来创建新流的一组ID。 
+          </div> </li> 
+        </ul> <a name="mayHaveCreatedStream-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>mayHaveCreatedStream</h4> <pre>boolean&nbsp;mayHaveCreatedStream(int&nbsp;streamId)</pre> 
+          <div class="block"> 
+           <span>指示此端点是否可能创建了给定的流。</span> 
+           <span>这是<code>true</code>如果<a href="Http2Connection.Endpoint.html#isValidStreamId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#isValidStreamId-int-"><code>isValidStreamId(int)</code></a>和<code>streamId</code> &lt;= <a href="Http2Connection.Endpoint.html#lastStreamCreated--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#lastStreamCreated--"><code>lastStreamCreated()</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="created-io.netty.handler.codec.http2.Http2Stream-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>created</h4> <pre>boolean&nbsp;created(<a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;stream)</pre> 
+          <div class="block">
+            指示此端点是否创建了给定的流。 
+          </div> </li> 
+        </ul> <a name="canOpenStream--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>canOpenStream</h4> <pre>boolean&nbsp;canOpenStream()</pre> 
+          <div class="block">
+            指示是否可以在不违反 
+           <a href="Http2Connection.Endpoint.html#maxActiveStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#maxActiveStreams--"><code>maxActiveStreams()</code>的</a>情况下打开由此端点创建的流。 
+          </div> </li> 
+        </ul> <a name="createStream-int-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>createStream</h4> <pre><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;createStream(int&nbsp;streamId,
+                         boolean&nbsp;halfClosed)
+                  throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block"> 
+           <span>创建由此端点启动的流。</span> 
+           <span>这可能会失败，原因如下：</span> 
+           <ul> 
+            <li> <span>请求的流ID不是此端点的下一个顺序ID。</span> </li> 
+            <li> <span>流已经存在。</span> </li> 
+            <li> <span><a href="Http2Connection.Endpoint.html#canOpenStream--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html#canOpenStream--"><code>canOpenStream()</code></a>是<code>false</code> 。</span> </li> 
+            <li> <span>连接被标记为消失。</span> </li> 
+           </ul> 
+           <p> <span>在通知<a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Listener</code></a>之前，流的初始状态将立即设置。</span> <span>状态转换对<code>halfClosed</code>敏感，由<a href="Http2Stream.html#open-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html#open-boolean-"><code>Http2Stream.open(boolean)</code></a>定义。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 流的ID 
+           </dd> 
+           <dd> 
+            <code>halfClosed</code> - 见 
+            <a href="Http2Stream.html#open-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html#open-boolean-"><code>Http2Stream.open(boolean)</code></a> 。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> 
+           </dd> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="Http2Stream.html#open-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html#open-boolean-"><code>Http2Stream.open(boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="reservePushStream-int-io.netty.handler.codec.http2.Http2Stream-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>reservePushStream</h4> <pre><a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;reservePushStream(int&nbsp;streamId,
+                              <a href="Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;parent)
+                       throws <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></pre> 
+          <div class="block"> 
+           <span>在此端点的保留状态中创建推送流并通知所有监听者。</span> 
+           <span>这可能会失败，原因如下：</span> 
+           <ul> 
+            <li> <span>服务器推送不允许到相反的端点。</span> </li> 
+            <li> <span>所请求的流ID不是此端点的下一个顺序流ID。</span> </li> 
+            <li> <span>并发流的数量高于此端点允许的阈值。</span> </li> 
+            <li> <span>连接被标记为消失。</span> </li> 
+            <li> <span>父流ID不存在或不是从发送推送承诺的那一方的<code>OPEN</code> 。</span> </li> 
+            <li> <span>无法为新的流设置有效的优先级。</span> </li> 
+           </ul> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>streamId</code> - 推送流的ID 
+           </dd> 
+           <dd> 
+            <code>parent</code> - 用于启动推送流的父流。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isServer--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isServer</h4> <pre>boolean&nbsp;isServer()</pre> 
+          <div class="block">
+            指示此端点是否是连接的服务器端。 
+          </div> </li> 
+        </ul> <a name="allowPushTo-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>allowPushTo</h4> <pre>void&nbsp;allowPushTo(boolean&nbsp;allow)</pre> 
+          <div class="block"> 
+           <span>这是从相反端点发送的值<a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_ENABLE_PUSH</a> 。</span> 
+           <span>这种方法只能由Netty（不是用户）作为接收<code>SETTINGS</code>帧的结果来<code>SETTINGS</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="allowPushTo--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>allowPushTo</h4> <pre>boolean&nbsp;allowPushTo()</pre> 
+          <div class="block"> 
+           <span>这是从相反端点发送的值<a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_ENABLE_PUSH</a> 。</span> 
+           <span>客户端端点的初始值必须为<code>true</code> ，并且服务器端点的值始终为false。</span> 
+          </div> </li> 
+        </ul> <a name="numActiveStreams--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>numActiveStreams</h4> <pre>int&nbsp;numActiveStreams()</pre> 
+          <div class="block">
+            获取由此端点创建的活动流的数量（即 
+           <code>OPEN</code>或 
+           <code>HALF CLOSED</code> ）。 
+          </div> </li> 
+        </ul> <a name="maxActiveStreams--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxActiveStreams</h4> <pre>int&nbsp;maxActiveStreams()</pre> 
+          <div class="block"> 
+           <span>获取允许同时处于活动状态的最大数量的流（由此端点创建）。</span> 
+           <span>这是从相反端点发送的<a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_MAX_CONCURRENT_STREAMS</a>值，用于限制由此端点创建的流。</span> 
+           <p> <span>此方法返回的默认值必须是“无限”。</span> </p> 
+          </div> </li> 
+        </ul> <a name="maxActiveStreams-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxActiveStreams</h4> <pre>void&nbsp;maxActiveStreams(int&nbsp;maxActiveStreams)</pre> 
+          <div class="block">
+            设置 
+           <code>SETTINGS_MAX_CONCURRENT_STREAMS</code>的限制。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>maxActiveStreams</code> - 允许同时激活的最大数量的流（由此端点创建）。</span> 
+            <span>这是从对端发送的<a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_MAX_CONCURRENT_STREAMS</a>值，用于限制由此端点创建的流。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="lastStreamCreated--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lastStreamCreated</h4> <pre>int&nbsp;lastStreamCreated()</pre> 
+          <div class="block">
+            获取由此端点成功创建的流的标识。 
+          </div> </li> 
+        </ul> <a name="lastStreamKnownByPeer--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lastStreamKnownByPeer</h4> <pre>int&nbsp;lastStreamKnownByPeer()</pre> 
+          <div class="block"> 
+           <span>如果此端点收到GOAWAY，这将是GOAWAY帧中的最后一个流ID。</span> 
+           <span>否则，这将是<code>-1</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="flowController--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flowController</h4> <pre><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="type parameter in Http2Connection.Endpoint">F</a>&nbsp;flowController()</pre> 
+          <div class="block">
+            获取此端点的流量控制器。 
+          </div> </li> 
+        </ul> <a name="flowController-io.netty.handler.codec.http2.Http2FlowController-"> </a><a name="flowController-F-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flowController</h4> <pre>void&nbsp;flowController(<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="type parameter in Http2Connection.Endpoint">F</a>&nbsp;flowController)</pre> 
+          <div class="block">
+            设置此端点的流量控制器。 
+          </div> </li> 
+        </ul> <a name="opposite--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>opposite</h4> <pre><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="interface in io.netty.handler.codec.http2">Http2Connection.Endpoint</a>&lt;? extends <a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2">Http2FlowController</a>&gt;&nbsp;opposite()</pre> 
+          <div class="block"> 
+           <span>获取<a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection.Endpoint</code></a>这个对面。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2Connection.Endpoint.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2Connection.Listener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Listener.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2Connection.Endpoint.html" target="_top">框架</a></li> 
+    <li><a href="Http2Connection.Endpoint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.Endpoint.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http2/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

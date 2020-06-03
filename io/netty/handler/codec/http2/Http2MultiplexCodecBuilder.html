@@ -1,0 +1,817 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Http2MultiplexCodecBuilder (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http2.Http2MultiplexCodecBuilder class"> 
+  <meta name="keywords" content="forClient()"> 
+  <meta name="keywords" content="forServer()"> 
+  <meta name="keywords" content="initialSettings()"> 
+  <meta name="keywords" content="gracefulShutdownTimeoutMillis()"> 
+  <meta name="keywords" content="isServer()"> 
+  <meta name="keywords" content="maxReservedStreams()"> 
+  <meta name="keywords" content="isValidateHeaders()"> 
+  <meta name="keywords" content="validateHeaders()"> 
+  <meta name="keywords" content="frameLogger()"> 
+  <meta name="keywords" content="encoderEnforceMaxConcurrentStreams()"> 
+  <meta name="keywords" content="headerSensitivityDetector()"> 
+  <meta name="keywords" content="encoderIgnoreMaxHeaderListSize()"> 
+  <meta name="keywords" content="initialHuffmanDecodeCapacity()"> 
+  <meta name="keywords" content="build()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Http2MultiplexCodecBuilder (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":9,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2MultiplexCodecBuilder.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2NoMoreStreamIdsException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2NoMoreStreamIdsException.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" target="_top">框架</a></li> 
+    <li><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http2 
+   </div> 
+   <h2 title="Class Http2MultiplexCodecBuilder" class="title">Class Http2MultiplexCodecBuilder</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">io.netty.handler.codec.http2.AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.handler.codec.http2.Http2MultiplexCodecBuilder</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>@UnstableApi
+public class <span class="typeNameLabel">Http2MultiplexCodecBuilder</span>
+extends <a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</pre> 
+      <div class="block"> 
+       <span>建筑师<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="类在io.netty.handler.codec.http2中"><code>Http2MultiplexCodec</code></a> 。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#build--">build</a></span>()</code> 
+            <div class="block"> 
+             <span>创建一个新的<a href="Http2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中"><code>Http2ConnectionHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>protected <a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-">build</a></span>(<a href="Http2ConnectionDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionDecoder.html" title="interface in io.netty.handler.codec.http2">Http2ConnectionDecoder</a>&nbsp;decoder, <a href="Http2ConnectionEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionEncoder.html" title="interface in io.netty.handler.codec.http2">Http2ConnectionEncoder</a>&nbsp;encoder, <a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="class in io.netty.handler.codec.http2">Http2Settings</a>&nbsp;initialSettings)</code> 
+            <div class="block"> 
+             <span>实现此方法以创建新的<a href="Http2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中"><code>Http2ConnectionHandler</code></a>或其子类型实例。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#encoderEnforceMaxConcurrentStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#encoderEnforceMaxConcurrentStreams--">encoderEnforceMaxConcurrentStreams</a></span>()</code> 
+            <div class="block">
+              如果编码器应该排队帧，如果否则会超过并发流的最大数量时返回。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#encoderEnforceMaxConcurrentStreams-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#encoderEnforceMaxConcurrentStreams-boolean-">encoderEnforceMaxConcurrentStreams</a></span>(boolean&nbsp;encoderEnforceMaxConcurrentStreams)</code> 
+            <div class="block">
+              如果编码器应该排队帧，如果否则会超过并发流的最大数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#encoderIgnoreMaxHeaderListSize-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#encoderIgnoreMaxHeaderListSize-boolean-">encoderIgnoreMaxHeaderListSize</a></span>(boolean&nbsp;ignoreMaxHeaderListSize)</code> 
+            <div class="block">
+              设置编码标题时是否应忽略 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_MAX_HEADER_LIST_SIZE</a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#forClient-io.netty.channel.ChannelHandler-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#forClient-io.netty.channel.ChannelHandler-">forClient</a></span>(<a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>&nbsp;childHandler)</code> 
+            <div class="block">
+              为HTTP / 2客户端创建一个构建器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>static <a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#forServer-io.netty.channel.ChannelHandler-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#forServer-io.netty.channel.ChannelHandler-">forServer</a></span>(<a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>&nbsp;childHandler)</code> 
+            <div class="block">
+              为HTTP / 2服务器创建一个构建器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2FrameLogger.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FrameLogger.html" title="class in io.netty.handler.codec.http2">Http2FrameLogger</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#frameLogger--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#frameLogger--">frameLogger</a></span>()</code> 
+            <div class="block">
+              返回用于编码器和解码器的记录器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-">frameLogger</a></span>(<a href="Http2FrameLogger.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FrameLogger.html" title="class in io.netty.handler.codec.http2">Http2FrameLogger</a>&nbsp;frameLogger)</code> 
+            <div class="block">
+              设置用于编码器和解码器的记录器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#gracefulShutdownTimeoutMillis--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#gracefulShutdownTimeoutMillis--">gracefulShutdownTimeoutMillis</a></span>()</code> 
+            <div class="block"> 
+             <span>以毫秒为单位返回<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a>的正常关闭超时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#gracefulShutdownTimeoutMillis-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#gracefulShutdownTimeoutMillis-long-">gracefulShutdownTimeoutMillis</a></span>(long&nbsp;gracefulShutdownTimeoutMillis)</code> 
+            <div class="block"> 
+             <span>以毫秒为单位设置<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a>的正常关闭超时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="interface in io.netty.handler.codec.http2">Http2HeadersEncoder.SensitivityDetector</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#headerSensitivityDetector--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#headerSensitivityDetector--">headerSensitivityDetector</a></span>()</code> 
+            <div class="block"> 
+             <span>返回使用的<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="io.netty.handler.codec.http2中的接口"><code>Http2HeadersEncoder.SensitivityDetector</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-">headerSensitivityDetector</a></span>(<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="interface in io.netty.handler.codec.http2">Http2HeadersEncoder.SensitivityDetector</a>&nbsp;headerSensitivityDetector)</code> 
+            <div class="block"> 
+             <span>设置要使用的<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="io.netty.handler.codec.http2中的接口"><code>Http2HeadersEncoder.SensitivityDetector</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#initialHuffmanDecodeCapacity-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#initialHuffmanDecodeCapacity-int-">initialHuffmanDecodeCapacity</a></span>(int&nbsp;initialHuffmanDecodeCapacity)</code> 
+            <div class="block">
+              设置在HPACK huffman解码期间使用的中间缓冲区的初始大小。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="class in io.netty.handler.codec.http2">Http2Settings</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#initialSettings--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#initialSettings--">initialSettings</a></span>()</code> 
+            <div class="block"> 
+             <span>设置<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="类在io.netty.handler.codec.http2中"><code>Http2Settings</code></a>用于初始连接设置交换。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#initialSettings-io.netty.handler.codec.http2.Http2Settings-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#initialSettings-io.netty.handler.codec.http2.Http2Settings-">initialSettings</a></span>(<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="class in io.netty.handler.codec.http2">Http2Settings</a>&nbsp;settings)</code> 
+            <div class="block"> 
+             <span>设置<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="类在io.netty.handler.codec.http2中"><code>Http2Settings</code></a>用于初始连接设置交换。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#isServer--">isServer</a></span>()</code> 
+            <div class="block"> 
+             <span>如果<a href="AbstractHttp2ConnectionHandlerBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#build--"><code>AbstractHttp2ConnectionHandlerBuilder.build()</code></a>将在服务器模式（ <code>true</code> ）或客户端模式（ <code>false</code> ）下创建<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a> ，则返回。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#isValidateHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#isValidateHeaders--">isValidateHeaders</a></span>()</code> 
+            <div class="block">
+              根据 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-8.1.2.6'" tppabs="https://tools.ietf.org/html/rfc7540#section-8.1.2.6">RFC 7540, 8.1.2.6</a>应该验证HTTP头部返回。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#maxReservedStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#maxReservedStreams--">maxReservedStreams</a></span>()</code> 
+            <div class="block">
+              获取在任何给定时间可以处于保留状态的最大数量的流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#maxReservedStreams-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#maxReservedStreams-int-">maxReservedStreams</a></span>(int&nbsp;maxReservedStreams)</code> 
+            <div class="block">
+              设置在任何给定时间可以处于保留状态的最大数量的流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2MultiplexCodecBuilder.html#validateHeaders-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html#validateHeaders-boolean-">validateHeaders</a></span>(boolean&nbsp;validateHeaders)</code> 
+            <div class="block">
+              根据 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-8.1.2.6'" tppabs="https://tools.ietf.org/html/rfc7540#section-8.1.2.6">RFC 7540, 8.1.2.6</a>设置是否验证HTTP标头。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http2.AbstractHttp2ConnectionHandlerBuilder"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.http2.<a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a></h3> <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#codec-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#codec-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-">codec</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#connection--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#connection--">connection</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#connection-io.netty.handler.codec.http2.Http2Connection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#connection-io.netty.handler.codec.http2.Http2Connection-">connection</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#decoder--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#decoder--">decoder</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#encoder--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoder--">encoder</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#frameListener--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameListener--">frameListener</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#frameListener-io.netty.handler.codec.http2.Http2FrameListener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameListener-io.netty.handler.codec.http2.Http2FrameListener-">frameListener</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#self--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#self--">self</a>, <a href="AbstractHttp2ConnectionHandlerBuilder.html#server-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#server-boolean-">server</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="forClient-io.netty.channel.ChannelHandler-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>forClient</h4> <pre>public static&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;forClient(<a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>&nbsp;childHandler)</pre> 
+          <div class="block">
+            为HTTP / 2客户端创建一个构建器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>childHandler</code> - 将处理程序添加到远程创建的流的通道。</span> 
+            <span>它必须是<code>ChannelHandler.Sharable</code> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="forServer-io.netty.channel.ChannelHandler-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>forServer</h4> <pre>public static&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;forServer(<a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>&nbsp;childHandler)</pre> 
+          <div class="block">
+            为HTTP / 2服务器创建一个构建器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>childHandler</code> - 将处理程序添加到远程创建的流的通道。</span> 
+            <span>它必须是<code>ChannelHandler.Sharable</code> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="initialSettings--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>initialSettings</h4> <pre>public&nbsp;<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="class in io.netty.handler.codec.http2">Http2Settings</a>&nbsp;initialSettings()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#initialSettings--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#initialSettings--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="类在io.netty.handler.codec.http2中"><code>Http2Settings</code></a>设置为用于初始连接设置交换。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#initialSettings--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#initialSettings--">initialSettings</a></code> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="initialSettings-io.netty.handler.codec.http2.Http2Settings-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>initialSettings</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;initialSettings(<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="class in io.netty.handler.codec.http2">Http2Settings</a>&nbsp;settings)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#initialSettings-io.netty.handler.codec.http2.Http2Settings-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#initialSettings-io.netty.handler.codec.http2.Http2Settings-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将<a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="类在io.netty.handler.codec.http2中"><code>Http2Settings</code></a>设置为用于初始连接设置交换。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#initialSettings-io.netty.handler.codec.http2.Http2Settings-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#initialSettings-io.netty.handler.codec.http2.Http2Settings-">initialSettings</a></code> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="gracefulShutdownTimeoutMillis--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>gracefulShutdownTimeoutMillis</h4> <pre>public&nbsp;long&nbsp;gracefulShutdownTimeoutMillis()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以毫秒为单位返回<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a>的正常关闭超时。</span> 
+           <span>如果超时是无限的，则返回-1。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis--">gracefulShutdownTimeoutMillis</a></code>在课堂上 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="gracefulShutdownTimeoutMillis-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>gracefulShutdownTimeoutMillis</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;gracefulShutdownTimeoutMillis(long&nbsp;gracefulShutdownTimeoutMillis)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis-long-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以毫秒为单位设置<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a>的正常关闭超时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis-long-">gracefulShutdownTimeoutMillis</a></code> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isServer--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isServer</h4> <pre>public&nbsp;boolean&nbsp;isServer()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#isServer--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>如果<a href="AbstractHttp2ConnectionHandlerBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#build--"><code>AbstractHttp2ConnectionHandlerBuilder.build()</code></a>将在服务器模式（ <code>true</code> ）或客户端模式（ <code>false</code> ）下创建<a href="Http2Connection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Connection.html" title="io.netty.handler.codec.http2中的接口"><code>Http2Connection</code></a> ，则返回。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#isServer--">isServer</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="maxReservedStreams--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxReservedStreams</h4> <pre>public&nbsp;int&nbsp;maxReservedStreams()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>获取在任何给定时间可以处于保留状态的最大数量的流。</span> 
+           <p> <span>默认情况下，该值将在本地端点的服务器上被忽略。</span> <span>这是因为RFC没有提供明确的通信限制，即有多少状态可以处于保留状态，而是依赖于对等方在发送RST_STREAM帧时被拒绝。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams--">maxReservedStreams</a></code> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="maxReservedStreams-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxReservedStreams</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;maxReservedStreams(int&nbsp;maxReservedStreams)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams-int-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            设置在任何给定时间可以处于保留状态的最大数量的流。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#maxReservedStreams-int-">maxReservedStreams</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isValidateHeaders--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isValidateHeaders</h4> <pre>public&nbsp;boolean&nbsp;isValidateHeaders()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#isValidateHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#isValidateHeaders--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            根据 
+           <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-8.1.2.6'" tppabs="https://tools.ietf.org/html/rfc7540#section-8.1.2.6">RFC 7540, 8.1.2.6</a>验证HTTP标头是否返回。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#isValidateHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#isValidateHeaders--">isValidateHeaders</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="validateHeaders-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>validateHeaders</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;validateHeaders(boolean&nbsp;validateHeaders)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#validateHeaders-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#validateHeaders-boolean-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            根据 
+           <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-8.1.2.6'" tppabs="https://tools.ietf.org/html/rfc7540#section-8.1.2.6">RFC 7540, 8.1.2.6</a>设置是否验证HTTP标头。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#validateHeaders-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#validateHeaders-boolean-">validateHeaders</a></code>在课堂上 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="frameLogger--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>frameLogger</h4> <pre>public&nbsp;<a href="Http2FrameLogger.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FrameLogger.html" title="class in io.netty.handler.codec.http2">Http2FrameLogger</a>&nbsp;frameLogger()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#frameLogger--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameLogger--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            返回用于编码器和解码器的记录器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#frameLogger--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameLogger--">frameLogger</a></code>在课堂上 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="Http2FrameLogger.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FrameLogger.html" title="类在io.netty.handler.codec.http2中"><code>Http2FrameLogger</code></a>如果设置，或<code>null</code>如果未设置。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>frameLogger</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;frameLogger(<a href="Http2FrameLogger.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FrameLogger.html" title="class in io.netty.handler.codec.http2">Http2FrameLogger</a>&nbsp;frameLogger)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            设置用于编码器和解码器的记录器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameLogger-io.netty.handler.codec.http2.Http2FrameLogger-">frameLogger</a></code>在课堂上 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="encoderEnforceMaxConcurrentStreams--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>encoderEnforceMaxConcurrentStreams</h4> <pre>public&nbsp;boolean&nbsp;encoderEnforceMaxConcurrentStreams()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            如果编码器应该排队帧，如果否则会超过并发流的最大数量时返回。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams--">encoderEnforceMaxConcurrentStreams</a></code>在课堂上 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="encoderEnforceMaxConcurrentStreams-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>encoderEnforceMaxConcurrentStreams</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;encoderEnforceMaxConcurrentStreams(boolean&nbsp;encoderEnforceMaxConcurrentStreams)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams-boolean-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            如果编码器应该排队帧，如果否则会超过并发流的最大数量。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoderEnforceMaxConcurrentStreams-boolean-">encoderEnforceMaxConcurrentStreams</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="headerSensitivityDetector--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>headerSensitivityDetector</h4> <pre>public&nbsp;<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="interface in io.netty.handler.codec.http2">Http2HeadersEncoder.SensitivityDetector</a>&nbsp;headerSensitivityDetector()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回使用的<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="io.netty.handler.codec.http2中的接口"><code>Http2HeadersEncoder.SensitivityDetector</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector--">headerSensitivityDetector</a></code> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>headerSensitivityDetector</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;headerSensitivityDetector(<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="interface in io.netty.handler.codec.http2">Http2HeadersEncoder.SensitivityDetector</a>&nbsp;headerSensitivityDetector)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>设置要使用的<a href="Http2HeadersEncoder.SensitivityDetector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2HeadersEncoder.SensitivityDetector.html" title="io.netty.handler.codec.http2中的接口"><code>Http2HeadersEncoder.SensitivityDetector</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#headerSensitivityDetector-io.netty.handler.codec.http2.Http2HeadersEncoder.SensitivityDetector-">headerSensitivityDetector</a></code>在课堂 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="encoderIgnoreMaxHeaderListSize-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>encoderIgnoreMaxHeaderListSize</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;encoderIgnoreMaxHeaderListSize(boolean&nbsp;ignoreMaxHeaderListSize)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#encoderIgnoreMaxHeaderListSize-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoderIgnoreMaxHeaderListSize-boolean-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            设置编码标头时是否应该忽略 
+           <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_MAX_HEADER_LIST_SIZE</a> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#encoderIgnoreMaxHeaderListSize-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#encoderIgnoreMaxHeaderListSize-boolean-">encoderIgnoreMaxHeaderListSize</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>ignoreMaxHeaderListSize</code> - 
+            <code>true</code>忽略 
+            <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7540  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7540#section-6.5.2'" tppabs="https://tools.ietf.org/html/rfc7540#section-6.5.2">SETTINGS_MAX_HEADER_LIST_SIZE</a> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             这个。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="initialHuffmanDecodeCapacity-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>initialHuffmanDecodeCapacity</h4> <pre>public&nbsp;<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&nbsp;initialHuffmanDecodeCapacity(int&nbsp;initialHuffmanDecodeCapacity)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#initialHuffmanDecodeCapacity-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#initialHuffmanDecodeCapacity-int-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block">
+            设置在HPACK huffman解码期间使用的中间缓冲区的初始大小。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#initialHuffmanDecodeCapacity-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#initialHuffmanDecodeCapacity-int-">initialHuffmanDecodeCapacity</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>initialHuffmanDecodeCapacity</code> - 在HPACK huffman解码期间使用的中间缓冲区的初始大小。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             这个。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="build--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>build</h4> <pre>public&nbsp;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>&nbsp;build()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#build--">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建一个新的<a href="Http2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中"><code>Http2ConnectionHandler</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#build--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#build--">build</a></code>在课程 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>build</h4> <pre>protected&nbsp;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>&nbsp;build(<a href="Http2ConnectionDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionDecoder.html" title="interface in io.netty.handler.codec.http2">Http2ConnectionDecoder</a>&nbsp;decoder,
+                                    <a href="Http2ConnectionEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionEncoder.html" title="interface in io.netty.handler.codec.http2">Http2ConnectionEncoder</a>&nbsp;encoder,
+                                    <a href="Http2Settings.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Settings.html" title="class in io.netty.handler.codec.http2">Http2Settings</a>&nbsp;initialSettings)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-">AbstractHttp2ConnectionHandlerBuilder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>实现此方法以创建新的<a href="Http2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中"><code>Http2ConnectionHandler</code></a>或其子类型实例。</span> 
+           <p> <span>此方法的返回将受到以下限制：</span> </p> 
+           <ul> 
+            <li> <span>如果尚未在解码器中设置，则将设置<a href="AbstractHttp2ConnectionHandlerBuilder.html#frameListener-io.netty.handler.codec.http2.Http2FrameListener-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#frameListener-io.netty.handler.codec.http2.Http2FrameListener-"><code>AbstractHttp2ConnectionHandlerBuilder.frameListener(Http2FrameListener)</code></a></span> </li> 
+            <li> <span><a href="AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#gracefulShutdownTimeoutMillis-long-"><code>AbstractHttp2ConnectionHandlerBuilder.gracefulShutdownTimeoutMillis(long)</code></a>将始终设置</span> </li> 
+           </ul> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html#build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html#build-io.netty.handler.codec.http2.Http2ConnectionDecoder-io.netty.handler.codec.http2.Http2ConnectionEncoder-io.netty.handler.codec.http2.Http2Settings-">build</a></code>在课堂 
+            <code><a href="AbstractHttp2ConnectionHandlerBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/AbstractHttp2ConnectionHandlerBuilder.html" title="class in io.netty.handler.codec.http2">AbstractHttp2ConnectionHandlerBuilder</a>&lt;<a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodec</a>,<a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" title="class in io.netty.handler.codec.http2">Http2MultiplexCodecBuilder</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2MultiplexCodecBuilder.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2NoMoreStreamIdsException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2NoMoreStreamIdsException.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" target="_top">框架</a></li> 
+    <li><a href="Http2MultiplexCodecBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodecBuilder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http2/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

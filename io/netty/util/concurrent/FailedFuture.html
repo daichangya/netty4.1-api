@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>FailedFuture (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.util.concurrent.FailedFuture class"> 
+  <meta name="keywords" content="cause()"> 
+  <meta name="keywords" content="isSuccess()"> 
+  <meta name="keywords" content="sync()"> 
+  <meta name="keywords" content="syncUninterruptibly()"> 
+  <meta name="keywords" content="getNow()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="FailedFuture (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/FailedFuture.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="FastThreadLocal.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FastThreadLocal.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-FailedFuture.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/FailedFuture.html" target="_top">框架</a></li> 
+    <li><a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.util.concurrent 
+   </div> 
+   <h2 title="Class FailedFuture" class="title">Class FailedFuture&lt;V&gt;</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="AbstractFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.AbstractFuture</a>&lt;V&gt;</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="CompleteFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.CompleteFuture</a>&lt;V&gt;</li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.util.concurrent.FailedFuture&lt;V&gt;</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd>
+         java.util.concurrent.Future &lt;V&gt; 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">FailedFuture&lt;V&gt;</span>
+extends <a href="CompleteFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html" title="class in io.netty.util.concurrent">CompleteFuture</a>&lt;V&gt;</pre> 
+      <div class="block"> 
+       <span><a href="CompleteFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html" title="class in io.netty.util.concurrent"><code>CompleteFuture</code></a>已经失败了。</span> 
+       <span>建议使用<a href="EventExecutor.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newFailedFuture-java.lang.Throwable-"><code>EventExecutor.newFailedFuture(Throwable)</code></a>而不是调用这个未来的构造函数。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="FailedFuture.html#FailedFuture-io.netty.util.concurrent.EventExecutor-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html#FailedFuture-io.netty.util.concurrent.EventExecutor-java.lang.Throwable-">FailedFuture</a></span>(<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;executor, java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>java.lang.Throwable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FailedFuture.html#cause--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html#cause--">cause</a></span>()</code> 
+            <div class="block">
+              如果I / O操作失败，则返回失败的I / O操作的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FailedFuture.html#getNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html#getNow--">getNow</a></span>()</code> 
+            <div class="block">
+              无阻塞地返回结果。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FailedFuture.html#isSuccess--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html#isSuccess--">isSuccess</a></span>()</code> 
+            <div class="block">
+              当且仅当I / O操作成功完成时才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FailedFuture.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html#sync--">sync</a></span>()</code> 
+            <div class="block">
+              等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FailedFuture.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html#syncUninterruptibly--">syncUninterruptibly</a></span>()</code> 
+            <div class="block">
+              等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.CompleteFuture"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="CompleteFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html" title="class in io.netty.util.concurrent">CompleteFuture</a></h3> <code><a href="CompleteFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a>, <a href="CompleteFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a>, <a href="CompleteFuture.html#await--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#await--">await</a>, <a href="CompleteFuture.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#await-long-">await</a>, <a href="CompleteFuture.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#await-long-java.util.concurrent.TimeUnit-">await</a>, <a href="CompleteFuture.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#awaitUninterruptibly--">awaitUninterruptibly</a>, <a href="CompleteFuture.html#awaitUninterruptibly-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#awaitUninterruptibly-long-">awaitUninterruptibly</a>, <a href="CompleteFuture.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-">awaitUninterruptibly</a>, <a href="CompleteFuture.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#cancel-boolean-">cancel</a>, <a href="CompleteFuture.html#executor--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#executor--">executor</a>, <a href="CompleteFuture.html#isCancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#isCancellable--">isCancellable</a>, <a href="CompleteFuture.html#isCancelled--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#isCancelled--">isCancelled</a>, <a href="CompleteFuture.html#isDone--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#isDone--">isDone</a>, <a href="CompleteFuture.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a>, <a href="CompleteFuture.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.AbstractFuture"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="AbstractFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html" title="class in io.netty.util.concurrent">AbstractFuture</a></h3> <code><a href="AbstractFuture.html#get--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html#get--">get</a>, <a href="AbstractFuture.html#get-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractFuture.html#get-long-java.util.concurrent.TimeUnit-">get</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="FailedFuture-io.netty.util.concurrent.EventExecutor-java.lang.Throwable-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>FailedFuture</h4> <pre>public&nbsp;FailedFuture(<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a>&nbsp;executor,
+                    java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - 与这个未来相关的<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>cause</code> - 失败的原因 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="cause--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cause</h4> <pre>public&nbsp;java.lang.Throwable&nbsp;cause()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#cause--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cause--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            如果I / O操作失败，则返回失败的I / O操作的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>失败的原因。</span> 
+            <span><code>null</code>如果成功或未来尚未完成。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isSuccess--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isSuccess</h4> <pre>public&nbsp;boolean&nbsp;isSuccess()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#isSuccess--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#isSuccess--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当I / O操作成功完成时才返回 
+           <code>true</code> 。 
+          </div> </li> 
+        </ul> <a name="sync--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sync</h4> <pre>public&nbsp;<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&gt;&nbsp;sync()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="Future.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#sync--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="CompleteFuture.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#sync--">sync</a></code>在课堂 
+            <code><a href="CompleteFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html" title="class in io.netty.util.concurrent">CompleteFuture</a>&lt;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="syncUninterruptibly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>syncUninterruptibly</h4> <pre>public&nbsp;<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&gt;&nbsp;syncUninterruptibly()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="Future.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#syncUninterruptibly--">Future</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="CompleteFuture.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html#syncUninterruptibly--">syncUninterruptibly</a></code>在课堂 
+            <code><a href="CompleteFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/CompleteFuture.html" title="class in io.netty.util.concurrent">CompleteFuture</a>&lt;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getNow--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>getNow</h4> <pre>public&nbsp;<a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" title="type parameter in FailedFuture">V</a>&nbsp;getNow()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="Future.html#getNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#getNow--">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>无阻塞地返回结果。</span> 
+           <span>如果未来还没有完成，这将返回<code>null</code> 。</span> 
+           <span>由于有可能使用<code>null</code>值标记未来成功，因此还需要检查未来是否真的用<code>Future.isDone()</code>完成，而不是在返回的<code>null</code>值上进行中继。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/FailedFuture.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="FastThreadLocal.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FastThreadLocal.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-FailedFuture.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/FailedFuture.html" target="_top">框架</a></li> 
+    <li><a href="FailedFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/FailedFuture.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/concurrent/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

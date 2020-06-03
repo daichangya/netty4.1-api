@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Channel.Unsafe (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.Channel.Unsafe interface"> 
+  <meta name="keywords" content="recvBufAllocHandle()"> 
+  <meta name="keywords" content="localAddress()"> 
+  <meta name="keywords" content="remoteAddress()"> 
+  <meta name="keywords" content="register()"> 
+  <meta name="keywords" content="bind()"> 
+  <meta name="keywords" content="connect()"> 
+  <meta name="keywords" content="disconnect()"> 
+  <meta name="keywords" content="close()"> 
+  <meta name="keywords" content="closeForcibly()"> 
+  <meta name="keywords" content="deregister()"> 
+  <meta name="keywords" content="beginRead()"> 
+  <meta name="keywords" content="write()"> 
+  <meta name="keywords" content="flush()"> 
+  <meta name="keywords" content="voidPromise()"> 
+  <meta name="keywords" content="outboundBuffer()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Channel.Unsafe (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6,"i8":6,"i9":6,"i10":6,"i11":6,"i12":6,"i13":6,"i14":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/Channel.Unsafe.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/Channel.Unsafe.html" target="_top">框架</a></li> 
+    <li><a href="Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Interface Channel.Unsafe" class="title">Interface Channel.Unsafe</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Known Subinterfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="nio/AbstractNioChannel.NioUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.NioUnsafe.html" title="io.netty.channel.nio中的接口">AbstractNioChannel.NioUnsafe</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        所有已知实现类：
+       </dt> 
+       <dd> 
+        <span><a href="AbstractChannel.AbstractUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.AbstractUnsafe.html" title="在io.netty.channel中的类">AbstractChannel.AbstractUnsafe</a> ， <a href="nio/AbstractNioByteChannel.NioByteUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioByteChannel.NioByteUnsafe.html" title="在io.netty.channel.nio中的类">AbstractNioByteChannel.NioByteUnsafe</a> ， <a href="nio/AbstractNioChannel.AbstractNioUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.AbstractNioUnsafe.html" title="在io.netty.channel.nio中的类">AbstractNioChannel.AbstractNioUnsafe</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+         Enclosing interface: 
+       </dt> 
+       <dd> 
+        <span><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">Channel</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public static interface <span class="typeNameLabel">Channel.Unsafe</span></pre> 
+      <div class="block"> 
+       <span><em>不</em>应该从用户代码调用的<em>不安全</em>操作。</span> 
+       <span>这些方法仅用于实现实际的传输，并且必须从I / O线程调用，但以下方法除外：</span> 
+       <ul> 
+        <li> <span><a href="Channel.Unsafe.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#localAddress--"><code>localAddress()</code></a></span> </li> 
+        <li> <span><a href="Channel.Unsafe.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#remoteAddress--"><code>remoteAddress()</code></a></span> </li> 
+        <li> <span><a href="Channel.Unsafe.html#closeForcibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#closeForcibly--"><code>closeForcibly()</code></a></span> </li> 
+        <li> <span><a href="Channel.Unsafe.html#register-io.netty.channel.EventLoop-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#register-io.netty.channel.EventLoop-io.netty.channel.ChannelPromise-"><code>register(EventLoop, ChannelPromise)</code></a></span> </li> 
+        <li> <span><a href="Channel.Unsafe.html#deregister-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#deregister-io.netty.channel.ChannelPromise-"><code>deregister(ChannelPromise)</code></a></span> </li> 
+        <li> <span><a href="Channel.Unsafe.html#voidPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#voidPromise--"><code>voidPromise()</code></a></span> </li> 
+       </ul> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#beginRead--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#beginRead--">beginRead</a></span>()</code> 
+            <div class="block"> 
+             <span>附表填充第一的入缓冲区的读取操作<a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a>在<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-">bind</a></span>(java.net.SocketAddress&nbsp;localAddress, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>绑定<code>SocketAddress</code>到<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>并通知其一旦其完成。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#close-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#close-io.netty.channel.ChannelPromise-">close</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>关闭<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并在操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#closeForcibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#closeForcibly--">closeForcibly</a></span>()</code> 
+            <div class="block"> 
+             <span>立即关闭<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，但不会触发任何事件。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a></span>(java.net.SocketAddress&nbsp;remoteAddress, java.net.SocketAddress&nbsp;localAddress, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>连接<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>指定的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>与指定的远程<code>SocketAddress</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#deregister-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#deregister-io.netty.channel.ChannelPromise-">deregister</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>操作完成后，从<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>注销<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，并通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#disconnect-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#disconnect-io.netty.channel.ChannelPromise-">disconnect</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>断开<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并在操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#flush--">flush</a></span>()</code> 
+            <div class="block">
+              清除所有通过 
+             <a href="Channel.Unsafe.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#write-java.lang.Object-io.netty.channel.ChannelPromise-"><code>write(Object, ChannelPromise)</code></a>预定的写入操作。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>java.net.SocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#localAddress--">localAddress</a></span>()</code> 
+            <div class="block">
+              返回本地绑定的 
+             <code>SocketAddress</code>或 
+             <code>null</code>如果没有。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="class in io.netty.channel">ChannelOutboundBuffer</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#outboundBuffer--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#outboundBuffer--">outboundBuffer</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>Channel</code></a>的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelOutboundBuffer</code></a> ，其中存储待处理的写入请求。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="interface in io.netty.channel">RecvByteBufAllocator.Handle</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#recvBufAllocHandle--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#recvBufAllocHandle--">recvBufAllocHandle</a></span>()</code> 
+            <div class="block"> 
+             <span>返回分配的<a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator.Handle</code></a> ，用于接收数据时将分配<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#register-io.netty.channel.EventLoop-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#register-io.netty.channel.EventLoop-io.netty.channel.ChannelPromise-">register</a></span>(<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="interface in io.netty.channel">EventLoop</a>&nbsp;eventLoop, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>注册<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并在注册完成后通知<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>java.net.SocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#remoteAddress--">remoteAddress</a></span>()</code> 
+            <div class="block">
+              返回绑定的 
+             <code>SocketAddress</code>远程或 
+             <code>null</code>如果没有绑定。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#voidPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#voidPromise--">voidPromise</a></span>()</code> 
+            <div class="block"> 
+             <span>返回一个特殊的ChannelPromise，可以重复使用并传递给<a href="Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html" title="io.netty.channel中的接口"><code>Channel.Unsafe</code>中</a>的操作。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Channel.Unsafe.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#write-java.lang.Object-io.netty.channel.ChannelPromise-">write</a></span>(java.lang.Object&nbsp;msg, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              计划写入操作。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="recvBufAllocHandle--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>recvBufAllocHandle</h4> <pre><a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="interface in io.netty.channel">RecvByteBufAllocator.Handle</a>&nbsp;recvBufAllocHandle()</pre> 
+          <div class="block"> 
+           <span>返回分配的<a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator.Handle</code></a> ，用于在接收数据时分配<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="localAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>localAddress</h4> <pre>java.net.SocketAddress&nbsp;localAddress()</pre> 
+          <div class="block">
+            返回本地绑定的 
+           <code>null</code>如果没有则返回 
+           <code>SocketAddress</code> 。 
+          </div> </li> 
+        </ul> <a name="remoteAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remoteAddress</h4> <pre>java.net.SocketAddress&nbsp;remoteAddress()</pre> 
+          <div class="block">
+            返回 
+           <code>SocketAddress</code>其上结合远程或 
+           <code>null</code>如果未尚未绑定。 
+          </div> </li> 
+        </ul> <a name="register-io.netty.channel.EventLoop-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>register</h4> <pre>void&nbsp;register(<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="interface in io.netty.channel">EventLoop</a>&nbsp;eventLoop,
+              <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>注册<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并在注册完成后通知<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>bind</h4> <pre>void&nbsp;bind(java.net.SocketAddress&nbsp;localAddress,
+          <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>绑定<code>SocketAddress</code>到<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>并通知其一旦其完成。</span> 
+          </div> </li> 
+        </ul> <a name="connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connect</h4> <pre>void&nbsp;connect(java.net.SocketAddress&nbsp;remoteAddress,
+             java.net.SocketAddress&nbsp;localAddress,
+             <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>连接<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>指定的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>与指定的远程<code>SocketAddress</code> 。</span> 
+           <span>如果应该使用特定的本地<code>SocketAddress</code>则需要将其作为参数给出。</span> 
+           <span>否则，只需将<code>null</code>传递给它。</span> 
+           <span>一旦连接操作完成， <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>将会收到通知。</span> 
+          </div> </li> 
+        </ul> <a name="disconnect-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>disconnect</h4> <pre>void&nbsp;disconnect(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>断开<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>的<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并在操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="close-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>close</h4> <pre>void&nbsp;close(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>关闭<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>并在操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="closeForcibly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>closeForcibly</h4> <pre>void&nbsp;closeForcibly()</pre> 
+          <div class="block"> 
+           <span>立即关闭<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，但不会触发任何事件。</span> 
+           <span>可能仅在注册尝试失败时才有用。</span> 
+          </div> </li> 
+        </ul> <a name="deregister-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>deregister</h4> <pre>void&nbsp;deregister(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span>操作完成后，从<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>注销<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，并通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="beginRead--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>beginRead</h4> <pre>void&nbsp;beginRead()</pre> 
+          <div class="block"> 
+           <span>附表填充第一的入缓冲区的读取操作<a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a>在<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a> 。</span> 
+           <span>如果已经有待处理的读取操作，则此方法不执行任何操作。</span> 
+          </div> </li> 
+        </ul> <a name="write-java.lang.Object-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>write</h4> <pre>void&nbsp;write(java.lang.Object&nbsp;msg,
+           <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block">
+            计划写入操作。 
+          </div> </li> 
+        </ul> <a name="flush--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>flush</h4> <pre>void&nbsp;flush()</pre> 
+          <div class="block">
+            清除通过 
+           <a href="Channel.Unsafe.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html#write-java.lang.Object-io.netty.channel.ChannelPromise-"><code>write(Object, ChannelPromise)</code></a>计划的所有写入操作。 
+          </div> </li> 
+        </ul> <a name="voidPromise--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>voidPromise</h4> <pre><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;voidPromise()</pre> 
+          <div class="block"> 
+           <span>返回一个特殊的ChannelPromise，可以重复使用并传递给<a href="Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html" title="io.netty.channel中的接口"><code>Channel.Unsafe</code>中</a>的操作。</span> 
+           <span>它永远不会被通知成功或错误，所以只是一个以<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>作为参数但不想获得通知的操作的占位符。</span> 
+          </div> </li> 
+        </ul> <a name="outboundBuffer--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>outboundBuffer</h4> <pre><a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="class in io.netty.channel">ChannelOutboundBuffer</a>&nbsp;outboundBuffer()</pre> 
+          <div class="block"> 
+           <span>返回<a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>Channel</code></a>中存储未决写入请求的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelOutboundBuffer</code></a> 。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/Channel.Unsafe.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/Channel.Unsafe.html" target="_top">框架</a></li> 
+    <li><a href="Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

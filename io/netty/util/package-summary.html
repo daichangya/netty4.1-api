@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.util (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.util package"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.util (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../resolver/dns/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="collection/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-util-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.util</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      在多个包中使用的实用程序类。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AsyncMapping.html" tppabs="http://netty.io/4.1/api/io/netty/util/AsyncMapping.html" title="interface in io.netty.util">AsyncMapping</a>&lt;IN,OUT&gt;</td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="interface in io.netty.util">Attribute</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个允许存储值引用的属性。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="interface in io.netty.util">AttributeMap</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>持有<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>Attribute</code></a> ，可通过<a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>访问。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BooleanSupplier.html" tppabs="http://netty.io/4.1/api/io/netty/util/BooleanSupplier.html" title="interface in io.netty.util">BooleanSupplier</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           代表 
+          <code>boolean</code>结果的供应商。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="interface in io.netty.util">ByteProcessor</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           提供了一种迭代字节集合的机制。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="interface in io.netty.util">Constant</a>&lt;T extends <a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="interface in io.netty.util">Constant</a>&lt;T&gt;&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           通过 
+          <code>==</code>操作员比较安全的单身人士。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="HashingStrategy.html" tppabs="http://netty.io/4.1/api/io/netty/util/HashingStrategy.html" title="interface in io.netty.util">HashingStrategy</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           哈希码生成和相等比较的抽象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="IntSupplier.html" tppabs="http://netty.io/4.1/api/io/netty/util/IntSupplier.html" title="interface in io.netty.util">IntSupplier</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           代表 
+          <code>int</code>结果的供应商。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="Mapping.html" tppabs="http://netty.io/4.1/api/io/netty/util/Mapping.html" title="interface in io.netty.util">Mapping</a>&lt;IN,OUT&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           保持从一种类型的对象到另一种类型的对象的映射。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Recycler.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/util/Recycler.Handle.html" title="interface in io.netty.util">Recycler.Handle</a>&lt;T&gt;</td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           需要显式释放的引用计数对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ResourceLeak.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeak.html" title="interface in io.netty.util">ResourceLeak</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">请使用<a href="ResourceLeakTracker.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakTracker.html" title="io.netty.util中的接口"><code>ResourceLeakTracker</code>，</a>因为这可能导致误报。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ResourceLeakHint.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakHint.html" title="interface in io.netty.util">ResourceLeakHint</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           提示对象，提供易于阅读的消息，以便更轻松地进行资源泄漏跟踪。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ResourceLeakTracker.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakTracker.html" title="interface in io.netty.util">ResourceLeakTracker</a>&lt;T&gt;</td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="Timeout.html" tppabs="http://netty.io/4.1/api/io/netty/util/Timeout.html" title="interface in io.netty.util">Timeout</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>与<a href="TimerTask.html" tppabs="http://netty.io/4.1/api/io/netty/util/TimerTask.html" title="io.netty.util中的接口"><code>TimerTask</code></a>关联的句柄由<a href="Timer.html" tppabs="http://netty.io/4.1/api/io/netty/util/Timer.html" title="io.netty.util中的接口"><code>Timer</code></a>返回。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Timer.html" tppabs="http://netty.io/4.1/api/io/netty/util/Timer.html" title="interface in io.netty.util">Timer</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>时间表<a href="TimerTask.html" tppabs="http://netty.io/4.1/api/io/netty/util/TimerTask.html" title="io.netty.util中的接口"><code>TimerTask</code></a>用于后台线程中的一次性未来执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="TimerTask.html" tppabs="http://netty.io/4.1/api/io/netty/util/TimerTask.html" title="interface in io.netty.util">TimerTask</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           在 
+          <a href="Timer.html#newTimeout-io.netty.util.TimerTask-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/Timer.html#newTimeout-io.netty.util.TimerTask-long-java.util.concurrent.TimeUnit-"><code>Timer.newTimeout(TimerTask, long, TimeUnit)</code></a>指定的延迟后执行的任务。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="UncheckedBooleanSupplier.html" tppabs="http://netty.io/4.1/api/io/netty/util/UncheckedBooleanSupplier.html" title="interface in io.netty.util">UncheckedBooleanSupplier</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           代表 
+          <code>boolean</code>结果的供应商，它不会抛出任何检查的异常。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractConstant.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractConstant.html" title="class in io.netty.util">AbstractConstant</a>&lt;T extends <a href="AbstractConstant.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractConstant.html" title="class in io.netty.util">AbstractConstant</a>&lt;T&gt;&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>基地执行<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">AbstractReferenceCounted</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>抽象类的基类想要实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AsciiString.html" tppabs="http://netty.io/4.1/api/io/netty/util/AsciiString.html" title="class in io.netty.util">AsciiString</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个已编码为字符编码的字符串，其字符总是需要一个字节，与ASCII相似。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="class in io.netty.util">AttributeKey</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>可用于访问<a href="Attribute.html" tppabs="http://netty.io/4.1/api/io/netty/util/Attribute.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>中的<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>Attribute</code>的密钥</a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteProcessor.IndexNotOfProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.IndexNotOfProcessor.html" title="class in io.netty.util">ByteProcessor.IndexNotOfProcessor</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="io.netty.util中的接口"><code>ByteProcessor</code></a>找到不是特定字节的第一个外观。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ByteProcessor.IndexOfProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.IndexOfProcessor.html" title="class in io.netty.util">ByteProcessor.IndexOfProcessor</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="io.netty.util中的接口"><code>ByteProcessor</code></a>找到特定字节的第一次出现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="CharsetUtil.html" tppabs="http://netty.io/4.1/api/io/netty/util/CharsetUtil.html" title="class in io.netty.util">CharsetUtil</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           提供与 
+          <code>Charset</code>及其相关类相关的各种常用操作和常量的实用程序类。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ConstantPool.html" tppabs="http://netty.io/4.1/api/io/netty/util/ConstantPool.html" title="class in io.netty.util">ConstantPool</a>&lt;T extends <a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="interface in io.netty.util">Constant</a>&lt;T&gt;&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一池<a href="Constant.html" tppabs="http://netty.io/4.1/api/io/netty/util/Constant.html" title="io.netty.util中的接口"><code>Constant</code></a> s。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultAttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/DefaultAttributeMap.html" title="class in io.netty.util">DefaultAttributeMap</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认<a href="AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口"><code>AttributeMap</code></a>实现，它使用每个桶的简单同步来尽可能降低内存开销。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DomainMappingBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainMappingBuilder.html" title="class in io.netty.util">DomainMappingBuilder</a>&lt;V&gt;</td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">改为使用<a href="DomainNameMappingBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainNameMappingBuilder.html" title="在io.netty.util中的类"><code>DomainNameMappingBuilder</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DomainNameMapping.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainNameMapping.html" title="class in io.netty.util">DomainNameMapping</a>&lt;V&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           将域名映射到其关联的值对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DomainNameMappingBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainNameMappingBuilder.html" title="class in io.netty.util">DomainNameMappingBuilder</a>&lt;V&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>用于不可变<a href="DomainNameMapping.html" tppabs="http://netty.io/4.1/api/io/netty/util/DomainNameMapping.html" title="在io.netty.util中的类"><code>DomainNameMapping</code></a>实例的生成器。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="HashedWheelTimer.html" tppabs="http://netty.io/4.1/api/io/netty/util/HashedWheelTimer.html" title="class in io.netty.util">HashedWheelTimer</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="Timer.html" tppabs="http://netty.io/4.1/api/io/netty/util/Timer.html" title="io.netty.util中的接口"><code>Timer</code></a>针对近似I / O超时调度进行了优化。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="NettyRuntime.html" tppabs="http://netty.io/4.1/api/io/netty/util/NettyRuntime.html" title="class in io.netty.util">NettyRuntime</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           实用程序类用于将调用打包为 
+          <code>Runtime</code> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="NetUtil.html" tppabs="http://netty.io/4.1/api/io/netty/util/NetUtil.html" title="class in io.netty.util">NetUtil</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个包含许多网络相关常量的类。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Recycler.html" tppabs="http://netty.io/4.1/api/io/netty/util/Recycler.html" title="class in io.netty.util">Recycler</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于线程本地堆栈的轻量级对象池。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ReferenceCountUtil.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCountUtil.html" title="class in io.netty.util">ReferenceCountUtil</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>处理可能实现<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code>的</a>对象的方法<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口">集合</a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="class in io.netty.util">ResourceLeakDetector</a>&lt;T&gt;</td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ResourceLeakDetectorFactory.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetectorFactory.html" title="class in io.netty.util">ResourceLeakDetectorFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>这个静态工厂应该用来根据需要加载<a href="ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ThreadDeathWatcher.html" tppabs="http://netty.io/4.1/api/io/netty/util/ThreadDeathWatcher.html" title="class in io.netty.util">ThreadDeathWatcher</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">将在下一个主要版本中删除</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="Version.html" tppabs="http://netty.io/4.1/api/io/netty/util/Version.html" title="class in io.netty.util">Version</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           检索可用Netty工件的版本信息。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation"> 
+      <caption> 
+       <span>枚举摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Enum</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ResourceLeakDetector.Level.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.Level.html" title="enum in io.netty.util">ResourceLeakDetector.Level</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           代表资源泄漏检测的级别。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation"> 
+      <caption> 
+       <span>异常摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">异常</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="IllegalReferenceCountException.html" tppabs="http://netty.io/4.1/api/io/netty/util/IllegalReferenceCountException.html" title="class in io.netty.util">IllegalReferenceCountException</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<code>IllegalStateException</code> ，当用户试图访问引用计数减少到0（并因此被释放）的<a href="ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口"><code>ReferenceCounted</code></a>时引发。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ResourceLeakException.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakException.html" title="class in io.netty.util">ResourceLeakException</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">该课程将在未来版本中删除。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Error Summary table, listing errors, and an explanation"> 
+      <caption> 
+       <span>Error Summary</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Error</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="Signal.html" tppabs="http://netty.io/4.1/api/io/netty/util/Signal.html" title="class in io.netty.util">Signal</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一种特殊的 
+          <code>Error</code> ，用于通过投掷某个状态或请求来发信号。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Annotation Types Summary table, listing annotation types, and an explanation"> 
+      <caption> 
+       <span>注解类型摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Annotation Type</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SuppressForbidden.html" tppabs="http://netty.io/4.1/api/io/netty/util/SuppressForbidden.html" title="annotation in io.netty.util">SuppressForbidden</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于在整个类，方法或字段中禁止禁用apis错误的注释。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.util Description">Package io.netty.util Description</h2> 
+   <div class="block">
+     在多个包中使用的实用程序类。 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../resolver/dns/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="collection/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-util-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>RtspResponseStatuses (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.rtsp.RtspResponseStatuses class"> 
+  <meta name="keywords" content="CONTINUE"> 
+  <meta name="keywords" content="OK"> 
+  <meta name="keywords" content="CREATED"> 
+  <meta name="keywords" content="LOW_STORAGE_SPACE"> 
+  <meta name="keywords" content="MULTIPLE_CHOICES"> 
+  <meta name="keywords" content="MOVED_PERMANENTLY"> 
+  <meta name="keywords" content="MOVED_TEMPORARILY"> 
+  <meta name="keywords" content="NOT_MODIFIED"> 
+  <meta name="keywords" content="USE_PROXY"> 
+  <meta name="keywords" content="BAD_REQUEST"> 
+  <meta name="keywords" content="UNAUTHORIZED"> 
+  <meta name="keywords" content="PAYMENT_REQUIRED"> 
+  <meta name="keywords" content="FORBIDDEN"> 
+  <meta name="keywords" content="NOT_FOUND"> 
+  <meta name="keywords" content="METHOD_NOT_ALLOWED"> 
+  <meta name="keywords" content="NOT_ACCEPTABLE"> 
+  <meta name="keywords" content="PROXY_AUTHENTICATION_REQUIRED"> 
+  <meta name="keywords" content="REQUEST_TIMEOUT"> 
+  <meta name="keywords" content="GONE"> 
+  <meta name="keywords" content="LENGTH_REQUIRED"> 
+  <meta name="keywords" content="PRECONDITION_FAILED"> 
+  <meta name="keywords" content="REQUEST_ENTITY_TOO_LARGE"> 
+  <meta name="keywords" content="REQUEST_URI_TOO_LONG"> 
+  <meta name="keywords" content="UNSUPPORTED_MEDIA_TYPE"> 
+  <meta name="keywords" content="PARAMETER_NOT_UNDERSTOOD"> 
+  <meta name="keywords" content="CONFERENCE_NOT_FOUND"> 
+  <meta name="keywords" content="NOT_ENOUGH_BANDWIDTH"> 
+  <meta name="keywords" content="SESSION_NOT_FOUND"> 
+  <meta name="keywords" content="METHOD_NOT_VALID"> 
+  <meta name="keywords" content="HEADER_FIELD_NOT_VALID"> 
+  <meta name="keywords" content="INVALID_RANGE"> 
+  <meta name="keywords" content="PARAMETER_IS_READONLY"> 
+  <meta name="keywords" content="AGGREGATE_OPERATION_NOT_ALLOWED"> 
+  <meta name="keywords" content="ONLY_AGGREGATE_OPERATION_ALLOWED"> 
+  <meta name="keywords" content="UNSUPPORTED_TRANSPORT"> 
+  <meta name="keywords" content="DESTINATION_UNREACHABLE"> 
+  <meta name="keywords" content="KEY_MANAGEMENT_FAILURE"> 
+  <meta name="keywords" content="INTERNAL_SERVER_ERROR"> 
+  <meta name="keywords" content="NOT_IMPLEMENTED"> 
+  <meta name="keywords" content="BAD_GATEWAY"> 
+  <meta name="keywords" content="SERVICE_UNAVAILABLE"> 
+  <meta name="keywords" content="GATEWAY_TIMEOUT"> 
+  <meta name="keywords" content="RTSP_VERSION_NOT_SUPPORTED"> 
+  <meta name="keywords" content="OPTION_NOT_SUPPORTED"> 
+  <meta name="keywords" content="valueOf()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="RtspResponseStatuses (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/RtspResponseStatuses.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/class-use/RtspResponseStatuses.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="RtspResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseEncoder.html" title="class in io.netty.handler.codec.rtsp"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="RtspVersions.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspVersions.html" title="class in io.netty.handler.codec.rtsp"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-rtsp-RtspResponseStatuses.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/rtsp/RtspResponseStatuses.html" target="_top">框架</a></li> 
+    <li><a href="RtspResponseStatuses.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.rtsp 
+   </div> 
+   <h2 title="Class RtspResponseStatuses" class="title">Class RtspResponseStatuses</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.rtsp.RtspResponseStatuses</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">RtspResponseStatuses</span>
+extends java.lang.Object</pre> 
+      <div class="block">
+        getStatus代码及其对RTSP响应的描述。 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#AGGREGATE_OPERATION_NOT_ALLOWED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#AGGREGATE_OPERATION_NOT_ALLOWED">AGGREGATE_OPERATION_NOT_ALLOWED</a></span></code> 
+            <div class="block">
+              459不允许进行汇总操作 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#BAD_GATEWAY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#BAD_GATEWAY">BAD_GATEWAY</a></span></code> 
+            <div class="block">
+              502错误的网关 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#BAD_REQUEST" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#BAD_REQUEST">BAD_REQUEST</a></span></code> 
+            <div class="block">
+              400错误请求 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#CONFERENCE_NOT_FOUND" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#CONFERENCE_NOT_FOUND">CONFERENCE_NOT_FOUND</a></span></code> 
+            <div class="block">
+              452会议未找到 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#CONTINUE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#CONTINUE">CONTINUE</a></span></code> 
+            <div class="block">
+              100继续 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#CREATED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#CREATED">CREATED</a></span></code> 
+            <div class="block">
+              201创建 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#DESTINATION_UNREACHABLE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#DESTINATION_UNREACHABLE">DESTINATION_UNREACHABLE</a></span></code> 
+            <div class="block">
+              462目的地不可达 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#FORBIDDEN" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#FORBIDDEN">FORBIDDEN</a></span></code> 
+            <div class="block">
+              403禁止 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#GATEWAY_TIMEOUT" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#GATEWAY_TIMEOUT">GATEWAY_TIMEOUT</a></span></code> 
+            <div class="block">
+              504网关超时 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#GONE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#GONE">GONE</a></span></code> 
+            <div class="block">
+              410消失 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#HEADER_FIELD_NOT_VALID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#HEADER_FIELD_NOT_VALID">HEADER_FIELD_NOT_VALID</a></span></code> 
+            <div class="block">
+              456标题字段对资源无效 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#INTERNAL_SERVER_ERROR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#INTERNAL_SERVER_ERROR">INTERNAL_SERVER_ERROR</a></span></code> 
+            <div class="block">
+              500内部服务器错误 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#INVALID_RANGE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#INVALID_RANGE">INVALID_RANGE</a></span></code> 
+            <div class="block">
+              457无效范围 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#KEY_MANAGEMENT_FAILURE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#KEY_MANAGEMENT_FAILURE">KEY_MANAGEMENT_FAILURE</a></span></code> 
+            <div class="block">
+              463密钥管理失败 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#LENGTH_REQUIRED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#LENGTH_REQUIRED">LENGTH_REQUIRED</a></span></code> 
+            <div class="block">
+              411长度要求 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#LOW_STORAGE_SPACE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#LOW_STORAGE_SPACE">LOW_STORAGE_SPACE</a></span></code> 
+            <div class="block">
+              250的存储空间不足 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#METHOD_NOT_ALLOWED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#METHOD_NOT_ALLOWED">METHOD_NOT_ALLOWED</a></span></code> 
+            <div class="block">
+              405方法不允许 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#METHOD_NOT_VALID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#METHOD_NOT_VALID">METHOD_NOT_VALID</a></span></code> 
+            <div class="block">
+              455方法在此状态下无效 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#MOVED_PERMANENTLY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#MOVED_PERMANENTLY">MOVED_PERMANENTLY</a></span></code> 
+            <div class="block">
+              301永久移动 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#MOVED_TEMPORARILY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#MOVED_TEMPORARILY">MOVED_TEMPORARILY</a></span></code> 
+            <div class="block">
+              302暂时移动 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#MULTIPLE_CHOICES" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#MULTIPLE_CHOICES">MULTIPLE_CHOICES</a></span></code> 
+            <div class="block">
+              300多种选择 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#NOT_ACCEPTABLE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#NOT_ACCEPTABLE">NOT_ACCEPTABLE</a></span></code> 
+            <div class="block">
+              406不可接受 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#NOT_ENOUGH_BANDWIDTH" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#NOT_ENOUGH_BANDWIDTH">NOT_ENOUGH_BANDWIDTH</a></span></code> 
+            <div class="block">
+              453带宽不够 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#NOT_FOUND" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#NOT_FOUND">NOT_FOUND</a></span></code> 
+            <div class="block">
+              404未找到 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#NOT_IMPLEMENTED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#NOT_IMPLEMENTED">NOT_IMPLEMENTED</a></span></code> 
+            <div class="block">
+              501未实施 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#NOT_MODIFIED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#NOT_MODIFIED">NOT_MODIFIED</a></span></code> 
+            <div class="block">
+              304未修改 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#OK" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#OK">OK</a></span></code> 
+            <div class="block">
+              200 OK 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#ONLY_AGGREGATE_OPERATION_ALLOWED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#ONLY_AGGREGATE_OPERATION_ALLOWED">ONLY_AGGREGATE_OPERATION_ALLOWED</a></span></code> 
+            <div class="block">
+              460只允许聚合操作 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#OPTION_NOT_SUPPORTED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#OPTION_NOT_SUPPORTED">OPTION_NOT_SUPPORTED</a></span></code> 
+            <div class="block">
+              551选项不受支持 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#PARAMETER_IS_READONLY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#PARAMETER_IS_READONLY">PARAMETER_IS_READONLY</a></span></code> 
+            <div class="block">
+              458参数是只读的 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#PARAMETER_NOT_UNDERSTOOD" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#PARAMETER_NOT_UNDERSTOOD">PARAMETER_NOT_UNDERSTOOD</a></span></code> 
+            <div class="block">
+              451参数不明白 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#PAYMENT_REQUIRED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#PAYMENT_REQUIRED">PAYMENT_REQUIRED</a></span></code> 
+            <div class="block">
+              402需要付款 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#PRECONDITION_FAILED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#PRECONDITION_FAILED">PRECONDITION_FAILED</a></span></code> 
+            <div class="block">
+              412先决条件失败 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#PROXY_AUTHENTICATION_REQUIRED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#PROXY_AUTHENTICATION_REQUIRED">PROXY_AUTHENTICATION_REQUIRED</a></span></code> 
+            <div class="block">
+              需要407代理验证 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#REQUEST_ENTITY_TOO_LARGE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#REQUEST_ENTITY_TOO_LARGE">REQUEST_ENTITY_TOO_LARGE</a></span></code> 
+            <div class="block">
+              413请求实体太大 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#REQUEST_TIMEOUT" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#REQUEST_TIMEOUT">REQUEST_TIMEOUT</a></span></code> 
+            <div class="block">
+              408请求超时 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#REQUEST_URI_TOO_LONG" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#REQUEST_URI_TOO_LONG">REQUEST_URI_TOO_LONG</a></span></code> 
+            <div class="block">
+              414请求URI太长 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#RTSP_VERSION_NOT_SUPPORTED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#RTSP_VERSION_NOT_SUPPORTED">RTSP_VERSION_NOT_SUPPORTED</a></span></code> 
+            <div class="block">
+              不支持505 RTSP版本 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#SERVICE_UNAVAILABLE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#SERVICE_UNAVAILABLE">SERVICE_UNAVAILABLE</a></span></code> 
+            <div class="block">
+              503服务不可用 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#SESSION_NOT_FOUND" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#SESSION_NOT_FOUND">SESSION_NOT_FOUND</a></span></code> 
+            <div class="block">
+              未找到454会话 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#UNAUTHORIZED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#UNAUTHORIZED">UNAUTHORIZED</a></span></code> 
+            <div class="block">
+              401未经授权 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#UNSUPPORTED_MEDIA_TYPE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#UNSUPPORTED_MEDIA_TYPE">UNSUPPORTED_MEDIA_TYPE</a></span></code> 
+            <div class="block">
+              415不支持的媒体类型 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#UNSUPPORTED_TRANSPORT" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#UNSUPPORTED_TRANSPORT">UNSUPPORTED_TRANSPORT</a></span></code> 
+            <div class="block">
+              461不支持的运输 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#USE_PROXY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#USE_PROXY">USE_PROXY</a></span></code> 
+            <div class="block">
+              305使用代理 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>static <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="RtspResponseStatuses.html#valueOf-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html#valueOf-int-">valueOf</a></span>(int&nbsp;code)</code> 
+            <div class="block"> 
+             <span>返回由指定代码表示的<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http"><code>HttpResponseStatus</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="CONTINUE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>CONTINUE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> CONTINUE</pre> 
+          <div class="block">
+            100继续 
+          </div> </li> 
+        </ul> <a name="OK"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>OK</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> OK</pre> 
+          <div class="block">
+            200 OK 
+          </div> </li> 
+        </ul> <a name="CREATED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>CREATED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> CREATED</pre> 
+          <div class="block">
+            201创建 
+          </div> </li> 
+        </ul> <a name="LOW_STORAGE_SPACE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>LOW_STORAGE_SPACE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> LOW_STORAGE_SPACE</pre> 
+          <div class="block">
+            250的存储空间不足 
+          </div> </li> 
+        </ul> <a name="MULTIPLE_CHOICES"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>MULTIPLE_CHOICES</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> MULTIPLE_CHOICES</pre> 
+          <div class="block">
+            300多种选择 
+          </div> </li> 
+        </ul> <a name="MOVED_PERMANENTLY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>MOVED_PERMANENTLY</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> MOVED_PERMANENTLY</pre> 
+          <div class="block">
+            301永久移动 
+          </div> </li> 
+        </ul> <a name="MOVED_TEMPORARILY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>MOVED_TEMPORARILY</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> MOVED_TEMPORARILY</pre> 
+          <div class="block">
+            302暂时移动 
+          </div> </li> 
+        </ul> <a name="NOT_MODIFIED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NOT_MODIFIED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> NOT_MODIFIED</pre> 
+          <div class="block">
+            304未修改 
+          </div> </li> 
+        </ul> <a name="USE_PROXY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>USE_PROXY</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> USE_PROXY</pre> 
+          <div class="block">
+            305使用代理 
+          </div> </li> 
+        </ul> <a name="BAD_REQUEST"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>BAD_REQUEST</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> BAD_REQUEST</pre> 
+          <div class="block">
+            400错误请求 
+          </div> </li> 
+        </ul> <a name="UNAUTHORIZED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>UNAUTHORIZED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> UNAUTHORIZED</pre> 
+          <div class="block">
+            401未经授权 
+          </div> </li> 
+        </ul> <a name="PAYMENT_REQUIRED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PAYMENT_REQUIRED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> PAYMENT_REQUIRED</pre> 
+          <div class="block">
+            402需要付款 
+          </div> </li> 
+        </ul> <a name="FORBIDDEN"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>FORBIDDEN</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> FORBIDDEN</pre> 
+          <div class="block">
+            403禁止 
+          </div> </li> 
+        </ul> <a name="NOT_FOUND"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NOT_FOUND</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> NOT_FOUND</pre> 
+          <div class="block">
+            404未找到 
+          </div> </li> 
+        </ul> <a name="METHOD_NOT_ALLOWED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>METHOD_NOT_ALLOWED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> METHOD_NOT_ALLOWED</pre> 
+          <div class="block">
+            405方法不允许 
+          </div> </li> 
+        </ul> <a name="NOT_ACCEPTABLE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NOT_ACCEPTABLE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> NOT_ACCEPTABLE</pre> 
+          <div class="block">
+            406不可接受 
+          </div> </li> 
+        </ul> <a name="PROXY_AUTHENTICATION_REQUIRED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PROXY_AUTHENTICATION_REQUIRED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> PROXY_AUTHENTICATION_REQUIRED</pre> 
+          <div class="block">
+            需要407代理验证 
+          </div> </li> 
+        </ul> <a name="REQUEST_TIMEOUT"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>REQUEST_TIMEOUT</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> REQUEST_TIMEOUT</pre> 
+          <div class="block">
+            408请求超时 
+          </div> </li> 
+        </ul> <a name="GONE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>GONE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> GONE</pre> 
+          <div class="block">
+            410消失 
+          </div> </li> 
+        </ul> <a name="LENGTH_REQUIRED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>LENGTH_REQUIRED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> LENGTH_REQUIRED</pre> 
+          <div class="block">
+            411长度要求 
+          </div> </li> 
+        </ul> <a name="PRECONDITION_FAILED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PRECONDITION_FAILED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> PRECONDITION_FAILED</pre> 
+          <div class="block">
+            412先决条件失败 
+          </div> </li> 
+        </ul> <a name="REQUEST_ENTITY_TOO_LARGE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>REQUEST_ENTITY_TOO_LARGE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> REQUEST_ENTITY_TOO_LARGE</pre> 
+          <div class="block">
+            413请求实体太大 
+          </div> </li> 
+        </ul> <a name="REQUEST_URI_TOO_LONG"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>REQUEST_URI_TOO_LONG</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> REQUEST_URI_TOO_LONG</pre> 
+          <div class="block">
+            414请求URI太长 
+          </div> </li> 
+        </ul> <a name="UNSUPPORTED_MEDIA_TYPE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>UNSUPPORTED_MEDIA_TYPE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> UNSUPPORTED_MEDIA_TYPE</pre> 
+          <div class="block">
+            415不支持的媒体类型 
+          </div> </li> 
+        </ul> <a name="PARAMETER_NOT_UNDERSTOOD"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PARAMETER_NOT_UNDERSTOOD</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> PARAMETER_NOT_UNDERSTOOD</pre> 
+          <div class="block">
+            451参数不明白 
+          </div> </li> 
+        </ul> <a name="CONFERENCE_NOT_FOUND"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>CONFERENCE_NOT_FOUND</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> CONFERENCE_NOT_FOUND</pre> 
+          <div class="block">
+            452会议未找到 
+          </div> </li> 
+        </ul> <a name="NOT_ENOUGH_BANDWIDTH"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NOT_ENOUGH_BANDWIDTH</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> NOT_ENOUGH_BANDWIDTH</pre> 
+          <div class="block">
+            453带宽不够 
+          </div> </li> 
+        </ul> <a name="SESSION_NOT_FOUND"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SESSION_NOT_FOUND</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> SESSION_NOT_FOUND</pre> 
+          <div class="block">
+            未找到454会话 
+          </div> </li> 
+        </ul> <a name="METHOD_NOT_VALID"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>METHOD_NOT_VALID</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> METHOD_NOT_VALID</pre> 
+          <div class="block">
+            455方法在此状态下无效 
+          </div> </li> 
+        </ul> <a name="HEADER_FIELD_NOT_VALID"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>HEADER_FIELD_NOT_VALID</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> HEADER_FIELD_NOT_VALID</pre> 
+          <div class="block">
+            456标题字段对资源无效 
+          </div> </li> 
+        </ul> <a name="INVALID_RANGE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>INVALID_RANGE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> INVALID_RANGE</pre> 
+          <div class="block">
+            457无效范围 
+          </div> </li> 
+        </ul> <a name="PARAMETER_IS_READONLY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PARAMETER_IS_READONLY</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> PARAMETER_IS_READONLY</pre> 
+          <div class="block">
+            458参数是只读的 
+          </div> </li> 
+        </ul> <a name="AGGREGATE_OPERATION_NOT_ALLOWED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>AGGREGATE_OPERATION_NOT_ALLOWED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> AGGREGATE_OPERATION_NOT_ALLOWED</pre> 
+          <div class="block">
+            459不允许进行汇总操作 
+          </div> </li> 
+        </ul> <a name="ONLY_AGGREGATE_OPERATION_ALLOWED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ONLY_AGGREGATE_OPERATION_ALLOWED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> ONLY_AGGREGATE_OPERATION_ALLOWED</pre> 
+          <div class="block">
+            460只允许聚合操作 
+          </div> </li> 
+        </ul> <a name="UNSUPPORTED_TRANSPORT"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>UNSUPPORTED_TRANSPORT</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> UNSUPPORTED_TRANSPORT</pre> 
+          <div class="block">
+            461不支持的运输 
+          </div> </li> 
+        </ul> <a name="DESTINATION_UNREACHABLE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DESTINATION_UNREACHABLE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> DESTINATION_UNREACHABLE</pre> 
+          <div class="block">
+            462目的地不可达 
+          </div> </li> 
+        </ul> <a name="KEY_MANAGEMENT_FAILURE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>KEY_MANAGEMENT_FAILURE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> KEY_MANAGEMENT_FAILURE</pre> 
+          <div class="block">
+            463密钥管理失败 
+          </div> </li> 
+        </ul> <a name="INTERNAL_SERVER_ERROR"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>INTERNAL_SERVER_ERROR</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> INTERNAL_SERVER_ERROR</pre> 
+          <div class="block">
+            500内部服务器错误 
+          </div> </li> 
+        </ul> <a name="NOT_IMPLEMENTED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NOT_IMPLEMENTED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> NOT_IMPLEMENTED</pre> 
+          <div class="block">
+            501未实施 
+          </div> </li> 
+        </ul> <a name="BAD_GATEWAY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>BAD_GATEWAY</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> BAD_GATEWAY</pre> 
+          <div class="block">
+            502错误的网关 
+          </div> </li> 
+        </ul> <a name="SERVICE_UNAVAILABLE"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SERVICE_UNAVAILABLE</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> SERVICE_UNAVAILABLE</pre> 
+          <div class="block">
+            503服务不可用 
+          </div> </li> 
+        </ul> <a name="GATEWAY_TIMEOUT"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>GATEWAY_TIMEOUT</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> GATEWAY_TIMEOUT</pre> 
+          <div class="block">
+            504网关超时 
+          </div> </li> 
+        </ul> <a name="RTSP_VERSION_NOT_SUPPORTED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>RTSP_VERSION_NOT_SUPPORTED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> RTSP_VERSION_NOT_SUPPORTED</pre> 
+          <div class="block">
+            不支持505 RTSP版本 
+          </div> </li> 
+        </ul> <a name="OPTION_NOT_SUPPORTED"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>OPTION_NOT_SUPPORTED</h4> <pre>public static final&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a> OPTION_NOT_SUPPORTED</pre> 
+          <div class="block">
+            551选项不受支持 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="valueOf-int-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>valueOf</h4> <pre>public static&nbsp;<a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http">HttpResponseStatus</a>&nbsp;valueOf(int&nbsp;code)</pre> 
+          <div class="block">
+            Returns the 
+           <a href="../http/HttpResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseStatus.html" title="class in io.netty.handler.codec.http"><code>HttpResponseStatus</code></a> represented by the specified code. If the specified code is a standard RTSP getStatus code, a cached instance will be returned. Otherwise, a new instance will be returned. 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/RtspResponseStatuses.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/class-use/RtspResponseStatuses.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="RtspResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseEncoder.html" title="class in io.netty.handler.codec.rtsp"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="RtspVersions.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspVersions.html" title="class in io.netty.handler.codec.rtsp"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-rtsp-RtspResponseStatuses.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/rtsp/RtspResponseStatuses.html" target="_top">框架</a></li> 
+    <li><a href="RtspResponseStatuses.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseStatuses.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/rtsp/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

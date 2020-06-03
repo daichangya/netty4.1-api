@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>JdkSslContext (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.ssl.JdkSslContext class"> 
+  <meta name="keywords" content="context()"> 
+  <meta name="keywords" content="isClient()"> 
+  <meta name="keywords" content="sessionContext()"> 
+  <meta name="keywords" content="cipherSuites()"> 
+  <meta name="keywords" content="sessionCacheSize()"> 
+  <meta name="keywords" content="sessionTimeout()"> 
+  <meta name="keywords" content="newEngine()"> 
+  <meta name="keywords" content="applicationProtocolNegotiator()"> 
+  <meta name="keywords" content="buildKeyManagerFactory()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="JdkSslContext (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":41,"i2":41,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/JdkSslContext.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="JdkSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslClientContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="JdkSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslServerContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-JdkSslContext.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/JdkSslContext.html" target="_top">框架</a></li> 
+    <li><a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.ssl 
+   </div> 
+   <h2 title="Class JdkSslContext" class="title">Class JdkSslContext</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">io.netty.handler.ssl.SslContext</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.handler.ssl.JdkSslContext</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="JdkSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslClientContext.html" title="class在io.netty.handler.ssl中">JdkSslClientContext</a> ， <a href="JdkSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslServerContext.html" title="class在io.netty.handler.ssl中">JdkSslServerContext</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">JdkSslContext</span>
+extends <a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></pre> 
+      <div class="block"> 
+       <span>一个使用JDK的SSL / TLS实现的<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a> 。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="JdkSslContext.html#JdkSslContext-javax.net.ssl.SSLContext-boolean-io.netty.handler.ssl.ClientAuth-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#JdkSslContext-javax.net.ssl.SSLContext-boolean-io.netty.handler.ssl.ClientAuth-">JdkSslContext</a></span>(javax.net.ssl.SSLContext&nbsp;sslContext, boolean&nbsp;isClient, <a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="enum in io.netty.handler.ssl">ClientAuth</a>&nbsp;clientAuth)</code> 
+            <div class="block"> 
+             <span>创建一个新<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a>从预配置<code>SSLContext</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="JdkSslContext.html#JdkSslContext-javax.net.ssl.SSLContext-boolean-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-io.netty.handler.ssl.ClientAuth-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#JdkSslContext-javax.net.ssl.SSLContext-boolean-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-io.netty.handler.ssl.ClientAuth-">JdkSslContext</a></span>(javax.net.ssl.SSLContext&nbsp;sslContext, boolean&nbsp;isClient, java.lang.Iterable&lt;java.lang.String&gt;&nbsp;ciphers, <a href="CipherSuiteFilter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/CipherSuiteFilter.html" title="interface in io.netty.handler.ssl">CipherSuiteFilter</a>&nbsp;cipherFilter, <a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class in io.netty.handler.ssl">ApplicationProtocolConfig</a>&nbsp;apn, <a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="enum in io.netty.handler.ssl">ClientAuth</a>&nbsp;clientAuth)</code> 
+            <div class="block"> 
+             <span>创建一个新<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a>从预配置<code>SSLContext</code> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="JdkApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#applicationProtocolNegotiator--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#applicationProtocolNegotiator--">applicationProtocolNegotiator</a></span>()</code> 
+            <div class="block">
+              返回负责协商TLS NPN / ALPN扩展的应用层协议的对象。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>protected static javax.net.ssl.KeyManagerFactory</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#buildKeyManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#buildKeyManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-">buildKeyManagerFactory</a></span>(java.io.File&nbsp;certChainFile, java.io.File&nbsp;keyFile, java.lang.String&nbsp;keyPassword, javax.net.ssl.KeyManagerFactory&nbsp;kmf)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">将被删除。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected static javax.net.ssl.KeyManagerFactory</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#buildKeyManagerFactory-java.io.File-java.lang.String-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#buildKeyManagerFactory-java.io.File-java.lang.String-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-">buildKeyManagerFactory</a></span>(java.io.File&nbsp;certChainFile, java.lang.String&nbsp;keyAlgorithm, java.io.File&nbsp;keyFile, java.lang.String&nbsp;keyPassword, javax.net.ssl.KeyManagerFactory&nbsp;kmf)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">将被删除。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#cipherSuites--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#cipherSuites--">cipherSuites</a></span>()</code> 
+            <div class="block">
+              按优先顺序返回启用的密码套件列表。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>javax.net.ssl.SSLContext</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#context--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#context--">context</a></span>()</code> 
+            <div class="block">
+              返回此上下文拥有的JDK 
+             <code>SSLContext</code>对象。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#isClient--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#isClient--">isClient</a></span>()</code> 
+            <div class="block">
+              当且仅当此上下文用于客户端时才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">newEngine</a></span>(<a href="../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code> 
+            <div class="block">
+              创建一个新的 
+             <code>SSLEngine</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newEngine</a></span>(<a href="../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort)</code> 
+            <div class="block">
+              使用咨询对等信息创建新的 
+             <code>SSLEngine</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#sessionCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#sessionCacheSize--">sessionCacheSize</a></span>()</code> 
+            <div class="block">
+              返回用于存储SSL会话对象的缓存大小。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>javax.net.ssl.SSLSessionContext</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#sessionContext--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#sessionContext--">sessionContext</a></span>()</code> 
+            <div class="block">
+              返回此上下文所持有的JDK 
+             <code>SSLSessionContext</code>对象。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="JdkSslContext.html#sessionTimeout--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#sessionTimeout--">sessionTimeout</a></span>()</code> 
+            <div class="block">
+              以秒为单位返回缓存的SSL会话对象的超时时间。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.ssl.SslContext"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.ssl.<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></h3> <code><a href="SslContext.html#buildTrustManagerFactory-java.io.File-javax.net.ssl.TrustManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#buildTrustManagerFactory-java.io.File-javax.net.ssl.TrustManagerFactory-">buildTrustManagerFactory</a>, <a href="SslContext.html#defaultClientProvider--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#defaultClientProvider--">defaultClientProvider</a>, <a href="SslContext.html#defaultServerProvider--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#defaultServerProvider--">defaultServerProvider</a>, <a href="SslContext.html#generateKeySpec-char:A-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#generateKeySpec-char:A-byte:A-">generateKeySpec</a>, <a href="SslContext.html#isServer--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#isServer--">isServer</a>, <a href="SslContext.html#newClientContext--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext--">newClientContext</a>, <a href="SslContext.html#newClientContext-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-java.io.File-">newClientContext</a>, <a href="SslContext.html#newClientContext-java.io.File-javax.net.ssl.TrustManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-java.io.File-javax.net.ssl.TrustManagerFactory-">newClientContext</a>, <a href="SslContext.html#newClientContext-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-">newClientContext</a>, <a href="SslContext.html#newClientContext-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-java.lang.Iterable-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-java.lang.Iterable-long-long-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-java.lang.Iterable-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-java.lang.Iterable-long-long-">newClientContext</a>, <a href="SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-javax.net.ssl.TrustManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-io.netty.handler.ssl.SslProvider-javax.net.ssl.TrustManagerFactory-">newClientContext</a>, <a href="SslContext.html#newClientContext-javax.net.ssl.TrustManagerFactory-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newClientContext-javax.net.ssl.TrustManagerFactory-">newClientContext</a>, <a href="SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-">newHandler</a>, <a href="SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-">newHandler</a>, <a href="SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newHandler</a>, <a href="SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-">newHandler</a>, <a href="SslContext.html#newServerContext-java.io.File-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-java.io.File-java.io.File-">newServerContext</a>, <a href="SslContext.html#newServerContext-java.io.File-java.io.File-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-java.io.File-java.io.File-java.lang.String-">newServerContext</a>, <a href="SslContext.html#newServerContext-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-">newServerContext</a>, <a href="SslContext.html#newServerContext-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-java.lang.Iterable-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-java.lang.Iterable-long-long-">newServerContext</a>, <a href="SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-">newServerContext</a>, <a href="SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-">newServerContext</a>, <a href="SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-">newServerContext</a>, <a href="SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-java.lang.Iterable-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-java.lang.Iterable-java.lang.Iterable-long-long-">newServerContext</a>, <a href="SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-java.lang.Iterable-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-java.io.File-java.lang.String-javax.net.ssl.TrustManagerFactory-java.lang.Iterable-java.lang.Iterable-long-long-">newServerContext</a>, <a href="SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newServerContext-io.netty.handler.ssl.SslProvider-java.io.File-javax.net.ssl.TrustManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-long-long-">newServerContext</a>, <a href="SslContext.html#nextProtocols--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#nextProtocols--">nextProtocols</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="JdkSslContext-javax.net.ssl.SSLContext-boolean-io.netty.handler.ssl.ClientAuth-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>JdkSslContext</h4> <pre>public&nbsp;JdkSslContext(javax.net.ssl.SSLContext&nbsp;sslContext,
+                     boolean&nbsp;isClient,
+                     <a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="enum in io.netty.handler.ssl">ClientAuth</a>&nbsp;clientAuth)</pre> 
+          <div class="block"> 
+           <span>创建一个新<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a>从预配置<code>SSLContext</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>sslContext</code> - 使用 
+            <code>SSLContext</code> 。 
+           </dd> 
+           <dd> 
+            <code>isClient</code> - 
+            <code>true</code>如果此上下文应为客户端使用创建 
+            <code>SSLEngine</code> 。 
+           </dd> 
+           <dd> 
+            <span><code>clientAuth</code> - 使用<a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="枚举在io.netty.handler.ssl中"><code>ClientAuth</code></a> 。</span> 
+            <span>这仅在<code>false</code>时才会使用。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="JdkSslContext-javax.net.ssl.SSLContext-boolean-java.lang.Iterable-io.netty.handler.ssl.CipherSuiteFilter-io.netty.handler.ssl.ApplicationProtocolConfig-io.netty.handler.ssl.ClientAuth-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>JdkSslContext</h4> <pre>public&nbsp;JdkSslContext(javax.net.ssl.SSLContext&nbsp;sslContext,
+                     boolean&nbsp;isClient,
+                     java.lang.Iterable&lt;java.lang.String&gt;&nbsp;ciphers,
+                     <a href="CipherSuiteFilter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/CipherSuiteFilter.html" title="interface in io.netty.handler.ssl">CipherSuiteFilter</a>&nbsp;cipherFilter,
+                     <a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class in io.netty.handler.ssl">ApplicationProtocolConfig</a>&nbsp;apn,
+                     <a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="enum in io.netty.handler.ssl">ClientAuth</a>&nbsp;clientAuth)</pre> 
+          <div class="block"> 
+           <span>创建一个新<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a>从预配置<code>SSLContext</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>sslContext</code> - 使用 
+            <code>SSLContext</code> 。 
+           </dd> 
+           <dd> 
+            <code>isClient</code> - 
+            <code>true</code>如果此上下文应为客户端使用创建 
+            <code>SSLEngine</code> 。 
+           </dd> 
+           <dd> 
+            <code>ciphers</code> - 要使用的密码或 
+            <code>null</code>如果应该使用标准。 
+           </dd> 
+           <dd> 
+            <code>cipherFilter</code> - 要使用的过滤器。 
+           </dd> 
+           <dd> 
+            <span><code>apn</code> - 使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a> 。</span> 
+           </dd> 
+           <dd> 
+            <span><code>clientAuth</code> - 使用<a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="枚举在io.netty.handler.ssl中"><code>ClientAuth</code></a> 。</span> 
+            <span>这仅在<code>false</code>时才会使用。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="context--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>context</h4> <pre>public final&nbsp;javax.net.ssl.SSLContext&nbsp;context()</pre> 
+          <div class="block">
+            返回此上下文拥有的JDK 
+           <code>SSLContext</code>对象。 
+          </div> </li> 
+        </ul> <a name="isClient--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isClient</h4> <pre>public final&nbsp;boolean&nbsp;isClient()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#isClient--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#isClient--">SslContext</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当此上下文用于客户端时才返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#isClient--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#isClient--">isClient</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sessionContext--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sessionContext</h4> <pre>public final&nbsp;javax.net.ssl.SSLSessionContext&nbsp;sessionContext()</pre> 
+          <div class="block">
+            返回此上下文拥有的JDK 
+           <code>SSLSessionContext</code>对象。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#sessionContext--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#sessionContext--">sessionContext</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="cipherSuites--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cipherSuites</h4> <pre>public final&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;cipherSuites()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#cipherSuites--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#cipherSuites--">SslContext</a></code></span> 
+          </div> 
+          <div class="block">
+            按优先顺序返回启用的密码套件列表。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#cipherSuites--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#cipherSuites--">cipherSuites</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sessionCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sessionCacheSize</h4> <pre>public final&nbsp;long&nbsp;sessionCacheSize()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#sessionCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#sessionCacheSize--">SslContext</a></code></span> 
+          </div> 
+          <div class="block">
+            返回用于存储SSL会话对象的缓存大小。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#sessionCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#sessionCacheSize--">sessionCacheSize</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sessionTimeout--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sessionTimeout</h4> <pre>public final&nbsp;long&nbsp;sessionTimeout()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#sessionTimeout--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#sessionTimeout--">SslContext</a></code></span> 
+          </div> 
+          <div class="block">
+            以秒为单位返回缓存的SSL会话对象的超时时间。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#sessionTimeout--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#sessionTimeout--">sessionTimeout</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newEngine-io.netty.buffer.ByteBufAllocator-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newEngine</h4> <pre>public final&nbsp;javax.net.ssl.SSLEngine&nbsp;newEngine(<a href="../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">SslContext</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建一个新的<code>SSLEngine</code> 。</span> 
+           <p> <span>如果使用<a href="SslProvider.html#OPENSSL_REFCNT" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslProvider.html#OPENSSL_REFCNT"><code>SslProvider.OPENSSL_REFCNT</code>，</a>则必须释放该对象。</span> <span>做到这一点的一种方法是将其封装在<a href="SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中"><code>SslHandler</code>中</a>并将其插入管道中。</span> <span>见<a href="SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-"><code>SslContext.newHandler(ByteBufAllocator)</code></a> 。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">newEngine</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             一个新的 
+            <code>SSLEngine</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newEngine</h4> <pre>public final&nbsp;javax.net.ssl.SSLEngine&nbsp;newEngine(<a href="../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                                               java.lang.String&nbsp;peerHost,
+                                               int&nbsp;peerPort)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">SslContext</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>使用咨询对等信息创建新的<code>SSLEngine</code> 。</span> 
+           <p> <span>如果使用<a href="SslProvider.html#OPENSSL_REFCNT" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslProvider.html#OPENSSL_REFCNT"><code>SslProvider.OPENSSL_REFCNT</code>，</a>则必须释放该对象。</span> <span>做到这一点的一种方法是将<a href="SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中"><code>SslHandler</code></a>换<a href="SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中">行</a>并将其插入管道中。</span> <span>见<a href="SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-"><code>SslContext.newHandler(ByteBufAllocator, String, int)</code></a> 。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newEngine</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+           <dd> 
+            <code>peerHost</code> - 主机的非权威名称 
+           </dd> 
+           <dd> 
+            <code>peerPort</code> - 非权威端口 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             一个新的 
+            <code>SSLEngine</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="applicationProtocolNegotiator--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>applicationProtocolNegotiator</h4> <pre>public final&nbsp;<a href="JdkApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator</a>&nbsp;applicationProtocolNegotiator()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="SslContext.html#applicationProtocolNegotiator--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#applicationProtocolNegotiator--">SslContext</a></code></span> 
+          </div> 
+          <div class="block">
+            返回负责协商TLS NPN / ALPN扩展的应用层协议的对象。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="SslContext.html#applicationProtocolNegotiator--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#applicationProtocolNegotiator--">applicationProtocolNegotiator</a></code>在课堂上 
+            <code><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="buildKeyManagerFactory-java.io.File-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>buildKeyManagerFactory</h4> <pre>@Deprecated
+protected static&nbsp;javax.net.ssl.KeyManagerFactory&nbsp;buildKeyManagerFactory(java.io.File&nbsp;certChainFile,
+                                                                                    java.io.File&nbsp;keyFile,
+                                                                                    java.lang.String&nbsp;keyPassword,
+                                                                                    javax.net.ssl.KeyManagerFactory&nbsp;kmf)
+                                                                             throws java.security.UnrecoverableKeyException,
+                                                                                    java.security.KeyStoreException,
+                                                                                    java.security.NoSuchAlgorithmException,
+                                                                                    javax.crypto.NoSuchPaddingException,
+                                                                                    java.security.spec.InvalidKeySpecException,
+                                                                                    java.security.InvalidAlgorithmParameterException,
+                                                                                    java.security.cert.CertificateException,
+                                                                                    java.security.KeyException,
+                                                                                    java.io.IOException</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">将被删除。</span></span> 
+          </div> 
+          <div class="block">
+            根据密钥文件，密钥文件密码和证书链构建 
+           <code>KeyManagerFactory</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>certChainFile</code> - PEM格式的X.509证书链文件 
+           </dd> 
+           <dd> 
+            <code>keyFile</code> - PEM格式的PKCS＃8私钥文件 
+           </dd> 
+           <dd> 
+            <span><code>keyPassword</code> -的的密码<code>keyFile</code> 。</span> 
+            <span><code>null</code>如果没有密码保护。</span> 
+           </dd> 
+           <dd> 
+            <code>kmf</code> - 将使用的现有 
+            <code>KeyManagerFactory</code>如果不是 
+            <code>null</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             A 
+            <code>KeyManagerFactory</code>基于密钥文件，密钥文件密码和证书链。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.security.UnrecoverableKeyException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.KeyStoreException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.NoSuchAlgorithmException</code> 
+           </dd> 
+           <dd> 
+            <code>javax.crypto.NoSuchPaddingException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.spec.InvalidKeySpecException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.InvalidAlgorithmParameterException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.cert.CertificateException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.KeyException</code> 
+           </dd> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="buildKeyManagerFactory-java.io.File-java.lang.String-java.io.File-java.lang.String-javax.net.ssl.KeyManagerFactory-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>buildKeyManagerFactory</h4> <pre>@Deprecated
+protected static&nbsp;javax.net.ssl.KeyManagerFactory&nbsp;buildKeyManagerFactory(java.io.File&nbsp;certChainFile,
+                                                                                    java.lang.String&nbsp;keyAlgorithm,
+                                                                                    java.io.File&nbsp;keyFile,
+                                                                                    java.lang.String&nbsp;keyPassword,
+                                                                                    javax.net.ssl.KeyManagerFactory&nbsp;kmf)
+                                                                             throws java.security.KeyStoreException,
+                                                                                    java.security.NoSuchAlgorithmException,
+                                                                                    javax.crypto.NoSuchPaddingException,
+                                                                                    java.security.spec.InvalidKeySpecException,
+                                                                                    java.security.InvalidAlgorithmParameterException,
+                                                                                    java.io.IOException,
+                                                                                    java.security.cert.CertificateException,
+                                                                                    java.security.KeyException,
+                                                                                    java.security.UnrecoverableKeyException</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">将被删除。</span></span> 
+          </div> 
+          <div class="block">
+            根据密钥算法，密钥文件，密钥文件密码和证书链构建 
+           <code>KeyManagerFactory</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>certChainFile</code> - PEM格式的X.509证书链文件 
+           </dd> 
+           <dd> 
+            <span><code>keyAlgorithm</code> - 请求算法的标准名称。</span> 
+            <span>有关标准算法名称的信息，请参阅“Java安全套接字扩展参考指南”。</span> 
+           </dd> 
+           <dd> 
+            <code>keyFile</code> - PEM格式的PKCS＃8私钥文件 
+           </dd> 
+           <dd> 
+            <span><code>keyPassword</code> -的的密码<code>keyFile</code> 。</span> 
+            <span><code>null</code>如果它没有密码保护。</span> 
+           </dd> 
+           <dd> 
+            <code>kmf</code> - 现有的 
+            <code>KeyManagerFactory</code>即使不是 
+            <code>null</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             A 
+            <code>KeyManagerFactory</code>基于密钥算法，密钥文件，密钥文件密码和证书链。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.security.KeyStoreException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.NoSuchAlgorithmException</code> 
+           </dd> 
+           <dd> 
+            <code>javax.crypto.NoSuchPaddingException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.spec.InvalidKeySpecException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.InvalidAlgorithmParameterException</code> 
+           </dd> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.cert.CertificateException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.KeyException</code> 
+           </dd> 
+           <dd> 
+            <code>java.security.UnrecoverableKeyException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/JdkSslContext.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="JdkSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslClientContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="JdkSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslServerContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-JdkSslContext.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/JdkSslContext.html" target="_top">框架</a></li> 
+    <li><a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/ssl/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

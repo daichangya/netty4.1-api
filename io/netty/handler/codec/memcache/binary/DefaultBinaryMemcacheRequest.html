@@ -1,0 +1,674 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DefaultBinaryMemcacheRequest (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.memcache.binary.DefaultBinaryMemcacheRequest class"> 
+  <meta name="keywords" content="REQUEST_MAGIC_BYTE"> 
+  <meta name="keywords" content="reserved()"> 
+  <meta name="keywords" content="setReserved()"> 
+  <meta name="keywords" content="retain()"> 
+  <meta name="keywords" content="touch()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultBinaryMemcacheRequest (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/class-use/DefaultBinaryMemcacheRequest.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="BinaryMemcacheServerCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheServerCodec.html" title="class in io.netty.handler.codec.memcache.binary"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultBinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheResponse.html" title="class in io.netty.handler.codec.memcache.binary"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-memcache-binary-DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" target="_top">框架</a></li> 
+    <li><a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.memcache.binary 
+   </div> 
+   <h2 title="Class DefaultBinaryMemcacheRequest" class="title">Class DefaultBinaryMemcacheRequest</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../../../util/AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">io.netty.util.AbstractReferenceCounted</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="../AbstractMemcacheObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObject.html" title="class in io.netty.handler.codec.memcache">io.netty.handler.codec.memcache.AbstractMemcacheObject</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">io.netty.handler.codec.memcache.binary.AbstractBinaryMemcacheMessage</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li>io.netty.handler.codec.memcache.binary.DefaultBinaryMemcacheRequest</li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../../DecoderResultProvider.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html" title="io.netty.handler.codec中的接口">DecoderResultProvider</a> ， <a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="io.netty.handler.codec.memcache.binary中的接口">BinaryMemcacheMessage</a> ， <a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口">BinaryMemcacheRequest</a> ， <a href="../MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="io.netty.handler.codec.memcache中的接口">MemcacheMessage</a> ， <a href="../MemcacheObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheObject.html" title="io.netty.handler.codec.memcache中的接口">MemcacheObject</a> ， <a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口">ReferenceCounted</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="DefaultFullBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultFullBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary">DefaultFullBinaryMemcacheRequest</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public class <span class="typeNameLabel">DefaultBinaryMemcacheRequest</span>
+extends <a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a>
+implements <a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></pre> 
+      <div class="block"> 
+       <span><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheRequest</code></a>的默认实现。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static byte</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#REQUEST_MAGIC_BYTE" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#REQUEST_MAGIC_BYTE">REQUEST_MAGIC_BYTE</a></span></code> 
+            <div class="block">
+              请求的默认魔术字节。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#DefaultBinaryMemcacheRequest--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#DefaultBinaryMemcacheRequest--">DefaultBinaryMemcacheRequest</a></span>()</code> 
+            <div class="block"> 
+             <span>仅使用标题创建一个新的<a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary"><code>DefaultBinaryMemcacheRequest</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#DefaultBinaryMemcacheRequest-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#DefaultBinaryMemcacheRequest-io.netty.buffer.ByteBuf-">DefaultBinaryMemcacheRequest</a></span>(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;key)</code> 
+            <div class="block"> 
+             <span>用标题和键创建一个新的<a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary"><code>DefaultBinaryMemcacheRequest</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#DefaultBinaryMemcacheRequest-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#DefaultBinaryMemcacheRequest-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">DefaultBinaryMemcacheRequest</a></span>(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;key, <a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;extras)</code> 
+            <div class="block"> 
+             <span>仅使用标题创建一个新的<a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary"><code>DefaultBinaryMemcacheRequest</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#reserved--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#reserved--">reserved</a></span>()</code> 
+            <div class="block">
+              返回保留的字段值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#retain--">retain</a></span>()</code> 
+            <div class="block">
+              将参考计数增加 
+             <code>1</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#retain-int-">retain</a></span>(int&nbsp;increment)</code> 
+            <div class="block">
+              通过指定的 
+             <code>increment</code>增加引用计数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#setReserved-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#setReserved-short-">setReserved</a></span>(short&nbsp;reserved)</code> 
+            <div class="block">
+              设置保留的字段值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#touch--">touch</a></span>()</code> 
+            <div class="block">
+              记录此对象的当前访问位置以进行调试。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultBinaryMemcacheRequest.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html#touch-java.lang.Object-">touch</a></span>(java.lang.Object&nbsp;hint)</code> 
+            <div class="block">
+              记录此对象的当前访问位置，并附加一些用于调试的任意信息。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.memcache.binary.AbstractBinaryMemcacheMessage"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.memcache.binary.<a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a></h3> <code><a href="AbstractBinaryMemcacheMessage.html#cas--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#cas--">cas</a>, <a href="AbstractBinaryMemcacheMessage.html#dataType--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#dataType--">dataType</a>, <a href="AbstractBinaryMemcacheMessage.html#deallocate--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#deallocate--">deallocate</a>, <a href="AbstractBinaryMemcacheMessage.html#extras--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#extras--">extras</a>, <a href="AbstractBinaryMemcacheMessage.html#extrasLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#extrasLength--">extrasLength</a>, <a href="AbstractBinaryMemcacheMessage.html#key--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#key--">key</a>, <a href="AbstractBinaryMemcacheMessage.html#keyLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#keyLength--">keyLength</a>, <a href="AbstractBinaryMemcacheMessage.html#magic--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#magic--">magic</a>, <a href="AbstractBinaryMemcacheMessage.html#opaque--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#opaque--">opaque</a>, <a href="AbstractBinaryMemcacheMessage.html#opcode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#opcode--">opcode</a>, <a href="AbstractBinaryMemcacheMessage.html#setCas-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setCas-long-">setCas</a>, <a href="AbstractBinaryMemcacheMessage.html#setDataType-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setDataType-byte-">setDataType</a>, <a href="AbstractBinaryMemcacheMessage.html#setExtras-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setExtras-io.netty.buffer.ByteBuf-">setExtras</a>, <a href="AbstractBinaryMemcacheMessage.html#setKey-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setKey-io.netty.buffer.ByteBuf-">setKey</a>, <a href="AbstractBinaryMemcacheMessage.html#setMagic-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setMagic-byte-">setMagic</a>, <a href="AbstractBinaryMemcacheMessage.html#setOpaque-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setOpaque-int-">setOpaque</a>, <a href="AbstractBinaryMemcacheMessage.html#setOpcode-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setOpcode-byte-">setOpcode</a>, <a href="AbstractBinaryMemcacheMessage.html#setTotalBodyLength-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#setTotalBodyLength-int-">setTotalBodyLength</a>, <a href="AbstractBinaryMemcacheMessage.html#totalBodyLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#totalBodyLength--">totalBodyLength</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.memcache.AbstractMemcacheObject"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.memcache.<a href="../AbstractMemcacheObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObject.html" title="class in io.netty.handler.codec.memcache">AbstractMemcacheObject</a></h3> <code><a href="../AbstractMemcacheObject.html#decoderResult--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObject.html#decoderResult--">decoderResult</a>, <a href="../AbstractMemcacheObject.html#setDecoderResult-io.netty.handler.codec.DecoderResult-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObject.html#setDecoderResult-io.netty.handler.codec.DecoderResult-">setDecoderResult</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.AbstractReferenceCounted"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.<a href="../../../../util/AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">AbstractReferenceCounted</a></h3> <code><a href="../../../../util/AbstractReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#refCnt--">refCnt</a>, <a href="../../../../util/AbstractReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#release--">release</a>, <a href="../../../../util/AbstractReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#release-int-">release</a>, <a href="../../../../util/AbstractReferenceCounted.html#setRefCnt-int-" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#setRefCnt-int-">setRefCnt</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.memcache.binary.BinaryMemcacheMessage"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.memcache.binary.<a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a></h3> <code><a href="BinaryMemcacheMessage.html#cas--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#cas--">cas</a>, <a href="BinaryMemcacheMessage.html#dataType--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#dataType--">dataType</a>, <a href="BinaryMemcacheMessage.html#extras--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#extras--">extras</a>, <a href="BinaryMemcacheMessage.html#extrasLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#extrasLength--">extrasLength</a>, <a href="BinaryMemcacheMessage.html#key--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#key--">key</a>, <a href="BinaryMemcacheMessage.html#keyLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#keyLength--">keyLength</a>, <a href="BinaryMemcacheMessage.html#magic--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#magic--">magic</a>, <a href="BinaryMemcacheMessage.html#opaque--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#opaque--">opaque</a>, <a href="BinaryMemcacheMessage.html#opcode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#opcode--">opcode</a>, <a href="BinaryMemcacheMessage.html#setCas-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setCas-long-">setCas</a>, <a href="BinaryMemcacheMessage.html#setDataType-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setDataType-byte-">setDataType</a>, <a href="BinaryMemcacheMessage.html#setExtras-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setExtras-io.netty.buffer.ByteBuf-">setExtras</a>, <a href="BinaryMemcacheMessage.html#setKey-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setKey-io.netty.buffer.ByteBuf-">setKey</a>, <a href="BinaryMemcacheMessage.html#setMagic-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setMagic-byte-">setMagic</a>, <a href="BinaryMemcacheMessage.html#setOpaque-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setOpaque-int-">setOpaque</a>, <a href="BinaryMemcacheMessage.html#setOpcode-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setOpcode-byte-">setOpcode</a>, <a href="BinaryMemcacheMessage.html#setTotalBodyLength-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#setTotalBodyLength-int-">setTotalBodyLength</a>, <a href="BinaryMemcacheMessage.html#totalBodyLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#totalBodyLength--">totalBodyLength</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.DecoderResultProvider"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.<a href="../../DecoderResultProvider.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html" title="interface in io.netty.handler.codec">DecoderResultProvider</a></h3> <code><a href="../../DecoderResultProvider.html#decoderResult--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html#decoderResult--">decoderResult</a>, <a href="../../DecoderResultProvider.html#setDecoderResult-io.netty.handler.codec.DecoderResult-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html#setDecoderResult-io.netty.handler.codec.DecoderResult-">setDecoderResult</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.ReferenceCounted"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.<a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></h3> <code><a href="../../../../util/ReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#refCnt--">refCnt</a>, <a href="../../../../util/ReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release--">release</a>, <a href="../../../../util/ReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release-int-">release</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="REQUEST_MAGIC_BYTE"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>REQUEST_MAGIC_BYTE</h4> <pre>public static final&nbsp;byte REQUEST_MAGIC_BYTE</pre> 
+          <div class="block">
+            请求的默认魔术字节。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../../constant-values.html#io.netty.handler.codec.memcache.binary.DefaultBinaryMemcacheRequest.REQUEST_MAGIC_BYTE" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.memcache.binary.DefaultBinaryMemcacheRequest.REQUEST_MAGIC_BYTE">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DefaultBinaryMemcacheRequest--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultBinaryMemcacheRequest</h4> <pre>public&nbsp;DefaultBinaryMemcacheRequest()</pre> 
+          <div class="block"> 
+           <span>仅使用标题创建一个新的<a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary"><code>DefaultBinaryMemcacheRequest</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="DefaultBinaryMemcacheRequest-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultBinaryMemcacheRequest</h4> <pre>public&nbsp;DefaultBinaryMemcacheRequest(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;key)</pre> 
+          <div class="block"> 
+           <span>用标题和键创建一个新的<a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary"><code>DefaultBinaryMemcacheRequest</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>key</code> - 使用的关键。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultBinaryMemcacheRequest-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DefaultBinaryMemcacheRequest</h4> <pre>public&nbsp;DefaultBinaryMemcacheRequest(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;key,
+                                    <a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;extras)</pre> 
+          <div class="block"> 
+           <span>仅使用标题创建一个新的<a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary"><code>DefaultBinaryMemcacheRequest</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>key</code> - 使用的关键。 
+           </dd> 
+           <dd> 
+            <code>extras</code> - 使用的临时演员。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="reserved--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>reserved</h4> <pre>public&nbsp;short&nbsp;reserved()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="BinaryMemcacheRequest.html#reserved--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#reserved--">BinaryMemcacheRequest</a></code></span> 
+          </div> 
+          <div class="block">
+            返回保留的字段值。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheRequest.html#reserved--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#reserved--">reserved</a></code>在界面 
+            <code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             保留的字段值。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setReserved-short-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setReserved</h4> <pre>public&nbsp;<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a>&nbsp;setReserved(short&nbsp;reserved)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="BinaryMemcacheRequest.html#setReserved-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#setReserved-short-">BinaryMemcacheRequest</a></code></span> 
+          </div> 
+          <div class="block">
+            设置保留的字段值。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheRequest.html#setReserved-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#setReserved-short-">setReserved</a></code>在界面 
+            <code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>reserved</code> - 保留的字段值。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="retain--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre>public&nbsp;<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a>&nbsp;retain()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block">
+            将引用计数增加 
+           <code>1</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheMessage.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#retain--">retain</a></code>在界面 
+            <code><a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheRequest.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#retain--">retain</a></code>在界面 
+            <code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../MemcacheMessage.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html#retain--">retain</a></code>在界面 
+            <code><a href="../MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="interface in io.netty.handler.codec.memcache">MemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">retain</a></code>在界面 
+            <code><a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBinaryMemcacheMessage.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#retain--">retain</a></code>在课堂上 
+            <code><a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="retain-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre>public&nbsp;<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a>&nbsp;retain(int&nbsp;increment)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block">
+            通过指定的 
+           <code>increment</code>增加引用计数。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheMessage.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#retain-int-">retain</a></code>在界面 
+            <code><a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheRequest.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#retain-int-">retain</a></code>在界面 
+            <code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../MemcacheMessage.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html#retain-int-">retain</a></code> ，界面 
+            <code><a href="../MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="interface in io.netty.handler.codec.memcache">MemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">retain</a></code>在界面 
+            <code><a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBinaryMemcacheMessage.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#retain-int-">retain</a></code>在课堂上 
+            <code><a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a>&nbsp;touch()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置以进行调试。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../../../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+           <span>此方法是<a href="../../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-"><code>touch(null)</code></a>的快捷方式。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheMessage.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#touch--">touch</a></code>在界面 
+            <code><a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheRequest.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#touch--">touch</a></code>在界面 
+            <code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../MemcacheMessage.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html#touch--">touch</a></code>在界面 
+            <code><a href="../MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="interface in io.netty.handler.codec.memcache">MemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">touch</a></code>在界面 
+            <code><a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBinaryMemcacheMessage.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#touch--">touch</a></code>在课堂上 
+            <code><a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch-java.lang.Object-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a>&nbsp;touch(java.lang.Object&nbsp;hint)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置，并附加一些用于调试的任意信息。</span> 
+           <span>如果确定此物体泄漏，通过此操作记录的信息将通过<a href="../../../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheMessage.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html#touch-java.lang.Object-">touch</a></code> ，界面 
+            <code><a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="BinaryMemcacheRequest.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../MemcacheMessage.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="../MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="interface in io.netty.handler.codec.memcache">MemcacheMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">touch</a></code> ，界面 
+            <code><a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBinaryMemcacheMessage.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html#touch-java.lang.Object-">touch</a></code>在课堂上 
+            <code><a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/class-use/DefaultBinaryMemcacheRequest.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="BinaryMemcacheServerCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheServerCodec.html" title="class in io.netty.handler.codec.memcache.binary"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultBinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheResponse.html" title="class in io.netty.handler.codec.memcache.binary"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-memcache-binary-DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" target="_top">框架</a></li> 
+    <li><a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Http2Flags (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http2.Http2Flags class"> 
+  <meta name="keywords" content="END_STREAM"> 
+  <meta name="keywords" content="END_HEADERS"> 
+  <meta name="keywords" content="ACK"> 
+  <meta name="keywords" content="PADDED"> 
+  <meta name="keywords" content="PRIORITY"> 
+  <meta name="keywords" content="value()"> 
+  <meta name="keywords" content="endOfStream()"> 
+  <meta name="keywords" content="endOfHeaders()"> 
+  <meta name="keywords" content="priorityPresent()"> 
+  <meta name="keywords" content="ack()"> 
+  <meta name="keywords" content="paddingPresent()"> 
+  <meta name="keywords" content="getNumPriorityBytes()"> 
+  <meta name="keywords" content="getPaddingPresenceFieldLength()"> 
+  <meta name="keywords" content="setFlag()"> 
+  <meta name="keywords" content="isFlagSet()"> 
+  <meta name="keywords" content="hashCode()"> 
+  <meta name="keywords" content="equals()"> 
+  <meta name="keywords" content="toString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Http2Flags (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2Flags.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2Flags.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2Flags.html" target="_top">框架</a></li> 
+    <li><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http2 
+   </div> 
+   <h2 title="Class Http2Flags" class="title">Class Http2Flags</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.http2.Http2Flags</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>@UnstableApi
+public final class <span class="typeNameLabel">Http2Flags</span>
+extends java.lang.Object</pre> 
+      <div class="block">
+        提供用于访问HTTP / 2规范定义的特定标志的实用方法。 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#ACK" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#ACK">ACK</a></span></code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#END_HEADERS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_HEADERS">END_HEADERS</a></span></code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#END_STREAM" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_STREAM">END_STREAM</a></span></code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#PADDED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PADDED">PADDED</a></span></code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#PRIORITY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PRIORITY">PRIORITY</a></span></code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Flags.html#Http2Flags--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#Http2Flags--">Http2Flags</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Flags.html#Http2Flags-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#Http2Flags-short-">Http2Flags</a></span>(short&nbsp;value)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#ack--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#ack--">ack</a></span>()</code> 
+            <div class="block">
+              确定是否设置了该标志，表示该帧是一个ACK。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#ack-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#ack-boolean-">ack</a></span>(boolean&nbsp;ack)</code> 
+            <div class="block">
+              设置 
+             <a href="Http2Flags.html#ACK" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#ACK"><code>ACK</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#endOfHeaders--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#endOfHeaders--">endOfHeaders</a></span>()</code> 
+            <div class="block">
+              确定是否设置了 
+             <a href="Http2Flags.html#END_HEADERS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_HEADERS"><code>END_HEADERS</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#endOfHeaders-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#endOfHeaders-boolean-">endOfHeaders</a></span>(boolean&nbsp;endOfHeaders)</code> 
+            <div class="block">
+              设置 
+             <a href="Http2Flags.html#END_HEADERS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_HEADERS"><code>END_HEADERS</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#endOfStream--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#endOfStream--">endOfStream</a></span>()</code> 
+            <div class="block">
+              确定是否设置了 
+             <a href="Http2Flags.html#END_STREAM" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_STREAM"><code>END_STREAM</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#endOfStream-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#endOfStream-boolean-">endOfStream</a></span>(boolean&nbsp;endOfStream)</code> 
+            <div class="block">
+              设置 
+             <a href="Http2Flags.html#END_STREAM" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_STREAM"><code>END_STREAM</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;obj)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#getNumPriorityBytes--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#getNumPriorityBytes--">getNumPriorityBytes</a></span>()</code> 
+            <div class="block">
+              获取有效负载的优先级字段预期的字节数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#getPaddingPresenceFieldLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#getPaddingPresenceFieldLength--">getPaddingPresenceFieldLength</a></span>()</code> 
+            <div class="block">
+              获取有效负载中预期的填充存在字段的字节长度。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#isFlagSet-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#isFlagSet-short-">isFlagSet</a></span>(short&nbsp;mask)</code> 
+            <div class="block">
+              指示是否设置了特定标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#paddingPresent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#paddingPresent--">paddingPresent</a></span>()</code> 
+            <div class="block">
+              对于包含填充的帧，指示是否存在 
+             <a href="Http2Flags.html#PADDED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PADDED"><code>PADDED</code></a>字段。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#paddingPresent-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#paddingPresent-boolean-">paddingPresent</a></span>(boolean&nbsp;paddingPresent)</code> 
+            <div class="block">
+              设置 
+             <a href="Http2Flags.html#PADDED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PADDED"><code>PADDED</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#priorityPresent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#priorityPresent--">priorityPresent</a></span>()</code> 
+            <div class="block">
+              确定是否设置标志，指示HEADERS帧中是否存在排它，流依赖性和权重字段。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#priorityPresent-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#priorityPresent-boolean-">priorityPresent</a></span>(boolean&nbsp;priorityPresent)</code> 
+            <div class="block">
+              设置 
+             <a href="Http2Flags.html#PRIORITY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PRIORITY"><code>PRIORITY</code></a>标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#setFlag-boolean-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#setFlag-boolean-short-">setFlag</a></span>(boolean&nbsp;on, short&nbsp;mask)</code> 
+            <div class="block">
+              通用方法设置任何标志。 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Flags.html#value--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#value--">value</a></span>()</code> 
+            <div class="block">
+              获取基础标志值。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="END_STREAM"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>END_STREAM</h4> <pre>public static final&nbsp;short END_STREAM</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../constant-values.html#io.netty.handler.codec.http2.Http2Flags.END_STREAM" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.http2.Http2Flags.END_STREAM">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="END_HEADERS"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>END_HEADERS</h4> <pre>public static final&nbsp;short END_HEADERS</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../constant-values.html#io.netty.handler.codec.http2.Http2Flags.END_HEADERS" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.http2.Http2Flags.END_HEADERS">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="ACK"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ACK</h4> <pre>public static final&nbsp;short ACK</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../constant-values.html#io.netty.handler.codec.http2.Http2Flags.ACK" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.http2.Http2Flags.ACK">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="PADDED"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PADDED</h4> <pre>public static final&nbsp;short PADDED</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../constant-values.html#io.netty.handler.codec.http2.Http2Flags.PADDED" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.http2.Http2Flags.PADDED">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="PRIORITY"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>PRIORITY</h4> <pre>public static final&nbsp;short PRIORITY</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../../constant-values.html#io.netty.handler.codec.http2.Http2Flags.PRIORITY" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.handler.codec.http2.Http2Flags.PRIORITY">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="Http2Flags--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Http2Flags</h4> <pre>public&nbsp;Http2Flags()</pre> </li> 
+        </ul> <a name="Http2Flags-short-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>Http2Flags</h4> <pre>public&nbsp;Http2Flags(short&nbsp;value)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="value--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>value</h4> <pre>public&nbsp;short&nbsp;value()</pre> 
+          <div class="block">
+            获取基础标志值。 
+          </div> </li> 
+        </ul> <a name="endOfStream--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>endOfStream</h4> <pre>public&nbsp;boolean&nbsp;endOfStream()</pre> 
+          <div class="block"> 
+           <span>确定是否设置了<a href="Http2Flags.html#END_STREAM" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_STREAM"><code>END_STREAM</code></a>标志。</span> 
+           <span>仅适用于数据和标题帧。</span> 
+          </div> </li> 
+        </ul> <a name="endOfHeaders--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>endOfHeaders</h4> <pre>public&nbsp;boolean&nbsp;endOfHeaders()</pre> 
+          <div class="block"> 
+           <span>确定是否设置了<a href="Http2Flags.html#END_HEADERS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_HEADERS"><code>END_HEADERS</code></a>标志。</span> 
+           <span>仅适用于HEADERS，PUSH_PROMISE和CONTINUATION帧。</span> 
+          </div> </li> 
+        </ul> <a name="priorityPresent--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>priorityPresent</h4> <pre>public&nbsp;boolean&nbsp;priorityPresent()</pre> 
+          <div class="block">
+            确定是否设置标志，指示HEADERS帧中是否存在排它，流依赖性和权重字段。 
+          </div> </li> 
+        </ul> <a name="ack--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ack</h4> <pre>public&nbsp;boolean&nbsp;ack()</pre> 
+          <div class="block"> 
+           <span>确定是否设置了该标志，表示该帧是一个ACK。</span> 
+           <span>仅适用于设置和PING帧。</span> 
+          </div> </li> 
+        </ul> <a name="paddingPresent--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>paddingPresent</h4> <pre>public&nbsp;boolean&nbsp;paddingPresent()</pre> 
+          <div class="block"> 
+           <span>对于包含填充的帧，指示是否存在<a href="Http2Flags.html#PADDED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PADDED"><code>PADDED</code></a>字段。</span> 
+           <span>仅适用于DATA，HEADERS，PUSH_PROMISE和CONTINUATION帧。</span> 
+          </div> </li> 
+        </ul> <a name="getNumPriorityBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getNumPriorityBytes</h4> <pre>public&nbsp;int&nbsp;getNumPriorityBytes()</pre> 
+          <div class="block"> 
+           <span>获取有效负载的优先级字段预期的字节数。</span> 
+           <span>这由<a href="Http2Flags.html#priorityPresent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#priorityPresent--"><code>priorityPresent()</code></a>标志确定。</span> 
+          </div> </li> 
+        </ul> <a name="getPaddingPresenceFieldLength--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getPaddingPresenceFieldLength</h4> <pre>public&nbsp;int&nbsp;getPaddingPresenceFieldLength()</pre> 
+          <div class="block"> 
+           <span>获取有效负载中预期的填充存在字段的字节长度。</span> 
+           <span>这由<a href="Http2Flags.html#paddingPresent--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#paddingPresent--"><code>paddingPresent()</code></a>标志确定。</span> 
+          </div> </li> 
+        </ul> <a name="endOfStream-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>endOfStream</h4> <pre>public&nbsp;<a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a>&nbsp;endOfStream(boolean&nbsp;endOfStream)</pre> 
+          <div class="block">
+            设置 
+           <a href="Http2Flags.html#END_STREAM" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_STREAM"><code>END_STREAM</code></a>标志。 
+          </div> </li> 
+        </ul> <a name="endOfHeaders-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>endOfHeaders</h4> <pre>public&nbsp;<a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a>&nbsp;endOfHeaders(boolean&nbsp;endOfHeaders)</pre> 
+          <div class="block">
+            设置 
+           <a href="Http2Flags.html#END_HEADERS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#END_HEADERS"><code>END_HEADERS</code></a>标志。 
+          </div> </li> 
+        </ul> <a name="priorityPresent-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>priorityPresent</h4> <pre>public&nbsp;<a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a>&nbsp;priorityPresent(boolean&nbsp;priorityPresent)</pre> 
+          <div class="block">
+            设置 
+           <a href="Http2Flags.html#PRIORITY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PRIORITY"><code>PRIORITY</code></a>标志。 
+          </div> </li> 
+        </ul> <a name="paddingPresent-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>paddingPresent</h4> <pre>public&nbsp;<a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a>&nbsp;paddingPresent(boolean&nbsp;paddingPresent)</pre> 
+          <div class="block">
+            设置 
+           <a href="Http2Flags.html#PADDED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#PADDED"><code>PADDED</code></a>标志。 
+          </div> </li> 
+        </ul> <a name="ack-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ack</h4> <pre>public&nbsp;<a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a>&nbsp;ack(boolean&nbsp;ack)</pre> 
+          <div class="block">
+            设置 
+           <a href="Http2Flags.html#ACK" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html#ACK"><code>ACK</code></a>标志。 
+          </div> </li> 
+        </ul> <a name="setFlag-boolean-short-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setFlag</h4> <pre>public&nbsp;<a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" title="class in io.netty.handler.codec.http2">Http2Flags</a>&nbsp;setFlag(boolean&nbsp;on,
+                          short&nbsp;mask)</pre> 
+          <div class="block">
+            通用方法设置任何标志。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>on</code> - 如果应该启用或禁用标志。 
+           </dd> 
+           <dd> 
+            <code>mask</code> - 标识标志位的掩码。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             这个例子。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isFlagSet-short-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isFlagSet</h4> <pre>public&nbsp;boolean&nbsp;isFlagSet(short&nbsp;mask)</pre> 
+          <div class="block">
+            指示是否设置了特定标志。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>mask</code> - 标识正在测试的特定标志位的掩码 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>如果标志被设置 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hashCode--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hashCode</h4> <pre>public&nbsp;int&nbsp;hashCode()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>hashCode</code>在课堂 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="equals-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>equals</h4> <pre>public&nbsp;boolean&nbsp;equals(java.lang.Object&nbsp;obj)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>equals</code>在课程 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课堂上 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2Flags.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2FlowController.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FlowController.html" title="interface in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2Flags.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2Flags.html" target="_top">框架</a></li> 
+    <li><a href="Http2Flags.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Flags.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http2/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

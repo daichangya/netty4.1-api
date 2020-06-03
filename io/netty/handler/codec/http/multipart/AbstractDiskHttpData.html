@@ -1,0 +1,901 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>AbstractDiskHttpData (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http.multipart.AbstractDiskHttpData class"> 
+  <meta name="keywords" content="getDiskFilename()"> 
+  <meta name="keywords" content="getPrefix()"> 
+  <meta name="keywords" content="getBaseDirectory()"> 
+  <meta name="keywords" content="getPostfix()"> 
+  <meta name="keywords" content="deleteOnExit()"> 
+  <meta name="keywords" content="setContent()"> 
+  <meta name="keywords" content="addContent()"> 
+  <meta name="keywords" content="delete()"> 
+  <meta name="keywords" content="get()"> 
+  <meta name="keywords" content="getByteBuf()"> 
+  <meta name="keywords" content="getChunk()"> 
+  <meta name="keywords" content="getString()"> 
+  <meta name="keywords" content="isInMemory()"> 
+  <meta name="keywords" content="renameTo()"> 
+  <meta name="keywords" content="getFile()"> 
+  <meta name="keywords" content="touch()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AbstractDiskHttpData (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":6,"i3":10,"i4":6,"i5":10,"i6":10,"i7":6,"i8":10,"i9":6,"i10":6,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/AbstractDiskHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/class-use/AbstractDiskHttpData.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>上一个</li> 
+    <li><a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-http-multipart-AbstractDiskHttpData.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html" target="_top">框架</a></li> 
+    <li><a href="AbstractDiskHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.handler.codec.http.multipart.AbstractHttpData">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http.multipart 
+   </div> 
+   <h2 title="Class AbstractDiskHttpData" class="title">Class AbstractDiskHttpData</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../../../util/AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">io.netty.util.AbstractReferenceCounted</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart">io.netty.handler.codec.http.multipart.AbstractHttpData</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.handler.codec.http.multipart.AbstractDiskHttpData</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../../../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口">ByteBufHolder</a> ， <a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="io.netty.handler.codec.http.multipart中的接口">HttpData</a> ， <a href="InterfaceHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html" title="io.netty.handler.codec.http.multipart中的接口">InterfaceHttpData</a> ， <a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口">ReferenceCounted</a> ，java.lang.Comparable的&lt; <a href="InterfaceHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html" title="io.netty.handler.codec.http.multipart中的接口">InterfaceHttpData</a> &gt;</span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="DiskAttribute.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/DiskAttribute.html" title="class in io.netty.handler.codec.http.multipart">DiskAttribute</a> ， <a href="DiskFileUpload.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/DiskFileUpload.html" title="class in io.netty.handler.codec.http.multipart">DiskFileUpload</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public abstract class <span class="typeNameLabel">AbstractDiskHttpData</span>
+extends <a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart">AbstractHttpData</a></pre> 
+      <div class="block">
+        抽象磁盘HttpData实现 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.handler.codec.http.multipart.InterfaceHttpData"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.handler.codec.http.multipart.<a href="InterfaceHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html" title="interface in io.netty.handler.codec.http.multipart">InterfaceHttpData</a></h3> <code><a href="InterfaceHttpData.HttpDataType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.HttpDataType.html" title="enum in io.netty.handler.codec.http.multipart">InterfaceHttpData.HttpDataType</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="fields.inherited.from.class.io.netty.handler.codec.http.multipart.AbstractHttpData"> </a> <h3>Fields inherited from class&nbsp;io.netty.handler.codec.http.multipart.<a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart">AbstractHttpData</a></h3> <code><a href="AbstractHttpData.html#definedSize" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#definedSize">definedSize</a>, <a href="AbstractHttpData.html#size" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#size">size</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier</th> 
+           <th class="colLast" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#AbstractDiskHttpData-java.lang.String-java.nio.charset.Charset-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#AbstractDiskHttpData-java.lang.String-java.nio.charset.Charset-long-">AbstractDiskHttpData</a></span>(java.lang.String&nbsp;name, java.nio.charset.Charset&nbsp;charset, long&nbsp;size)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#addContent-io.netty.buffer.ByteBuf-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#addContent-io.netty.buffer.ByteBuf-boolean-">addContent</a></span>(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer, boolean&nbsp;last)</code> 
+            <div class="block">
+              从ChannelBuffer添加内容 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#delete--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#delete--">delete</a></span>()</code> 
+            <div class="block">
+              删除文件项目的底层存储，包括删除任何关联的临时磁盘文件。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected abstract boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#deleteOnExit--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#deleteOnExit--">deleteOnExit</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#get--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#get--">get</a></span>()</code> 
+            <div class="block">
+              以字节数组的形式返回文件项目的内容。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected abstract java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getBaseDirectory--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getBaseDirectory--">getBaseDirectory</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getByteBuf--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getByteBuf--">getByteBuf</a></span>()</code> 
+            <div class="block">
+              以ByteBuf的形式返回文件项目的内容 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getChunk-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getChunk-int-">getChunk</a></span>(int&nbsp;length)</code> 
+            <div class="block">
+              从当前位置返回一个ChannelBuffer，长度读取字节数最多，从而增加了读取字节的当前位置。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected abstract java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getDiskFilename--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getDiskFilename--">getDiskFilename</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>java.io.File</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getFile--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getFile--">getFile</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>protected abstract java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getPostfix--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getPostfix--">getPostfix</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected abstract java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getPrefix--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getPrefix--">getPrefix</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getString--">getString</a></span>()</code> 
+            <div class="block">
+              使用默认字符编码，以String形式返回文件项目的内容。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#getString-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#getString-java.nio.charset.Charset-">getString</a></span>(java.nio.charset.Charset&nbsp;encoding)</code> 
+            <div class="block">
+              使用指定的字符集，以String形式返回文件项目的内容。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#isInMemory--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#isInMemory--">isInMemory</a></span>()</code> 
+            <div class="block">
+              提供有关是否从内存中读取文件内容的提示。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#renameTo-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#renameTo-java.io.File-">renameTo</a></span>(java.io.File&nbsp;dest)</code> 
+            <div class="block">
+              方便的getMethod将上传的项目写入磁盘。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#setContent-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#setContent-io.netty.buffer.ByteBuf-">setContent</a></span>(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer)</code> 
+            <div class="block">
+              设置来自ChannelBuffer的内容（删除以前的任何数据） 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#setContent-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#setContent-java.io.File-">setContent</a></span>(java.io.File&nbsp;file)</code> 
+            <div class="block">
+              设置文件中的内容（删除以前的任何数据） 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#setContent-java.io.InputStream-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#setContent-java.io.InputStream-">setContent</a></span>(java.io.InputStream&nbsp;inputStream)</code> 
+            <div class="block">
+              设置inputStream中的内容（删除以前的任何数据） 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code><a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#touch--">touch</a></span>()</code> 
+            <div class="block">
+              记录此对象的当前访问位置以进行调试。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code><a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractDiskHttpData.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html#touch-java.lang.Object-">touch</a></span>(java.lang.Object&nbsp;hint)</code> 
+            <div class="block">
+              记录此对象的当前访问位置，并附加一些用于调试的任意信息。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.multipart.AbstractHttpData"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.http.multipart.<a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart">AbstractHttpData</a></h3> <code><a href="AbstractHttpData.html#checkSize-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#checkSize-long-">checkSize</a>, <a href="AbstractHttpData.html#content--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#content--">content</a>, <a href="AbstractHttpData.html#deallocate--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#deallocate--">deallocate</a>, <a href="AbstractHttpData.html#definedLength--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#definedLength--">definedLength</a>, <a href="AbstractHttpData.html#getCharset--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#getCharset--">getCharset</a>, <a href="AbstractHttpData.html#getMaxSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#getMaxSize--">getMaxSize</a>, <a href="AbstractHttpData.html#getName--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#getName--">getName</a>, <a href="AbstractHttpData.html#isCompleted--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#isCompleted--">isCompleted</a>, <a href="AbstractHttpData.html#length--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#length--">length</a>, <a href="AbstractHttpData.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#retain--">retain</a>, <a href="AbstractHttpData.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#retain-int-">retain</a>, <a href="AbstractHttpData.html#setCharset-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#setCharset-java.nio.charset.Charset-">setCharset</a>, <a href="AbstractHttpData.html#setCompleted--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#setCompleted--">setCompleted</a>, <a href="AbstractHttpData.html#setMaxSize-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#setMaxSize-long-">setMaxSize</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.AbstractReferenceCounted"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.<a href="../../../../util/AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">AbstractReferenceCounted</a></h3> <code><a href="../../../../util/AbstractReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#refCnt--">refCnt</a>, <a href="../../../../util/AbstractReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#release--">release</a>, <a href="../../../../util/AbstractReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#release-int-">release</a>, <a href="../../../../util/AbstractReferenceCounted.html#setRefCnt-int-" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#setRefCnt-int-">setRefCnt</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.multipart.HttpData"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.http.multipart.<a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a></h3> <code><a href="HttpData.html#copy--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#copy--">copy</a>, <a href="HttpData.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#duplicate--">duplicate</a>, <a href="HttpData.html#replace-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#replace-io.netty.buffer.ByteBuf-">replace</a>, <a href="HttpData.html#retainedDuplicate--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#retainedDuplicate--">retainedDuplicate</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.multipart.InterfaceHttpData"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.http.multipart.<a href="InterfaceHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html" title="interface in io.netty.handler.codec.http.multipart">InterfaceHttpData</a></h3> <code><a href="InterfaceHttpData.html#getHttpDataType--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html#getHttpDataType--">getHttpDataType</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Comparable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Comparable</h3> <code>compareTo</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.ReferenceCounted"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.<a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></h3> <code><a href="../../../../util/ReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#refCnt--">refCnt</a>, <a href="../../../../util/ReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release--">release</a>, <a href="../../../../util/ReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release-int-">release</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="AbstractDiskHttpData-java.lang.String-java.nio.charset.Charset-long-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>AbstractDiskHttpData</h4> <pre>protected&nbsp;AbstractDiskHttpData(java.lang.String&nbsp;name,
+                               java.nio.charset.Charset&nbsp;charset,
+                               long&nbsp;size)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="getDiskFilename--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getDiskFilename</h4> <pre>protected abstract&nbsp;java.lang.String&nbsp;getDiskFilename()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             真正的DiskFilename（基本名称） 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getPrefix--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getPrefix</h4> <pre>protected abstract&nbsp;java.lang.String&nbsp;getPrefix()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             默认的前缀 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBaseDirectory--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBaseDirectory</h4> <pre>protected abstract&nbsp;java.lang.String&nbsp;getBaseDirectory()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             默认的基本目录 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getPostfix--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getPostfix</h4> <pre>protected abstract&nbsp;java.lang.String&nbsp;getPostfix()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             默认的后缀 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="deleteOnExit--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>deleteOnExit</h4> <pre>protected abstract&nbsp;boolean&nbsp;deleteOnExit()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果在默认情况下应该在退出时删除文件，则为真 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setContent-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setContent</h4> <pre>public&nbsp;void&nbsp;setContent(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer)
+                throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="HttpData.html#setContent-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#setContent-io.netty.buffer.ByteBuf-">HttpData</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            设置来自ChannelBuffer的内容（删除以前的任何数据） 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>buffer</code> - 必须不为null 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addContent-io.netty.buffer.ByteBuf-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addContent</h4> <pre>public&nbsp;void&nbsp;addContent(<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer,
+                       boolean&nbsp;last)
+                throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpData.html#addContent-io.netty.buffer.ByteBuf-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#addContent-io.netty.buffer.ByteBuf-boolean-">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            从ChannelBuffer添加内容 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>buffer</code> - 除非last设置为False，否则不能为null 
+           </dd> 
+           <dd> 
+            <code>last</code> - 缓冲区是最后一个 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setContent-java.io.File-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setContent</h4> <pre>public&nbsp;void&nbsp;setContent(java.io.File&nbsp;file)
+                throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="HttpData.html#setContent-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#setContent-java.io.File-">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            设置文件中的内容（删除以前的任何数据） 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>file</code> - 必须不为null 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setContent-java.io.InputStream-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setContent</h4> <pre>public&nbsp;void&nbsp;setContent(java.io.InputStream&nbsp;inputStream)
+                throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpData.html#setContent-java.io.InputStream-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#setContent-java.io.InputStream-">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            设置inputStream中的内容（删除以前的任何数据） 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>inputStream</code> - 必须不为null 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="delete--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>delete</h4> <pre>public&nbsp;void&nbsp;delete()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpData.html#delete--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#delete--">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            删除文件项目的底层存储，包括删除任何关联的临时磁盘文件。 
+          </div> </li> 
+        </ul> <a name="get--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>get</h4> <pre>public&nbsp;byte[]&nbsp;get()
+           throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="HttpData.html#get--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#get--">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            以字节数组的形式返回文件项目的内容。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             文件项目的内容为一个字节数组。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getByteBuf--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getByteBuf</h4> <pre>public&nbsp;<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;getByteBuf()
+                   throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="HttpData.html#getByteBuf--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#getByteBuf--">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            以ByteBuf的形式返回文件项目的内容 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             该文件项目的内容为ByteBuf 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getChunk-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getChunk</h4> <pre>public&nbsp;<a href="../../../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;getChunk(int&nbsp;length)
+                 throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="HttpData.html#getChunk-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#getChunk-int-">HttpData</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>从当前位置返回一个ChannelBuffer，长度读取字节数最多，从而增加了读取字节的当前位置。</span> 
+           <span>一旦到达最后，它将返回一个EMPTY_BUFFER并将当前位置重置为0。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             一个用于来自当前位置的内容的ChannelBuffer或一个EMPTY_BUFFER，如果没有更多数据要返回 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getString--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getString</h4> <pre>public&nbsp;java.lang.String&nbsp;getString()
+                           throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpData.html#getString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#getString--">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            使用默认字符编码，以String形式返回文件项目的内容。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             该文件项目的内容为一个字符串，使用默认的字符编码。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getString-java.nio.charset.Charset-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getString</h4> <pre>public&nbsp;java.lang.String&nbsp;getString(java.nio.charset.Charset&nbsp;encoding)
+                           throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpData.html#getString-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#getString-java.nio.charset.Charset-">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            使用指定的字符集，以String形式返回文件项目的内容。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>encoding</code> - 使用的字符集 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             使用指定的字符集将文件项的内容作为字符串使用。 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isInMemory--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isInMemory</h4> <pre>public&nbsp;boolean&nbsp;isInMemory()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="HttpData.html#isInMemory--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#isInMemory--">HttpData</a></code></span> 
+          </div> 
+          <div class="block">
+            提供有关是否从内存中读取文件内容的提示。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果文件内容在内存中，则为真。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="renameTo-java.io.File-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>renameTo</h4> <pre>public&nbsp;boolean&nbsp;renameTo(java.io.File&nbsp;dest)
+                 throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="HttpData.html#renameTo-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#renameTo-java.io.File-">HttpData</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>方便的getMethod将上传的项目写入磁盘。</span> 
+           <span>如果前一个存在，它将被删除。</span> 
+           <span>一旦调用了getMethod，如果成功，新文件将不在创建原始InterfaceHttpData对象的工厂清理程序中。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>dest</code> - 目标文件 - 必须不为空 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果写入成功，则为真 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getFile--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getFile</h4> <pre>public&nbsp;java.io.File&nbsp;getFile()
+                     throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果此数据表示在文件中，则关联的文件 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> - 如果该数据不是由文件表示的 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a>&nbsp;touch()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置以进行调试。</span> 
+           <span>如果确定此物体泄漏，通过此操作记录的信息将通过<a href="../../../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+           <span>此方法是<a href="../../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-"><code>touch(null)</code></a>的快捷方式。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../buffer/ByteBufHolder.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#touch--">touch</a></code>在界面 
+            <code><a href="../../../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="interface in io.netty.buffer">ByteBufHolder</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpData.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#touch--">touch</a></code>接口 
+            <code><a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="InterfaceHttpData.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html#touch--">touch</a></code>在界面 
+            <code><a href="InterfaceHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html" title="interface in io.netty.handler.codec.http.multipart">InterfaceHttpData</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">touch</a></code>在界面 
+            <code><a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttpData.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#touch--">touch</a></code>在课程 
+            <code><a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart">AbstractHttpData</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch-java.lang.Object-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a>&nbsp;touch(java.lang.Object&nbsp;hint)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置，并附加一些用于调试的任意信息。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../../../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../buffer/ByteBufHolder.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="../../../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="interface in io.netty.buffer">ByteBufHolder</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpData.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="HttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpData.html" title="interface in io.netty.handler.codec.http.multipart">HttpData</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="InterfaceHttpData.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html#touch-java.lang.Object-">touch</a></code>接口 
+            <code><a href="InterfaceHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/InterfaceHttpData.html" title="interface in io.netty.handler.codec.http.multipart">InterfaceHttpData</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="../../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractHttpData.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html#touch-java.lang.Object-">touch</a></code>在课堂上 
+            <code><a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart">AbstractHttpData</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/AbstractDiskHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/class-use/AbstractDiskHttpData.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>上一个</li> 
+    <li><a href="AbstractHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractHttpData.html" title="class in io.netty.handler.codec.http.multipart"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-http-multipart-AbstractDiskHttpData.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html" target="_top">框架</a></li> 
+    <li><a href="AbstractDiskHttpData.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/AbstractDiskHttpData.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.handler.codec.http.multipart.AbstractHttpData">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

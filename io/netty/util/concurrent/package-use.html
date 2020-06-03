@@ -1,0 +1,1052 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Package io.netty.util.concurrent (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Package io.netty.util.concurrent (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-package-use.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/package-use.html" target="_top">框架</a></li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-use.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Uses of Package io.netty.util.concurrent" class="title">Uses of Package<br>io.netty.util.concurrent</h1> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel">io.netty.channel</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           核心频道API是异步和事件驱动的各种传输（如 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O#Channels'" tppabs="http://en.wikipedia.org/wiki/New_I/O#Channels">NIO Channel）的抽象</a> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.epoll">io.netty.channel.epoll</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           针对Linux的优化传输，使用 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Epoll  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Epoll'" tppabs="http://en.wikipedia.org/wiki/Epoll">EPOLL Edge-Triggered Mode</a>获得最高性能。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.group">io.netty.channel.group</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个通道注册表，帮助用户维护打开的<a href="../../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>列表并对其执行批量操作。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.kqueue">io.netty.channel.kqueue</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           BSD专用运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.local">io.netty.channel.local</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一种虚拟传输，可在同一虚拟机中实现双方之间的通信。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.nio">io.netty.channel.nio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O'" tppabs="http://en.wikipedia.org/wiki/New_I/O">NIO</a>的通道API实现 - 推荐用于大量连接（&gt; = 1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.oio">io.netty.channel.oio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           旧阻止基于I / O的通道API实现 - 建议用于少量连接（&lt;1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.pool">io.netty.channel.pool</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="../../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>池的实现和API。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http2">io.netty.handler.codec.http2</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于发送和接收HTTP / 2帧的处理程序。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.proxy">io.netty.handler.proxy</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           通过代理协议（如 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/SOCKS  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/SOCKS'" tppabs="http://en.wikipedia.org/wiki/SOCKS">SOCKS</a>和 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/HTTP_tunnel  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling'" tppabs="http://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling">HTTP CONNECT tunneling）</a>添加对客户端连接的支持 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.ssl">io.netty.handler.ssl</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Transport_Layer_Security  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Transport_Layer_Security'" tppabs="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL · TLS</a>实施依据 
+          <code>SSLEngine</code> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.traffic">io.netty.handler.traffic</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           流量整形处理器和动态统计的实现。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.resolver">io.netty.resolver</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           将表示端点名称的任意字符串解析为地址。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.resolver.dns">io.netty.resolver.dns</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Java的内置域名查找机制的一种替代方法，可以异步解析域名，同样支持任意DNS记录类型的查询。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.util">io.netty.util</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           在多个包中使用的实用程序类。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.util.concurrent">io.netty.util.concurrent</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           并发/异步任务的实用程序类。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutor.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutor.html#io.netty.channel">AbstractEventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.channel">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractFuture.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractFuture.html#io.netty.channel">AbstractFuture</a> 
+         <div class="block"> 
+          <span>摘要<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>不允许取消的实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AbstractScheduledEventExecutor.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractScheduledEventExecutor.html#io.netty.channel">AbstractScheduledEventExecutor</a> 
+         <div class="block"> 
+          <span>希望支持调度的抽象基类<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/DefaultProgressivePromise.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/DefaultProgressivePromise.html#io.netty.channel">DefaultProgressivePromise</a>&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultPromise.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/DefaultPromise.html#io.netty.channel">DefaultPromise</a>&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.channel">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它提供了一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorChooserFactory.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorChooserFactory.html#io.netty.channel">EventExecutorChooserFactory</a> 
+         <div class="block"> 
+          <span>创建新的<a href="EventExecutorChooserFactory.EventExecutorChooser.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorChooserFactory.EventExecutorChooser.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorChooserFactory.EventExecutorChooser</code></a> s的工厂。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.channel">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过其<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用方法。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.channel">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/GenericFutureListener.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/GenericFutureListener.html#io.netty.channel">GenericFutureListener</a> 
+         <div class="block"> 
+          <span><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口">听取<code>Future</code></a>的结果。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/GenericProgressiveFutureListener.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/GenericProgressiveFutureListener.html#io.netty.channel">GenericProgressiveFutureListener</a>&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/MultithreadEventExecutorGroup.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/MultithreadEventExecutorGroup.html#io.netty.channel">MultithreadEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/OrderedEventExecutor.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/OrderedEventExecutor.html#io.netty.channel">OrderedEventExecutor</a> 
+         <div class="block"> 
+          <span>用于<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的标记界面，将以有序/串行方式处理所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ProgressiveFuture.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ProgressiveFuture.html#io.netty.channel">ProgressiveFuture</a> 
+         <div class="block"> 
+          <span>A <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>用于指示操作的进度。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ProgressivePromise.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ProgressivePromise.html#io.netty.channel">ProgressivePromise</a> 
+         <div class="block"> 
+          <span>特别<a href="ProgressiveFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ProgressiveFuture.html" title="io.netty.util.concurrent中的接口"><code>ProgressiveFuture</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.channel">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/PromiseAggregator.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/PromiseAggregator.html#io.netty.channel">PromiseAggregator</a> 
+         <div class="block"> 
+          <span><span class="deprecatedLabel">已过时。</span></span> 
+          <div class="block"> 
+           <span><span class="deprecationComment">使用<a href="PromiseCombiner.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/PromiseCombiner.html" title="class in io.netty.util.concurrent"><code>PromiseCombiner</code></a> <a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="io.netty.util.concurrent中的接口"><code>GenericFutureListener</code></a>实现，将<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口">82657178626108</a>合并为一个，通过监听单个<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>并在所有<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>完成时产生聚合结果（成功/失败）。</span></span> 
+          </div> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/PromiseNotifier.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/PromiseNotifier.html#io.netty.channel">PromiseNotifier</a> 
+         <div class="block"> 
+          <span><a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="io.netty.util.concurrent中的接口"><code>GenericFutureListener</code></a>执行其他<a href="Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="io.netty.util.concurrent中的接口"><code>Promise</code></a>并完成后通知他们。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/RejectedExecutionHandler.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/RejectedExecutionHandler.html#io.netty.channel">RejectedExecutionHandler</a> 
+         <div class="block"> 
+          <span>类似于<code>RejectedExecutionHandler</code>但是特定于<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/SingleThreadEventExecutor.html#io.netty.channel" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/SingleThreadEventExecutor.html#io.netty.channel">SingleThreadEventExecutor</a> 
+         <div class="block"> 
+          <span><a href="OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="io.netty.util.concurrent中的接口"><code>OrderedEventExecutor</code></a>的抽象基类，它在单个线程中执行所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.epoll"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.channel.epoll">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorChooserFactory.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorChooserFactory.html#io.netty.channel.epoll">EventExecutorChooserFactory</a> 
+         <div class="block"> 
+          <span>创建新的<a href="EventExecutorChooserFactory.EventExecutorChooser.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorChooserFactory.EventExecutorChooser.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorChooserFactory.EventExecutorChooser</code></a>的工厂。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.channel.epoll">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过其<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/MultithreadEventExecutorGroup.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/MultithreadEventExecutorGroup.html#io.netty.channel.epoll">MultithreadEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/RejectedExecutionHandler.html#io.netty.channel.epoll" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/RejectedExecutionHandler.html#io.netty.channel.epoll">RejectedExecutionHandler</a> 
+         <div class="block"> 
+          <span>类似于<code>RejectedExecutionHandler</code>但是特定于<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.group"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/group/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/group/package-summary.html">io.netty.channel.group</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.channel.group" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.channel.group">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它提供了一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.channel.group" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.channel.group">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/GenericFutureListener.html#io.netty.channel.group" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/GenericFutureListener.html#io.netty.channel.group">GenericFutureListener</a> 
+         <div class="block"> 
+          <span><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口">听取<code>Future</code></a>的结果。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.kqueue"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.channel.kqueue">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorChooserFactory.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorChooserFactory.html#io.netty.channel.kqueue">EventExecutorChooserFactory</a> 
+         <div class="block"> 
+          <span>创建新的<a href="EventExecutorChooserFactory.EventExecutorChooser.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorChooserFactory.EventExecutorChooser.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorChooserFactory.EventExecutorChooser</code></a> s的工厂。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.channel.kqueue">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过其<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用方法。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/MultithreadEventExecutorGroup.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/MultithreadEventExecutorGroup.html#io.netty.channel.kqueue">MultithreadEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/RejectedExecutionHandler.html#io.netty.channel.kqueue" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/RejectedExecutionHandler.html#io.netty.channel.kqueue">RejectedExecutionHandler</a> 
+         <div class="block"> 
+          <span>类似于<code>RejectedExecutionHandler</code>但是特定于<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.local"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/local/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/local/package-summary.html">io.netty.channel.local</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.channel.local" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.channel.local">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.channel.local" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.channel.local">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过其<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/MultithreadEventExecutorGroup.html#io.netty.channel.local" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/MultithreadEventExecutorGroup.html#io.netty.channel.local">MultithreadEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.nio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/package-summary.html">io.netty.channel.nio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutor.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutor.html#io.netty.channel.nio">AbstractEventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.channel.nio">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractScheduledEventExecutor.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractScheduledEventExecutor.html#io.netty.channel.nio">AbstractScheduledEventExecutor</a> 
+         <div class="block"> 
+          <span>希望支持调度的抽象基类<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.channel.nio">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它提供了一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorChooserFactory.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorChooserFactory.html#io.netty.channel.nio">EventExecutorChooserFactory</a> 
+         <div class="block"> 
+          <span>创建新的<a href="EventExecutorChooserFactory.EventExecutorChooser.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorChooserFactory.EventExecutorChooser.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorChooserFactory.EventExecutorChooser</code></a>的工厂。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.channel.nio">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过其<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/MultithreadEventExecutorGroup.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/MultithreadEventExecutorGroup.html#io.netty.channel.nio">MultithreadEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/OrderedEventExecutor.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/OrderedEventExecutor.html#io.netty.channel.nio">OrderedEventExecutor</a> 
+         <div class="block"> 
+          <span>用于<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的标记接口，将以有序/串行方式处理所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/RejectedExecutionHandler.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/RejectedExecutionHandler.html#io.netty.channel.nio">RejectedExecutionHandler</a> 
+         <div class="block"> 
+          <span>类似于<code>RejectedExecutionHandler</code>但是特定于<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/SingleThreadEventExecutor.html#io.netty.channel.nio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/SingleThreadEventExecutor.html#io.netty.channel.nio">SingleThreadEventExecutor</a> 
+         <div class="block"> 
+          <span><a href="OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="io.netty.util.concurrent中的接口"><code>OrderedEventExecutor</code></a>的抽象基类，它在单个线程中执行所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.oio"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/oio/package-summary.html">io.netty.channel.oio</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.channel.oio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.channel.oio">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.channel.oio" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.channel.oio">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用方法。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.channel.pool"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../channel/pool/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/package-summary.html">io.netty.channel.pool</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.channel.pool" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.channel.pool">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.channel.pool" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.channel.pool">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.codec.http2"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../handler/codec/http2/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">io.netty.handler.codec.http2</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.handler.codec.http2">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/GenericFutureListener.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/GenericFutureListener.html#io.netty.handler.codec.http2">GenericFutureListener</a> 
+         <div class="block"> 
+          <span><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口">听取<code>Future</code></a>的结果。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.handler.codec.http2" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.handler.codec.http2">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.proxy"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../handler/proxy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-summary.html">io.netty.handler.proxy</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.handler.proxy" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.handler.proxy">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.ssl"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../handler/ssl/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">io.netty.handler.ssl</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.handler.ssl">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.handler.ssl" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.handler.ssl">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.handler.traffic"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../handler/traffic/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-summary.html">io.netty.handler.traffic</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.handler.traffic" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.handler.traffic">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它带有一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.resolver"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../resolver/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/package-summary.html">io.netty.resolver</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.resolver" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.resolver">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它提供了一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.resolver" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.resolver">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.resolver" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.resolver">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.resolver.dns"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../../resolver/dns/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">io.netty.resolver.dns</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.resolver.dns" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.resolver.dns">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它提供了一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.resolver.dns" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.resolver.dns">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.resolver.dns" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.resolver.dns">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.util"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">io.netty.util</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.util">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.util" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.util">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"><a name="io.netty.util.concurrent"> </a> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+      <caption> 
+       <span>Classes in <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a> used by <a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">io.netty.util.concurrent</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colOne" scope="col">Class and Description</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutor.html#io.netty.util.concurrent">AbstractEventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AbstractEventExecutorGroup.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractEventExecutorGroup.html#io.netty.util.concurrent">AbstractEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/AbstractFuture.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractFuture.html#io.netty.util.concurrent">AbstractFuture</a> 
+         <div class="block"> 
+          <span>摘要<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>实现不允许取消。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/AbstractScheduledEventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/AbstractScheduledEventExecutor.html#io.netty.util.concurrent">AbstractScheduledEventExecutor</a> 
+         <div class="block"> 
+          <span>希望支持调度的抽象基类<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/CompleteFuture.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/CompleteFuture.html#io.netty.util.concurrent">CompleteFuture</a> 
+         <div class="block"> 
+          <span>代表已完成的<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code>的</a>骨架<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/DefaultEventExecutorChooserFactory.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/DefaultEventExecutorChooserFactory.html#io.netty.util.concurrent">DefaultEventExecutorChooserFactory</a> 
+         <div class="block"> 
+          <span>使用简单的循环法选择下一个<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code>的</a>默认实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/DefaultPromise.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/DefaultPromise.html#io.netty.util.concurrent">DefaultPromise</a>&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutor.html#io.netty.util.concurrent">EventExecutor</a> 
+         <div class="block"> 
+          <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>是一个特殊的<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它提供了一些方便的方法来查看<code>Thread</code>是否在事件循环中执行。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorChooserFactory.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorChooserFactory.html#io.netty.util.concurrent">EventExecutorChooserFactory</a> 
+         <div class="block"> 
+          <span>创建新的<a href="EventExecutorChooserFactory.EventExecutorChooser.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorChooserFactory.EventExecutorChooser.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorChooserFactory.EventExecutorChooser</code></a> s的工厂。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorChooserFactory.EventExecutorChooser.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorChooserFactory.EventExecutorChooser.html#io.netty.util.concurrent">EventExecutorChooserFactory.EventExecutorChooser</a> 
+         <div class="block"> 
+          <span>选择下一个<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/EventExecutorGroup.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/EventExecutorGroup.html#io.netty.util.concurrent">EventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>负责通过其<a href="EventExecutorGroup.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#next--"><code>EventExecutorGroup.next()</code></a>方法提供<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的使用方法。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Future.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Future.html#io.netty.util.concurrent">Future</a> 
+         <div class="block">
+           异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/FutureListener.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/FutureListener.html#io.netty.util.concurrent">FutureListener</a> 
+         <div class="block"> 
+          <span>为方便起见，隐藏类型参数的子类型<a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="io.netty.util.concurrent中的接口"><code>GenericFutureListener</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/GenericFutureListener.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/GenericFutureListener.html#io.netty.util.concurrent">GenericFutureListener</a> 
+         <div class="block"> 
+          <span><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口">听取<code>Future</code></a>的结果。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/GlobalEventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/GlobalEventExecutor.html#io.netty.util.concurrent">GlobalEventExecutor</a> 
+         <div class="block"> 
+          <span>单线程单身人士<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ImmediateEventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ImmediateEventExecutor.html#io.netty.util.concurrent">ImmediateEventExecutor</a> 
+         <div class="block">
+           在调用者的线程中执行 
+          <code>Runnable</code>对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ImmediateExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ImmediateExecutor.html#io.netty.util.concurrent">ImmediateExecutor</a> 
+         <div class="block"> 
+          <code>Executor</code>它们在调用者线程中执行任务。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/MultithreadEventExecutorGroup.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/MultithreadEventExecutorGroup.html#io.netty.util.concurrent">MultithreadEventExecutorGroup</a> 
+         <div class="block"> 
+          <span><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>实现的抽象基类， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/OrderedEventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/OrderedEventExecutor.html#io.netty.util.concurrent">OrderedEventExecutor</a> 
+         <div class="block"> 
+          <span>用于<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>的标记接口，它将以有序/串行方式处理所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/ProgressiveFuture.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ProgressiveFuture.html#io.netty.util.concurrent">ProgressiveFuture</a> 
+         <div class="block"> 
+          <span>A <a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>用于指示操作的进度。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ProgressivePromise.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ProgressivePromise.html#io.netty.util.concurrent">ProgressivePromise</a> 
+         <div class="block"> 
+          <span>特别<a href="ProgressiveFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ProgressiveFuture.html" title="io.netty.util.concurrent中的接口"><code>ProgressiveFuture</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/Promise.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/Promise.html#io.netty.util.concurrent">Promise</a> 
+         <div class="block"> 
+          <span>特别<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/PromiseAggregator.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/PromiseAggregator.html#io.netty.util.concurrent">PromiseAggregator</a> 
+         <div class="block"> 
+          <span><span class="deprecatedLabel">已过时。</span></span> 
+          <div class="block"> 
+           <span><span class="deprecationComment">使用<a href="PromiseCombiner.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/PromiseCombiner.html" title="class in io.netty.util.concurrent"><code>PromiseCombiner</code></a> <a href="GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="io.netty.util.concurrent中的接口"><code>GenericFutureListener</code></a>实施，通过收听个人<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>并在所有<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>完成时产生聚合结果（成功/失败），将多个<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>合并为一个。</span></span> 
+          </div> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/RejectedExecutionHandler.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/RejectedExecutionHandler.html#io.netty.util.concurrent">RejectedExecutionHandler</a> 
+         <div class="block"> 
+          <span>类似于<code>RejectedExecutionHandler</code>但是特定于<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ScheduledFuture.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ScheduledFuture.html#io.netty.util.concurrent">ScheduledFuture</a> 
+         <div class="block">
+           预定的异步操作的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colOne"><a href="class-use/SingleThreadEventExecutor.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/SingleThreadEventExecutor.html#io.netty.util.concurrent">SingleThreadEventExecutor</a> 
+         <div class="block"> 
+          <span><a href="OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="io.netty.util.concurrent中的接口"><code>OrderedEventExecutor</code></a>的抽象基类，它在一个线程中执行所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colOne"><a href="class-use/ThreadProperties.html#io.netty.util.concurrent" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/ThreadProperties.html#io.netty.util.concurrent">ThreadProperties</a> 
+         <div class="block">
+           公开 
+          <code>Thread</code>详细信息。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-package-use.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/package-use.html" target="_top">框架</a></li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-use.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/concurrent/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,1330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Interface io.netty.buffer.ByteBufAllocator (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Interface io.netty.buffer.ByteBufAllocator (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-buffer-class-use-ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/class-use/ByteBufAllocator.html" target="_top">框架</a></li> 
+    <li><a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/ByteBufAllocator.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h2 title="Uses of Interface io.netty.buffer.ByteBufAllocator" class="title">Uses of Interface<br>io.netty.buffer.ByteBufAllocator</h2> 
+  </div> 
+  <div class="classUseContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.buffer">io.netty.buffer</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象字节缓冲区 - 表示低级二进制和文本消息的基本数据结构。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel">io.netty.channel</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           核心通道API是异步和事件驱动的各种传输（如 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O#Channels'" tppabs="http://en.wikipedia.org/wiki/New_I/O#Channels">NIO Channel）的抽象</a> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.epoll">io.netty.channel.epoll</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           为使用 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Epoll  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Epoll'" tppabs="http://en.wikipedia.org/wiki/Epoll">EPOLL Edge-Triggered Mode</a>获得最佳性能的Linux优化传输。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.kqueue">io.netty.channel.kqueue</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           BSD专用运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.rxtx">io.netty.channel.rxtx</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://rxtx.qbang.org/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://rxtx.qbang.org/'" tppabs="http://rxtx.qbang.org/">RXTX的</a>串行和并行端口通信传输。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.sctp">io.netty.channel.sctp</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象扩展核心通道API的SCTP套接字接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket">io.netty.channel.socket</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象扩展核心通道API的TCP和UDP套接字接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket.oio">io.netty.channel.socket.oio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           旧阻塞基于I / O的套接字通道API实现 - 建议少量连接（&lt;1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.udt">io.netty.channel.udt</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           UDT运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.unix">io.netty.channel.unix</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Unix专用传输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec">io.netty.handler.codec</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           可扩展解码器及其常见实现，用于处理基于流的传输（如TCP / IP）中发现的数据包碎片和重新组装问题。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.base64">io.netty.handler.codec.base64</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>编码器和解码器将<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Base64  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Base64'" tppabs="http://en.wikipedia.org/wiki/Base64">Base64</a>编码的<code>String</code>或<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>转换成解码的<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，反之亦然。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http">io.netty.handler.codec.http</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，解码器及其相关的HTTP消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http.multipart">io.netty.handler.codec.http.multipart</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           HTTP多部分支持。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http.websocketx">io.netty.handler.codec.http.websocketx</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Web_Sockets  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Web_Sockets'" tppabs="http://en.wikipedia.org/wiki/Web_Sockets">Web Socket</a>数据帧的编码器，解码器，握手及其相关消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http2">io.netty.handler.codec.http2</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于发送和接收HTTP / 2帧的处理程序。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.spdy">io.netty.handler.codec.spdy</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           SPDY协议的编码器，解码器，会话处理程序及其相关的消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.ssl">io.netty.handler.ssl</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Transport_Layer_Security  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Transport_Layer_Security'" tppabs="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL · TLS的</a>实现基于 
+          <code>SSLEngine</code> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.stream">io.netty.handler.stream</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           写入非常大的数据流，既不占用大量内存也不获取 
+          <code>OutOfMemoryError</code> 。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <ul class="blockList"> 
+      <li class="blockList"><a name="io.netty.buffer"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+        <caption> 
+         <span>Classes in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a> that implement <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">AbstractByteBufAllocator</a></span></code> 
+           <div class="block"> 
+            <span>骨架<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>执行延伸。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" title="class in io.netty.buffer">PooledByteBufAllocator</a></span></code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledByteBufAllocator.html" title="class in io.netty.buffer">UnpooledByteBufAllocator</a></span></code> 
+           <div class="block"> 
+            <span><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口">单纯的<code>ByteBufAllocator</code></a>实现不会聚集任何东西。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing fields, and an explanation"> 
+        <caption> 
+         <span>Fields in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a> declared as <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Field and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBufAllocator.</span><code><span class="memberNameLink"><a href="../ByteBufAllocator.html#DEFAULT" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html#DEFAULT">DEFAULT</a></span></code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a> that return <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">UnpooledUnsafeDirectByteBuf.</span><code><span class="memberNameLink"><a href="../UnpooledUnsafeDirectByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledUnsafeDirectByteBuf.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">UnpooledHeapByteBuf.</span><code><span class="memberNameLink"><a href="../UnpooledHeapByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledHeapByteBuf.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">UnpooledDirectByteBuf.</span><code><span class="memberNameLink"><a href="../UnpooledDirectByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledDirectByteBuf.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SwappedByteBuf.</span><code><span class="memberNameLink"><a href="../SwappedByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/SwappedByteBuf.html#alloc--">alloc</a></span>()</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ReadOnlyByteBuf.</span><code><span class="memberNameLink"><a href="../ReadOnlyByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#alloc--">alloc</a></span>()</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EmptyByteBuf.</span><code><span class="memberNameLink"><a href="../EmptyByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/EmptyByteBuf.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DuplicatedByteBuf.</span><code><span class="memberNameLink"><a href="../DuplicatedByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/DuplicatedByteBuf.html#alloc--">alloc</a></span>()</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">CompositeByteBuf.</span><code><span class="memberNameLink"><a href="../CompositeByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>abstract <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBuf.</span><code><span class="memberNameLink"><a href="../ByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#alloc--">alloc</a></span>()</code> 
+           <div class="block"> 
+            <span>返回创建此缓冲区的<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBufUtil.</span><code><span class="memberNameLink"><a href="../ByteBufUtil.html#encodeString-io.netty.buffer.ByteBufAllocator-java.nio.CharBuffer-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufUtil.html#encodeString-io.netty.buffer.ByteBufAllocator-java.nio.CharBuffer-java.nio.charset.Charset-">encodeString</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.nio.CharBuffer&nbsp;src, java.nio.charset.Charset&nbsp;charset)</code> 
+           <div class="block"> 
+            <span>编码给定<code>CharBuffer</code>使用给定<code>Charset</code>到一个新<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>这是通过分配<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBufUtil.</span><code><span class="memberNameLink"><a href="../ByteBufUtil.html#encodeString-io.netty.buffer.ByteBufAllocator-java.nio.CharBuffer-java.nio.charset.Charset-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufUtil.html#encodeString-io.netty.buffer.ByteBufAllocator-java.nio.CharBuffer-java.nio.charset.Charset-int-">encodeString</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.nio.CharBuffer&nbsp;src, java.nio.charset.Charset&nbsp;charset, int&nbsp;extraCapacity)</code> 
+           <div class="block"> 
+            <span>编码给定<code>CharBuffer</code>使用给定<code>Charset</code>到一个新<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>这是通过分配<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBufUtil.</span><code><span class="memberNameLink"><a href="../ByteBufUtil.html#readBytes-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufUtil.html#readBytes-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-int-">readBytes</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer, int&nbsp;length)</code> 
+           <div class="block"> 
+            <span>阅读给定的字节量到一个新<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>是从分配<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBufUtil.</span><code><span class="memberNameLink"><a href="../ByteBufUtil.html#writeAscii-io.netty.buffer.ByteBufAllocator-java.lang.CharSequence-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufUtil.html#writeAscii-io.netty.buffer.ByteBufAllocator-java.lang.CharSequence-">writeAscii</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.CharSequence&nbsp;seq)</code> 
+           <div class="block"> 
+            <span>在<code>CharSequence</code>中编码<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/ASCII  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/ASCII'" tppabs="http://en.wikipedia.org/wiki/ASCII">CharSequence</a>并将其写入<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">85671801367801</a>分配的<code>alloc</code> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteBufUtil.</span><code><span class="memberNameLink"><a href="../ByteBufUtil.html#writeUtf8-io.netty.buffer.ByteBufAllocator-java.lang.CharSequence-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufUtil.html#writeUtf8-io.netty.buffer.ByteBufAllocator-java.lang.CharSequence-">writeUtf8</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.CharSequence&nbsp;seq)</code> 
+           <div class="block"> 
+            <span>编码<code>CharSequence</code>在<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/UTF-8  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/UTF-8'" tppabs="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> ，并将其写入到<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>与分配<code>alloc</code> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation"> 
+        <caption> 
+         <span>Constructors in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">io.netty.buffer</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colOne" scope="col">Constructor and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../CompositeByteBuf.html#CompositeByteBuf-io.netty.buffer.ByteBufAllocator-boolean-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html#CompositeByteBuf-io.netty.buffer.ByteBufAllocator-boolean-int-">CompositeByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;direct, int&nbsp;maxNumComponents)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../CompositeByteBuf.html#CompositeByteBuf-io.netty.buffer.ByteBufAllocator-boolean-int-io.netty.buffer.ByteBuf...-" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html#CompositeByteBuf-io.netty.buffer.ByteBufAllocator-boolean-int-io.netty.buffer.ByteBuf...-">CompositeByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;direct, int&nbsp;maxNumComponents, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>...&nbsp;buffers)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../CompositeByteBuf.html#CompositeByteBuf-io.netty.buffer.ByteBufAllocator-boolean-int-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html#CompositeByteBuf-io.netty.buffer.ByteBufAllocator-boolean-int-java.lang.Iterable-">CompositeByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;direct, int&nbsp;maxNumComponents, java.lang.Iterable&lt;<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&gt;&nbsp;buffers)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../EmptyByteBuf.html#EmptyByteBuf-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/buffer/EmptyByteBuf.html#EmptyByteBuf-io.netty.buffer.ByteBufAllocator-">EmptyByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledDirectByteBuf.html#UnpooledDirectByteBuf-io.netty.buffer.ByteBufAllocator-java.nio.ByteBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledDirectByteBuf.html#UnpooledDirectByteBuf-io.netty.buffer.ByteBufAllocator-java.nio.ByteBuffer-int-">UnpooledDirectByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.nio.ByteBuffer&nbsp;initialBuffer, int&nbsp;maxCapacity)</code> 
+           <div class="block">
+             通过包装指定的初始缓冲区来创建一个新的直接缓冲区。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledDirectByteBuf.html#UnpooledDirectByteBuf-io.netty.buffer.ByteBufAllocator-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledDirectByteBuf.html#UnpooledDirectByteBuf-io.netty.buffer.ByteBufAllocator-int-int-">UnpooledDirectByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, int&nbsp;initialCapacity, int&nbsp;maxCapacity)</code> 
+           <div class="block">
+             创建一个新的直接缓冲区。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledHeapByteBuf.html#UnpooledHeapByteBuf-io.netty.buffer.ByteBufAllocator-byte:A-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledHeapByteBuf.html#UnpooledHeapByteBuf-io.netty.buffer.ByteBufAllocator-byte:A-int-">UnpooledHeapByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, byte[]&nbsp;initialArray, int&nbsp;maxCapacity)</code> 
+           <div class="block">
+             用现有的字节数组创建一个新的堆缓冲区。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledHeapByteBuf.html#UnpooledHeapByteBuf-io.netty.buffer.ByteBufAllocator-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledHeapByteBuf.html#UnpooledHeapByteBuf-io.netty.buffer.ByteBufAllocator-int-int-">UnpooledHeapByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, int&nbsp;initialCapacity, int&nbsp;maxCapacity)</code> 
+           <div class="block">
+             用新分配的字节数组创建一个新的堆缓冲区。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledUnsafeDirectByteBuf.html#UnpooledUnsafeDirectByteBuf-io.netty.buffer.ByteBufAllocator-java.nio.ByteBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledUnsafeDirectByteBuf.html#UnpooledUnsafeDirectByteBuf-io.netty.buffer.ByteBufAllocator-java.nio.ByteBuffer-int-">UnpooledUnsafeDirectByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.nio.ByteBuffer&nbsp;initialBuffer, int&nbsp;maxCapacity)</code> 
+           <div class="block">
+             通过包装指定的初始缓冲区来创建一个新的直接缓冲区。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../UnpooledUnsafeDirectByteBuf.html#UnpooledUnsafeDirectByteBuf-io.netty.buffer.ByteBufAllocator-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledUnsafeDirectByteBuf.html#UnpooledUnsafeDirectByteBuf-io.netty.buffer.ByteBufAllocator-int-int-">UnpooledUnsafeDirectByteBuf</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, int&nbsp;initialCapacity, int&nbsp;maxCapacity)</code> 
+           <div class="block">
+             创建一个新的直接缓冲区。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+        <caption> 
+         <span>Classes in <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a> that implement <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../channel/PreferHeapByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/PreferHeapByteBufAllocator.html" title="class in io.netty.channel">PreferHeapByteBufAllocator</a></span></code> 
+           <div class="block"> 
+            <span>包裹另一个<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code>，</a>并且在明确要求直接缓冲区时除外使用heapbuffers。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing fields, and an explanation"> 
+        <caption> 
+         <span>Fields in <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a> with type parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Field and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../../channel/ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="class in io.netty.channel">ChannelOption</a>&lt;<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&gt;</code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChannelOption.</span><code><span class="memberNameLink"><a href="../../channel/ChannelOption.html#ALLOCATOR" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html#ALLOCATOR">ALLOCATOR</a></span></code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a> that return <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChannelHandlerContext.</span><code><span class="memberNameLink"><a href="../../channel/ChannelHandlerContext.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#alloc--">alloc</a></span>()</code> 
+           <div class="block"> 
+            <span>返回分配的<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>这将被用于分配<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>秒。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">Channel.</span><code><span class="memberNameLink"><a href="../../channel/Channel.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#alloc--">alloc</a></span>()</code> 
+           <div class="block"> 
+            <span>返回分配的<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>这将被用于分配<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>秒。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">AbstractChannel.</span><code><span class="memberNameLink"><a href="../../channel/AbstractChannel.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/DefaultChannelConfig.html#getAllocator--" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelConfig.html#getAllocator--">getAllocator</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/ChannelConfig.html#getAllocator--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html#getAllocator--">getAllocator</a></span>()</code> 
+           <div class="block"> 
+            <span>返回<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> ，用于通道分配缓冲区。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">RecvByteBufAllocator.Handle.</span><code><span class="memberNameLink"><a href="../../channel/RecvByteBufAllocator.Handle.html#allocate-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html#allocate-io.netty.buffer.ByteBufAllocator-">allocate</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> 
+           <div class="block">
+             创建一个新的接收缓冲区，其容量可能足够大，可以读取所有入站数据，并且足够小，不会浪费其空间。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">RecvByteBufAllocator.DelegatingHandle.</span><code><span class="memberNameLink"><a href="../../channel/RecvByteBufAllocator.DelegatingHandle.html#allocate-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.DelegatingHandle.html#allocate-io.netty.buffer.ByteBufAllocator-">allocate</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultMaxMessagesRecvByteBufAllocator.MaxMessageHandle.</span><code><span class="memberNameLink"><a href="../../channel/DefaultMaxMessagesRecvByteBufAllocator.MaxMessageHandle.html#allocate-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultMaxMessagesRecvByteBufAllocator.MaxMessageHandle.html#allocate-io.netty.buffer.ByteBufAllocator-">allocate</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">CoalescingBufferQueue.</span><code><span class="memberNameLink"><a href="../../channel/CoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/CoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">compose</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>protected abstract <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">AbstractCoalescingBufferQueue.</span><code><span class="memberNameLink"><a href="../../channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">compose</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code> 
+           <div class="block">
+             计算 
+            <code>current + next</code>的结果。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">AbstractCoalescingBufferQueue.</span><code><span class="memberNameLink"><a href="../../channel/AbstractCoalescingBufferQueue.html#composeFirst-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#composeFirst-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-">composeFirst</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;first)</code> 
+           <div class="block"> 
+            <span>计算第一个<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，随后调用<a href="../../channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"><code>AbstractCoalescingBufferQueue.compose(ByteBufAllocator, ByteBuf, ByteBuf)</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>protected <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">AbstractCoalescingBufferQueue.</span><code><span class="memberNameLink"><a href="../../channel/AbstractCoalescingBufferQueue.html#composeIntoComposite-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#composeIntoComposite-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">composeIntoComposite</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code> 
+           <div class="block"> 
+            <span>将<code>cumulation</code>和<code>next</code>成一个新的<a href="../CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">AbstractCoalescingBufferQueue.</span><code><span class="memberNameLink"><a href="../../channel/AbstractCoalescingBufferQueue.html#copyAndCompose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#copyAndCompose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">copyAndCompose</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code> 
+           <div class="block">
+             将 
+            <code>cumulation</code>和 
+            <code>next</code>成一个新的 
+            <a href="../ByteBufAllocator.html#ioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html#ioBuffer--"><code>ioBuffer()</code></a> 。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">AbstractCoalescingBufferQueue.</span><code><span class="memberNameLink"><a href="../../channel/AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-">remove</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, int&nbsp;bytes, <a href="../../channel/ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;aggregatePromise)</code> 
+           <div class="block"> 
+            <span>用指定的字节数从队列中移除<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="interface in io.netty.channel">ChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/DefaultChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="interface in io.netty.channel">ChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/ChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block"> 
+            <span>设置用于通道分配缓冲区的<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation"> 
+        <caption> 
+         <span>Constructors in <a href="../../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">io.netty.channel</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colOne" scope="col">Constructor and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../channel/PreferHeapByteBufAllocator.html#PreferHeapByteBufAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/PreferHeapByteBufAllocator.html#PreferHeapByteBufAllocator-io.netty.buffer.ByteBufAllocator-">PreferHeapByteBufAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.epoll"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/epoll/EpollSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollSocketChannelConfig.html" title="class in io.netty.channel.epoll">EpollSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/epoll/EpollSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/epoll/EpollServerSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollServerSocketChannelConfig.html" title="class in io.netty.channel.epoll">EpollServerSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollServerSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/epoll/EpollServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/epoll/EpollServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollServerChannelConfig.html" title="class in io.netty.channel.epoll">EpollServerChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollServerChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/epoll/EpollServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/epoll/EpollDomainSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollDomainSocketChannelConfig.html" title="class in io.netty.channel.epoll">EpollDomainSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollDomainSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/epoll/EpollDomainSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollDomainSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/epoll/EpollDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollDatagramChannelConfig.html" title="class in io.netty.channel.epoll">EpollDatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/epoll/EpollDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/epoll/EpollChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollChannelConfig.html" title="class in io.netty.channel.epoll">EpollChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/epoll/EpollChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.kqueue"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/kqueue/KQueueSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueSocketChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/kqueue/KQueueSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/kqueue/KQueueServerSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueServerSocketChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueServerSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueServerSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/kqueue/KQueueServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/kqueue/KQueueServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueServerChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueServerChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueServerChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/kqueue/KQueueServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/kqueue/KQueueDomainSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueDomainSocketChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueDomainSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueDomainSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/kqueue/KQueueDomainSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueDomainSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/kqueue/KQueueDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueDatagramChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueDatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/kqueue/KQueueDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/kqueue/KQueueChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/kqueue/KQueueChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.rxtx"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/rxtx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/package-summary.html">io.netty.channel.rxtx</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/rxtx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/package-summary.html">io.netty.channel.rxtx</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/rxtx/RxtxChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/RxtxChannelConfig.html" title="interface in io.netty.channel.rxtx">RxtxChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">RxtxChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/rxtx/RxtxChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/RxtxChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.sctp"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/sctp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html">io.netty.channel.sctp</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/sctp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html">io.netty.channel.sctp</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/sctp/SctpServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannelConfig.html" title="interface in io.netty.channel.sctp">SctpServerChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SctpServerChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/sctp/SctpServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/sctp/SctpChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannelConfig.html" title="interface in io.netty.channel.sctp">SctpChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SctpChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/sctp/SctpChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/sctp/SctpServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannelConfig.html" title="interface in io.netty.channel.sctp">SctpServerChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultSctpServerChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/sctp/DefaultSctpServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/DefaultSctpServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/sctp/SctpChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannelConfig.html" title="interface in io.netty.channel.sctp">SctpChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultSctpChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/sctp/DefaultSctpChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/DefaultSctpChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.socket"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/socket/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">io.netty.channel.socket</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/socket/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">io.netty.channel.socket</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/SocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/SocketChannelConfig.html" title="interface in io.netty.channel.socket">SocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/SocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/SocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/ServerSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/ServerSocketChannelConfig.html" title="interface in io.netty.channel.socket">ServerSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ServerSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/ServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/ServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/SocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/SocketChannelConfig.html" title="interface in io.netty.channel.socket">SocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/DefaultSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/ServerSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/ServerSocketChannelConfig.html" title="interface in io.netty.channel.socket">ServerSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultServerSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/DefaultServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/DefaultDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/DatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.socket.oio"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/socket/oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/package-summary.html">io.netty.channel.socket.oio</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/socket/oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/package-summary.html">io.netty.channel.socket.oio</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/oio/OioSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioSocketChannelConfig.html" title="interface in io.netty.channel.socket.oio">OioSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">OioSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/oio/OioSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/oio/OioServerSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioServerSocketChannelConfig.html" title="interface in io.netty.channel.socket.oio">OioServerSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">OioServerSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/oio/OioServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/oio/OioDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioDatagramChannelConfig.html" title="interface in io.netty.channel.socket.oio">OioDatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">OioDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/oio/OioDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/oio/OioSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioSocketChannelConfig.html" title="interface in io.netty.channel.socket.oio">OioSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultOioSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/oio/DefaultOioSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/DefaultOioSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/socket/oio/OioServerSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioServerSocketChannelConfig.html" title="interface in io.netty.channel.socket.oio">OioServerSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultOioServerSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/socket/oio/DefaultOioServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/DefaultOioServerSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.udt"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/udt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/package-summary.html">io.netty.channel.udt</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/udt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/package-summary.html">io.netty.channel.udt</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/udt/UdtServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannelConfig.html" title="interface in io.netty.channel.udt">UdtServerChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">UdtServerChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/udt/UdtServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/udt/UdtChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannelConfig.html" title="interface in io.netty.channel.udt">UdtChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">UdtChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/udt/UdtChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/udt/UdtServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannelConfig.html" title="interface in io.netty.channel.udt">UdtServerChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultUdtServerChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/udt/DefaultUdtServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/DefaultUdtServerChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../channel/udt/UdtChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannelConfig.html" title="interface in io.netty.channel.udt">UdtChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultUdtChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/udt/DefaultUdtChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/DefaultUdtChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> &nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.unix"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../channel/unix/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">io.netty.channel.unix</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/unix/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">io.netty.channel.unix</a> that return <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>protected abstract <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SocketWritableByteChannel.</span><code><span class="memberNameLink"><a href="../../channel/unix/SocketWritableByteChannel.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/SocketWritableByteChannel.html#alloc--">alloc</a></span>()</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../channel/unix/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">io.netty.channel.unix</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../channel/unix/DomainSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/DomainSocketChannelConfig.html" title="interface in io.netty.channel.unix">DomainSocketChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DomainSocketChannelConfig.</span><code><span class="memberNameLink"><a href="../../channel/unix/DomainSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/DomainSocketChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">io.netty.handler.codec</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">io.netty.handler.codec</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ByteToMessageDecoder.Cumulator.</span><code><span class="memberNameLink"><a href="../../handler/codec/ByteToMessageDecoder.Cumulator.html#cumulate-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html#cumulate-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">cumulate</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in)</code> 
+           <div class="block"> 
+            <span>累积给定的<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>并返回包含累积字节的<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.base64"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/base64/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/package-summary.html">io.netty.handler.codec.base64</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/base64/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/package-summary.html">io.netty.handler.codec.base64</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">Base64.</span><code><span class="memberNameLink"><a href="../../handler/codec/base64/Base64.html#decode-io.netty.buffer.ByteBuf-int-int-io.netty.handler.codec.base64.Base64Dialect-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/Base64.html#decode-io.netty.buffer.ByteBuf-int-int-io.netty.handler.codec.base64.Base64Dialect-io.netty.buffer.ByteBufAllocator-">decode</a></span>(<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;src, int&nbsp;off, int&nbsp;len, <a href="../../handler/codec/base64/Base64Dialect.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/Base64Dialect.html" title="enum in io.netty.handler.codec.base64">Base64Dialect</a>&nbsp;dialect, <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>static <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">Base64.</span><code><span class="memberNameLink"><a href="../../handler/codec/base64/Base64.html#encode-io.netty.buffer.ByteBuf-int-int-boolean-io.netty.handler.codec.base64.Base64Dialect-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/Base64.html#encode-io.netty.buffer.ByteBuf-int-int-boolean-io.netty.handler.codec.base64.Base64Dialect-io.netty.buffer.ByteBufAllocator-">encode</a></span>(<a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;src, int&nbsp;off, int&nbsp;len, boolean&nbsp;breakLines, <a href="../../handler/codec/base64/Base64Dialect.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/Base64Dialect.html" title="enum in io.netty.handler.codec.base64">Base64Dialect</a>&nbsp;dialect, <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/http/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">io.netty.handler.codec.http</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/http/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">io.netty.handler.codec.http</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../handler/codec/http/HttpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpContent.html" title="interface in io.netty.handler.codec.http">HttpContent</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">HttpChunkedInput.</span><code><span class="memberNameLink"><a href="../../handler/codec/http/HttpChunkedInput.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpChunkedInput.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http.multipart"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/http/multipart/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-summary.html">io.netty.handler.codec.http.multipart</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/http/multipart/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-summary.html">io.netty.handler.codec.http.multipart</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../handler/codec/http/HttpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpContent.html" title="interface in io.netty.handler.codec.http">HttpContent</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">HttpPostRequestEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/http/multipart/HttpPostRequestEncoder.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/HttpPostRequestEncoder.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block">
+             返回下一个可用的HttpChunk。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http.websocketx"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../handler/codec/http/websocketx/WebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">WebSocketFrame</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">WebSocketChunkedInput.</span><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/WebSocketChunkedInput.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketChunkedInput.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block">
+             从流中获取分块的数据。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http2"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/http2/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">io.netty.handler.codec.http2</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/http2/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">io.netty.handler.codec.http2</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/codec/http/FullHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpMessage.html" title="interface in io.netty.handler.codec.http">FullHttpMessage</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">InboundHttp2ToHttpAdapter.</span><code><span class="memberNameLink"><a href="../../handler/codec/http2/InboundHttp2ToHttpAdapter.html#newMessage-io.netty.handler.codec.http2.Http2Stream-io.netty.handler.codec.http2.Http2Headers-boolean-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/InboundHttp2ToHttpAdapter.html#newMessage-io.netty.handler.codec.http2.Http2Stream-io.netty.handler.codec.http2.Http2Headers-boolean-io.netty.buffer.ByteBufAllocator-">newMessage</a></span>(<a href="../../handler/codec/http2/Http2Stream.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Stream.html" title="interface in io.netty.handler.codec.http2">Http2Stream</a>&nbsp;stream, <a href="../../handler/codec/http2/Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;headers, boolean&nbsp;validateHttpHeaders, <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code> 
+           <div class="block"> 
+            <span>根据当前连接参数创建一个新的<a href="../../handler/codec/http/FullHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpMessage.html" title="io.netty.handler.codec.http中的接口"><code>FullHttpMessage</code></a></span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>static <a href="../../handler/codec/http/FullHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpRequest.html" title="interface in io.netty.handler.codec.http">FullHttpRequest</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">HttpConversionUtil.</span><code><span class="memberNameLink"><a href="../../handler/codec/http2/HttpConversionUtil.html#toFullHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toFullHttpRequest-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-">toFullHttpRequest</a></span>(int&nbsp;streamId, <a href="../../handler/codec/http2/Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers, <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;validateHttpHeaders)</code> 
+           <div class="block">
+             创建一个新的对象来包含请求数据 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>static <a href="../../handler/codec/http/FullHttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpResponse.html" title="interface in io.netty.handler.codec.http">FullHttpResponse</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">HttpConversionUtil.</span><code><span class="memberNameLink"><a href="../../handler/codec/http2/HttpConversionUtil.html#toFullHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpConversionUtil.html#toFullHttpResponse-int-io.netty.handler.codec.http2.Http2Headers-io.netty.buffer.ByteBufAllocator-boolean-">toFullHttpResponse</a></span>(int&nbsp;streamId, <a href="../../handler/codec/http2/Http2Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Headers.html" title="interface in io.netty.handler.codec.http2">Http2Headers</a>&nbsp;http2Headers, <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;validateHttpHeaders)</code> 
+           <div class="block">
+             创建一个新的对象来包含响应数据 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.spdy"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/codec/spdy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/package-summary.html">io.netty.handler.codec.spdy</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/codec/spdy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/package-summary.html">io.netty.handler.codec.spdy</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyHeaderBlockRawEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyHeaderBlockRawEncoder.html#encode-io.netty.buffer.ByteBufAllocator-io.netty.handler.codec.spdy.SpdyHeadersFrame-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyHeaderBlockRawEncoder.html#encode-io.netty.buffer.ByteBufAllocator-io.netty.handler.codec.spdy.SpdyHeadersFrame-">encode</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../../handler/codec/spdy/SpdyHeadersFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyHeadersFrame.html" title="interface in io.netty.handler.codec.spdy">SpdyHeadersFrame</a>&nbsp;frame)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeDataFrame-io.netty.buffer.ByteBufAllocator-int-boolean-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeDataFrame-io.netty.buffer.ByteBufAllocator-int-boolean-io.netty.buffer.ByteBuf-">encodeDataFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;streamId, boolean&nbsp;last, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;data)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeGoAwayFrame-io.netty.buffer.ByteBufAllocator-int-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeGoAwayFrame-io.netty.buffer.ByteBufAllocator-int-int-">encodeGoAwayFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;lastGoodStreamId, int&nbsp;statusCode)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeHeadersFrame-io.netty.buffer.ByteBufAllocator-int-boolean-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeHeadersFrame-io.netty.buffer.ByteBufAllocator-int-boolean-io.netty.buffer.ByteBuf-">encodeHeadersFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;streamId, boolean&nbsp;last, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;headerBlock)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodePingFrame-io.netty.buffer.ByteBufAllocator-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodePingFrame-io.netty.buffer.ByteBufAllocator-int-">encodePingFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;id)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeRstStreamFrame-io.netty.buffer.ByteBufAllocator-int-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeRstStreamFrame-io.netty.buffer.ByteBufAllocator-int-int-">encodeRstStreamFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;streamId, int&nbsp;statusCode)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeSettingsFrame-io.netty.buffer.ByteBufAllocator-io.netty.handler.codec.spdy.SpdySettingsFrame-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeSettingsFrame-io.netty.buffer.ByteBufAllocator-io.netty.handler.codec.spdy.SpdySettingsFrame-">encodeSettingsFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, <a href="../../handler/codec/spdy/SpdySettingsFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdySettingsFrame.html" title="interface in io.netty.handler.codec.spdy">SpdySettingsFrame</a>&nbsp;spdySettingsFrame)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeSynReplyFrame-io.netty.buffer.ByteBufAllocator-int-boolean-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeSynReplyFrame-io.netty.buffer.ByteBufAllocator-int-boolean-io.netty.buffer.ByteBuf-">encodeSynReplyFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;streamId, boolean&nbsp;last, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;headerBlock)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeSynStreamFrame-io.netty.buffer.ByteBufAllocator-int-int-byte-boolean-boolean-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeSynStreamFrame-io.netty.buffer.ByteBufAllocator-int-int-byte-boolean-boolean-io.netty.buffer.ByteBuf-">encodeSynStreamFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;streamId, int&nbsp;associatedToStreamId, byte&nbsp;priority, boolean&nbsp;last, boolean&nbsp;unidirectional, <a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;headerBlock)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SpdyFrameEncoder.</span><code><span class="memberNameLink"><a href="../../handler/codec/spdy/SpdyFrameEncoder.html#encodeWindowUpdateFrame-io.netty.buffer.ByteBufAllocator-int-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameEncoder.html#encodeWindowUpdateFrame-io.netty.buffer.ByteBufAllocator-int-int-">encodeWindowUpdateFrame</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, int&nbsp;streamId, int&nbsp;deltaWindowSize)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.ssl"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/ssl/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">io.netty.handler.ssl</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/ssl/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">io.netty.handler.ssl</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>abstract javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">SslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code> 
+           <div class="block">
+             创建一个新的 
+            <code>SSLEngine</code> 。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">ReferenceCountedOpenSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/ReferenceCountedOpenSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code> 
+           <div class="block">
+             用当前配置返回一个新的服务器端 
+            <code>SSLEngine</code> 。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">JdkSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">DelegatingSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/DelegatingSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/DelegatingSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>abstract javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">SslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort)</code> 
+           <div class="block">
+             使用咨询对等信息创建新的 
+            <code>SSLEngine</code> 。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">ReferenceCountedOpenSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/ReferenceCountedOpenSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">JdkSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>javax.net.ssl.SSLEngine</code></td> 
+          <td class="colLast"><span class="typeNameLabel">DelegatingSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/DelegatingSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/DelegatingSslContext.html#newEngine-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newEngine</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc)</code> 
+           <div class="block"> 
+            <span>创建一个新的<a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中"><code>SslHandler</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;startTls)</code> 
+           <div class="block">
+             创建一个新的SslHandler。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ReferenceCountedOpenSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/ReferenceCountedOpenSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;startTls)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DelegatingSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/DelegatingSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/DelegatingSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-boolean-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, boolean&nbsp;startTls)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort)</code> 
+           <div class="block"> 
+            <span>用咨询对等信息创建一个新的<a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中"><code>SslHandler</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">SslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort, boolean&nbsp;startTls)</code> 
+           <div class="block">
+             创建一个新的SslHandler。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ReferenceCountedOpenSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/ReferenceCountedOpenSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort, boolean&nbsp;startTls)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>protected <a href="../../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DelegatingSslContext.</span><code><span class="memberNameLink"><a href="../../handler/ssl/DelegatingSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/DelegatingSslContext.html#newHandler-io.netty.buffer.ByteBufAllocator-java.lang.String-int-boolean-">newHandler</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, java.lang.String&nbsp;peerHost, int&nbsp;peerPort, boolean&nbsp;startTls)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.stream"> </a> <h3>Uses of <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a> in <a href="../../handler/stream/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/package-summary.html">io.netty.handler.stream</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../handler/stream/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/package-summary.html">io.netty.handler.stream</a> with parameters of type <a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChunkedStream.</span><code><span class="memberNameLink"><a href="../../handler/stream/ChunkedStream.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedStream.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChunkedNioStream.</span><code><span class="memberNameLink"><a href="../../handler/stream/ChunkedNioStream.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedNioStream.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChunkedNioFile.</span><code><span class="memberNameLink"><a href="../../handler/stream/ChunkedNioFile.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedNioFile.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../../handler/stream/ChunkedInput.html" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedInput.html" title="type parameter in ChunkedInput">B</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChunkedInput.</span><code><span class="memberNameLink"><a href="../../handler/stream/ChunkedInput.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedInput.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code> 
+           <div class="block">
+             Fetches a chunked data from the stream. 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">ChunkedFile.</span><code><span class="memberNameLink"><a href="../../handler/stream/ChunkedFile.html#readChunk-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedFile.html#readChunk-io.netty.buffer.ByteBufAllocator-">readChunk</a></span>(<a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li><a href="../ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-buffer-class-use-ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/class-use/ByteBufAllocator.html" target="_top">框架</a></li> 
+    <li><a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/ByteBufAllocator.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/buffer/class-use/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

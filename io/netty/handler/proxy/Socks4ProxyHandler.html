@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Socks4ProxyHandler (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.proxy.Socks4ProxyHandler class"> 
+  <meta name="keywords" content="protocol()"> 
+  <meta name="keywords" content="authScheme()"> 
+  <meta name="keywords" content="username()"> 
+  <meta name="keywords" content="addCodec()"> 
+  <meta name="keywords" content="removeEncoder()"> 
+  <meta name="keywords" content="removeDecoder()"> 
+  <meta name="keywords" content="newInitialMessage()"> 
+  <meta name="keywords" content="handleResponse()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Socks4ProxyHandler (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/class-use/Socks4ProxyHandler.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Socks5ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks5ProxyHandler.html" title="class in io.netty.handler.proxy"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-proxy-Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/proxy/Socks4ProxyHandler.html" target="_top">框架</a></li> 
+    <li><a href="Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.proxy 
+   </div> 
+   <h2 title="Class Socks4ProxyHandler" class="title">Class Socks4ProxyHandler</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">io.netty.channel.ChannelHandlerAdapter</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">io.netty.channel.ChannelInboundHandlerAdapter</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="../../channel/ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html" title="class in io.netty.channel">io.netty.channel.ChannelDuplexHandler</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">io.netty.handler.proxy.ProxyHandler</a></li> 
+            <li> 
+             <ul class="inheritance"> 
+              <li>io.netty.handler.proxy.Socks4ProxyHandler</li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口">ChannelHandler</a> ， <a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口">ChannelInboundHandler</a> ， <a href="../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口">ChannelOutboundHandler</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">Socks4ProxyHandler</span>
+extends <a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></pre> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.channel.<a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="../../channel/ChannelHandler.Sharable.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.Sharable.html" title="annotation in io.netty.channel">ChannelHandler.Sharable</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#Socks4ProxyHandler-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#Socks4ProxyHandler-java.net.SocketAddress-">Socks4ProxyHandler</a></span>(java.net.SocketAddress&nbsp;proxyAddress)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#Socks4ProxyHandler-java.net.SocketAddress-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#Socks4ProxyHandler-java.net.SocketAddress-java.lang.String-">Socks4ProxyHandler</a></span>(java.net.SocketAddress&nbsp;proxyAddress, java.lang.String&nbsp;username)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-">addCodec</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              添加与代理服务器进行通信所需的编解码器处理程序。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#authScheme--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#authScheme--">authScheme</a></span>()</code> 
+            <div class="block">
+              返回正在使用的认证方案的名称。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-">handleResponse</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;response)</code> 
+            <div class="block">
+              处理从代理服务器收到的消息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>protected java.lang.Object</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#newInitialMessage-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#newInitialMessage-io.netty.channel.ChannelHandlerContext-">newInitialMessage</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              返回到代理服务器的连接建立后第一次发送的新消息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#protocol--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#protocol--">protocol</a></span>()</code> 
+            <div class="block">
+              返回正在使用的代理协议的名称。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#removeDecoder-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#removeDecoder-io.netty.channel.ChannelHandlerContext-">removeDecoder</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              删除 
+             <a href="ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-"><code>ProxyHandler.addCodec(ChannelHandlerContext)</code>中</a>添加的解码器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#removeEncoder-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#removeEncoder-io.netty.channel.ChannelHandlerContext-">removeEncoder</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              删除 
+             <a href="ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-"><code>ProxyHandler.addCodec(ChannelHandlerContext)</code>中</a>添加的编码器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socks4ProxyHandler.html#username--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html#username--">username</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.proxy.ProxyHandler"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.proxy.<a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></h3> <code><a href="ProxyHandler.html#channelActive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#channelActive-io.netty.channel.ChannelHandlerContext-">channelActive</a>, <a href="ProxyHandler.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#channelInactive-io.netty.channel.ChannelHandlerContext-">channelInactive</a>, <a href="ProxyHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a>, <a href="ProxyHandler.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-">channelReadComplete</a>, <a href="ProxyHandler.html#connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a>, <a href="ProxyHandler.html#connectFuture--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#connectFuture--">connectFuture</a>, <a href="ProxyHandler.html#connectTimeoutMillis--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#connectTimeoutMillis--">connectTimeoutMillis</a>, <a href="ProxyHandler.html#destinationAddress--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#destinationAddress--">destinationAddress</a>, <a href="ProxyHandler.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-">exceptionCaught</a>, <a href="ProxyHandler.html#exceptionMessage-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#exceptionMessage-java.lang.String-">exceptionMessage</a>, <a href="ProxyHandler.html#flush-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#flush-io.netty.channel.ChannelHandlerContext-">flush</a>, <a href="ProxyHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a>, <a href="ProxyHandler.html#isConnected--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#isConnected--">isConnected</a>, <a href="ProxyHandler.html#proxyAddress--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#proxyAddress--">proxyAddress</a>, <a href="ProxyHandler.html#sendToProxyServer-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#sendToProxyServer-java.lang.Object-">sendToProxyServer</a>, <a href="ProxyHandler.html#setConnectTimeoutMillis-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#setConnectTimeoutMillis-long-">setConnectTimeoutMillis</a>, <a href="ProxyHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-">write</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelDuplexHandler"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html" title="class in io.netty.channel">ChannelDuplexHandler</a></h3> <code><a href="../../channel/ChannelDuplexHandler.html#bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-">bind</a>, <a href="../../channel/ChannelDuplexHandler.html#close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">close</a>, <a href="../../channel/ChannelDuplexHandler.html#deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">deregister</a>, <a href="../../channel/ChannelDuplexHandler.html#disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">disconnect</a>, <a href="../../channel/ChannelDuplexHandler.html#read-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#read-io.netty.channel.ChannelHandlerContext-">read</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelInboundHandlerAdapter"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></h3> <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelRegistered-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelRegistered-io.netty.channel.ChannelHandlerContext-">channelRegistered</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelUnregistered-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelUnregistered-io.netty.channel.ChannelHandlerContext-">channelUnregistered</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelWritabilityChanged-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelWritabilityChanged-io.netty.channel.ChannelHandlerContext-">channelWritabilityChanged</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-">userEventTriggered</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandlerAdapter"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></h3> <code><a href="../../channel/ChannelHandlerAdapter.html#ensureNotSharable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#ensureNotSharable--">ensureNotSharable</a>, <a href="../../channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a>, <a href="../../channel/ChannelHandlerAdapter.html#isSharable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#isSharable--">isSharable</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Methods inherited from interface&nbsp;io.netty.channel.<a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="../../channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="Socks4ProxyHandler-java.net.SocketAddress-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Socks4ProxyHandler</h4> <pre>public&nbsp;Socks4ProxyHandler(java.net.SocketAddress&nbsp;proxyAddress)</pre> </li> 
+        </ul> <a name="Socks4ProxyHandler-java.net.SocketAddress-java.lang.String-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>Socks4ProxyHandler</h4> <pre>public&nbsp;Socks4ProxyHandler(java.net.SocketAddress&nbsp;proxyAddress,
+                          java.lang.String&nbsp;username)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="protocol--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>protocol</h4> <pre>public&nbsp;java.lang.String&nbsp;protocol()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#protocol--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#protocol--">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            返回正在使用的代理协议的名称。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#protocol--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#protocol--">protocol</a></code>在课堂上 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="authScheme--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>authScheme</h4> <pre>public&nbsp;java.lang.String&nbsp;authScheme()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#authScheme--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#authScheme--">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            返回正在使用的认证方案的名称。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#authScheme--" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#authScheme--">authScheme</a></code>在课堂上 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="username--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>username</h4> <pre>public&nbsp;java.lang.String&nbsp;username()</pre> </li> 
+        </ul> <a name="addCodec-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addCodec</h4> <pre>protected&nbsp;void&nbsp;addCodec(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                 throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            添加与代理服务器进行通信所需的编解码器处理程序。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-">addCodec</a></code>在课堂上 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeEncoder-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeEncoder</h4> <pre>protected&nbsp;void&nbsp;removeEncoder(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                      throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#removeEncoder-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#removeEncoder-io.netty.channel.ChannelHandlerContext-">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            删除 
+           <a href="ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-"><code>ProxyHandler.addCodec(ChannelHandlerContext)</code>中</a>添加的编码器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#removeEncoder-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#removeEncoder-io.netty.channel.ChannelHandlerContext-">removeEncoder</a></code>在课堂上 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeDecoder-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeDecoder</h4> <pre>protected&nbsp;void&nbsp;removeDecoder(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                      throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#removeDecoder-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#removeDecoder-io.netty.channel.ChannelHandlerContext-">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            删除 
+           <a href="ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#addCodec-io.netty.channel.ChannelHandlerContext-"><code>ProxyHandler.addCodec(ChannelHandlerContext)</code>中</a>添加的解码器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#removeDecoder-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#removeDecoder-io.netty.channel.ChannelHandlerContext-">removeDecoder</a></code>在课堂上 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newInitialMessage-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newInitialMessage</h4> <pre>protected&nbsp;java.lang.Object&nbsp;newInitialMessage(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                                      throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#newInitialMessage-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#newInitialMessage-io.netty.channel.ChannelHandlerContext-">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            返回到代理服务器的连接建立后第一次发送的新消息。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#newInitialMessage-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#newInitialMessage-io.netty.channel.ChannelHandlerContext-">newInitialMessage</a></code>在课堂上 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             初始消息或 
+            <code>null</code>如果代理服务器需要发送第一条消息） 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>handleResponse</h4> <pre>protected&nbsp;boolean&nbsp;handleResponse(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                                 java.lang.Object&nbsp;response)
+                          throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ProxyHandler.html#handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-">ProxyHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            处理从代理服务器收到的消息。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ProxyHandler.html#handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html#handleResponse-io.netty.channel.ChannelHandlerContext-java.lang.Object-">handleResponse</a></code>在课程 
+            <code><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy">ProxyHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>如果到目的地的连接已建立， 
+            <code>false</code>如果到目的地的连接尚未建立，并且预计将从代理服务器获得更多消息 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/class-use/Socks4ProxyHandler.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="class in io.netty.handler.proxy"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Socks5ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks5ProxyHandler.html" title="class in io.netty.handler.proxy"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-proxy-Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/proxy/Socks4ProxyHandler.html" target="_top">框架</a></li> 
+    <li><a href="Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/proxy/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

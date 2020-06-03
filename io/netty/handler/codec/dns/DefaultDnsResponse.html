@@ -1,0 +1,1209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DefaultDnsResponse (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.dns.DefaultDnsResponse class"> 
+  <meta name="keywords" content="isAuthoritativeAnswer()"> 
+  <meta name="keywords" content="setAuthoritativeAnswer()"> 
+  <meta name="keywords" content="isTruncated()"> 
+  <meta name="keywords" content="setTruncated()"> 
+  <meta name="keywords" content="isRecursionAvailable()"> 
+  <meta name="keywords" content="setRecursionAvailable()"> 
+  <meta name="keywords" content="code()"> 
+  <meta name="keywords" content="setCode()"> 
+  <meta name="keywords" content="setId()"> 
+  <meta name="keywords" content="setOpCode()"> 
+  <meta name="keywords" content="setRecursionDesired()"> 
+  <meta name="keywords" content="setZ()"> 
+  <meta name="keywords" content="setRecord()"> 
+  <meta name="keywords" content="addRecord()"> 
+  <meta name="keywords" content="clear()"> 
+  <meta name="keywords" content="touch()"> 
+  <meta name="keywords" content="retain()"> 
+  <meta name="keywords" content="toString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultDnsResponse (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultDnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/class-use/DefaultDnsResponse.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultDnsRecordEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsRecordEncoder.html" title="class in io.netty.handler.codec.dns"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-dns-DefaultDnsResponse.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/dns/DefaultDnsResponse.html" target="_top">框架</a></li> 
+    <li><a href="DefaultDnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.dns 
+   </div> 
+   <h2 title="Class DefaultDnsResponse" class="title">Class DefaultDnsResponse</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../../util/AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">io.netty.util.AbstractReferenceCounted</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">io.netty.handler.codec.dns.AbstractDnsMessage</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.handler.codec.dns.DefaultDnsResponse</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="io.netty.handler.codec.dns中的接口">DnsMessage</a> ， <a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="io.netty.handler.codec.dns中的接口">DnsResponse</a> ， <a href="../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口">ReferenceCounted</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="DatagramDnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DatagramDnsResponse.html" title="class in io.netty.handler.codec.dns">DatagramDnsResponse</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public class <span class="typeNameLabel">DefaultDnsResponse</span>
+extends <a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a>
+implements <a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></pre> 
+      <div class="block"> 
+       <span>默认的<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="io.netty.handler.codec.dns中的接口"><code>DnsResponse</code></a>实现。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#DefaultDnsResponse-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#DefaultDnsResponse-int-">DefaultDnsResponse</a></span>(int&nbsp;id)</code> 
+            <div class="block">
+              使用 
+             <a href="DnsOpCode.html#QUERY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html#QUERY"><code>DnsOpCode.QUERY</code></a> 
+             <code>opCode</code>和 
+             <a href="DnsResponseCode.html#NOERROR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html#NOERROR"><code>DnsResponseCode.NOERROR</code></a> 
+             <code>RCODE</code>创建一个新实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#DefaultDnsResponse-int-io.netty.handler.codec.dns.DnsOpCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#DefaultDnsResponse-int-io.netty.handler.codec.dns.DnsOpCode-">DefaultDnsResponse</a></span>(int&nbsp;id, <a href="DnsOpCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html" title="class in io.netty.handler.codec.dns">DnsOpCode</a>&nbsp;opCode)</code> 
+            <div class="block">
+              用 
+             <a href="DnsResponseCode.html#NOERROR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html#NOERROR"><code>DnsResponseCode.NOERROR</code></a> 
+             <code>RCODE</code>创建一个新实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#DefaultDnsResponse-int-io.netty.handler.codec.dns.DnsOpCode-io.netty.handler.codec.dns.DnsResponseCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#DefaultDnsResponse-int-io.netty.handler.codec.dns.DnsOpCode-io.netty.handler.codec.dns.DnsResponseCode-">DefaultDnsResponse</a></span>(int&nbsp;id, <a href="DnsOpCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html" title="class in io.netty.handler.codec.dns">DnsOpCode</a>&nbsp;opCode, <a href="DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></span>(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section, <a href="DnsRecord.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecord.html" title="interface in io.netty.handler.codec.dns">DnsRecord</a>&nbsp;record)</code> 
+            <div class="block">
+              添加指定 
+             <code>record</code>在指定的结束 
+             <code>section</code>此DNS的消息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></span>(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section, int&nbsp;index, <a href="DnsRecord.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecord.html" title="interface in io.netty.handler.codec.dns">DnsRecord</a>&nbsp;record)</code> 
+            <div class="block">
+              添加指定 
+             <code>record</code>在指定 
+             <code>index</code>指定的 
+             <code>section</code>此DNS的消息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#clear--">clear</a></span>()</code> 
+            <div class="block">
+              删除此DNS消息中的所有记录。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#clear-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#clear-io.netty.handler.codec.dns.DnsSection-">clear</a></span>(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section)</code> 
+            <div class="block">
+              删除此DNS消息的指定 
+             <code>section</code>的所有记录。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#code--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#code--">code</a></span>()</code> 
+            <div class="block">
+              返回4位返回码。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#isAuthoritativeAnswer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#isAuthoritativeAnswer--">isAuthoritativeAnswer</a></span>()</code> 
+            <div class="block">
+              如果响应服务器对查询消息中的域名具有权威性，则返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#isRecursionAvailable--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#isRecursionAvailable--">isRecursionAvailable</a></span>()</code> 
+            <div class="block">
+              如果DNS服务器可以处理递归查询，则返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#isTruncated--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#isTruncated--">isTruncated</a></span>()</code> 
+            <div class="block">
+              如果响应已被截断，则返回 
+             <code>true</code> ，通常超过512个字节。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#retain--">retain</a></span>()</code> 
+            <div class="block">
+              将引用计数增加 
+             <code>1</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#retain-int-">retain</a></span>(int&nbsp;increment)</code> 
+            <div class="block">
+              通过指定的 
+             <code>increment</code>增加引用计数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setAuthoritativeAnswer-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setAuthoritativeAnswer-boolean-">setAuthoritativeAnswer</a></span>(boolean&nbsp;authoritativeAnswer)</code> 
+            <div class="block">
+              如果响应服务器对查询消息中的域名具有权威性，则设置为 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setCode-io.netty.handler.codec.dns.DnsResponseCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setCode-io.netty.handler.codec.dns.DnsResponseCode-">setCode</a></span>(<a href="DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code)</code> 
+            <div class="block">
+              设置此消息的响应代码。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setId-int-">setId</a></span>(int&nbsp;id)</code> 
+            <div class="block">
+              设置此DNS消息的 
+             <code>ID</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-">setOpCode</a></span>(<a href="DnsOpCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html" title="class in io.netty.handler.codec.dns">DnsOpCode</a>&nbsp;opCode)</code> 
+            <div class="block">
+              设置此DNS消息的 
+             <code>opCode</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">setRecord</a></span>(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section, <a href="DnsRecord.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecord.html" title="interface in io.netty.handler.codec.dns">DnsRecord</a>&nbsp;record)</code> 
+            <div class="block">
+              设置指定的 
+             <code>section</code>这个DNS消息到指定的 
+             <code>record</code> ，使其成为一个单一的记录部分。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setRecursionAvailable-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setRecursionAvailable-boolean-">setRecursionAvailable</a></span>(boolean&nbsp;recursionAvailable)</code> 
+            <div class="block">
+              如果DNS服务器可以处理递归查询，则设置为 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setRecursionDesired-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setRecursionDesired-boolean-">setRecursionDesired</a></span>(boolean&nbsp;recursionDesired)</code> 
+            <div class="block">
+              设置此DNS消息的 
+             <code>RD</code> （期望递归）字段。 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setTruncated-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setTruncated-boolean-">setTruncated</a></span>(boolean&nbsp;truncated)</code> 
+            <div class="block">
+              如果响应已被截断，则设置为 
+             <code>true</code> （通常发生在512字节以上的响应）。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#setZ-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#setZ-int-">setZ</a></span>(int&nbsp;z)</code> 
+            <div class="block">
+              设置此DNS消息的 
+             <code>Z</code> （保留供将来使用）字段。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#touch--">touch</a></span>()</code> 
+            <div class="block">
+              记录此对象的当前访问位置以进行调试。 
+            </div> </td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultDnsResponse.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html#touch-java.lang.Object-">touch</a></span>(java.lang.Object&nbsp;hint)</code> 
+            <div class="block">
+              记录此对象的当前访问位置，并附加一些用于调试的任意信息。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.dns.AbstractDnsMessage"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.dns.<a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></h3> <code><a href="AbstractDnsMessage.html#count--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#count--">count</a>, <a href="AbstractDnsMessage.html#count-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#count-io.netty.handler.codec.dns.DnsSection-">count</a>, <a href="AbstractDnsMessage.html#deallocate--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#deallocate--">deallocate</a>, <a href="AbstractDnsMessage.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#equals-java.lang.Object-">equals</a>, <a href="AbstractDnsMessage.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#hashCode--">hashCode</a>, <a href="AbstractDnsMessage.html#id--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#id--">id</a>, <a href="AbstractDnsMessage.html#isRecursionDesired--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#isRecursionDesired--">isRecursionDesired</a>, <a href="AbstractDnsMessage.html#opCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#opCode--">opCode</a>, <a href="AbstractDnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-">recordAt</a>, <a href="AbstractDnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-int-">recordAt</a>, <a href="AbstractDnsMessage.html#removeRecord-io.netty.handler.codec.dns.DnsSection-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#removeRecord-io.netty.handler.codec.dns.DnsSection-int-">removeRecord</a>, <a href="AbstractDnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">setRecord</a>, <a href="AbstractDnsMessage.html#z--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#z--">z</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.AbstractReferenceCounted"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.<a href="../../../util/AbstractReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html" title="class in io.netty.util">AbstractReferenceCounted</a></h3> <code><a href="../../../util/AbstractReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#refCnt--">refCnt</a>, <a href="../../../util/AbstractReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#release--">release</a>, <a href="../../../util/AbstractReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#release-int-">release</a>, <a href="../../../util/AbstractReferenceCounted.html#setRefCnt-int-" tppabs="http://netty.io/4.1/api/io/netty/util/AbstractReferenceCounted.html#setRefCnt-int-">setRefCnt</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.dns.DnsMessage"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.dns.<a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></h3> <code><a href="DnsMessage.html#count--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#count--">count</a>, <a href="DnsMessage.html#count-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#count-io.netty.handler.codec.dns.DnsSection-">count</a>, <a href="DnsMessage.html#id--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#id--">id</a>, <a href="DnsMessage.html#isRecursionDesired--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#isRecursionDesired--">isRecursionDesired</a>, <a href="DnsMessage.html#opCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#opCode--">opCode</a>, <a href="DnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-">recordAt</a>, <a href="DnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#recordAt-io.netty.handler.codec.dns.DnsSection-int-">recordAt</a>, <a href="DnsMessage.html#removeRecord-io.netty.handler.codec.dns.DnsSection-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#removeRecord-io.netty.handler.codec.dns.DnsSection-int-">removeRecord</a>, <a href="DnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">setRecord</a>, <a href="DnsMessage.html#z--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#z--">z</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.ReferenceCounted"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.<a href="../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></h3> <code><a href="../../../util/ReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#refCnt--">refCnt</a>, <a href="../../../util/ReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release--">release</a>, <a href="../../../util/ReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release-int-">release</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DefaultDnsResponse-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultDnsResponse</h4> <pre>public&nbsp;DefaultDnsResponse(int&nbsp;id)</pre> 
+          <div class="block">
+            使用 
+           <a href="DnsOpCode.html#QUERY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html#QUERY"><code>DnsOpCode.QUERY</code></a> 
+           <code>opCode</code>和 
+           <a href="DnsResponseCode.html#NOERROR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html#NOERROR"><code>DnsResponseCode.NOERROR</code></a> 
+           <code>RCODE</code>创建一个新实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>id</code> - DNS响应的 
+            <code>ID</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultDnsResponse-int-io.netty.handler.codec.dns.DnsOpCode-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultDnsResponse</h4> <pre>public&nbsp;DefaultDnsResponse(int&nbsp;id,
+                          <a href="DnsOpCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html" title="class in io.netty.handler.codec.dns">DnsOpCode</a>&nbsp;opCode)</pre> 
+          <div class="block">
+            使用 
+           <a href="DnsResponseCode.html#NOERROR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html#NOERROR"><code>DnsResponseCode.NOERROR</code></a> 
+           <code>RCODE</code>创建一个新实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>id</code> - DNS响应的 
+            <code>ID</code> 
+           </dd> 
+           <dd> 
+            <code>opCode</code> - DNS响应的 
+            <code>opCode</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultDnsResponse-int-io.netty.handler.codec.dns.DnsOpCode-io.netty.handler.codec.dns.DnsResponseCode-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DefaultDnsResponse</h4> <pre>public&nbsp;DefaultDnsResponse(int&nbsp;id,
+                          <a href="DnsOpCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html" title="class in io.netty.handler.codec.dns">DnsOpCode</a>&nbsp;opCode,
+                          <a href="DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>id</code> - DNS响应的 
+            <code>ID</code> 
+           </dd> 
+           <dd> 
+            <code>opCode</code> - DNS响应的 
+            <code>opCode</code> 
+           </dd> 
+           <dd> 
+            <code>code</code> - DNS响应的 
+            <code>RCODE</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="isAuthoritativeAnswer--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isAuthoritativeAnswer</h4> <pre>public&nbsp;boolean&nbsp;isAuthoritativeAnswer()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#isAuthoritativeAnswer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#isAuthoritativeAnswer--">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            如果响应服务器对查询消息中的域名具有权威性，则返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#isAuthoritativeAnswer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#isAuthoritativeAnswer--">isAuthoritativeAnswer</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setAuthoritativeAnswer-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setAuthoritativeAnswer</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setAuthoritativeAnswer(boolean&nbsp;authoritativeAnswer)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#setAuthoritativeAnswer-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setAuthoritativeAnswer-boolean-">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            如果响应服务器对查询消息中的域名具有权威性，则设置为 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setAuthoritativeAnswer-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setAuthoritativeAnswer-boolean-">setAuthoritativeAnswer</a></code> ，界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>authoritativeAnswer</code> - 标志为权威答案 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isTruncated--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isTruncated</h4> <pre>public&nbsp;boolean&nbsp;isTruncated()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#isTruncated--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#isTruncated--">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            如果响应已被截断，则返回 
+           <code>true</code> ，通常超过512个字节。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#isTruncated--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#isTruncated--">isTruncated</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setTruncated-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setTruncated</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setTruncated(boolean&nbsp;truncated)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#setTruncated-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setTruncated-boolean-">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            如果响应已被截断，则设置为 
+           <code>true</code> （通常发生在512字节以上的响应）。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setTruncated-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setTruncated-boolean-">setTruncated</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>truncated</code> - 截断标志 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isRecursionAvailable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isRecursionAvailable</h4> <pre>public&nbsp;boolean&nbsp;isRecursionAvailable()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#isRecursionAvailable--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#isRecursionAvailable--">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            如果DNS服务器可以处理递归查询，则返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#isRecursionAvailable--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#isRecursionAvailable--">isRecursionAvailable</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setRecursionAvailable-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setRecursionAvailable</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setRecursionAvailable(boolean&nbsp;recursionAvailable)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#setRecursionAvailable-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setRecursionAvailable-boolean-">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            如果DNS服务器可以处理递归查询，则设置为 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setRecursionAvailable-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setRecursionAvailable-boolean-">setRecursionAvailable</a></code> ，界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>recursionAvailable</code> - 递归可用性标志 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="code--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>code</h4> <pre>public&nbsp;<a href="DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#code--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#code--">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            返回4位返回码。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#code--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#code--">code</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setCode-io.netty.handler.codec.dns.DnsResponseCode-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setCode</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setCode(<a href="DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsResponse.html#setCode-io.netty.handler.codec.dns.DnsResponseCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setCode-io.netty.handler.codec.dns.DnsResponseCode-">DnsResponse</a></code></span> 
+          </div> 
+          <div class="block">
+            设置此消息的响应代码。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setCode-io.netty.handler.codec.dns.DnsResponseCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setCode-io.netty.handler.codec.dns.DnsResponseCode-">setCode</a></code>接口 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>code</code> - 响应代码 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setId-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setId</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setId(int&nbsp;id)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#setId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setId-int-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block">
+            设置此DNS消息的 
+           <code>ID</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#setId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setId-int-">setId</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setId-int-">setId</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#setId-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#setId-int-">setId</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setOpCode-io.netty.handler.codec.dns.DnsOpCode-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setOpCode</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setOpCode(<a href="DnsOpCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsOpCode.html" title="class in io.netty.handler.codec.dns">DnsOpCode</a>&nbsp;opCode)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block">
+            设置此DNS消息的 
+           <code>opCode</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-">setOpCode</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-">setOpCode</a></code> ，界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#setOpCode-io.netty.handler.codec.dns.DnsOpCode-">setOpCode</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setRecursionDesired-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setRecursionDesired</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setRecursionDesired(boolean&nbsp;recursionDesired)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsMessage.html#setRecursionDesired-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setRecursionDesired-boolean-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block">
+            设置此DNS消息的 
+           <code>RD</code> （期望递归）字段。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#setRecursionDesired-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setRecursionDesired-boolean-">setRecursionDesired</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setRecursionDesired-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setRecursionDesired-boolean-">setRecursionDesired</a></code> ，界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#setRecursionDesired-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#setRecursionDesired-boolean-">setRecursionDesired</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setZ-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setZ</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setZ(int&nbsp;z)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#setZ-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setZ-int-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block">
+            设置此DNS消息的 
+           <code>Z</code> （保留供将来使用）字段。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#setZ-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setZ-int-">setZ</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setZ-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setZ-int-">setZ</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#setZ-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#setZ-int-">setZ</a></code>在课程 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setRecord</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;setRecord(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section,
+                             <a href="DnsRecord.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecord.html" title="interface in io.netty.handler.codec.dns">DnsRecord</a>&nbsp;record)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="DnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>设置指定的<code>section</code>这个DNS消息到指定的<code>record</code> ，使其成为一个单一的记录部分。</span> 
+           <span>当指定的<code>section</code>是<a href="DnsSection.html#QUESTION" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html#QUESTION"><code>DnsSection.QUESTION</code>时</a> ，指定的<code>record</code>必须是<a href="DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="io.netty.handler.codec.dns中的接口"><code>DnsQuestion</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">setRecord</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">setRecord</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#setRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">setRecord</a></code>在课堂 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addRecord</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;addRecord(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section,
+                             <a href="DnsRecord.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecord.html" title="interface in io.netty.handler.codec.dns">DnsRecord</a>&nbsp;record)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>添加指定<code>record</code>在指定的结束<code>section</code>此DNS的消息。</span> 
+           <span>当指定的<code>section</code>是<a href="DnsSection.html#QUESTION" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html#QUESTION"><code>DnsSection.QUESTION</code>时</a> ，指定的<code>record</code>必须是<a href="DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="io.netty.handler.codec.dns中的接口"><code>DnsQuestion</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addRecord</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;addRecord(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section,
+                             int&nbsp;index,
+                             <a href="DnsRecord.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecord.html" title="interface in io.netty.handler.codec.dns">DnsRecord</a>&nbsp;record)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>添加指定<code>record</code>在指定<code>index</code>指定的<code>section</code>此DNS的消息。</span> 
+           <span>当指定的<code>section</code>是<a href="DnsSection.html#QUESTION" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html#QUESTION"><code>DnsSection.QUESTION</code>时</a> ，指定的<code>record</code>必须是<a href="DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="io.netty.handler.codec.dns中的接口"><code>DnsQuestion</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#addRecord-io.netty.handler.codec.dns.DnsSection-int-io.netty.handler.codec.dns.DnsRecord-">addRecord</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="clear-io.netty.handler.codec.dns.DnsSection-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>clear</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;clear(<a href="DnsSection.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsSection.html" title="enum in io.netty.handler.codec.dns">DnsSection</a>&nbsp;section)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#clear-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#clear-io.netty.handler.codec.dns.DnsSection-">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block">
+            删除此DNS消息的指定 
+           <code>section</code>的所有记录。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#clear-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#clear-io.netty.handler.codec.dns.DnsSection-">clear</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#clear-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#clear-io.netty.handler.codec.dns.DnsSection-">clear</a></code> ，界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#clear-io.netty.handler.codec.dns.DnsSection-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#clear-io.netty.handler.codec.dns.DnsSection-">clear</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="clear--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>clear</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;clear()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="DnsMessage.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#clear--">DnsMessage</a></code></span> 
+          </div> 
+          <div class="block">
+            删除此DNS消息中的所有记录。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#clear--">clear</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#clear--">clear</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#clear--">clear</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;touch()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置以进行调试。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+           <span>此方法是<a href="../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-"><code>touch(null)</code></a>的快捷方式。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#touch--">touch</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#touch--">touch</a></code>接口 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">touch</a></code> ，界面 
+            <code><a href="../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#touch--">touch</a></code>在类 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;touch(java.lang.Object&nbsp;hint)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置，并附加一些用于调试的任意信息。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#touch-java.lang.Object-">touch</a></code> ，界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">touch</a></code>接口 
+            <code><a href="../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#touch-java.lang.Object-">touch</a></code>在类 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="retain--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;retain()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../../../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block">
+            将引用计数增加 
+           <code>1</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#retain--">retain</a></code> ，界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#retain--">retain</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">retain</a></code>在界面 
+            <code><a href="../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#retain--">retain</a></code>在课堂上 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="retain-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre>public&nbsp;<a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a>&nbsp;retain(int&nbsp;increment)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../../../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block">
+            通过指定的 
+           <code>increment</code>增加引用计数。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsMessage.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html#retain-int-">retain</a></code>在界面 
+            <code><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns">DnsMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DnsResponse.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html#retain-int-">retain</a></code>在界面 
+            <code><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns">DnsResponse</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">retain</a></code>在界面 
+            <code><a href="../../../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDnsMessage.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html#retain-int-">retain</a></code>在课程 
+            <code><a href="AbstractDnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/AbstractDnsMessage.html" title="class in io.netty.handler.codec.dns">AbstractDnsMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课堂上 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultDnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/class-use/DefaultDnsResponse.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultDnsRecordEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsRecordEncoder.html" title="class in io.netty.handler.codec.dns"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DnsMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsMessage.html" title="interface in io.netty.handler.codec.dns"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-dns-DefaultDnsResponse.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/dns/DefaultDnsResponse.html" target="_top">框架</a></li> 
+    <li><a href="DefaultDnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DefaultDnsResponse.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/dns/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

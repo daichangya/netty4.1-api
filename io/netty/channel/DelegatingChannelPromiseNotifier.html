@@ -1,0 +1,1268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DelegatingChannelPromiseNotifier (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.DelegatingChannelPromiseNotifier class"> 
+  <meta name="keywords" content="operationComplete()"> 
+  <meta name="keywords" content="channel()"> 
+  <meta name="keywords" content="setSuccess()"> 
+  <meta name="keywords" content="trySuccess()"> 
+  <meta name="keywords" content="setFailure()"> 
+  <meta name="keywords" content="addListener()"> 
+  <meta name="keywords" content="addListeners()"> 
+  <meta name="keywords" content="removeListener()"> 
+  <meta name="keywords" content="removeListeners()"> 
+  <meta name="keywords" content="tryFailure()"> 
+  <meta name="keywords" content="setUncancellable()"> 
+  <meta name="keywords" content="await()"> 
+  <meta name="keywords" content="awaitUninterruptibly()"> 
+  <meta name="keywords" content="isVoid()"> 
+  <meta name="keywords" content="unvoid()"> 
+  <meta name="keywords" content="getNow()"> 
+  <meta name="keywords" content="cancel()"> 
+  <meta name="keywords" content="isCancelled()"> 
+  <meta name="keywords" content="isDone()"> 
+  <meta name="keywords" content="get()"> 
+  <meta name="keywords" content="sync()"> 
+  <meta name="keywords" content="syncUninterruptibly()"> 
+  <meta name="keywords" content="isSuccess()"> 
+  <meta name="keywords" content="isCancellable()"> 
+  <meta name="keywords" content="cause()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DelegatingChannelPromiseNotifier (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/DelegatingChannelPromiseNotifier.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultSelectStrategyFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultSelectStrategyFactory.html" title="class in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/DelegatingChannelPromiseNotifier.html" target="_top">框架</a></li> 
+    <li><a href="DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Class DelegatingChannelPromiseNotifier" class="title">Class DelegatingChannelPromiseNotifier</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.DelegatingChannelPromiseNotifier</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口">ChannelFuture</a> ， <a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="io.netty.channel中的接口">ChannelFutureListener</a> ， <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口">ChannelPromise</a> ， <a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="io.netty.util.concurrent中的接口">GenericFutureListener</a> &lt; <a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口">ChannelFuture</a> &gt;， <a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="io.netty.util.concurrent中的接口">Promise</a> &lt;java.lang.Void的&gt;，java.util.concurrent.Future &lt;java.lang.Void的&gt;，java.util.EventListener的</span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public final class <span class="typeNameLabel">DelegatingChannelPromiseNotifier</span>
+extends java.lang.Object
+implements <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>, <a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="interface in io.netty.channel">ChannelFutureListener</a></pre> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="fields.inherited.from.class.io.netty.channel.ChannelFutureListener"> </a> <h3>Fields inherited from interface&nbsp;io.netty.channel.<a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="interface in io.netty.channel">ChannelFutureListener</a></h3> <code><a href="ChannelFutureListener.html#CLOSE" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html#CLOSE">CLOSE</a>, <a href="ChannelFutureListener.html#CLOSE_ON_FAILURE" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html#CLOSE_ON_FAILURE">CLOSE_ON_FAILURE</a>, <a href="ChannelFutureListener.html#FIRE_EXCEPTION_ON_FAILURE" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html#FIRE_EXCEPTION_ON_FAILURE">FIRE_EXCEPTION_ON_FAILURE</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#DelegatingChannelPromiseNotifier-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#DelegatingChannelPromiseNotifier-io.netty.channel.ChannelPromise-">DelegatingChannelPromiseNotifier</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;delegate)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#DelegatingChannelPromiseNotifier-io.netty.channel.ChannelPromise-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#DelegatingChannelPromiseNotifier-io.netty.channel.ChannelPromise-boolean-">DelegatingChannelPromiseNotifier</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;delegate, boolean&nbsp;logNotifyFailure)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a></span>(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;&nbsp;listener)</code> 
+            <div class="block">
+              将指定的侦听器添加到此将来。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a></span>(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;...&nbsp;listeners)</code> 
+            <div class="block">
+              将指定的侦听器添加到此将来。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#await--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#await--">await</a></span>()</code> 
+            <div class="block">
+              等待这个未来的完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#await-long-">await</a></span>(long&nbsp;timeoutMillis)</code> 
+            <div class="block">
+              等待这个未来在规定的时限内完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#await-long-java.util.concurrent.TimeUnit-">await</a></span>(long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code> 
+            <div class="block">
+              等待这个未来在规定的时限内完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#awaitUninterruptibly--">awaitUninterruptibly</a></span>()</code> 
+            <div class="block">
+              等待这个未来不中断地完成。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#awaitUninterruptibly-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#awaitUninterruptibly-long-">awaitUninterruptibly</a></span>(long&nbsp;timeoutMillis)</code> 
+            <div class="block">
+              等待这个未来在规定的时间内完成而不会中断。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-">awaitUninterruptibly</a></span>(long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code> 
+            <div class="block">
+              等待这个未来在规定的时间内完成而不会中断。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#cancel-boolean-">cancel</a></span>(boolean&nbsp;mayInterruptIfRunning)</code> 
+            <div class="block">
+              如果取消成功，将会以 
+             <code>CancellationException</code>失败。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.Throwable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#cause--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#cause--">cause</a></span>()</code> 
+            <div class="block">
+              如果I / O操作失败，则返回失败的I / O操作的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#channel--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#channel--">channel</a></span>()</code> 
+            <div class="block">
+              返回与此未来相关的I / O操作发生的通道。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.Void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#get--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#get--">get</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>java.lang.Void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#get-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#get-long-java.util.concurrent.TimeUnit-">get</a></span>(long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.Void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#getNow--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#getNow--">getNow</a></span>()</code> 
+            <div class="block">
+              无阻塞地返回结果。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#isCancellable--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#isCancellable--">isCancellable</a></span>()</code> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当该操作可通过取消 
+             <a href="../util/concurrent/Future.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cancel-boolean-"><code>Future.cancel(boolean)</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#isCancelled--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#isCancelled--">isCancelled</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#isDone--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#isDone--">isDone</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#isSuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#isSuccess--">isSuccess</a></span>()</code> 
+            <div class="block">
+              当且仅当I / O操作成功完成时返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#isVoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#isVoid--">isVoid</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<code>true</code>如果这<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>是一个无效的未来，所以不允许调用任何下列方法： <a href="ChannelFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-"><code>ChannelFuture.addListener(GenericFutureListener)</code></a> <a href="ChannelFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-"><code>ChannelFuture.addListeners(GenericFutureListener[])</code></a> <a href="ChannelFuture.html#await--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#await--"><code>ChannelFuture.await()</code></a> <a href="../util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-"><code>Future.await(long, TimeUnit)</code></a> （）} <a href="../util/concurrent/Future.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-"><code>Future.await(long)</code></a> （）} <a href="ChannelFuture.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#awaitUninterruptibly--"><code>ChannelFuture.awaitUninterruptibly()</code></a> <a href="ChannelFuture.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#sync--"><code>ChannelFuture.sync()</code></a> <a href="ChannelFuture.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#syncUninterruptibly--"><code>ChannelFuture.syncUninterruptibly()</code></a></span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#operationComplete-io.netty.channel.ChannelFuture-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#operationComplete-io.netty.channel.ChannelFuture-">operationComplete</a></span>(<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a>&nbsp;future)</code> 
+            <div class="block"> 
+             <span>当与<a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>相关的操作完成时调用。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a></span>(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;&nbsp;listener)</code> 
+            <div class="block">
+              从此将来删除指定侦听器的第一个匹配项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></span>(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;...&nbsp;listeners)</code> 
+            <div class="block">
+              为将来的每个听众删除第一个匹配项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#setFailure-java.lang.Throwable-">setFailure</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block">
+              将这个未来标志为失败并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#setSuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#setSuccess--">setSuccess</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#setSuccess-java.lang.Void-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#setSuccess-java.lang.Void-">setSuccess</a></span>(java.lang.Void&nbsp;result)</code> 
+            <div class="block">
+              将这个未来标志为成功并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#setUncancellable--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#setUncancellable--">setUncancellable</a></span>()</code> 
+            <div class="block">
+              使这个未来无法取消。 
+            </div> </td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#sync--">sync</a></span>()</code> 
+            <div class="block">
+              等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#syncUninterruptibly--">syncUninterruptibly</a></span>()</code> 
+            <div class="block">
+              等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+            </div> </td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#tryFailure-java.lang.Throwable-">tryFailure</a></span>(java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block">
+              将这个未来标志为失败并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i29" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#trySuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#trySuccess--">trySuccess</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i30" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#trySuccess-java.lang.Void-" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#trySuccess-java.lang.Void-">trySuccess</a></span>(java.lang.Void&nbsp;result)</code> 
+            <div class="block">
+              将这个未来标志为成功并通知所有听众。 
+            </div> </td> 
+          </tr> 
+          <tr id="i31" class="rowColor"> 
+           <td class="colFirst"><code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DelegatingChannelPromiseNotifier.html#unvoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html#unvoid--">unvoid</a></span>()</code> 
+            <div class="block"> 
+             <span>如果<a href="ChannelFuture.html#isVoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#isVoid--"><code>ChannelFuture.isVoid()</code></a>返回<code>true</code>则返回新的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DelegatingChannelPromiseNotifier-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DelegatingChannelPromiseNotifier</h4> <pre>public&nbsp;DelegatingChannelPromiseNotifier(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;delegate)</pre> </li> 
+        </ul> <a name="DelegatingChannelPromiseNotifier-io.netty.channel.ChannelPromise-boolean-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DelegatingChannelPromiseNotifier</h4> <pre>public&nbsp;DelegatingChannelPromiseNotifier(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;delegate,
+                                        boolean&nbsp;logNotifyFailure)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="operationComplete-io.netty.channel.ChannelFuture-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>operationComplete</h4> <pre>public&nbsp;void&nbsp;operationComplete(<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a>&nbsp;future)
+                       throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/GenericFutureListener.html#operationComplete-F-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html#operationComplete-F-">GenericFutureListener</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>当与<a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>相关的操作已完成时调用。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/GenericFutureListener.html#operationComplete-F-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html#operationComplete-F-">operationComplete</a></code>接口 
+            <code><a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>future</code> - 调用此回调的源<a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="channel--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>channel</h4> <pre>public&nbsp;<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="ChannelFuture.html#channel--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#channel--">ChannelFuture</a></code></span> 
+          </div> 
+          <div class="block">
+            返回与此未来相关的I / O操作发生的通道。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#channel--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#channel--">channel</a></code>在界面 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#channel--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#channel--">channel</a></code> ，界面 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setSuccess-java.lang.Void-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSuccess</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;setSuccess(java.lang.Void&nbsp;result)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/concurrent/Promise.html#setSuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setSuccess-V-">Promise</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>将这个未来标志为成功并通知所有听众。</span> 
+           <span>如果它已经成功或失败，它会抛出一个<code>IllegalStateException</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#setSuccess-java.lang.Void-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setSuccess-java.lang.Void-">setSuccess</a></code>在界面 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#setSuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setSuccess-V-">setSuccess</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setSuccess--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSuccess</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;setSuccess()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#setSuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setSuccess--">setSuccess</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="trySuccess--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>trySuccess</h4> <pre>public&nbsp;boolean&nbsp;trySuccess()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#trySuccess--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#trySuccess--">trySuccess</a></code>在界面 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="trySuccess-java.lang.Void-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>trySuccess</h4> <pre>public&nbsp;boolean&nbsp;trySuccess(java.lang.Void&nbsp;result)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Promise.html#trySuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#trySuccess-V-">Promise</a></code></span> 
+          </div> 
+          <div class="block">
+            将这个未来标志为成功并通知所有听众。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#trySuccess-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#trySuccess-V-">trySuccess</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>当且仅当成功标记这个未来是成功的。</span> 
+            <span>否则<code>false</code>因为这个未来已被标记为成功或失败。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setFailure-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setFailure</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;setFailure(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Promise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setFailure-java.lang.Throwable-">Promise</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将这个未来标志为失败并通知所有听众。</span> 
+           <span>如果它已经成功或失败，它会抛出<code>IllegalStateException</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#setFailure-java.lang.Throwable-">setFailure</a></code> ，界面 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#setFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setFailure-java.lang.Throwable-">setFailure</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addListener-io.netty.util.concurrent.GenericFutureListener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addListener</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;addListener(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Future.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#addListener-io.netty.util.concurrent.GenericFutureListener-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的侦听器添加到此将来。</span> 
+           <span>当这个未来完成时，通知指定的监听器。</span> 
+           <span>如果这个未来已经完成，立即通知指定的监听器。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a></code> ，界面 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#addListener-io.netty.util.concurrent.GenericFutureListener-">addListener</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addListeners-io.netty.util.concurrent.GenericFutureListener...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addListeners</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;addListeners(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;...&nbsp;listeners)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/concurrent/Future.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">Future</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的侦听器添加到此将来。</span> 
+           <span>这个未来完成时，通知指定的监听者。</span> 
+           <span>如果这个未来已经完成，则立即通知指定的监听者。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a></code>接口 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-">addListeners</a></code>在界面 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeListener-io.netty.util.concurrent.GenericFutureListener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeListener</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;removeListener(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;&nbsp;listener)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>从此将来删除指定侦听器的第一个匹配项。</span> 
+           <span>未来完成时，指定的监听器不再通知。</span> 
+           <span>如果指定的侦听器未与此将来关联，则此方法不执行任何操作并以静默方式返回。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a></code>在界面 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a></code>在界面 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#removeListener-io.netty.util.concurrent.GenericFutureListener-">removeListener</a></code> ，界面 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeListeners-io.netty.util.concurrent.GenericFutureListener...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeListeners</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;removeListeners(<a href="../util/concurrent/GenericFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/GenericFutureListener.html" title="interface in io.netty.util.concurrent">GenericFutureListener</a>&lt;? extends <a href="../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;? super java.lang.Void&gt;&gt;...&nbsp;listeners)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Future.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>为将来的每个听众删除第一个匹配项。</span> 
+           <span>未来完成时，指定的监听器不再通知。</span> 
+           <span>如果指定的侦听器未与此将来关联，则此方法不执行任何操作并以静默方式返回。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></code>在界面 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#removeListeners-io.netty.util.concurrent.GenericFutureListener...-">removeListeners</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="tryFailure-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>tryFailure</h4> <pre>public&nbsp;boolean&nbsp;tryFailure(java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/concurrent/Promise.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#tryFailure-java.lang.Throwable-">Promise</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            将这个未来标志为失败并通知所有听众。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#tryFailure-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#tryFailure-java.lang.Throwable-">tryFailure</a></code>在界面 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>当且仅当成功将这个未来标记为失败。</span> 
+            <span>否则<code>false</code>因为这个未来已经被标记为成功或失败。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setUncancellable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setUncancellable</h4> <pre>public&nbsp;boolean&nbsp;setUncancellable()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Promise.html#setUncancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setUncancellable--">Promise</a></code></span> 
+          </div> 
+          <div class="block">
+            使这个未来无法取消。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#setUncancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#setUncancellable--">setUncancellable</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>当且仅当成功地将这个未来标记为不可取消或已经完成而未被取消。</span> 
+            <span><code>false</code>如果这个未来已经被取消了。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="await--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>await</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;await()
+                     throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#await--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来的完成。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#await--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#await--">await</a></code>接口 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#await--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#await--">await</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#await--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#await--">await</a></code>在界面 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> - 如果当前线程中断 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="awaitUninterruptibly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitUninterruptibly</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;awaitUninterruptibly()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#awaitUninterruptibly--">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>等待这个未来不中断地完成。</span> 
+           <span>此方法捕获一个<code>InterruptedException</code>并以静默方式丢弃它。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#awaitUninterruptibly--">awaitUninterruptibly</a></code>在界面 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#awaitUninterruptibly--">awaitUninterruptibly</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#awaitUninterruptibly--">awaitUninterruptibly</a></code> ，界面 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isVoid--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isVoid</h4> <pre>public&nbsp;boolean&nbsp;isVoid()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="ChannelFuture.html#isVoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#isVoid--">ChannelFuture</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>如果这<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>是一个无效的未来，并且不允许调用以下任何方法，则返回<code>true</code> ：</span> 
+           <ul> 
+            <li> <span><a href="ChannelFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#addListener-io.netty.util.concurrent.GenericFutureListener-"><code>ChannelFuture.addListener(GenericFutureListener)</code></a></span> </li> 
+            <li> <span><a href="ChannelFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#addListeners-io.netty.util.concurrent.GenericFutureListener...-"><code>ChannelFuture.addListeners(GenericFutureListener[])</code></a></span> </li> 
+            <li> <span><a href="ChannelFuture.html#await--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#await--"><code>ChannelFuture.await()</code></a></span> </li> 
+            <li> <span><a href="../util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-"><code>Future.await(long, TimeUnit)</code></a> （）}</span> </li> 
+            <li> <span><a href="../util/concurrent/Future.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-"><code>Future.await(long)</code></a> （）}</span> </li> 
+            <li> <span><a href="ChannelFuture.html#awaitUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#awaitUninterruptibly--"><code>ChannelFuture.awaitUninterruptibly()</code></a></span> </li> 
+            <li> <span><a href="ChannelFuture.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#sync--"><code>ChannelFuture.sync()</code></a></span> </li> 
+            <li> <span><a href="ChannelFuture.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#syncUninterruptibly--"><code>ChannelFuture.syncUninterruptibly()</code></a></span> </li> 
+           </ul> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#isVoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#isVoid--">isVoid</a></code>接口 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="unvoid--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>unvoid</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;unvoid()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="ChannelPromise.html#unvoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#unvoid--">ChannelPromise</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>如果<a href="ChannelFuture.html#isVoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#isVoid--"><code>ChannelFuture.isVoid()</code></a>返回<code>true</code>则返回新的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#unvoid--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#unvoid--">unvoid</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="await-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>await</h4> <pre>public&nbsp;boolean&nbsp;await(long&nbsp;timeout,
+                     java.util.concurrent.TimeUnit&nbsp;unit)
+              throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-java.util.concurrent.TimeUnit-">Future</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            等待这个未来在规定的时限内完成。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来在规定的时限内完成 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> - 如果当前线程中断 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="await-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>await</h4> <pre>public&nbsp;boolean&nbsp;await(long&nbsp;timeoutMillis)
+              throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Future.html#await-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#await-long-">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来在规定的时限内完成。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来在规定的时限内完成 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> - 如果当前线程中断 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="awaitUninterruptibly-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitUninterruptibly</h4> <pre>public&nbsp;boolean&nbsp;awaitUninterruptibly(long&nbsp;timeout,
+                                    java.util.concurrent.TimeUnit&nbsp;unit)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Future.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#awaitUninterruptibly-long-java.util.concurrent.TimeUnit-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>等待这个未来在规定的时间内完成而不会中断。</span> 
+           <span>此方法捕获<code>InterruptedException</code>并以静默方式丢弃它。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来在规定的时限内完成 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="awaitUninterruptibly-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitUninterruptibly</h4> <pre>public&nbsp;boolean&nbsp;awaitUninterruptibly(long&nbsp;timeoutMillis)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#awaitUninterruptibly-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#awaitUninterruptibly-long-">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>等待这个未来在规定的时间内完成而不会中断。</span> 
+           <span>此方法捕获一个<code>InterruptedException</code>并以静默方式丢弃它。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当未来在规定的时限内完成 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getNow--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getNow</h4> <pre>public&nbsp;java.lang.Void&nbsp;getNow()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#getNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#getNow--">Future</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>无阻塞地返回结果。</span> 
+           <span>如果未来还没有完成，这将返回<code>null</code> 。</span> 
+           <span>由于可能使用<code>null</code>值标记未来成功，因此您还需要检查未来是否真的用<code>Future.isDone()</code>完成，而不是在返回的<code>null</code>值上进行中继。</span> 
+          </div> </li> 
+        </ul> <a name="cancel-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cancel</h4> <pre>public&nbsp;boolean&nbsp;cancel(boolean&nbsp;mayInterruptIfRunning)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cancel-boolean-">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            如果取消成功，将会以 
+           <code>CancellationException</code>未来失败。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>cancel</code>在界面 
+            <code>java.util.concurrent.Future&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isCancelled--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isCancelled</h4> <pre>public&nbsp;boolean&nbsp;isCancelled()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isCancelled</code>接口 
+            <code>java.util.concurrent.Future&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isDone--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isDone</h4> <pre>public&nbsp;boolean&nbsp;isDone()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isDone</code>接口 
+            <code>java.util.concurrent.Future&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="get--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>get</h4> <pre>public&nbsp;java.lang.Void&nbsp;get()
+                   throws java.lang.InterruptedException,
+                          java.util.concurrent.ExecutionException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>get</code>接口 
+            <code>java.util.concurrent.Future&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+           <dd> 
+            <code>java.util.concurrent.ExecutionException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="get-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>get</h4> <pre>public&nbsp;java.lang.Void&nbsp;get(long&nbsp;timeout,
+                          java.util.concurrent.TimeUnit&nbsp;unit)
+                   throws java.lang.InterruptedException,
+                          java.util.concurrent.ExecutionException,
+                          java.util.concurrent.TimeoutException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>get</code>接口 
+            <code>java.util.concurrent.Future&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+           <dd> 
+            <code>java.util.concurrent.ExecutionException</code> 
+           </dd> 
+           <dd> 
+            <code>java.util.concurrent.TimeoutException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sync--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sync</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;sync()
+                    throws java.lang.InterruptedException</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#sync--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#sync--">sync</a></code>在界面 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#sync--">sync</a></code>在界面 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#sync--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#sync--">sync</a></code>接口 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="syncUninterruptibly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>syncUninterruptibly</h4> <pre>public&nbsp;<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;syncUninterruptibly()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#syncUninterruptibly--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            等待这个未来，直到完成，并且在这个未来失败的时候重新引发失败的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelFuture.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html#syncUninterruptibly--">syncUninterruptibly</a></code>接口 
+            <code><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPromise.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html#syncUninterruptibly--">syncUninterruptibly</a></code>接口 
+            <code><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/concurrent/Promise.html#syncUninterruptibly--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html#syncUninterruptibly--">syncUninterruptibly</a></code> ，界面 
+            <code><a href="../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isSuccess--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isSuccess</h4> <pre>public&nbsp;boolean&nbsp;isSuccess()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/concurrent/Future.html#isSuccess--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#isSuccess--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当I / O操作成功完成时返回 
+           <code>true</code> 。 
+          </div> </li> 
+        </ul> <a name="isCancellable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isCancellable</h4> <pre>public&nbsp;boolean&nbsp;isCancellable()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../util/concurrent/Future.html#isCancellable--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#isCancellable--">Future</a></code></span> 
+          </div> 
+          <div class="block">
+            返回 
+           <code>true</code>当且仅当该操作可通过取消 
+           <a href="../util/concurrent/Future.html#cancel-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cancel-boolean-"><code>Future.cancel(boolean)</code></a> 。 
+          </div> </li> 
+        </ul> <a name="cause--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>cause</h4> <pre>public&nbsp;java.lang.Throwable&nbsp;cause()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/concurrent/Future.html#cause--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html#cause--">Future</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            如果I / O操作失败，则返回失败的I / O操作的原因。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>失败的原因。</span> 
+            <span><code>null</code>如果成功或未来尚未完成。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/DelegatingChannelPromiseNotifier.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultSelectStrategyFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultSelectStrategyFactory.html" title="class in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="interface in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/DelegatingChannelPromiseNotifier.html" target="_top">框架</a></li> 
+    <li><a href="DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

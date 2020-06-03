@@ -1,0 +1,772 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.channel (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel package"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.channel (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../buffer/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="embedded/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/embedded/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.channel</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      核心频道API是异步和事件驱动的各种传输（如 
+     <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O#Channels'" tppabs="http://en.wikipedia.org/wiki/New_I/O#Channels">NIO Channel）的抽象</a> 。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AddressedEnvelope.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AddressedEnvelope.html" title="interface in io.netty.channel">AddressedEnvelope</a>&lt;M,A extends java.net.SocketAddress&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           包含发件人地址和收件人地址的其他邮件的消息。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           与网络套接字或能够进行I / O操作（如读取，写入，连接和绑定）的组件的关系。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html" title="interface in io.netty.channel">Channel.Unsafe</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <em>不</em>应该从用户代码调用的 
+          <em>不安全</em>操作。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="interface in io.netty.channel">ChannelConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>的</a>一组配置属性。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFactory.html" title="interface in io.netty.channel">ChannelFactory</a>&lt;T extends <a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>创建一个新的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>异步<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> I / O操作的结果。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="interface in io.netty.channel">ChannelFutureListener</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口">听取<code>ChannelFuture</code></a>的结果。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>处理I / O事件或拦截I / O操作，并将其转发到其<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code>中的</a>下一个处理程序。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>使<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>能够与其<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>和其他处理程序进行交互。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelId.html" title="interface in io.netty.channel">ChannelId</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>表示<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的全局唯一标识符。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a> ，它为状态更改添加回调。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelInboundInvoker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundInvoker.html" title="interface in io.netty.channel">ChannelInboundInvoker</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel">ChannelOutboundBuffer.MessageProcessor</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="interface in io.netty.channel">ChannelOutboundHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>将通知IO出站操作。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelOutboundInvoker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html" title="interface in io.netty.channel">ChannelOutboundInvoker</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="interface in io.netty.channel">ChannelPipeline</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>处理或拦截<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>Channel</code></a>的入站事件和出站操作的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelHandler</code>列表</a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelProgressiveFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelProgressiveFuture.html" title="interface in io.netty.channel">ChannelProgressiveFuture</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>用于指示<a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="io.netty.channel中的接口"><code>FileRegion</code></a>传输进度的特殊<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelProgressiveFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelProgressiveFutureListener.html" title="interface in io.netty.channel">ChannelProgressiveFutureListener</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个 
+          <code>EventListener</code>监听器，一旦与未来相关的发送任务正在被传送，该监听器将被调用。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelProgressivePromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelProgressivePromise.html" title="interface in io.netty.channel">ChannelProgressivePromise</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>特殊的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> ，一旦关联的字节被传输，它将被通知。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>特别<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code></a>这是可写的。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="interface in io.netty.channel">EventLoop</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一旦注册，将处理<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>的</a>所有I / O操作。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>特殊<a href="../util/concurrent/EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，允许注册<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，在事件循环期间进行处理以供以后选择。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>通过支持<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Zero-copy  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Zero-copy'" tppabs="http://en.wikipedia.org/wiki/Zero-copy">zero-copy file transfer</a>的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>发送的文件区域。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="MaxBytesRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MaxBytesRecvByteBufAllocator.html" title="interface in io.netty.channel">MaxBytesRecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator</code></a> ，其基于每次读取的最大值和当事件循环尝试读取操作时的最大量来限制读取操作。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="MaxMessagesRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MaxMessagesRecvByteBufAllocator.html" title="interface in io.netty.channel">MaxMessagesRecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator</code></a> ，它限制事件循环尝试执行读取操作时将要尝试的读取操作数。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="MessageSizeEstimator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MessageSizeEstimator.html" title="interface in io.netty.channel">MessageSizeEstimator</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           负责估算消息的大小。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="MessageSizeEstimator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MessageSizeEstimator.Handle.html" title="interface in io.netty.channel">MessageSizeEstimator.Handle</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="interface in io.netty.channel">RecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           分配一个新的接收缓冲区，其容量可能足够大，可以读取所有入站数据，并且足够小，不会浪费其空间。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="RecvByteBufAllocator.ExtendedHandle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.ExtendedHandle.html" title="interface in io.netty.channel">RecvByteBufAllocator.ExtendedHandle</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="interface in io.netty.channel">RecvByteBufAllocator.Handle</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="RecvByteBufAllocator.ExtendedHandle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.ExtendedHandle.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator.ExtendedHandle</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SelectStrategy.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SelectStrategy.html" title="interface in io.netty.channel">SelectStrategy</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           选择策略界面。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SelectStrategyFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SelectStrategyFactory.html" title="interface in io.netty.channel">SelectStrategyFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>每次创建新的<a href="SelectStrategy.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SelectStrategy.html" title="io.netty.channel中的接口"><code>SelectStrategy</code>的</a>工厂。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>接受传入的连接尝试并通过接受它们来创建其子<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个骨架<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>的</a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html" title="class in io.netty.channel">AbstractCoalescingBufferQueue</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AbstractEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractEventLoop.html" title="class in io.netty.channel">AbstractEventLoop</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>骨架实施<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractEventLoopGroup.html" title="class in io.netty.channel">AbstractEventLoopGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>骨架实现<a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AbstractServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractServerChannel.html" title="class in io.netty.channel">AbstractServerChannel</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">骨干</a>服务器端<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>的</a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AdaptiveRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AdaptiveRecvByteBufAllocator.html" title="class in io.netty.channel">AdaptiveRecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator</code></a>自动增加和减少反馈时预测的缓冲区大小。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html" title="class in io.netty.channel">ChannelDuplexHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>实现，它代表<a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a>和<a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口"><code>ChannelOutboundHandler</code>之间</a>的组合。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelFlushPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFlushPromiseNotifier.html" title="class in io.netty.channel">ChannelFlushPromiseNotifier</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>该实现允许注册<a href="ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="io.netty.channel中的接口"><code>ChannelFuture</code>个</a>实例，一旦写入了一定数量的数据就会收到通知，并且达到了检查点。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>骨架实施<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a>实现的抽象基类，提供所有方法的实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelInitializer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInitializer.html" title="class in io.netty.channel">ChannelInitializer</a>&lt;C extends <a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个特殊的<a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> ，它提供了一个简单的方法来初始化一个<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>一旦它被注册到<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelMetadata.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelMetadata.html" title="class in io.netty.channel">ChannelMetadata</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>表示<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>实现的属性。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="class in io.netty.channel">ChannelOption</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="在io.netty.channel中的类"><code>ChannelOption</code></a>允许以类型安全的方式配置<a href="ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="io.netty.channel中的接口"><code>ChannelConfig</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="class in io.netty.channel">ChannelOutboundBuffer</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>（仅限传输实现者） <a href="AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="在io.netty.channel中的类"><code>AbstractChannel</code></a>使用的内部数据结构来存储其挂起的出站写入请求。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelOutboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandlerAdapter.html" title="class in io.netty.channel">ChannelOutboundHandlerAdapter</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>骨架实施<a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口"><code>ChannelOutboundHandler</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelPromiseAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromiseAggregator.html" title="class in io.netty.channel">ChannelPromiseAggregator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="../util/concurrent/PromiseCombiner.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/PromiseCombiner.html" title="class in io.netty.util.concurrent"><code>PromiseCombiner</code></a>类别，通过收听单个期货并在所有期货完成时产生汇总结果（成功/失败），用于将多个渠道期货合并为一个。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromiseNotifier.html" title="class in io.netty.channel">ChannelPromiseNotifier</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>ChannelFutureListener实现需要其他<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a> （s）并在完成时通知它们。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="CoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/CoalescingBufferQueue.html" title="class in io.netty.channel">CoalescingBufferQueue</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>生产者通过反复添加<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code>来</a>添加字节的FIFO队列，消费者以任意长度获取字节。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="CombinedChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/CombinedChannelDuplexHandler.html" title="class in io.netty.channel">CombinedChannelDuplexHandler</a>&lt;I extends <a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a>,O extends <a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="interface in io.netty.channel">ChannelOutboundHandler</a>&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>将<a href="ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a>和<a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口"><code>ChannelOutboundHandler</code>组合</a>成一个<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultAddressedEnvelope.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultAddressedEnvelope.html" title="class in io.netty.channel">DefaultAddressedEnvelope</a>&lt;M,A extends java.net.SocketAddress&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认的<a href="AddressedEnvelope.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AddressedEnvelope.html" title="io.netty.channel中的接口"><code>AddressedEnvelope</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelConfig.html" title="class in io.netty.channel">DefaultChannelConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认的<a href="ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="io.netty.channel中的接口"><code>ChannelConfig</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelId.html" title="class in io.netty.channel">DefaultChannelId</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认的<a href="ChannelId.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelId.html" title="io.netty.channel中的接口"><code>ChannelId</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelPipeline.html" title="class in io.netty.channel">DefaultChannelPipeline</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认的<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultChannelProgressivePromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelProgressivePromise.html" title="class in io.netty.channel">DefaultChannelProgressivePromise</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认的<a href="ChannelProgressivePromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelProgressivePromise.html" title="io.netty.channel中的接口"><code>ChannelProgressivePromise</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultChannelPromise.html" title="class in io.netty.channel">DefaultChannelPromise</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认的<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultEventLoop.html" title="class in io.netty.channel">DefaultEventLoop</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultEventLoopGroup.html" title="class in io.netty.channel">DefaultEventLoopGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="MultithreadEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MultithreadEventLoopGroup.html" title="在io.netty.channel中的类"><code>MultithreadEventLoopGroup</code></a>必须用于当地运输。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultFileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultFileRegion.html" title="class in io.netty.channel">DefaultFileRegion</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>从<code>FileChannel</code>或<code>File</code>传输数据的默认<a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="io.netty.channel中的接口"><code>FileRegion</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultMaxBytesRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultMaxBytesRecvByteBufAllocator.html" title="class in io.netty.channel">DefaultMaxBytesRecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator</code></a>基于从每次读取的最大字节数中减去该值来产生缓冲区大小预测。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultMaxMessagesRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultMaxMessagesRecvByteBufAllocator.html" title="class in io.netty.channel">DefaultMaxMessagesRecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="MaxMessagesRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MaxMessagesRecvByteBufAllocator.html" title="io.netty.channel中的接口"><code>MaxMessagesRecvByteBufAllocator</code>的</a>默认实现，它尊重<a href="ChannelConfig.html#isAutoRead--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html#isAutoRead--"><code>ChannelConfig.isAutoRead()</code></a>并防止溢出。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultMessageSizeEstimator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultMessageSizeEstimator.html" title="class in io.netty.channel">DefaultMessageSizeEstimator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认<a href="MessageSizeEstimator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MessageSizeEstimator.html" title="io.netty.channel中的接口"><code>MessageSizeEstimator</code></a>实施支持的尺寸的估计<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ， <a href="../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>和<a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="io.netty.channel中的接口"><code>FileRegion</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultSelectStrategyFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultSelectStrategyFactory.html" title="class in io.netty.channel">DefaultSelectStrategyFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           使用默认选择策略的工厂。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DelegatingChannelPromiseNotifier.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DelegatingChannelPromiseNotifier.html" title="class in io.netty.channel">DelegatingChannelPromiseNotifier</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="FixedRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FixedRecvByteBufAllocator.html" title="class in io.netty.channel">FixedRecvByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>总是产生相同缓冲区大小预测的<a href="RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="MultithreadEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MultithreadEventLoopGroup.html" title="class in io.netty.channel">MultithreadEventLoopGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a>实现的抽象基类， <a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口">它们</a>同时处理具有多个线程的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="PendingWriteQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/PendingWriteQueue.html" title="class in io.netty.channel">PendingWriteQueue</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           等待稍后执行的写入操作队列。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="PreferHeapByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/PreferHeapByteBufAllocator.html" title="class in io.netty.channel">PreferHeapByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>包裹另一个<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>并在除了明确请求直接缓冲区外的地方使用heapbuffers。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="RecvByteBufAllocator.DelegatingHandle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.DelegatingHandle.html" title="class in io.netty.channel">RecvByteBufAllocator.DelegatingHandle</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator.Handle</code></a>代表所有呼叫到其他<a href="RecvByteBufAllocator.Handle.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.Handle.html" title="io.netty.channel中的接口"><code>RecvByteBufAllocator.Handle</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ReflectiveChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ReflectiveChannelFactory.html" title="class in io.netty.channel">ReflectiveChannelFactory</a>&lt;T extends <a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<a href="ChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFactory.html" title="io.netty.channel中的接口"><code>ChannelFactory</code></a>实例化一个新<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>通过反射性地调用它的默认构造函数。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SimpleChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SimpleChannelInboundHandler.html" title="class in io.netty.channel">SimpleChannelInboundHandler</a>&lt;I&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="在io.netty.channel中的类"><code>ChannelInboundHandlerAdapter</code></a>它允许显式只处理特定类型的消息。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="class in io.netty.channel">SingleThreadEventLoop</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>的抽象基类，它在单个线程中执行其所有提交的任务。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ThreadPerChannelEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ThreadPerChannelEventLoop.html" title="class in io.netty.channel">ThreadPerChannelEventLoop</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="在io.netty.channel中的类"><code>SingleThreadEventLoop</code></a>用于处理<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">OIO <code>Channel</code></a>的。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ThreadPerChannelEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ThreadPerChannelEventLoopGroup.html" title="class in io.netty.channel">ThreadPerChannelEventLoopGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a>创建一个<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>每<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="VoidChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/VoidChannelPromise.html" title="class in io.netty.channel">VoidChannelPromise</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="WriteBufferWaterMark.html" tppabs="http://netty.io/4.1/api/io/netty/channel/WriteBufferWaterMark.html" title="class in io.netty.channel">WriteBufferWaterMark</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           WriteBufferWaterMark用于为写入缓冲区设置低水位标志和高位标志。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation"> 
+      <caption> 
+       <span>异常摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">异常</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelException.html" title="class in io.netty.channel">ChannelException</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           当I / O操作失败时引发的 
+          <code>RuntimeException</code> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelPipelineException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipelineException.html" title="class in io.netty.channel">ChannelPipelineException</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="ChannelException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelException.html" title="在io.netty.channel中的类"><code>ChannelException</code></a>当<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>未能执行操作时引发。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ConnectTimeoutException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ConnectTimeoutException.html" title="class in io.netty.channel">ConnectTimeoutException</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <code>ConnectException</code>如果由于连接超时而无法建立连接，将会抛出它。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="EventLoopException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopException.html" title="class in io.netty.channel">EventLoopException</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>Special <a href="ChannelException.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelException.html" title="在io.netty.channel中的类"><code>ChannelException</code></a>当发生错误时将由<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code></a>和<a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a>实现抛出。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Annotation Types Summary table, listing annotation types, and an explanation"> 
+      <caption> 
+       <span>注解类型摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Annotation Type</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ChannelHandler.Sharable.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.Sharable.html" title="annotation in io.netty.channel">ChannelHandler.Sharable</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>表示可以将<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口">带有</a>注释的<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>的同一个实例<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口">多次</a>添加到一个或多个<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a> ，而不会出现竞争条件。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.channel Description">Package io.netty.channel Description</h2> 
+   <div class="block">
+     核心通道API是异步和事件驱动的各种传输（如 
+    <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O#Channels'" tppabs="http://en.wikipedia.org/wiki/New_I/O#Channels">NIO Channel）的抽象</a> 。 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../buffer/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="embedded/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/embedded/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

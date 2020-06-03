@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.resolver.dns (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.resolver.dns package"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.resolver.dns (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../../util/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-resolver-dns-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/resolver/dns/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <p>@UnstableApi </p> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.resolver.dns</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      Java的内置域名查找机制的一种替代方法，可以异步解析域名，同样支持任意DNS记录类型的查询。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsCache.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsCache.html" title="interface in io.netty.resolver.dns">DnsCache</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           DNS解析条目的缓存。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DnsCacheEntry.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsCacheEntry.html" title="interface in io.netty.resolver.dns">DnsCacheEntry</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           表示可缓存的先前DNS查询的结果。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           该界面提供对各个DNS查询的可视性。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DnsQueryLifecycleObserverFactory.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserverFactory.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserverFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>用于生成<a href="DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserver</code>的</a>新实例。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsServerAddressStream.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStream.html" title="interface in io.netty.resolver.dns">DnsServerAddressStream</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           无限的DNS服务器地址流。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="interface in io.netty.resolver.dns">DnsServerAddressStreamProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>提供一个机会来覆盖哪个<a href="DnsServerAddressStream.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStream.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStream</code></a>用于解析特定的主机名。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BiDnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserver.html" title="class in io.netty.resolver.dns">BiDnsQueryLifecycleObserver</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>将两个<a href="DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserver</code></a>组合成一个<a href="DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserver</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BiDnsQueryLifecycleObserverFactory.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserverFactory.html" title="class in io.netty.resolver.dns">BiDnsQueryLifecycleObserverFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>将两个<a href="DnsQueryLifecycleObserverFactory.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserverFactory.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserverFactory</code></a>组合成一个<a href="DnsQueryLifecycleObserverFactory.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserverFactory.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserverFactory</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultDnsCache.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DefaultDnsCache.html" title="class in io.netty.resolver.dns">DefaultDnsCache</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>默认实现<a href="DnsCache.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsCache.html" title="io.netty.resolver.dns中的接口"><code>DnsCache</code></a> ，由<code>ConcurrentMap</code>支持。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultDnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DefaultDnsServerAddressStreamProvider.html" title="class in io.netty.resolver.dns">DefaultDnsServerAddressStreamProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStreamProvider</code></a>将使用预定义的默认DNS服务器用于DNS解析。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsAddressResolverGroup.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsAddressResolverGroup.html" title="class in io.netty.resolver.dns">DnsAddressResolverGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="../AddressResolverGroup.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/AddressResolverGroup.html" title="class in io.netty.resolver"><code>AddressResolverGroup</code></a> <a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns"><code>DnsNameResolver</code></a> s。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns">DnsNameResolver</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>基于DNS的<a href="../InetNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/InetNameResolver.html" title="class in io.netty.resolver"><code>InetNameResolver</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsNameResolverBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolverBuilder.html" title="class in io.netty.resolver.dns">DnsNameResolverBuilder</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns"><code>DnsNameResolver</code></a>建造者。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DnsServerAddresses.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddresses.html" title="class in io.netty.resolver.dns">DnsServerAddresses</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>提供无限序列的DNS服务器地址到<a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns"><code>DnsNameResolver</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsServerAddressStreamProviders.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProviders.html" title="class in io.netty.resolver.dns">DnsServerAddressStreamProviders</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>与<a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStreamProvider</code></a>相关的实用方法。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="MultiDnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/MultiDnsServerAddressStreamProvider.html" title="class in io.netty.resolver.dns">MultiDnsServerAddressStreamProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>甲<a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStreamProvider</code></a>其中通过的集合迭代<a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStreamProvider</code></a>直到第一非<code>null</code>结果被发现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="NoopDnsCache.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/NoopDnsCache.html" title="class in io.netty.resolver.dns">NoopDnsCache</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           实际上从不缓存任何东西的noop DNS缓存。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="NoopDnsQueryLifecycleObserverFactory.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/NoopDnsQueryLifecycleObserverFactory.html" title="class in io.netty.resolver.dns">NoopDnsQueryLifecycleObserverFactory</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="RoundRobinDnsAddressResolverGroup.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/RoundRobinDnsAddressResolverGroup.html" title="class in io.netty.resolver.dns">RoundRobinDnsAddressResolverGroup</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<a href="../AddressResolverGroup.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/AddressResolverGroup.html" title="class in io.netty.resolver"><code>AddressResolverGroup</code></a>的<a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns"><code>DnsNameResolver</code></a> s，支持随机选择目标地址（如果有多个由名称服务器提供）。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SequentialDnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/SequentialDnsServerAddressStreamProvider.html" title="class in io.netty.resolver.dns">SequentialDnsServerAddressStreamProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStreamProvider</code></a> ，它由一个连续的DNS服务器列表支持。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SingletonDnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/SingletonDnsServerAddressStreamProvider.html" title="class in io.netty.resolver.dns">SingletonDnsServerAddressStreamProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="DnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsServerAddressStreamProvider.html" title="io.netty.resolver.dns中的接口"><code>DnsServerAddressStreamProvider</code></a>总是使用单个DNS服务器进行解析。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="UnixResolverDnsServerAddressStreamProvider.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/UnixResolverDnsServerAddressStreamProvider.html" title="class in io.netty.resolver.dns">UnixResolverDnsServerAddressStreamProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           能够解析文件（如 
+          <a href="javascript:if(confirm('https://linux.die.net/man/5/resolver  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://linux.die.net/man/5/resolver'" tppabs="https://linux.die.net/man/5/resolver">/etc/resolv.conf</a>和 
+          <a href="javascript:if(confirm('https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man5/resolver.5.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man5/resolver.5.html'" tppabs="https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man5/resolver.5.html">/etc/resolver）</a>以尊重系统默认域服务器。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation"> 
+      <caption> 
+       <span>异常摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">异常</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DnsNameResolverException.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolverException.html" title="class in io.netty.resolver.dns">DnsNameResolverException</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<code>RuntimeException</code>时提出<a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns"><code>DnsNameResolver</code></a>未能履行一项成功的查询。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DnsNameResolverTimeoutException.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolverTimeoutException.html" title="class in io.netty.resolver.dns">DnsNameResolverTimeoutException</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<a href="DnsNameResolverException.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolverException.html" title="class in io.netty.resolver.dns"><code>DnsNameResolverException</code></a>时提出<a href="DnsNameResolver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsNameResolver.html" title="class in io.netty.resolver.dns"><code>DnsNameResolver</code></a>失败，因为超时的执行成功的查询。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.resolver.dns Description">Package io.netty.resolver.dns Description</h2> 
+   <div class="block">
+     An alternative to Java's built-in domain name lookup mechanism that resolves a domain name asynchronously, which supports the queries of an arbitrary DNS record type as well. 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../../util/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-resolver-dns-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/resolver/dns/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/resolver/dns/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

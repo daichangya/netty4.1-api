@@ -1,0 +1,633 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DefaultHttpRequest (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http.DefaultHttpRequest class"> 
+  <meta name="keywords" content="getMethod()"> 
+  <meta name="keywords" content="method()"> 
+  <meta name="keywords" content="getUri()"> 
+  <meta name="keywords" content="uri()"> 
+  <meta name="keywords" content="setMethod()"> 
+  <meta name="keywords" content="setUri()"> 
+  <meta name="keywords" content="setProtocolVersion()"> 
+  <meta name="keywords" content="hashCode()"> 
+  <meta name="keywords" content="equals()"> 
+  <meta name="keywords" content="toString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultHttpRequest (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":42,"i2":42,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/class-use/DefaultHttpRequest.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultHttpObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html" title="class in io.netty.handler.codec.http"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultHttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpResponse.html" title="class in io.netty.handler.codec.http"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http-DefaultHttpRequest.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/DefaultHttpRequest.html" target="_top">框架</a></li> 
+    <li><a href="DefaultHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http 
+   </div> 
+   <h2 title="Class DefaultHttpRequest" class="title">Class DefaultHttpRequest</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="DefaultHttpObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html" title="class in io.netty.handler.codec.http">io.netty.handler.codec.http.DefaultHttpObject</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="DefaultHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html" title="class in io.netty.handler.codec.http">io.netty.handler.codec.http.DefaultHttpMessage</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.handler.codec.http.DefaultHttpRequest</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../DecoderResultProvider.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html" title="io.netty.handler.codec中的接口">DecoderResultProvider</a> ， <a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口">HttpMessage</a> ， <a href="HttpObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpObject.html" title="io.netty.handler.codec.http中的接口">HttpObject</a> ， <a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口">HttpRequest</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="DefaultFullHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultFullHttpRequest.html" title="class in io.netty.handler.codec.http">DefaultFullHttpRequest</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">DefaultHttpRequest</span>
+extends <a href="DefaultHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html" title="class in io.netty.handler.codec.http">DefaultHttpMessage</a>
+implements <a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></pre> 
+      <div class="block"> 
+       <span>默认的<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpRequest</code></a>实现。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-">DefaultHttpRequest</a></span>(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion, <a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method, java.lang.String&nbsp;uri)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-boolean-">DefaultHttpRequest</a></span>(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion, <a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method, java.lang.String&nbsp;uri, boolean&nbsp;validateHeaders)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-io.netty.handler.codec.http.HttpHeaders-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-io.netty.handler.codec.http.HttpHeaders-">DefaultHttpRequest</a></span>(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion, <a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method, java.lang.String&nbsp;uri, <a href="HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;headers)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;o)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#getMethod--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#getMethod--">getMethod</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#getUri--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#getUri--">getUri</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#method--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#method--">method</a></span>()</code> 
+            <div class="block"> 
+             <span>返回此<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http"><code>HttpRequest</code></a>的<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpMethod</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#setMethod-io.netty.handler.codec.http.HttpMethod-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#setMethod-io.netty.handler.codec.http.HttpMethod-">setMethod</a></span>(<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method)</code> 
+            <div class="block"> 
+             <span>设置此<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http"><code>HttpRequest</code></a>的<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpMethod</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-">setProtocolVersion</a></span>(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;version)</code> 
+            <div class="block"> 
+             <span>设置此<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口"><code>HttpMessage</code></a>的协议版本</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#setUri-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#setUri-java.lang.String-">setUri</a></span>(java.lang.String&nbsp;uri)</code> 
+            <div class="block">
+              设置请求的URI（或者路径） 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DefaultHttpRequest.html#uri--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html#uri--">uri</a></span>()</code> 
+            <div class="block">
+              返回请求的URI（或者路径） 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.DefaultHttpMessage"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.http.<a href="DefaultHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html" title="class in io.netty.handler.codec.http">DefaultHttpMessage</a></h3> <code><a href="DefaultHttpMessage.html#getProtocolVersion--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html#getProtocolVersion--">getProtocolVersion</a>, <a href="DefaultHttpMessage.html#headers--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html#headers--">headers</a>, <a href="DefaultHttpMessage.html#protocolVersion--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html#protocolVersion--">protocolVersion</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.DefaultHttpObject"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.http.<a href="DefaultHttpObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html" title="class in io.netty.handler.codec.http">DefaultHttpObject</a></h3> <code><a href="DefaultHttpObject.html#decoderResult--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html#decoderResult--">decoderResult</a>, <a href="DefaultHttpObject.html#getDecoderResult--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html#getDecoderResult--">getDecoderResult</a>, <a href="DefaultHttpObject.html#setDecoderResult-io.netty.handler.codec.DecoderResult-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html#setDecoderResult-io.netty.handler.codec.DecoderResult-">setDecoderResult</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.HttpMessage"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.http.<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a></h3> <code><a href="HttpMessage.html#getProtocolVersion--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html#getProtocolVersion--">getProtocolVersion</a>, <a href="HttpMessage.html#headers--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html#headers--">headers</a>, <a href="HttpMessage.html#protocolVersion--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html#protocolVersion--">protocolVersion</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.http.HttpObject"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.http.<a href="HttpObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpObject.html" title="interface in io.netty.handler.codec.http">HttpObject</a></h3> <code><a href="HttpObject.html#getDecoderResult--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpObject.html#getDecoderResult--">getDecoderResult</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.DecoderResultProvider"> </a> <h3>Methods inherited from interface&nbsp;io.netty.handler.codec.<a href="../DecoderResultProvider.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html" title="interface in io.netty.handler.codec">DecoderResultProvider</a></h3> <code><a href="../DecoderResultProvider.html#decoderResult--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html#decoderResult--">decoderResult</a>, <a href="../DecoderResultProvider.html#setDecoderResult-io.netty.handler.codec.DecoderResult-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DecoderResultProvider.html#setDecoderResult-io.netty.handler.codec.DecoderResult-">setDecoderResult</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultHttpRequest</h4> <pre>public&nbsp;DefaultHttpRequest(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion,
+                          <a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method,
+                          java.lang.String&nbsp;uri)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>httpVersion</code> - 请求的HTTP版本 
+           </dd> 
+           <dd> 
+            <code>method</code> - 请求的HTTP方法 
+           </dd> 
+           <dd> 
+            <code>uri</code> - 请求的URI或路径 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DefaultHttpRequest</h4> <pre>public&nbsp;DefaultHttpRequest(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion,
+                          <a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method,
+                          java.lang.String&nbsp;uri,
+                          boolean&nbsp;validateHeaders)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>httpVersion</code> - 请求的HTTP版本 
+           </dd> 
+           <dd> 
+            <code>method</code> - 请求的HTTP方法 
+           </dd> 
+           <dd> 
+            <code>uri</code> - 请求的URI或路径 
+           </dd> 
+           <dd> 
+            <span><code>validateHeaders</code> - 将它们添加到<a href="HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http"><code>HttpHeaders</code></a>时验证标题名称和值</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DefaultHttpRequest-io.netty.handler.codec.http.HttpVersion-io.netty.handler.codec.http.HttpMethod-java.lang.String-io.netty.handler.codec.http.HttpHeaders-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DefaultHttpRequest</h4> <pre>public&nbsp;DefaultHttpRequest(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion,
+                          <a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method,
+                          java.lang.String&nbsp;uri,
+                          <a href="HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;headers)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>httpVersion</code> - 请求的HTTP版本 
+           </dd> 
+           <dd> 
+            <code>method</code> - 请求的HTTP方法 
+           </dd> 
+           <dd> 
+            <code>uri</code> - 请求的URI或路径 
+           </dd> 
+           <dd> 
+            <code>headers</code> - 此请求的标题 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="getMethod--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getMethod</h4> <pre>@Deprecated
+public&nbsp;<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;getMethod()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#getMethod--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#getMethod--">getMethod</a></code>在界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="method--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>method</h4> <pre>public&nbsp;<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpRequest.html#method--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#method--">HttpRequest</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http"><code>HttpRequest</code></a>的<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpMethod</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#method--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#method--">method</a></code>在界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>此<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http"><code>HttpRequest</code></a>的<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpMethod</code></a></span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getUri--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getUri</h4> <pre>@Deprecated
+public&nbsp;java.lang.String&nbsp;getUri()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#getUri--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#getUri--">getUri</a></code>在界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="uri--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>uri</h4> <pre>public&nbsp;java.lang.String&nbsp;uri()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="HttpRequest.html#uri--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#uri--">HttpRequest</a></code></span> 
+          </div> 
+          <div class="block">
+            返回请求的URI（或者路径） 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#uri--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#uri--">uri</a></code>在界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             请求的URI 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setMethod-io.netty.handler.codec.http.HttpMethod-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setMethod</h4> <pre>public&nbsp;<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a>&nbsp;setMethod(<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http">HttpMethod</a>&nbsp;method)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpRequest.html#setMethod-io.netty.handler.codec.http.HttpMethod-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#setMethod-io.netty.handler.codec.http.HttpMethod-">HttpRequest</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>设置此<a href="HttpMethod.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMethod.html" title="class in io.netty.handler.codec.http"><code>HttpRequest</code></a>的<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>HttpMethod</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#setMethod-io.netty.handler.codec.http.HttpMethod-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#setMethod-io.netty.handler.codec.http.HttpMethod-">setMethod</a></code>的界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setUri-java.lang.String-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setUri</h4> <pre>public&nbsp;<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a>&nbsp;setUri(java.lang.String&nbsp;uri)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="HttpRequest.html#setUri-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#setUri-java.lang.String-">HttpRequest</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            设置请求的URI（或者路径） 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#setUri-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#setUri-java.lang.String-">setUri</a></code>在界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setProtocolVersion-io.netty.handler.codec.http.HttpVersion-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setProtocolVersion</h4> <pre>public&nbsp;<a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a>&nbsp;setProtocolVersion(<a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;version)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="HttpMessage.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-">HttpMessage</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>设置此<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口"><code>HttpMessage</code></a>的协议版本</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpMessage.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-">setProtocolVersion</a></code>在界面 
+            <code><a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="HttpRequest.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-">setProtocolVersion</a></code>在界面 
+            <code><a href="HttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequest.html" title="interface in io.netty.handler.codec.http">HttpRequest</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DefaultHttpMessage.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html#setProtocolVersion-io.netty.handler.codec.http.HttpVersion-">setProtocolVersion</a></code>在课堂上 
+            <code><a href="DefaultHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html" title="class in io.netty.handler.codec.http">DefaultHttpMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hashCode--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hashCode</h4> <pre>public&nbsp;int&nbsp;hashCode()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DefaultHttpMessage.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html#hashCode--">hashCode</a></code>在课程 
+            <code><a href="DefaultHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html" title="class in io.netty.handler.codec.http">DefaultHttpMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="equals-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>equals</h4> <pre>public&nbsp;boolean&nbsp;equals(java.lang.Object&nbsp;o)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="DefaultHttpMessage.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html#equals-java.lang.Object-">equals</a></code>在课堂 
+            <code><a href="DefaultHttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpMessage.html" title="class in io.netty.handler.codec.http">DefaultHttpMessage</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课堂上 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/class-use/DefaultHttpRequest.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultHttpObject.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpObject.html" title="class in io.netty.handler.codec.http"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DefaultHttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpResponse.html" title="class in io.netty.handler.codec.http"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http-DefaultHttpRequest.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/DefaultHttpRequest.html" target="_top">框架</a></li> 
+    <li><a href="DefaultHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/DefaultHttpRequest.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

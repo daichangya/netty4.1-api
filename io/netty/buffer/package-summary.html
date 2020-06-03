@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.buffer (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.buffer package"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.buffer (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../bootstrap/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-buffer-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.buffer</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      抽象字节缓冲区 - 表示低级二进制和文本消息的基本数据结构。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           实现负责分配缓冲区。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetric.html" title="interface in io.netty.buffer">ByteBufAllocatorMetric</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteBufAllocatorMetricProvider.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetricProvider.html" title="interface in io.netty.buffer">ByteBufAllocatorMetricProvider</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="interface in io.netty.buffer">ByteBufHolder</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个发送或接收的数据包。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteBufProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufProcessor.html" title="interface in io.netty.buffer">ByteBufProcessor</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="../util/ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="io.netty.util中的接口"><code>ByteProcessor</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="interface in io.netty.buffer">PoolArenaMetric</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           公开竞技场的指标。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="PoolChunkListMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolChunkListMetric.html" title="interface in io.netty.buffer">PoolChunkListMetric</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           指标列表的块。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="PoolChunkMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolChunkMetric.html" title="interface in io.netty.buffer">PoolChunkMetric</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           大块的度量。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="PoolSubpageMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolSubpageMetric.html" title="interface in io.netty.buffer">PoolSubpageMetric</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           子页面的度量标准。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           缓冲区的骨架实现。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">AbstractByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>骨架<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>执行延伸。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractDerivedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html" title="class in io.netty.buffer">AbstractDerivedByteBuf</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">不使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AbstractReferenceCountedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractReferenceCountedByteBuf.html" title="class in io.netty.buffer">AbstractReferenceCountedByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>用于计算引用的<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>实现的抽象基类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个零或更多字节（八位字节）的随机和顺序访问序列。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ByteBufInputStream.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufInputStream.html" title="class in io.netty.buffer">ByteBufInputStream</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>从<code>InputStream</code>读取数据的<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">InputStream</a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ByteBufOutputStream.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufOutputStream.html" title="class in io.netty.buffer">ByteBufOutputStream</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个<code>OutputStream</code>这在将数据写入<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ByteBufUtil.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufUtil.html" title="class in io.netty.buffer">ByteBufUtil</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>与处理<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>相关的实用程序方法的集合，例如生成十六进制转储和交换整数的字节顺序。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="class in io.netty.buffer">CompositeByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           将多个缓冲区显示为单个合并缓冲区的虚拟缓冲区。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code>的</a>默认实现将其数据保存在<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code>中</a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DuplicatedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DuplicatedByteBuf.html" title="class in io.netty.buffer">DuplicatedByteBuf</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">不使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="EmptyByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/EmptyByteBuf.html" title="class in io.netty.buffer">EmptyByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个空的<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>其容量和最大容量都是<code>0</code> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" title="class in io.netty.buffer">PooledByteBufAllocator</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="PooledByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html" title="class in io.netty.buffer">PooledByteBufAllocatorMetric</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>暴露指标为<a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" title="在io.netty.buffer中的类"><code>PooledByteBufAllocator</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html" title="class in io.netty.buffer">ReadOnlyByteBuf</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">不使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SlicedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/SlicedByteBuf.html" title="class in io.netty.buffer">SlicedByteBuf</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">不使用。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SwappedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/SwappedByteBuf.html" title="class in io.netty.buffer">SwappedByteBuf</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span class="deprecationComment">使用Little Endian访问器，例如</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="Unpooled.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/Unpooled.html" title="class in io.netty.buffer">Unpooled</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>通过分配新空间或包装或复制现有字节数组，字节缓冲区和字符串来创建新的<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="UnpooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledByteBufAllocator.html" title="class in io.netty.buffer">UnpooledByteBufAllocator</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>简单的<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>实现，不会聚集任何东西。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="UnpooledDirectByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledDirectByteBuf.html" title="class in io.netty.buffer">UnpooledDirectByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于NIO 
+          <code>ByteBuffer</code>的缓冲区。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="UnpooledHeapByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledHeapByteBuf.html" title="class in io.netty.buffer">UnpooledHeapByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Big endian Java堆缓冲区实现。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="UnpooledUnsafeDirectByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/UnpooledUnsafeDirectByteBuf.html" title="class in io.netty.buffer">UnpooledUnsafeDirectByteBuf</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于NIO 
+          <code>ByteBuffer</code>的缓冲区。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.buffer Description">Package io.netty.buffer Description</h2> 
+   <div class="block"> 
+    <span>抽象字节缓冲区 - 表示低级二进制和文本消息的基本数据结构。</span> 
+    <span>Netty使用它自己的缓冲区API而不是NIO <code>ByteBuffer</code>来表示一个字节序列。</span> 
+    <span>这种方法比使用<code>ByteBuffer</code>有显着的优势。</span> 
+    <span>Netty的新缓冲区类型<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code>的</a>设计从根本上解决了<code>ByteBuffer</code>的问题，并满足了网络应用程序开发人员的日常需求。</span> 
+    <span>列出一些很酷的功能：</span> 
+    <ul> 
+     <li> <span>您可以根据需要定义您的缓冲区类型。</span> </li> 
+     <li> <span>透明零拷贝是通过内置复合缓冲区类型实现的。</span> </li> 
+     <li> <span>动态缓冲区类型是开箱即用的，其容量可按需扩展，就像<code>StringBuffer</code>一样。</span> </li> 
+     <li> <span>无需再调用<code>flip()</code>方法。</span> </li> 
+     <li> <span>它通常比<code>ByteBuffer</code>快。</span> </li> 
+    </ul> 
+    <h3> <span>可扩展性</span> </h3> 
+    <span><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>具有丰富的操作集，可针对快速协议实施进行优化。</span> 
+    <span>例如， <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>提供了访问无符号值和字符串以及在缓冲区中搜索特定字节序列的各种操作。</span> 
+    <span>您还可以扩展或包装现有的缓冲区类型以添加方便的访问器。</span> 
+    <span>自定义缓冲区类型仍然实现<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>接口，而不是引入不兼容的类型。</span> 
+    <h3> <span>透明零拷贝</span> </h3> 
+    <span>要将网络应用程序的性能提升到极致，您需要减少内存复制操作的数量。</span> 
+    <span>你可能有一组缓冲区可以被分割并组合成一个完整的消息。</span> 
+    <span>Netty提供了一个复合缓冲区，它允许您从任意数量的现有缓冲区中创建一个新的缓冲区，而无需复制内存。</span> 
+    <span>例如，一条消息可以由两部分组成;</span> 
+    <span>标题和正文。</span> 
+    <span>在模块化应用中，这两个部分可以由不同的模块生成，并在消息发出后进行组装。</span> 
+    <pre>  <span>+--------+----------+
+ | header |   body   |
+ +--------+----------+</span> </pre> 
+    <span>如果使用<code>ByteBuffer</code>则必须创建一个新的大缓冲区，并将这两个部分复制到新缓冲区中。</span> 
+    <span>或者，您可以在NIO中执行收集写入操作，但它限制您将缓冲区组合表示为<code>ByteBuffer</code>的数组而不是单个缓冲区，从而打破抽象并引入复杂的状态管理。</span> 
+    <span>此外，如果您不打算从NIO频道读取或写入，这是没有用的。</span> 
+    <pre>  <span>// The composite type is incompatible with the component type.
+ ByteBuffer[] message = new ByteBuffer[] { header, body };</span> </pre> 
+    <span>相比之下， <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>没有这样的警告，因为它是完全可扩展的并且具有内置的复合缓冲区类型。</span> 
+    <pre>  <span>// The composite type is compatible with the component type.
+ <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer"><code>ByteBuf</code></a> message = <a href="Unpooled.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/Unpooled.html" title="class in io.netty.buffer"><code>Unpooled</code></a>.wrappedBuffer(header, body);
+
+ // Therefore, you can even create a composite by mixing a composite and an
+ // ordinary buffer.
+ <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer"><code>ByteBuf</code></a> messageWithFooter = <a href="Unpooled.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/Unpooled.html" title="class in io.netty.buffer"><code>Unpooled</code></a>.wrappedBuffer(message, footer);
+
+ // Because the composite is still a <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer"><code>ByteBuf</code></a>, you can access its content
+ // easily, and the accessor method will behave just like it's a single buffer
+ // even if the region you want to access spans over multiple components.  The
+ // unsigned integer being read here is located across body and footer.
+ messageWithFooter.getUnsignedInt(
+     messageWithFooter.readableBytes() - footer.readableBytes() - 1);</span> </pre> 
+    <h3> <span>自动容量扩展</span> </h3> 
+    <span>许多协议定义了可变长度的消息，这意味着在构造消息之前无法确定消息的长度，或者精确地计算长度是困难和不方便的。</span> 
+    <span>这就像当你建立一个<code>String</code> 。</span> 
+    <span>您经常估计结果字符串的长度，并让<code>StringBuffer</code>扩展。</span> 
+    <pre>  <span>// A new dynamic buffer is created.  Internally, the actual buffer is created
+ // lazily to avoid potentially wasted memory space.
+ <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer"><code>ByteBuf</code></a> b = <a href="Unpooled.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/Unpooled.html" title="class in io.netty.buffer"><code>Unpooled</code></a>.buffer(4);
+
+ // When the first write attempt is made, the internal buffer is created with
+ // the specified initial capacity (4).
+ b.writeByte('1');
+
+ b.writeByte('2');
+ b.writeByte('3');
+ b.writeByte('4');
+
+ // When the number of written bytes exceeds the initial capacity (4), the
+ // internal buffer is reallocated automatically with a larger capacity.
+ b.writeByte('5');</span> </pre> 
+    <h3> <span>更好的性能</span> </h3> 
+    <span><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>最常用的缓冲区实现是一个非常薄的字节数组封装（即<code>byte[]</code> ）。</span> 
+    <span>与<code>ByteBuffer</code>不同，它没有复杂的边界检查和索引补偿，因此JVM更容易优化缓冲区访问。</span> 
+    <span>更复杂的缓冲区实现仅用于分片缓冲区或复合缓冲区，它的性能和<code>ByteBuffer</code> 。</span> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../bootstrap/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../channel/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-buffer-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/buffer/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

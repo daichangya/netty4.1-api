@@ -1,0 +1,806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ByteToMessageDecoder (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.ByteToMessageDecoder class"> 
+  <meta name="keywords" content="MERGE_CUMULATOR"> 
+  <meta name="keywords" content="COMPOSITE_CUMULATOR"> 
+  <meta name="keywords" content="setSingleDecode()"> 
+  <meta name="keywords" content="isSingleDecode()"> 
+  <meta name="keywords" content="setCumulator()"> 
+  <meta name="keywords" content="setDiscardAfterReads()"> 
+  <meta name="keywords" content="actualReadableBytes()"> 
+  <meta name="keywords" content="internalBuffer()"> 
+  <meta name="keywords" content="handlerRemoved()"> 
+  <meta name="keywords" content="handlerRemoved0()"> 
+  <meta name="keywords" content="channelRead()"> 
+  <meta name="keywords" content="channelReadComplete()"> 
+  <meta name="keywords" content="discardSomeReadBytes()"> 
+  <meta name="keywords" content="channelInactive()"> 
+  <meta name="keywords" content="userEventTriggered()"> 
+  <meta name="keywords" content="callDecode()"> 
+  <meta name="keywords" content="decode()"> 
+  <meta name="keywords" content="decodeLast()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ByteToMessageDecoder (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":6,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/class-use/ByteToMessageDecoder.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ByteToMessageCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageCodec.html" title="class in io.netty.handler.codec"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-codec-ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/ByteToMessageDecoder.html" target="_top">框架</a></li> 
+    <li><a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec 
+   </div> 
+   <h2 title="Class ByteToMessageDecoder" class="title">Class ByteToMessageDecoder</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">io.netty.channel.ChannelHandlerAdapter</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">io.netty.channel.ChannelInboundHandlerAdapter</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.handler.codec.ByteToMessageDecoder</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口">ChannelHandler</a> ， <a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口">ChannelInboundHandler</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="memcache/AbstractMemcacheObjectDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObjectDecoder.html" title="class在io.netty.handler.codec.memcache中">AbstractMemcacheObjectDecoder</a> ， <a href="../ssl/AbstractSniHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/AbstractSniHandler.html" title="class在io.netty.handler.ssl中">AbstractSniHandler</a> ， <a href="compression/Bzip2Decoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/Bzip2Decoder.html" title="class in io.netty.handler.codec.compression">Bzip2Decoder</a> ， <a href="DelimiterBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DelimiterBasedFrameDecoder.html" title="class在io.netty.handler.codec中">DelimiterBasedFrameDecoder</a> ， <a href="compression/FastLzFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/FastLzFrameDecoder.html" title="class in io.netty.handler.codec.compression">FastLzFrameDecoder</a> ， <a href="FixedLengthFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/FixedLengthFrameDecoder.html" title="class在io.netty.handler.codec中">FixedLengthFrameDecoder</a> ， <a href="haproxy/HAProxyMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/HAProxyMessageDecoder.html" title="class在io.netty.handler.codec.haproxy中">HAProxyMessageDecoder</a> ， <a href="http2/Http2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中">Http2ConnectionHandler</a> ， <a href="http/HttpObjectDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpObjectDecoder.html" title="class in io.netty.handler.codec.http">HttpObjectDecoder</a> ， <a href="json/JsonObjectDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/json/JsonObjectDecoder.html" title="类在io.netty.handler.codec.json中">JsonObjectDecoder</a> ， <a href="LengthFieldBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/LengthFieldBasedFrameDecoder.html" title="class在io.netty.handler.codec中">LengthFieldBasedFrameDecoder</a> ， <a href="LineBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/LineBasedFrameDecoder.html" title="class在io.netty.handler.codec中">LineBasedFrameDecoder</a> ， <a href="compression/Lz4FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/Lz4FrameDecoder.html" title="class in io.netty.handler.codec.compression">Lz4FrameDecoder</a> ， <a href="compression/LzfDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/LzfDecoder.html" title="class in io.netty.handler.codec.compression">LzfDecoder</a> ， <a href="../ssl/OptionalSslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OptionalSslHandler.html" title="class在io.netty.handler.ssl中">OptionalSslHandler</a> ， <a href="protobuf/ProtobufVarint32FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/protobuf/ProtobufVarint32FrameDecoder.html" title="class in io.netty.handler.codec.protobuf">ProtobufVarint32FrameDecoder</a> ， <a href="redis/RedisDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/RedisDecoder.html" title="class在io.netty.handler.codec.redis中">RedisDecoder</a> ， <a href="ReplayingDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ReplayingDecoder.html" title="class在io.netty.handler.codec中">ReplayingDecoder</a> ， <a href="compression/SnappyFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/SnappyFrameDecoder.html" title="class in io.netty.handler.codec.compression">SnappyFrameDecoder</a> ， <a href="socksx/SocksPortUnificationServerHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/SocksPortUnificationServerHandler.html" title="class in io.netty.handler.codec.socksx">SocksPortUnificationServerHandler</a> ， <a href="spdy/SpdyFrameCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameCodec.html" title="class in io.netty.handler.codec.spdy">SpdyFrameCodec</a> ， <a href="../ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中">SslHandler</a> ， <a href="http/websocketx/WebSocket08FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket08FrameDecoder.html" title="class in io.netty.handler.codec.http.websocketx">WebSocket08FrameDecoder</a> ， <a href="xml/XmlDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/xml/XmlDecoder.html" title="class在io.netty.handler.codec.xml中">XmlDecoder</a> ， <a href="xml/XmlFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/xml/XmlFrameDecoder.html" title="class在io.netty.handler.codec.xml中">XmlFrameDecoder</a> ， <a href="compression/ZlibDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/ZlibDecoder.html" title="class in io.netty.handler.codec.compression">ZlibDecoder</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public abstract class <span class="typeNameLabel">ByteToMessageDecoder</span>
+extends <a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></pre> 
+      <div class="block"> 
+       <span><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="在io.netty.channel中的类"><code>ChannelInboundHandlerAdapter</code></a> ，它以类似流的方式将字节从一个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code>解码</a>为另一个消息类型。</span> 
+       <span>例如，这里是一个实现，它从输入<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code>中</a>读取所有可读的字节并创建一个新的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+       <pre>  <span>public class SquareDecoder extends <a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class in io.netty.handler.codec"><code>ByteToMessageDecoder</code></a> {
+         <code> @Override</code>
+         public void decode(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel"><code>ChannelHandlerContext</code></a> ctx, <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer"><code>ByteBuf</code></a> in, List&lt;Object&gt; out)
+                 throws <code>异常</code> {
+             out.add(in.readBytes(in.readableBytes()));
+         }
+     }</span> </pre> 
+       <h3> <span>帧检测</span> </h3> 
+       <p> <span>一般帧检测应通过加入先前在管道处理<a href="DelimiterBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DelimiterBasedFrameDecoder.html" title="class在io.netty.handler.codec中"><code>DelimiterBasedFrameDecoder</code></a> ， <a href="FixedLengthFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/FixedLengthFrameDecoder.html" title="class在io.netty.handler.codec中"><code>FixedLengthFrameDecoder</code></a> ， <a href="LengthFieldBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/LengthFieldBasedFrameDecoder.html" title="class在io.netty.handler.codec中"><code>LengthFieldBasedFrameDecoder</code></a> ，或<a href="LineBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/LineBasedFrameDecoder.html" title="class在io.netty.handler.codec中"><code>LineBasedFrameDecoder</code></a> 。</span> </p> 
+       <p> <span>如果需要自定义帧解码器，那么在用<a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class在io.netty.handler.codec中"><code>ByteToMessageDecoder</code></a>实现一个时需要小心。</span> <span>通过检查<a href="../../buffer/ByteBuf.html#readableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#readableBytes--"><code>ByteBuf.readableBytes()</code>，</a>确保缓冲区中有足够的字节用于完整帧。</span> <span>如果完整帧没有足够的字节，则返回而不修改阅读器索引以允许更多字节到达。</span> </p> 
+       <p> <span>要在不修改阅读器索引的情况下检查完整帧，请使用<a href="../../buffer/ByteBuf.html#getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getInt-int-"><code>ByteBuf.getInt(int)</code>之类的</a>方法。</span> <span>当使用<a href="../../buffer/ByteBuf.html#getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getInt-int-"><code>ByteBuf.getInt(int)</code>等</a>方法时， <strong>必须</strong>使用阅读器索引。</span> <span>例如，调用<tt>in.getInt(0)</tt>假定帧在缓冲区的开始处开始，但情况并非总是如此。</span> <span>改为使用<tt>in.getInt(in.readerIndex())</tt> 。</span> </p> 
+       <h3> <span>陷阱</span> </h3> 
+       <p> <span>请注意， <a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class在io.netty.handler.codec中"><code>ByteToMessageDecoder</code>的</a>子类<strong>不能</strong>用<code>@Sharable</code>注释。</span> </p> 
+       <p> <span>如果返回的缓冲区未释放或添加到<tt>out</tt> <code>List</code>某些方法（如<a href="../../buffer/ByteBuf.html#readBytes-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#readBytes-int-"><code>ByteBuf.readBytes(int)</code>）</a>将导致内存泄漏。</span> <span>使用衍生缓冲区，如<a href="../../buffer/ByteBuf.html#readSlice-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#readSlice-int-"><code>ByteBuf.readSlice(int)</code></a>以避免内存泄漏。</span> </p> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation"> 
+         <caption> 
+          <span>Nested Classes</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Class and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static interface&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a></span></code> 
+            <div class="block"> 
+             <span>累积<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> s。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.channel.<a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="../../channel/ChannelHandler.Sharable.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.Sharable.html" title="annotation in io.netty.channel">ChannelHandler.Sharable</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#COMPOSITE_CUMULATOR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#COMPOSITE_CUMULATOR">COMPOSITE_CUMULATOR</a></span></code> 
+            <div class="block"> 
+             <span>通过将它们添加到<a href="../../buffer/CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a>来累积<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，所以尽可能不要复制存储器。</span> 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#MERGE_CUMULATOR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#MERGE_CUMULATOR">MERGE_CUMULATOR</a></span></code> 
+            <div class="block"> 
+             <span>累积<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> s通过合并成一个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> s，使用内存拷贝。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier</th> 
+           <th class="colLast" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#ByteToMessageDecoder--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#ByteToMessageDecoder--">ByteToMessageDecoder</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#actualReadableBytes--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#actualReadableBytes--">actualReadableBytes</a></span>()</code> 
+            <div class="block">
+              返回此解码器的内部累积缓冲区中的可读字节的实际数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#callDecode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#callDecode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-">callDecode</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in, java.util.List&lt;java.lang.Object&gt;&nbsp;out)</code> 
+            <div class="block"> 
+             <span>一旦数据应该从给定的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>解码，则<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">调用</a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelInactive-io.netty.channel.ChannelHandlerContext-">channelInactive</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block"> 
+             <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelInactive--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelInactive--"><code>ChannelHandlerContext.fireChannelInactive()</code></a>转发至<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;msg)</code> 
+            <div class="block"> 
+             <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-"><code>ChannelHandlerContext.fireChannelRead(Object)</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-">channelReadComplete</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block"> 
+             <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelReadComplete--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelReadComplete--"><code>ChannelHandlerContext.fireChannelReadComplete()</code></a>转发至<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected abstract void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-">decode</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in, java.util.List&lt;java.lang.Object&gt;&nbsp;out)</code> 
+            <div class="block"> 
+             <span>解码从一个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>到另一个。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#decodeLast-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#decodeLast-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-">decodeLast</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in, java.util.List&lt;java.lang.Object&gt;&nbsp;out)</code> 
+            <div class="block"> 
+             <span>当<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a>处于非活动状态时称为最后一次。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#discardSomeReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#discardSomeReadBytes--">discardSomeReadBytes</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              子类可以忽略这个方法。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#handlerRemoved0-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#handlerRemoved0-io.netty.channel.ChannelHandlerContext-">handlerRemoved0</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block"> 
+             <span>在<a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class在io.netty.handler.codec中"><code>ByteToMessageDecoder</code></a>从实际上下文中移除之后调用，它不再处理事件。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#internalBuffer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#internalBuffer--">internalBuffer</a></span>()</code> 
+            <div class="block">
+              返回此解码器的内部累积缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#isSingleDecode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#isSingleDecode--">isSingleDecode</a></span>()</code> 
+            <div class="block">
+              如果 
+             <code>true</code>则每个 
+             <a href="ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-"><code>channelRead(ChannelHandlerContext, Object)</code></a>呼叫仅解码一条消息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#setCumulator-io.netty.handler.codec.ByteToMessageDecoder.Cumulator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#setCumulator-io.netty.handler.codec.ByteToMessageDecoder.Cumulator-">setCumulator</a></span>(<a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a>&nbsp;cumulator)</code> 
+            <div class="block"> 
+             <span>设置<a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="io.netty.handler.codec中的接口"><code>ByteToMessageDecoder.Cumulator</code></a>用于累计收到的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#setDiscardAfterReads-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#setDiscardAfterReads-int-">setDiscardAfterReads</a></span>(int&nbsp;discardAfterReads)</code> 
+            <div class="block">
+              设置 
+             <a href="../../buffer/ByteBuf.html#discardSomeReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#discardSomeReadBytes--"><code>ByteBuf.discardSomeReadBytes()</code></a>之后的读取次数，释放内存。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#setSingleDecode-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#setSingleDecode-boolean-">setSingleDecode</a></span>(boolean&nbsp;singleDecode)</code> 
+            <div class="block">
+              如果设置，则每个 
+             <a href="ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-"><code>channelRead(ChannelHandlerContext, Object)</code></a>呼叫仅解码一条消息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ByteToMessageDecoder.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-">userEventTriggered</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;evt)</code> 
+            <div class="block"> 
+             <span>致电<a href="../../channel/ChannelHandlerContext.html#fireUserEventTriggered-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireUserEventTriggered-java.lang.Object-"><code>ChannelHandlerContext.fireUserEventTriggered(Object)</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelInboundHandlerAdapter"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></h3> <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelActive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelActive-io.netty.channel.ChannelHandlerContext-">channelActive</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelRegistered-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelRegistered-io.netty.channel.ChannelHandlerContext-">channelRegistered</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelUnregistered-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelUnregistered-io.netty.channel.ChannelHandlerContext-">channelUnregistered</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelWritabilityChanged-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelWritabilityChanged-io.netty.channel.ChannelHandlerContext-">channelWritabilityChanged</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-">exceptionCaught</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandlerAdapter"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></h3> <code><a href="../../channel/ChannelHandlerAdapter.html#ensureNotSharable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#ensureNotSharable--">ensureNotSharable</a>, <a href="../../channel/ChannelHandlerAdapter.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a>, <a href="../../channel/ChannelHandlerAdapter.html#isSharable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#isSharable--">isSharable</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Methods inherited from interface&nbsp;io.netty.channel.<a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="../../channel/ChannelHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="MERGE_CUMULATOR"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>MERGE_CUMULATOR</h4> <pre>public static final&nbsp;<a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a> MERGE_CUMULATOR</pre> 
+          <div class="block"> 
+           <span>累积<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> s合并成一个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> s，使用内存拷贝。</span> 
+          </div> </li> 
+        </ul> <a name="COMPOSITE_CUMULATOR"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>COMPOSITE_CUMULATOR</h4> <pre>public static final&nbsp;<a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a> COMPOSITE_CUMULATOR</pre> 
+          <div class="block"> 
+           <span>通过将它们添加到<a href="../../buffer/CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a>来累积<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> s，所以尽可能不要复制存储器。</span> 
+           <span>请注意， <a href="../../buffer/CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a>使用更复杂的索引实现，因此取决于您的使用情况和解码器实现，这可能会比使用<a href="ByteToMessageDecoder.html#MERGE_CUMULATOR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#MERGE_CUMULATOR"><code>MERGE_CUMULATOR</code></a>更慢。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="ByteToMessageDecoder--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>ByteToMessageDecoder</h4> <pre>protected&nbsp;ByteToMessageDecoder()</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="setSingleDecode-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSingleDecode</h4> <pre>public&nbsp;void&nbsp;setSingleDecode(boolean&nbsp;singleDecode)</pre> 
+          <div class="block"> 
+           <span>如果设置，则每个<a href="ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-"><code>channelRead(ChannelHandlerContext, Object)</code></a>呼叫仅解码一条消息。</span> 
+           <span>如果你需要做一些协议升级，并且要确保没有任何混淆，这可能很有用。</span> 
+           <span>默认值为<code>false</code>因为这会影响性能。</span> 
+          </div> </li> 
+        </ul> <a name="isSingleDecode--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isSingleDecode</h4> <pre>public&nbsp;boolean&nbsp;isSingleDecode()</pre> 
+          <div class="block"> 
+           <span>如果<code>true</code>则每个<a href="ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-"><code>channelRead(ChannelHandlerContext, Object)</code></a>呼叫仅解码一条消息。</span> 
+           <span>默认值为<code>false</code>因为这会影响性能。</span> 
+          </div> </li> 
+        </ul> <a name="setCumulator-io.netty.handler.codec.ByteToMessageDecoder.Cumulator-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setCumulator</h4> <pre>public&nbsp;void&nbsp;setCumulator(<a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec">ByteToMessageDecoder.Cumulator</a>&nbsp;cumulator)</pre> 
+          <div class="block"> 
+           <span>设置<a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="io.netty.handler.codec中的接口"><code>ByteToMessageDecoder.Cumulator</code></a>用于累计收到的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="setDiscardAfterReads-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setDiscardAfterReads</h4> <pre>public&nbsp;void&nbsp;setDiscardAfterReads(int&nbsp;discardAfterReads)</pre> 
+          <div class="block"> 
+           <span>设置<a href="../../buffer/ByteBuf.html#discardSomeReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#discardSomeReadBytes--"><code>ByteBuf.discardSomeReadBytes()</code></a>之后的读取次数，从而释放内存。</span> 
+           <span>默认值是<code>16</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="actualReadableBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>actualReadableBytes</h4> <pre>protected&nbsp;int&nbsp;actualReadableBytes()</pre> 
+          <div class="block"> 
+           <span>返回此解码器的内部累积缓冲区中的可读字节的实际数量。</span> 
+           <span>您通常不需要依赖此值来编写解码器。</span> 
+           <span>只有在您必须自担风险使用它时才使用它。</span> 
+           <span>此方法是<a href="ByteToMessageDecoder.html#internalBuffer--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#internalBuffer--"><code>internalBuffer().readableBytes()</code></a>的快捷方式。</span> 
+          </div> </li> 
+        </ul> <a name="internalBuffer--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>internalBuffer</h4> <pre>protected&nbsp;<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;internalBuffer()</pre> 
+          <div class="block"> 
+           <span>返回此解码器的内部累积缓冲区。</span> 
+           <span>您通常不需要直接访问内部缓冲区来编写解码器。</span> 
+           <span>只有在您必须自担风险使用它时才使用它。</span> 
+          </div> </li> 
+        </ul> <a name="handlerRemoved-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>handlerRemoved</h4> <pre>public final&nbsp;void&nbsp;handlerRemoved(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                          throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">ChannelHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block">
+            子类可以忽略这个方法。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></code> ，界面 
+            <code><a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></code>在课程 
+            <code><a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="handlerRemoved0-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>handlerRemoved0</h4> <pre>protected&nbsp;void&nbsp;handlerRemoved0(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                        throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>在<a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class在io.netty.handler.codec中"><code>ByteToMessageDecoder</code></a>已从实际上下文中移除并且不再处理事件之后调用。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>channelRead</h4> <pre>public&nbsp;void&nbsp;channelRead(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                        java.lang.Object&nbsp;msg)
+                 throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">ChannelInboundHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-"><code>ChannelHandlerContext.fireChannelRead(Object)</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+           <span>子类可以重写此方法来更改行为。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a></code>在界面 
+            <code><a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a></code>在课程 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="channelReadComplete-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>channelReadComplete</h4> <pre>public&nbsp;void&nbsp;channelReadComplete(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                         throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-">ChannelInboundHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelReadComplete--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelReadComplete--"><code>ChannelHandlerContext.fireChannelReadComplete()</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+           <span>子类可以重写此方法来更改行为。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandler.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-">channelReadComplete</a></code>在界面 
+            <code><a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-">channelReadComplete</a></code>在班级 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="discardSomeReadBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>discardSomeReadBytes</h4> <pre>protected final&nbsp;void&nbsp;discardSomeReadBytes()</pre> </li> 
+        </ul> <a name="channelInactive-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>channelInactive</h4> <pre>public&nbsp;void&nbsp;channelInactive(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                     throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelInactive-io.netty.channel.ChannelHandlerContext-">ChannelInboundHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelInactive--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelInactive--"><code>ChannelHandlerContext.fireChannelInactive()</code></a>转发至<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+           <span>子类可以重写此方法来更改行为。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandler.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html#channelInactive-io.netty.channel.ChannelHandlerContext-">channelInactive</a></code>在界面 
+            <code><a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelInactive-io.netty.channel.ChannelHandlerContext-">channelInactive</a></code>在课堂上 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>userEventTriggered</h4> <pre>public&nbsp;void&nbsp;userEventTriggered(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                               java.lang.Object&nbsp;evt)
+                        throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-">ChannelInboundHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>致电<a href="../../channel/ChannelHandlerContext.html#fireUserEventTriggered-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireUserEventTriggered-java.lang.Object-"><code>ChannelHandlerContext.fireUserEventTriggered(Object)</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+           <span>子类可以重写此方法来更改行为。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandler.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-">userEventTriggered</a></code> ，界面 
+            <code><a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-">userEventTriggered</a></code>在课程 
+            <code><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="callDecode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>callDecode</h4> <pre>protected&nbsp;void&nbsp;callDecode(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                          <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in,
+                          java.util.List&lt;java.lang.Object&gt;&nbsp;out)</pre> 
+          <div class="block"> 
+           <span>调用一次数据应该从给定的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>解码。</span> 
+           <span>只要解码应该发生，该方法将调用<a href="ByteToMessageDecoder.html#decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-"><code>decode(ChannelHandlerContext, ByteBuf, List)</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - <a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class在io.netty.handler.codec中"><code>ByteToMessageDecoder</code></a>所属的<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>in</code> - <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">从中</a>读取数据的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>out</code> - 应该添加解码消息的 
+            <code>List</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>decode</h4> <pre>protected abstract&nbsp;void&nbsp;decode(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                               <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in,
+                               java.util.List&lt;java.lang.Object&gt;&nbsp;out)
+                        throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>解码从一个<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>到另一个。</span> 
+           <span>该方法将被调用，直到输入<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>在从此方法返回时没有任何可读的内容或直到从输入<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>没有读到任何<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">内容</a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - <a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class在io.netty.handler.codec中"><code>ByteToMessageDecoder</code></a>属于的<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>in</code> - <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">从中</a>读取数据的<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>out</code> - 应该添加解码消息的 
+            <code>List</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="decodeLast-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>decodeLast</h4> <pre>protected&nbsp;void&nbsp;decodeLast(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                          <a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;in,
+                          java.util.List&lt;java.lang.Object&gt;&nbsp;out)
+                   throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>当<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a>处于非活动状态时称为最后一次。</span> 
+           <span>这意味着<a href="ByteToMessageDecoder.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#channelInactive-io.netty.channel.ChannelHandlerContext-"><code>channelInactive(ChannelHandlerContext)</code></a>被触发。</span> 
+           <span>默认情况下，这只会调用<a href="ByteToMessageDecoder.html#decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html#decode-io.netty.channel.ChannelHandlerContext-io.netty.buffer.ByteBuf-java.util.List-"><code>decode(ChannelHandlerContext, ByteBuf, List)</code>，</a>但子类可能会覆盖这个对于一些特殊的清理操作。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/class-use/ByteToMessageDecoder.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ByteToMessageCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageCodec.html" title="class in io.netty.handler.codec"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ByteToMessageDecoder.Cumulator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.Cumulator.html" title="interface in io.netty.handler.codec"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-codec-ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/ByteToMessageDecoder.html" target="_top">框架</a></li> 
+    <li><a href="ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

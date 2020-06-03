@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>FileRegion (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.FileRegion interface"> 
+  <meta name="keywords" content="position()"> 
+  <meta name="keywords" content="transfered()"> 
+  <meta name="keywords" content="transferred()"> 
+  <meta name="keywords" content="count()"> 
+  <meta name="keywords" content="transferTo()"> 
+  <meta name="keywords" content="retain()"> 
+  <meta name="keywords" content="touch()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="FileRegion (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":38,"i7":6,"i8":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/FileRegion.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="FixedRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FixedRecvByteBufAllocator.html" title="class in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-FileRegion.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/FileRegion.html" target="_top">框架</a></li> 
+    <li><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Interface FileRegion" class="title">Interface FileRegion</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Superinterfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口">ReferenceCounted</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        所有已知实现类：
+       </dt> 
+       <dd> 
+        <span><a href="DefaultFileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultFileRegion.html" title="在io.netty.channel中的类">DefaultFileRegion</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public interface <span class="typeNameLabel">FileRegion</span>
+extends <a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></pre> 
+      <div class="block"> 
+       <span>通过支持<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Zero-copy  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Zero-copy'" tppabs="http://en.wikipedia.org/wiki/Zero-copy">zero-copy file transfer</a>的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>发送的文件区域。</span> 
+       <h3> <span>升级您的JDK / JRE</span> </h3> 
+       <span><code>FileChannel.transferTo(long, long, WritableByteChannel)</code>在旧版本的Sun JDK及其衍生版本中至少有四个已知的错误。</span> 
+       <span>如果您打算使用零拷贝文件传输，请将您的JDK升级到1.6.0_18或更高版本。</span> 
+       <ul> 
+        <li> <span><a href="javascript:if(confirm('http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5103988  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5103988'" tppabs="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=5103988">5103988</a> - FileChannel.transferTo（）应该为EAGAIN返回-1，而不是抛出IOException</span> </li> 
+        <li> <span><a href="javascript:if(confirm('http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6253145  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6253145'" tppabs="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6253145">6253145</a> - 超出2GB边界时，Linux上的FileChannel.transferTo（）失败</span> </li> 
+        <li> <span><a href="javascript:if(confirm('http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6427312  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6427312'" tppabs="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6427312">6427312</a> - FileChannel.transferTo（）抛出IOException“系统调用中断”</span> </li> 
+        <li> <span><a href="javascript:if(confirm('http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6524172  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6524172'" tppabs="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6524172">6470086</a> - FileChannel.transferTo（2147483647，1，channel）导致“值太大”异常</span> </li> 
+       </ul> 
+       <h3> <span>检查您的操作系统和JDK / JRE</span> </h3> 
+       <span>如果您的操作系统（或JDK / JRE）不支持零拷贝文件传输，则发送包含<a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="io.netty.channel中的接口"><code>FileRegion</code></a>的文件可能会失败或性能降低。</span> 
+       <span>例如，发送大文件在Windows中运行不正常。</span> 
+       <h3> <span>并非所有的传输都支持它</span> </h3> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#count--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#count--">count</a></span>()</code> 
+            <div class="block">
+              返回要传输的字节数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#position--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#position--">position</a></span>()</code> 
+            <div class="block">
+              返回传输开始的文件中的偏移量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#retain--">retain</a></span>()</code> 
+            <div class="block">
+              将引用计数增加 
+             <code>1</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#retain-int-">retain</a></span>(int&nbsp;increment)</code> 
+            <div class="block">
+              将参考计数增加指定的 
+             <code>increment</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#touch--">touch</a></span>()</code> 
+            <div class="block">
+              记录此对象的当前访问位置以进行调试。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#touch-java.lang.Object-">touch</a></span>(java.lang.Object&nbsp;hint)</code> 
+            <div class="block">
+              记录此对象的当前访问位置，并附加一些用于调试的任意信息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#transfered--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#transfered--">transfered</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="FileRegion.html#transferred--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#transferred--"><code>transferred()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#transferred--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#transferred--">transferred</a></span>()</code> 
+            <div class="block">
+              返回已经传输的字节。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="FileRegion.html#transferTo-java.nio.channels.WritableByteChannel-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#transferTo-java.nio.channels.WritableByteChannel-long-">transferTo</a></span>(java.nio.channels.WritableByteChannel&nbsp;target, long&nbsp;position)</code> 
+            <div class="block">
+              将此文件区域的内容传输到指定的通道。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.ReferenceCounted"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.<a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></h3> <code><a href="../util/ReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#refCnt--">refCnt</a>, <a href="../util/ReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release--">release</a>, <a href="../util/ReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release-int-">release</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="position--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>position</h4> <pre>long&nbsp;position()</pre> 
+          <div class="block">
+            返回传输开始的文件中的偏移量。 
+          </div> </li> 
+        </ul> <a name="transfered--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>transfered</h4> <pre>@Deprecated
+long&nbsp;transfered()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="FileRegion.html#transferred--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#transferred--"><code>transferred()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回已经传输的字节。 
+          </div> </li> 
+        </ul> <a name="transferred--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>transferred</h4> <pre>long&nbsp;transferred()</pre> 
+          <div class="block">
+            返回已经传输的字节。 
+          </div> </li> 
+        </ul> <a name="count--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>count</h4> <pre>long&nbsp;count()</pre> 
+          <div class="block">
+            返回要传输的字节数。 
+          </div> </li> 
+        </ul> <a name="transferTo-java.nio.channels.WritableByteChannel-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>transferTo</h4> <pre>long&nbsp;transferTo(java.nio.channels.WritableByteChannel&nbsp;target,
+                long&nbsp;position)
+         throws java.io.IOException</pre> 
+          <div class="block">
+            将此文件区域的内容传输到指定的通道。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>target</code> - 转移的目的地 
+           </dd> 
+           <dd> 
+            <span><code>position</code> - 从传输开始的文件的相对偏移量。</span> 
+            <span>例如， <tt>0</tt>将使传输从第<a href="FileRegion.html#position--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#position--"><code>position()</code></a>个字节开始， <tt><a href="FileRegion.html#count--" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html#count--"><code>count()</code></a> - 1</tt>将使该区域的最后一个字节传输。</span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="retain--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a>&nbsp;retain()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block">
+            将引用计数增加 
+           <code>1</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">retain</a></code>在界面 
+            <code><a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="retain-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a>&nbsp;retain(int&nbsp;increment)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            将参考计数增加 
+           <code>increment</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">retain</a></code>在界面 
+            <code><a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a>&nbsp;touch()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置以进行调试。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+           <span>此方法是<a href="../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-"><code>touch(null)</code></a>的快捷方式。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">touch</a></code>在界面 
+            <code><a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="touch-java.lang.Object-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>touch</h4> <pre><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" title="interface in io.netty.channel">FileRegion</a>&nbsp;touch(java.lang.Object&nbsp;hint)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置，并附加一些用于调试的任意信息。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">touch</a></code>在界面 
+            <code><a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="interface in io.netty.util">ReferenceCounted</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/FileRegion.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="FixedRecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FixedRecvByteBufAllocator.html" title="class in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-FileRegion.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/FileRegion.html" target="_top">框架</a></li> 
+    <li><a href="FileRegion.html" tppabs="http://netty.io/4.1/api/io/netty/channel/FileRegion.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

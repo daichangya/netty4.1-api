@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.channel.sctp (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.sctp package"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.channel.sctp (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../rxtx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/nio/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-sctp-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/sctp/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.channel.sctp</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      抽象扩展核心通道API的SCTP套接字接口。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SctpChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannel.html" title="interface in io.netty.channel.sctp">SctpChannel</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>单个SCTP关联的SCTP / IP <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>接口。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SctpChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannelConfig.html" title="interface in io.netty.channel.sctp">SctpChannelConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="../ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="io.netty.channel中的接口"><code>ChannelConfig</code></a>为<a href="SctpChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannel.html" title="io.netty.channel.sctp中的接口"><code>SctpChannel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SctpServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannel.html" title="interface in io.netty.channel.sctp">SctpServerChannel</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>接受传入的SCTP / IP关联的SCTP / IP <a href="../ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SctpServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannelConfig.html" title="interface in io.netty.channel.sctp">SctpServerChannelConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="../ChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelConfig.html" title="io.netty.channel中的接口"><code>ChannelConfig</code></a>为<a href="SctpServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannelConfig.html" title="io.netty.channel.sctp中的接口"><code>SctpServerChannelConfig</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultSctpChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/DefaultSctpChannelConfig.html" title="class in io.netty.channel.sctp">DefaultSctpChannelConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>SCTP的默认<a href="SctpChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannelConfig.html" title="io.netty.channel.sctp中的接口"><code>SctpChannelConfig</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultSctpServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/DefaultSctpServerChannelConfig.html" title="class in io.netty.channel.sctp">DefaultSctpServerChannelConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>SCTP的默认<a href="SctpServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpServerChannelConfig.html" title="io.netty.channel.sctp中的接口"><code>SctpServerChannelConfig</code></a>实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SctpChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannelOption.html" title="class in io.netty.channel.sctp">SctpChannelOption</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于配置SCTP传输的选项 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SctpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpMessage.html" title="class in io.netty.channel.sctp">SctpMessage</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           SCTP数据块的表示 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SctpNotificationHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpNotificationHandler.html" title="class in io.netty.channel.sctp">SctpNotificationHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><code>AbstractNotificationHandler</code>实施，这将处理所有<code>Notification</code>由触发器个<code>Notification</code>在用户事件<a href="../ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>一个的<a href="SctpChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpChannel.html" title="io.netty.channel.sctp中的接口"><code>SctpChannel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.channel.sctp Description">Package io.netty.channel.sctp Description</h2> 
+   <div class="block">
+     抽象扩展核心通道API的SCTP套接字接口。 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../rxtx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/rxtx/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/nio/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-sctp-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/sctp/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/sctp/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

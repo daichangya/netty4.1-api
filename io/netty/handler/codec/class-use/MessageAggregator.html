@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Class io.netty.handler.codec.MessageAggregator (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Class io.netty.handler.codec.MessageAggregator (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">软件包</a></li> 
+    <li><a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-class-use-MessageAggregator.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/class-use/MessageAggregator.html" target="_top">框架</a></li> 
+    <li><a href="MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/class-use/MessageAggregator.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h2 title="Uses of Class io.netty.handler.codec.MessageAggregator" class="title">Uses of Class<br>io.netty.handler.codec.MessageAggregator</h2> 
+  </div> 
+  <div class="classUseContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http">io.netty.handler.codec.http</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，解码器及其相关的HTTP消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http.websocketx">io.netty.handler.codec.http.websocketx</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Web_Sockets  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Web_Sockets'" tppabs="http://en.wikipedia.org/wiki/Web_Sockets">Web Socket</a>数据帧的编码器，解码器，握手及其相关消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.memcache">io.netty.handler.codec.memcache</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           ascii和二进制类的通用超集。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.memcache.binary">io.netty.handler.codec.memcache.binary</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Memcache二进制协议的实现和接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.redis">io.netty.handler.codec.redis</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，Redis解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.stomp">io.netty.handler.codec.stomp</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol'" tppabs="http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol">STOMP</a>编解码器 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <ul class="blockList"> 
+      <li class="blockList"><a name="io.netty.handler.codec.http"> </a> <h3>Uses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../http/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">io.netty.handler.codec.http</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../http/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">io.netty.handler.codec.http</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../http/HttpClientUpgradeHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpClientUpgradeHandler.html" title="class in io.netty.handler.codec.http">HttpClientUpgradeHandler</a></span></code> 
+           <div class="block">
+             用于处理与另一个协议的HTTP升级握手的客户端处理程序。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../http/HttpObjectAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpObjectAggregator.html" title="class in io.netty.handler.codec.http">HttpObjectAggregator</a></span></code> 
+           <div class="block"> 
+            <span>A <a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>将<a href="../http/HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口"><code>HttpMessage</code></a>及其后续<a href="../http/HttpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpContent.html" title="io.netty.handler.codec.http中的接口"><code>HttpContent</code></a>合并为一个<a href="../http/FullHttpRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpRequest.html" title="io.netty.handler.codec.http中的接口"><code>FullHttpRequest</code></a>或<a href="../http/FullHttpResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/FullHttpResponse.html" title="io.netty.handler.codec.http中的接口"><code>FullHttpResponse</code></a> （取决于它是否用于处理请求或响应）而没有以下<a href="../http/HttpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpContent.html" title="io.netty.handler.codec.http中的接口"><code>HttpContent</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../http/HttpServerUpgradeHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpServerUpgradeHandler.html" title="class in io.netty.handler.codec.http">HttpServerUpgradeHandler</a></span></code> 
+           <div class="block">
+             服务器端处理程序，用于接收HTTP请求，并且可以在支持所请求的协议时选择执行协议切换。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http.websocketx"> </a> <h3>Uses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../http/websocketx/WebSocketFrameAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameAggregator.html" title="class in io.netty.handler.codec.http.websocketx">WebSocketFrameAggregator</a></span></code> 
+           <div class="block">
+             处理程序聚合碎片WebSocketFrame的。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.memcache"> </a> <h3>Uses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../memcache/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/package-summary.html">io.netty.handler.codec.memcache</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../memcache/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/package-summary.html">io.netty.handler.codec.memcache</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../memcache/AbstractMemcacheObjectAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObjectAggregator.html" title="class in io.netty.handler.codec.memcache">AbstractMemcacheObjectAggregator</a>&lt;H extends <a href="../memcache/MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="interface in io.netty.handler.codec.memcache">MemcacheMessage</a>&gt;</span></code> 
+           <div class="block"> 
+            <span>A <a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>将<a href="../memcache/MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="io.netty.handler.codec.memcache中的接口"><code>MemcacheMessage</code></a>及其随后的<a href="../memcache/MemcacheContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheContent.html" title="io.netty.handler.codec.memcache中的接口"><code>MemcacheContent</code>汇总</a>为单个<a href="../memcache/MemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheMessage.html" title="io.netty.handler.codec.memcache中的接口"><code>MemcacheMessage</code></a> ，但没有<a href="../memcache/MemcacheContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/MemcacheContent.html" title="io.netty.handler.codec.memcache中的接口"><code>MemcacheContent</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.memcache.binary"> </a> <h3>Uses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../memcache/binary/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html">io.netty.handler.codec.memcache.binary</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../memcache/binary/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html">io.netty.handler.codec.memcache.binary</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../memcache/binary/BinaryMemcacheObjectAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheObjectAggregator.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheObjectAggregator</a></span></code> 
+           <div class="block">
+             memcache二进制协议的对象聚合器。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.redis"> </a> <h3>Uses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../redis/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/package-summary.html">io.netty.handler.codec.redis</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../redis/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/package-summary.html">io.netty.handler.codec.redis</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../redis/RedisBulkStringAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/RedisBulkStringAggregator.html" title="class in io.netty.handler.codec.redis">RedisBulkStringAggregator</a></span></code> 
+           <div class="block"> 
+            <span>A <a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>将<a href="../redis/BulkStringHeaderRedisMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/BulkStringHeaderRedisMessage.html" title="class在io.netty.handler.codec.redis中"><code>BulkStringHeaderRedisMessage</code></a>及其后续<a href="../redis/BulkStringRedisContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/BulkStringRedisContent.html" title="io.netty.handler.codec.redis中的接口"><code>BulkStringRedisContent</code></a>合并为一个<a href="../redis/FullBulkStringRedisMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/FullBulkStringRedisMessage.html" title="class在io.netty.handler.codec.redis中"><code>FullBulkStringRedisMessage</code></a> ，但没有<a href="../redis/BulkStringRedisContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/BulkStringRedisContent.html" title="io.netty.handler.codec.redis中的接口"><code>BulkStringRedisContent</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.stomp"> </a> <h3>Uses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../stomp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/package-summary.html">io.netty.handler.codec.stomp</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">MessageAggregator</a> in <a href="../stomp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/package-summary.html">io.netty.handler.codec.stomp</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../stomp/StompSubframeAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/StompSubframeAggregator.html" title="class in io.netty.handler.codec.stomp">StompSubframeAggregator</a></span></code> 
+           <div class="block"> 
+            <span>A <a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>将<a href="../stomp/StompHeadersSubframe.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/StompHeadersSubframe.html" title="io.netty.handler.codec.stomp中的接口"><code>StompHeadersSubframe</code></a>及其后的<a href="../stomp/StompContentSubframe.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/StompContentSubframe.html" title="io.netty.handler.codec.stomp中的接口"><code>StompContentSubframe</code>汇总</a>为一个<a href="../stomp/StompFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/StompFrame.html" title="io.netty.handler.codec.stomp中的接口"><code>StompFrame</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">软件包</a></li> 
+    <li><a href="../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-class-use-MessageAggregator.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/class-use/MessageAggregator.html" target="_top">框架</a></li> 
+    <li><a href="MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/class-use/MessageAggregator.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/class-use/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

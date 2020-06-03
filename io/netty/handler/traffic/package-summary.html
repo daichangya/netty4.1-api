@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.handler.traffic (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.traffic package"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.handler.traffic (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../timeout/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/timeout/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../../resolver/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-traffic-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/traffic/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.handler.traffic</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      流量整形处理器和动态统计的实现。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>AbstractTrafficShapingHandler允许将全局带宽（请参阅<a href="GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>GlobalTrafficShapingHandler</code></a> ）或每个会话带宽（请参阅<a href="ChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/ChannelTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>ChannelTrafficShapingHandler</code></a> ）限制为流量整形。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/ChannelTrafficShapingHandler.html" title="class in io.netty.handler.traffic">ChannelTrafficShapingHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>AbstractTrafficShapingHandler</code>的</a>这种实现是用于信道流量整形，也就是说每个信道的带宽限制。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="GlobalChannelTrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficCounter.html" title="class in io.netty.handler.traffic">GlobalChannelTrafficCounter</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>版本为<a href="GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>GlobalChannelTrafficShapingHandler</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" title="class in io.netty.handler.traffic">GlobalChannelTrafficShapingHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>AbstractTrafficShapingHandler</code>的</a>这种实现方式<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">适用</a>于全局和每通道流量整形，也就是全球带宽限制，无论开放通道的数量和每个通道的带宽限制如何。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="class in io.netty.handler.traffic">GlobalTrafficShapingHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>AbstractTrafficShapingHandler</code>的</a>这种实现方式<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">适用</a>于全局流量整形，即无论打开的通道数量多少，都可以对带宽进行全局限制。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="class in io.netty.handler.traffic">TrafficCounter</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           计算速率限制流量的读取和写入字节数。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.handler.traffic Description">Package io.netty.handler.traffic Description</h2> 
+   <div class="block"> 
+    <span>流量整形处理器和动态统计的实现。</span> 
+    <p> <span>这个软件包的主要目标是允许您调整流量（带宽限制），还可以获取有关读取或写入字节数的统计信息。</span> <span>这两个功能可以是活动的或不活动的（流量或统计）。</span> </p> 
+    <p> <span>两个类实现这种行为：</span> </p> 
+    <ul> 
+     <li> <span><tt><a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="class in io.netty.handler.traffic"><code>TrafficCounter</code></a></tt> ：该类实现处理程序所需的计数器。</span> <span>它可以被访问以获得一些额外的信息，例如自上次检查以来的读取或写入字节，来自上次检查的读取和写入带宽...</span> </li> 
+     <li> <span><tt><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic"><code>AbstractTrafficShapingHandler</code></a></tt> ：这个抽象类实现了流量整形的内核。</span> <span>它可以扩展到适合您的需求。</span> <span>建议将两类作为默认实现：分别参见<a href="ChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/ChannelTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>ChannelTrafficShapingHandler</code></a>和<a href="GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>GlobalTrafficShapingHandler</code>，</a>了解信道流量整形和全局流量整形。</span> </li> 
+    </ul> 
+    <p></p> 
+    <p> <span>入站和出站流量都可以独立形成。</span> <span>这是通过向Channel和Global流量整形处理程序的构造函数传递所需的限制值，或者通过调用<tt><code>AbstractTrafficShapingHandler</code></tt>上的<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">configure</a>方法来<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">完成的</a> 。</span> <span>两个参数都为0表示不应该有任何限制。</span> <span>这使您可以监视传入和传出流量，而无需整形。</span> </p> 
+    <p> <span>要激活或取消激活统计信息，您可以将延迟调整到较低（出于效率原因建议不小于200ms）或较高的值（例如说24H以毫秒为单位足以解决问题）或甚至使用<tt>0</tt>表示不会进行计算。</span> </p> 
+    <p> <span>如果您想对这些统计信息做任何事情，只需重写<tt>doAccounting</tt>方法即可。</span> <br> <span>该间隔可以从该方法中<tt>configure</tt>被改变或者<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>AbstractTrafficShapingHandler</code></a> ，或直接使用该方法的<tt>configure</tt> <a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="在io.netty.handler.traffic中的类"><code>TrafficCounter</code></a> 。</span> </p> 
+    <p> <span>请注意，必须为每个新频道创建一个新的<a href="ChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/ChannelTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>ChannelTrafficShapingHandler</code></a> ，但只有一个<a href="GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>GlobalTrafficShapingHandler</code></a>必须为所有频道创建。</span> </p> 
+    <p> <span>还要注意，如果要分离频道类别（例如，从业务角度或从绑定地址的角度来看），您可以创建不同的GlobalTrafficShapingHandler。</span> </p> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../timeout/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/timeout/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../../resolver/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-traffic-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/traffic/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/traffic/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

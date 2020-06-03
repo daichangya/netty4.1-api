@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.handler.ssl (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.ssl package"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.handler.ssl (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../proxy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="ocsp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ocsp/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.handler.ssl</h1> 
+   <div class="docSummary"> 
+    <div class="block"> 
+     <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Transport_Layer_Security  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Transport_Layer_Security'" tppabs="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL · TLS的</a>实现基于 
+     <code>SSLEngine</code> 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolNegotiator.html" title="interface in io.netty.handler.ssl">ApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a></span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="CipherSuiteFilter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/CipherSuiteFilter.html" title="interface in io.netty.handler.ssl">CipherSuiteFilter</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           提供了一种基于受支持和默认密码套件过滤提供的密码套件的方法。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a></span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.ProtocolSelectionListener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.ProtocolSelectionListener.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator.ProtocolSelectionListener</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个监听者被其同伴选择的协议通知。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.ProtocolSelectionListenerFactory.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.ProtocolSelectionListenerFactory.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator.ProtocolSelectionListenerFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="JdkApplicationProtocolNegotiator.ProtocolSelectionListener.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.ProtocolSelectionListener.html" title="io.netty.handler.ssl中的接口"><code>JdkApplicationProtocolNegotiator.ProtocolSelectionListener</code></a>对象的工厂接口。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.ProtocolSelector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.ProtocolSelector.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator.ProtocolSelector</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           定义SSL握手过程中应用程序协议选择器角色的接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.ProtocolSelectorFactory.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.ProtocolSelectorFactory.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator.ProtocolSelectorFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="JdkApplicationProtocolNegotiator.ProtocolSelector.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.ProtocolSelector.html" title="io.netty.handler.ssl中的接口"><code>JdkApplicationProtocolNegotiator.ProtocolSelector</code></a>对象的工厂接口。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.SslEngineWrapperFactory.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.SslEngineWrapperFactory.html" title="interface in io.netty.handler.ssl">JdkApplicationProtocolNegotiator.SslEngineWrapperFactory</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象工厂模式包装 
+          <code>SSLEngine</code>对象。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSslApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslApplicationProtocolNegotiator.html" title="interface in io.netty.handler.ssl">OpenSslApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a></span></span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractSniHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/AbstractSniHandler.html" title="class in io.netty.handler.ssl">AbstractSniHandler</a>&lt;T&gt;</td> 
+        <td class="colLast"> 
+         <div class="block">
+           为服务器端SSL启用 
+          <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc3546  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc3546#section-3.1'" tppabs="https://tools.ietf.org/html/rfc3546#section-3.1">SNI (Server Name Indication)</a>扩展。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class in io.netty.handler.ssl">ApplicationProtocolConfig</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>提供<code>SSLEngine</code>不可知的方式来配置<a href="ApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolNegotiator.html" title="io.netty.handler.ssl中的接口"><code>ApplicationProtocolNegotiator</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolNames.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolNames.html" title="class in io.netty.handler.ssl">ApplicationProtocolNames</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           提供ALPN和NPN中使用的一组协议名称。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolNegotiationHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolNegotiationHandler.html" title="class in io.netty.handler.ssl">ApplicationProtocolNegotiationHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>配置一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>取决于应用层协议协商结果<a href="SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中"><code>SslHandler</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DelegatingSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/DelegatingSslContext.html" title="class in io.netty.handler.ssl">DelegatingSslContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>允许包装另一个<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a>和init <code>SSLEngine</code>实例的适配器类。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="IdentityCipherSuiteFilter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/IdentityCipherSuiteFilter.html" title="class in io.netty.handler.ssl">IdentityCipherSuiteFilter</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           该课程不会对密码套件进行任何过滤。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="JdkAlpnApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkAlpnApplicationProtocolNegotiator.html" title="class in io.netty.handler.ssl">JdkAlpnApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="JdkApplicationProtocolNegotiator.AllocatorAwareSslEngineWrapperFactory.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkApplicationProtocolNegotiator.AllocatorAwareSslEngineWrapperFactory.html" title="class in io.netty.handler.ssl">JdkApplicationProtocolNegotiator.AllocatorAwareSslEngineWrapperFactory</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="JdkNpnApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkNpnApplicationProtocolNegotiator.html" title="class in io.netty.handler.ssl">JdkNpnApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="JdkSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslClientContext.html" title="class in io.netty.handler.ssl">JdkSslClientContext</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="SslContextBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContextBuilder.html" title="class在io.netty.handler.ssl中"><code>SslContextBuilder</code></a>创建<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a>实例，并仅在代码中使用<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class in io.netty.handler.ssl">JdkSslContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一个使用JDK的SSL / TLS实现的<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="JdkSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslServerContext.html" title="class in io.netty.handler.ssl">JdkSslServerContext</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="SslContextBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContextBuilder.html" title="class在io.netty.handler.ssl中"><code>SslContextBuilder</code></a>创建<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a>实例，并仅在代码中使用<a href="JdkSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/JdkSslContext.html" title="class在io.netty.handler.ssl中"><code>JdkSslContext</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSsl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSsl.html" title="class in io.netty.handler.ssl">OpenSsl</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           告诉 
+          <a href="javascript:if(confirm('http://netty.io/wiki/forked-tomcat-native.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://netty.io/wiki/forked-tomcat-native.html'" tppabs="http://netty.io/wiki/forked-tomcat-native.html"><code>netty-tcnative</code></a>及其OpenSSL支持是否可用。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OpenSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslClientContext.html" title="class in io.netty.handler.ssl">OpenSslClientContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>客户端<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a>使用OpenSSL的SSL / TLS实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class in io.netty.handler.ssl">OpenSslContext</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           这个类将使用终结器来确保自动清理本地资源。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OpenSslDefaultApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslDefaultApplicationProtocolNegotiator.html" title="class in io.netty.handler.ssl">OpenSslDefaultApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a> 。</span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSslEngine.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslEngine.html" title="class in io.netty.handler.ssl">OpenSslEngine</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           实现一个 
+          <code>SSLEngine</code>使用 
+          <a href="javascript:if(confirm('https://www.openssl.org/docs/crypto/BIO_s_bio.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://www.openssl.org/docs/crypto/BIO_s_bio.html#EXAMPLE'" tppabs="https://www.openssl.org/docs/crypto/BIO_s_bio.html#EXAMPLE">OpenSSL BIO abstractions</a> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OpenSslNpnApplicationProtocolNegotiator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslNpnApplicationProtocolNegotiator.html" title="class in io.netty.handler.ssl">OpenSslNpnApplicationProtocolNegotiator</a></td> 
+        <td class="colLast">Deprecated 
+         <div class="block"> 
+          <span><span class="deprecationComment">使用<a href="ApplicationProtocolConfig.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.html" title="class在io.netty.handler.ssl中"><code>ApplicationProtocolConfig</code></a></span></span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerContext.html" title="class in io.netty.handler.ssl">OpenSslServerContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>服务器端<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a> ，使用OpenSSL的SSL / TLS实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html" title="class in io.netty.handler.ssl">OpenSslServerSessionContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class在io.netty.handler.ssl中"><code>OpenSslSessionContext</code></a>实现，它提供了仅用于服务器端的额外方法。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl">OpenSslSessionContext</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           OpenSSL特定的 
+          <code>SSLSessionContext</code>实现。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html" title="class in io.netty.handler.ssl">OpenSslSessionStats</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           由OpenSSL会话上下文公开的统计信息。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="OpenSslSessionTicketKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionTicketKey.html" title="class in io.netty.handler.ssl">OpenSslSessionTicketKey</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           会话票据密钥 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OptionalSslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OptionalSslHandler.html" title="class in io.netty.handler.ssl">OptionalSslHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="OptionalSslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OptionalSslHandler.html" title="class在io.netty.handler.ssl中"><code>OptionalSslHandler</code></a>是一款实用解码器，可根据收到的第一条消息支持SSL和非SSL处理程序。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="PemPrivateKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemPrivateKey.html" title="class in io.netty.handler.ssl">PemPrivateKey</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>这是<code>PrivateKey</code>一个特殊目的实现，它允许用户直接将PEM / PKCS＃8编码密钥材料传递到<a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中"><code>OpenSslContext</code>，</a>而无需在Java <a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中">域中</a>解析和重新编码字节。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>这是<code>X509Certificate</code>一个特殊目的实现，它允许用户直接将PEM / PKCS＃8编码数据传递到<a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中"><code>OpenSslContext</code>，</a>而无需在Java <a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中">域中</a>解析和重新编码字节。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ReferenceCountedOpenSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslClientContext.html" title="class in io.netty.handler.ssl">ReferenceCountedOpenSslClientContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>客户端<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a> ，使用OpenSSL的SSL / TLS实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ReferenceCountedOpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslContext.html" title="class in io.netty.handler.ssl">ReferenceCountedOpenSslContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code>的</a>一个实现，它与支持<a href="javascript:if(confirm('https://www.openssl.org/  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://www.openssl.org/'" tppabs="https://www.openssl.org/">OpenSsl</a> C库API的库一起工作。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ReferenceCountedOpenSslEngine.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslEngine.html" title="class in io.netty.handler.ssl">ReferenceCountedOpenSslEngine</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           实现一个 
+          <code>SSLEngine</code>使用 
+          <a href="javascript:if(confirm('https://www.openssl.org/docs/crypto/BIO_s_bio.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://www.openssl.org/docs/crypto/BIO_s_bio.html#EXAMPLE'" tppabs="https://www.openssl.org/docs/crypto/BIO_s_bio.html#EXAMPLE">OpenSSL BIO abstractions</a> 。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ReferenceCountedOpenSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslServerContext.html" title="class in io.netty.handler.ssl">ReferenceCountedOpenSslServerContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>使用OpenSSL的SSL / TLS实现的服务器端<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SniCompletionEvent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SniCompletionEvent.html" title="class in io.netty.handler.ssl">SniCompletionEvent</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>一旦我们根据<code>SNI hostname</code>选择了<a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class在io.netty.handler.ssl中"><code>SslContext</code></a> ，就会触发事件，这可能是因为它成功或出现了错误。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SniHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SniHandler.html" title="class in io.netty.handler.ssl">SniHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           为服务器端SSL启用 
+          <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc3546  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc3546#section-3.1'" tppabs="https://tools.ietf.org/html/rfc3546#section-3.1">SNI (Server Name Indication)</a>扩展。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SslCloseCompletionEvent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslCloseCompletionEvent.html" title="class in io.netty.handler.ssl">SslCloseCompletionEvent</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一旦收到close_notify或在收到失败之前发生的事件。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SslCompletionEvent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslCompletionEvent.html" title="class in io.netty.handler.ssl">SslCompletionEvent</a></td> 
+        <td class="colLast">&nbsp;</td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html" title="class in io.netty.handler.ssl">SslContext</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>作为<code>SSLEngine</code>和<a href="SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中"><code>SslHandler</code></a>的工厂的安全套接字协议实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SslContextBuilder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslContextBuilder.html" title="class in io.netty.handler.ssl">SslContextBuilder</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           生成器用于配置新的SslContext进行创建。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class in io.netty.handler.ssl">SslHandler</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>将<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Transport_Layer_Security  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Transport_Layer_Security'" tppabs="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL · TLS</a>和StartTLS支持添加到<a href="../../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="SslHandshakeCompletionEvent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandshakeCompletionEvent.html" title="class in io.netty.handler.ssl">SslHandshakeCompletionEvent</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           SSL握手完成后触发的事件，这可能是因为它成功或出现错误。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SupportedCipherSuiteFilter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SupportedCipherSuiteFilter.html" title="class in io.netty.handler.ssl">SupportedCipherSuiteFilter</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           这个类将过滤掉当前 
+          <code>SSLEngine</code>不支持的所有请求的密码。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation"> 
+      <caption> 
+       <span>枚举摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Enum</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolConfig.Protocol.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.Protocol.html" title="enum in io.netty.handler.ssl">ApplicationProtocolConfig.Protocol</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           定义要使用哪种应用程序级别的协议协商。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolConfig.SelectedListenerFailureBehavior.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.SelectedListenerFailureBehavior.html" title="enum in io.netty.handler.ssl">ApplicationProtocolConfig.SelectedListenerFailureBehavior</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           定义被通知选定协议的对等体的最常见行为。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="ApplicationProtocolConfig.SelectorFailureBehavior.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ApplicationProtocolConfig.SelectorFailureBehavior.html" title="enum in io.netty.handler.ssl">ApplicationProtocolConfig.SelectorFailureBehavior</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           定义选择应用程序协议的对等体的最常见行为。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="ClientAuth.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ClientAuth.html" title="enum in io.netty.handler.ssl">ClientAuth</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           指示关于客户端认证的 
+          <code>SSLEngine</code>的状态。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="SslProvider.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslProvider.html" title="enum in io.netty.handler.ssl">SslProvider</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           SSL / TLS协议提供程序的枚举。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Exception Summary table, listing exceptions, and an explanation"> 
+      <caption> 
+       <span>异常摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">异常</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="NotSslRecordException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/NotSslRecordException.html" title="class in io.netty.handler.ssl">NotSslRecordException</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           特殊 
+          <code>SSLException</code>如果收到的数据包看起来不像TLS / SSL记录，则会引发这种情况。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="OpenSslCertificateException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslCertificateException.html" title="class in io.netty.handler.ssl">OpenSslCertificateException</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           一个特殊的 
+          <code>CertificateException</code>允许指定哪个错误代码包含在SSL记录中。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.handler.ssl Description">Package io.netty.handler.ssl Description</h2> 
+   <div class="block"> 
+    <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Transport_Layer_Security  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://en.wikipedia.org/wiki/Transport_Layer_Security'" tppabs="http://en.wikipedia.org/wiki/Transport_Layer_Security">SSL · TLS</a> implementation based on 
+    <code>SSLEngine</code> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../proxy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="ocsp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ocsp/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/ssl/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

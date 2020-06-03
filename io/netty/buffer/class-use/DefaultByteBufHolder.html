@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Class io.netty.buffer.DefaultByteBufHolder (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Class io.netty.buffer.DefaultByteBufHolder (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li><a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-buffer-class-use-DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/class-use/DefaultByteBufHolder.html" target="_top">框架</a></li> 
+    <li><a href="DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/DefaultByteBufHolder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h2 title="Uses of Class io.netty.buffer.DefaultByteBufHolder" class="title">Uses of Class<br>io.netty.buffer.DefaultByteBufHolder</h2> 
+  </div> 
+  <div class="classUseContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.sctp">io.netty.channel.sctp</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象扩展核心通道API的SCTP套接字接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.udt">io.netty.channel.udt</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           UDT运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.haproxy">io.netty.handler.codec.haproxy</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           解码HAProxy代理协议标头 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http.websocketx">io.netty.handler.codec.http.websocketx</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Web_Sockets  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Web_Sockets'" tppabs="http://en.wikipedia.org/wiki/Web_Sockets">Web Socket</a>数据帧的编码器，解码器，握手及其相关消息类型。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.http2">io.netty.handler.codec.http2</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           用于发送和接收HTTP / 2帧的处理程序。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.redis">io.netty.handler.codec.redis</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           编码器，Redis解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.smtp">io.netty.handler.codec.smtp</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('https://www.ietf.org/rfc/rfc2821.txt  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://www.ietf.org/rfc/rfc2821.txt'" tppabs="https://www.ietf.org/rfc/rfc2821.txt">SMTP</a>编解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.handler.codec.stomp">io.netty.handler.codec.stomp</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol'" tppabs="http://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol">STOMP</a>编解码器 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <ul class="blockList"> 
+      <li class="blockList"><a name="io.netty.channel.sctp"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../channel/sctp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html">io.netty.channel.sctp</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../channel/sctp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/package-summary.html">io.netty.channel.sctp</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../channel/sctp/SctpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/channel/sctp/SctpMessage.html" title="class in io.netty.channel.sctp">SctpMessage</a></span></code> 
+           <div class="block">
+             SCTP数据块的表示 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.udt"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../channel/udt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/package-summary.html">io.netty.channel.udt</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../channel/udt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/package-summary.html">io.netty.channel.udt</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../channel/udt/UdtMessage.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtMessage.html" title="class in io.netty.channel.udt">UdtMessage</a></span></code> 
+           <div class="block"> 
+            <span><span class="deprecatedLabel">已过时。</span></span> 
+            <div class="block"> 
+             <span><span class="deprecationComment">UDT运输不再维护并将被移除。</span></span> 
+            </div> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.haproxy"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/haproxy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/package-summary.html">io.netty.handler.codec.haproxy</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/haproxy/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/package-summary.html">io.netty.handler.codec.haproxy</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/haproxy/HAProxySSLTLV.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/HAProxySSLTLV.html" title="class in io.netty.handler.codec.haproxy">HAProxySSLTLV</a></span></code> 
+           <div class="block"> 
+            <span>代表<a href="../../handler/codec/haproxy/HAProxyTLV.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/HAProxyTLV.html" title="class在io.netty.handler.codec.haproxy中"><code>HAProxyTLV.Type.PP2_TYPE_SSL</code></a>类型的<a href="../../handler/codec/haproxy/HAProxyTLV.Type.html#PP2_TYPE_SSL" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/HAProxyTLV.Type.html#PP2_TYPE_SSL"><code>HAProxyTLV</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/haproxy/HAProxyTLV.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/haproxy/HAProxyTLV.html" title="class in io.netty.handler.codec.haproxy">HAProxyTLV</a></span></code> 
+           <div class="block">
+             类型长度值（TLV向量），可以添加到PROXY协议以包含附加信息，如SSL信息。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http.websocketx"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/http/websocketx/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">io.netty.handler.codec.http.websocketx</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/BinaryWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/BinaryWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">BinaryWebSocketFrame</a></span></code> 
+           <div class="block">
+             包含二进制数据的Web Socket框架 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/CloseWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/CloseWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">CloseWebSocketFrame</a></span></code> 
+           <div class="block">
+             Web Socket Frame用于关闭连接 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/ContinuationWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/ContinuationWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">ContinuationWebSocketFrame</a></span></code> 
+           <div class="block">
+             Web套接字连续帧包含连续文本或二进制数据。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/PingWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/PingWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">PingWebSocketFrame</a></span></code> 
+           <div class="block">
+             包含二进制数据的Web Socket框架 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/PongWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/PongWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">PongWebSocketFrame</a></span></code> 
+           <div class="block">
+             包含二进制数据的Web Socket框架 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/TextWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/TextWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">TextWebSocketFrame</a></span></code> 
+           <div class="block">
+             Web Socket文本框架 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http/websocketx/WebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx">WebSocketFrame</a></span></code> 
+           <div class="block">
+             Web套接字框架的基类 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.http2"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/http2/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">io.netty.handler.codec.http2</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/http2/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">io.netty.handler.codec.http2</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http2/DefaultHttp2GoAwayFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2GoAwayFrame.html" title="class in io.netty.handler.codec.http2">DefaultHttp2GoAwayFrame</a></span></code> 
+           <div class="block"> 
+            <span>默认的<a href="../../handler/codec/http2/Http2GoAwayFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2GoAwayFrame.html" title="io.netty.handler.codec.http2中的接口"><code>Http2GoAwayFrame</code></a>实现。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/http2/DefaultHttp2UnknownFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/DefaultHttp2UnknownFrame.html" title="class in io.netty.handler.codec.http2">DefaultHttp2UnknownFrame</a></span></code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.redis"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/redis/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/package-summary.html">io.netty.handler.codec.redis</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/redis/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/package-summary.html">io.netty.handler.codec.redis</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/redis/DefaultBulkStringRedisContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/DefaultBulkStringRedisContent.html" title="class in io.netty.handler.codec.redis">DefaultBulkStringRedisContent</a></span></code> 
+           <div class="block"> 
+            <span>默认实现<a href="../../handler/codec/redis/BulkStringRedisContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/BulkStringRedisContent.html" title="io.netty.handler.codec.redis中的接口"><code>BulkStringRedisContent</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/redis/DefaultLastBulkStringRedisContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/DefaultLastBulkStringRedisContent.html" title="class in io.netty.handler.codec.redis">DefaultLastBulkStringRedisContent</a></span></code> 
+           <div class="block"> 
+            <span><a href="../../handler/codec/redis/LastBulkStringRedisContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/LastBulkStringRedisContent.html" title="io.netty.handler.codec.redis中的接口"><code>LastBulkStringRedisContent</code></a>的默认实现。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/redis/FullBulkStringRedisMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/FullBulkStringRedisMessage.html" title="class in io.netty.handler.codec.redis">FullBulkStringRedisMessage</a></span></code> 
+           <div class="block"> 
+            <a href="javascript:if(confirm('http://redis.io/topics/protocol  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://redis.io/topics/protocol'" tppabs="http://redis.io/topics/protocol">RESP</a>的汇总批量字符串。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.smtp"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/smtp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/package-summary.html">io.netty.handler.codec.smtp</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/smtp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/package-summary.html">io.netty.handler.codec.smtp</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/smtp/DefaultLastSmtpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/DefaultLastSmtpContent.html" title="class in io.netty.handler.codec.smtp">DefaultLastSmtpContent</a></span></code> 
+           <div class="block"> 
+            <span>默认实现<a href="../../handler/codec/smtp/LastSmtpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/LastSmtpContent.html" title="io.netty.handler.codec.smtp中的接口"><code>LastSmtpContent</code></a> ，它不会验证传入的原始数据。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/smtp/DefaultSmtpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/DefaultSmtpContent.html" title="class in io.netty.handler.codec.smtp">DefaultSmtpContent</a></span></code> 
+           <div class="block"> 
+            <span>默认实现<a href="../../handler/codec/smtp/SmtpContent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/SmtpContent.html" title="io.netty.handler.codec.smtp中的接口"><code>SmtpContent</code></a> ，不会验证传入的原始数据。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.handler.codec.stomp"> </a> <h3>Uses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/stomp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/package-summary.html">io.netty.handler.codec.stomp</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subclasses, and an explanation"> 
+        <caption> 
+         <span>Subclasses of <a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">DefaultByteBufHolder</a> in <a href="../../handler/codec/stomp/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/package-summary.html">io.netty.handler.codec.stomp</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/stomp/DefaultLastStompContentSubframe.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/DefaultLastStompContentSubframe.html" title="class in io.netty.handler.codec.stomp">DefaultLastStompContentSubframe</a></span></code> 
+           <div class="block"> 
+            <span><a href="../../handler/codec/stomp/LastStompContentSubframe.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/LastStompContentSubframe.html" title="io.netty.handler.codec.stomp中的接口"><code>LastStompContentSubframe</code></a>的默认实现。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../handler/codec/stomp/DefaultStompContentSubframe.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/DefaultStompContentSubframe.html" title="class in io.netty.handler.codec.stomp">DefaultStompContentSubframe</a></span></code> 
+           <div class="block"> 
+            <span>默认的<a href="../../handler/codec/stomp/StompContentSubframe.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/StompContentSubframe.html" title="io.netty.handler.codec.stomp中的接口"><code>StompContentSubframe</code></a>实现。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li><a href="../DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-buffer-class-use-DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/class-use/DefaultByteBufHolder.html" target="_top">框架</a></li> 
+    <li><a href="DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/DefaultByteBufHolder.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/buffer/class-use/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

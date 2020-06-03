@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.handler.codec.http.websocketx Class Hierarchy (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.handler.codec.http.websocketx Class Hierarchy (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li>使用</li> 
+    <li class="navBarCell1Rev">树</li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../multipart/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-tree.html">Prev</a></li> 
+    <li><a href="extensions/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/package-tree.html">Next</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-http-websocketx-package-tree.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/websocketx/package-tree.html" target="_top">框架</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-tree.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 class="title">Hierarchy For Package io.netty.handler.codec.http.websocketx</h1> 
+   <span class="packageHierarchyLabel">Package Hierarchies:</span> 
+   <ul class="horizontal"> 
+    <li><a href="../../../../../../overview-tree.html" tppabs="http://netty.io/4.1/api/overview-tree.html">All Packages</a></li> 
+   </ul> 
+  </div> 
+  <div class="contentContainer"> 
+   <h2 title="Class Hierarchy">Class Hierarchy</h2> 
+   <ul> 
+    <li type="circle">java.lang.Object 
+     <ul> 
+      <li type="circle">io.netty.channel.<a href="../../../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">ChannelHandlerAdapter</span></a> (implements io.netty.channel.<a href="../../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>) 
+       <ul> 
+        <li type="circle">io.netty.channel.<a href="../../../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">ChannelInboundHandlerAdapter</span></a> (implements io.netty.channel.<a href="../../../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a>) 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.<a href="../../ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">ByteToMessageDecoder</span></a> 
+           <ul> 
+            <li type="circle">io.netty.handler.codec.<a href="../../ReplayingDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ReplayingDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">ReplayingDecoder</span></a>&lt;S&gt; 
+             <ul> 
+              <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket00FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket00FrameDecoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket00FrameDecoder</span></a> (implements io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameDecoder.html" title="interface in io.netty.handler.codec.http.websocketx">WebSocketFrameDecoder</a>)</li> 
+             </ul> </li> 
+            <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket08FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket08FrameDecoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket08FrameDecoder</span></a> (implements io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameDecoder.html" title="interface in io.netty.handler.codec.http.websocketx">WebSocketFrameDecoder</a>) 
+             <ul> 
+              <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket07FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket07FrameDecoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket07FrameDecoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket13FrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket13FrameDecoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket13FrameDecoder</span></a></li> 
+             </ul> </li> 
+           </ul> </li> 
+          <li type="circle">io.netty.handler.codec.<a href="../../MessageToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToMessageDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">MessageToMessageDecoder</span></a>&lt;I&gt; 
+           <ul> 
+            <li type="circle">io.netty.handler.codec.<a href="../../MessageAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageAggregator.html" title="class in io.netty.handler.codec"><span class="typeNameLink">MessageAggregator</span></a>&lt;I,S,C,O&gt; 
+             <ul> 
+              <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameAggregator.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketFrameAggregator</span></a></li> 
+             </ul> </li> 
+            <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientProtocolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientProtocolHandler.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientProtocolHandler</span></a></li> 
+            <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerProtocolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandler.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerProtocolHandler</span></a></li> 
+           </ul> </li> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="Utf8FrameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/Utf8FrameValidator.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">Utf8FrameValidator</span></a></li> 
+         </ul> </li> 
+        <li type="circle">io.netty.channel.<a href="../../../../channel/ChannelOutboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">ChannelOutboundHandlerAdapter</span></a> (implements io.netty.channel.<a href="../../../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="interface in io.netty.channel">ChannelOutboundHandler</a>) 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.<a href="../../MessageToMessageEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToMessageEncoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">MessageToMessageEncoder</span></a>&lt;I&gt; 
+           <ul> 
+            <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket00FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket00FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket00FrameEncoder</span></a> (implements io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameEncoder.html" title="interface in io.netty.handler.codec.http.websocketx">WebSocketFrameEncoder</a>)</li> 
+            <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket08FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket08FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket08FrameEncoder</span></a> (implements io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameEncoder.html" title="interface in io.netty.handler.codec.http.websocketx">WebSocketFrameEncoder</a>) 
+             <ul> 
+              <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket07FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket07FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket07FrameEncoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocket13FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket13FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocket13FrameEncoder</span></a></li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li type="circle">io.netty.buffer.<a href="../../../../buffer/DefaultByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/DefaultByteBufHolder.html" title="class in io.netty.buffer"><span class="typeNameLink">DefaultByteBufHolder</span></a> (implements io.netty.buffer.<a href="../../../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="interface in io.netty.buffer">ByteBufHolder</a>) 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketFrame</span></a> 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="BinaryWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/BinaryWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">BinaryWebSocketFrame</span></a></li> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="CloseWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/CloseWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">CloseWebSocketFrame</span></a></li> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="ContinuationWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/ContinuationWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">ContinuationWebSocketFrame</span></a></li> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="PingWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/PingWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">PingWebSocketFrame</span></a></li> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="PongWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/PongWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">PongWebSocketFrame</span></a></li> 
+          <li type="circle">io.netty.handler.codec.http.websocketx.<a href="TextWebSocketFrame.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/TextWebSocketFrame.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">TextWebSocketFrame</span></a></li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li type="circle">java.lang.Throwable (implements java.io.Serializable) 
+       <ul> 
+        <li type="circle">java.lang.Exception 
+         <ul> 
+          <li type="circle">java.lang.RuntimeException 
+           <ul> 
+            <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketHandshakeException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketHandshakeException.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketHandshakeException</span></a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketChunkedInput.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketChunkedInput.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketChunkedInput</span></a> (implements io.netty.handler.stream.<a href="../../../stream/ChunkedInput.html" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedInput.html" title="interface in io.netty.handler.stream">ChunkedInput</a>&lt;B&gt;)</li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientHandshaker.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientHandshaker.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientHandshaker</span></a> 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientHandshaker00.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientHandshaker00.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientHandshaker00</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientHandshaker07.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientHandshaker07.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientHandshaker07</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientHandshaker08.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientHandshaker08.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientHandshaker08</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientHandshaker13.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientHandshaker13.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientHandshaker13</span></a></li> 
+       </ul> </li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientHandshakerFactory.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientHandshakerFactory.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientHandshakerFactory</span></a></li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketScheme.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketScheme.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketScheme</span></a></li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerHandshaker.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerHandshaker.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerHandshaker</span></a> 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerHandshaker00.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerHandshaker00.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerHandshaker00</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerHandshaker07.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerHandshaker07.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerHandshaker07</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerHandshaker08.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerHandshaker08.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerHandshaker08</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerHandshaker13.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerHandshaker13.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerHandshaker13</span></a></li> 
+       </ul> </li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerHandshakerFactory.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerHandshakerFactory.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerHandshakerFactory</span></a></li> 
+      <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerProtocolHandler.HandshakeComplete.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandler.HandshakeComplete.html" title="class in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerProtocolHandler.HandshakeComplete</span></a></li> 
+     </ul> </li> 
+   </ul> 
+   <h2 title="Interface Hierarchy">Interface Hierarchy</h2> 
+   <ul> 
+    <li type="circle">io.netty.channel.<a href="../../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel"><span class="typeNameLink">ChannelHandler</span></a> 
+     <ul> 
+      <li type="circle">io.netty.channel.<a href="../../../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel"><span class="typeNameLink">ChannelInboundHandler</span></a> 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameDecoder.html" title="interface in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketFrameDecoder</span></a></li> 
+       </ul> </li> 
+      <li type="circle">io.netty.channel.<a href="../../../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="interface in io.netty.channel"><span class="typeNameLink">ChannelOutboundHandler</span></a> 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameEncoder.html" title="interface in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketFrameEncoder</span></a></li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <h2 title="Enum Hierarchy">Enum Hierarchy</h2> 
+   <ul> 
+    <li type="circle">java.lang.Object 
+     <ul> 
+      <li type="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable) 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketVersion.html" title="enum in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketVersion</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketServerProtocolHandler.ServerHandshakeStateEvent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketServerProtocolHandler.ServerHandshakeStateEvent.html" title="enum in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketServerProtocolHandler.ServerHandshakeStateEvent</span></a></li> 
+        <li type="circle">io.netty.handler.codec.http.websocketx.<a href="WebSocketClientProtocolHandler.ClientHandshakeStateEvent.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketClientProtocolHandler.ClientHandshakeStateEvent.html" title="enum in io.netty.handler.codec.http.websocketx"><span class="typeNameLink">WebSocketClientProtocolHandler.ClientHandshakeStateEvent</span></a></li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li>使用</li> 
+    <li class="navBarCell1Rev">树</li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../multipart/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/multipart/package-tree.html">Prev</a></li> 
+    <li><a href="extensions/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/package-tree.html">Next</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-http-websocketx-package-tree.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/websocketx/package-tree.html" target="_top">框架</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/package-tree.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

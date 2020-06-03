@@ -1,0 +1,1064 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>GlobalChannelTrafficShapingHandler (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.traffic.GlobalChannelTrafficShapingHandler class"> 
+  <meta name="keywords" content="userDefinedWritabilityIndex()"> 
+  <meta name="keywords" content="maxDeviation()"> 
+  <meta name="keywords" content="accelerationFactor()"> 
+  <meta name="keywords" content="slowDownFactor()"> 
+  <meta name="keywords" content="setMaxDeviation()"> 
+  <meta name="keywords" content="doAccounting()"> 
+  <meta name="keywords" content="getMaxGlobalWriteSize()"> 
+  <meta name="keywords" content="setMaxGlobalWriteSize()"> 
+  <meta name="keywords" content="queuesSize()"> 
+  <meta name="keywords" content="configureChannel()"> 
+  <meta name="keywords" content="getWriteChannelLimit()"> 
+  <meta name="keywords" content="setWriteChannelLimit()"> 
+  <meta name="keywords" content="getReadChannelLimit()"> 
+  <meta name="keywords" content="setReadChannelLimit()"> 
+  <meta name="keywords" content="release()"> 
+  <meta name="keywords" content="handlerAdded()"> 
+  <meta name="keywords" content="handlerRemoved()"> 
+  <meta name="keywords" content="channelRead()"> 
+  <meta name="keywords" content="checkWaitReadTime()"> 
+  <meta name="keywords" content="informReadOperation()"> 
+  <meta name="keywords" content="maximumCumulativeWrittenBytes()"> 
+  <meta name="keywords" content="maximumCumulativeReadBytes()"> 
+  <meta name="keywords" content="channelTrafficCounters()"> 
+  <meta name="keywords" content="write()"> 
+  <meta name="keywords" content="submitWrite()"> 
+  <meta name="keywords" content="toString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="GlobalChannelTrafficShapingHandler (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/class-use/GlobalChannelTrafficShapingHandler.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="GlobalChannelTrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficCounter.html" title="class in io.netty.handler.traffic"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="class in io.netty.handler.traffic"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-traffic-GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" target="_top">框架</a></li> 
+    <li><a href="GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.handler.traffic.AbstractTrafficShapingHandler">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.traffic 
+   </div> 
+   <h2 title="Class GlobalChannelTrafficShapingHandler" class="title">Class GlobalChannelTrafficShapingHandler</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">io.netty.channel.ChannelHandlerAdapter</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">io.netty.channel.ChannelInboundHandlerAdapter</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="../../channel/ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html" title="class in io.netty.channel">io.netty.channel.ChannelDuplexHandler</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">io.netty.handler.traffic.AbstractTrafficShapingHandler</a></li> 
+            <li> 
+             <ul class="inheritance"> 
+              <li>io.netty.handler.traffic.GlobalChannelTrafficShapingHandler</li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口">ChannelHandler</a> ， <a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口">ChannelInboundHandler</a> ， <a href="../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口">ChannelOutboundHandler</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre><a href="../../channel/ChannelHandler.Sharable.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.Sharable.html" title="annotation in io.netty.channel">@ChannelHandler.Sharable</a>
+public class <span class="typeNameLabel">GlobalChannelTrafficShapingHandler</span>
+extends <a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></pre> 
+      <div class="block"> 
+       <span><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类"><code>AbstractTrafficShapingHandler</code>的</a>这种实现方式<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">适用</a>于全局和每信道流量整形，也就是全球带宽限制，无论开放通道的数量和每个通道的带宽限制如何。</span> 
+       <br> 
+       <br> 
+       <span>此版本与其他TrafficShapingHandler不在同一管道中。</span> 
+       <br> 
+       <br> 
+       <span>一般用途应该如下：</span> 
+       <br> 
+       <ul> 
+        <li> <span>创建您的独特GlobalChannelTrafficShapingHandler，如：</span> <br><br> <span><tt>GlobalChannelTrafficShapingHandler myHandler = new GlobalChannelTrafficShapingHandler(executor);</tt></span> <br><br> <span>执行者可以是底层的IO工作者池</span> <br> <span><tt>pipeline.addLast(myHandler);</tt></span> <br><br> <span><b>请注意，此处理程序的管道覆盖范围为“全部”，这意味着只有一个此类处理程序必须在所有通道中创建和共享，因为计数器必须在所有通道之间共享。</b></span> <br><br> <span>其他参数可以像写入或读取限制（以字节/秒表示，其中0表示没有限制）或表示带宽的两次计算之间的延迟的检查间隔（以毫秒为单位）传递，因此doAccounting方法的回调（0意味着根本没有会计）。</span> <br> <span>请注意，由于这是全球和通道流量整形的融合，所以限制分别为2组，分别为全局和通道。</span> <br><br> <span>值为0意味着不计入checkInterval。</span> <span>如果您需要流量整形，但没有此类记帐，建议设置一个正值，即使该值较高，因为流量整形的精度取决于流量计算的时间段。</span> <span>时间间隔越高，流量整形的精确度越低。</span> <span>建议接近5或10分钟的值更高。</span> <br><br> <span>maxTimeToWait默认设置为15秒，允许指定时间整形的上限。</span> <br><br></li> 
+        <li> <span>在您的处理程序中，您应该考虑使用<code>channel.isWritable()</code>和<code>channelWritabilityChanged(ctx)</code>来处理可写性，或者通过<code>future.addListener(new GenericFutureListener())</code>返回将来返回的<code>ctx.write()</code> 。</span> </li> 
+        <li> <span>您还应该考虑在读取或写入操作时使用的对象大小与您所需的带宽相对匹配：例如，10KB / s的10 MB对象将导致突发效应，而1 MB / s的100 KB对象应该平滑由此TrafficShaping处理程序处理。</span> <br><br></li> 
+        <li> <span>一些配置方法将被视为尽力而为，这意味着所有已安排的流量都不会改变，但仅适用于新的流量。</span> <br> <span>所以这些方法的预期用途不应该太频繁地使用，因此对于流量整形配置。</span> </li> 
+       </ul> 
+       <br> 
+       <span>一旦这个处理程序不再需要，一定要调用<a href="GlobalChannelTrafficShapingHandler.html#release--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#release--"><code>release()</code></a>来释放所有内部资源。</span> 
+       <span>这不会关闭<a href="../../util/concurrent/EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code>，</a>因为它可能是共享的，所以你需要自己做。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.channel.<a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="../../channel/ChannelHandler.Sharable.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.Sharable.html" title="annotation in io.netty.channel">ChannelHandler.Sharable</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="fields.inherited.from.class.io.netty.handler.traffic.AbstractTrafficShapingHandler"> </a> <h3>Fields inherited from class&nbsp;io.netty.handler.traffic.<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></h3> <code><a href="AbstractTrafficShapingHandler.html#checkInterval" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#checkInterval">checkInterval</a>, <a href="AbstractTrafficShapingHandler.html#DEFAULT_CHECK_INTERVAL" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#DEFAULT_CHECK_INTERVAL">DEFAULT_CHECK_INTERVAL</a>, <a href="AbstractTrafficShapingHandler.html#DEFAULT_MAX_TIME" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#DEFAULT_MAX_TIME">DEFAULT_MAX_TIME</a>, <a href="AbstractTrafficShapingHandler.html#maxTime" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#maxTime">maxTime</a>, <a href="AbstractTrafficShapingHandler.html#trafficCounter" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#trafficCounter">trafficCounter</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-">GlobalChannelTrafficShapingHandler</a></span>(java.util.concurrent.ScheduledExecutorService&nbsp;executor)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-">GlobalChannelTrafficShapingHandler</a></span>(java.util.concurrent.ScheduledExecutorService&nbsp;executor, long&nbsp;checkInterval)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-">GlobalChannelTrafficShapingHandler</a></span>(java.util.concurrent.ScheduledExecutorService&nbsp;executor, long&nbsp;writeGlobalLimit, long&nbsp;readGlobalLimit, long&nbsp;writeChannelLimit, long&nbsp;readChannelLimit)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-long-">GlobalChannelTrafficShapingHandler</a></span>(java.util.concurrent.ScheduledExecutorService&nbsp;executor, long&nbsp;writeGlobalLimit, long&nbsp;readGlobalLimit, long&nbsp;writeChannelLimit, long&nbsp;readChannelLimit, long&nbsp;checkInterval)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-long-long-">GlobalChannelTrafficShapingHandler</a></span>(java.util.concurrent.ScheduledExecutorService&nbsp;executor, long&nbsp;writeGlobalLimit, long&nbsp;readGlobalLimit, long&nbsp;writeChannelLimit, long&nbsp;readChannelLimit, long&nbsp;checkInterval, long&nbsp;maxTime)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>float</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#accelerationFactor--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#accelerationFactor--">accelerationFactor</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;msg)</code> 
+            <div class="block"> 
+             <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-"><code>ChannelHandlerContext.fireChannelRead(Object)</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>java.util.Collection&lt;<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="class in io.netty.handler.traffic">TrafficCounter</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#channelTrafficCounters--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#channelTrafficCounters--">channelTrafficCounters</a></span>()</code> 
+            <div class="block">
+              例如，允许doAccounting使用每个频道的TrafficCounter。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>protected long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#checkWaitReadTime-io.netty.channel.ChannelHandlerContext-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#checkWaitReadTime-io.netty.channel.ChannelHandlerContext-long-long-">checkWaitReadTime</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, long&nbsp;wait, long&nbsp;now)</code> 
+            <div class="block">
+              在GTSH中覆盖的方法考虑到通道的特定定时器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#configureChannel-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#configureChannel-long-long-">configureChannel</a></span>(long&nbsp;newWriteLimit, long&nbsp;newReadLimit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#doAccounting-io.netty.handler.traffic.TrafficCounter-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#doAccounting-io.netty.handler.traffic.TrafficCounter-">doAccounting</a></span>(<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="class in io.netty.handler.traffic">TrafficCounter</a>&nbsp;counter)</code> 
+            <div class="block">
+              每次从TrafficCounters计算会计时调用。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#getMaxGlobalWriteSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#getMaxGlobalWriteSize--">getMaxGlobalWriteSize</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#getReadChannelLimit--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#getReadChannelLimit--">getReadChannelLimit</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#getWriteChannelLimit--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#getWriteChannelLimit--">getWriteChannelLimit</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              子类可以忽略这个方法。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              子类可以忽略这个方法。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#informReadOperation-io.netty.channel.ChannelHandlerContext-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#informReadOperation-io.netty.channel.ChannelHandlerContext-long-">informReadOperation</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, long&nbsp;now)</code> 
+            <div class="block">
+              在GTSH中覆盖的方法考虑到通道的特定定时器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>float</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#maxDeviation--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#maxDeviation--">maxDeviation</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>protected long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#maximumCumulativeReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#maximumCumulativeReadBytes--">maximumCumulativeReadBytes</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>protected long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#maximumCumulativeWrittenBytes--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#maximumCumulativeWrittenBytes--">maximumCumulativeWrittenBytes</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#queuesSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#queuesSize--">queuesSize</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#release--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#release--">release</a></span>()</code> 
+            <div class="block">
+              释放此实例的所有内部资源。 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#setMaxDeviation-float-float-float-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#setMaxDeviation-float-float-float-">setMaxDeviation</a></span>(float&nbsp;maxDeviation, float&nbsp;slowDownFactor, float&nbsp;accelerationFactor)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#setMaxGlobalWriteSize-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#setMaxGlobalWriteSize-long-">setMaxGlobalWriteSize</a></span>(long&nbsp;maxGlobalWriteSize)</code> 
+            <div class="block">
+              请注意，更改将被视为尽力而为，这意味着所有已计划的流量都不会改变，但仅适用于新的流量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#setReadChannelLimit-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#setReadChannelLimit-long-">setReadChannelLimit</a></span>(long&nbsp;readLimit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#setWriteChannelLimit-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#setWriteChannelLimit-long-">setWriteChannelLimit</a></span>(long&nbsp;writeLimit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>float</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#slowDownFactor--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#slowDownFactor--">slowDownFactor</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#submitWrite-io.netty.channel.ChannelHandlerContext-java.lang.Object-long-long-long-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#submitWrite-io.netty.channel.ChannelHandlerContext-java.lang.Object-long-long-long-io.netty.channel.ChannelPromise-">submitWrite</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;msg, long&nbsp;size, long&nbsp;writedelay, long&nbsp;now, <a href="../../channel/ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#userDefinedWritabilityIndex--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#userDefinedWritabilityIndex--">userDefinedWritabilityIndex</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="GlobalChannelTrafficShapingHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-">write</a></span>(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;msg, <a href="../../channel/ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>致电<a href="../../channel/ChannelOutboundInvoker.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-io.netty.channel.ChannelPromise-"><code>ChannelOutboundInvoker.write(Object, ChannelPromise)</code></a>转发到<a href="../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelOutboundHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.traffic.AbstractTrafficShapingHandler"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.traffic.<a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></h3> <code><a href="AbstractTrafficShapingHandler.html#calculateSize-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#calculateSize-java.lang.Object-">calculateSize</a>, <a href="AbstractTrafficShapingHandler.html#channelRegistered-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#channelRegistered-io.netty.channel.ChannelHandlerContext-">channelRegistered</a>, <a href="AbstractTrafficShapingHandler.html#configure-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#configure-long-">configure</a>, <a href="AbstractTrafficShapingHandler.html#configure-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#configure-long-long-">configure</a>, <a href="AbstractTrafficShapingHandler.html#configure-long-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#configure-long-long-long-">configure</a>, <a href="AbstractTrafficShapingHandler.html#getCheckInterval--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#getCheckInterval--">getCheckInterval</a>, <a href="AbstractTrafficShapingHandler.html#getMaxTimeWait--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#getMaxTimeWait--">getMaxTimeWait</a>, <a href="AbstractTrafficShapingHandler.html#getMaxWriteDelay--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#getMaxWriteDelay--">getMaxWriteDelay</a>, <a href="AbstractTrafficShapingHandler.html#getMaxWriteSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#getMaxWriteSize--">getMaxWriteSize</a>, <a href="AbstractTrafficShapingHandler.html#getReadLimit--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#getReadLimit--">getReadLimit</a>, <a href="AbstractTrafficShapingHandler.html#getWriteLimit--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#getWriteLimit--">getWriteLimit</a>, <a href="AbstractTrafficShapingHandler.html#isHandlerActive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#isHandlerActive-io.netty.channel.ChannelHandlerContext-">isHandlerActive</a>, <a href="AbstractTrafficShapingHandler.html#read-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#read-io.netty.channel.ChannelHandlerContext-">read</a>, <a href="AbstractTrafficShapingHandler.html#setCheckInterval-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#setCheckInterval-long-">setCheckInterval</a>, <a href="AbstractTrafficShapingHandler.html#setMaxTimeWait-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#setMaxTimeWait-long-">setMaxTimeWait</a>, <a href="AbstractTrafficShapingHandler.html#setMaxWriteDelay-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#setMaxWriteDelay-long-">setMaxWriteDelay</a>, <a href="AbstractTrafficShapingHandler.html#setMaxWriteSize-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#setMaxWriteSize-long-">setMaxWriteSize</a>, <a href="AbstractTrafficShapingHandler.html#setReadLimit-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#setReadLimit-long-">setReadLimit</a>, <a href="AbstractTrafficShapingHandler.html#setWriteLimit-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#setWriteLimit-long-">setWriteLimit</a>, <a href="AbstractTrafficShapingHandler.html#submitWrite-io.netty.channel.ChannelHandlerContext-java.lang.Object-long-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#submitWrite-io.netty.channel.ChannelHandlerContext-java.lang.Object-long-io.netty.channel.ChannelPromise-">submitWrite</a>, <a href="AbstractTrafficShapingHandler.html#trafficCounter--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#trafficCounter--">trafficCounter</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelDuplexHandler"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html" title="class in io.netty.channel">ChannelDuplexHandler</a></h3> <code><a href="../../channel/ChannelDuplexHandler.html#bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-">bind</a>, <a href="../../channel/ChannelDuplexHandler.html#close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">close</a>, <a href="../../channel/ChannelDuplexHandler.html#connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a>, <a href="../../channel/ChannelDuplexHandler.html#deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">deregister</a>, <a href="../../channel/ChannelDuplexHandler.html#disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">disconnect</a>, <a href="../../channel/ChannelDuplexHandler.html#flush-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#flush-io.netty.channel.ChannelHandlerContext-">flush</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelInboundHandlerAdapter"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel">ChannelInboundHandlerAdapter</a></h3> <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelActive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelActive-io.netty.channel.ChannelHandlerContext-">channelActive</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelInactive-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelInactive-io.netty.channel.ChannelHandlerContext-">channelInactive</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelReadComplete-io.netty.channel.ChannelHandlerContext-">channelReadComplete</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelUnregistered-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelUnregistered-io.netty.channel.ChannelHandlerContext-">channelUnregistered</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#channelWritabilityChanged-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelWritabilityChanged-io.netty.channel.ChannelHandlerContext-">channelWritabilityChanged</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-">exceptionCaught</a>, <a href="../../channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#userEventTriggered-io.netty.channel.ChannelHandlerContext-java.lang.Object-">userEventTriggered</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandlerAdapter"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></h3> <code><a href="../../channel/ChannelHandlerAdapter.html#ensureNotSharable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#ensureNotSharable--">ensureNotSharable</a>, <a href="../../channel/ChannelHandlerAdapter.html#isSharable--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#isSharable--">isSharable</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Methods inherited from interface&nbsp;io.netty.channel.<a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="../../channel/ChannelHandler.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-">exceptionCaught</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-long-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>GlobalChannelTrafficShapingHandler</h4> <pre>public&nbsp;GlobalChannelTrafficShapingHandler(java.util.concurrent.ScheduledExecutorService&nbsp;executor,
+                                          long&nbsp;writeGlobalLimit,
+                                          long&nbsp;readGlobalLimit,
+                                          long&nbsp;writeChannelLimit,
+                                          long&nbsp;readChannelLimit,
+                                          long&nbsp;checkInterval,
+                                          long&nbsp;maxTime)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - 用于<code>ScheduledExecutorService</code>的<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="在io.netty.handler.traffic中的类">ScheduledExecutorService</a> 。</span> 
+           </dd> 
+           <dd> 
+            <code>writeGlobalLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>readGlobalLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>writeChannelLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>readChannelLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>checkInterval</code> - 通道的两次性能计算之间的延迟，如果不计算统计数据，则延迟0。 
+           </dd> 
+           <dd> 
+            <code>maxTime</code> - 
+            <code>maxTime</code>等待的最大延迟时间。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>GlobalChannelTrafficShapingHandler</h4> <pre>public&nbsp;GlobalChannelTrafficShapingHandler(java.util.concurrent.ScheduledExecutorService&nbsp;executor,
+                                          long&nbsp;writeGlobalLimit,
+                                          long&nbsp;readGlobalLimit,
+                                          long&nbsp;writeChannelLimit,
+                                          long&nbsp;readChannelLimit,
+                                          long&nbsp;checkInterval)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - 用于<code>ScheduledExecutorService</code>的<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="在io.netty.handler.traffic中的类">ScheduledExecutorService</a> 。</span> 
+           </dd> 
+           <dd> 
+            <code>writeGlobalLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>readGlobalLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>writeChannelLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>readChannelLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>checkInterval</code> - 通道两次性能计算之间的延迟，如果不计算统计数据，则延迟0。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-long-long-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>GlobalChannelTrafficShapingHandler</h4> <pre>public&nbsp;GlobalChannelTrafficShapingHandler(java.util.concurrent.ScheduledExecutorService&nbsp;executor,
+                                          long&nbsp;writeGlobalLimit,
+                                          long&nbsp;readGlobalLimit,
+                                          long&nbsp;writeChannelLimit,
+                                          long&nbsp;readChannelLimit)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - 用于<code>ScheduledExecutorService</code>的<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="在io.netty.handler.traffic中的类">ScheduledExecutorService</a> 。</span> 
+           </dd> 
+           <dd> 
+            <code>writeGlobalLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>readGlobalLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>writeChannelLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+           <dd> 
+            <code>readChannelLimit</code> - 0或以字节/秒为单位的限制 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>GlobalChannelTrafficShapingHandler</h4> <pre>public&nbsp;GlobalChannelTrafficShapingHandler(java.util.concurrent.ScheduledExecutorService&nbsp;executor,
+                                          long&nbsp;checkInterval)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - 用于<code>ScheduledExecutorService</code>的<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="在io.netty.handler.traffic中的类">ScheduledExecutorService</a> 。</span> 
+           </dd> 
+           <dd> 
+            <code>checkInterval</code> - 通道两次性能计算之间的延迟，如果不计算统计数据，则延迟0。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="GlobalChannelTrafficShapingHandler-java.util.concurrent.ScheduledExecutorService-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>GlobalChannelTrafficShapingHandler</h4> <pre>public&nbsp;GlobalChannelTrafficShapingHandler(java.util.concurrent.ScheduledExecutorService&nbsp;executor)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>executor</code> - 用于<code>ScheduledExecutorService</code>的<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="在io.netty.handler.traffic中的类">ScheduledExecutorService</a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="userDefinedWritabilityIndex--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>userDefinedWritabilityIndex</h4> <pre>protected&nbsp;int&nbsp;userDefinedWritabilityIndex()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractTrafficShapingHandler.html#userDefinedWritabilityIndex--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#userDefinedWritabilityIndex--">userDefinedWritabilityIndex</a></code>在课堂上 
+            <code><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>TrafficShapingHandler用来管理用户定义的可写性的索引。</span> 
+            <span>对于通道TSH，它被定义为：对于全局TSH，它被定义为：对于GlobalChannel TSH它被定义为。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="maxDeviation--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maxDeviation</h4> <pre>public&nbsp;float&nbsp;maxDeviation()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             当前的最大偏差 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="accelerationFactor--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>accelerationFactor</h4> <pre>public&nbsp;float&nbsp;accelerationFactor()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             当前的加速因子 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="slowDownFactor--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>slowDownFactor</h4> <pre>public&nbsp;float&nbsp;slowDownFactor()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             目前的减速因素 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setMaxDeviation-float-float-float-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setMaxDeviation</h4> <pre>public&nbsp;void&nbsp;setMaxDeviation(float&nbsp;maxDeviation,
+                            float&nbsp;slowDownFactor,
+                            float&nbsp;accelerationFactor)</pre> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>maxDeviation</code> - 计算平均值时允许的最大偏差，默认偏差为0.1，因此为所需带宽的+/- 10％。</span> 
+            <span>最大值为0.4。</span> 
+           </dd> 
+           <dd> 
+            <code>slowDownFactor</code> - 将因子设置为+ x％给客户太快（最小值为0，意味着没有减速因子），默认值为40％（0.4）。 
+           </dd> 
+           <dd> 
+            <code>accelerationFactor</code> - 将因子设置为-x％给客户端太慢（最大值为0，意味着没有加速因子），默认值为-10％（-0.1）。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doAccounting-io.netty.handler.traffic.TrafficCounter-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doAccounting</h4> <pre>protected&nbsp;void&nbsp;doAccounting(<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="class in io.netty.handler.traffic">TrafficCounter</a>&nbsp;counter)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractTrafficShapingHandler.html#doAccounting-io.netty.handler.traffic.TrafficCounter-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#doAccounting-io.netty.handler.traffic.TrafficCounter-">AbstractTrafficShapingHandler</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>每次从TrafficCounters计算会计时调用。</span> 
+           <span>这个方法可以用来实现几乎实时的会计。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractTrafficShapingHandler.html#doAccounting-io.netty.handler.traffic.TrafficCounter-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#doAccounting-io.netty.handler.traffic.TrafficCounter-">doAccounting</a></code>在课堂上 
+            <code><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>counter</code> - 计算其性能的 
+            <code>counter</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getMaxGlobalWriteSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getMaxGlobalWriteSize</h4> <pre>public&nbsp;long&nbsp;getMaxGlobalWriteSize()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             maxGlobalWriteSize 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setMaxGlobalWriteSize-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setMaxGlobalWriteSize</h4> <pre>public&nbsp;void&nbsp;setMaxGlobalWriteSize(long&nbsp;maxGlobalWriteSize)</pre> 
+          <div class="block"> 
+           <span>请注意，更改将被视为尽力而为，这意味着所有已计划的流量都不会改变，但仅适用于新的流量。</span> 
+           <br> 
+           <span>所以这种方法的预期用法不是太频繁地使用，因此对于流量整形配置。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>maxGlobalWriteSize</code> - 设置写暂停之前缓冲区全局允许的最大全局写入大小。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="queuesSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>queuesSize</h4> <pre>public&nbsp;long&nbsp;queuesSize()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             所有队列的全局缓冲区大小。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="configureChannel-long-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>configureChannel</h4> <pre>public&nbsp;void&nbsp;configureChannel(long&nbsp;newWriteLimit,
+                             long&nbsp;newReadLimit)</pre> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>newWriteLimit</code> - 通道写入限制 
+           </dd> 
+           <dd> 
+            <code>newReadLimit</code> - 通道读取限制 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getWriteChannelLimit--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getWriteChannelLimit</h4> <pre>public&nbsp;long&nbsp;getWriteChannelLimit()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             通道写入限制 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setWriteChannelLimit-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setWriteChannelLimit</h4> <pre>public&nbsp;void&nbsp;setWriteChannelLimit(long&nbsp;writeLimit)</pre> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>writeLimit</code> - 通道写入限制 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getReadChannelLimit--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getReadChannelLimit</h4> <pre>public&nbsp;long&nbsp;getReadChannelLimit()</pre> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             通道读取限制 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setReadChannelLimit-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setReadChannelLimit</h4> <pre>public&nbsp;void&nbsp;setReadChannelLimit(long&nbsp;readLimit)</pre> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>readLimit</code> - 通道读取限制 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="release--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>release</h4> <pre>public final&nbsp;void&nbsp;release()</pre> 
+          <div class="block">
+            释放此实例的所有内部资源。 
+          </div> </li> 
+        </ul> <a name="handlerAdded-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>handlerAdded</h4> <pre>public&nbsp;void&nbsp;handlerAdded(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                  throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelHandlerAdapter.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">ChannelHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block">
+            子类可以忽略这个方法。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a></code>在界面 
+            <code><a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelHandlerAdapter.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a></code>在课堂上 
+            <code><a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="handlerRemoved-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>handlerRemoved</h4> <pre>public&nbsp;void&nbsp;handlerRemoved(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+                    throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">ChannelHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block">
+            子类可以忽略这个方法。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></code>在界面 
+            <code><a href="../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></code>在课堂上 
+            <code><a href="../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel">ChannelHandlerAdapter</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>channelRead</h4> <pre>public&nbsp;void&nbsp;channelRead(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                        java.lang.Object&nbsp;msg)
+                 throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelInboundHandlerAdapter.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">ChannelInboundHandlerAdapter</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>致电<a href="../../channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#fireChannelRead-java.lang.Object-"><code>ChannelHandlerContext.fireChannelRead(Object)</code></a>转发到<a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelInboundHandler</code></a> 。</span> 
+           <span>子类可以重写此方法来更改行为。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelInboundHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a></code>在界面 
+            <code><a href="../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractTrafficShapingHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#channelRead-io.netty.channel.ChannelHandlerContext-java.lang.Object-">channelRead</a></code>在课堂上 
+            <code><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="checkWaitReadTime-io.netty.channel.ChannelHandlerContext-long-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>checkWaitReadTime</h4> <pre>protected&nbsp;long&nbsp;checkWaitReadTime(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                                 long&nbsp;wait,
+                                 long&nbsp;now)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractTrafficShapingHandler.html#checkWaitReadTime-io.netty.channel.ChannelHandlerContext-long-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#checkWaitReadTime-io.netty.channel.ChannelHandlerContext-long-long-">AbstractTrafficShapingHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            在GTSH中覆盖的方法考虑到通道的特定定时器。 
+          </div> 
+          <dl> 
+           <dd> 
+            <code>wait</code> - 以毫秒计算的等待延迟 
+           </dd> 
+           <dd> 
+            <code>now</code> - 现在的相对时间，以毫秒为单位 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             根据上下文使用等待 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="informReadOperation-io.netty.channel.ChannelHandlerContext-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>informReadOperation</h4> <pre>protected&nbsp;void&nbsp;informReadOperation(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                                   long&nbsp;now)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractTrafficShapingHandler.html#informReadOperation-io.netty.channel.ChannelHandlerContext-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#informReadOperation-io.netty.channel.ChannelHandlerContext-long-">AbstractTrafficShapingHandler</a></code></span> 
+          </div> 
+          <div class="block">
+            在GTSH中覆盖的方法考虑到通道的特定定时器。 
+          </div> 
+          <dl> 
+           <dd> 
+            <code>now</code> - 现在的相对时间，以毫秒为单位 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="maximumCumulativeWrittenBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maximumCumulativeWrittenBytes</h4> <pre>protected&nbsp;long&nbsp;maximumCumulativeWrittenBytes()</pre> </li> 
+        </ul> <a name="maximumCumulativeReadBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>maximumCumulativeReadBytes</h4> <pre>protected&nbsp;long&nbsp;maximumCumulativeReadBytes()</pre> </li> 
+        </ul> <a name="channelTrafficCounters--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>channelTrafficCounters</h4> <pre>public&nbsp;java.util.Collection&lt;<a href="TrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/TrafficCounter.html" title="class in io.netty.handler.traffic">TrafficCounter</a>&gt;&nbsp;channelTrafficCounters()</pre> 
+          <div class="block">
+            例如，允许doAccounting使用每个频道的TrafficCounter。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             在通话时存在的TrafficCounters列表。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>write</h4> <pre>public&nbsp;void&nbsp;write(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                  java.lang.Object&nbsp;msg,
+                  <a href="../../channel/ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+           throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../channel/ChannelDuplexHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-">ChannelDuplexHandler</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>致电<a href="../../channel/ChannelOutboundInvoker.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-io.netty.channel.ChannelPromise-"><code>ChannelOutboundInvoker.write(Object, ChannelPromise)</code></a>转发到<a href="../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>中的下一个<a href="../../channel/ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelOutboundHandler</code></a> 。</span> 
+           <span>子类可以重写此方法来更改行为。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../channel/ChannelOutboundHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-">write</a></code> ，界面 
+            <code><a href="../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="interface in io.netty.channel">ChannelOutboundHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractTrafficShapingHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-">write</a></code>在课堂上 
+            <code><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - 进行写入操作的<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>msg</code> - 要写的消息 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 在操作完成后通知<a href="../../channel/ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="submitWrite-io.netty.channel.ChannelHandlerContext-java.lang.Object-long-long-long-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>submitWrite</h4> <pre>protected&nbsp;void&nbsp;submitWrite(<a href="../../channel/ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                           java.lang.Object&nbsp;msg,
+                           long&nbsp;size,
+                           long&nbsp;writedelay,
+                           long&nbsp;now,
+                           <a href="../../channel/ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractTrafficShapingHandler.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html#toString--">toString</a></code>在课堂上 
+            <code><a href="AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="class in io.netty.handler.traffic">AbstractTrafficShapingHandler</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/class-use/GlobalChannelTrafficShapingHandler.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="GlobalChannelTrafficCounter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficCounter.html" title="class in io.netty.handler.traffic"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="class in io.netty.handler.traffic"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-traffic-GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" target="_top">框架</a></li> 
+    <li><a href="GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.handler.traffic.AbstractTrafficShapingHandler">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/traffic/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

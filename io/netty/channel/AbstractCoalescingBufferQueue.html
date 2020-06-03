@@ -1,0 +1,659 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>AbstractCoalescingBufferQueue (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.AbstractCoalescingBufferQueue class"> 
+  <meta name="keywords" content="addFirst()"> 
+  <meta name="keywords" content="add()"> 
+  <meta name="keywords" content="removeFirst()"> 
+  <meta name="keywords" content="remove()"> 
+  <meta name="keywords" content="readableBytes()"> 
+  <meta name="keywords" content="isEmpty()"> 
+  <meta name="keywords" content="releaseAndFailAll()"> 
+  <meta name="keywords" content="copyTo()"> 
+  <meta name="keywords" content="writeAndRemoveAll()"> 
+  <meta name="keywords" content="compose()"> 
+  <meta name="keywords" content="composeIntoComposite()"> 
+  <meta name="keywords" content="copyAndCompose()"> 
+  <meta name="keywords" content="composeFirst()"> 
+  <meta name="keywords" content="removeEmptyValue()"> 
+  <meta name="keywords" content="size()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="AbstractCoalescingBufferQueue (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":6,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":6,"i14":10,"i15":10,"i16":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/AbstractCoalescingBufferQueue.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="AbstractChannel.AbstractUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.AbstractUnsafe.html" title="class in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="AbstractEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractEventLoop.html" title="class in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/AbstractCoalescingBufferQueue.html" target="_top">框架</a></li> 
+    <li><a href="AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Class AbstractCoalescingBufferQueue" class="title">Class AbstractCoalescingBufferQueue</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.AbstractCoalescingBufferQueue</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="CoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/CoalescingBufferQueue.html" title="在io.netty.channel中的类">CoalescingBufferQueue</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public abstract class <span class="typeNameLabel">AbstractCoalescingBufferQueue</span>
+extends java.lang.Object</pre> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier</th> 
+           <th class="colLast" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#AbstractCoalescingBufferQueue-io.netty.channel.Channel-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#AbstractCoalescingBufferQueue-io.netty.channel.Channel-int-">AbstractCoalescingBufferQueue</a></span>(<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel, int&nbsp;initSize)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-">add</a></span>(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf)</code> 
+            <div class="block">
+              在队列的末尾添加一个缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-io.netty.channel.ChannelFutureListener-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-io.netty.channel.ChannelFutureListener-">add</a></span>(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf, <a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="interface in io.netty.channel">ChannelFutureListener</a>&nbsp;listener)</code> 
+            <div class="block">
+              将一个缓冲区添加到队列的末尾，并将一个侦听器与它关联起来，当所有缓冲区字节已从队列中消耗并写入时应该完成侦听器。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-io.netty.channel.ChannelPromise-">add</a></span>(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              将一个缓冲区添加到队列的末尾，并将一个承诺与它关联起来，当所有缓冲区的字节已从队列中消耗并写入时应该完成该承诺。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#addFirst-io.netty.buffer.ByteBuf-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#addFirst-io.netty.buffer.ByteBuf-io.netty.channel.ChannelPromise-">addFirst</a></span>(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              将一个缓冲区添加到队列的前面，并将一个承诺与它关联起来，当所有缓冲区的字节已从队列中消耗并写入时应该完成该承诺。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected abstract <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">compose</a></span>(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code> 
+            <div class="block">
+              计算 
+             <code>current + next</code>的结果。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#composeFirst-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#composeFirst-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-">composeFirst</a></span>(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;first)</code> 
+            <div class="block"> 
+             <span>计算第一个<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，将在随后致电<a href="AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"><code>compose(ByteBufAllocator, ByteBuf, ByteBuf)</code>时使用</a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#composeIntoComposite-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#composeIntoComposite-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">composeIntoComposite</a></span>(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code> 
+            <div class="block"> 
+             <span>将<code>cumulation</code>和<code>next</code>成一个新的<a href="../buffer/CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#copyAndCompose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#copyAndCompose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-">copyAndCompose</a></span>(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation, <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</code> 
+            <div class="block">
+              将 
+             <code>cumulation</code>和 
+             <code>next</code>成一个新的 
+             <a href="../buffer/ByteBufAllocator.html#ioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html#ioBuffer--"><code>ByteBufAllocator.ioBuffer()</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#copyTo-io.netty.channel.AbstractCoalescingBufferQueue-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#copyTo-io.netty.channel.AbstractCoalescingBufferQueue-">copyTo</a></span>(<a href="AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html" title="class in io.netty.channel">AbstractCoalescingBufferQueue</a>&nbsp;dest)</code> 
+            <div class="block">
+              将此队列中的所有待处理条目复制到目标队列中。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#isEmpty--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#isEmpty--">isEmpty</a></span>()</code> 
+            <div class="block">
+              队列中是否有挂起的缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#readableBytes--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#readableBytes--">readableBytes</a></span>()</code> 
+            <div class="block">
+              可读字节数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#releaseAndFailAll-io.netty.channel.ChannelOutboundInvoker-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#releaseAndFailAll-io.netty.channel.ChannelOutboundInvoker-java.lang.Throwable-">releaseAndFailAll</a></span>(<a href="ChannelOutboundInvoker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html" title="interface in io.netty.channel">ChannelOutboundInvoker</a>&nbsp;invoker, java.lang.Throwable&nbsp;cause)</code> 
+            <div class="block">
+              释放队列中的所有缓冲区并完成所有侦听器和承诺。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code><a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-">remove</a></span>(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc, int&nbsp;bytes, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;aggregatePromise)</code> 
+            <div class="block"> 
+             <span>用指定的字节数从队列中删除<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>protected abstract <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#removeEmptyValue--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#removeEmptyValue--">removeEmptyValue</a></span>()</code> 
+            <div class="block">
+              调用 
+             <a href="AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-"><code>remove(ByteBufAllocator, int, ChannelPromise)</code></a>时返回的值，但队列为空。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#removeFirst-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#removeFirst-io.netty.channel.ChannelPromise-">removeFirst</a></span>(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;aggregatePromise)</code> 
+            <div class="block"> 
+             <span>从队列中移除第一个<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#size--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#size--">size</a></span>()</code> 
+            <div class="block">
+              获取此队列中通过 
+             <a href="AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>方法之一添加的元素数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="AbstractCoalescingBufferQueue.html#writeAndRemoveAll-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#writeAndRemoveAll-io.netty.channel.ChannelHandlerContext-">writeAndRemoveAll</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              将所有剩余的元素写入此队列中。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="AbstractCoalescingBufferQueue-io.netty.channel.Channel-int-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>AbstractCoalescingBufferQueue</h4> <pre>protected&nbsp;AbstractCoalescingBufferQueue(<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel,
+                                        int&nbsp;initSize)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>channel</code> -所述<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ，其将具有<a href="Channel.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#isWritable--"><code>Channel.isWritable()</code></a>反映排队缓冲器的量或<code>null</code>如果更新没有可写状态。</span> 
+           </dd> 
+           <dd> 
+            <code>initSize</code> - 基础队列的初始大小。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="addFirst-io.netty.buffer.ByteBuf-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addFirst</h4> <pre>public final&nbsp;void&nbsp;addFirst(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf,
+                           <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block">
+            将一个缓冲区添加到队列的前面，并将一个承诺与它关联起来，当所有缓冲区的字节已从队列中消耗并写入时应该完成该承诺。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>buf</code> - 添加到队列的头部 
+           </dd> 
+           <dd> 
+            <code>promise</code> - 当所有字节被消耗和写入时完成，可以是无效的。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="add-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>add</h4> <pre>public final&nbsp;void&nbsp;add(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf)</pre> 
+          <div class="block">
+            在队列的末尾添加一个缓冲区。 
+          </div> </li> 
+        </ul> <a name="add-io.netty.buffer.ByteBuf-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>add</h4> <pre>public final&nbsp;void&nbsp;add(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf,
+                      <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</pre> 
+          <div class="block">
+            将一个缓冲区添加到队列的末尾，并将一个承诺与它关联起来，当所有缓冲区的字节已从队列中消耗并写入时应该完成该承诺。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>buf</code> - 添加到队列尾部 
+           </dd> 
+           <dd> 
+            <code>promise</code> - 在所有字节被消耗和写入时完成，可以是无效的。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="add-io.netty.buffer.ByteBuf-io.netty.channel.ChannelFutureListener-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>add</h4> <pre>public final&nbsp;void&nbsp;add(<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buf,
+                      <a href="ChannelFutureListener.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFutureListener.html" title="interface in io.netty.channel">ChannelFutureListener</a>&nbsp;listener)</pre> 
+          <div class="block">
+            将一个缓冲区添加到队列的末尾，并将一个侦听器与它关联起来，当所有缓冲区字节已从队列中消耗并写入时应该完成侦听器。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>buf</code> - 添加到队列尾部 
+           </dd> 
+           <dd> 
+            <code>listener</code> - 通知所有字节已被使用和写入时，可以是 
+            <code>null</code> 。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="removeFirst-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeFirst</h4> <pre>public final&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;removeFirst(<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;aggregatePromise)</pre> 
+          <div class="block"> 
+           <span>从队列中移除第一个<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>aggregatePromise</code> - 用于聚合返回缓冲区的承诺和侦听器。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>队列中的第一个<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remove</h4> <pre>public final&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;remove(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                            int&nbsp;bytes,
+                            <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;aggregatePromise)</pre> 
+          <div class="block"> 
+           <span>从指定字节数的队列中删除<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+           <span>任何添加的字节缓冲区在删除过程中会被完全消耗，当传递的聚合<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a>完成时，它将承诺完成。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>alloc</code> - 如果在聚合过程中生成新的<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code>，</a>则使用分配器。</span> 
+           </dd> 
+           <dd> 
+            <span><code>bytes</code> -返回可读的最大字节数<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，如果<code>bytes</code>大于<a href="AbstractCoalescingBufferQueue.html#readableBytes" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#readableBytes"><code>readableBytes</code></a>接着长度的缓冲器<a href="AbstractCoalescingBufferQueue.html#readableBytes" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#readableBytes"><code>readableBytes</code></a>被返回。</span> 
+           </dd> 
+           <dd> 
+            <code>aggregatePromise</code> - 用于聚合组成缓冲区的承诺和侦听器。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>一个由入队缓冲区组成的<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="readableBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>readableBytes</h4> <pre>public final&nbsp;int&nbsp;readableBytes()</pre> 
+          <div class="block">
+            可读字节数。 
+          </div> </li> 
+        </ul> <a name="isEmpty--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isEmpty</h4> <pre>public final&nbsp;boolean&nbsp;isEmpty()</pre> 
+          <div class="block">
+            队列中是否有挂起的缓冲区。 
+          </div> </li> 
+        </ul> <a name="releaseAndFailAll-io.netty.channel.ChannelOutboundInvoker-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>releaseAndFailAll</h4> <pre>public final&nbsp;void&nbsp;releaseAndFailAll(<a href="ChannelOutboundInvoker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html" title="interface in io.netty.channel">ChannelOutboundInvoker</a>&nbsp;invoker,
+                                    java.lang.Throwable&nbsp;cause)</pre> 
+          <div class="block">
+            释放队列中的所有缓冲区并完成所有侦听器和承诺。 
+          </div> </li> 
+        </ul> <a name="copyTo-io.netty.channel.AbstractCoalescingBufferQueue-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>copyTo</h4> <pre>public final&nbsp;void&nbsp;copyTo(<a href="AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html" title="class in io.netty.channel">AbstractCoalescingBufferQueue</a>&nbsp;dest)</pre> 
+          <div class="block">
+            将此队列中的所有待处理条目复制到目标队列中。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>dest</code> - 将待处理的缓冲区复制到。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="writeAndRemoveAll-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>writeAndRemoveAll</h4> <pre>public final&nbsp;void&nbsp;writeAndRemoveAll(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</pre> 
+          <div class="block">
+            将所有剩余的元素写入此队列中。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>ctx</code> - 将所有元素写入的上下文。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>compose</h4> <pre>protected abstract&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;compose(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                                   <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation,
+                                   <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</pre> 
+          <div class="block">
+            计算 
+           <code>current + next</code>的结果。 
+          </div> </li> 
+        </ul> <a name="composeIntoComposite-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>composeIntoComposite</h4> <pre>protected final&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;composeIntoComposite(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                                             <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation,
+                                             <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</pre> 
+          <div class="block"> 
+           <span>将<code>cumulation</code>和<code>next</code>成一个新的<a href="../buffer/CompositeByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/CompositeByteBuf.html" title="在io.netty.buffer中的类"><code>CompositeByteBuf</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="copyAndCompose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>copyAndCompose</h4> <pre>protected final&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;copyAndCompose(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc,
+                                       <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;cumulation,
+                                       <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;next)</pre> 
+          <div class="block">
+            将 
+           <code>cumulation</code>和 
+           <code>next</code>成新的 
+           <a href="../buffer/ByteBufAllocator.html#ioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html#ioBuffer--"><code>ByteBufAllocator.ioBuffer()</code></a> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>alloc</code> - 用于分配新缓冲区的分配器。 
+           </dd> 
+           <dd> 
+            <code>cumulation</code> - 当前累计。 
+           </dd> 
+           <dd> 
+            <code>next</code> - 下一个缓冲区。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>cumulation + next</code>的结果。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="composeFirst-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>composeFirst</h4> <pre>protected&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;composeFirst(<a href="../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator,
+                               <a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;first)</pre> 
+          <div class="block"> 
+           <span>计算第一个<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> ，随后调用<a href="AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#compose-io.netty.buffer.ByteBufAllocator-io.netty.buffer.ByteBuf-io.netty.buffer.ByteBuf-"><code>compose(ByteBufAllocator, ByteBuf, ByteBuf)</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="removeEmptyValue--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeEmptyValue</h4> <pre>protected abstract&nbsp;<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;removeEmptyValue()</pre> 
+          <div class="block"> 
+           <a href="AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#remove-io.netty.buffer.ByteBufAllocator-int-io.netty.channel.ChannelPromise-"><code>remove(ByteBufAllocator, int, ChannelPromise)</code></a>被调用但队列为空时返回的值。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>代表一个空队列的<a href="../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="size--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>size</h4> <pre>protected final&nbsp;int&nbsp;size()</pre> 
+          <div class="block">
+            获取通过 
+           <a href="AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html#add-io.netty.buffer.ByteBuf-"><code>add(ByteBuf)</code></a>方法之一添加的此队列中元素的数量。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             此队列中元素的数量。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/AbstractCoalescingBufferQueue.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="AbstractChannel.AbstractUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.AbstractUnsafe.html" title="class in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="AbstractEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractEventLoop.html" title="class in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/AbstractCoalescingBufferQueue.html" target="_top">框架</a></li> 
+    <li><a href="AbstractCoalescingBufferQueue.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractCoalescingBufferQueue.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

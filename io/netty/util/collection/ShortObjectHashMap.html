@@ -1,0 +1,818 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ShortObjectHashMap (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.util.collection.ShortObjectHashMap class"> 
+  <meta name="keywords" content="DEFAULT_CAPACITY"> 
+  <meta name="keywords" content="DEFAULT_LOAD_FACTOR"> 
+  <meta name="keywords" content="get()"> 
+  <meta name="keywords" content="put()"> 
+  <meta name="keywords" content="putAll()"> 
+  <meta name="keywords" content="remove()"> 
+  <meta name="keywords" content="size()"> 
+  <meta name="keywords" content="isEmpty()"> 
+  <meta name="keywords" content="clear()"> 
+  <meta name="keywords" content="containsKey()"> 
+  <meta name="keywords" content="containsValue()"> 
+  <meta name="keywords" content="entries()"> 
+  <meta name="keywords" content="values()"> 
+  <meta name="keywords" content="hashCode()"> 
+  <meta name="keywords" content="equals()"> 
+  <meta name="keywords" content="keySet()"> 
+  <meta name="keywords" content="entrySet()"> 
+  <meta name="keywords" content="toString()"> 
+  <meta name="keywords" content="keyToString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ShortObjectHashMap (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/class-use/ShortObjectHashMap.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ShortCollections.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortCollections.html" title="class in io.netty.util.collection"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-collection-ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/collection/ShortObjectHashMap.html" target="_top">框架</a></li> 
+    <li><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.util.collection 
+   </div> 
+   <h2 title="Class ShortObjectHashMap" class="title">Class ShortObjectHashMap&lt;V&gt;</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.util.collection.ShortObjectHashMap&lt;V&gt;</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt> 
+        <span class="paramLabel">参数类型</span> 
+       </dt> 
+       <dd> 
+        <code>V</code> - 存储在地图中的值类型。 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="io.netty.util.collection中的接口">ShortObjectMap</a> &lt;V&gt;，java.util.Map &lt;java.lang.Short，V&gt;</span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">ShortObjectHashMap&lt;V&gt;</span>
+extends java.lang.Object
+implements <a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a>&lt;V&gt;</pre> 
+      <div class="block"> 
+       <span><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="io.netty.util.collection中的接口"><code>ShortObjectMap</code>的</a>哈希映射实现，它使用键的开放寻址。</span> 
+       <span>为了最小化内存占用，这个类使用开放寻址而不是链接。</span> 
+       <span>使用线性探测来解决冲突。</span> 
+       <span>删除实现压缩，因此删除的成本可以接近完整映射的O（N），这使得建议使用小的loadFactor。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.util.collection.ShortObjectMap"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.util.collection.<a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a></h3> <code><a href="ShortObjectMap.PrimitiveEntry.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.PrimitiveEntry.html" title="interface in io.netty.util.collection">ShortObjectMap.PrimitiveEntry</a>&lt;<a href="ShortObjectMap.PrimitiveEntry.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.PrimitiveEntry.html" title="type parameter in ShortObjectMap.PrimitiveEntry">V</a>&gt;</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.java.util.Map"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;java.util.Map</h3> <code>java.util.Map.Entry&lt;K,V&gt;</code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#DEFAULT_CAPACITY" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#DEFAULT_CAPACITY">DEFAULT_CAPACITY</a></span></code> 
+            <div class="block">
+              默认初始容量。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static float</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#DEFAULT_LOAD_FACTOR" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#DEFAULT_LOAD_FACTOR">DEFAULT_LOAD_FACTOR</a></span></code> 
+            <div class="block">
+              默认加载因子。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#ShortObjectHashMap--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#ShortObjectHashMap--">ShortObjectHashMap</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#ShortObjectHashMap-int-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#ShortObjectHashMap-int-">ShortObjectHashMap</a></span>(int&nbsp;initialCapacity)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#ShortObjectHashMap-int-float-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#ShortObjectHashMap-int-float-">ShortObjectHashMap</a></span>(int&nbsp;initialCapacity, float&nbsp;loadFactor)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#clear--">clear</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#containsKey-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#containsKey-java.lang.Object-">containsKey</a></span>(java.lang.Object&nbsp;key)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#containsKey-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#containsKey-short-">containsKey</a></span>(short&nbsp;key)</code> 
+            <div class="block">
+              指示此映射是否包含指定键的值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#containsValue-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#containsValue-java.lang.Object-">containsValue</a></span>(java.lang.Object&nbsp;value)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>java.lang.Iterable&lt;<a href="ShortObjectMap.PrimitiveEntry.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.PrimitiveEntry.html" title="interface in io.netty.util.collection">ShortObjectMap.PrimitiveEntry</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#entries--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#entries--">entries</a></span>()</code> 
+            <div class="block">
+              获取迭代以遍历此映射中包含的原始条目。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>java.util.Set&lt;java.util.Map.Entry&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#entrySet--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#entrySet--">entrySet</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;obj)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#get-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#get-java.lang.Object-">get</a></span>(java.lang.Object&nbsp;key)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#get-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#get-short-">get</a></span>(short&nbsp;key)</code> 
+            <div class="block">
+              使用指定的键获取映射中的值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#isEmpty--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#isEmpty--">isEmpty</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.util.Set&lt;java.lang.Short&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#keySet--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#keySet--">keySet</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#keyToString-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#keyToString-short-">keyToString</a></span>(short&nbsp;key)</code> 
+            <div class="block">
+              Helper方法由 
+             <a href="ShortObjectHashMap.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#toString--"><code>toString()</code>调用</a> ，以便将单个映射键转换为字符串。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#put-short-V-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#put-short-V-">put</a></span>(short&nbsp;key, <a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;value)</code> 
+            <div class="block">
+              将给定的条目放入地图中。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#put-java.lang.Short-V-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#put-java.lang.Short-V-">put</a></span>(java.lang.Short&nbsp;key, <a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;value)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#putAll-java.util.Map-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#putAll-java.util.Map-">putAll</a></span>(java.util.Map&lt;? extends java.lang.Short,? extends <a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&nbsp;sourceMap)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#remove-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#remove-java.lang.Object-">remove</a></span>(java.lang.Object&nbsp;key)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#remove-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#remove-short-">remove</a></span>(short&nbsp;key)</code> 
+            <div class="block">
+              用指定的键删除条目。 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#size--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#size--">size</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>java.util.Collection&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ShortObjectHashMap.html#values--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#values--">values</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.util.Map"> </a> <h3>Methods inherited from interface&nbsp;java.util.Map</h3> <code>compute, computeIfAbsent, computeIfPresent, forEach, getOrDefault, merge, putIfAbsent, remove, replace, replace, replaceAll</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="DEFAULT_CAPACITY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DEFAULT_CAPACITY</h4> <pre>public static final&nbsp;int DEFAULT_CAPACITY</pre> 
+          <div class="block"> 
+           <span>默认初始容量。</span> 
+           <span>如果未在构造函数中指定，则使用它</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../constant-values.html#io.netty.util.collection.ShortObjectHashMap.DEFAULT_CAPACITY" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.util.collection.ShortObjectHashMap.DEFAULT_CAPACITY">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="DEFAULT_LOAD_FACTOR"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DEFAULT_LOAD_FACTOR</h4> <pre>public static final&nbsp;float DEFAULT_LOAD_FACTOR</pre> 
+          <div class="block"> 
+           <span>默认加载因子。</span> 
+           <span>如果未在构造函数中指定，则使用它</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../../../constant-values.html#io.netty.util.collection.ShortObjectHashMap.DEFAULT_LOAD_FACTOR" tppabs="http://netty.io/4.1/api/constant-values.html#io.netty.util.collection.ShortObjectHashMap.DEFAULT_LOAD_FACTOR">Constant Field Values</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="ShortObjectHashMap--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ShortObjectHashMap</h4> <pre>public&nbsp;ShortObjectHashMap()</pre> </li> 
+        </ul> <a name="ShortObjectHashMap-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ShortObjectHashMap</h4> <pre>public&nbsp;ShortObjectHashMap(int&nbsp;initialCapacity)</pre> </li> 
+        </ul> <a name="ShortObjectHashMap-int-float-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>ShortObjectHashMap</h4> <pre>public&nbsp;ShortObjectHashMap(int&nbsp;initialCapacity,
+                          float&nbsp;loadFactor)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="get-short-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>get</h4> <pre>public&nbsp;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;get(short&nbsp;key)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="ShortObjectMap.html#get-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#get-short-">ShortObjectMap</a></code></span> 
+          </div> 
+          <div class="block">
+            使用指定的键获取映射中的值。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ShortObjectMap.html#get-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#get-short-">get</a></code> ，界面 
+            <code><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>key</code> - 其关联值将被返回的键。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果在地图中找不到密钥，则值为 
+            <code>null</code> 。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="put-short-java.lang.Object-"> </a><a name="put-short-V-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>put</h4> <pre>public&nbsp;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;put(short&nbsp;key,
+             <a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="ShortObjectMap.html#put-short-V-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#put-short-V-">ShortObjectMap</a></code></span> 
+          </div> 
+          <div class="block">
+            将给定的条目放入地图中。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ShortObjectMap.html#put-short-V-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#put-short-V-">put</a></code> ，界面 
+            <code><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>key</code> - 入门的关键。 
+           </dd> 
+           <dd> 
+            <code>value</code> - 条目的值。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果没有先前的映射，则此键的先前值或 
+            <code>null</code> 。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="putAll-java.util.Map-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>putAll</h4> <pre>public&nbsp;void&nbsp;putAll(java.util.Map&lt;? extends java.lang.Short,? extends <a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&nbsp;sourceMap)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>putAll</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remove-short-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remove</h4> <pre>public&nbsp;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;remove(short&nbsp;key)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="ShortObjectMap.html#remove-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#remove-short-">ShortObjectMap</a></code></span> 
+          </div> 
+          <div class="block">
+            用指定的键删除条目。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ShortObjectMap.html#remove-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#remove-short-">remove</a></code> ，界面 
+            <code><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>key</code> - 从此地图中删除条目的关键。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果没有映射， 
+            <code>null</code>键的先前值，或 
+            <code>null</code> 。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="size--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>size</h4> <pre>public&nbsp;int&nbsp;size()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>size</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isEmpty--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isEmpty</h4> <pre>public&nbsp;boolean&nbsp;isEmpty()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isEmpty</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="clear--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>clear</h4> <pre>public&nbsp;void&nbsp;clear()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>clear</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="containsKey-short-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>containsKey</h4> <pre>public&nbsp;boolean&nbsp;containsKey(short&nbsp;key)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="ShortObjectMap.html#containsKey-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#containsKey-short-">ShortObjectMap</a></code></span> 
+          </div> 
+          <div class="block">
+            指示此映射是否包含指定键的值。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ShortObjectMap.html#containsKey-short-" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#containsKey-short-">containsKey</a></code>在界面 
+            <code><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="containsValue-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>containsValue</h4> <pre>public&nbsp;boolean&nbsp;containsValue(java.lang.Object&nbsp;value)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>containsValue</code>在界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="entries--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>entries</h4> <pre>public&nbsp;java.lang.Iterable&lt;<a href="ShortObjectMap.PrimitiveEntry.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.PrimitiveEntry.html" title="interface in io.netty.util.collection">ShortObjectMap.PrimitiveEntry</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&gt;&nbsp;entries()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面： <code><a href="ShortObjectMap.html#entries--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#entries--">ShortObjectMap</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>获取迭代以遍历此映射中包含的原始条目。</span> 
+           <span>作为优化，由<a href="ShortObjectMap.PrimitiveEntry.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.PrimitiveEntry.html" title="io.netty.util.collection中的接口">Iterator</a>返回的<code>Iterator</code>可能随着<code>Iterator</code>进展而改变。</span> 
+           <span>调用者不应该依赖<a href="ShortObjectMap.PrimitiveEntry.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.PrimitiveEntry.html" title="io.netty.util.collection中的接口"><code>ShortObjectMap.PrimitiveEntry</code></a>键/值稳定性。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ShortObjectMap.html#entries--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html#entries--">entries</a></code> ，界面 
+            <code><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection">ShortObjectMap</a>&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="values--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>values</h4> <pre>public&nbsp;java.util.Collection&lt;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&nbsp;values()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>values</code>在界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hashCode--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hashCode</h4> <pre>public&nbsp;int&nbsp;hashCode()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>hashCode</code>在界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>hashCode</code>在课堂 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="equals-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>equals</h4> <pre>public&nbsp;boolean&nbsp;equals(java.lang.Object&nbsp;obj)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>equals</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>equals</code>在课堂上 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="containsKey-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>containsKey</h4> <pre>public&nbsp;boolean&nbsp;containsKey(java.lang.Object&nbsp;key)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>containsKey</code>在界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="get-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>get</h4> <pre>public&nbsp;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;get(java.lang.Object&nbsp;key)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>get</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="put-java.lang.Short-java.lang.Object-"> </a><a name="put-java.lang.Short-V-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>put</h4> <pre>public&nbsp;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;put(java.lang.Short&nbsp;key,
+             <a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;value)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>put</code>在界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remove-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remove</h4> <pre>public&nbsp;<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&nbsp;remove(java.lang.Object&nbsp;key)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>remove</code> ，界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="keySet--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>keySet</h4> <pre>public&nbsp;java.util.Set&lt;java.lang.Short&gt;&nbsp;keySet()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>keySet</code>在界面 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="entrySet--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>entrySet</h4> <pre>public&nbsp;java.util.Set&lt;java.util.Map.Entry&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;&gt;&nbsp;entrySet()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>entrySet</code>接口 
+            <code>java.util.Map&lt;java.lang.Short,<a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" title="type parameter in ShortObjectHashMap">V</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课堂上 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="keyToString-short-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>keyToString</h4> <pre>protected&nbsp;java.lang.String&nbsp;keyToString(short&nbsp;key)</pre> 
+          <div class="block">
+            Helper method called by 
+           <a href="ShortObjectHashMap.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html#toString--"><code>toString()</code></a> in order to convert a single map key into a string. This is protected to allow subclasses to override the appearance of a given key. 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/class-use/ShortObjectHashMap.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ShortCollections.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortCollections.html" title="class in io.netty.util.collection"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ShortObjectMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectMap.html" title="interface in io.netty.util.collection"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-collection-ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/collection/ShortObjectHashMap.html" target="_top">框架</a></li> 
+    <li><a href="ShortObjectHashMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/collection/ShortObjectHashMap.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/collection/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

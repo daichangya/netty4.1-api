@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>HttpUtil (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http.HttpUtil class"> 
+  <meta name="keywords" content="isOriginForm()"> 
+  <meta name="keywords" content="isAsteriskForm()"> 
+  <meta name="keywords" content="isKeepAlive()"> 
+  <meta name="keywords" content="setKeepAlive()"> 
+  <meta name="keywords" content="getContentLength()"> 
+  <meta name="keywords" content="setContentLength()"> 
+  <meta name="keywords" content="isContentLengthSet()"> 
+  <meta name="keywords" content="is100ContinueExpected()"> 
+  <meta name="keywords" content="set100ContinueExpected()"> 
+  <meta name="keywords" content="isTransferEncodingChunked()"> 
+  <meta name="keywords" content="setTransferEncodingChunked()"> 
+  <meta name="keywords" content="getCharset()"> 
+  <meta name="keywords" content="getCharsetAsString()"> 
+  <meta name="keywords" content="getCharsetAsSequence()"> 
+  <meta name="keywords" content="getMimeType()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="HttpUtil (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":41,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":9,"i21":9,"i22":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/HttpUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/class-use/HttpUtil.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="HttpStatusClass.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpStatusClass.html" title="enum in io.netty.handler.codec.http"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http-HttpUtil.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/HttpUtil.html" target="_top">框架</a></li> 
+    <li><a href="HttpUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http 
+   </div> 
+   <h2 title="Class HttpUtil" class="title">Class HttpUtil</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.http.HttpUtil</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">HttpUtil</span>
+extends java.lang.Object</pre> 
+      <div class="block">
+        在HTTP上下文中有用的实用方法。 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>static java.nio.charset.Charset</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharset-java.lang.CharSequence-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharset-java.lang.CharSequence-">getCharset</a></span>(java.lang.CharSequence&nbsp;contentTypeValue)</code> 
+            <div class="block">
+              从Content-Type标头值中获取字符集。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>static java.nio.charset.Charset</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharset-java.lang.CharSequence-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharset-java.lang.CharSequence-java.nio.charset.Charset-">getCharset</a></span>(java.lang.CharSequence&nbsp;contentTypeValue, java.nio.charset.Charset&nbsp;defaultCharset)</code> 
+            <div class="block">
+              从Content-Type标头值中获取字符集。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>static java.nio.charset.Charset</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharset-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharset-io.netty.handler.codec.http.HttpMessage-">getCharset</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block">
+              从消息的Content-Type头获取字符集。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>static java.nio.charset.Charset</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharset-io.netty.handler.codec.http.HttpMessage-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharset-io.netty.handler.codec.http.HttpMessage-java.nio.charset.Charset-">getCharset</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message, java.nio.charset.Charset&nbsp;defaultCharset)</code> 
+            <div class="block">
+              从消息的Content-Type头获取字符集。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>static java.lang.CharSequence</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharsetAsSequence-java.lang.CharSequence-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharsetAsSequence-java.lang.CharSequence-">getCharsetAsSequence</a></span>(java.lang.CharSequence&nbsp;contentTypeValue)</code> 
+            <div class="block">
+              从Content-Type头值中获取字符集作为字符序列。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>static java.lang.CharSequence</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-">getCharsetAsSequence</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block">
+              从消息的Content-Type头部获取字符集作为字符序列。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>static java.lang.CharSequence</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getCharsetAsString-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharsetAsString-io.netty.handler.codec.http.HttpMessage-">getCharsetAsString</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="HttpUtil.html#getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-"><code>getCharsetAsSequence(HttpMessage)</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>static long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-">getContentLength</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block">
+              返回内容的长度。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-int-">getContentLength</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message, int&nbsp;defaultValue)</code> 
+            <div class="block">
+              获取 
+             <code>int</code>表示 
+             <a href="HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-long-">形式</a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>static long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-long-">getContentLength</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message, long&nbsp;defaultValue)</code> 
+            <div class="block">
+              如果消息没有 
+             <code>"Content-Length" header</code> ，则返回内容的长度或指定的默认值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>static java.lang.CharSequence</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getMimeType-java.lang.CharSequence-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getMimeType-java.lang.CharSequence-">getMimeType</a></span>(java.lang.CharSequence&nbsp;contentTypeValue)</code> 
+            <div class="block">
+              从Content-Type头值中取出MIME类型部分作为字符序列。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>static java.lang.CharSequence</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#getMimeType-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getMimeType-io.netty.handler.codec.http.HttpMessage-">getMimeType</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block">
+              从消息的Content-Type头中作为char序列获取MIME类型部分。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#is100ContinueExpected-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#is100ContinueExpected-io.netty.handler.codec.http.HttpMessage-">is100ContinueExpected</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当指定的消息包含预期标题并且唯一期望值是100-继续期望值时。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#isAsteriskForm-java.net.URI-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#isAsteriskForm-java.net.URI-">isAsteriskForm</a></span>(java.net.URI&nbsp;uri)</code> 
+            <div class="block">
+              根据 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7230  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7230#section-5.3'" tppabs="https://tools.ietf.org/html/rfc7230#section-5.3">rfc7230, 5.3</a>确定uri是否以星号形式。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#isContentLengthSet-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#isContentLengthSet-io.netty.handler.codec.http.HttpMessage-">isContentLengthSet</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;m)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#isKeepAlive-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#isKeepAlive-io.netty.handler.codec.http.HttpMessage-">isKeepAlive</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block">
+              当且仅当连接可以保持打开并因此“保持活动”时才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#isOriginForm-java.net.URI-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#isOriginForm-java.net.URI-">isOriginForm</a></span>(java.net.URI&nbsp;uri)</code> 
+            <div class="block">
+              根据 
+             <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7230  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7230#section-5.3'" tppabs="https://tools.ietf.org/html/rfc7230#section-5.3">rfc7230, 5.3</a>确定uri是否是原始形式。 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#isTransferEncodingChunked-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#isTransferEncodingChunked-io.netty.handler.codec.http.HttpMessage-">isTransferEncodingChunked</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</code> 
+            <div class="block"> 
+             <span>检查指定的<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口"><code>HttpMessage</code>中</a>的传输编码<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口">是否</a>已分块</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#set100ContinueExpected-io.netty.handler.codec.http.HttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#set100ContinueExpected-io.netty.handler.codec.http.HttpMessage-boolean-">set100ContinueExpected</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message, boolean&nbsp;expected)</code> 
+            <div class="block">
+              将 
+             <code>"Expect: 100-continue"</code>标头设置为或从指定的消息中删除。 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#setContentLength-io.netty.handler.codec.http.HttpMessage-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#setContentLength-io.netty.handler.codec.http.HttpMessage-long-">setContentLength</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message, long&nbsp;length)</code> 
+            <div class="block">
+              设置 
+             <code>"Content-Length"</code>标题。 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#setKeepAlive-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#setKeepAlive-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-">setKeepAlive</a></span>(<a href="HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;h, <a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion, boolean&nbsp;keepAlive)</code> 
+            <div class="block">
+              根据指定消息的协议版本设置 
+             <code>"Connection"</code>头的值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#setKeepAlive-io.netty.handler.codec.http.HttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#setKeepAlive-io.netty.handler.codec.http.HttpMessage-boolean-">setKeepAlive</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message, boolean&nbsp;keepAlive)</code> 
+            <div class="block">
+              根据指定消息的协议版本设置 
+             <code>"Connection"</code>标头的值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="HttpUtil.html#setTransferEncodingChunked-io.netty.handler.codec.http.HttpMessage-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#setTransferEncodingChunked-io.netty.handler.codec.http.HttpMessage-boolean-">setTransferEncodingChunked</a></span>(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;m, boolean&nbsp;chunked)</code> 
+            <div class="block">
+              设置 
+             <a href="HttpHeaderNames.html#TRANSFER_ENCODING" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderNames.html#TRANSFER_ENCODING"><code>HttpHeaderNames.TRANSFER_ENCODING</code></a>要么包括 
+             <a href="HttpHeaderValues.html#CHUNKED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderValues.html#CHUNKED"><code>HttpHeaderValues.CHUNKED</code></a>如果 
+             <code>chunked</code>是 
+             <code>true</code> ，或删除 
+             <a href="HttpHeaderValues.html#CHUNKED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderValues.html#CHUNKED"><code>HttpHeaderValues.CHUNKED</code></a>如果 
+             <code>chunked</code>是 
+             <code>false</code> 。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="isOriginForm-java.net.URI-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isOriginForm</h4> <pre>public static&nbsp;boolean&nbsp;isOriginForm(java.net.URI&nbsp;uri)</pre> 
+          <div class="block">
+            根据 
+           <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7230  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7230#section-5.3'" tppabs="https://tools.ietf.org/html/rfc7230#section-5.3">rfc7230, 5.3</a>确定uri是否为原始形式。 
+          </div> </li> 
+        </ul> <a name="isAsteriskForm-java.net.URI-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isAsteriskForm</h4> <pre>public static&nbsp;boolean&nbsp;isAsteriskForm(java.net.URI&nbsp;uri)</pre> 
+          <div class="block">
+            根据 
+           <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc7230  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://tools.ietf.org/html/rfc7230#section-5.3'" tppabs="https://tools.ietf.org/html/rfc7230#section-5.3">rfc7230, 5.3</a>确定uri是否以星号形式。 
+          </div> </li> 
+        </ul> <a name="isKeepAlive-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isKeepAlive</h4> <pre>public static&nbsp;boolean&nbsp;isKeepAlive(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block"> 
+           <span>当且仅当连接可以保持打开并因此“保持活动”时才返回<code>true</code> 。</span> 
+           <span>这种方法尊重的价值。</span> 
+           <span><code>"Connection"</code>头，然后返回值<a href="HttpVersion.html#isKeepAliveDefault--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html#isKeepAliveDefault--"><code>HttpVersion.isKeepAliveDefault()</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="setKeepAlive-io.netty.handler.codec.http.HttpMessage-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setKeepAlive</h4> <pre>public static&nbsp;void&nbsp;setKeepAlive(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message,
+                                boolean&nbsp;keepAlive)</pre> 
+          <div class="block"> 
+           <span>根据指定消息的协议版本设置<code>"Connection"</code>标头的值。</span> 
+           <span>此getMethod根据<a href="HttpVersion.html#isKeepAliveDefault--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html#isKeepAliveDefault--"><code>HttpVersion.isKeepAliveDefault()</code></a>指定的消息协议版本的默认保持活动模式设置或删除<code>"Connection"</code>标头。</span> 
+           <ul> 
+            <li> <span>如果连接默认保持活动状态：</span> 
+             <ul> 
+              <li> <span>设置为<code>"close"</code>如果<code>keepAlive</code>是<code>false</code> 。</span> </li> 
+              <li> <span>否则删除。</span> </li> 
+             </ul></li> 
+            <li> <span>如果连接默认关闭：</span> 
+             <ul> 
+              <li> <span>设置为<code>"keep-alive"</code>如果<code>keepAlive</code>是<code>true</code> 。</span> </li> 
+              <li> <span>否则删除。</span> </li> 
+             </ul></li> 
+           </ul> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="HttpUtil.html#setKeepAlive-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#setKeepAlive-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-"><code>setKeepAlive(HttpHeaders, HttpVersion, boolean)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setKeepAlive-io.netty.handler.codec.http.HttpHeaders-io.netty.handler.codec.http.HttpVersion-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setKeepAlive</h4> <pre>public static&nbsp;void&nbsp;setKeepAlive(<a href="HttpHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaders.html" title="class in io.netty.handler.codec.http">HttpHeaders</a>&nbsp;h,
+                                <a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http">HttpVersion</a>&nbsp;httpVersion,
+                                boolean&nbsp;keepAlive)</pre> 
+          <div class="block"> 
+           <span>根据指定消息的协议版本设置<code>"Connection"</code>标头的值。</span> 
+           <span>此getMethod设置或删除<code>"Connection"</code>标头，具体取决于<a href="HttpVersion.html#isKeepAliveDefault--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html#isKeepAliveDefault--"><code>HttpVersion.isKeepAliveDefault()</code>中</a>指定的消息协议版本的默认保持活动模式。</span> 
+           <ul> 
+            <li> <span>如果连接默认保持活动状态：</span> 
+             <ul> 
+              <li> <span>设置为<code>"close"</code>如果<code>keepAlive</code>是<code>false</code> 。</span> </li> 
+              <li> <span>否则删除。</span> </li> 
+             </ul></li> 
+            <li> <span>如果连接默认关闭：</span> 
+             <ul> 
+              <li> <span>设置为<code>"keep-alive"</code>如果<code>keepAlive</code>是<code>true</code> 。</span> </li> 
+              <li> <span>否则删除。</span> </li> 
+             </ul></li> 
+           </ul> 
+          </div> </li> 
+        </ul> <a name="getContentLength-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getContentLength</h4> <pre>public static&nbsp;long&nbsp;getContentLength(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block"> 
+           <span>返回内容的长度。</span> 
+           <span>请注意，此值不是从<a href="../../../buffer/ByteBufHolder.html#content--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#content--"><code>ByteBufHolder.content()</code>中</a>检索的，而是从<code>"Content-Length"</code>标题中检索的，因此它们彼此独立。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             内容的长度 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.NumberFormatException</code> - 如果消息没有 
+            <code>"Content-Length"</code>标题或其值不是数字 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getContentLength-io.netty.handler.codec.http.HttpMessage-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getContentLength</h4> <pre>public static&nbsp;long&nbsp;getContentLength(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message,
+                                    long&nbsp;defaultValue)</pre> 
+          <div class="block"> 
+           <span>如果消息没有<code>"Content-Length" header</code> ，则返回内容的长度或指定的默认值。</span> 
+           <span>请注意，此值不是从<a href="../../../buffer/ByteBufHolder.html#content--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#content--"><code>ByteBufHolder.content()</code>中</a>检索的，而是从<code>"Content-Length"</code>标题中检索的，因此它们彼此独立。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 消息 
+           </dd> 
+           <dd> 
+            <code>defaultValue</code> - 默认值 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             内容长度或指定的默认值 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.NumberFormatException</code> - 如果 
+            <code>"Content-Length"</code>头不解析为长 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getContentLength-io.netty.handler.codec.http.HttpMessage-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getContentLength</h4> <pre>public static&nbsp;int&nbsp;getContentLength(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message,
+                                   int&nbsp;defaultValue)</pre> 
+          <div class="block">
+            获取 
+           <code>int</code>代表性 
+           <a href="HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getContentLength-io.netty.handler.codec.http.HttpMessage-long-"><code>getContentLength(HttpMessage, long)</code></a> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>内容长度或<code>defaultValue</code>如果此消息没有<code>"Content-Length"</code>标头或其值不是数字）。</span> 
+            <span>不要超过整数的边界。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setContentLength-io.netty.handler.codec.http.HttpMessage-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setContentLength</h4> <pre>public static&nbsp;void&nbsp;setContentLength(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message,
+                                    long&nbsp;length)</pre> 
+          <div class="block">
+            设置 
+           <code>"Content-Length"</code>标题。 
+          </div> </li> 
+        </ul> <a name="isContentLengthSet-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isContentLengthSet</h4> <pre>public static&nbsp;boolean&nbsp;isContentLengthSet(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;m)</pre> </li> 
+        </ul> <a name="is100ContinueExpected-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>is100ContinueExpected</h4> <pre>public static&nbsp;boolean&nbsp;is100ContinueExpected(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block"> 
+           <span>返回<code>true</code>当且仅当指定的消息包含期望头并且唯一期望值是100-继续期望值时。</span> 
+           <span>请注意，如果期望头对消息无效（例如，消息是响应，或消息上的版本是HTTP / 1.0），则此方法返回<code>false</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 消息 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当期望100-继续存在并且它是唯一期望存在 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="set100ContinueExpected-io.netty.handler.codec.http.HttpMessage-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>set100ContinueExpected</h4> <pre>public static&nbsp;void&nbsp;set100ContinueExpected(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message,
+                                          boolean&nbsp;expected)</pre> 
+          <div class="block"> 
+           <span>将<code>"Expect: 100-continue"</code>标头设置为或从指定的消息中删除。</span> 
+           <span>如果<code>expected</code>是<code>true</code> ，该<code>"Expect: 100-continue"</code>头设置和其他所有以前<code>"Expect"</code>头被删除。</span> 
+           <span>否则，所有<code>"Expect"</code>标头将被完全删除。</span> 
+          </div> </li> 
+        </ul> <a name="isTransferEncodingChunked-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isTransferEncodingChunked</h4> <pre>public static&nbsp;boolean&nbsp;isTransferEncodingChunked(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block"> 
+           <span>检查以查看指定的<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口"><code>HttpMessage</code>中</a>的传输编码<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="io.netty.handler.codec.http中的接口">是否</a>已分块</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 要检查的消息 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果传输编码是分块的，则为真，否则为false 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setTransferEncodingChunked-io.netty.handler.codec.http.HttpMessage-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setTransferEncodingChunked</h4> <pre>public static&nbsp;void&nbsp;setTransferEncodingChunked(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;m,
+                                              boolean&nbsp;chunked)</pre> 
+          <div class="block">
+            设置 
+           <a href="HttpHeaderNames.html#TRANSFER_ENCODING" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderNames.html#TRANSFER_ENCODING"><code>HttpHeaderNames.TRANSFER_ENCODING</code></a>要么包括 
+           <a href="HttpHeaderValues.html#CHUNKED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderValues.html#CHUNKED"><code>HttpHeaderValues.CHUNKED</code></a>如果 
+           <code>chunked</code>是 
+           <code>true</code> ，或删除 
+           <a href="HttpHeaderValues.html#CHUNKED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderValues.html#CHUNKED"><code>HttpHeaderValues.CHUNKED</code></a>如果 
+           <code>chunked</code>是 
+           <code>false</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>m</code> - 包含要修改标题的消息。 
+           </dd> 
+           <dd> 
+            <span><code>chunked</code> - 如果<code>true</code>然后在头中包含<a href="HttpHeaderValues.html#CHUNKED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderValues.html#CHUNKED"><code>HttpHeaderValues.CHUNKED</code></a> 。</span> 
+            <span>否则从标题中删除<a href="HttpHeaderValues.html#CHUNKED" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpHeaderValues.html#CHUNKED"><code>HttpHeaderValues.CHUNKED</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharset-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharset</h4> <pre>public static&nbsp;java.nio.charset.Charset&nbsp;getCharset(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block">
+            从消息的Content-Type头获取字符集。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 从中获取Content-Type标头的实体 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             来自消息的Content-Type头部的字符集或 
+            <a href="../../../util/CharsetUtil.html#ISO_8859_1" tppabs="http://netty.io/4.1/api/io/netty/util/CharsetUtil.html#ISO_8859_1"><code>CharsetUtil.ISO_8859_1</code>，</a>如果charset不存在或不可 
+            <a href="../../../util/CharsetUtil.html#ISO_8859_1" tppabs="http://netty.io/4.1/api/io/netty/util/CharsetUtil.html#ISO_8859_1">解析</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharset-java.lang.CharSequence-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharset</h4> <pre>public static&nbsp;java.nio.charset.Charset&nbsp;getCharset(java.lang.CharSequence&nbsp;contentTypeValue)</pre> 
+          <div class="block">
+            从Content-Type标头值中获取字符集。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>contentTypeValue</code> - 要解析的Content-Type标头值 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             来自消息内容类型标头的字符集或 
+            <a href="../../../util/CharsetUtil.html#ISO_8859_1" tppabs="http://netty.io/4.1/api/io/netty/util/CharsetUtil.html#ISO_8859_1"><code>CharsetUtil.ISO_8859_1</code></a>如果字符集未呈现或不可 
+            <a href="../../../util/CharsetUtil.html#ISO_8859_1" tppabs="http://netty.io/4.1/api/io/netty/util/CharsetUtil.html#ISO_8859_1">解析</a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharset-io.netty.handler.codec.http.HttpMessage-java.nio.charset.Charset-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharset</h4> <pre>public static&nbsp;java.nio.charset.Charset&nbsp;getCharset(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message,
+                                                  java.nio.charset.Charset&nbsp;defaultCharset)</pre> 
+          <div class="block">
+            从消息的Content-Type头获取字符集。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 从中获取Content-Type标头的实体 
+           </dd> 
+           <dd> 
+            <code>defaultCharset</code> - 在空白，不正确或不包含必需的部分标题值的情况下使用的结果 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             来自消息的Content-Type头部的字符集或 
+            <code>defaultCharset</code>如果字符集未呈现或不可 
+            <code>defaultCharset</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharset-java.lang.CharSequence-java.nio.charset.Charset-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharset</h4> <pre>public static&nbsp;java.nio.charset.Charset&nbsp;getCharset(java.lang.CharSequence&nbsp;contentTypeValue,
+                                                  java.nio.charset.Charset&nbsp;defaultCharset)</pre> 
+          <div class="block">
+            从Content-Type标头值中获取字符集。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>contentTypeValue</code> - 要解析的Content-Type标头值 
+           </dd> 
+           <dd> 
+            <code>defaultCharset</code> - 在空白，不正确或不包含必需的部分标题值的情况下使用的结果 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             来自消息的Content-Type头部的字符集或 
+            <code>defaultCharset</code>如果字符集未呈现或不可 
+            <code>defaultCharset</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharsetAsString-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharsetAsString</h4> <pre>@Deprecated
+public static&nbsp;java.lang.CharSequence&nbsp;getCharsetAsString(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="HttpUtil.html#getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html#getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-"><code>getCharsetAsSequence(HttpMessage)</code></a></span></span> 
+          </div> 
+          <div class="block"> 
+           <span>从消息的Content-Type头部获取字符集作为字符序列。</span> 
+           <span>很多网站/可能的客户端都有charset =“CHARSET”，例如charset =“utf-8”。</span> 
+           <span>或“utf8”而不是“utf-8”这不符合标准，但此方法提供了在代码中手动捕获所需错误的功能</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 从中获取Content-Type标头的实体 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>CharSequence</code>带有来自消息内容类型头部的字符集或 
+            <code>null</code>如果未提供字符集 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharsetAsSequence-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharsetAsSequence</h4> <pre>public static&nbsp;java.lang.CharSequence&nbsp;getCharsetAsSequence(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block"> 
+           <span>从消息的Content-Type头部获取字符集作为字符序列。</span> 
+           <span>很多网站/可能的客户端都有charset =“CHARSET”，例如charset =“utf-8”。</span> 
+           <span>或“utf8”而不是“utf-8”这不符合标准，但此方法提供了在代码中手动捕获所需错误的功能</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>CharSequence</code>带有来自消息Content-Type头部的字符集或 
+            <code>null</code>如果未提供字符集 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCharsetAsSequence-java.lang.CharSequence-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCharsetAsSequence</h4> <pre>public static&nbsp;java.lang.CharSequence&nbsp;getCharsetAsSequence(java.lang.CharSequence&nbsp;contentTypeValue)</pre> 
+          <div class="block"> 
+           <span>从Content-Type头值中获取字符集作为字符序列。</span> 
+           <span>很多网站/可能的客户端都有charset =“CHARSET”，例如charset =“utf-8”。</span> 
+           <span>或“utf8”而不是“utf-8”这不符合标准，但此方法提供了在代码中手动捕获所需错误的功能</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>contentTypeValue</code> - 要解析的Content-Type标头值 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>CharSequence</code>带有来自消息内容类型标头的字符集或 
+            <code>null</code>如果未提供字符集 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.NullPointerException</code> - 如果是 
+            <code>contentTypeValue == null</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getMimeType-io.netty.handler.codec.http.HttpMessage-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getMimeType</h4> <pre>public static&nbsp;java.lang.CharSequence&nbsp;getMimeType(<a href="HttpMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpMessage.html" title="interface in io.netty.handler.codec.http">HttpMessage</a>&nbsp;message)</pre> 
+          <div class="block">
+            从消息的Content-Type头中作为char序列获取MIME类型部分。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>message</code> - 从中获取Content-Type标头的实体 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>MIME类型为<code>CharSequence</code>从消息的Content-Type首部或<code>null</code>如果此标头的Content-Type头或MIME类型部分不呈现</span> 
+            <p></p> 
+            <span>将返回“content-type：text / html; charset = utf-8” - “text / html”</span> 
+            <br> 
+            <span>将返回“content-type：text / html” - “text / html”</span> 
+            <br> 
+            <span>“content-type：”或否标题 - <code>null</code>我们将被退回</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getMimeType-java.lang.CharSequence-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>getMimeType</h4> <pre>public static&nbsp;java.lang.CharSequence&nbsp;getMimeType(java.lang.CharSequence&nbsp;contentTypeValue)</pre> 
+          <div class="block">
+            从Content-Type头值中取出MIME类型部分作为字符序列。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>contentTypeValue</code> - 要解析的Content-Type标头值 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>MIME类型为<code>CharSequence</code>从消息的Content-Type首部或<code>null</code>如果此标头的Content-Type头或MIME类型部分不呈现</span> 
+            <p></p> 
+            <span>将返回“content-type：text / html; charset = utf-8” - “text / html”</span> 
+            <br> 
+            <span>将返回“content-type：text / html” - “text / html”</span> 
+            <br> 
+            <span>“content-type： <code>null</code> - <code>null</code>我们会被退回</span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.NullPointerException</code> - 如果是 
+            <code>contentTypeValue == null</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/HttpUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/class-use/HttpUtil.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="HttpStatusClass.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpStatusClass.html" title="enum in io.netty.handler.codec.http"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="HttpVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpVersion.html" title="class in io.netty.handler.codec.http"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http-HttpUtil.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http/HttpUtil.html" target="_top">框架</a></li> 
+    <li><a href="HttpUtil.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpUtil.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Http2Exception (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.http2.Http2Exception class"> 
+  <meta name="keywords" content="error()"> 
+  <meta name="keywords" content="shutdownHint()"> 
+  <meta name="keywords" content="connectionError()"> 
+  <meta name="keywords" content="closedStreamError()"> 
+  <meta name="keywords" content="streamError()"> 
+  <meta name="keywords" content="headerListSizeError()"> 
+  <meta name="keywords" content="isStreamError()"> 
+  <meta name="keywords" content="streamId()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Http2Exception (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":9,"i1":9,"i2":9,"i3":10,"i4":9,"i5":9,"i6":10,"i7":9,"i8":9,"i9":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2Exception.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2EventAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2EventAdapter.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2Exception.ClosedStreamCreationException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ClosedStreamCreationException.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2Exception.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2Exception.html" target="_top">框架</a></li> 
+    <li><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.http2 
+   </div> 
+   <h2 title="Class Http2Exception" class="title">Class Http2Exception</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>java.lang.Throwable</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>java.lang.Exception</li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.handler.codec.http2.Http2Exception</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd>
+         的java.io.Serializable 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="Http2Exception.ClosedStreamCreationException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ClosedStreamCreationException.html" title="类在io.netty.handler.codec.http2中">Http2Exception.ClosedStreamCreationException</a> ， <a href="Http2Exception.CompositeStreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.CompositeStreamException.html" title="类在io.netty.handler.codec.http2中">Http2Exception.CompositeStreamException</a> ， <a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中">Http2Exception.StreamException</a> ， <a href="Http2NoMoreStreamIdsException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2NoMoreStreamIdsException.html" title="类在io.netty.handler.codec.http2中">Http2NoMoreStreamIdsException</a> ， <a href="StreamBufferingEncoder.Http2ChannelClosedException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/StreamBufferingEncoder.Http2ChannelClosedException.html" title="类在io.netty.handler.codec.http2中">StreamBufferingEncoder.Http2ChannelClosedException</a> ， <a href="StreamBufferingEncoder.Http2GoAwayException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/StreamBufferingEncoder.Http2GoAwayException.html" title="类在io.netty.handler.codec.http2中">StreamBufferingEncoder.Http2GoAwayException</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public class <span class="typeNameLabel">Http2Exception</span>
+extends java.lang.Exception</pre> 
+      <div class="block">
+        遇到HTTP / 2错误时抛出异常。 
+      </div> 
+      <dl> 
+       <dt> 
+        <span class="seeLabel">另请参见：</span> 
+       </dt> 
+       <dd> 
+        <a href="../../../../../serialized-form.html#io.netty.handler.codec.http2.Http2Exception" tppabs="http://netty.io/4.1/api/serialized-form.html#io.netty.handler.codec.http2.Http2Exception">Serialized Form</a> 
+       </dd> 
+      </dl> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation"> 
+         <caption> 
+          <span>Nested Classes</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Class and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static class&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.ClosedStreamCreationException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ClosedStreamCreationException.html" title="class in io.netty.handler.codec.http2">Http2Exception.ClosedStreamCreationException</a></span></code> 
+            <div class="block">
+              当流创建尝试失败时使用，但可能是因为流先前已关闭。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static class&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.CompositeStreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.CompositeStreamException.html" title="class in io.netty.handler.codec.http2">Http2Exception.CompositeStreamException</a></span></code> 
+            <div class="block">
+              提供使用一个throw语句处理多个流异常的能力。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static class&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.HeaderListSizeException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.HeaderListSizeException.html" title="class in io.netty.handler.codec.http2">Http2Exception.HeaderListSizeException</a></span></code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static class&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a></span></code> 
+            <div class="block">
+              提供关于是否合理关闭的提示，应执行什么类型的关闭。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static class&nbsp;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="class in io.netty.handler.codec.http2">Http2Exception.StreamException</a></span></code> 
+            <div class="block">
+              表示可以隔离到单个流的异常（与整个连接相反）。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-">Http2Exception</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-">Http2Exception</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, <a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-">Http2Exception</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;message)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-">Http2Exception</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;message, <a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Throwable-">Http2Exception</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;message, java.lang.Throwable&nbsp;cause)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Throwable-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Throwable-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-">Http2Exception</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;message, java.lang.Throwable&nbsp;cause, <a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>static <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#closedStreamError-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#closedStreamError-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-">closedStreamError</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;fmt, java.lang.Object...&nbsp;args)</code> 
+            <div class="block">
+              如果发生的错误不能隔离到单个流中，而是应用于整个连接，请使用此选项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#connectionError-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#connectionError-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-">connectionError</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;fmt, java.lang.Object...&nbsp;args)</code> 
+            <div class="block">
+              如果发生的错误不能隔离到单个流中，而是应用于整个连接，请使用此选项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>static <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#connectionError-io.netty.handler.codec.http2.Http2Error-java.lang.Throwable-java.lang.String-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#connectionError-io.netty.handler.codec.http2.Http2Error-java.lang.Throwable-java.lang.String-java.lang.Object...-">connectionError</a></span>(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.Throwable&nbsp;cause, java.lang.String&nbsp;fmt, java.lang.Object...&nbsp;args)</code> 
+            <div class="block">
+              如果发生的错误不能隔离到单个流中，而是应用于整个连接，请使用此选项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#error--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#error--">error</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>static <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#headerListSizeError-int-io.netty.handler.codec.http2.Http2Error-boolean-java.lang.String-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#headerListSizeError-int-io.netty.handler.codec.http2.Http2Error-boolean-java.lang.String-java.lang.Object...-">headerListSizeError</a></span>(int&nbsp;id, <a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, boolean&nbsp;onDecode, java.lang.String&nbsp;fmt, java.lang.Object...&nbsp;args)</code> 
+            <div class="block">
+              由于无法解码超过最大标题大小列表的标题而导致的特定流错误。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#isStreamError-io.netty.handler.codec.http2.Http2Exception-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#isStreamError-io.netty.handler.codec.http2.Http2Exception-">isStreamError</a></span>(<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;e)</code> 
+            <div class="block">
+              检查一个异常是否被隔离到单个流或整个连接。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#shutdownHint--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#shutdownHint--">shutdownHint</a></span>()</code> 
+            <div class="block">
+              提供关于应执行什么类型的关闭的提示。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#streamError-int-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#streamError-int-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-">streamError</a></span>(int&nbsp;id, <a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.String&nbsp;fmt, java.lang.Object...&nbsp;args)</code> 
+            <div class="block">
+              如果发生可以隔离到单个流的错误，请使用此选项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>static <a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#streamError-int-io.netty.handler.codec.http2.Http2Error-java.lang.Throwable-java.lang.String-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#streamError-int-io.netty.handler.codec.http2.Http2Error-java.lang.Throwable-java.lang.String-java.lang.Object...-">streamError</a></span>(int&nbsp;id, <a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error, java.lang.Throwable&nbsp;cause, java.lang.String&nbsp;fmt, java.lang.Object...&nbsp;args)</code> 
+            <div class="block">
+              如果发生可以隔离到单个流的错误，请使用此选项。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Http2Exception.html#streamId-io.netty.handler.codec.http2.Http2Exception-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html#streamId-io.netty.handler.codec.http2.Http2Exception-">streamId</a></span>(<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;e)</code> 
+            <div class="block">
+              获取与异常关联的流ID。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Throwable"> </a> <h3>Methods inherited from class&nbsp;java.lang.Throwable</h3> <code>addSuppressed, fillInStackTrace, getCause, getLocalizedMessage, getMessage, getStackTrace, getSuppressed, initCause, printStackTrace, printStackTrace, printStackTrace, setStackTrace, toString</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="Http2Exception-io.netty.handler.codec.http2.Http2Error-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Http2Exception</h4> <pre>public&nbsp;Http2Exception(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error)</pre> </li> 
+        </ul> <a name="Http2Exception-io.netty.handler.codec.http2.Http2Error-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Http2Exception</h4> <pre>public&nbsp;Http2Exception(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                      <a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint)</pre> </li> 
+        </ul> <a name="Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Http2Exception</h4> <pre>public&nbsp;Http2Exception(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                      java.lang.String&nbsp;message)</pre> </li> 
+        </ul> <a name="Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Http2Exception</h4> <pre>public&nbsp;Http2Exception(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                      java.lang.String&nbsp;message,
+                      <a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint)</pre> </li> 
+        </ul> <a name="Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Throwable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>Http2Exception</h4> <pre>public&nbsp;Http2Exception(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                      java.lang.String&nbsp;message,
+                      java.lang.Throwable&nbsp;cause)</pre> </li> 
+        </ul> <a name="Http2Exception-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Throwable-io.netty.handler.codec.http2.Http2Exception.ShutdownHint-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>Http2Exception</h4> <pre>public&nbsp;Http2Exception(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                      java.lang.String&nbsp;message,
+                      java.lang.Throwable&nbsp;cause,
+                      <a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="error--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>error</h4> <pre>public&nbsp;<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error()</pre> </li> 
+        </ul> <a name="shutdownHint--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>shutdownHint</h4> <pre>public&nbsp;<a href="Http2Exception.ShutdownHint.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ShutdownHint.html" title="enum in io.netty.handler.codec.http2">Http2Exception.ShutdownHint</a>&nbsp;shutdownHint()</pre> 
+          <div class="block"> 
+           <span>提供关于应执行什么类型的关闭的提示。</span> 
+           <span>注意这个提示可能会被忽略。</span> 
+          </div> </li> 
+        </ul> <a name="connectionError-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connectionError</h4> <pre>public static&nbsp;<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;connectionError(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                                             java.lang.String&nbsp;fmt,
+                                             java.lang.Object...&nbsp;args)</pre> 
+          <div class="block">
+            如果发生的错误不能隔离到单个流中，而是应用于整个连接，请使用此选项。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>error</code> - HTTP / 2规范定义的错误类型。 
+           </dd> 
+           <dd> 
+            <code>fmt</code> - 带附加调试数据的内容和格式的字符串。 
+           </dd> 
+           <dd> 
+            <code>args</code> - 符合 
+            <code>fmt</code>定义格式的 
+            <code>fmt</code> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             可以转换为HTTP / 2错误的异常。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="connectionError-io.netty.handler.codec.http2.Http2Error-java.lang.Throwable-java.lang.String-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connectionError</h4> <pre>public static&nbsp;<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;connectionError(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                                             java.lang.Throwable&nbsp;cause,
+                                             java.lang.String&nbsp;fmt,
+                                             java.lang.Object...&nbsp;args)</pre> 
+          <div class="block">
+            如果发生的错误不能隔离到单个流中，而是应用于整个连接，请使用此选项。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>error</code> - HTTP / 2规范定义的错误类型。 
+           </dd> 
+           <dd> 
+            <code>cause</code> - 导致错误的对象。 
+           </dd> 
+           <dd> 
+            <code>fmt</code> - 具有附加调试数据的内容和格式的字符串。 
+           </dd> 
+           <dd> 
+            <code>args</code> - 符合 
+            <code>fmt</code>定义格式的 
+            <code>fmt</code> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             可以转换为HTTP / 2错误的异常。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="closedStreamError-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>closedStreamError</h4> <pre>public static&nbsp;<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;closedStreamError(<a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                                               java.lang.String&nbsp;fmt,
+                                               java.lang.Object...&nbsp;args)</pre> 
+          <div class="block">
+            如果发生的错误不能隔离到单个流中，而是应用于整个连接，请使用此选项。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>error</code> - HTTP / 2规范定义的错误类型。 
+           </dd> 
+           <dd> 
+            <code>fmt</code> - 具有附加调试数据的内容和格式的字符串。 
+           </dd> 
+           <dd> 
+            <code>args</code> - 符合 
+            <code>fmt</code>定义格式的 
+            <code>fmt</code> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             可以转换为HTTP / 2错误的异常。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="streamError-int-io.netty.handler.codec.http2.Http2Error-java.lang.String-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>streamError</h4> <pre>public static&nbsp;<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;streamError(int&nbsp;id,
+                                         <a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                                         java.lang.String&nbsp;fmt,
+                                         java.lang.Object...&nbsp;args)</pre> 
+          <div class="block"> 
+           <span>如果发生可以隔离到单个流的错误，请使用此选项。</span> 
+           <span>如果<code>id</code>不是<a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code></a>那么<a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.StreamException</code></a>将被退回。</span> 
+           <span>否则，错误将被视为连接错误，并返回<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>id</code> - 错误 
+            <code>id</code>的流ID。 
+           </dd> 
+           <dd> 
+            <code>error</code> - HTTP / 2规范定义的错误类型。 
+           </dd> 
+           <dd> 
+            <code>fmt</code> - 带附加调试数据的内容和格式的字符串。 
+           </dd> 
+           <dd> 
+            <code>args</code> - 符合 
+            <code>fmt</code>定义格式的 
+            <code>fmt</code> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>如果<code>id</code>不是<a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code>，</a>则返回<a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.StreamException</code></a> 。</span> 
+            <span>否则，错误将被视为连接错误，并返回<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="streamError-int-io.netty.handler.codec.http2.Http2Error-java.lang.Throwable-java.lang.String-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>streamError</h4> <pre>public static&nbsp;<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;streamError(int&nbsp;id,
+                                         <a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                                         java.lang.Throwable&nbsp;cause,
+                                         java.lang.String&nbsp;fmt,
+                                         java.lang.Object...&nbsp;args)</pre> 
+          <div class="block"> 
+           <span>如果发生可以隔离到单个流的错误，请使用此选项。</span> 
+           <span>如果<code>id</code>不是<a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code>，</a>则返回<a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.StreamException</code></a> 。</span> 
+           <span>否则，错误将被视为连接错误，并返回<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>id</code> - 错误 
+            <code>id</code>的流ID。 
+           </dd> 
+           <dd> 
+            <code>error</code> - HTTP / 2规范定义的错误类型。 
+           </dd> 
+           <dd> 
+            <code>cause</code> - 导致错误的对象。 
+           </dd> 
+           <dd> 
+            <code>fmt</code> - 带附加调试数据的内容和格式的字符串。 
+           </dd> 
+           <dd> 
+            <code>args</code> - 符合 
+            <code>fmt</code>定义格式的 
+            <code>fmt</code> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>如果<code>id</code>不是<a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code>，</a>那么将返回一个<a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.StreamException</code></a> 。</span> 
+            <span>否则，错误将被视为连接错误，并返回<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="headerListSizeError-int-io.netty.handler.codec.http2.Http2Error-boolean-java.lang.String-java.lang.Object...-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>headerListSizeError</h4> <pre>public static&nbsp;<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;headerListSizeError(int&nbsp;id,
+                                                 <a href="Http2Error.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Error.html" title="enum in io.netty.handler.codec.http2">Http2Error</a>&nbsp;error,
+                                                 boolean&nbsp;onDecode,
+                                                 java.lang.String&nbsp;fmt,
+                                                 java.lang.Object...&nbsp;args)</pre> 
+          <div class="block"> 
+           <span>由于无法解码超过最大标题大小列表的标题而导致的特定流错误。</span> 
+           <span>如果<code>id</code>不是<a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code>，</a>则返回<a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.StreamException</code></a> 。</span> 
+           <span>否则，该错误将被视为连接错误，并返回<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>id</code> - 错误 
+            <code>id</code>的流ID。 
+           </dd> 
+           <dd> 
+            <code>error</code> - HTTP / 2规范定义的错误类型。 
+           </dd> 
+           <dd> 
+            <code>onDecode</code> - 解码标题时是否捕获到此错误 
+           </dd> 
+           <dd> 
+            <code>fmt</code> - 具有附加调试数据的内容和格式的字符串。 
+           </dd> 
+           <dd> 
+            <code>args</code> - 符合 
+            <code>fmt</code>定义格式的 
+            <code>fmt</code> 。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>如果<code>id</code>不是<a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code>，</a>则返回<a href="Http2Exception.HeaderListSizeException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.HeaderListSizeException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.HeaderListSizeException</code></a> 。</span> 
+            <span>否则，错误将被视为连接错误，并返回<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isStreamError-io.netty.handler.codec.http2.Http2Exception-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isStreamError</h4> <pre>public static&nbsp;boolean&nbsp;isStreamError(<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;e)</pre> 
+          <div class="block">
+            检查一个异常是否被隔离到单个流或整个连接。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>e</code> - 要检查的例外情况。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>true</code>如果<code>e</code>是一个实例<a href="Http2Exception.StreamException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.StreamException.html" title="类在io.netty.handler.codec.http2中"><code>Http2Exception.StreamException</code></a> 。</span> 
+            <span><code>false</code>否则。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="streamId-io.netty.handler.codec.http2.Http2Exception-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>streamId</h4> <pre>public static&nbsp;int&nbsp;streamId(<a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" title="class in io.netty.handler.codec.http2">Http2Exception</a>&nbsp;e)</pre> 
+          <div class="block">
+            获取与异常关联的流ID。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>e</code> - 获取流ID的例外情况。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="Http2CodecUtil.html#CONNECTION_STREAM_ID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2CodecUtil.html#CONNECTION_STREAM_ID"><code>Http2CodecUtil.CONNECTION_STREAM_ID</code></a>如果<code>e</code>是连接错误。</span> 
+            <span>否则，与流错误关联的流标识。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/class-use/Http2Exception.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="Http2EventAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2EventAdapter.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Http2Exception.ClosedStreamCreationException.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.ClosedStreamCreationException.html" title="class in io.netty.handler.codec.http2"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-http2-Http2Exception.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/http2/Http2Exception.html" target="_top">框架</a></li> 
+    <li><a href="Http2Exception.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2Exception.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/http2/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

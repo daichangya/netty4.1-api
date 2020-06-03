@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>EpollTcpInfo (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.epoll.EpollTcpInfo class"> 
+  <meta name="keywords" content="state()"> 
+  <meta name="keywords" content="caState()"> 
+  <meta name="keywords" content="retransmits()"> 
+  <meta name="keywords" content="probes()"> 
+  <meta name="keywords" content="backoff()"> 
+  <meta name="keywords" content="options()"> 
+  <meta name="keywords" content="sndWscale()"> 
+  <meta name="keywords" content="rcvWscale()"> 
+  <meta name="keywords" content="rto()"> 
+  <meta name="keywords" content="ato()"> 
+  <meta name="keywords" content="sndMss()"> 
+  <meta name="keywords" content="rcvMss()"> 
+  <meta name="keywords" content="unacked()"> 
+  <meta name="keywords" content="sacked()"> 
+  <meta name="keywords" content="lost()"> 
+  <meta name="keywords" content="retrans()"> 
+  <meta name="keywords" content="fackets()"> 
+  <meta name="keywords" content="lastDataSent()"> 
+  <meta name="keywords" content="lastAckSent()"> 
+  <meta name="keywords" content="lastDataRecv()"> 
+  <meta name="keywords" content="lastAckRecv()"> 
+  <meta name="keywords" content="pmtu()"> 
+  <meta name="keywords" content="rcvSsthresh()"> 
+  <meta name="keywords" content="rtt()"> 
+  <meta name="keywords" content="rttvar()"> 
+  <meta name="keywords" content="sndSsthresh()"> 
+  <meta name="keywords" content="sndCwnd()"> 
+  <meta name="keywords" content="advmss()"> 
+  <meta name="keywords" content="reordering()"> 
+  <meta name="keywords" content="rcvRtt()"> 
+  <meta name="keywords" content="rcvSpace()"> 
+  <meta name="keywords" content="totalRetrans()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="EpollTcpInfo (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/EpollTcpInfo.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/class-use/EpollTcpInfo.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="EpollSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollSocketChannelConfig.html" title="class in io.netty.channel.epoll"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Native.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/Native.html" title="class in io.netty.channel.epoll"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-epoll-EpollTcpInfo.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/epoll/EpollTcpInfo.html" target="_top">框架</a></li> 
+    <li><a href="EpollTcpInfo.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.epoll 
+   </div> 
+   <h2 title="Class EpollTcpInfo" class="title">Class EpollTcpInfo</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.epoll.EpollTcpInfo</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">EpollTcpInfo</span>
+extends java.lang.Object</pre> 
+      <div class="block"> 
+       <p> struct tcp_info { __u8 tcpi_state; __u8 tcpi_ca_state; __u8 tcpi_retransmits; __u8 tcpi_probes; __u8 tcpi_backoff; __u8 tcpi_options; __u8 tcpi_snd_wscale : 4, tcpi_rcv_wscale : 4; __u32 tcpi_rto; __u32 tcpi_ato; __u32 tcpi_snd_mss; __u32 tcpi_rcv_mss; __u32 tcpi_unacked; __u32 tcpi_sacked; __u32 tcpi_lost; __u32 tcpi_retrans; __u32 tcpi_fackets; __u32 tcpi_last_data_sent; __u32 tcpi_last_ack_sent; __u32 tcpi_last_data_recv; __u32 tcpi_last_ack_recv; __u32 tcpi_pmtu; __u32 tcpi_rcv_ssthresh; __u32 tcpi_rtt; __u32 tcpi_rttvar; __u32 tcpi_snd_ssthresh; __u32 tcpi_snd_cwnd; __u32 tcpi_advmss; __u32 tcpi_reordering; __u32 tcpi_rcv_rtt; __u32 tcpi_rcv_space; __u32 tcpi_total_retrans; }; </p> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#EpollTcpInfo--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#EpollTcpInfo--">EpollTcpInfo</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#advmss--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#advmss--">advmss</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#ato--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#ato--">ato</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#backoff--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#backoff--">backoff</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#caState--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#caState--">caState</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#fackets--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#fackets--">fackets</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#lastAckRecv--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#lastAckRecv--">lastAckRecv</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#lastAckSent--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#lastAckSent--">lastAckSent</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#lastDataRecv--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#lastDataRecv--">lastDataRecv</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#lastDataSent--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#lastDataSent--">lastDataSent</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#lost--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#lost--">lost</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#options--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#options--">options</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#pmtu--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#pmtu--">pmtu</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#probes--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#probes--">probes</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rcvMss--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rcvMss--">rcvMss</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rcvRtt--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rcvRtt--">rcvRtt</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rcvSpace--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rcvSpace--">rcvSpace</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rcvSsthresh--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rcvSsthresh--">rcvSsthresh</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rcvWscale--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rcvWscale--">rcvWscale</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#reordering--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#reordering--">reordering</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#retrans--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#retrans--">retrans</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#retransmits--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#retransmits--">retransmits</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rto--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rto--">rto</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rtt--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rtt--">rtt</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#rttvar--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#rttvar--">rttvar</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#sacked--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#sacked--">sacked</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#sndCwnd--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#sndCwnd--">sndCwnd</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#sndMss--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#sndMss--">sndMss</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#sndSsthresh--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#sndSsthresh--">sndSsthresh</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#sndWscale--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#sndWscale--">sndWscale</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i29" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#state--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#state--">state</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i30" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#totalRetrans--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#totalRetrans--">totalRetrans</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i31" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="EpollTcpInfo.html#unacked--" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html#unacked--">unacked</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="EpollTcpInfo--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>EpollTcpInfo</h4> <pre>public&nbsp;EpollTcpInfo()</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="state--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>state</h4> <pre>public&nbsp;int&nbsp;state()</pre> </li> 
+        </ul> <a name="caState--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>caState</h4> <pre>public&nbsp;int&nbsp;caState()</pre> </li> 
+        </ul> <a name="retransmits--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retransmits</h4> <pre>public&nbsp;int&nbsp;retransmits()</pre> </li> 
+        </ul> <a name="probes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>probes</h4> <pre>public&nbsp;int&nbsp;probes()</pre> </li> 
+        </ul> <a name="backoff--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>backoff</h4> <pre>public&nbsp;int&nbsp;backoff()</pre> </li> 
+        </ul> <a name="options--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>options</h4> <pre>public&nbsp;int&nbsp;options()</pre> </li> 
+        </ul> <a name="sndWscale--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sndWscale</h4> <pre>public&nbsp;int&nbsp;sndWscale()</pre> </li> 
+        </ul> <a name="rcvWscale--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rcvWscale</h4> <pre>public&nbsp;int&nbsp;rcvWscale()</pre> </li> 
+        </ul> <a name="rto--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rto</h4> <pre>public&nbsp;long&nbsp;rto()</pre> </li> 
+        </ul> <a name="ato--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ato</h4> <pre>public&nbsp;long&nbsp;ato()</pre> </li> 
+        </ul> <a name="sndMss--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sndMss</h4> <pre>public&nbsp;long&nbsp;sndMss()</pre> </li> 
+        </ul> <a name="rcvMss--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rcvMss</h4> <pre>public&nbsp;long&nbsp;rcvMss()</pre> </li> 
+        </ul> <a name="unacked--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>unacked</h4> <pre>public&nbsp;long&nbsp;unacked()</pre> </li> 
+        </ul> <a name="sacked--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sacked</h4> <pre>public&nbsp;long&nbsp;sacked()</pre> </li> 
+        </ul> <a name="lost--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lost</h4> <pre>public&nbsp;long&nbsp;lost()</pre> </li> 
+        </ul> <a name="retrans--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retrans</h4> <pre>public&nbsp;long&nbsp;retrans()</pre> </li> 
+        </ul> <a name="fackets--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>fackets</h4> <pre>public&nbsp;long&nbsp;fackets()</pre> </li> 
+        </ul> <a name="lastDataSent--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lastDataSent</h4> <pre>public&nbsp;long&nbsp;lastDataSent()</pre> </li> 
+        </ul> <a name="lastAckSent--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lastAckSent</h4> <pre>public&nbsp;long&nbsp;lastAckSent()</pre> </li> 
+        </ul> <a name="lastDataRecv--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lastDataRecv</h4> <pre>public&nbsp;long&nbsp;lastDataRecv()</pre> </li> 
+        </ul> <a name="lastAckRecv--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>lastAckRecv</h4> <pre>public&nbsp;long&nbsp;lastAckRecv()</pre> </li> 
+        </ul> <a name="pmtu--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pmtu</h4> <pre>public&nbsp;long&nbsp;pmtu()</pre> </li> 
+        </ul> <a name="rcvSsthresh--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rcvSsthresh</h4> <pre>public&nbsp;long&nbsp;rcvSsthresh()</pre> </li> 
+        </ul> <a name="rtt--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rtt</h4> <pre>public&nbsp;long&nbsp;rtt()</pre> </li> 
+        </ul> <a name="rttvar--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rttvar</h4> <pre>public&nbsp;long&nbsp;rttvar()</pre> </li> 
+        </ul> <a name="sndSsthresh--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sndSsthresh</h4> <pre>public&nbsp;long&nbsp;sndSsthresh()</pre> </li> 
+        </ul> <a name="sndCwnd--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sndCwnd</h4> <pre>public&nbsp;long&nbsp;sndCwnd()</pre> </li> 
+        </ul> <a name="advmss--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>advmss</h4> <pre>public&nbsp;long&nbsp;advmss()</pre> </li> 
+        </ul> <a name="reordering--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>reordering</h4> <pre>public&nbsp;long&nbsp;reordering()</pre> </li> 
+        </ul> <a name="rcvRtt--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rcvRtt</h4> <pre>public&nbsp;long&nbsp;rcvRtt()</pre> </li> 
+        </ul> <a name="rcvSpace--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rcvSpace</h4> <pre>public&nbsp;long&nbsp;rcvSpace()</pre> </li> 
+        </ul> <a name="totalRetrans--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>totalRetrans</h4> <pre>public&nbsp;long&nbsp;totalRetrans()</pre> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/EpollTcpInfo.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/class-use/EpollTcpInfo.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="EpollSocketChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollSocketChannelConfig.html" title="class in io.netty.channel.epoll"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="Native.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/Native.html" title="class in io.netty.channel.epoll"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-epoll-EpollTcpInfo.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/epoll/EpollTcpInfo.html" target="_top">框架</a></li> 
+    <li><a href="EpollTcpInfo.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollTcpInfo.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/epoll/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

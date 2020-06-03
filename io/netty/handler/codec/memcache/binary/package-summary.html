@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.handler.codec.memcache.binary (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.memcache.binary package"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.handler.codec.memcache.binary (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../../mqtt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/mqtt/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-memcache-binary-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/memcache/binary/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <p>@UnstableApi </p> 
+   <h1 title="Package" class="title">Package&nbsp;io.netty.handler.codec.memcache.binary</h1> 
+   <div class="docSummary"> 
+    <div class="block">
+      Memcache二进制协议的实现和接口。 
+    </div> 
+   </div> 
+   <p>See:&nbsp;<a href="#package.description">描述</a></p> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Interface Summary table, listing interfaces, and an explanation"> 
+      <caption> 
+       <span>接口摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">接口</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>定义二进制Memcache消息的接口，为<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheRequest</code></a>和<a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheResponse</code></a>提供公共属性。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequest</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>代表完整的<a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheRequest</code></a> ，其中包含标题和可选的关键字和附加内容。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheResponse</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>代表完整的<a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheResponse</code></a> ，其中包含标题和可选的关键字和附加内容。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="FullBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/FullBinaryMemcacheRequest.html" title="interface in io.netty.handler.codec.memcache.binary">FullBinaryMemcacheRequest</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheRequest</code></a>也包含内容。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="FullBinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/FullBinaryMemcacheResponse.html" title="interface in io.netty.handler.codec.memcache.binary">FullBinaryMemcacheResponse</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>A <a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheResponse</code></a>也包含内容。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Class Summary table, listing classes, and an explanation"> 
+      <caption> 
+       <span>类摘要</span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">Class</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractBinaryMemcacheDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheDecoder.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheDecoder</a>&lt;M extends <a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a>&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheRequest</code></a>和<a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheResponse</code>的</a>解码器。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="AbstractBinaryMemcacheEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheEncoder.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheEncoder</a>&lt;M extends <a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="interface in io.netty.handler.codec.memcache.binary">BinaryMemcacheMessage</a>&gt;</td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>将二进制内存缓存消息编码为字节的<a href="../../MessageToByteEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToByteEncoder.html" title="class在io.netty.handler.codec中"><code>MessageToByteEncoder</code></a> 。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="AbstractBinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheMessage.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheMessage</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheMessage</code>的</a>默认实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheClientCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheClientCodec.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheClientCodec</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           结合了正确编码器和解码器的客户端编解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheObjectAggregator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheObjectAggregator.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheObjectAggregator</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           memcache二进制协议的对象聚合器。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheOpcodes.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheOpcodes.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheOpcodes</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>代表<a href="BinaryMemcacheMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheMessage.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheMessage</code></a>中可能出现的所有操作码。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheRequestDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequestDecoder.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequestDecoder</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           负责解码请求特定报头的解码器部分。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheRequestEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequestEncoder.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequestEncoder</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           负责编码请求标头的编码器部分。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheResponseDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponseDecoder.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheResponseDecoder</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           负责解码响应头的解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponseEncoder.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheResponseEncoder</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           负责编码响应头的编码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheResponseStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponseStatus.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheResponseStatus</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span>包含一个<a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheResponse</code></a>可以返回的所有可能的状态值。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="BinaryMemcacheServerCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheServerCodec.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheServerCodec</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           完整的服务器编解码器，结合了正确的编码器和解码器。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary">DefaultBinaryMemcacheRequest</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="BinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheRequest</code></a>的默认实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultBinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultBinaryMemcacheResponse.html" title="class in io.netty.handler.codec.memcache.binary">DefaultBinaryMemcacheResponse</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="BinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>BinaryMemcacheResponse</code></a>的默认实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="DefaultFullBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultFullBinaryMemcacheRequest.html" title="class in io.netty.handler.codec.memcache.binary">DefaultFullBinaryMemcacheRequest</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="FullBinaryMemcacheRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/FullBinaryMemcacheRequest.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>FullBinaryMemcacheRequest</code></a>的默认实现。</span> 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="DefaultFullBinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/DefaultFullBinaryMemcacheResponse.html" title="class in io.netty.handler.codec.memcache.binary">DefaultFullBinaryMemcacheResponse</a></td> 
+        <td class="colLast"> 
+         <div class="block"> 
+          <span><a href="FullBinaryMemcacheResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/FullBinaryMemcacheResponse.html" title="io.netty.handler.codec.memcache.binary中的接口"><code>FullBinaryMemcacheResponse</code></a>的默认实现。</span> 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+   </ul> 
+   <a name="package.description"> </a> 
+   <h2 title="Package io.netty.handler.codec.memcache.binary Description">Package io.netty.handler.codec.memcache.binary Description</h2> 
+   <div class="block">
+     Memcache二进制协议的实现和接口。 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li class="navBarCell1Rev">软件包</li> 
+    <li>Class</li> 
+    <li><a href="package-use.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-use.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-tree.html">树</a></li> 
+    <li><a href="../../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/package-summary.html">Prev&nbsp;Package</a></li> 
+    <li><a href="../../mqtt/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/mqtt/package-summary.html">Next&nbsp;Package</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../../index.html-io-netty-handler-codec-memcache-binary-package-summary.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/memcache/binary/package-summary.html" target="_top">框架</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/package-summary.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

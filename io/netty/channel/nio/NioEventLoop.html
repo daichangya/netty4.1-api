@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>NioEventLoop (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.nio.NioEventLoop class"> 
+  <meta name="keywords" content="selectorProvider()"> 
+  <meta name="keywords" content="newTaskQueue()"> 
+  <meta name="keywords" content="pendingTasks()"> 
+  <meta name="keywords" content="register()"> 
+  <meta name="keywords" content="getIoRatio()"> 
+  <meta name="keywords" content="setIoRatio()"> 
+  <meta name="keywords" content="rebuildSelector()"> 
+  <meta name="keywords" content="run()"> 
+  <meta name="keywords" content="cleanup()"> 
+  <meta name="keywords" content="pollTask()"> 
+  <meta name="keywords" content="wakeup()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="NioEventLoop (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/NioEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/class-use/NioEventLoop.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="NioEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoopGroup.html" title="class in io.netty.channel.nio"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-nio-NioEventLoop.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/nio/NioEventLoop.html" target="_top">框架</a></li> 
+    <li><a href="NioEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.channel.SingleThreadEventLoop">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.nio 
+   </div> 
+   <h2 title="Class NioEventLoop" class="title">Class NioEventLoop</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>java.util.concurrent.AbstractExecutorService</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="../../util/concurrent/AbstractEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.AbstractEventExecutor</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="../../util/concurrent/AbstractScheduledEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.AbstractScheduledEventExecutor</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li><a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.SingleThreadEventExecutor</a></li> 
+            <li> 
+             <ul class="inheritance"> 
+              <li><a href="../SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="class in io.netty.channel">io.netty.channel.SingleThreadEventLoop</a></li> 
+              <li> 
+               <ul class="inheritance"> 
+                <li>io.netty.channel.nio.NioEventLoop</li> 
+               </ul> </li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口">EventLoop</a> ， <a href="../EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口">EventLoopGroup</a> ， <a href="../../util/concurrent/EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口">EventExecutor</a> ， <a href="../../util/concurrent/EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">EventExecutorGroup</a> ， <a href="../../util/concurrent/OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="io.netty.util.concurrent中的接口">OrderedEventExecutor</a> ，java.lang.Iterable &lt; <a href="../../util/concurrent/EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口">EventExecutor</a> &gt;，java.util.concurrent.Executor，java.util.concurrent.ExecutorService中，java.util.concurrent.ScheduledExecutorService</span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">NioEventLoop</span>
+extends <a href="../SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="class in io.netty.channel">SingleThreadEventLoop</a></pre> 
+      <div class="block"> 
+       <span><a href="../SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="在io.netty.channel中的类"><code>SingleThreadEventLoop</code></a>实现注册<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的<code>Selector</code>和这些事件循环中的多重复合。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="fields.inherited.from.class.io.netty.channel.SingleThreadEventLoop"> </a> <h3>Fields inherited from class&nbsp;io.netty.channel.<a href="../SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="class in io.netty.channel">SingleThreadEventLoop</a></h3> <code><a href="../SingleThreadEventLoop.html#DEFAULT_MAX_PENDING_TASKS" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#DEFAULT_MAX_PENDING_TASKS">DEFAULT_MAX_PENDING_TASKS</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#cleanup--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#cleanup--">cleanup</a></span>()</code> 
+            <div class="block">
+              无所作为，子类可能会覆盖 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#getIoRatio--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#getIoRatio--">getIoRatio</a></span>()</code> 
+            <div class="block">
+              返回在事件循环中花费I / O所需时间的百分比。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected java.util.Queue&lt;java.lang.Runnable&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#newTaskQueue-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#newTaskQueue-int-">newTaskQueue</a></span>(int&nbsp;maxPendingTasks)</code> 
+            <div class="block">
+              创建一个新的 
+             <code>Queue</code> ，它将保存要执行的任务。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#pendingTasks--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#pendingTasks--">pendingTasks</a></span>()</code> 
+            <div class="block">
+              返回待处理任务的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.Runnable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#pollTask--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#pollTask--">pollTask</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#rebuildSelector--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#rebuildSelector--">rebuildSelector</a></span>()</code> 
+            <div class="block">
+              用新创建的 
+             <code>Selector</code>替换当前 
+             <code>Selector</code>这个事件循环，以解决臭名昭着的100％CPU bug。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#register-java.nio.channels.SelectableChannel-int-io.netty.channel.nio.NioTask-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#register-java.nio.channels.SelectableChannel-int-io.netty.channel.nio.NioTask-">register</a></span>(java.nio.channels.SelectableChannel&nbsp;ch, int&nbsp;interestOps, <a href="NioTask.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioTask.html" title="interface in io.netty.channel.nio">NioTask</a>&lt;?&gt;&nbsp;task)</code> 
+            <div class="block">
+              将任意 
+             <code>SelectableChannel</code> （不一定由Netty创建）注册到此事件循环的 
+             <code>Selector</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#run--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#run--">run</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>java.nio.channels.spi.SelectorProvider</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#selectorProvider--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#selectorProvider--">selectorProvider</a></span>()</code> 
+            <div class="block"> 
+             <span>返回此<code>SelectorProvider</code>使用的<a href="NioEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html" title="在io.netty.channel.nio中的类">SelectorProvider</a>以获取<code>Selector</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#setIoRatio-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#setIoRatio-int-">setIoRatio</a></span>(int&nbsp;ioRatio)</code> 
+            <div class="block">
+              设置在事件循环中花费I / O所需时间的百分比。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioEventLoop.html#wakeup-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html#wakeup-boolean-">wakeup</a></span>(boolean&nbsp;inEventLoop)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.SingleThreadEventLoop"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="class in io.netty.channel">SingleThreadEventLoop</a></h3> <code><a href="../SingleThreadEventLoop.html#afterRunningAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#afterRunningAllTasks--">afterRunningAllTasks</a>, <a href="../SingleThreadEventLoop.html#executeAfterEventLoopIteration-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#executeAfterEventLoopIteration-java.lang.Runnable-">executeAfterEventLoopIteration</a>, <a href="../SingleThreadEventLoop.html#hasTasks--" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#hasTasks--">hasTasks</a>, <a href="../SingleThreadEventLoop.html#next--" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#next--">next</a>, <a href="../SingleThreadEventLoop.html#parent--" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#parent--">parent</a>, <a href="../SingleThreadEventLoop.html#register-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#register-io.netty.channel.Channel-">register</a>, <a href="../SingleThreadEventLoop.html#register-io.netty.channel.Channel-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#register-io.netty.channel.Channel-io.netty.channel.ChannelPromise-">register</a>, <a href="../SingleThreadEventLoop.html#register-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#register-io.netty.channel.ChannelPromise-">register</a>, <a href="../SingleThreadEventLoop.html#wakesUpForTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#wakesUpForTask-java.lang.Runnable-">wakesUpForTask</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.SingleThreadEventExecutor"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">SingleThreadEventExecutor</a></h3> <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#addShutdownHook-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addShutdownHook-java.lang.Runnable-">addShutdownHook</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-">addTask</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#awaitTermination-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#awaitTermination-long-java.util.concurrent.TimeUnit-">awaitTermination</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#confirmShutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#confirmShutdown--">confirmShutdown</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#delayNanos-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#delayNanos-long-">delayNanos</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#execute-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#execute-java.lang.Runnable-">execute</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#inEventLoop-java.lang.Thread-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#inEventLoop-java.lang.Thread-">inEventLoop</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#interruptThread--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#interruptThread--">interruptThread</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#invokeAll-java.util.Collection-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAll-java.util.Collection-">invokeAll</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#invokeAll-java.util.Collection-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAll-java.util.Collection-long-java.util.concurrent.TimeUnit-">invokeAll</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#invokeAny-java.util.Collection-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAny-java.util.Collection-">invokeAny</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#invokeAny-java.util.Collection-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAny-java.util.Collection-long-java.util.concurrent.TimeUnit-">invokeAny</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#isShutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#isShutdown--">isShutdown</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#isShuttingDown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#isShuttingDown--">isShuttingDown</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#isTerminated--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#isTerminated--">isTerminated</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#newTaskQueue--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue--">newTaskQueue</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#peekTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#peekTask--">peekTask</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#pollTaskFrom-java.util.Queue-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pollTaskFrom-java.util.Queue-">pollTaskFrom</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#reject--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#reject--">reject</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#reject-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#reject-java.lang.Runnable-">reject</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#removeShutdownHook-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#removeShutdownHook-java.lang.Runnable-">removeShutdownHook</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#removeTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#removeTask-java.lang.Runnable-">removeTask</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#runAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks--">runAllTasks</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#runAllTasks-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks-long-">runAllTasks</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#runAllTasksFrom-java.util.Queue-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasksFrom-java.util.Queue-">runAllTasksFrom</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#shutdown--">shutdown</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-">shutdownGracefully</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#takeTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#takeTask--">takeTask</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#terminationFuture--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#terminationFuture--">terminationFuture</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#threadProperties--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#threadProperties--">threadProperties</a>, <a href="../../util/concurrent/SingleThreadEventExecutor.html#updateLastExecutionTime--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#updateLastExecutionTime--">updateLastExecutionTime</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.AbstractScheduledEventExecutor"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="../../util/concurrent/AbstractScheduledEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html" title="class in io.netty.util.concurrent">AbstractScheduledEventExecutor</a></h3> <code><a href="../../util/concurrent/AbstractScheduledEventExecutor.html#cancelScheduledTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#cancelScheduledTasks--">cancelScheduledTasks</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#hasScheduledTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#hasScheduledTasks--">hasScheduledTasks</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#nanoTime--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#nanoTime--">nanoTime</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#nextScheduledTaskNano--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#nextScheduledTaskNano--">nextScheduledTaskNano</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#pollScheduledTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#pollScheduledTask--">pollScheduledTask</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#pollScheduledTask-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#pollScheduledTask-long-">pollScheduledTask</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleAtFixedRate</a>, <a href="../../util/concurrent/AbstractScheduledEventExecutor.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleWithFixedDelay</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.AbstractEventExecutor"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="../../util/concurrent/AbstractEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html" title="class in io.netty.util.concurrent">AbstractEventExecutor</a></h3> <code><a href="../../util/concurrent/AbstractEventExecutor.html#inEventLoop--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#inEventLoop--">inEventLoop</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#iterator--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#iterator--">iterator</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newFailedFuture-java.lang.Throwable-">newFailedFuture</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#newProgressivePromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newProgressivePromise--">newProgressivePromise</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newPromise--">newPromise</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#newSucceededFuture-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newSucceededFuture-V-">newSucceededFuture</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#newTaskFor-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newTaskFor-java.util.concurrent.Callable-">newTaskFor</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#newTaskFor-java.lang.Runnable-T-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newTaskFor-java.lang.Runnable-T-">newTaskFor</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#safeExecute-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#safeExecute-java.lang.Runnable-">safeExecute</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#shutdownGracefully--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#shutdownGracefully--">shutdownGracefully</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#shutdownNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#shutdownNow--">shutdownNow</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#submit-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#submit-java.util.concurrent.Callable-">submit</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#submit-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#submit-java.lang.Runnable-">submit</a>, <a href="../../util/concurrent/AbstractEventExecutor.html#submit-java.lang.Runnable-T-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#submit-java.lang.Runnable-T-">submit</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.EventExecutor"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.concurrent.<a href="../../util/concurrent/EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a></h3> <code><a href="../../util/concurrent/EventExecutor.html#inEventLoop--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#inEventLoop--">inEventLoop</a>, <a href="../../util/concurrent/EventExecutor.html#inEventLoop-java.lang.Thread-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#inEventLoop-java.lang.Thread-">inEventLoop</a>, <a href="../../util/concurrent/EventExecutor.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newFailedFuture-java.lang.Throwable-">newFailedFuture</a>, <a href="../../util/concurrent/EventExecutor.html#newProgressivePromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newProgressivePromise--">newProgressivePromise</a>, <a href="../../util/concurrent/EventExecutor.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newPromise--">newPromise</a>, <a href="../../util/concurrent/EventExecutor.html#newSucceededFuture-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newSucceededFuture-V-">newSucceededFuture</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.EventExecutorGroup"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.concurrent.<a href="../../util/concurrent/EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a></h3> <code><a href="../../util/concurrent/EventExecutorGroup.html#isShuttingDown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#isShuttingDown--">isShuttingDown</a>, <a href="../../util/concurrent/EventExecutorGroup.html#iterator--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#iterator--">iterator</a>, <a href="../../util/concurrent/EventExecutorGroup.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="../../util/concurrent/EventExecutorGroup.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="../../util/concurrent/EventExecutorGroup.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleAtFixedRate</a>, <a href="../../util/concurrent/EventExecutorGroup.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleWithFixedDelay</a>, <a href="../../util/concurrent/EventExecutorGroup.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdown--">shutdown</a>, <a href="../../util/concurrent/EventExecutorGroup.html#shutdownGracefully--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully--">shutdownGracefully</a>, <a href="../../util/concurrent/EventExecutorGroup.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-">shutdownGracefully</a>, <a href="../../util/concurrent/EventExecutorGroup.html#shutdownNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownNow--">shutdownNow</a>, <a href="../../util/concurrent/EventExecutorGroup.html#submit-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#submit-java.util.concurrent.Callable-">submit</a>, <a href="../../util/concurrent/EventExecutorGroup.html#submit-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#submit-java.lang.Runnable-">submit</a>, <a href="../../util/concurrent/EventExecutorGroup.html#submit-java.lang.Runnable-T-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#submit-java.lang.Runnable-T-">submit</a>, <a href="../../util/concurrent/EventExecutorGroup.html#terminationFuture--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#terminationFuture--">terminationFuture</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.util.concurrent.ExecutorService"> </a> <h3>Methods inherited from interface&nbsp;java.util.concurrent.ExecutorService</h3> <code>awaitTermination, invokeAll, invokeAll, invokeAny, invokeAny, isShutdown, isTerminated</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.util.concurrent.Executor"> </a> <h3>Methods inherited from interface&nbsp;java.util.concurrent.Executor</h3> <code>execute</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3> <code>forEach, spliterator</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="selectorProvider--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>selectorProvider</h4> <pre>public&nbsp;java.nio.channels.spi.SelectorProvider&nbsp;selectorProvider()</pre> 
+          <div class="block"> 
+           <span>返回此<code>SelectorProvider</code>使用的<a href="NioEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html" title="在io.netty.channel.nio中的类">SelectorProvider</a>以获得<code>Selector</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="newTaskQueue-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newTaskQueue</h4> <pre>protected&nbsp;java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;newTaskQueue(int&nbsp;maxPendingTasks)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-">SingleThreadEventExecutor</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建一个新的<code>Queue</code> ，它将保存要执行的任务。</span> 
+           <span>这个默认的实现将返回一个<code>LinkedBlockingQueue</code>但是如果你的子类<a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a>不会在这个<code>Queue</code>上做任何阻塞调用，它可能对<code>@Override</code>有意义的，并返回一些不支持阻塞操作的更高性能的实现。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-">newTaskQueue</a></code> 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">SingleThreadEventExecutor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="pendingTasks--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pendingTasks</h4> <pre>public&nbsp;int&nbsp;pendingTasks()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#pendingTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pendingTasks--">SingleThreadEventExecutor</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回待处理任务的数量。</span> 
+           <span><strong>请注意，此操作可能很昂贵，因为它取决于SingleThreadEventExecutor的内部实现。</strong></span> 
+           <span><strong>所以使用它很在乎！</strong></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../SingleThreadEventLoop.html#pendingTasks--" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html#pendingTasks--">pendingTasks</a></code>在课堂上 
+            <code><a href="../SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="class in io.netty.channel">SingleThreadEventLoop</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="register-java.nio.channels.SelectableChannel-int-io.netty.channel.nio.NioTask-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>register</h4> <pre>public&nbsp;void&nbsp;register(java.nio.channels.SelectableChannel&nbsp;ch,
+                     int&nbsp;interestOps,
+                     <a href="NioTask.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioTask.html" title="interface in io.netty.channel.nio">NioTask</a>&lt;?&gt;&nbsp;task)</pre> 
+          <div class="block"> 
+           <span>将任意<code>SelectableChannel</code> （不一定由Netty创建）注册到此事件循环的<code>Selector</code> 。</span> 
+           <span>一旦指定的<code>SelectableChannel</code>注册，指定的<code>task</code>将这一事件循环被执行时<code>SelectableChannel</code>已准备就绪。</span> 
+          </div> </li> 
+        </ul> <a name="getIoRatio--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getIoRatio</h4> <pre>public&nbsp;int&nbsp;getIoRatio()</pre> 
+          <div class="block">
+            返回在事件循环中花费I / O所需时间的百分比。 
+          </div> </li> 
+        </ul> <a name="setIoRatio-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setIoRatio</h4> <pre>public&nbsp;void&nbsp;setIoRatio(int&nbsp;ioRatio)</pre> 
+          <div class="block"> 
+           <span>设置在事件循环中花费I / O所需时间的百分比。</span> 
+           <span>默认值是<code>50</code> ，这意味着事件循环将尝试花费I / O的时间与非I / O任务相同的时间。</span> 
+          </div> </li> 
+        </ul> <a name="rebuildSelector--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>rebuildSelector</h4> <pre>public&nbsp;void&nbsp;rebuildSelector()</pre> 
+          <div class="block">
+            用新创建的 
+           <code>Selector</code>替换当前的 
+           <code>Selector</code>这个事件循环，以解决臭名昭着的100％的CPU bug。 
+          </div> </li> 
+        </ul> <a name="run--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>run</h4> <pre>protected&nbsp;void&nbsp;run()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#run--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#run--">run</a></code>在课堂上 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">SingleThreadEventExecutor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="cleanup--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cleanup</h4> <pre>protected&nbsp;void&nbsp;cleanup()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#cleanup--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#cleanup--">SingleThreadEventExecutor</a></code></span> 
+          </div> 
+          <div class="block">
+            无所作为，子类可能会覆盖 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#cleanup--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#cleanup--">cleanup</a></code>在课堂上 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">SingleThreadEventExecutor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="pollTask--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pollTask</h4> <pre>protected&nbsp;java.lang.Runnable&nbsp;pollTask()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#pollTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pollTask--">pollTask</a></code>在课堂上 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">SingleThreadEventExecutor</a></code> 
+           </dd> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <code>Queue.poll()</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="wakeup-boolean-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>wakeup</h4> <pre>protected&nbsp;void&nbsp;wakeup(boolean&nbsp;inEventLoop)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html#wakeup-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#wakeup-boolean-">wakeup</a></code>在课堂上 
+            <code><a href="../../util/concurrent/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent">SingleThreadEventExecutor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/NioEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/class-use/NioEventLoop.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="NioEventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoopGroup.html" title="class in io.netty.channel.nio"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-nio-NioEventLoop.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/nio/NioEventLoop.html" target="_top">框架</a></li> 
+    <li><a href="NioEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/NioEventLoop.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.channel.SingleThreadEventLoop">Field</a>&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/nio/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

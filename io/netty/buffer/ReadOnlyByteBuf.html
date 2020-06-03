@@ -1,0 +1,2840 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ReadOnlyByteBuf (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.buffer.ReadOnlyByteBuf class"> 
+  <meta name="keywords" content="isReadOnly()"> 
+  <meta name="keywords" content="isWritable()"> 
+  <meta name="keywords" content="ensureWritable()"> 
+  <meta name="keywords" content="unwrap()"> 
+  <meta name="keywords" content="alloc()"> 
+  <meta name="keywords" content="order()"> 
+  <meta name="keywords" content="isDirect()"> 
+  <meta name="keywords" content="hasArray()"> 
+  <meta name="keywords" content="array()"> 
+  <meta name="keywords" content="arrayOffset()"> 
+  <meta name="keywords" content="hasMemoryAddress()"> 
+  <meta name="keywords" content="memoryAddress()"> 
+  <meta name="keywords" content="discardReadBytes()"> 
+  <meta name="keywords" content="setBytes()"> 
+  <meta name="keywords" content="setByte()"> 
+  <meta name="keywords" content="_setByte()"> 
+  <meta name="keywords" content="setShort()"> 
+  <meta name="keywords" content="_setShort()"> 
+  <meta name="keywords" content="setShortLE()"> 
+  <meta name="keywords" content="_setShortLE()"> 
+  <meta name="keywords" content="setMedium()"> 
+  <meta name="keywords" content="_setMedium()"> 
+  <meta name="keywords" content="setMediumLE()"> 
+  <meta name="keywords" content="_setMediumLE()"> 
+  <meta name="keywords" content="setInt()"> 
+  <meta name="keywords" content="_setInt()"> 
+  <meta name="keywords" content="setIntLE()"> 
+  <meta name="keywords" content="_setIntLE()"> 
+  <meta name="keywords" content="setLong()"> 
+  <meta name="keywords" content="_setLong()"> 
+  <meta name="keywords" content="setLongLE()"> 
+  <meta name="keywords" content="_setLongLE()"> 
+  <meta name="keywords" content="getBytes()"> 
+  <meta name="keywords" content="duplicate()"> 
+  <meta name="keywords" content="copy()"> 
+  <meta name="keywords" content="slice()"> 
+  <meta name="keywords" content="getByte()"> 
+  <meta name="keywords" content="_getByte()"> 
+  <meta name="keywords" content="getShort()"> 
+  <meta name="keywords" content="_getShort()"> 
+  <meta name="keywords" content="getShortLE()"> 
+  <meta name="keywords" content="_getShortLE()"> 
+  <meta name="keywords" content="getUnsignedMedium()"> 
+  <meta name="keywords" content="_getUnsignedMedium()"> 
+  <meta name="keywords" content="getUnsignedMediumLE()"> 
+  <meta name="keywords" content="_getUnsignedMediumLE()"> 
+  <meta name="keywords" content="getInt()"> 
+  <meta name="keywords" content="_getInt()"> 
+  <meta name="keywords" content="getIntLE()"> 
+  <meta name="keywords" content="_getIntLE()"> 
+  <meta name="keywords" content="getLong()"> 
+  <meta name="keywords" content="_getLong()"> 
+  <meta name="keywords" content="getLongLE()"> 
+  <meta name="keywords" content="_getLongLE()"> 
+  <meta name="keywords" content="nioBufferCount()"> 
+  <meta name="keywords" content="nioBuffer()"> 
+  <meta name="keywords" content="nioBuffers()"> 
+  <meta name="keywords" content="forEachByte()"> 
+  <meta name="keywords" content="forEachByteDesc()"> 
+  <meta name="keywords" content="capacity()"> 
+  <meta name="keywords" content="asReadOnly()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ReadOnlyByteBuf (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42,"i13":42,"i14":42,"i15":42,"i16":42,"i17":42,"i18":42,"i19":42,"i20":42,"i21":42,"i22":42,"i23":42,"i24":42,"i25":42,"i26":42,"i27":42,"i28":42,"i29":42,"i30":42,"i31":42,"i32":42,"i33":42,"i34":42,"i35":42,"i36":42,"i37":42,"i38":42,"i39":42,"i40":42,"i41":42,"i42":42,"i43":42,"i44":42,"i45":42,"i46":42,"i47":42,"i48":42,"i49":42,"i50":42,"i51":42,"i52":42,"i53":42,"i54":42,"i55":42,"i56":42,"i57":42,"i58":42,"i59":42,"i60":42,"i61":42,"i62":42,"i63":42,"i64":42,"i65":42,"i66":42,"i67":42,"i68":42,"i69":42,"i70":42,"i71":42,"i72":42,"i73":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/ReadOnlyByteBuf.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="PoolSubpageMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolSubpageMetric.html" title="interface in io.netty.buffer"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="SlicedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/SlicedByteBuf.html" title="class in io.netty.buffer"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-buffer-ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/ReadOnlyByteBuf.html" target="_top">框架</a></li> 
+    <li><a href="ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.buffer 
+   </div> 
+   <h2 title="Class ReadOnlyByteBuf" class="title">Class ReadOnlyByteBuf</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">io.netty.buffer.ByteBuf</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">io.netty.buffer.AbstractByteBuf</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="AbstractDerivedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html" title="class in io.netty.buffer">io.netty.buffer.AbstractDerivedByteBuf</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li>io.netty.buffer.ReadOnlyByteBuf</li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../util/ReferenceCounted.html" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html" title="io.netty.util中的接口">ReferenceCounted</a> ，java.lang.Comparable &lt; <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">ByteBuf</a> &gt;</span> 
+       </dd> 
+      </dl> 
+      <hr> 
+      <div class="block"> 
+       <span><span class="deprecatedLabel">已过时。</span></span> 
+       <div class="block"> 
+        <span><span class="deprecationComment">不使用。</span></span> 
+       </div> 
+      </div> <br> <pre>@Deprecated
+public class <span class="typeNameLabel">ReadOnlyByteBuf</span>
+extends <a href="AbstractDerivedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html" title="class in io.netty.buffer">AbstractDerivedByteBuf</a></pre> 
+      <div class="block"> 
+       <span>派生缓冲区禁止向其父节点发送任何写入请求。</span> 
+       <span>建议使用<a href="Unpooled.html#unmodifiableBuffer-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/Unpooled.html#unmodifiableBuffer-io.netty.buffer.ByteBuf-"><code>Unpooled.unmodifiableBuffer(ByteBuf)</code></a>而不是显式调用构造函数。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#ReadOnlyByteBuf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#ReadOnlyByteBuf-io.netty.buffer.ByteBuf-">ReadOnlyByteBuf</a></span>(<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>protected byte</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getByte-int-">_getByte</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getInt-int-">_getInt</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getIntLE-int-">_getIntLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>protected long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getLong-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getLong-int-">_getLong</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getLongLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getLongLE-int-">_getLongLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getShort-int-">_getShort</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getShortLE-int-">_getShortLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getUnsignedMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getUnsignedMedium-int-">_getUnsignedMedium</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_getUnsignedMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_getUnsignedMediumLE-int-">_getUnsignedMediumLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setByte-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setByte-int-int-">_setByte</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setInt-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setInt-int-int-">_setInt</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setIntLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setIntLE-int-int-">_setIntLE</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setLong-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setLong-int-long-">_setLong</a></span>(int&nbsp;index, long&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setLongLE-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setLongLE-int-long-">_setLongLE</a></span>(int&nbsp;index, long&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setMedium-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setMedium-int-int-">_setMedium</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setMediumLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setMediumLE-int-int-">_setMediumLE</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setShort-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setShort-int-int-">_setShort</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#Z:Z_setShortLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#Z:Z_setShortLE-int-int-">_setShortLE</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#alloc--">alloc</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>返回创建此缓冲区的<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#array--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#array--">array</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此缓冲区的后备字节数组。 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#arrayOffset--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#arrayOffset--">arrayOffset</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此缓冲区的后备字节数组中第一个字节的偏移量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#asReadOnly--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#asReadOnly--">asReadOnly</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此缓冲区的只读版本。 
+            </div> </td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#capacity--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#capacity--">capacity</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此缓冲区可包含的字节数（字节）。 
+            </div> </td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#capacity-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#capacity-int-">capacity</a></span>(int&nbsp;newCapacity)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              调整此缓冲区的容量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#copy-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#copy-int-int-">copy</a></span>(int&nbsp;index, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此缓冲区的子区域的副本。 
+            </div> </td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#discardReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#discardReadBytes--">discardReadBytes</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              丢弃第0个索引和 
+             <code>readerIndex</code>之间的字节。 
+            </div> </td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#duplicate--">duplicate</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回共享此缓冲区整个区域的缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#ensureWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#ensureWritable-int-">ensureWritable</a></span>(int&nbsp;minWritableBytes)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              确保 
+             <a href="ByteBuf.html#writableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writableBytes--">the writable bytes</a>的数量等于或大于指定值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#ensureWritable-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#ensureWritable-int-boolean-">ensureWritable</a></span>(int&nbsp;minWritableBytes, boolean&nbsp;force)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              尝试确保 
+             <a href="ByteBuf.html#writableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writableBytes--">the writable bytes</a>的数量等于或大于指定值。 
+            </div> </td> 
+          </tr> 
+          <tr id="i29" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#forEachByte-int-int-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#forEachByte-int-int-io.netty.util.ByteProcessor-">forEachByte</a></span>(int&nbsp;index, int&nbsp;length, <a href="../util/ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="interface in io.netty.util">ByteProcessor</a>&nbsp;processor)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以指定的 
+             <code>processor</code>按升序迭代该缓冲区的指定区域。 
+            </div> </td> 
+          </tr> 
+          <tr id="i30" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#forEachByteDesc-int-int-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#forEachByteDesc-int-int-io.netty.util.ByteProcessor-">forEachByteDesc</a></span>(int&nbsp;index, int&nbsp;length, <a href="../util/ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="interface in io.netty.util">ByteProcessor</a>&nbsp;processor)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以指定的 
+             <code>processor</code>降序遍历此缓冲区的指定区域。 
+            </div> </td> 
+          </tr> 
+          <tr id="i31" class="rowColor"> 
+           <td class="colFirst"><code>byte</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getByte-int-">getByte</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中的指定绝对 
+             <code>index</code>处获取一个字节。 
+            </div> </td> 
+          </tr> 
+          <tr id="i32" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getBytes-int-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getBytes-int-byte:A-int-int-">getBytes</a></span>(int&nbsp;index, byte[]&nbsp;dst, int&nbsp;dstIndex, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将此缓冲区的数据传输到指定的绝对目标 
+             <code>index</code>开始的目标。 
+            </div> </td> 
+          </tr> 
+          <tr id="i33" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getBytes-int-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getBytes-int-java.nio.ByteBuffer-">getBytes</a></span>(int&nbsp;index, java.nio.ByteBuffer&nbsp;dst)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将缓冲区的数据传输到指定的目的地，从指定的绝对 
+             <code>index</code>开始，直到目的地的位置达到其限制。 
+            </div> </td> 
+          </tr> 
+          <tr id="i34" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-int-">getBytes</a></span>(int&nbsp;index, <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;dst, int&nbsp;dstIndex, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将此缓冲区的数据传输到指定的绝对目标 
+             <code>index</code>开始的目标。 
+            </div> </td> 
+          </tr> 
+          <tr id="i35" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getBytes-int-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getBytes-int-java.nio.channels.FileChannel-long-int-">getBytes</a></span>(int&nbsp;index, java.nio.channels.FileChannel&nbsp;out, long&nbsp;position, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将此缓冲区的数据从指定的绝对 
+             <code>index</code>到指定通道，从给定的文件位置开始。 
+            </div> </td> 
+          </tr> 
+          <tr id="i36" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getBytes-int-java.nio.channels.GatheringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getBytes-int-java.nio.channels.GatheringByteChannel-int-">getBytes</a></span>(int&nbsp;index, java.nio.channels.GatheringByteChannel&nbsp;out, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将此缓冲区的数据传输到指定的绝对 
+             <code>index</code>开始的通道。 
+            </div> </td> 
+          </tr> 
+          <tr id="i37" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getBytes-int-java.io.OutputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getBytes-int-java.io.OutputStream-int-">getBytes</a></span>(int&nbsp;index, java.io.OutputStream&nbsp;out, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将此缓冲区的数据传输到以指定的绝对值 
+             <code>index</code>开始的指定流。 
+            </div> </td> 
+          </tr> 
+          <tr id="i38" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getInt-int-">getInt</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中的指定绝对 
+             <code>index</code>处获取一个32位整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i39" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getIntLE-int-">getIntLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在具有Little Endian Byte Order的缓冲区中的指定绝对 
+             <code>index</code>处获取一个32位整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i40" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getLong-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getLong-int-">getLong</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区的指定绝对 
+             <code>index</code>处获取一个64位长整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i41" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getLongLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getLongLE-int-">getLongLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以Little Endian字节顺序在此缓冲区中的指定绝对 
+             <code>index</code>处获取64位长整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i42" class="altColor"> 
+           <td class="colFirst"><code>short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getShort-int-">getShort</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区的指定绝对 
+             <code>index</code>处获取一个16位短整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i43" class="rowColor"> 
+           <td class="colFirst"><code>short</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getShortLE-int-">getShortLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以小端字节顺序在此缓冲区中的指定绝对 
+             <code>index</code>处获取一个16位短整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i44" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getUnsignedMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getUnsignedMedium-int-">getUnsignedMedium</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中指定的绝对 
+             <code>index</code>处获取一个无符号的24位中等整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i45" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#getUnsignedMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#getUnsignedMediumLE-int-">getUnsignedMediumLE</a></span>(int&nbsp;index)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以小端字节顺序在此缓冲区中的指定绝对 
+             <code>index</code>处获取无符号的24位中等整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i46" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#hasArray--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#hasArray--">hasArray</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              当且仅当此缓冲区有一个后备字节数组时，才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i47" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#hasMemoryAddress--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#hasMemoryAddress--">hasMemoryAddress</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当此缓冲区具有对指向后备数据的低级内存地址的引用时。 
+            </div> </td> 
+          </tr> 
+          <tr id="i48" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#isDirect--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#isDirect--">isDirect</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              当且仅当此缓冲区由NIO直接缓冲区支持时才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i49" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#isReadOnly--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#isReadOnly--">isReadOnly</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              当且仅当此缓冲区为只读时才返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i50" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#isWritable--">isWritable</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当 
+             <code>(this.capacity - this.writerIndex)</code>大于 
+             <code>0</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i51" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#isWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#isWritable-int-">isWritable</a></span>(int&nbsp;numBytes)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回 
+             <code>true</code>当且仅当此缓冲区有足够空间允许写入指定数量的元素时。 
+            </div> </td> 
+          </tr> 
+          <tr id="i52" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#memoryAddress--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#memoryAddress--">memoryAddress</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回指向备份数据第一个字节的低级内存地址。 
+            </div> </td> 
+          </tr> 
+          <tr id="i53" class="rowColor"> 
+           <td class="colFirst"><code>java.nio.ByteBuffer</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#nioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#nioBuffer-int-int-">nioBuffer</a></span>(int&nbsp;index, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将此缓冲区的子区域公开为NIO 
+             <code>ByteBuffer</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i54" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#nioBufferCount--">nioBufferCount</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回构成此缓冲区的NIO 
+             <code>ByteBuffer</code>的最大数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i55" class="rowColor"> 
+           <td class="colFirst"><code>java.nio.ByteBuffer[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#nioBuffers-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#nioBuffers-int-int-">nioBuffers</a></span>(int&nbsp;index, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以指定的索引和长度公开此缓冲区的字节为NIO 
+             <code>ByteBuffer</code>返回的缓冲区共享或包含此缓冲区的复制内容，同时更改返回的NIO缓冲区的位置和限制不会影响此索引和标记缓冲。 
+            </div> </td> 
+          </tr> 
+          <tr id="i56" class="altColor"> 
+           <td class="colFirst"><code>java.nio.ByteOrder</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#order--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#order--">order</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i57" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setByte-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setByte-int-int-">setByte</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的字节。 
+            </div> </td> 
+          </tr> 
+          <tr id="i58" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setBytes-int-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setBytes-int-byte:A-int-int-">setBytes</a></span>(int&nbsp;index, byte[]&nbsp;src, int&nbsp;srcIndex, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将指定的源数组的数据从指定的绝对 
+             <code>index</code>开始传送到此缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i59" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setBytes-int-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setBytes-int-java.nio.ByteBuffer-">setBytes</a></span>(int&nbsp;index, java.nio.ByteBuffer&nbsp;src)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将指定的源缓冲区的数据从指定的绝对 
+             <code>index</code>开始传输到此缓冲区，直到源缓冲区的位置达到其限制。 
+            </div> </td> 
+          </tr> 
+          <tr id="i60" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-int-">setBytes</a></span>(int&nbsp;index, <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;src, int&nbsp;srcIndex, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将指定的源缓冲区的数据从指定的绝对 
+             <code>index</code>开始传送到此缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i61" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setBytes-int-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setBytes-int-java.nio.channels.FileChannel-long-int-">setBytes</a></span>(int&nbsp;index, java.nio.channels.FileChannel&nbsp;in, long&nbsp;position, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将从给定文件位置开始的指定源通道的内容传输到此缓冲区，从指定的绝对 
+             <code>index</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i62" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setBytes-int-java.io.InputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setBytes-int-java.io.InputStream-int-">setBytes</a></span>(int&nbsp;index, java.io.InputStream&nbsp;in, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将指定源流的内容从指定绝对 
+             <code>index</code>开始传输到此缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i63" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setBytes-int-java.nio.channels.ScatteringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setBytes-int-java.nio.channels.ScatteringByteChannel-int-">setBytes</a></span>(int&nbsp;index, java.nio.channels.ScatteringByteChannel&nbsp;in, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将指定源通道的内容从指定绝对 
+             <code>index</code>开始传送到此缓冲区。 
+            </div> </td> 
+          </tr> 
+          <tr id="i64" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setInt-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setInt-int-int-">setInt</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的32位整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i65" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setIntLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setIntLE-int-int-">setIntLE</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              使用Little Endian字节顺序在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的32位整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i66" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setLong-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setLong-int-long-">setLong</a></span>(int&nbsp;index, long&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的64位长整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i67" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setLongLE-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setLongLE-int-long-">setLongLE</a></span>(int&nbsp;index, long&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以小端字节顺序在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的64位长整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i68" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setMedium-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setMedium-int-int-">setMedium</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的24位中等整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i69" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setMediumLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setMediumLE-int-int-">setMediumLE</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              以Little Endian字节顺序在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的24位中等整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i70" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setShort-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setShort-int-int-">setShort</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              在此缓冲区的指定绝对 
+             <code>index</code>处设置指定的16位短整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i71" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#setShortLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#setShortLE-int-int-">setShortLE</a></span>(int&nbsp;index, int&nbsp;value)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              使用Little Endian Byte Order在此缓冲区中的指定绝对 
+             <code>index</code>处设置指定的16位短整数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i72" class="altColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#slice-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#slice-int-int-">slice</a></span>(int&nbsp;index, int&nbsp;length)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此缓冲区的子区域的一部分。 
+            </div> </td> 
+          </tr> 
+          <tr id="i73" class="rowColor"> 
+           <td class="colFirst"><code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ReadOnlyByteBuf.html#unwrap--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html#unwrap--">unwrap</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              如果此缓冲区是另一个缓冲区的包装，则返回底层缓冲区实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.buffer.AbstractDerivedByteBuf"> </a> <h3>Methods inherited from class&nbsp;io.netty.buffer.<a href="AbstractDerivedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html" title="class in io.netty.buffer">AbstractDerivedByteBuf</a></h3> <code><a href="AbstractDerivedByteBuf.html#internalNioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#internalNioBuffer-int-int-">internalNioBuffer</a>, <a href="AbstractDerivedByteBuf.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#refCnt--">refCnt</a>, <a href="AbstractDerivedByteBuf.html#release--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#release--">release</a>, <a href="AbstractDerivedByteBuf.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#release-int-">release</a>, <a href="AbstractDerivedByteBuf.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#retain--">retain</a>, <a href="AbstractDerivedByteBuf.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#retain-int-">retain</a>, <a href="AbstractDerivedByteBuf.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#touch--">touch</a>, <a href="AbstractDerivedByteBuf.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#touch-java.lang.Object-">touch</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.buffer.AbstractByteBuf"> </a> <h3>Methods inherited from class&nbsp;io.netty.buffer.<a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></h3> <code><a href="AbstractByteBuf.html#adjustMarkers-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#adjustMarkers-int-">adjustMarkers</a>, <a href="AbstractByteBuf.html#bytesBefore-byte-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#bytesBefore-byte-">bytesBefore</a>, <a href="AbstractByteBuf.html#bytesBefore-int-byte-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#bytesBefore-int-byte-">bytesBefore</a>, <a href="AbstractByteBuf.html#bytesBefore-int-int-byte-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#bytesBefore-int-int-byte-">bytesBefore</a>, <a href="AbstractByteBuf.html#checkDstIndex-int-int-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#checkDstIndex-int-int-int-int-">checkDstIndex</a>, <a href="AbstractByteBuf.html#checkIndex-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#checkIndex-int-">checkIndex</a>, <a href="AbstractByteBuf.html#checkIndex-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#checkIndex-int-int-">checkIndex</a>, <a href="AbstractByteBuf.html#checkNewCapacity-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#checkNewCapacity-int-">checkNewCapacity</a>, <a href="AbstractByteBuf.html#checkReadableBytes-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#checkReadableBytes-int-">checkReadableBytes</a>, <a href="AbstractByteBuf.html#checkSrcIndex-int-int-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#checkSrcIndex-int-int-int-int-">checkSrcIndex</a>, <a href="AbstractByteBuf.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#clear--">clear</a>, <a href="AbstractByteBuf.html#compareTo-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#compareTo-io.netty.buffer.ByteBuf-">compareTo</a>, <a href="AbstractByteBuf.html#copy--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#copy--">copy</a>, <a href="AbstractByteBuf.html#discardSomeReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#discardSomeReadBytes--">discardSomeReadBytes</a>, <a href="AbstractByteBuf.html#ensureAccessible--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#ensureAccessible--">ensureAccessible</a>, <a href="AbstractByteBuf.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#equals-java.lang.Object-">equals</a>, <a href="AbstractByteBuf.html#forEachByte-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#forEachByte-io.netty.util.ByteProcessor-">forEachByte</a>, <a href="AbstractByteBuf.html#forEachByteDesc-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#forEachByteDesc-io.netty.util.ByteProcessor-">forEachByteDesc</a>, <a href="AbstractByteBuf.html#getBoolean-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getBoolean-int-">getBoolean</a>, <a href="AbstractByteBuf.html#getBytes-int-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getBytes-int-byte:A-">getBytes</a>, <a href="AbstractByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-">getBytes</a>, <a href="AbstractByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-">getBytes</a>, <a href="AbstractByteBuf.html#getChar-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getChar-int-">getChar</a>, <a href="AbstractByteBuf.html#getCharSequence-int-int-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getCharSequence-int-int-java.nio.charset.Charset-">getCharSequence</a>, <a href="AbstractByteBuf.html#getDouble-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getDouble-int-">getDouble</a>, <a href="AbstractByteBuf.html#getFloat-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getFloat-int-">getFloat</a>, <a href="AbstractByteBuf.html#getMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getMedium-int-">getMedium</a>, <a href="AbstractByteBuf.html#getMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getMediumLE-int-">getMediumLE</a>, <a href="AbstractByteBuf.html#getUnsignedByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedByte-int-">getUnsignedByte</a>, <a href="AbstractByteBuf.html#getUnsignedInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedInt-int-">getUnsignedInt</a>, <a href="AbstractByteBuf.html#getUnsignedIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedIntLE-int-">getUnsignedIntLE</a>, <a href="AbstractByteBuf.html#getUnsignedShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedShort-int-">getUnsignedShort</a>, <a href="AbstractByteBuf.html#getUnsignedShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedShortLE-int-">getUnsignedShortLE</a>, <a href="AbstractByteBuf.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#hashCode--">hashCode</a>, <a href="AbstractByteBuf.html#indexOf-int-int-byte-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#indexOf-int-int-byte-">indexOf</a>, <a href="AbstractByteBuf.html#isReadable--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#isReadable--">isReadable</a>, <a href="AbstractByteBuf.html#isReadable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#isReadable-int-">isReadable</a>, <a href="AbstractByteBuf.html#markReaderIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#markReaderIndex--">markReaderIndex</a>, <a href="AbstractByteBuf.html#markWriterIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#markWriterIndex--">markWriterIndex</a>, <a href="AbstractByteBuf.html#maxCapacity--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#maxCapacity--">maxCapacity</a>, <a href="AbstractByteBuf.html#maxCapacity-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#maxCapacity-int-">maxCapacity</a>, <a href="AbstractByteBuf.html#maxWritableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#maxWritableBytes--">maxWritableBytes</a>, <a href="AbstractByteBuf.html#newSwappedByteBuf--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#newSwappedByteBuf--">newSwappedByteBuf</a>, <a href="AbstractByteBuf.html#nioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#nioBuffer--">nioBuffer</a>, <a href="AbstractByteBuf.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#nioBuffers--">nioBuffers</a>, <a href="AbstractByteBuf.html#order-java.nio.ByteOrder-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#order-java.nio.ByteOrder-">order</a>, <a href="AbstractByteBuf.html#readableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readableBytes--">readableBytes</a>, <a href="AbstractByteBuf.html#readBoolean--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBoolean--">readBoolean</a>, <a href="AbstractByteBuf.html#readByte--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readByte--">readByte</a>, <a href="AbstractByteBuf.html#readBytes-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-byte:A-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-byte:A-int-int-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-io.netty.buffer.ByteBuf-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-java.nio.ByteBuffer-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-io.netty.buffer.ByteBuf-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-io.netty.buffer.ByteBuf-int-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-io.netty.buffer.ByteBuf-int-int-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-java.nio.channels.FileChannel-long-int-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-java.nio.channels.GatheringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-java.nio.channels.GatheringByteChannel-int-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-int-">readBytes</a>, <a href="AbstractByteBuf.html#readBytes-java.io.OutputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readBytes-java.io.OutputStream-int-">readBytes</a>, <a href="AbstractByteBuf.html#readChar--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readChar--">readChar</a>, <a href="AbstractByteBuf.html#readCharSequence-int-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readCharSequence-int-java.nio.charset.Charset-">readCharSequence</a>, <a href="AbstractByteBuf.html#readDouble--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readDouble--">readDouble</a>, <a href="AbstractByteBuf.html#readerIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readerIndex--">readerIndex</a>, <a href="AbstractByteBuf.html#readerIndex-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readerIndex-int-">readerIndex</a>, <a href="AbstractByteBuf.html#readFloat--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readFloat--">readFloat</a>, <a href="AbstractByteBuf.html#readInt--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readInt--">readInt</a>, <a href="AbstractByteBuf.html#readIntLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readIntLE--">readIntLE</a>, <a href="AbstractByteBuf.html#readLong--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readLong--">readLong</a>, <a href="AbstractByteBuf.html#readLongLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readLongLE--">readLongLE</a>, <a href="AbstractByteBuf.html#readMedium--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readMedium--">readMedium</a>, <a href="AbstractByteBuf.html#readMediumLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readMediumLE--">readMediumLE</a>, <a href="AbstractByteBuf.html#readRetainedSlice-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readRetainedSlice-int-">readRetainedSlice</a>, <a href="AbstractByteBuf.html#readShort--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readShort--">readShort</a>, <a href="AbstractByteBuf.html#readShortLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readShortLE--">readShortLE</a>, <a href="AbstractByteBuf.html#readSlice-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readSlice-int-">readSlice</a>, <a href="AbstractByteBuf.html#readUnsignedByte--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedByte--">readUnsignedByte</a>, <a href="AbstractByteBuf.html#readUnsignedInt--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedInt--">readUnsignedInt</a>, <a href="AbstractByteBuf.html#readUnsignedIntLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedIntLE--">readUnsignedIntLE</a>, <a href="AbstractByteBuf.html#readUnsignedMedium--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedMedium--">readUnsignedMedium</a>, <a href="AbstractByteBuf.html#readUnsignedMediumLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedMediumLE--">readUnsignedMediumLE</a>, <a href="AbstractByteBuf.html#readUnsignedShort--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedShort--">readUnsignedShort</a>, <a href="AbstractByteBuf.html#readUnsignedShortLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#readUnsignedShortLE--">readUnsignedShortLE</a>, <a href="AbstractByteBuf.html#resetReaderIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#resetReaderIndex--">resetReaderIndex</a>, <a href="AbstractByteBuf.html#resetWriterIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#resetWriterIndex--">resetWriterIndex</a>, <a href="AbstractByteBuf.html#retainedDuplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#retainedDuplicate--">retainedDuplicate</a>, <a href="AbstractByteBuf.html#retainedSlice--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#retainedSlice--">retainedSlice</a>, <a href="AbstractByteBuf.html#retainedSlice-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#retainedSlice-int-int-">retainedSlice</a>, <a href="AbstractByteBuf.html#setBoolean-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setBoolean-int-boolean-">setBoolean</a>, <a href="AbstractByteBuf.html#setBytes-int-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setBytes-int-byte:A-">setBytes</a>, <a href="AbstractByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-">setBytes</a>, <a href="AbstractByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-">setBytes</a>, <a href="AbstractByteBuf.html#setChar-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setChar-int-int-">setChar</a>, <a href="AbstractByteBuf.html#setCharSequence-int-java.lang.CharSequence-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setCharSequence-int-java.lang.CharSequence-java.nio.charset.Charset-">setCharSequence</a>, <a href="AbstractByteBuf.html#setDouble-int-double-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setDouble-int-double-">setDouble</a>, <a href="AbstractByteBuf.html#setFloat-int-float-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setFloat-int-float-">setFloat</a>, <a href="AbstractByteBuf.html#setIndex-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setIndex-int-int-">setIndex</a>, <a href="AbstractByteBuf.html#setZero-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setZero-int-int-">setZero</a>, <a href="AbstractByteBuf.html#skipBytes-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#skipBytes-int-">skipBytes</a>, <a href="AbstractByteBuf.html#slice--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#slice--">slice</a>, <a href="AbstractByteBuf.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#toString--">toString</a>, <a href="AbstractByteBuf.html#toString-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#toString-java.nio.charset.Charset-">toString</a>, <a href="AbstractByteBuf.html#toString-int-int-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#toString-int-int-java.nio.charset.Charset-">toString</a>, <a href="AbstractByteBuf.html#writableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writableBytes--">writableBytes</a>, <a href="AbstractByteBuf.html#writeBoolean-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBoolean-boolean-">writeBoolean</a>, <a href="AbstractByteBuf.html#writeByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeByte-int-">writeByte</a>, <a href="AbstractByteBuf.html#writeBytes-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-byte:A-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-byte:A-int-int-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-io.netty.buffer.ByteBuf-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-java.nio.ByteBuffer-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-io.netty.buffer.ByteBuf-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-io.netty.buffer.ByteBuf-int-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-io.netty.buffer.ByteBuf-int-int-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-java.nio.channels.FileChannel-long-int-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-java.io.InputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-java.io.InputStream-int-">writeBytes</a>, <a href="AbstractByteBuf.html#writeBytes-java.nio.channels.ScatteringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeBytes-java.nio.channels.ScatteringByteChannel-int-">writeBytes</a>, <a href="AbstractByteBuf.html#writeChar-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeChar-int-">writeChar</a>, <a href="AbstractByteBuf.html#writeCharSequence-java.lang.CharSequence-java.nio.charset.Charset-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeCharSequence-java.lang.CharSequence-java.nio.charset.Charset-">writeCharSequence</a>, <a href="AbstractByteBuf.html#writeDouble-double-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeDouble-double-">writeDouble</a>, <a href="AbstractByteBuf.html#writeFloat-float-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeFloat-float-">writeFloat</a>, <a href="AbstractByteBuf.html#writeInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeInt-int-">writeInt</a>, <a href="AbstractByteBuf.html#writeIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeIntLE-int-">writeIntLE</a>, <a href="AbstractByteBuf.html#writeLong-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeLong-long-">writeLong</a>, <a href="AbstractByteBuf.html#writeLongLE-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeLongLE-long-">writeLongLE</a>, <a href="AbstractByteBuf.html#writeMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeMedium-int-">writeMedium</a>, <a href="AbstractByteBuf.html#writeMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeMediumLE-int-">writeMediumLE</a>, <a href="AbstractByteBuf.html#writerIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writerIndex--">writerIndex</a>, <a href="AbstractByteBuf.html#writerIndex-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writerIndex-int-">writerIndex</a>, <a href="AbstractByteBuf.html#writeShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeShort-int-">writeShort</a>, <a href="AbstractByteBuf.html#writeShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeShortLE-int-">writeShortLE</a>, <a href="AbstractByteBuf.html#writeZero-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#writeZero-int-">writeZero</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.buffer.ByteBuf"> </a> <h3>Methods inherited from class&nbsp;io.netty.buffer.<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></h3> <code><a href="ByteBuf.html#getDoubleLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getDoubleLE-int-">getDoubleLE</a>, <a href="ByteBuf.html#getFloatLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getFloatLE-int-">getFloatLE</a>, <a href="ByteBuf.html#readDoubleLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#readDoubleLE--">readDoubleLE</a>, <a href="ByteBuf.html#readFloatLE--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#readFloatLE--">readFloatLE</a>, <a href="ByteBuf.html#setDoubleLE-int-double-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setDoubleLE-int-double-">setDoubleLE</a>, <a href="ByteBuf.html#setFloatLE-int-float-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setFloatLE-int-float-">setFloatLE</a>, <a href="ByteBuf.html#writeDoubleLE-double-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writeDoubleLE-double-">writeDoubleLE</a>, <a href="ByteBuf.html#writeFloatLE-float-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writeFloatLE-float-">writeFloatLE</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="ReadOnlyByteBuf-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>ReadOnlyByteBuf</h4> <pre>public&nbsp;ReadOnlyByteBuf(<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;buffer)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="isReadOnly--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isReadOnly</h4> <pre>public&nbsp;boolean&nbsp;isReadOnly()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#isReadOnly--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#isReadOnly--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当此缓冲区为只读时才返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDerivedByteBuf.html#isReadOnly--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#isReadOnly--">isReadOnly</a></code>在课堂 
+            <code><a href="AbstractDerivedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html" title="class in io.netty.buffer">AbstractDerivedByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isWritable--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isWritable</h4> <pre>public&nbsp;boolean&nbsp;isWritable()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#isWritable--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回 
+           <code>true</code>当且仅当 
+           <code>(this.capacity - this.writerIndex)</code>大于 
+           <code>0</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#isWritable--">isWritable</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isWritable-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isWritable</h4> <pre>public&nbsp;boolean&nbsp;isWritable(int&nbsp;numBytes)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#isWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#isWritable-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当此缓冲区有足够的空间允许写入指定数量的元素时才返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#isWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#isWritable-int-">isWritable</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="ensureWritable-int-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ensureWritable</h4> <pre>public&nbsp;int&nbsp;ensureWritable(int&nbsp;minWritableBytes,
+                          boolean&nbsp;force)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#ensureWritable-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#ensureWritable-int-boolean-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>尝试确保<a href="ByteBuf.html#writableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writableBytes--">the writable bytes</a>的数量等于或大于指定值。</span> 
+           <span>与<a href="ByteBuf.html#ensureWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#ensureWritable-int-"><code>ByteBuf.ensureWritable(int)</code></a>不同，此方法不会引发异常，但会返回代码。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#ensureWritable-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#ensureWritable-int-boolean-">ensureWritable</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>minWritableBytes</code> - 可写入字节的预期最小数量 
+           </dd> 
+           <dd> 
+            <span><code>force</code> - 当<a href="ByteBuf.html#writerIndex--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writerIndex--"><code>ByteBuf.writerIndex()</code></a> + <code>minWritableBytes</code> &gt; <a href="ByteBuf.html#maxCapacity--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#maxCapacity--"><code>ByteBuf.maxCapacity()</code></a> ：</span> 
+            <ul> 
+             <li> <span><code>true</code> - 缓冲区的容量扩大到<a href="ByteBuf.html#maxCapacity--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#maxCapacity--"><code>ByteBuf.maxCapacity()</code></a></span> </li> 
+             <li> <span><code>false</code> - 缓冲区的容量不变</span> </li> 
+            </ul> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>0</code>如果缓冲区有足够的可写字节，并且其容量不变。</span> 
+            <span><code>1</code>如果缓冲区没有足够的字节，并且其容量不变。</span> 
+            <span><code>2</code>如果缓冲区有足够的可写字节，并且其容量已增加。</span> 
+            <span><code>3</code>如果缓冲区没有足够的字节，但其容量已增加到最大值。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="ensureWritable-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ensureWritable</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;ensureWritable(int&nbsp;minWritableBytes)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#ensureWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#ensureWritable-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>确保<a href="ByteBuf.html#writableBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#writableBytes--">the writable bytes</a>的数量等于或大于指定值。</span> 
+           <span>如果此缓冲区中有足够的可写字节，则此方法返回时无副作用。</span> 
+           <span>否则，它会产生一个<code>IllegalArgumentException</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#ensureWritable-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#ensureWritable-int-">ensureWritable</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>minWritableBytes</code> - 可写入字节的预期最小数量 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="unwrap--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>unwrap</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;unwrap()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#unwrap--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#unwrap--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            如果此缓冲区是另一个缓冲区的包装，则返回底层缓冲区实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#unwrap--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#unwrap--">unwrap</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>null</code>如果此缓冲区不是包装 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="alloc--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>alloc</h4> <pre>public&nbsp;<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;alloc()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#alloc--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回创建此缓冲区的<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#alloc--">alloc</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="order--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>order</h4> <pre>@Deprecated
+public&nbsp;java.nio.ByteOrder&nbsp;order()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#order--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#order--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回此缓冲区的 
+           <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Endianness  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Endianness'" tppabs="http://en.wikipedia.org/wiki/Endianness">endianness</a> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#order--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#order--">order</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isDirect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isDirect</h4> <pre>public&nbsp;boolean&nbsp;isDirect()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#isDirect--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#isDirect--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当此缓冲区由NIO直接缓冲区支持时才返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#isDirect--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#isDirect--">isDirect</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hasArray--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hasArray</h4> <pre>public&nbsp;boolean&nbsp;hasArray()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#hasArray--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#hasArray--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>当且仅当此缓冲区有一个后备字节数组时，才返回<code>true</code> 。</span> 
+           <span>如果此方法返回true，则可以放心地致电<a href="ByteBuf.html#array--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#array--"><code>ByteBuf.array()</code></a>和<a href="ByteBuf.html#arrayOffset--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#arrayOffset--"><code>ByteBuf.arrayOffset()</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#hasArray--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#hasArray--">hasArray</a></code>在课程 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="array--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>array</h4> <pre>public&nbsp;byte[]&nbsp;array()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#array--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#array--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回此缓冲区的后备字节数组。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#array--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#array--">array</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="arrayOffset--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>arrayOffset</h4> <pre>public&nbsp;int&nbsp;arrayOffset()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#arrayOffset--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#arrayOffset--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回此缓冲区的后备字节数组中第一个字节的偏移量。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#arrayOffset--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#arrayOffset--">arrayOffset</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hasMemoryAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hasMemoryAddress</h4> <pre>public&nbsp;boolean&nbsp;hasMemoryAddress()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#hasMemoryAddress--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#hasMemoryAddress--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            当且仅当此缓冲区引用指向后备数据的低级内存地址时才返回 
+           <code>true</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#hasMemoryAddress--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#hasMemoryAddress--">hasMemoryAddress</a></code>在课程 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="memoryAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>memoryAddress</h4> <pre>public&nbsp;long&nbsp;memoryAddress()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#memoryAddress--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#memoryAddress--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回指向备份数据第一个字节的低级内存地址。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#memoryAddress--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#memoryAddress--">memoryAddress</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="discardReadBytes--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>discardReadBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;discardReadBytes()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#discardReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#discardReadBytes--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>丢弃第0个索引和<code>readerIndex</code>之间的字节。</span> 
+           <span>它移动之间的字节<code>readerIndex</code>和<code>writerIndex</code>至第0索引，并且设置<code>readerIndex</code>和<code>writerIndex</code>至<code>0</code>和<code>oldWriterIndex - oldReaderIndex</code>分别。</span> 
+           <p> <span>请参阅班级文件以获得更详细的解释。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#discardReadBytes--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#discardReadBytes--">discardReadBytes</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBytes-int-io.netty.buffer.ByteBuf-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setBytes(int&nbsp;index,
+                        <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;src,
+                        int&nbsp;srcIndex,
+                        int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的源缓冲区的数据从指定的绝对<code>index</code>开始传输到此缓冲区。</span> 
+           <span>此方法不会修改来源（即<code>this</code> ）和目的地的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-io.netty.buffer.ByteBuf-int-int-">setBytes</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>srcIndex</code> - 来源的第一个索引 
+           </dd> 
+           <dd> 
+            <code>length</code> - 要传输的字节数 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBytes-int-byte:A-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setBytes(int&nbsp;index,
+                        byte[]&nbsp;src,
+                        int&nbsp;srcIndex,
+                        int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setBytes-int-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-byte:A-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的源数组的数据传输到此缓冲区，从指定的绝对<code>index</code> 。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#setBytes-int-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-byte:A-int-int-">setBytes</a></code>在课程 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBytes-int-java.nio.ByteBuffer-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setBytes(int&nbsp;index,
+                        java.nio.ByteBuffer&nbsp;src)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setBytes-int-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.nio.ByteBuffer-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定的源缓冲区的数据从指定的绝对<code>index</code>开始传输到此缓冲区，直到源缓冲区的位置达到其限制。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#setBytes-int-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.nio.ByteBuffer-">setBytes</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setByte-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setByte</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setByte(int&nbsp;index,
+                       int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setByte-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setByte-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处设置指定的字节。</span> 
+           <span>指定值的24个高位被忽略。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setByte-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setByte-int-int-">setByte</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setByte-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setByte</h4> <pre>protected&nbsp;void&nbsp;_setByte(int&nbsp;index,
+                        int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setByte-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setByte-int-int-">_setByte</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setShort-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setShort</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setShort(int&nbsp;index,
+                        int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setShort-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setShort-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处设置指定的16位短整数。</span> 
+           <span>指定值的16个高位被忽略。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setShort-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setShort-int-int-">setShort</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setShort-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setShort</h4> <pre>protected&nbsp;void&nbsp;_setShort(int&nbsp;index,
+                         int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setShort-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setShort-int-int-">_setShort</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setShortLE-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setShortLE</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setShortLE(int&nbsp;index,
+                          int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setShortLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setShortLE-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>使用Little Endian Byte Order在此缓冲区中的指定绝对<code>index</code>处设置指定的16位短整数。</span> 
+           <span>指定值的16个高位被忽略。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setShortLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setShortLE-int-int-">setShortLE</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setShortLE-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setShortLE</h4> <pre>protected&nbsp;void&nbsp;_setShortLE(int&nbsp;index,
+                           int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setShortLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setShortLE-int-int-">_setShortLE</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setMedium-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setMedium</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setMedium(int&nbsp;index,
+                         int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setMedium-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setMedium-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处设置指定的24位中等整数。</span> 
+           <span>请注意，最高有效字节在指定值中被忽略。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setMedium-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setMedium-int-int-">setMedium</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setMedium-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setMedium</h4> <pre>protected&nbsp;void&nbsp;_setMedium(int&nbsp;index,
+                          int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setMedium-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setMedium-int-int-">_setMedium</a></code> 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setMediumLE-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setMediumLE</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setMediumLE(int&nbsp;index,
+                           int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setMediumLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setMediumLE-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以Little Endian字节顺序在此缓冲区中的指定绝对<code>index</code>处设置指定的24位中等整数。</span> 
+           <span>请注意，最高有效字节在指定值中被忽略。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setMediumLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setMediumLE-int-int-">setMediumLE</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setMediumLE-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setMediumLE</h4> <pre>protected&nbsp;void&nbsp;_setMediumLE(int&nbsp;index,
+                            int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setMediumLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setMediumLE-int-int-">_setMediumLE</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setInt-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setInt</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setInt(int&nbsp;index,
+                      int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setInt-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setInt-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处设置指定的32位整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setInt-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setInt-int-int-">setInt</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setInt-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setInt</h4> <pre>protected&nbsp;void&nbsp;_setInt(int&nbsp;index,
+                       int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setInt-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setInt-int-int-">_setInt</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setIntLE-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setIntLE</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setIntLE(int&nbsp;index,
+                        int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setIntLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setIntLE-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>使用Little Endian字节顺序在此缓冲区中的指定绝对<code>index</code>处设置指定的32位整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setIntLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setIntLE-int-int-">setIntLE</a></code> class 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setIntLE-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setIntLE</h4> <pre>protected&nbsp;void&nbsp;_setIntLE(int&nbsp;index,
+                         int&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setIntLE-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setIntLE-int-int-">_setIntLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setLong-int-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setLong</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setLong(int&nbsp;index,
+                       long&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setLong-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setLong-int-long-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区的指定绝对<code>index</code>处设置指定的64位长整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setLong-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setLong-int-long-">setLong</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setLong-int-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setLong</h4> <pre>protected&nbsp;void&nbsp;_setLong(int&nbsp;index,
+                        long&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setLong-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setLong-int-long-">_setLong</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setLongLE-int-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setLongLE</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;setLongLE(int&nbsp;index,
+                         long&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setLongLE-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setLongLE-int-long-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以小端字节顺序在此缓冲区中的指定绝对<code>index</code>处设置指定的64位长整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#setLongLE-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#setLongLE-int-long-">setLongLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_setLongLE-int-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_setLongLE</h4> <pre>protected&nbsp;void&nbsp;_setLongLE(int&nbsp;index,
+                          long&nbsp;value)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_setLongLE-int-long-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_setLongLE-int-long-">_setLongLE</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBytes-int-java.io.InputStream-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBytes</h4> <pre>public&nbsp;int&nbsp;setBytes(int&nbsp;index,
+                    java.io.InputStream&nbsp;in,
+                    int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setBytes-int-java.io.InputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.io.InputStream-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定源码流的内容从指定绝对<code>index</code>开始传输到此缓冲区。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#setBytes-int-java.io.InputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.io.InputStream-int-">setBytes</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>length</code> - 要传输的字节数 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>从指定通道读入的实际字节数。</span> 
+            <span><code>-1</code>如果指定的频道已关闭。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBytes-int-java.nio.channels.ScatteringByteChannel-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBytes</h4> <pre>public&nbsp;int&nbsp;setBytes(int&nbsp;index,
+                    java.nio.channels.ScatteringByteChannel&nbsp;in,
+                    int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setBytes-int-java.nio.channels.ScatteringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.nio.channels.ScatteringByteChannel-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将指定源通道的内容从指定绝对<code>index</code>开始传输到此缓冲区。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#setBytes-int-java.nio.channels.ScatteringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.nio.channels.ScatteringByteChannel-int-">setBytes</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>length</code> - 要传输的最大字节数 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>从指定通道读入的实际字节数。</span> 
+            <span><code>-1</code>如果指定的频道已关闭。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBytes-int-java.nio.channels.FileChannel-long-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBytes</h4> <pre>public&nbsp;int&nbsp;setBytes(int&nbsp;index,
+                    java.nio.channels.FileChannel&nbsp;in,
+                    long&nbsp;position,
+                    int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#setBytes-int-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.nio.channels.FileChannel-long-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将从给定文件位置开始的指定源通道的内容传输到此缓冲区，从指定绝对<code>index</code> 。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+           <span>此方法不会修改频道的位置。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#setBytes-int-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#setBytes-int-java.nio.channels.FileChannel-long-int-">setBytes</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>position</code> - 传输开始的文件位置 
+           </dd> 
+           <dd> 
+            <code>length</code> - 传输的最大字节数 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>从指定通道读入的实际字节数。</span> 
+            <span><code>-1</code>如果指定的频道已关闭。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBytes-int-java.nio.channels.GatheringByteChannel-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBytes</h4> <pre>public&nbsp;int&nbsp;getBytes(int&nbsp;index,
+                    java.nio.channels.GatheringByteChannel&nbsp;out,
+                    int&nbsp;length)
+             throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getBytes-int-java.nio.channels.GatheringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.nio.channels.GatheringByteChannel-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的数据传输到指定的绝对<code>index</code>开始的通道。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#getBytes-int-java.nio.channels.GatheringByteChannel-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.nio.channels.GatheringByteChannel-int-">getBytes</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>length</code> - 传输的最大字节数 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             写出到指定通道的实际字节数 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> - 如果指定的通道在I / O期间引发异常 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBytes-int-java.nio.channels.FileChannel-long-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBytes</h4> <pre>public&nbsp;int&nbsp;getBytes(int&nbsp;index,
+                    java.nio.channels.FileChannel&nbsp;out,
+                    long&nbsp;position,
+                    int&nbsp;length)
+             throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getBytes-int-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.nio.channels.FileChannel-long-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的数据从指定的绝对<code>index</code>开始<code>index</code>到指定的通道，从给定的文件位置开始。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+           <span>此方法不会修改频道的位置。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#getBytes-int-java.nio.channels.FileChannel-long-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.nio.channels.FileChannel-long-int-">getBytes</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>position</code> - 传输开始的文件位置 
+           </dd> 
+           <dd> 
+            <code>length</code> - 传输的最大字节数 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             写出到指定通道的实际字节数 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> - 如果指定的通道在I / O期间引发异常 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBytes-int-java.io.OutputStream-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;getBytes(int&nbsp;index,
+                        java.io.OutputStream&nbsp;out,
+                        int&nbsp;length)
+                 throws java.io.IOException</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getBytes-int-java.io.OutputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.io.OutputStream-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的数据传输到指定绝对<code>index</code>的指定流<code>index</code> 。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#getBytes-int-java.io.OutputStream-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.io.OutputStream-int-">getBytes</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>length</code> - 要传输的字节数 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> - 如果指定的流在I / O期间抛出异常 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBytes-int-byte:A-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;getBytes(int&nbsp;index,
+                        byte[]&nbsp;dst,
+                        int&nbsp;dstIndex,
+                        int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getBytes-int-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-byte:A-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的数据传输到指定的目标，从指定的绝对<code>index</code> 。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#getBytes-int-byte:A-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-byte:A-int-int-">getBytes</a></code>在课程 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>dstIndex</code> - 目的地的第一个索引 
+           </dd> 
+           <dd> 
+            <code>length</code> - 要传输的字节数 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBytes-int-io.netty.buffer.ByteBuf-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;getBytes(int&nbsp;index,
+                        <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;dst,
+                        int&nbsp;dstIndex,
+                        int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的数据传输到指定的绝对目标<code>index</code>开始的目标。</span> 
+           <span>此方法不会修改来源（即<code>this</code> ）和目的地的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-io.netty.buffer.ByteBuf-int-int-">getBytes</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dd> 
+            <code>dstIndex</code> - 目的地的第一个索引 
+           </dd> 
+           <dd> 
+            <code>length</code> - 要传输的字节数 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBytes-int-java.nio.ByteBuffer-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBytes</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;getBytes(int&nbsp;index,
+                        java.nio.ByteBuffer&nbsp;dst)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getBytes-int-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.nio.ByteBuffer-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的数据传输到指定的目标位置，从指定的绝对值<code>index</code>开始，直到目标位置达到其限制。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> ，而目标的<code>position</code>将会增加。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#getBytes-int-java.nio.ByteBuffer-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getBytes-int-java.nio.ByteBuffer-">getBytes</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="duplicate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>duplicate</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;duplicate()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#duplicate--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回共享此缓冲区整个区域的缓冲区。</span> 
+           <span>修改返回的缓冲区或缓冲区的内容会影响彼此的内容，同时维护单独的索引和标记。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+           <p> <span>读者和作家的标记不会重复。</span> <span>另外请注意，此方法不会调用<a href="ByteBuf.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#retain--"><code>ByteBuf.retain()</code></a> ，因此引用计数不会增加。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#duplicate--">duplicate</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>其可读内容等同于<a href="ByteBuf.html#slice--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#slice--"><code>ByteBuf.slice()</code></a>返回的缓冲区的缓冲区。</span> 
+            <span>然而，这个缓冲区将共享底层缓冲区的容量，因此如果需要的话允许访问所有的底层内容。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="copy-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>copy</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;copy(int&nbsp;index,
+                    int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#copy-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#copy-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此缓冲区的子区域的副本。</span> 
+           <span>修改返回的缓冲区或缓冲区的内容完全不会相互影响。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#copy-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#copy-int-int-">copy</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="slice-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>slice</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;slice(int&nbsp;index,
+                     int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#slice-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#slice-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此缓冲区的子区域的一部分。</span> 
+           <span>修改返回的缓冲区或缓冲区的内容会影响彼此的内容，同时维护单独的索引和标记。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+           <p> <span>另外请注意，此方法不会调用<a href="ByteBuf.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#retain--"><code>ByteBuf.retain()</code></a> ，因此引用计数不会增加。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#slice-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#slice-int-int-">slice</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getByte-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getByte</h4> <pre>public&nbsp;byte&nbsp;getByte(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getByte-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处获取一个字节。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getByte-int-">getByte</a></code> ，课时 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getByte-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getByte</h4> <pre>protected&nbsp;byte&nbsp;_getByte(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getByte-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getByte-int-">_getByte</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getShort-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getShort</h4> <pre>public&nbsp;short&nbsp;getShort(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getShort-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处获取一个16位短整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getShort-int-">getShort</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getShort-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getShort</h4> <pre>protected&nbsp;short&nbsp;_getShort(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getShort-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getShort-int-">_getShort</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getShortLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getShortLE</h4> <pre>public&nbsp;short&nbsp;getShortLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getShortLE-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以Little Endian字节顺序在此缓冲区中的指定绝对<code>index</code>处获取一个16位短整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getShortLE-int-">getShortLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getShortLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getShortLE</h4> <pre>protected&nbsp;short&nbsp;_getShortLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getShortLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getShortLE-int-">_getShortLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getUnsignedMedium-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getUnsignedMedium</h4> <pre>public&nbsp;int&nbsp;getUnsignedMedium(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getUnsignedMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getUnsignedMedium-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中指定的绝对<code>index</code>处获取一个无符号的24位中等整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getUnsignedMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedMedium-int-">getUnsignedMedium</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getUnsignedMedium-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getUnsignedMedium</h4> <pre>protected&nbsp;int&nbsp;_getUnsignedMedium(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getUnsignedMedium-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getUnsignedMedium-int-">_getUnsignedMedium</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getUnsignedMediumLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getUnsignedMediumLE</h4> <pre>public&nbsp;int&nbsp;getUnsignedMediumLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getUnsignedMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getUnsignedMediumLE-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以小端字节顺序在此缓冲区中的指定绝对<code>index</code>处获取无符号的24位中等整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getUnsignedMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getUnsignedMediumLE-int-">getUnsignedMediumLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getUnsignedMediumLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getUnsignedMediumLE</h4> <pre>protected&nbsp;int&nbsp;_getUnsignedMediumLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getUnsignedMediumLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getUnsignedMediumLE-int-">_getUnsignedMediumLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getInt-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getInt</h4> <pre>public&nbsp;int&nbsp;getInt(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getInt-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处获取一个32位整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getInt-int-">getInt</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getInt-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getInt</h4> <pre>protected&nbsp;int&nbsp;_getInt(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getInt-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getInt-int-">_getInt</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getIntLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getIntLE</h4> <pre>public&nbsp;int&nbsp;getIntLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getIntLE-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中的指定绝对<code>index</code>处获取一个32位整数，其<code>index</code>字节顺序。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getIntLE-int-">getIntLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getIntLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getIntLE</h4> <pre>protected&nbsp;int&nbsp;_getIntLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getIntLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getIntLE-int-">_getIntLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getLong-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getLong</h4> <pre>public&nbsp;long&nbsp;getLong(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getLong-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getLong-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>在此缓冲区中指定的绝对<code>index</code>处获取一个64位长整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getLong-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getLong-int-">getLong</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getLong-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getLong</h4> <pre>protected&nbsp;long&nbsp;_getLong(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getLong-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getLong-int-">_getLong</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getLongLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getLongLE</h4> <pre>public&nbsp;long&nbsp;getLongLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#getLongLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#getLongLE-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以小端字节顺序在此缓冲区中的指定绝对<code>index</code>处获取64位长整数。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#getLongLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#getLongLE-int-">getLongLE</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="Z:Z_getLongLE-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>_getLongLE</h4> <pre>protected&nbsp;long&nbsp;_getLongLE(int&nbsp;index)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#Z:Z_getLongLE-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#Z:Z_getLongLE-int-">_getLongLE</a></code>在课程 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="nioBufferCount--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBufferCount</h4> <pre>public&nbsp;int&nbsp;nioBufferCount()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBufferCount--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回构成此缓冲区的NIO <code>ByteBuffer</code>的最大数量。</span> 
+           <span>请注意， <a href="ByteBuf.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers--"><code>ByteBuf.nioBuffers()</code></a>或<a href="ByteBuf.html#nioBuffers-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers-int-int-"><code>ByteBuf.nioBuffers(int, int)</code></a>可能会返回更少数量的<code>ByteBuffer</code> s。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBufferCount--">nioBufferCount</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>-1</code>如果此缓冲区没有底层<code>ByteBuffer</code> 。</span> 
+            <span>如果此缓冲区至少有一个基础<code>ByteBuffer</code> ，则基础<code>ByteBuffer</code>的<code>ByteBuffer</code> 。</span> 
+            <span>请注意，此方法不会返回<code>0</code>以避免混淆。</span> 
+           </dd> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="ByteBuf.html#nioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffer--"><code>ByteBuf.nioBuffer()</code></a> ， 
+            <a href="ByteBuf.html#nioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffer-int-int-"><code>ByteBuf.nioBuffer(int, int)</code></a> ， 
+            <a href="ByteBuf.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers--"><code>ByteBuf.nioBuffers()</code></a> ， 
+            <a href="ByteBuf.html#nioBuffers-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers-int-int-"><code>ByteBuf.nioBuffers(int, int)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="nioBuffer-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBuffer</h4> <pre>public&nbsp;java.nio.ByteBuffer&nbsp;nioBuffer(int&nbsp;index,
+                                     int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#nioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffer-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此缓冲区的子区域公开为NIO <code>ByteBuffer</code> 。</span> 
+           <span>返回的缓冲区共享或包含此缓冲区的复制内容，同时更改返回的NIO缓冲区的位置和限制不会影响此缓冲区的索引和标记。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+           <span>请注意，如果此缓冲区是动态缓冲区并且它调整了其容量，则返回的NIO缓冲区将不会看到此缓冲区的更改。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractDerivedByteBuf.html#nioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html#nioBuffer-int-int-">nioBuffer</a></code>在课堂 
+            <code><a href="AbstractDerivedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractDerivedByteBuf.html" title="class in io.netty.buffer">AbstractDerivedByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="ByteBuf.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBufferCount--"><code>ByteBuf.nioBufferCount()</code></a> ， 
+            <a href="ByteBuf.html#nioBuffers--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers--"><code>ByteBuf.nioBuffers()</code></a> ， 
+            <a href="ByteBuf.html#nioBuffers-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers-int-int-"><code>ByteBuf.nioBuffers(int, int)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="nioBuffers-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>nioBuffers</h4> <pre>public&nbsp;java.nio.ByteBuffer[]&nbsp;nioBuffers(int&nbsp;index,
+                                        int&nbsp;length)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#nioBuffers-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers-int-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以指定的索引和长度公开此缓冲区的字节为NIO <code>ByteBuffer</code>返回的缓冲区共享或包含此缓冲区的复制内容，同时更改返回的NIO缓冲区的位置和限制不会影响此索引和标记缓冲。</span> 
+           <span>此方法不会修改此缓冲区的<code>readerIndex</code>或<code>writerIndex</code> 。</span> 
+           <span>请注意，如果此缓冲区是动态缓冲区并且它调整了其容量，则返回的NIO缓冲区将不会看到此缓冲区的更改。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#nioBuffers-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffers-int-int-">nioBuffers</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="ByteBuf.html#nioBufferCount--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBufferCount--"><code>ByteBuf.nioBufferCount()</code></a> ， 
+            <a href="ByteBuf.html#nioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffer--"><code>ByteBuf.nioBuffer()</code></a> ， 
+            <a href="ByteBuf.html#nioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#nioBuffer-int-int-"><code>ByteBuf.nioBuffer(int, int)</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="forEachByte-int-int-io.netty.util.ByteProcessor-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>forEachByte</h4> <pre>public&nbsp;int&nbsp;forEachByte(int&nbsp;index,
+                       int&nbsp;length,
+                       <a href="../util/ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="interface in io.netty.util">ByteProcessor</a>&nbsp;processor)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#forEachByte-int-int-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#forEachByte-int-int-io.netty.util.ByteProcessor-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以指定的<code>processor</code>按升序迭代该缓冲区的指定区域。</span> 
+           <span>（即<code>index</code> ， <code>(index + 1)</code> ，.. <code>(index + length - 1)</code> ）</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#forEachByte-int-int-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#forEachByte-int-int-io.netty.util.ByteProcessor-">forEachByte</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>-1</code>如果处理器迭代到或超出指定区域的末尾。</span> 
+            <span>上次访问的索引如果<a href="../util/ByteProcessor.html#process-byte-" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html#process-byte-"><code>ByteProcessor.process(byte)</code></a>返回<code>false</code> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="forEachByteDesc-int-int-io.netty.util.ByteProcessor-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>forEachByteDesc</h4> <pre>public&nbsp;int&nbsp;forEachByteDesc(int&nbsp;index,
+                           int&nbsp;length,
+                           <a href="../util/ByteProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html" title="interface in io.netty.util">ByteProcessor</a>&nbsp;processor)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#forEachByteDesc-int-int-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#forEachByteDesc-int-int-io.netty.util.ByteProcessor-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>以指定的<code>processor</code>降序遍历此缓冲区的指定区域。</span> 
+           <span>（即<code>(index + length - 1)</code> ， <code>(index + length - 2)</code> ，... <code>index</code> ）</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#forEachByteDesc-int-int-io.netty.util.ByteProcessor-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#forEachByteDesc-int-int-io.netty.util.ByteProcessor-">forEachByteDesc</a></code>在课堂上 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><code>-1</code>如果处理器迭代到或超出指定区域的开始位置。</span> 
+            <span>最后访问的索引如果<a href="../util/ByteProcessor.html#process-byte-" tppabs="http://netty.io/4.1/api/io/netty/util/ByteProcessor.html#process-byte-"><code>ByteProcessor.process(byte)</code></a>返回<code>false</code> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="capacity--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>capacity</h4> <pre>public&nbsp;int&nbsp;capacity()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#capacity--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#capacity--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回此缓冲区可包含的字节数（字节）。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#capacity--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#capacity--">capacity</a></code>在课堂上 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="capacity-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>capacity</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;capacity(int&nbsp;newCapacity)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#capacity-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#capacity-int-">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>调整此缓冲区的容量。</span> 
+           <span>如果<code>newCapacity</code>小于当前容量，则此缓冲区的内容将被截断。</span> 
+           <span>如果<code>newCapacity</code>大于当前容量，则缓冲区会附加长度为<code>(newCapacity - currentCapacity)</code>未指定数据。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBuf.html#capacity-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#capacity-int-">capacity</a></code>在课堂 
+            <code><a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="asReadOnly--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>asReadOnly</h4> <pre>public&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;asReadOnly()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="ByteBuf.html#asReadOnly--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#asReadOnly--">ByteBuf</a></code></span> 
+          </div> 
+          <div class="block">
+            返回此缓冲区的只读版本。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBuf.html#asReadOnly--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html#asReadOnly--">asReadOnly</a></code>在课堂 
+            <code><a href="AbstractByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBuf.html" title="class in io.netty.buffer">AbstractByteBuf</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/ReadOnlyByteBuf.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="PoolSubpageMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolSubpageMetric.html" title="interface in io.netty.buffer"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="SlicedByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/SlicedByteBuf.html" title="class in io.netty.buffer"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-buffer-ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/ReadOnlyByteBuf.html" target="_top">框架</a></li> 
+    <li><a href="ReadOnlyByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ReadOnlyByteBuf.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/buffer/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ServerBootstrap (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.bootstrap.ServerBootstrap class"> 
+  <meta name="keywords" content="group()"> 
+  <meta name="keywords" content="childOption()"> 
+  <meta name="keywords" content="childAttr()"> 
+  <meta name="keywords" content="childHandler()"> 
+  <meta name="keywords" content="validate()"> 
+  <meta name="keywords" content="clone()"> 
+  <meta name="keywords" content="childGroup()"> 
+  <meta name="keywords" content="config()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ServerBootstrap (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":42,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/class-use/ServerBootstrap.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ChannelFactory.html" title="interface in io.netty.bootstrap"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ServerBootstrapConfig.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrapConfig.html" title="class in io.netty.bootstrap"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-bootstrap-ServerBootstrap.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/bootstrap/ServerBootstrap.html" target="_top">框架</a></li> 
+    <li><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.bootstrap 
+   </div> 
+   <h2 title="Class ServerBootstrap" class="title">Class ServerBootstrap</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">io.netty.bootstrap.AbstractBootstrap</a>&lt;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>,<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a>&gt;</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.bootstrap.ServerBootstrap</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd>
+         java.lang.Cloneable 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">ServerBootstrap</span>
+extends <a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">AbstractBootstrap</a>&lt;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>,<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a>&gt;</pre> 
+      <div class="block"> 
+       <span><a href="Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a>子类，它允许容易引导<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code></a></span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="ServerBootstrap.html#ServerBootstrap--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#ServerBootstrap--">ServerBootstrap</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#childAttr-io.netty.util.AttributeKey-T-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#childAttr-io.netty.util.AttributeKey-T-">childAttr</a></span>(<a href="../util/AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="class in io.netty.util">AttributeKey</a>&lt;T&gt;&nbsp;childKey, T&nbsp;value)</code> 
+            <div class="block"> 
+             <span>设置特定<a href="../util/AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>与给定值的每一个孩子<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#childGroup--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#childGroup--">childGroup</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">改为使用<a href="ServerBootstrap.html#config--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#config--"><code>config()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#childHandler-io.netty.channel.ChannelHandler-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#childHandler-io.netty.channel.ChannelHandler-">childHandler</a></span>(<a href="../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>&nbsp;childHandler)</code> 
+            <div class="block"> 
+             <span>设置<a href="../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>这是用来服务于该请求<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#childOption-io.netty.channel.ChannelOption-T-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#childOption-io.netty.channel.ChannelOption-T-">childOption</a></span>(<a href="../channel/ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="class in io.netty.channel">ChannelOption</a>&lt;T&gt;&nbsp;childOption, T&nbsp;value)</code> 
+            <div class="block"> 
+             <span>允许指定<a href="../channel/ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="在io.netty.channel中的类"><code>ChannelOption</code></a>其用于<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>种</a>情况下，一旦它们开始创建（受体后接受了<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ）。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#clone--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#clone--">clone</a></span>()</code> 
+            <div class="block">
+              返回具有相同配置的此引导程序的深层克隆。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code><a href="ServerBootstrapConfig.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrapConfig.html" title="class in io.netty.bootstrap">ServerBootstrapConfig</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#config--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#config--">config</a></span>()</code> 
+            <div class="block"> 
+             <span>返回可用于获取引导程序当前配置的<a href="AbstractBootstrapConfig.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrapConfig.html" title="class在io.netty.bootstrap中"><code>AbstractBootstrapConfig</code></a>对象。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#group-io.netty.channel.EventLoopGroup-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#group-io.netty.channel.EventLoopGroup-">group</a></span>(<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;group)</code> 
+            <div class="block"> 
+             <span>指定用于父级（接受者）和子级（客户端）的<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#group-io.netty.channel.EventLoopGroup-io.netty.channel.EventLoopGroup-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#group-io.netty.channel.EventLoopGroup-io.netty.channel.EventLoopGroup-">group</a></span>(<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;parentGroup, <a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;childGroup)</code> 
+            <div class="block"> 
+             <span>为父（受主）和孩子（客户）设置<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ServerBootstrap.html#validate--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#validate--">validate</a></span>()</code> 
+            <div class="block">
+              验证所有参数。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.bootstrap.AbstractBootstrap"> </a> <h3>Methods inherited from class&nbsp;io.netty.bootstrap.<a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">AbstractBootstrap</a></h3> <code><a href="AbstractBootstrap.html#attr-io.netty.util.AttributeKey-T-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#attr-io.netty.util.AttributeKey-T-">attr</a>, <a href="AbstractBootstrap.html#bind--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#bind--">bind</a>, <a href="AbstractBootstrap.html#bind-java.net.InetAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#bind-java.net.InetAddress-int-">bind</a>, <a href="AbstractBootstrap.html#bind-int-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#bind-int-">bind</a>, <a href="AbstractBootstrap.html#bind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#bind-java.net.SocketAddress-">bind</a>, <a href="AbstractBootstrap.html#bind-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#bind-java.lang.String-int-">bind</a>, <a href="AbstractBootstrap.html#channel-java.lang.Class-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#channel-java.lang.Class-">channel</a>, <a href="AbstractBootstrap.html#channelFactory-io.netty.bootstrap.ChannelFactory-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#channelFactory-io.netty.bootstrap.ChannelFactory-">channelFactory</a>, <a href="AbstractBootstrap.html#channelFactory-io.netty.channel.ChannelFactory-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#channelFactory-io.netty.channel.ChannelFactory-">channelFactory</a>, <a href="AbstractBootstrap.html#group--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#group--">group</a>, <a href="AbstractBootstrap.html#handler-io.netty.channel.ChannelHandler-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#handler-io.netty.channel.ChannelHandler-">handler</a>, <a href="AbstractBootstrap.html#localAddress-java.net.InetAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#localAddress-java.net.InetAddress-int-">localAddress</a>, <a href="AbstractBootstrap.html#localAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#localAddress-int-">localAddress</a>, <a href="AbstractBootstrap.html#localAddress-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#localAddress-java.net.SocketAddress-">localAddress</a>, <a href="AbstractBootstrap.html#localAddress-java.lang.String-int-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#localAddress-java.lang.String-int-">localAddress</a>, <a href="AbstractBootstrap.html#option-io.netty.channel.ChannelOption-T-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#option-io.netty.channel.ChannelOption-T-">option</a>, <a href="AbstractBootstrap.html#register--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#register--">register</a>, <a href="AbstractBootstrap.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#toString--">toString</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="ServerBootstrap--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>ServerBootstrap</h4> <pre>public&nbsp;ServerBootstrap()</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="group-io.netty.channel.EventLoopGroup-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>group</h4> <pre>public&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;group(<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;group)</pre> 
+          <div class="block"> 
+           <span>指定用于父（受主）和子（客户）的<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBootstrap.html#group-io.netty.channel.EventLoopGroup-" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#group-io.netty.channel.EventLoopGroup-">group</a></code>在课堂 
+            <code><a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">AbstractBootstrap</a>&lt;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>,<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="group-io.netty.channel.EventLoopGroup-io.netty.channel.EventLoopGroup-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>group</h4> <pre>public&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;group(<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;parentGroup,
+                             <a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;childGroup)</pre> 
+          <div class="block"> 
+           <span>为父（受主）和孩子（客户）设置<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> 。</span> 
+           <span>这些<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a>用于处理<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口"><code>ServerChannel</code></a>和<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的所有事件和IO。</span> 
+          </div> </li> 
+        </ul> <a name="childOption-io.netty.channel.ChannelOption-java.lang.Object-"> </a><a name="childOption-io.netty.channel.ChannelOption-T-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>childOption</h4> <pre>public&nbsp;&lt;T&gt;&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;childOption(<a href="../channel/ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="class in io.netty.channel">ChannelOption</a>&lt;T&gt;&nbsp;childOption,
+                                       T&nbsp;value)</pre> 
+          <div class="block"> 
+           <span>允许指定<a href="../channel/ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="在io.netty.channel中的类"><code>ChannelOption</code></a>其用于<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>种</a>情况下，一旦它们开始创建（受体后接受了<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> ）。</span> 
+           <span>使用值<code>null</code>删除以前的一组<a href="../channel/ChannelOption.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOption.html" title="在io.netty.channel中的类"><code>ChannelOption</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="childAttr-io.netty.util.AttributeKey-java.lang.Object-"> </a><a name="childAttr-io.netty.util.AttributeKey-T-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>childAttr</h4> <pre>public&nbsp;&lt;T&gt;&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;childAttr(<a href="../util/AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="class in io.netty.util">AttributeKey</a>&lt;T&gt;&nbsp;childKey,
+                                     T&nbsp;value)</pre> 
+          <div class="block"> 
+           <span>设置特定<a href="../util/AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a>与给定值的每一个孩子<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+           <span>如果值为<code>null</code> ， <a href="../util/AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类">则会</a>删除<a href="../util/AttributeKey.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeKey.html" title="在io.netty.util中的类"><code>AttributeKey</code></a></span> 
+          </div> </li> 
+        </ul> <a name="childHandler-io.netty.channel.ChannelHandler-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>childHandler</h4> <pre>public&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;childHandler(<a href="../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>&nbsp;childHandler)</pre> 
+          <div class="block"> 
+           <span>设置<a href="../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>这是用来服务于该请求<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的。</span> 
+          </div> </li> 
+        </ul> <a name="validate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>validate</h4> <pre>public&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;validate()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractBootstrap.html#validate--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#validate--">AbstractBootstrap</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>验证所有参数。</span> 
+           <span>子类可以重写这个，但在这种情况下应该调用super方法。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBootstrap.html#validate--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#validate--">validate</a></code>在课堂 
+            <code><a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">AbstractBootstrap</a>&lt;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>,<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="clone--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>clone</h4> <pre>public&nbsp;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>&nbsp;clone()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractBootstrap.html#clone--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#clone--">AbstractBootstrap</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回具有相同配置的此引导程序的深层克隆。</span> 
+           <span>使用类似设置制作多个<a href="../channel/Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>时，此方法非常有用。</span> 
+           <span>请注意，这种方法不会深入但<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口">浅薄</a>地克隆<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> ，从而使该组成为共享资源。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBootstrap.html#clone--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#clone--">clone</a></code>在课堂上 
+            <code><a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">AbstractBootstrap</a>&lt;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>,<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="childGroup--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>childGroup</h4> <pre>@Deprecated
+public&nbsp;<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="interface in io.netty.channel">EventLoopGroup</a>&nbsp;childGroup()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">改为使用<a href="ServerBootstrap.html#config--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html#config--"><code>config()</code></a> 。</span></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回构造<a href="../channel/EventLoopGroup.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoopGroup.html" title="io.netty.channel中的接口"><code>EventLoopGroup</code></a> ，其将用于所述子频道或<code>null</code>如果非被被配置。</span> 
+          </div> </li> 
+        </ul> <a name="config--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>config</h4> <pre>public final&nbsp;<a href="ServerBootstrapConfig.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrapConfig.html" title="class in io.netty.bootstrap">ServerBootstrapConfig</a>&nbsp;config()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractBootstrap.html#config--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#config--">AbstractBootstrap</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回可用于获取引导程序当前配置的<a href="AbstractBootstrapConfig.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrapConfig.html" title="class在io.netty.bootstrap中"><code>AbstractBootstrapConfig</code></a>对象。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractBootstrap.html#config--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html#config--">config</a></code>在课堂上 
+            <code><a href="AbstractBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/AbstractBootstrap.html" title="class in io.netty.bootstrap">AbstractBootstrap</a>&lt;<a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" title="class in io.netty.bootstrap">ServerBootstrap</a>,<a href="../channel/ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="interface in io.netty.channel">ServerChannel</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/class-use/ServerBootstrap.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelFactory.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ChannelFactory.html" title="interface in io.netty.bootstrap"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ServerBootstrapConfig.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrapConfig.html" title="class in io.netty.bootstrap"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-bootstrap-ServerBootstrap.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/bootstrap/ServerBootstrap.html" target="_top">框架</a></li> 
+    <li><a href="ServerBootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/ServerBootstrap.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/bootstrap/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

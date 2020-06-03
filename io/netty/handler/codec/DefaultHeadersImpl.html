@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DefaultHeadersImpl (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.DefaultHeadersImpl class"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DefaultHeadersImpl (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/class-use/DefaultHeadersImpl.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultHeaders.NameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.NameValidator.html" title="interface in io.netty.handler.codec"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DelimiterBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DelimiterBasedFrameDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-codec-DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/DefaultHeadersImpl.html" target="_top">框架</a></li> 
+    <li><a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.classes.inherited.from.class.io.netty.handler.codec.DefaultHeaders">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.handler.codec.DefaultHeaders">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#methods.inherited.from.class.io.netty.handler.codec.DefaultHeaders">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li>方法</li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec 
+   </div> 
+   <h2 title="Class DefaultHeadersImpl" class="title">Class DefaultHeadersImpl&lt;K,V&gt;</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="DefaultHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html" title="class in io.netty.handler.codec">io.netty.handler.codec.DefaultHeaders</a>&lt;K,V,<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="class in io.netty.handler.codec">DefaultHeadersImpl</a>&lt;K,V&gt;&gt;</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.handler.codec.DefaultHeadersImpl&lt;K,V&gt;</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt> 
+        <span class="paramLabel">参数类型</span> 
+       </dt> 
+       <dd> 
+        <code>K</code> - 标题名称的类型。 
+       </dd> 
+       <dd> 
+        <code>V</code> - 标题值的类型。 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="Headers.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/Headers.html" title="io.netty.handler.codec中的接口">Headers</a> &lt;K，V， <a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="class在io.netty.handler.codec中">DefaultHeadersImpl</a> &lt;K，V &gt;&gt;，java.lang.Iterable &lt;java.util.Map.Entry &lt;K，V &gt;&gt;</span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">DefaultHeadersImpl&lt;K,V&gt;</span>
+extends <a href="DefaultHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html" title="class in io.netty.handler.codec">DefaultHeaders</a>&lt;K,V,<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="class in io.netty.handler.codec">DefaultHeadersImpl</a>&lt;K,V&gt;&gt;</pre> 
+      <div class="block"> 
+       <span><a href="DefaultHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html" title="class在io.netty.handler.codec中"><code>DefaultHeaders</code></a>的具体实现允许直接实例化。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.handler.codec.DefaultHeaders"> </a> <h3>Nested classes/interfaces inherited from class&nbsp;io.netty.handler.codec.<a href="DefaultHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html" title="class in io.netty.handler.codec">DefaultHeaders</a></h3> <code><a href="DefaultHeaders.HeaderEntry.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.HeaderEntry.html" title="class in io.netty.handler.codec">DefaultHeaders.HeaderEntry</a>&lt;<a href="DefaultHeaders.HeaderEntry.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.HeaderEntry.html" title="type parameter in DefaultHeaders.HeaderEntry">K</a>,<a href="DefaultHeaders.HeaderEntry.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.HeaderEntry.html" title="type parameter in DefaultHeaders.HeaderEntry">V</a>&gt;, <a href="DefaultHeaders.NameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.NameValidator.html" title="interface in io.netty.handler.codec">DefaultHeaders.NameValidator</a>&lt;<a href="DefaultHeaders.NameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.NameValidator.html" title="type parameter in DefaultHeaders.NameValidator">K</a>&gt;</code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="fields.inherited.from.class.io.netty.handler.codec.DefaultHeaders"> </a> <h3>Fields inherited from class&nbsp;io.netty.handler.codec.<a href="DefaultHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html" title="class in io.netty.handler.codec">DefaultHeaders</a></h3> <code><a href="DefaultHeaders.html#head" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#head">head</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DefaultHeadersImpl.html#DefaultHeadersImpl-io.netty.util.HashingStrategy-io.netty.handler.codec.ValueConverter-io.netty.handler.codec.DefaultHeaders.NameValidator-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html#DefaultHeadersImpl-io.netty.util.HashingStrategy-io.netty.handler.codec.ValueConverter-io.netty.handler.codec.DefaultHeaders.NameValidator-">DefaultHeadersImpl</a></span>(<a href="../../util/HashingStrategy.html" tppabs="http://netty.io/4.1/api/io/netty/util/HashingStrategy.html" title="interface in io.netty.util">HashingStrategy</a>&lt;<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="type parameter in DefaultHeadersImpl">K</a>&gt;&nbsp;nameHashingStrategy, <a href="ValueConverter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ValueConverter.html" title="interface in io.netty.handler.codec">ValueConverter</a>&lt;<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="type parameter in DefaultHeadersImpl">V</a>&gt;&nbsp;valueConverter, <a href="DefaultHeaders.NameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.NameValidator.html" title="interface in io.netty.handler.codec">DefaultHeaders.NameValidator</a>&lt;<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="type parameter in DefaultHeadersImpl">K</a>&gt;&nbsp;nameValidator)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.codec.DefaultHeaders"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.codec.<a href="DefaultHeaders.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html" title="class in io.netty.handler.codec">DefaultHeaders</a></h3> <code><a href="DefaultHeaders.html#add-io.netty.handler.codec.Headers-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#add-io.netty.handler.codec.Headers-">add</a>, <a href="DefaultHeaders.html#add-K-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#add-K-java.lang.Iterable-">add</a>, <a href="DefaultHeaders.html#add-K-V...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#add-K-V...-">add</a>, <a href="DefaultHeaders.html#add-K-V-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#add-K-V-">add</a>, <a href="DefaultHeaders.html#addBoolean-K-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addBoolean-K-boolean-">addBoolean</a>, <a href="DefaultHeaders.html#addByte-K-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addByte-K-byte-">addByte</a>, <a href="DefaultHeaders.html#addChar-K-char-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addChar-K-char-">addChar</a>, <a href="DefaultHeaders.html#addDouble-K-double-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addDouble-K-double-">addDouble</a>, <a href="DefaultHeaders.html#addFloat-K-float-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addFloat-K-float-">addFloat</a>, <a href="DefaultHeaders.html#addImpl-io.netty.handler.codec.Headers-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addImpl-io.netty.handler.codec.Headers-">addImpl</a>, <a href="DefaultHeaders.html#addInt-K-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addInt-K-int-">addInt</a>, <a href="DefaultHeaders.html#addLong-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addLong-K-long-">addLong</a>, <a href="DefaultHeaders.html#addObject-K-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addObject-K-java.lang.Iterable-">addObject</a>, <a href="DefaultHeaders.html#addObject-K-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addObject-K-java.lang.Object...-">addObject</a>, <a href="DefaultHeaders.html#addObject-K-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addObject-K-java.lang.Object-">addObject</a>, <a href="DefaultHeaders.html#addShort-K-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addShort-K-short-">addShort</a>, <a href="DefaultHeaders.html#addTimeMillis-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#addTimeMillis-K-long-">addTimeMillis</a>, <a href="DefaultHeaders.html#clear--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#clear--">clear</a>, <a href="DefaultHeaders.html#contains-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#contains-K-">contains</a>, <a href="DefaultHeaders.html#contains-K-V-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#contains-K-V-">contains</a>, <a href="DefaultHeaders.html#contains-K-V-io.netty.util.HashingStrategy-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#contains-K-V-io.netty.util.HashingStrategy-">contains</a>, <a href="DefaultHeaders.html#containsBoolean-K-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsBoolean-K-boolean-">containsBoolean</a>, <a href="DefaultHeaders.html#containsByte-K-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsByte-K-byte-">containsByte</a>, <a href="DefaultHeaders.html#containsChar-K-char-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsChar-K-char-">containsChar</a>, <a href="DefaultHeaders.html#containsDouble-K-double-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsDouble-K-double-">containsDouble</a>, <a href="DefaultHeaders.html#containsFloat-K-float-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsFloat-K-float-">containsFloat</a>, <a href="DefaultHeaders.html#containsInt-K-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsInt-K-int-">containsInt</a>, <a href="DefaultHeaders.html#containsLong-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsLong-K-long-">containsLong</a>, <a href="DefaultHeaders.html#containsObject-K-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsObject-K-java.lang.Object-">containsObject</a>, <a href="DefaultHeaders.html#containsShort-K-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsShort-K-short-">containsShort</a>, <a href="DefaultHeaders.html#containsTimeMillis-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#containsTimeMillis-K-long-">containsTimeMillis</a>, <a href="DefaultHeaders.html#copy--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#copy--">copy</a>, <a href="DefaultHeaders.html#equals-io.netty.handler.codec.Headers-io.netty.util.HashingStrategy-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#equals-io.netty.handler.codec.Headers-io.netty.util.HashingStrategy-">equals</a>, <a href="DefaultHeaders.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#equals-java.lang.Object-">equals</a>, <a href="DefaultHeaders.html#get-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#get-K-">get</a>, <a href="DefaultHeaders.html#get-K-V-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#get-K-V-">get</a>, <a href="DefaultHeaders.html#getAll-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getAll-K-">getAll</a>, <a href="DefaultHeaders.html#getAllAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getAllAndRemove-K-">getAllAndRemove</a>, <a href="DefaultHeaders.html#getAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getAndRemove-K-">getAndRemove</a>, <a href="DefaultHeaders.html#getAndRemove-K-V-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getAndRemove-K-V-">getAndRemove</a>, <a href="DefaultHeaders.html#getBoolean-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getBoolean-K-">getBoolean</a>, <a href="DefaultHeaders.html#getBoolean-K-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getBoolean-K-boolean-">getBoolean</a>, <a href="DefaultHeaders.html#getBooleanAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getBooleanAndRemove-K-">getBooleanAndRemove</a>, <a href="DefaultHeaders.html#getBooleanAndRemove-K-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getBooleanAndRemove-K-boolean-">getBooleanAndRemove</a>, <a href="DefaultHeaders.html#getByte-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getByte-K-">getByte</a>, <a href="DefaultHeaders.html#getByte-K-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getByte-K-byte-">getByte</a>, <a href="DefaultHeaders.html#getByteAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getByteAndRemove-K-">getByteAndRemove</a>, <a href="DefaultHeaders.html#getByteAndRemove-K-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getByteAndRemove-K-byte-">getByteAndRemove</a>, <a href="DefaultHeaders.html#getChar-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getChar-K-">getChar</a>, <a href="DefaultHeaders.html#getChar-K-char-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getChar-K-char-">getChar</a>, <a href="DefaultHeaders.html#getCharAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getCharAndRemove-K-">getCharAndRemove</a>, <a href="DefaultHeaders.html#getCharAndRemove-K-char-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getCharAndRemove-K-char-">getCharAndRemove</a>, <a href="DefaultHeaders.html#getDouble-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getDouble-K-">getDouble</a>, <a href="DefaultHeaders.html#getDouble-K-double-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getDouble-K-double-">getDouble</a>, <a href="DefaultHeaders.html#getDoubleAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getDoubleAndRemove-K-">getDoubleAndRemove</a>, <a href="DefaultHeaders.html#getDoubleAndRemove-K-double-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getDoubleAndRemove-K-double-">getDoubleAndRemove</a>, <a href="DefaultHeaders.html#getFloat-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getFloat-K-">getFloat</a>, <a href="DefaultHeaders.html#getFloat-K-float-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getFloat-K-float-">getFloat</a>, <a href="DefaultHeaders.html#getFloatAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getFloatAndRemove-K-">getFloatAndRemove</a>, <a href="DefaultHeaders.html#getFloatAndRemove-K-float-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getFloatAndRemove-K-float-">getFloatAndRemove</a>, <a href="DefaultHeaders.html#getInt-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getInt-K-">getInt</a>, <a href="DefaultHeaders.html#getInt-K-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getInt-K-int-">getInt</a>, <a href="DefaultHeaders.html#getIntAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getIntAndRemove-K-">getIntAndRemove</a>, <a href="DefaultHeaders.html#getIntAndRemove-K-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getIntAndRemove-K-int-">getIntAndRemove</a>, <a href="DefaultHeaders.html#getLong-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getLong-K-">getLong</a>, <a href="DefaultHeaders.html#getLong-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getLong-K-long-">getLong</a>, <a href="DefaultHeaders.html#getLongAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getLongAndRemove-K-">getLongAndRemove</a>, <a href="DefaultHeaders.html#getLongAndRemove-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getLongAndRemove-K-long-">getLongAndRemove</a>, <a href="DefaultHeaders.html#getShort-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getShort-K-">getShort</a>, <a href="DefaultHeaders.html#getShort-K-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getShort-K-short-">getShort</a>, <a href="DefaultHeaders.html#getShortAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getShortAndRemove-K-">getShortAndRemove</a>, <a href="DefaultHeaders.html#getShortAndRemove-K-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getShortAndRemove-K-short-">getShortAndRemove</a>, <a href="DefaultHeaders.html#getTimeMillis-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getTimeMillis-K-">getTimeMillis</a>, <a href="DefaultHeaders.html#getTimeMillis-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getTimeMillis-K-long-">getTimeMillis</a>, <a href="DefaultHeaders.html#getTimeMillisAndRemove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getTimeMillisAndRemove-K-">getTimeMillisAndRemove</a>, <a href="DefaultHeaders.html#getTimeMillisAndRemove-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#getTimeMillisAndRemove-K-long-">getTimeMillisAndRemove</a>, <a href="DefaultHeaders.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#hashCode--">hashCode</a>, <a href="DefaultHeaders.html#hashCode-io.netty.util.HashingStrategy-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#hashCode-io.netty.util.HashingStrategy-">hashCode</a>, <a href="DefaultHeaders.html#isEmpty--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#isEmpty--">isEmpty</a>, <a href="DefaultHeaders.html#iterator--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#iterator--">iterator</a>, <a href="DefaultHeaders.html#names--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#names--">names</a>, <a href="DefaultHeaders.html#newHeaderEntry-int-K-V-io.netty.handler.codec.DefaultHeaders.HeaderEntry-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#newHeaderEntry-int-K-V-io.netty.handler.codec.DefaultHeaders.HeaderEntry-">newHeaderEntry</a>, <a href="DefaultHeaders.html#remove-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#remove-K-">remove</a>, <a href="DefaultHeaders.html#set-io.netty.handler.codec.Headers-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#set-io.netty.handler.codec.Headers-">set</a>, <a href="DefaultHeaders.html#set-K-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#set-K-java.lang.Iterable-">set</a>, <a href="DefaultHeaders.html#set-K-V...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#set-K-V...-">set</a>, <a href="DefaultHeaders.html#set-K-V-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#set-K-V-">set</a>, <a href="DefaultHeaders.html#setAll-io.netty.handler.codec.Headers-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setAll-io.netty.handler.codec.Headers-">setAll</a>, <a href="DefaultHeaders.html#setBoolean-K-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setBoolean-K-boolean-">setBoolean</a>, <a href="DefaultHeaders.html#setByte-K-byte-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setByte-K-byte-">setByte</a>, <a href="DefaultHeaders.html#setChar-K-char-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setChar-K-char-">setChar</a>, <a href="DefaultHeaders.html#setDouble-K-double-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setDouble-K-double-">setDouble</a>, <a href="DefaultHeaders.html#setFloat-K-float-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setFloat-K-float-">setFloat</a>, <a href="DefaultHeaders.html#setInt-K-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setInt-K-int-">setInt</a>, <a href="DefaultHeaders.html#setLong-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setLong-K-long-">setLong</a>, <a href="DefaultHeaders.html#setObject-K-java.lang.Iterable-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setObject-K-java.lang.Iterable-">setObject</a>, <a href="DefaultHeaders.html#setObject-K-java.lang.Object...-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setObject-K-java.lang.Object...-">setObject</a>, <a href="DefaultHeaders.html#setObject-K-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setObject-K-java.lang.Object-">setObject</a>, <a href="DefaultHeaders.html#setShort-K-short-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setShort-K-short-">setShort</a>, <a href="DefaultHeaders.html#setTimeMillis-K-long-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#setTimeMillis-K-long-">setTimeMillis</a>, <a href="DefaultHeaders.html#size--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#size--">size</a>, <a href="DefaultHeaders.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#toString--">toString</a>, <a href="DefaultHeaders.html#valueConverter--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#valueConverter--">valueConverter</a>, <a href="DefaultHeaders.html#valueIterator-K-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.html#valueIterator-K-">valueIterator</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3> <code>forEach, spliterator</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DefaultHeadersImpl-io.netty.util.HashingStrategy-io.netty.handler.codec.ValueConverter-io.netty.handler.codec.DefaultHeaders.NameValidator-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DefaultHeadersImpl</h4> <pre>public&nbsp;DefaultHeadersImpl(<a href="../../util/HashingStrategy.html" tppabs="http://netty.io/4.1/api/io/netty/util/HashingStrategy.html" title="interface in io.netty.util">HashingStrategy</a>&lt;<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="type parameter in DefaultHeadersImpl">K</a>&gt;&nbsp;nameHashingStrategy,
+                          <a href="ValueConverter.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ValueConverter.html" title="interface in io.netty.handler.codec">ValueConverter</a>&lt;<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="type parameter in DefaultHeadersImpl">V</a>&gt;&nbsp;valueConverter,
+                          <a href="DefaultHeaders.NameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.NameValidator.html" title="interface in io.netty.handler.codec">DefaultHeaders.NameValidator</a>&lt;<a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" title="type parameter in DefaultHeadersImpl">K</a>&gt;&nbsp;nameValidator)</pre> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/class-use/DefaultHeadersImpl.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DefaultHeaders.NameValidator.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeaders.NameValidator.html" title="interface in io.netty.handler.codec"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DelimiterBasedFrameDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DelimiterBasedFrameDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-codec-DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/DefaultHeadersImpl.html" target="_top">框架</a></li> 
+    <li><a href="DefaultHeadersImpl.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DefaultHeadersImpl.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.classes.inherited.from.class.io.netty.handler.codec.DefaultHeaders">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#fields.inherited.from.class.io.netty.handler.codec.DefaultHeaders">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#methods.inherited.from.class.io.netty.handler.codec.DefaultHeaders">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li>方法</li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

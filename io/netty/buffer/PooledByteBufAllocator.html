@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>PooledByteBufAllocator (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.buffer.PooledByteBufAllocator class"> 
+  <meta name="keywords" content="DEFAULT"> 
+  <meta name="keywords" content="newHeapBuffer()"> 
+  <meta name="keywords" content="newDirectBuffer()"> 
+  <meta name="keywords" content="defaultNumHeapArena()"> 
+  <meta name="keywords" content="defaultNumDirectArena()"> 
+  <meta name="keywords" content="defaultPageSize()"> 
+  <meta name="keywords" content="defaultMaxOrder()"> 
+  <meta name="keywords" content="defaultUseCacheForAllThreads()"> 
+  <meta name="keywords" content="defaultPreferDirect()"> 
+  <meta name="keywords" content="defaultTinyCacheSize()"> 
+  <meta name="keywords" content="defaultSmallCacheSize()"> 
+  <meta name="keywords" content="defaultNormalCacheSize()"> 
+  <meta name="keywords" content="isDirectMemoryCacheAlignmentSupported()"> 
+  <meta name="keywords" content="isDirectBufferPooled()"> 
+  <meta name="keywords" content="hasThreadLocalCache()"> 
+  <meta name="keywords" content="freeThreadLocalCache()"> 
+  <meta name="keywords" content="metric()"> 
+  <meta name="keywords" content="numHeapArenas()"> 
+  <meta name="keywords" content="numDirectArenas()"> 
+  <meta name="keywords" content="heapArenas()"> 
+  <meta name="keywords" content="directArenas()"> 
+  <meta name="keywords" content="numThreadLocalCaches()"> 
+  <meta name="keywords" content="tinyCacheSize()"> 
+  <meta name="keywords" content="smallCacheSize()"> 
+  <meta name="keywords" content="normalCacheSize()"> 
+  <meta name="keywords" content="chunkSize()"> 
+  <meta name="keywords" content="dumpStats()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="PooledByteBufAllocator (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":42,"i11":10,"i12":42,"i13":42,"i14":42,"i15":10,"i16":9,"i17":10,"i18":10,"i19":10,"i20":42,"i21":42,"i22":42,"i23":42,"i24":42,"i25":42};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/PooledByteBufAllocator.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="PoolChunkMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolChunkMetric.html" title="interface in io.netty.buffer"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="PooledByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html" title="class in io.netty.buffer"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-buffer-PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/PooledByteBufAllocator.html" target="_top">框架</a></li> 
+    <li><a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.buffer 
+   </div> 
+   <h2 title="Class PooledByteBufAllocator" class="title">Class PooledByteBufAllocator</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">io.netty.buffer.AbstractByteBufAllocator</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.buffer.PooledByteBufAllocator</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口">ByteBufAllocator</a> ， <a href="ByteBufAllocatorMetricProvider.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetricProvider.html" title="io.netty.buffer中的接口">ByteBufAllocatorMetricProvider</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">PooledByteBufAllocator</span>
+extends <a href="AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">AbstractByteBufAllocator</a>
+implements <a href="ByteBufAllocatorMetricProvider.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetricProvider.html" title="interface in io.netty.buffer">ByteBufAllocatorMetricProvider</a></pre> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" title="class in io.netty.buffer">PooledByteBufAllocator</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#DEFAULT" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#DEFAULT">DEFAULT</a></span></code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator--">PooledByteBufAllocator</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-">PooledByteBufAllocator</a></span>(boolean&nbsp;preferDirect)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-">PooledByteBufAllocator</a></span>(boolean&nbsp;preferDirect, int&nbsp;nHeapArena, int&nbsp;nDirectArena, int&nbsp;pageSize, int&nbsp;maxOrder)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-"><code>PooledByteBufAllocator(boolean, int, int, int, int, int, int, int, boolean)</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-">PooledByteBufAllocator</a></span>(boolean&nbsp;preferDirect, int&nbsp;nHeapArena, int&nbsp;nDirectArena, int&nbsp;pageSize, int&nbsp;maxOrder, int&nbsp;tinyCacheSize, int&nbsp;smallCacheSize, int&nbsp;normalCacheSize)</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-"><code>PooledByteBufAllocator(boolean, int, int, int, int, int, int, int, boolean)</code></a></span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-">PooledByteBufAllocator</a></span>(boolean&nbsp;preferDirect, int&nbsp;nHeapArena, int&nbsp;nDirectArena, int&nbsp;pageSize, int&nbsp;maxOrder, int&nbsp;tinyCacheSize, int&nbsp;smallCacheSize, int&nbsp;normalCacheSize, boolean&nbsp;useCacheForAllThreads)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-int-">PooledByteBufAllocator</a></span>(boolean&nbsp;preferDirect, int&nbsp;nHeapArena, int&nbsp;nDirectArena, int&nbsp;pageSize, int&nbsp;maxOrder, int&nbsp;tinyCacheSize, int&nbsp;smallCacheSize, int&nbsp;normalCacheSize, boolean&nbsp;useCacheForAllThreads, int&nbsp;directMemoryCacheAlignment)</code>&nbsp;</td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#PooledByteBufAllocator-int-int-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-int-int-int-int-">PooledByteBufAllocator</a></span>(int&nbsp;nHeapArena, int&nbsp;nDirectArena, int&nbsp;pageSize, int&nbsp;maxOrder)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#chunkSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#chunkSize--">chunkSize</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#chunkSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#chunkSize--"><code>PooledByteBufAllocatorMetric.chunkSize()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultMaxOrder--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultMaxOrder--">defaultMaxOrder</a></span>()</code> 
+            <div class="block">
+              默认最大订单 - 系统属性：io.netty.allocator.maxOrder - 默认11 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultNormalCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultNormalCacheSize--">defaultNormalCacheSize</a></span>()</code> 
+            <div class="block">
+              默认正常缓存大小 - 系统属性：io.netty.allocator.normalCacheSize - 默认64 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultNumDirectArena--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultNumDirectArena--">defaultNumDirectArena</a></span>()</code> 
+            <div class="block">
+              直接竞技场的默认数量 - 系统属性：io.netty.allocator.numDirectArenas - 默认2 *核心 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultNumHeapArena--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultNumHeapArena--">defaultNumHeapArena</a></span>()</code> 
+            <div class="block">
+              堆场的默认数量 - 系统属性：io.netty.allocator.numHeapArenas - 默认2 *内核 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultPageSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultPageSize--">defaultPageSize</a></span>()</code> 
+            <div class="block">
+              默认缓冲页面大小 - 系统属性：io.netty.allocator.pageSize - 默认8192 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultPreferDirect--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultPreferDirect--">defaultPreferDirect</a></span>()</code> 
+            <div class="block">
+              默认优先直接 - 系统属性：io.netty.noPreferDirect - 默认为false 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultSmallCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultSmallCacheSize--">defaultSmallCacheSize</a></span>()</code> 
+            <div class="block">
+              默认的小缓存大小 - 系统属性：io.netty.allocator.smallCacheSize - 默认值为256 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultTinyCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultTinyCacheSize--">defaultTinyCacheSize</a></span>()</code> 
+            <div class="block">
+              默认的微小缓存大小 - 系统属性：io.netty.allocator.tinyCacheSize - 默认512 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#defaultUseCacheForAllThreads--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#defaultUseCacheForAllThreads--">defaultUseCacheForAllThreads</a></span>()</code> 
+            <div class="block">
+              默认线程缓存行为 - 系统属性：io.netty.allocator.useCacheForAllThreads - 默认为true 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>java.util.List&lt;<a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="interface in io.netty.buffer">PoolArenaMetric</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#directArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#directArenas--">directArenas</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#directArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#directArenas--"><code>PooledByteBufAllocatorMetric.directArenas()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#dumpStats--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#dumpStats--">dumpStats</a></span>()</code> 
+            <div class="block">
+              以字符串的形式返回分配器（包含所有度量）的状态。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#freeThreadLocalCache--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#freeThreadLocalCache--">freeThreadLocalCache</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#hasThreadLocalCache--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#hasThreadLocalCache--">hasThreadLocalCache</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>java.util.List&lt;<a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="interface in io.netty.buffer">PoolArenaMetric</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#heapArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#heapArenas--">heapArenas</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#heapArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#heapArenas--"><code>PooledByteBufAllocatorMetric.heapArenas()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#isDirectBufferPooled--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#isDirectBufferPooled--">isDirectBufferPooled</a></span>()</code> 
+            <div class="block"> 
+             <span>如果直接<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">拨打</a> <code>true</code>则返回<code>true</code></span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>static boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#isDirectMemoryCacheAlignmentSupported--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#isDirectMemoryCacheAlignmentSupported--">isDirectMemoryCacheAlignmentSupported</a></span>()</code> 
+            <div class="block">
+              返回 
+             <code>true</code>如果直接内存缓存对齐支持， 
+             <code>false</code>其他。 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code><a href="PooledByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html" title="class in io.netty.buffer">PooledByteBufAllocatorMetric</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#metric--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#metric--">metric</a></span>()</code> 
+            <div class="block"> 
+             <span>为<a href="ByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetric.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>返回<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocatorMetric</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#newDirectBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#newDirectBuffer-int-int-">newDirectBuffer</a></span>(int&nbsp;initialCapacity, int&nbsp;maxCapacity)</code> 
+            <div class="block"> 
+             <span>创建直接<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>给定参数：initialCapacity和MAXCAPACITY。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>protected <a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#newHeapBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#newHeapBuffer-int-int-">newHeapBuffer</a></span>(int&nbsp;initialCapacity, int&nbsp;maxCapacity)</code> 
+            <div class="block"> 
+             <span>创建一个堆<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>给定参数：initialCapacity和MAXCAPACITY。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#normalCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#normalCacheSize--">normalCacheSize</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#normalCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#normalCacheSize--"><code>PooledByteBufAllocatorMetric.normalCacheSize()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#numDirectArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#numDirectArenas--">numDirectArenas</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#numDirectArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#numDirectArenas--"><code>PooledByteBufAllocatorMetric.numDirectArenas()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#numHeapArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#numHeapArenas--">numHeapArenas</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#numHeapArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#numHeapArenas--"><code>PooledByteBufAllocatorMetric.numHeapArenas()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#numThreadLocalCaches--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#numThreadLocalCaches--">numThreadLocalCaches</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#numThreadLocalCaches--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#numThreadLocalCaches--"><code>PooledByteBufAllocatorMetric.numThreadLocalCaches()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#smallCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#smallCacheSize--">smallCacheSize</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#smallCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#smallCacheSize--"><code>PooledByteBufAllocatorMetric.smallCacheSize()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PooledByteBufAllocator.html#tinyCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#tinyCacheSize--">tinyCacheSize</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#tinyCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#tinyCacheSize--"><code>PooledByteBufAllocatorMetric.tinyCacheSize()</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.buffer.AbstractByteBufAllocator"> </a> <h3>Methods inherited from class&nbsp;io.netty.buffer.<a href="AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">AbstractByteBufAllocator</a></h3> <code><a href="AbstractByteBufAllocator.html#buffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#buffer--">buffer</a>, <a href="AbstractByteBufAllocator.html#buffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#buffer-int-">buffer</a>, <a href="AbstractByteBufAllocator.html#buffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#buffer-int-int-">buffer</a>, <a href="AbstractByteBufAllocator.html#calculateNewCapacity-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#calculateNewCapacity-int-int-">calculateNewCapacity</a>, <a href="AbstractByteBufAllocator.html#compositeBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#compositeBuffer--">compositeBuffer</a>, <a href="AbstractByteBufAllocator.html#compositeBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#compositeBuffer-int-">compositeBuffer</a>, <a href="AbstractByteBufAllocator.html#compositeDirectBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#compositeDirectBuffer--">compositeDirectBuffer</a>, <a href="AbstractByteBufAllocator.html#compositeDirectBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#compositeDirectBuffer-int-">compositeDirectBuffer</a>, <a href="AbstractByteBufAllocator.html#compositeHeapBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#compositeHeapBuffer--">compositeHeapBuffer</a>, <a href="AbstractByteBufAllocator.html#compositeHeapBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#compositeHeapBuffer-int-">compositeHeapBuffer</a>, <a href="AbstractByteBufAllocator.html#directBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#directBuffer--">directBuffer</a>, <a href="AbstractByteBufAllocator.html#directBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#directBuffer-int-">directBuffer</a>, <a href="AbstractByteBufAllocator.html#directBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#directBuffer-int-int-">directBuffer</a>, <a href="AbstractByteBufAllocator.html#heapBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#heapBuffer--">heapBuffer</a>, <a href="AbstractByteBufAllocator.html#heapBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#heapBuffer-int-">heapBuffer</a>, <a href="AbstractByteBufAllocator.html#heapBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#heapBuffer-int-int-">heapBuffer</a>, <a href="AbstractByteBufAllocator.html#ioBuffer--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#ioBuffer--">ioBuffer</a>, <a href="AbstractByteBufAllocator.html#ioBuffer-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#ioBuffer-int-">ioBuffer</a>, <a href="AbstractByteBufAllocator.html#ioBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#ioBuffer-int-int-">ioBuffer</a>, <a href="AbstractByteBufAllocator.html#toLeakAwareBuffer-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#toLeakAwareBuffer-io.netty.buffer.ByteBuf-">toLeakAwareBuffer</a>, <a href="AbstractByteBufAllocator.html#toLeakAwareBuffer-io.netty.buffer.CompositeByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#toLeakAwareBuffer-io.netty.buffer.CompositeByteBuf-">toLeakAwareBuffer</a>, <a href="AbstractByteBufAllocator.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#toString--">toString</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="DEFAULT"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DEFAULT</h4> <pre>public static final&nbsp;<a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" title="class in io.netty.buffer">PooledByteBufAllocator</a> DEFAULT</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="PooledByteBufAllocator--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>public&nbsp;PooledByteBufAllocator()</pre> </li> 
+        </ul> <a name="PooledByteBufAllocator-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>public&nbsp;PooledByteBufAllocator(boolean&nbsp;preferDirect)</pre> </li> 
+        </ul> <a name="PooledByteBufAllocator-int-int-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>public&nbsp;PooledByteBufAllocator(int&nbsp;nHeapArena,
+                              int&nbsp;nDirectArena,
+                              int&nbsp;pageSize,
+                              int&nbsp;maxOrder)</pre> </li> 
+        </ul> <a name="PooledByteBufAllocator-boolean-int-int-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>@Deprecated
+public&nbsp;PooledByteBufAllocator(boolean&nbsp;preferDirect,
+                                          int&nbsp;nHeapArena,
+                                          int&nbsp;nDirectArena,
+                                          int&nbsp;pageSize,
+                                          int&nbsp;maxOrder)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-"><code>PooledByteBufAllocator(boolean, int, int, int, int, int, int, int, boolean)</code></a></span></span> 
+          </div> </li> 
+        </ul> <a name="PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>@Deprecated
+public&nbsp;PooledByteBufAllocator(boolean&nbsp;preferDirect,
+                                          int&nbsp;nHeapArena,
+                                          int&nbsp;nDirectArena,
+                                          int&nbsp;pageSize,
+                                          int&nbsp;maxOrder,
+                                          int&nbsp;tinyCacheSize,
+                                          int&nbsp;smallCacheSize,
+                                          int&nbsp;normalCacheSize)</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html#PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-"><code>PooledByteBufAllocator(boolean, int, int, int, int, int, int, int, boolean)</code></a></span></span> 
+          </div> </li> 
+        </ul> <a name="PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>public&nbsp;PooledByteBufAllocator(boolean&nbsp;preferDirect,
+                              int&nbsp;nHeapArena,
+                              int&nbsp;nDirectArena,
+                              int&nbsp;pageSize,
+                              int&nbsp;maxOrder,
+                              int&nbsp;tinyCacheSize,
+                              int&nbsp;smallCacheSize,
+                              int&nbsp;normalCacheSize,
+                              boolean&nbsp;useCacheForAllThreads)</pre> </li> 
+        </ul> <a name="PooledByteBufAllocator-boolean-int-int-int-int-int-int-int-boolean-int-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>PooledByteBufAllocator</h4> <pre>public&nbsp;PooledByteBufAllocator(boolean&nbsp;preferDirect,
+                              int&nbsp;nHeapArena,
+                              int&nbsp;nDirectArena,
+                              int&nbsp;pageSize,
+                              int&nbsp;maxOrder,
+                              int&nbsp;tinyCacheSize,
+                              int&nbsp;smallCacheSize,
+                              int&nbsp;normalCacheSize,
+                              boolean&nbsp;useCacheForAllThreads,
+                              int&nbsp;directMemoryCacheAlignment)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="newHeapBuffer-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newHeapBuffer</h4> <pre>protected&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;newHeapBuffer(int&nbsp;initialCapacity,
+                                int&nbsp;maxCapacity)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractByteBufAllocator.html#newHeapBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#newHeapBuffer-int-int-">AbstractByteBufAllocator</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建一个堆<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>给定参数：initialCapacity和MAXCAPACITY。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBufAllocator.html#newHeapBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#newHeapBuffer-int-int-">newHeapBuffer</a></code> 
+            <code><a href="AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">AbstractByteBufAllocator</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newDirectBuffer-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newDirectBuffer</h4> <pre>protected&nbsp;<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;newDirectBuffer(int&nbsp;initialCapacity,
+                                  int&nbsp;maxCapacity)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="AbstractByteBufAllocator.html#newDirectBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#newDirectBuffer-int-int-">AbstractByteBufAllocator</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建直接<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类"><code>ByteBuf</code></a>给定参数：initialCapacity和MAXCAPACITY。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractByteBufAllocator.html#newDirectBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html#newDirectBuffer-int-int-">newDirectBuffer</a></code> ，上课 
+            <code><a href="AbstractByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/AbstractByteBufAllocator.html" title="class in io.netty.buffer">AbstractByteBufAllocator</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="defaultNumHeapArena--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultNumHeapArena</h4> <pre>public static&nbsp;int&nbsp;defaultNumHeapArena()</pre> 
+          <div class="block">
+            堆场的默认数量 - 系统属性：io.netty.allocator.numHeapArenas - 默认2 *内核 
+          </div> </li> 
+        </ul> <a name="defaultNumDirectArena--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultNumDirectArena</h4> <pre>public static&nbsp;int&nbsp;defaultNumDirectArena()</pre> 
+          <div class="block">
+            直接竞技场的默认数量 - 系统属性：io.netty.allocator.numDirectArenas - 默认2 *核心 
+          </div> </li> 
+        </ul> <a name="defaultPageSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultPageSize</h4> <pre>public static&nbsp;int&nbsp;defaultPageSize()</pre> 
+          <div class="block">
+            默认缓冲页面大小 - 系统属性：io.netty.allocator.pageSize - 默认8192 
+          </div> </li> 
+        </ul> <a name="defaultMaxOrder--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultMaxOrder</h4> <pre>public static&nbsp;int&nbsp;defaultMaxOrder()</pre> 
+          <div class="block">
+            默认最大订单 - 系统属性：io.netty.allocator.maxOrder - 默认11 
+          </div> </li> 
+        </ul> <a name="defaultUseCacheForAllThreads--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultUseCacheForAllThreads</h4> <pre>public static&nbsp;boolean&nbsp;defaultUseCacheForAllThreads()</pre> 
+          <div class="block">
+            默认线程缓存行为 - 系统属性：io.netty.allocator.useCacheForAllThreads - 默认为true 
+          </div> </li> 
+        </ul> <a name="defaultPreferDirect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultPreferDirect</h4> <pre>public static&nbsp;boolean&nbsp;defaultPreferDirect()</pre> 
+          <div class="block">
+            默认优先直接 - 系统属性：io.netty.noPreferDirect - 默认为false 
+          </div> </li> 
+        </ul> <a name="defaultTinyCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultTinyCacheSize</h4> <pre>public static&nbsp;int&nbsp;defaultTinyCacheSize()</pre> 
+          <div class="block">
+            默认的微小缓存大小 - 系统属性：io.netty.allocator.tinyCacheSize - 默认512 
+          </div> </li> 
+        </ul> <a name="defaultSmallCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultSmallCacheSize</h4> <pre>public static&nbsp;int&nbsp;defaultSmallCacheSize()</pre> 
+          <div class="block">
+            默认的小缓存大小 - 系统属性：io.netty.allocator.smallCacheSize - 默认值为256 
+          </div> </li> 
+        </ul> <a name="defaultNormalCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>defaultNormalCacheSize</h4> <pre>public static&nbsp;int&nbsp;defaultNormalCacheSize()</pre> 
+          <div class="block">
+            默认正常缓存大小 - 系统属性：io.netty.allocator.normalCacheSize - 默认64 
+          </div> </li> 
+        </ul> <a name="isDirectMemoryCacheAlignmentSupported--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isDirectMemoryCacheAlignmentSupported</h4> <pre>public static&nbsp;boolean&nbsp;isDirectMemoryCacheAlignmentSupported()</pre> 
+          <div class="block">
+            返回 
+           <code>true</code>如果直接内存缓存对齐支持， 
+           <code>false</code>其他。 
+          </div> </li> 
+        </ul> <a name="isDirectBufferPooled--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isDirectBufferPooled</h4> <pre>public&nbsp;boolean&nbsp;isDirectBufferPooled()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="ByteBufAllocator.html#isDirectBufferPooled--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html#isDirectBufferPooled--">ByteBufAllocator</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>如果直接<a href="ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="在io.netty.buffer中的类">拨打</a> <code>true</code>则返回<code>true</code></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBufAllocator.html#isDirectBufferPooled--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html#isDirectBufferPooled--">isDirectBufferPooled</a></code>在界面 
+            <code><a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hasThreadLocalCache--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hasThreadLocalCache</h4> <pre>@Deprecated
+public&nbsp;boolean&nbsp;hasThreadLocalCache()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block">
+            如果调用 
+           <code>Thread</code>对分配的缓冲区有 
+           <code>ThreadLocal</code>缓存，则返回 
+           <code>true</code> 。 
+          </div> </li> 
+        </ul> <a name="freeThreadLocalCache--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>freeThreadLocalCache</h4> <pre>@Deprecated
+public&nbsp;void&nbsp;freeThreadLocalCache()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block">
+            释放调用 
+           <code>Thread</code>所有缓存缓冲区。 
+          </div> </li> 
+        </ul> <a name="metric--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>metric</h4> <pre>public&nbsp;<a href="PooledByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html" title="class in io.netty.buffer">PooledByteBufAllocatorMetric</a>&nbsp;metric()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="ByteBufAllocatorMetricProvider.html#metric--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetricProvider.html#metric--">ByteBufAllocatorMetricProvider</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回<a href="ByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetric.html" title="io.netty.buffer中的接口"><code>ByteBufAllocator</code></a>的<a href="ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="io.netty.buffer中的接口"><code>ByteBufAllocatorMetric</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ByteBufAllocatorMetricProvider.html#metric--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetricProvider.html#metric--">metric</a></code>在界面 
+            <code><a href="ByteBufAllocatorMetricProvider.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocatorMetricProvider.html" title="interface in io.netty.buffer">ByteBufAllocatorMetricProvider</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="numHeapArenas--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>numHeapArenas</h4> <pre>@Deprecated
+public&nbsp;int&nbsp;numHeapArenas()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#numHeapArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#numHeapArenas--"><code>PooledByteBufAllocatorMetric.numHeapArenas()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回堆场的数量。 
+          </div> </li> 
+        </ul> <a name="numDirectArenas--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>numDirectArenas</h4> <pre>@Deprecated
+public&nbsp;int&nbsp;numDirectArenas()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#numDirectArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#numDirectArenas--"><code>PooledByteBufAllocatorMetric.numDirectArenas()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回直接竞技场的数量。 
+          </div> </li> 
+        </ul> <a name="heapArenas--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>heapArenas</h4> <pre>@Deprecated
+public&nbsp;java.util.List&lt;<a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="interface in io.netty.buffer">PoolArenaMetric</a>&gt;&nbsp;heapArenas()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#heapArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#heapArenas--"><code>PooledByteBufAllocatorMetric.heapArenas()</code></a> 。</span></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回一个<code>List</code>所有堆<a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="io.netty.buffer中的接口"><code>PoolArenaMetric</code></a>这个池提供的秒。</span> 
+          </div> </li> 
+        </ul> <a name="directArenas--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>directArenas</h4> <pre>@Deprecated
+public&nbsp;java.util.List&lt;<a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="interface in io.netty.buffer">PoolArenaMetric</a>&gt;&nbsp;directArenas()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#directArenas--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#directArenas--"><code>PooledByteBufAllocatorMetric.directArenas()</code></a> 。</span></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回一个<code>List</code>所有直接的<a href="PoolArenaMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolArenaMetric.html" title="io.netty.buffer中的接口"><code>PoolArenaMetric</code></a>这个池提供的秒。</span> 
+          </div> </li> 
+        </ul> <a name="numThreadLocalCaches--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>numThreadLocalCaches</h4> <pre>@Deprecated
+public&nbsp;int&nbsp;numThreadLocalCaches()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#numThreadLocalCaches--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#numThreadLocalCaches--"><code>PooledByteBufAllocatorMetric.numThreadLocalCaches()</code></a> 。</span></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此<a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" title="在io.netty.buffer中的类"><code>PooledByteBufAllocator</code></a>使用的线程本地缓存的数量。</span> 
+          </div> </li> 
+        </ul> <a name="tinyCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>tinyCacheSize</h4> <pre>@Deprecated
+public&nbsp;int&nbsp;tinyCacheSize()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#tinyCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#tinyCacheSize--"><code>PooledByteBufAllocatorMetric.tinyCacheSize()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回微小缓存的大小。 
+          </div> </li> 
+        </ul> <a name="smallCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>smallCacheSize</h4> <pre>@Deprecated
+public&nbsp;int&nbsp;smallCacheSize()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#smallCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#smallCacheSize--"><code>PooledByteBufAllocatorMetric.smallCacheSize()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回小缓存的大小。 
+          </div> </li> 
+        </ul> <a name="normalCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>normalCacheSize</h4> <pre>@Deprecated
+public&nbsp;int&nbsp;normalCacheSize()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#normalCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#normalCacheSize--"><code>PooledByteBufAllocatorMetric.normalCacheSize()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回普通缓存的大小。 
+          </div> </li> 
+        </ul> <a name="chunkSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>chunkSize</h4> <pre>@Deprecated
+public final&nbsp;int&nbsp;chunkSize()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">使用<a href="PooledByteBufAllocatorMetric.html#chunkSize--" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html#chunkSize--"><code>PooledByteBufAllocatorMetric.chunkSize()</code></a> 。</span></span> 
+          </div> 
+          <div class="block">
+            返回竞技场的块大小。 
+          </div> </li> 
+        </ul> <a name="dumpStats--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>dumpStats</h4> <pre>public&nbsp;java.lang.String&nbsp;dumpStats()</pre> 
+          <div class="block"> 
+           <span>以字符串的形式返回分配器（包含所有度量）的状态。</span> 
+           <span>请注意，这可能是昂贵的，所以不应该太频繁地调用。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/class-use/PooledByteBufAllocator.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="PoolChunkMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PoolChunkMetric.html" title="interface in io.netty.buffer"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="PooledByteBufAllocatorMetric.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocatorMetric.html" title="class in io.netty.buffer"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-buffer-PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/buffer/PooledByteBufAllocator.html" target="_top">框架</a></li> 
+    <li><a href="PooledByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/PooledByteBufAllocator.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/buffer/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

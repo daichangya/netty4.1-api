@@ -1,0 +1,526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>ChannelOutboundHandler (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.ChannelOutboundHandler interface"> 
+  <meta name="keywords" content="bind()"> 
+  <meta name="keywords" content="connect()"> 
+  <meta name="keywords" content="disconnect()"> 
+  <meta name="keywords" content="close()"> 
+  <meta name="keywords" content="deregister()"> 
+  <meta name="keywords" content="read()"> 
+  <meta name="keywords" content="write()"> 
+  <meta name="keywords" content="flush()"> 
+  <link rel="stylesheet" type="text/css" href="../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="ChannelOutboundHandler (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6,"i7":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/ChannelOutboundHandler.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelOutboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/ChannelOutboundHandler.html" target="_top">框架</a></li> 
+    <li><a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel 
+   </div> 
+   <h2 title="Interface ChannelOutboundHandler" class="title">Interface ChannelOutboundHandler</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Superinterfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口">ChannelHandler</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+         All Known Subinterfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../handler/codec/http/websocketx/WebSocketFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocketFrameEncoder.html" title="io.netty.handler.codec.http.websocketx中的接口">WebSocketFrameEncoder</a></span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        所有已知实现类：
+       </dt> 
+       <dd> 
+        <span><a href="../handler/codec/memcache/binary/AbstractBinaryMemcacheEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/AbstractBinaryMemcacheEncoder.html" title="class in io.netty.handler.codec.memcache.binary">AbstractBinaryMemcacheEncoder</a> ， <a href="../handler/codec/memcache/AbstractMemcacheObjectEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/AbstractMemcacheObjectEncoder.html" title="class在io.netty.handler.codec.memcache中">AbstractMemcacheObjectEncoder</a> ， <a href="../handler/ssl/AbstractSniHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/AbstractSniHandler.html" title="class在io.netty.handler.ssl中">AbstractSniHandler</a> ， <a href="../handler/traffic/AbstractTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/AbstractTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">AbstractTrafficShapingHandler</a> ， <a href="../handler/codec/base64/Base64Encoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/base64/Base64Encoder.html" title="在io.netty.handler.codec.base64中的类">Base64Encoder</a> ， <a href="../handler/codec/memcache/binary/BinaryMemcacheClientCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheClientCodec.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheClientCodec</a> ， <a href="../handler/codec/memcache/binary/BinaryMemcacheRequestEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheRequestEncoder.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheRequestEncoder</a> ， <a href="../handler/codec/memcache/binary/BinaryMemcacheResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheResponseEncoder.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheResponseEncoder</a> ， <a href="../handler/codec/memcache/binary/BinaryMemcacheServerCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/memcache/binary/BinaryMemcacheServerCodec.html" title="class in io.netty.handler.codec.memcache.binary">BinaryMemcacheServerCodec</a> ， <a href="../handler/codec/bytes/ByteArrayEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/bytes/ByteArrayEncoder.html" title="class in io.netty.handler.codec.bytes">ByteArrayEncoder</a> ， <a href="../handler/codec/ByteToMessageCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageCodec.html" title="class在io.netty.handler.codec中">ByteToMessageCodec</a> ， <a href="../handler/codec/compression/Bzip2Encoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/Bzip2Encoder.html" title="class in io.netty.handler.codec.compression">Bzip2Encoder</a> ， <a href="ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelDuplexHandler.html" title="在io.netty.channel中的类">ChannelDuplexHandler</a> ， <a href="ChannelOutboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandlerAdapter.html" title="在io.netty.channel中的类">ChannelOutboundHandlerAdapter</a> ， <a href="../handler/traffic/ChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/ChannelTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">ChannelTrafficShapingHandler</a> ， <a href="../handler/stream/ChunkedWriteHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/stream/ChunkedWriteHandler.html" title="class in io.netty.handler.stream">ChunkedWriteHandler</a> ， <a href="CombinedChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/CombinedChannelDuplexHandler.html" title="在io.netty.channel中的类">CombinedChannelDuplexHandler</a> ， <a href="../handler/codec/marshalling/CompatibleMarshallingEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/marshalling/CompatibleMarshallingEncoder.html" title="class in io.netty.handler.codec.marshalling">CompatibleMarshallingEncoder</a> ， <a href="../handler/codec/serialization/CompatibleObjectEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/serialization/CompatibleObjectEncoder.html" title="类在io.netty.handler.codec.serialization">CompatibleObjectEncoder</a> ， <a href="../handler/codec/http/cors/CorsHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/cors/CorsHandler.html" title="class in io.netty.handler.codec.http.cors">CorsHandler</a> ， <a href="../handler/codec/dns/DatagramDnsQueryEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DatagramDnsQueryEncoder.html" title="class in io.netty.handler.codec.dns">DatagramDnsQueryEncoder</a> ， <a href="../handler/codec/dns/DatagramDnsResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DatagramDnsResponseEncoder.html" title="class in io.netty.handler.codec.dns">DatagramDnsResponseEncoder</a> ， <a href="../handler/codec/DatagramPacketEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/DatagramPacketEncoder.html" title="class在io.netty.handler.codec中">DatagramPacketEncoder</a> ， <a href="../handler/codec/compression/FastLzFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/FastLzFrameEncoder.html" title="class in io.netty.handler.codec.compression">FastLzFrameEncoder</a> ， <a href="../handler/flow/FlowControlHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/flow/FlowControlHandler.html" title="class在io.netty.handler.flow中">FlowControlHandler</a> ， <a href="../handler/flush/FlushConsolidationHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/flush/FlushConsolidationHandler.html" title="类在io.netty.handler.flush中">FlushConsolidationHandler</a> ， <a href="../handler/traffic/GlobalChannelTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalChannelTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">GlobalChannelTrafficShapingHandler</a> ， <a href="../handler/traffic/GlobalTrafficShapingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/traffic/GlobalTrafficShapingHandler.html" title="在io.netty.handler.traffic中的类">GlobalTrafficShapingHandler</a> ， <a href="../handler/codec/http2/Http2ChannelDuplexHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ChannelDuplexHandler.html" title="类在io.netty.handler.codec.http2中">Http2ChannelDuplexHandler</a> ， <a href="../handler/codec/http2/Http2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中">Http2ConnectionHandler</a> ， <a href="../handler/codec/http2/Http2FrameCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2FrameCodec.html" title="类在io.netty.handler.codec.http2中">Http2FrameCodec</a> ， <a href="../handler/codec/http2/Http2MultiplexCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2MultiplexCodec.html" title="类在io.netty.handler.codec.http2中">Http2MultiplexCodec</a> ， <a href="../handler/codec/http2/Http2StreamFrameToHttpObjectCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/Http2StreamFrameToHttpObjectCodec.html" title="类在io.netty.handler.codec.http2中">Http2StreamFrameToHttpObjectCodec</a> ， <a href="../handler/codec/http/HttpClientCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpClientCodec.html" title="class in io.netty.handler.codec.http">HttpClientCodec</a> ， <a href="../handler/codec/http/HttpClientUpgradeHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpClientUpgradeHandler.html" title="class in io.netty.handler.codec.http">HttpClientUpgradeHandler</a> ， <a href="../handler/codec/http/HttpContentCompressor.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpContentCompressor.html" title="class in io.netty.handler.codec.http">HttpContentCompressor</a> ， <a href="../handler/codec/http/HttpContentEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpContentEncoder.html" title="class in io.netty.handler.codec.http">HttpContentEncoder</a> ， <a href="../handler/codec/http/HttpObjectEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpObjectEncoder.html" title="class in io.netty.handler.codec.http">HttpObjectEncoder</a> ， <a href="../handler/proxy/HttpProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/HttpProxyHandler.html" title="在io.netty.handler.proxy中的类">HttpProxyHandler</a> ， <a href="../handler/codec/http/HttpRequestEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpRequestEncoder.html" title="class in io.netty.handler.codec.http">HttpRequestEncoder</a> ， <a href="../handler/codec/http/HttpResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpResponseEncoder.html" title="class in io.netty.handler.codec.http">HttpResponseEncoder</a> ， <a href="../handler/codec/http/HttpServerCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpServerCodec.html" title="class in io.netty.handler.codec.http">HttpServerCodec</a> ， <a href="../handler/codec/http/HttpServerKeepAliveHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/HttpServerKeepAliveHandler.html" title="class in io.netty.handler.codec.http">HttpServerKeepAliveHandler</a> ， <a href="../handler/codec/http2/HttpToHttp2ConnectionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http2/HttpToHttp2ConnectionHandler.html" title="类在io.netty.handler.codec.http2中">HttpToHttp2ConnectionHandler</a> ， <a href="../handler/timeout/IdleStateHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/timeout/IdleStateHandler.html" title="在io.netty.handler.timeout中的类">IdleStateHandler</a> ， <a href="../handler/codec/compression/JdkZlibEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/JdkZlibEncoder.html" title="class in io.netty.handler.codec.compression">JdkZlibEncoder</a> ， <a href="../handler/codec/compression/JZlibEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/JZlibEncoder.html" title="class in io.netty.handler.codec.compression">JZlibEncoder</a> ， <a href="../handler/codec/LengthFieldPrepender.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/LengthFieldPrepender.html" title="class在io.netty.handler.codec中">LengthFieldPrepender</a> ， <a href="../handler/codec/string/LineEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/string/LineEncoder.html" title="类在io.netty.handler.codec.string中">LineEncoder</a> ， <a href="../handler/logging/LoggingHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/logging/LoggingHandler.html" title="class in io.netty.handler.logging">LoggingHandler</a> ， <a href="../handler/codec/compression/Lz4FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/Lz4FrameEncoder.html" title="class in io.netty.handler.codec.compression">Lz4FrameEncoder</a> ， <a href="../handler/codec/compression/LzfEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/LzfEncoder.html" title="class in io.netty.handler.codec.compression">LzfEncoder</a> ， <a href="../handler/codec/compression/LzmaFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/LzmaFrameEncoder.html" title="class in io.netty.handler.codec.compression">LzmaFrameEncoder</a> ， <a href="../handler/codec/marshalling/MarshallingEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/marshalling/MarshallingEncoder.html" title="class in io.netty.handler.codec.marshalling">MarshallingEncoder</a> ， <a href="../handler/codec/MessageToByteEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToByteEncoder.html" title="class在io.netty.handler.codec中">MessageToByteEncoder</a> ， <a href="../handler/codec/MessageToMessageCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToMessageCodec.html" title="class在io.netty.handler.codec中">MessageToMessageCodec</a> ， <a href="../handler/codec/MessageToMessageEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToMessageEncoder.html" title="class在io.netty.handler.codec中">MessageToMessageEncoder</a> ， <a href="../handler/codec/mqtt/MqttEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/mqtt/MqttEncoder.html" title="在io.netty.handler.codec.mqtt中的类">MqttEncoder</a> ， <a href="../handler/codec/serialization/ObjectEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/serialization/ObjectEncoder.html" title="类在io.netty.handler.codec.serialization">ObjectEncoder</a></span> 
+        <span>， <a href="../handler/codec/protobuf/ProtobufEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/protobuf/ProtobufEncoder.html" title="class in io.netty.handler.codec.protobuf">ProtobufEncoder</a> ， <a href="../handler/codec/protobuf/ProtobufEncoderNano.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/protobuf/ProtobufEncoderNano.html" title="class in io.netty.handler.codec.protobuf">ProtobufEncoderNano</a> ， <a href="../handler/codec/protobuf/ProtobufVarint32LengthFieldPrepender.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/protobuf/ProtobufVarint32LengthFieldPrepender.html" title="class in io.netty.handler.codec.protobuf">ProtobufVarint32LengthFieldPrepender</a> ， <a href="../handler/proxy/ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/ProxyHandler.html" title="在io.netty.handler.proxy中的类">ProxyHandler</a> ， <a href="../handler/timeout/ReadTimeoutHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/timeout/ReadTimeoutHandler.html" title="在io.netty.handler.timeout中的类">ReadTimeoutHandler</a> ， <a href="../handler/codec/redis/RedisEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/redis/RedisEncoder.html" title="class在io.netty.handler.codec.redis中">RedisEncoder</a> ， <a href="../handler/codec/rtsp/RtspEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspEncoder.html" title="class在io.netty.handler.codec.rtsp中">RtspEncoder</a> ， <a href="../handler/codec/rtsp/RtspObjectEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspObjectEncoder.html" title="class在io.netty.handler.codec.rtsp中">RtspObjectEncoder</a> ， <a href="../handler/codec/rtsp/RtspRequestEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspRequestEncoder.html" title="class在io.netty.handler.codec.rtsp中">RtspRequestEncoder</a> ， <a href="../handler/codec/rtsp/RtspResponseEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/rtsp/RtspResponseEncoder.html" title="class在io.netty.handler.codec.rtsp中">RtspResponseEncoder</a> ， <a href="../handler/codec/sctp/SctpOutboundByteStreamHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/sctp/SctpOutboundByteStreamHandler.html" title="class in io.netty.handler.codec.sctp">SctpOutboundByteStreamHandler</a> ， <a href="../handler/codec/smtp/SmtpRequestEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/SmtpRequestEncoder.html" title="class in io.netty.handler.codec.smtp">SmtpRequestEncoder</a> ， <a href="../handler/codec/compression/SnappyFramedEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/SnappyFramedEncoder.html" title="class in io.netty.handler.codec.compression">SnappyFramedEncoder</a> ， <a href="../handler/codec/compression/SnappyFrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/SnappyFrameEncoder.html" title="class in io.netty.handler.codec.compression">SnappyFrameEncoder</a> ， <a href="../handler/ssl/SniHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SniHandler.html" title="class在io.netty.handler.ssl中">SniHandler</a> ， <a href="../handler/codec/socksx/v4/Socks4ClientEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/v4/Socks4ClientEncoder.html" title="class in io.netty.handler.codec.socksx.v4">Socks4ClientEncoder</a> ， <a href="../handler/proxy/Socks4ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks4ProxyHandler.html" title="在io.netty.handler.proxy中的类">Socks4ProxyHandler</a> ， <a href="../handler/codec/socksx/v4/Socks4ServerEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/v4/Socks4ServerEncoder.html" title="class in io.netty.handler.codec.socksx.v4">Socks4ServerEncoder</a> ， <a href="../handler/codec/socksx/v5/Socks5ClientEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/v5/Socks5ClientEncoder.html" title="class in io.netty.handler.codec.socksx.v5">Socks5ClientEncoder</a> ， <a href="../handler/proxy/Socks5ProxyHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/proxy/Socks5ProxyHandler.html" title="在io.netty.handler.proxy中的类">Socks5ProxyHandler</a> ， <a href="../handler/codec/socksx/v5/Socks5ServerEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/v5/Socks5ServerEncoder.html" title="class in io.netty.handler.codec.socksx.v5">Socks5ServerEncoder</a> ， <a href="../handler/codec/socks/SocksMessageEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksMessageEncoder.html" title="class在io.netty.handler.codec.socks中">SocksMessageEncoder</a> ， <a href="../handler/codec/spdy/SpdyFrameCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyFrameCodec.html" title="class in io.netty.handler.codec.spdy">SpdyFrameCodec</a> ， <a href="../handler/codec/spdy/SpdyHttpCodec.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyHttpCodec.html" title="class in io.netty.handler.codec.spdy">SpdyHttpCodec</a> ， <a href="../handler/codec/spdy/SpdyHttpEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyHttpEncoder.html" title="class in io.netty.handler.codec.spdy">SpdyHttpEncoder</a> ， <a href="../handler/codec/spdy/SpdyHttpResponseStreamIdHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdyHttpResponseStreamIdHandler.html" title="class in io.netty.handler.codec.spdy">SpdyHttpResponseStreamIdHandler</a> ， <a href="../handler/codec/spdy/SpdySessionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/spdy/SpdySessionHandler.html" title="class in io.netty.handler.codec.spdy">SpdySessionHandler</a> ， <a href="../handler/ssl/SslHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/SslHandler.html" title="class在io.netty.handler.ssl中">SslHandler</a> ， <a href="../handler/codec/stomp/StompSubframeEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/stomp/StompSubframeEncoder.html" title="class在io.netty.handler.codec.stomp中">StompSubframeEncoder</a> ， <a href="../handler/codec/string/StringEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/string/StringEncoder.html" title="类在io.netty.handler.codec.string中">StringEncoder</a> ， <a href="../handler/codec/http/websocketx/WebSocket00FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket00FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx">WebSocket00FrameEncoder</a> ， <a href="../handler/codec/http/websocketx/WebSocket07FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket07FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx">WebSocket07FrameEncoder</a> ， <a href="../handler/codec/http/websocketx/WebSocket08FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket08FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx">WebSocket08FrameEncoder</a> ， <a href="../handler/codec/http/websocketx/WebSocket13FrameEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/WebSocket13FrameEncoder.html" title="class in io.netty.handler.codec.http.websocketx">WebSocket13FrameEncoder</a> ， <a href="../handler/codec/http/websocketx/extensions/compression/WebSocketClientCompressionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/compression/WebSocketClientCompressionHandler.html" title="class in io.netty.handler.codec.http.websocketx.extensions.compression">WebSocketClientCompressionHandler</a> ， <a href="../handler/codec/http/websocketx/extensions/WebSocketClientExtensionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/WebSocketClientExtensionHandler.html" title="class in io.netty.handler.codec.http.websocketx.extensions">WebSocketClientExtensionHandler</a> ， <a href="../handler/codec/http/websocketx/extensions/WebSocketExtensionEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/WebSocketExtensionEncoder.html" title="class in io.netty.handler.codec.http.websocketx.extensions">WebSocketExtensionEncoder</a> ， <a href="../handler/codec/http/websocketx/extensions/compression/WebSocketServerCompressionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/compression/WebSocketServerCompressionHandler.html" title="class in io.netty.handler.codec.http.websocketx.extensions.compression">WebSocketServerCompressionHandler</a> ， <a href="../handler/codec/http/websocketx/extensions/WebSocketServerExtensionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/http/websocketx/extensions/WebSocketServerExtensionHandler.html" title="class in io.netty.handler.codec.http.websocketx.extensions">WebSocketServerExtensionHandler</a> ， <a href="../handler/timeout/WriteTimeoutHandler.html" tppabs="http://netty.io/4.1/api/io/netty/handler/timeout/WriteTimeoutHandler.html" title="在io.netty.handler.timeout中的类">WriteTimeoutHandler</a> ， <a href="../handler/codec/compression/ZlibEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/compression/ZlibEncoder.html" title="class in io.netty.handler.codec.compression">ZlibEncoder</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public interface <span class="typeNameLabel">ChannelOutboundHandler</span>
+extends <a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></pre> 
+      <div class="block"> 
+       <span><a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="io.netty.channel中的接口"><code>ChannelHandler</code></a>将通知IO出站操作。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.channel.<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="ChannelHandler.Sharable.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.Sharable.html" title="annotation in io.netty.channel">ChannelHandler.Sharable</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-">bind</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.net.SocketAddress&nbsp;localAddress, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              调用一次绑定操作。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">close</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              一旦进行了密切的操作，就会被调用。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.net.SocketAddress&nbsp;remoteAddress, java.net.SocketAddress&nbsp;localAddress, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              连接操作完成后调用。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">deregister</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>一旦从当前注册的<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code>开始</a>取消注册操作，就会被调用。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-">disconnect</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              调用一次断开操作。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#flush-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#flush-io.netty.channel.ChannelHandlerContext-">flush</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              调用一次冲洗操作。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#read-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#read-io.netty.channel.ChannelHandlerContext-">read</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)</code> 
+            <div class="block">
+              拦截 
+             <a href="ChannelHandlerContext.html#read--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#read--"><code>ChannelHandlerContext.read()</code></a> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="ChannelOutboundHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html#write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-">write</a></span>(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx, java.lang.Object&nbsp;msg, <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)</code> 
+            <div class="block">
+              一旦写入操作被调用，就调用它。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelHandler"> </a> <h3>Methods inherited from interface&nbsp;io.netty.channel.<a href="ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a></h3> <code><a href="ChannelHandler.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#exceptionCaught-io.netty.channel.ChannelHandlerContext-java.lang.Throwable-">exceptionCaught</a>, <a href="ChannelHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerAdded-io.netty.channel.ChannelHandlerContext-">handlerAdded</a>, <a href="ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html#handlerRemoved-io.netty.channel.ChannelHandlerContext-">handlerRemoved</a></code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="bind-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>bind</h4> <pre>void&nbsp;bind(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+          java.net.SocketAddress&nbsp;localAddress,
+          <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+   throws java.lang.Exception</pre> 
+          <div class="block">
+            调用一次绑定操作。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - <a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口">为其</a>进行绑定操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>localAddress</code> - 它应该绑定的 
+            <code>SocketAddress</code> 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="connect-io.netty.channel.ChannelHandlerContext-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connect</h4> <pre>void&nbsp;connect(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+             java.net.SocketAddress&nbsp;remoteAddress,
+             java.net.SocketAddress&nbsp;localAddress,
+             <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+      throws java.lang.Exception</pre> 
+          <div class="block">
+            连接操作完成后调用。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - <a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口">为其</a>进行连接操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>remoteAddress</code> - 它应该连接到的 
+            <code>SocketAddress</code> 
+           </dd> 
+           <dd> 
+            <code>localAddress</code> - 用作连接源的 
+            <code>SocketAddress</code> 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 在操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="disconnect-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>disconnect</h4> <pre>void&nbsp;disconnect(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+         throws java.lang.Exception</pre> 
+          <div class="block">
+            调用一次断开操作。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - <a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口">为其</a>进行断开操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="close-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>close</h4> <pre>void&nbsp;close(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+           <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+    throws java.lang.Exception</pre> 
+          <div class="block">
+            一旦进行了密切的操作，就会被调用。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - 关闭操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 如果发生错误则抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="deregister-io.netty.channel.ChannelHandlerContext-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>deregister</h4> <pre>void&nbsp;deregister(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+                <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+         throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>一旦从当前注册的<a href="EventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/EventLoop.html" title="io.netty.channel中的接口"><code>EventLoop</code>开始</a>撤销注册操作，就会被调用。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - 关闭操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="read-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>read</h4> <pre>void&nbsp;read(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+   throws java.lang.Exception</pre> 
+          <div class="block">
+            拦截 
+           <a href="ChannelHandlerContext.html#read--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html#read--"><code>ChannelHandlerContext.read()</code></a> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="write-io.netty.channel.ChannelHandlerContext-java.lang.Object-io.netty.channel.ChannelPromise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>write</h4> <pre>void&nbsp;write(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx,
+           java.lang.Object&nbsp;msg,
+           <a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="interface in io.netty.channel">ChannelPromise</a>&nbsp;promise)
+    throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>一旦写入操作被调用，就调用它。</span> 
+           <span>写入操作将通过<a href="ChannelPipeline.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPipeline.html" title="io.netty.channel中的接口"><code>ChannelPipeline</code></a>写入消息。</span> 
+           <span>那些一旦<a href="Channel.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#flush--"><code>Channel.flush()</code></a>被称为准备被刷新到实际的<a href="Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - <a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口">为其</a>写入操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dd> 
+            <code>msg</code> - 要写的消息 
+           </dd> 
+           <dd> 
+            <span><code>promise</code> - 操作完成后通知<a href="ChannelPromise.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelPromise.html" title="io.netty.channel中的接口"><code>ChannelPromise</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="flush-io.netty.channel.ChannelHandlerContext-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>flush</h4> <pre>void&nbsp;flush(<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="interface in io.netty.channel">ChannelHandlerContext</a>&nbsp;ctx)
+    throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span>调用一次冲洗操作。</span> 
+           <span>刷新操作将尝试清除所有以前写入的待处理消息。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>ctx</code> - 进行刷新操作的<a href="ChannelHandlerContext.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerContext.html" title="io.netty.channel中的接口"><code>ChannelHandlerContext</code></a></span> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> - 发生错误时抛出 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/class-use/ChannelOutboundHandler.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/package-tree.html">树</a></li> 
+    <li><a href="../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ChannelOutboundBuffer.MessageProcessor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.MessageProcessor.html" title="interface in io.netty.channel"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ChannelOutboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../index.html-io-netty-channel-ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/ChannelOutboundHandler.html" target="_top">框架</a></li> 
+    <li><a href="ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

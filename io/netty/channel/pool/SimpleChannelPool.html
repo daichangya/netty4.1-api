@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>SimpleChannelPool (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.pool.SimpleChannelPool class"> 
+  <meta name="keywords" content="bootstrap()"> 
+  <meta name="keywords" content="handler()"> 
+  <meta name="keywords" content="healthChecker()"> 
+  <meta name="keywords" content="releaseHealthCheck()"> 
+  <meta name="keywords" content="acquire()"> 
+  <meta name="keywords" content="connectChannel()"> 
+  <meta name="keywords" content="release()"> 
+  <meta name="keywords" content="pollChannel()"> 
+  <meta name="keywords" content="offerChannel()"> 
+  <meta name="keywords" content="close()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SimpleChannelPool (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/SimpleChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/class-use/SimpleChannelPool.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="FixedChannelPool.AcquireTimeoutAction.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/FixedChannelPool.AcquireTimeoutAction.html" title="enum in io.netty.channel.pool"><span class="typeNameLink">上一个</span></a></li> 
+    <li>下一个</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-pool-SimpleChannelPool.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/pool/SimpleChannelPool.html" target="_top">框架</a></li> 
+    <li><a href="SimpleChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.pool 
+   </div> 
+   <h2 title="Class SimpleChannelPool" class="title">Class SimpleChannelPool</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.channel.pool.SimpleChannelPool</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口">ChannelPool</a> ，java.io.Closeable，java.lang.AutoCloseable</span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="FixedChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/FixedChannelPool.html" title="class在io.netty.channel.pool中">FixedChannelPool</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">SimpleChannelPool</span>
+extends java.lang.Object
+implements <a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="interface in io.netty.channel.pool">ChannelPool</a></pre> 
+      <div class="block"> 
+       <span>简单的<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a>实现将创建新的<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>如果有人试图获得<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code>，</a>但没有人在池中。</span> 
+       <span>强制执行最大并发<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>的限制。</span> 
+       <span>该实施使用<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>ChannelPool</code></a>中的<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>Channel</code>的</a> LIFO订单。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-">SimpleChannelPool</a></span>(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap, <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler)</code> 
+            <div class="block">
+              使用 
+             <a href="ChannelHealthChecker.html#ACTIVE" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html#ACTIVE"><code>ChannelHealthChecker.ACTIVE</code></a>创建一个新实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-">SimpleChannelPool</a></span>(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap, <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler, <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthCheck)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-boolean-">SimpleChannelPool</a></span>(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap, <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler, <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthCheck, boolean&nbsp;releaseHealthCheck)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-boolean-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-boolean-boolean-">SimpleChannelPool</a></span>(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap, <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler, <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthCheck, boolean&nbsp;releaseHealthCheck, boolean&nbsp;lastRecentUsed)</code> 
+            <div class="block">
+              创建一个新的实例。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#acquire--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#acquire--">acquire</a></span>()</code> 
+            <div class="block"> 
+             <span>获得<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code><a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#acquire-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#acquire-io.netty.util.concurrent.Promise-">acquire</a></span>(<a href="../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>获得<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#bootstrap--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#bootstrap--">bootstrap</a></span>()</code> 
+            <div class="block"> 
+             <span>返回该池将用于打开新连接的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#close--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#close--">close</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="../ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#connectChannel-io.netty.bootstrap.Bootstrap-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#connectChannel-io.netty.bootstrap.Bootstrap-">connectChannel</a></span>(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bs)</code> 
+            <div class="block"> 
+             <span>引导一个新的<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#handler--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#handler--">handler</a></span>()</code> 
+            <div class="block"> 
+             <span>返回将通知不同池操作的<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#healthChecker--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#healthChecker--">healthChecker</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="io.netty.channel.pool中的接口"><code>ChannelHealthChecker</code></a>将用来检查一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>是健康的。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#offerChannel-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#offerChannel-io.netty.channel.Channel-">offerChannel</a></span>(<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel)</code> 
+            <div class="block"> 
+             <span>提供<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>回到内部存储。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>protected <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#pollChannel--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#pollChannel--">pollChannel</a></span>()</code> 
+            <div class="block"> 
+             <span>从内部存储中查询<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>以重新使用它。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code><a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;java.lang.Void&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#release-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#release-io.netty.channel.Channel-">release</a></span>(<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel)</code> 
+            <div class="block"> 
+             <span>释放<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>返回到此<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code><a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;java.lang.Void&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-">release</a></span>(<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel, <a href="../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;&nbsp;promise)</code> 
+            <div class="block"> 
+             <span>释放<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>回到这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SimpleChannelPool.html#releaseHealthCheck--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#releaseHealthCheck--">releaseHealthCheck</a></span>()</code> 
+            <div class="block">
+              指示此池在提供给池后是否会检查通道的健康状况。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SimpleChannelPool</h4> <pre>public&nbsp;SimpleChannelPool(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap,
+                         <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler)</pre> 
+          <div class="block">
+            使用 
+           <a href="ChannelHealthChecker.html#ACTIVE" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html#ACTIVE"><code>ChannelHealthChecker.ACTIVE</code></a>创建一个新实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>bootstrap</code> - 用于连接的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>handler</code> - 将通知不同池操作的<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a></span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SimpleChannelPool</h4> <pre>public&nbsp;SimpleChannelPool(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap,
+                         <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler,
+                         <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthCheck)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>bootstrap</code> - 用于连接的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>handler</code> - 将通知不同池操作的<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>healthCheck</code> -该<a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="io.netty.channel.pool中的接口"><code>ChannelHealthChecker</code></a>将用来检查一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>时从获得仍然是健康<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a></span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SimpleChannelPool</h4> <pre>public&nbsp;SimpleChannelPool(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap,
+                         <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler,
+                         <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthCheck,
+                         boolean&nbsp;releaseHealthCheck)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>bootstrap</code> - 用于连接的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>handler</code> - 将通知不同池操作的<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>healthCheck</code> - <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="io.netty.channel.pool中的接口"><code>ChannelHealthChecker</code></a>将用于检查从<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a>获得的<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>是否仍然健康</span> 
+           </dd> 
+           <dd> 
+            <span><code>releaseHealthCheck</code> - 如果此参数设置为<code>true</code> ，则会在返回之前检查渠道健康状况;</span> 
+            <span>否则，只有在采集时检查信道健康状况</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="SimpleChannelPool-io.netty.bootstrap.Bootstrap-io.netty.channel.pool.ChannelPoolHandler-io.netty.channel.pool.ChannelHealthChecker-boolean-boolean-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>SimpleChannelPool</h4> <pre>public&nbsp;SimpleChannelPool(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap,
+                         <a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler,
+                         <a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthCheck,
+                         boolean&nbsp;releaseHealthCheck,
+                         boolean&nbsp;lastRecentUsed)</pre> 
+          <div class="block">
+            创建一个新的实例。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>bootstrap</code> - 用于连接的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>handler</code> - 将通知不同池操作的<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>healthCheck</code> -该<a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="io.netty.channel.pool中的接口"><code>ChannelHealthChecker</code></a>将用来检查一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>时从获得仍然是健康<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a></span> 
+           </dd> 
+           <dd> 
+            <span><code>releaseHealthCheck</code> - 如果此参数设置为<code>true</code> ，则会在返回之前检查渠道健康状况;</span> 
+            <span>否则，只有在采集时检查信道健康状况</span> 
+           </dd> 
+           <dd> 
+            <span><code>lastRecentUsed</code> - <code>true</code> <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>选择将是LIFO，如果是<code>false</code> FIFO。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="bootstrap--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>bootstrap</h4> <pre>protected&nbsp;<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bootstrap()</pre> 
+          <div class="block"> 
+           <span>返回该池将用于打开新连接的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a>该池将用于打开新的连接</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="handler--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>handler</h4> <pre>protected&nbsp;<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="interface in io.netty.channel.pool">ChannelPoolHandler</a>&nbsp;handler()</pre> 
+          <div class="block"> 
+           <span>返回将通知不同池操作的<a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span><a href="ChannelPoolHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPoolHandler.html" title="io.netty.channel.pool中的接口"><code>ChannelPoolHandler</code></a>将通知不同池操作</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="healthChecker--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>healthChecker</h4> <pre>protected&nbsp;<a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="interface in io.netty.channel.pool">ChannelHealthChecker</a>&nbsp;healthChecker()</pre> 
+          <div class="block"> 
+           <span>返回<a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="io.netty.channel.pool中的接口"><code>ChannelHealthChecker</code></a>将用来检查一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>是健康的。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>该<a href="ChannelHealthChecker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelHealthChecker.html" title="io.netty.channel.pool中的接口"><code>ChannelHealthChecker</code></a>将被用来检查一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>是健康的</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="releaseHealthCheck--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>releaseHealthCheck</h4> <pre>protected&nbsp;boolean&nbsp;releaseHealthCheck()</pre> 
+          <div class="block">
+            指示此池在提供给池后是否会检查通道的健康状况。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>如果此池在将它们提供回池中之前将检查通道的健康状况，或者 
+            <code>false</code>如果只在采集时检查通道健康状况 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="acquire--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>acquire</h4> <pre>public final&nbsp;<a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;&nbsp;acquire()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="ChannelPool.html#acquire--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#acquire--">ChannelPool</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>获得<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+           <span>一旦获得成功，通知返回的<a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a> ，否则失败。</span> 
+           <span><strong>重要的是，即使<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>明确关闭，获得的数据也会再次发布到池中。</strong></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPool.html#acquire--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#acquire--">acquire</a></code>在界面 
+            <code><a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="interface in io.netty.channel.pool">ChannelPool</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="acquire-io.netty.util.concurrent.Promise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>acquire</h4> <pre>public&nbsp;<a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;&nbsp;acquire(<a href="../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&gt;&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="ChannelPool.html#acquire-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#acquire-io.netty.util.concurrent.Promise-">ChannelPool</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>获得<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+           <span>一旦获得成功，通知给定的<a href="../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="io.netty.util.concurrent中的接口"><code>Promise</code></a> ，否则失败。</span> 
+           <span><strong>重要的是，即使<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>明确关闭，获得的数据也会再次发布到池中。</strong></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPool.html#acquire-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#acquire-io.netty.util.concurrent.Promise-">acquire</a></code>在界面 
+            <code><a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="interface in io.netty.channel.pool">ChannelPool</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="connectChannel-io.netty.bootstrap.Bootstrap-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connectChannel</h4> <pre>protected&nbsp;<a href="../ChannelFuture.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelFuture.html" title="interface in io.netty.channel">ChannelFuture</a>&nbsp;connectChannel(<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class in io.netty.bootstrap">Bootstrap</a>&nbsp;bs)</pre> 
+          <div class="block"> 
+           <span>引导一个新的<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+           <span>默认实现使用<a href="../../bootstrap/Bootstrap.html#connect--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html#connect--"><code>Bootstrap.connect()</code></a> ，子类可能会覆盖此。</span> 
+           <p> <span>这里传递的<a href="../../bootstrap/Bootstrap.html" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html" title="class在io.netty.bootstrap中"><code>Bootstrap</code></a>是通过<a href="../../bootstrap/Bootstrap.html#clone--" tppabs="http://netty.io/4.1/api/io/netty/bootstrap/Bootstrap.html#clone--"><code>Bootstrap.clone()</code></a>克隆的，所以修改是安全的。</span> </p> 
+          </div> </li> 
+        </ul> <a name="release-io.netty.channel.Channel-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>release</h4> <pre>public final&nbsp;<a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;java.lang.Void&gt;&nbsp;release(<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="ChannelPool.html#release-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#release-io.netty.channel.Channel-">ChannelPool</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>释放一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>回到这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+           <span>一旦发布成功，通知返回的<a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a> ，否则失败。</span> 
+           <span>失败时， <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>将自动关闭。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPool.html#release-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#release-io.netty.channel.Channel-">release</a></code>在界面 
+            <code><a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="interface in io.netty.channel.pool">ChannelPool</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>release</h4> <pre>public&nbsp;<a href="../../util/concurrent/Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;java.lang.Void&gt;&nbsp;release(<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel,
+                                      <a href="../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="interface in io.netty.util.concurrent">Promise</a>&lt;java.lang.Void&gt;&nbsp;promise)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="ChannelPool.html#release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-">ChannelPool</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>释放一个<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>回到这个<a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="io.netty.channel.pool中的接口"><code>ChannelPool</code></a> 。</span> 
+           <span>一旦发布成功，通知给定的<a href="../../util/concurrent/Promise.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Promise.html" title="io.netty.util.concurrent中的接口"><code>Promise</code></a> ，否则失败。</span> 
+           <span>失败时， <a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>将自动关闭。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPool.html#release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#release-io.netty.channel.Channel-io.netty.util.concurrent.Promise-">release</a></code>在界面 
+            <code><a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="interface in io.netty.channel.pool">ChannelPool</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="pollChannel--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pollChannel</h4> <pre>protected&nbsp;<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;pollChannel()</pre> 
+          <div class="block"> 
+           <span>从内部存储中查询<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>以重新使用它。</span> 
+           <span>如果没有<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>准备重新使用，这将返回<code>null</code> 。</span> 
+           <span>子类可以覆盖<a href="SimpleChannelPool.html#pollChannel--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#pollChannel--"><code>pollChannel()</code></a>和<a href="SimpleChannelPool.html#offerChannel-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#offerChannel-io.netty.channel.Channel-"><code>offerChannel(Channel)</code></a> 。</span> 
+           <span>请注意，这些方法的实现需要线程安全！</span> 
+          </div> </li> 
+        </ul> <a name="offerChannel-io.netty.channel.Channel-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>offerChannel</h4> <pre>protected&nbsp;boolean&nbsp;offerChannel(<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a>&nbsp;channel)</pre> 
+          <div class="block"> 
+           <span>提供<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>回到内部存储。</span> 
+           <span>这将返回<code>true</code>如果<a href="../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>可以添加， <code>false</code>其他。</span> 
+           <span>子类可能会覆盖<a href="SimpleChannelPool.html#pollChannel--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#pollChannel--"><code>pollChannel()</code></a>和<a href="SimpleChannelPool.html#offerChannel-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html#offerChannel-io.netty.channel.Channel-"><code>offerChannel(Channel)</code></a> 。</span> 
+           <span>请注意，这些方法的实现需要线程安全！</span> 
+          </div> </li> 
+        </ul> <a name="close--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>close</h4> <pre>public&nbsp;void&nbsp;close()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="ChannelPool.html#close--" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html#close--">close</a></code>在界面 
+            <code><a href="ChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/ChannelPool.html" title="interface in io.netty.channel.pool">ChannelPool</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>close</code>在界面 
+            <code>java.io.Closeable</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>close</code>在界面 
+            <code>java.lang.AutoCloseable</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/SimpleChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/class-use/SimpleChannelPool.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="FixedChannelPool.AcquireTimeoutAction.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/FixedChannelPool.AcquireTimeoutAction.html" title="enum in io.netty.channel.pool"><span class="typeNameLink">上一个</span></a></li> 
+    <li>下一个</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-pool-SimpleChannelPool.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/pool/SimpleChannelPool.html" target="_top">框架</a></li> 
+    <li><a href="SimpleChannelPool.html" tppabs="http://netty.io/4.1/api/io/netty/channel/pool/SimpleChannelPool.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/pool/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

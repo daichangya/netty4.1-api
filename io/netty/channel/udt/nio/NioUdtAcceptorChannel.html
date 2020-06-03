@@ -1,0 +1,1023 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>NioUdtAcceptorChannel (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.udt.nio.NioUdtAcceptorChannel class"> 
+  <meta name="keywords" content="logger"> 
+  <meta name="keywords" content="config()"> 
+  <meta name="keywords" content="doBind()"> 
+  <meta name="keywords" content="doClose()"> 
+  <meta name="keywords" content="doConnect()"> 
+  <meta name="keywords" content="doDisconnect()"> 
+  <meta name="keywords" content="doFinishConnect()"> 
+  <meta name="keywords" content="doWriteMessage()"> 
+  <meta name="keywords" content="filterOutboundMessage()"> 
+  <meta name="keywords" content="isActive()"> 
+  <meta name="keywords" content="javaChannel()"> 
+  <meta name="keywords" content="localAddress0()"> 
+  <meta name="keywords" content="localAddress()"> 
+  <meta name="keywords" content="remoteAddress()"> 
+  <meta name="keywords" content="remoteAddress0()"> 
+  <meta name="keywords" content="metadata()"> 
+  <meta name="keywords" content="doReadMessages()"> 
+  <meta name="keywords" content="newConnectorChannel()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="NioUdtAcceptorChannel (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":42,"i1":42,"i2":42,"i3":42,"i4":42,"i5":42,"i6":42,"i7":42,"i8":42,"i9":42,"i10":42,"i11":42,"i12":42,"i13":42,"i14":38,"i15":42,"i16":42};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/NioUdtAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/class-use/NioUdtAcceptorChannel.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>上一个</li> 
+    <li><a href="NioUdtByteAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtByteAcceptorChannel.html" title="class in io.netty.channel.udt.nio"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-channel-udt-nio-NioUdtAcceptorChannel.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/udt/nio/NioUdtAcceptorChannel.html" target="_top">框架</a></li> 
+    <li><a href="NioUdtAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.classes.inherited.from.class.io.netty.channel.nio.AbstractNioChannel">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.udt.nio 
+   </div> 
+   <h2 title="Class NioUdtAcceptorChannel" class="title">Class NioUdtAcceptorChannel</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="../../../util/DefaultAttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/DefaultAttributeMap.html" title="class in io.netty.util">io.netty.util.DefaultAttributeMap</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">io.netty.channel.AbstractChannel</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">io.netty.channel.nio.AbstractNioChannel</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li><a href="../../nio/AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio">io.netty.channel.nio.AbstractNioMessageChannel</a></li> 
+            <li> 
+             <ul class="inheritance"> 
+              <li>io.netty.channel.udt.nio.NioUdtAcceptorChannel</li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">Channel</a> ， <a href="../../ChannelOutboundInvoker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html" title="io.netty.channel中的接口">ChannelOutboundInvoker</a> ， <a href="../../ServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ServerChannel.html" title="io.netty.channel中的接口">ServerChannel</a> ， <a href="../UdtChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html" title="io.netty.channel.udt中的接口">UdtChannel</a> ， <a href="../UdtServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannel.html" title="io.netty.channel.udt中的接口">UdtServerChannel</a> ， <a href="../../../util/AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="io.netty.util中的接口">AttributeMap</a> ，java.lang.Comparable的&lt; <a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口">Channel</a> &gt;</span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="NioUdtByteAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtByteAcceptorChannel.html" title="在io.netty.channel.udt.nio中的类">NioUdtByteAcceptorChannel</a> ， <a href="NioUdtMessageAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtMessageAcceptorChannel.html" title="在io.netty.channel.udt.nio中的类">NioUdtMessageAcceptorChannel</a></span> 
+       </dd> 
+      </dl> 
+      <hr> 
+      <div class="block"> 
+       <span><span class="deprecatedLabel">已过时。</span></span> 
+       <div class="block"> 
+        <span><span class="deprecationComment">UDT运输不再维护并将被移除。</span></span> 
+       </div> 
+      </div> <br> <pre>@Deprecated
+public abstract class <span class="typeNameLabel">NioUdtAcceptorChannel</span>
+extends <a href="../../nio/AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio">AbstractNioMessageChannel</a>
+implements <a href="../UdtServerChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannel.html" title="interface in io.netty.channel.udt">UdtServerChannel</a></pre> 
+      <div class="block">
+        Netty字节/消息UDT流/数据报接收器的通用基础。 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.nio.AbstractNioChannel"> </a> <h3>Nested classes/interfaces inherited from class&nbsp;io.netty.channel.nio.<a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></h3> <code><a href="../../nio/AbstractNioChannel.AbstractNioUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.AbstractNioUnsafe.html" title="class in io.netty.channel.nio">AbstractNioChannel.AbstractNioUnsafe</a>, <a href="../../nio/AbstractNioChannel.NioUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.NioUnsafe.html" title="interface in io.netty.channel.nio">AbstractNioChannel.NioUnsafe</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.AbstractChannel"> </a> <h3>Nested classes/interfaces inherited from class&nbsp;io.netty.channel.<a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></h3> <code><a href="../../AbstractChannel.AbstractUnsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.AbstractUnsafe.html" title="class in io.netty.channel">AbstractChannel.AbstractUnsafe</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.io.netty.channel.Channel"> </a> <h3>Nested classes/interfaces inherited from interface&nbsp;io.netty.channel.<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></h3> <code><a href="../../Channel.Unsafe.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.Unsafe.html" title="interface in io.netty.channel">Channel.Unsafe</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected static io.netty.util.internal.logging.InternalLogger</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#logger" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#logger">logger</a></span></code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="fields.inherited.from.class.io.netty.channel.nio.AbstractNioChannel"> </a> <h3>Fields inherited from class&nbsp;io.netty.channel.nio.<a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></h3> <code><a href="../../nio/AbstractNioChannel.html#readInterestOp" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#readInterestOp">readInterestOp</a></code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier</th> 
+           <th class="colLast" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#NioUdtAcceptorChannel-com.barchart.udt.nio.ServerSocketChannelUDT-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#NioUdtAcceptorChannel-com.barchart.udt.nio.ServerSocketChannelUDT-">NioUdtAcceptorChannel</a></span>(com.barchart.udt.nio.ServerSocketChannelUDT&nbsp;channelUDT)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#NioUdtAcceptorChannel-com.barchart.udt.TypeUDT-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#NioUdtAcceptorChannel-com.barchart.udt.TypeUDT-">NioUdtAcceptorChannel</a></span>(com.barchart.udt.TypeUDT&nbsp;type)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code><a href="../UdtServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannelConfig.html" title="interface in io.netty.channel.udt">UdtServerChannelConfig</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#config--">config</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此频道的配置。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doBind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doBind-java.net.SocketAddress-">doBind</a></span>(java.net.SocketAddress&nbsp;localAddress)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>将<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>绑定到<code>SocketAddress</code></span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doClose--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doClose--">doClose</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>关闭<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a></span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doConnect-java.net.SocketAddress-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doConnect-java.net.SocketAddress-java.net.SocketAddress-">doConnect</a></span>(java.net.SocketAddress&nbsp;remoteAddress, java.net.SocketAddress&nbsp;localAddress)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              连接到远程对等 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doDisconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doDisconnect--">doDisconnect</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>将此<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从其远程对等端断开</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doFinishConnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doFinishConnect--">doFinishConnect</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              完成连接 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doReadMessages-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doReadMessages-java.util.List-">doReadMessages</a></span>(java.util.List&lt;java.lang.Object&gt;&nbsp;buf)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              将消息读入给定数组并返回读取的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-">doWriteMessage</a></span>(java.lang.Object&nbsp;msg, <a href="../../ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="class in io.netty.channel">ChannelOutboundBuffer</a>&nbsp;in)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              写下消息到底层 
+             <code>Channel</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.Object</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#filterOutboundMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#filterOutboundMessage-java.lang.Object-">filterOutboundMessage</a></span>(java.lang.Object&nbsp;msg)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>当新消息添加到此<a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="在io.netty.channel中的类">8249118891440</a>的<a href="../../ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>中时<a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="在io.netty.channel中的类">调用</a> ，以便<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>实现将消息转换为另一个消息。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#isActive--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#isActive--">isActive</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>如果<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>处于活动状态并已连接，则返回<code>true</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected com.barchart.udt.nio.ServerSocketChannelUDT</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#javaChannel--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#javaChannel--">javaChannel</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>java.net.InetSocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#localAddress--">localAddress</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此通道绑定的本地地址。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>protected java.net.SocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#localAddress0--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#localAddress0--">localAddress0</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回本地绑定的 
+             <code>SocketAddress</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code><a href="../../ChannelMetadata.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelMetadata.html" title="class in io.netty.channel">ChannelMetadata</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#metadata--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#metadata--">metadata</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>返回<a href="../../ChannelMetadata.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelMetadata.html" title="在io.netty.channel中的类"><code>ChannelMetadata</code></a>的的<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>其描述的性质<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>protected abstract <a href="../UdtChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html" title="interface in io.netty.channel.udt">UdtChannel</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#newConnectorChannel-com.barchart.udt.nio.SocketChannelUDT-" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#newConnectorChannel-com.barchart.udt.nio.SocketChannelUDT-">newConnectorChannel</a></span>(com.barchart.udt.nio.SocketChannelUDT&nbsp;channelUDT)</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> &nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>java.net.InetSocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#remoteAddress--">remoteAddress</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block">
+              返回此通道连接到的远程地址。 
+            </div> </td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>protected java.net.SocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="NioUdtAcceptorChannel.html#remoteAddress0--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html#remoteAddress0--">remoteAddress0</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> 
+            <div class="block"> 
+             <span>返回<code>SocketAddress</code>其中<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>被连接到。</span> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.nio.AbstractNioMessageChannel"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.nio.<a href="../../nio/AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio">AbstractNioMessageChannel</a></h3> <code><a href="../../nio/AbstractNioMessageChannel.html#closeOnReadError-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#closeOnReadError-java.lang.Throwable-">closeOnReadError</a>, <a href="../../nio/AbstractNioMessageChannel.html#continueOnWriteError--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#continueOnWriteError--">continueOnWriteError</a>, <a href="../../nio/AbstractNioMessageChannel.html#doBeginRead--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#doBeginRead--">doBeginRead</a>, <a href="../../nio/AbstractNioMessageChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#doWrite-io.netty.channel.ChannelOutboundBuffer-">doWrite</a>, <a href="../../nio/AbstractNioMessageChannel.html#newUnsafe--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#newUnsafe--">newUnsafe</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.nio.AbstractNioChannel"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.nio.<a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></h3> <code><a href="../../nio/AbstractNioChannel.html#clearReadPending--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#clearReadPending--">clearReadPending</a>, <a href="../../nio/AbstractNioChannel.html#doDeregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doDeregister--">doDeregister</a>, <a href="../../nio/AbstractNioChannel.html#doRegister--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doRegister--">doRegister</a>, <a href="../../nio/AbstractNioChannel.html#eventLoop--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#eventLoop--">eventLoop</a>, <a href="../../nio/AbstractNioChannel.html#isCompatible-io.netty.channel.EventLoop-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#isCompatible-io.netty.channel.EventLoop-">isCompatible</a>, <a href="../../nio/AbstractNioChannel.html#isOpen--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#isOpen--">isOpen</a>, <a href="../../nio/AbstractNioChannel.html#isReadPending--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#isReadPending--">isReadPending</a>, <a href="../../nio/AbstractNioChannel.html#newDirectBuffer-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#newDirectBuffer-io.netty.buffer.ByteBuf-">newDirectBuffer</a>, <a href="../../nio/AbstractNioChannel.html#newDirectBuffer-io.netty.util.ReferenceCounted-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#newDirectBuffer-io.netty.util.ReferenceCounted-io.netty.buffer.ByteBuf-">newDirectBuffer</a>, <a href="../../nio/AbstractNioChannel.html#selectionKey--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#selectionKey--">selectionKey</a>, <a href="../../nio/AbstractNioChannel.html#setReadPending-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#setReadPending-boolean-">setReadPending</a>, <a href="../../nio/AbstractNioChannel.html#unsafe--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#unsafe--">unsafe</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.AbstractChannel"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.<a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></h3> <code><a href="../../AbstractChannel.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#alloc--">alloc</a>, <a href="../../AbstractChannel.html#bind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#bind-java.net.SocketAddress-">bind</a>, <a href="../../AbstractChannel.html#bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-">bind</a>, <a href="../../AbstractChannel.html#bytesBeforeUnwritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#bytesBeforeUnwritable--">bytesBeforeUnwritable</a>, <a href="../../AbstractChannel.html#bytesBeforeWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#bytesBeforeWritable--">bytesBeforeWritable</a>, <a href="../../AbstractChannel.html#close--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#close--">close</a>, <a href="../../AbstractChannel.html#close-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#close-io.netty.channel.ChannelPromise-">close</a>, <a href="../../AbstractChannel.html#closeFuture--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#closeFuture--">closeFuture</a>, <a href="../../AbstractChannel.html#compareTo-io.netty.channel.Channel-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#compareTo-io.netty.channel.Channel-">compareTo</a>, <a href="../../AbstractChannel.html#connect-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#connect-java.net.SocketAddress-">connect</a>, <a href="../../AbstractChannel.html#connect-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#connect-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a>, <a href="../../AbstractChannel.html#connect-java.net.SocketAddress-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#connect-java.net.SocketAddress-java.net.SocketAddress-">connect</a>, <a href="../../AbstractChannel.html#connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a>, <a href="../../AbstractChannel.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#deregister--">deregister</a>, <a href="../../AbstractChannel.html#deregister-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#deregister-io.netty.channel.ChannelPromise-">deregister</a>, <a href="../../AbstractChannel.html#disconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#disconnect--">disconnect</a>, <a href="../../AbstractChannel.html#disconnect-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#disconnect-io.netty.channel.ChannelPromise-">disconnect</a>, <a href="../../AbstractChannel.html#doShutdownOutput--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doShutdownOutput--">doShutdownOutput</a>, <a href="../../AbstractChannel.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#equals-java.lang.Object-">equals</a>, <a href="../../AbstractChannel.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#flush--">flush</a>, <a href="../../AbstractChannel.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#hashCode--">hashCode</a>, <a href="../../AbstractChannel.html#id--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#id--">id</a>, <a href="../../AbstractChannel.html#invalidateLocalAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#invalidateLocalAddress--">invalidateLocalAddress</a>, <a href="../../AbstractChannel.html#invalidateRemoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#invalidateRemoteAddress--">invalidateRemoteAddress</a>, <a href="../../AbstractChannel.html#isRegistered--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#isRegistered--">isRegistered</a>, <a href="../../AbstractChannel.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#isWritable--">isWritable</a>, <a href="../../AbstractChannel.html#newChannelPipeline--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#newChannelPipeline--">newChannelPipeline</a>, <a href="../../AbstractChannel.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#newFailedFuture-java.lang.Throwable-">newFailedFuture</a>, <a href="../../AbstractChannel.html#newId--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#newId--">newId</a>, <a href="../../AbstractChannel.html#newProgressivePromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#newProgressivePromise--">newProgressivePromise</a>, <a href="../../AbstractChannel.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#newPromise--">newPromise</a>, <a href="../../AbstractChannel.html#newSucceededFuture--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#newSucceededFuture--">newSucceededFuture</a>, <a href="../../AbstractChannel.html#parent--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#parent--">parent</a>, <a href="../../AbstractChannel.html#pipeline--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#pipeline--">pipeline</a>, <a href="../../AbstractChannel.html#read--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#read--">read</a>, <a href="../../AbstractChannel.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#toString--">toString</a>, <a href="../../AbstractChannel.html#voidPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#voidPromise--">voidPromise</a>, <a href="../../AbstractChannel.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#write-java.lang.Object-">write</a>, <a href="../../AbstractChannel.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#write-java.lang.Object-io.netty.channel.ChannelPromise-">write</a>, <a href="../../AbstractChannel.html#writeAndFlush-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#writeAndFlush-java.lang.Object-">writeAndFlush</a>, <a href="../../AbstractChannel.html#writeAndFlush-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#writeAndFlush-java.lang.Object-io.netty.channel.ChannelPromise-">writeAndFlush</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.DefaultAttributeMap"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.<a href="../../../util/DefaultAttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/DefaultAttributeMap.html" title="class in io.netty.util">DefaultAttributeMap</a></h3> <code><a href="../../../util/DefaultAttributeMap.html#attr-io.netty.util.AttributeKey-" tppabs="http://netty.io/4.1/api/io/netty/util/DefaultAttributeMap.html#attr-io.netty.util.AttributeKey-">attr</a>, <a href="../../../util/DefaultAttributeMap.html#hasAttr-io.netty.util.AttributeKey-" tppabs="http://netty.io/4.1/api/io/netty/util/DefaultAttributeMap.html#hasAttr-io.netty.util.AttributeKey-">hasAttr</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.Channel"> </a> <h3>Methods inherited from interface&nbsp;io.netty.channel.<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></h3> <code><a href="../../Channel.html#alloc--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#alloc--">alloc</a>, <a href="../../Channel.html#bytesBeforeUnwritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#bytesBeforeUnwritable--">bytesBeforeUnwritable</a>, <a href="../../Channel.html#bytesBeforeWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#bytesBeforeWritable--">bytesBeforeWritable</a>, <a href="../../Channel.html#closeFuture--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#closeFuture--">closeFuture</a>, <a href="../../Channel.html#eventLoop--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#eventLoop--">eventLoop</a>, <a href="../../Channel.html#flush--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#flush--">flush</a>, <a href="../../Channel.html#id--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#id--">id</a>, <a href="../../Channel.html#isOpen--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#isOpen--">isOpen</a>, <a href="../../Channel.html#isRegistered--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#isRegistered--">isRegistered</a>, <a href="../../Channel.html#isWritable--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#isWritable--">isWritable</a>, <a href="../../Channel.html#parent--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#parent--">parent</a>, <a href="../../Channel.html#pipeline--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#pipeline--">pipeline</a>, <a href="../../Channel.html#read--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#read--">read</a>, <a href="../../Channel.html#unsafe--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#unsafe--">unsafe</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.AttributeMap"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.<a href="../../../util/AttributeMap.html" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html" title="interface in io.netty.util">AttributeMap</a></h3> <code><a href="../../../util/AttributeMap.html#attr-io.netty.util.AttributeKey-" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html#attr-io.netty.util.AttributeKey-">attr</a>, <a href="../../../util/AttributeMap.html#hasAttr-io.netty.util.AttributeKey-" tppabs="http://netty.io/4.1/api/io/netty/util/AttributeMap.html#hasAttr-io.netty.util.AttributeKey-">hasAttr</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.ChannelOutboundInvoker"> </a> <h3>Methods inherited from interface&nbsp;io.netty.channel.<a href="../../ChannelOutboundInvoker.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html" title="interface in io.netty.channel">ChannelOutboundInvoker</a></h3> <code><a href="../../ChannelOutboundInvoker.html#bind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#bind-java.net.SocketAddress-">bind</a>, <a href="../../ChannelOutboundInvoker.html#bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#bind-java.net.SocketAddress-io.netty.channel.ChannelPromise-">bind</a>, <a href="../../ChannelOutboundInvoker.html#close--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#close--">close</a>, <a href="../../ChannelOutboundInvoker.html#close-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#close-io.netty.channel.ChannelPromise-">close</a>, <a href="../../ChannelOutboundInvoker.html#connect-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#connect-java.net.SocketAddress-">connect</a>, <a href="../../ChannelOutboundInvoker.html#connect-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#connect-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a>, <a href="../../ChannelOutboundInvoker.html#connect-java.net.SocketAddress-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#connect-java.net.SocketAddress-java.net.SocketAddress-">connect</a>, <a href="../../ChannelOutboundInvoker.html#connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#connect-java.net.SocketAddress-java.net.SocketAddress-io.netty.channel.ChannelPromise-">connect</a>, <a href="../../ChannelOutboundInvoker.html#deregister--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#deregister--">deregister</a>, <a href="../../ChannelOutboundInvoker.html#deregister-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#deregister-io.netty.channel.ChannelPromise-">deregister</a>, <a href="../../ChannelOutboundInvoker.html#disconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#disconnect--">disconnect</a>, <a href="../../ChannelOutboundInvoker.html#disconnect-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#disconnect-io.netty.channel.ChannelPromise-">disconnect</a>, <a href="../../ChannelOutboundInvoker.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#newFailedFuture-java.lang.Throwable-">newFailedFuture</a>, <a href="../../ChannelOutboundInvoker.html#newProgressivePromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#newProgressivePromise--">newProgressivePromise</a>, <a href="../../ChannelOutboundInvoker.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#newPromise--">newPromise</a>, <a href="../../ChannelOutboundInvoker.html#newSucceededFuture--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#newSucceededFuture--">newSucceededFuture</a>, <a href="../../ChannelOutboundInvoker.html#voidPromise--" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#voidPromise--">voidPromise</a>, <a href="../../ChannelOutboundInvoker.html#write-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-">write</a>, <a href="../../ChannelOutboundInvoker.html#write-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#write-java.lang.Object-io.netty.channel.ChannelPromise-">write</a>, <a href="../../ChannelOutboundInvoker.html#writeAndFlush-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#writeAndFlush-java.lang.Object-">writeAndFlush</a>, <a href="../../ChannelOutboundInvoker.html#writeAndFlush-java.lang.Object-io.netty.channel.ChannelPromise-" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundInvoker.html#writeAndFlush-java.lang.Object-io.netty.channel.ChannelPromise-">writeAndFlush</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Comparable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Comparable</h3> <code>compareTo</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="logger"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>logger</h4> <pre>protected static final&nbsp;io.netty.util.internal.logging.InternalLogger logger</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="NioUdtAcceptorChannel-com.barchart.udt.nio.ServerSocketChannelUDT-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NioUdtAcceptorChannel</h4> <pre>protected&nbsp;NioUdtAcceptorChannel(com.barchart.udt.nio.ServerSocketChannelUDT&nbsp;channelUDT)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> </li> 
+        </ul> <a name="NioUdtAcceptorChannel-com.barchart.udt.TypeUDT-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>NioUdtAcceptorChannel</h4> <pre>protected&nbsp;NioUdtAcceptorChannel(com.barchart.udt.TypeUDT&nbsp;type)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="config--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>config</h4> <pre>public&nbsp;<a href="../UdtServerChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtServerChannelConfig.html" title="interface in io.netty.channel.udt">UdtServerChannelConfig</a>&nbsp;config()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../Channel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#config--">Channel</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            返回此频道的配置。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../Channel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#config--">config</a></code>在界面 
+            <code><a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../UdtChannel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html#config--">config</a></code>在界面 
+            <code><a href="../UdtChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html" title="interface in io.netty.channel.udt">UdtChannel</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doBind-java.net.SocketAddress-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doBind</h4> <pre>protected&nbsp;void&nbsp;doBind(java.net.SocketAddress&nbsp;localAddress)
+               throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../AbstractChannel.html#doBind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doBind-java.net.SocketAddress-">AbstractChannel</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>绑定到<code>SocketAddress</code></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#doBind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doBind-java.net.SocketAddress-">doBind</a></code>在课堂上 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doClose--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doClose</h4> <pre>protected&nbsp;void&nbsp;doClose()
+                throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../AbstractChannel.html#doClose--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doClose--">AbstractChannel</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>关闭<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a></span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../nio/AbstractNioChannel.html#doClose--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doClose--">doClose</a></code>在课堂上 
+            <code><a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doConnect-java.net.SocketAddress-java.net.SocketAddress-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doConnect</h4> <pre>protected&nbsp;boolean&nbsp;doConnect(java.net.SocketAddress&nbsp;remoteAddress,
+                            java.net.SocketAddress&nbsp;localAddress)
+                     throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../nio/AbstractNioChannel.html#doConnect-java.net.SocketAddress-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doConnect-java.net.SocketAddress-java.net.SocketAddress-">AbstractNioChannel</a></code></span> 
+          </div> 
+          <div class="block">
+            连接到远程对等 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../nio/AbstractNioChannel.html#doConnect-java.net.SocketAddress-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doConnect-java.net.SocketAddress-java.net.SocketAddress-">doConnect</a></code>在课堂上 
+            <code><a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doDisconnect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doDisconnect</h4> <pre>protected&nbsp;void&nbsp;doDisconnect()
+                     throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../AbstractChannel.html#doDisconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doDisconnect--">AbstractChannel</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>将此<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>从其远程对等方断开</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#doDisconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#doDisconnect--">doDisconnect</a></code>在课堂上 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doFinishConnect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doFinishConnect</h4> <pre>protected&nbsp;void&nbsp;doFinishConnect()
+                        throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../nio/AbstractNioChannel.html#doFinishConnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doFinishConnect--">AbstractNioChannel</a></code></span> 
+          </div> 
+          <div class="block">
+            完成连接 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../nio/AbstractNioChannel.html#doFinishConnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#doFinishConnect--">doFinishConnect</a></code>在课堂 
+            <code><a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doWriteMessage</h4> <pre>protected&nbsp;boolean&nbsp;doWriteMessage(java.lang.Object&nbsp;msg,
+                                 <a href="../../ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="class in io.netty.channel">ChannelOutboundBuffer</a>&nbsp;in)
+                          throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../nio/AbstractNioMessageChannel.html#doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-">AbstractNioMessageChannel</a></code></span> 
+          </div> 
+          <div class="block">
+            写下消息到底层 
+           <code>Channel</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../nio/AbstractNioMessageChannel.html#doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#doWriteMessage-java.lang.Object-io.netty.channel.ChannelOutboundBuffer-">doWriteMessage</a></code>在课堂 
+            <code><a href="../../nio/AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio">AbstractNioMessageChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当消息已被写入 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="filterOutboundMessage-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>filterOutboundMessage</h4> <pre>protected final&nbsp;java.lang.Object&nbsp;filterOutboundMessage(java.lang.Object&nbsp;msg)
+                                                throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../AbstractChannel.html#filterOutboundMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#filterOutboundMessage-java.lang.Object-">AbstractChannel</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>当新消息添加到此<a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="在io.netty.channel中的类">82491189944297</a>的<a href="../../ChannelOutboundBuffer.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundBuffer.html" title="在io.netty.channel中的类"><code>ChannelOutboundBuffer</code></a>中时<a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="在io.netty.channel中的类">调用</a> ，以便<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>实现将消息转换为另一个消息。</span> 
+           <span>（例如堆缓冲区 - &gt;直接缓冲区）</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#filterOutboundMessage-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#filterOutboundMessage-java.lang.Object-">filterOutboundMessage</a></code>在课堂 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isActive--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isActive</h4> <pre>public&nbsp;boolean&nbsp;isActive()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../../Channel.html#isActive--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#isActive--">Channel</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>如果<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>处于活动状态并已连接，则返回<code>true</code> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../Channel.html#isActive--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#isActive--">isActive</a></code>在界面 
+            <code><a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="javaChannel--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>javaChannel</h4> <pre>protected&nbsp;com.barchart.udt.nio.ServerSocketChannelUDT&nbsp;javaChannel()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../nio/AbstractNioChannel.html#javaChannel--" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html#javaChannel--">javaChannel</a></code>在课堂上 
+            <code><a href="../../nio/AbstractNioChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioChannel.html" title="class in io.netty.channel.nio">AbstractNioChannel</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="localAddress0--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>localAddress0</h4> <pre>protected&nbsp;java.net.SocketAddress&nbsp;localAddress0()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../AbstractChannel.html#localAddress0--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#localAddress0--">AbstractChannel</a></code></span> 
+          </div> 
+          <div class="block">
+            返回本地绑定的 
+           <code>SocketAddress</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#localAddress0--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#localAddress0--">localAddress0</a></code>在课堂上 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="localAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>localAddress</h4> <pre>public&nbsp;java.net.InetSocketAddress&nbsp;localAddress()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../Channel.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#localAddress--">Channel</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此通道绑定的本地地址。</span> 
+           <span>返回的<code>SocketAddress</code>应该被下调为更具体的类型，例如<code>InetSocketAddress</code>以检索详细信息。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../Channel.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#localAddress--">localAddress</a></code>在界面 
+            <code><a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../UdtChannel.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html#localAddress--">localAddress</a></code>在界面 
+            <code><a href="../UdtChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html" title="interface in io.netty.channel.udt">UdtChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#localAddress--">localAddress</a></code>在课堂上 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>这个频道的本地地址。</span> 
+            <span><code>null</code>如果这个频道没有绑定。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remoteAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remoteAddress</h4> <pre>public&nbsp;java.net.InetSocketAddress&nbsp;remoteAddress()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../Channel.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#remoteAddress--">Channel</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此通道连接到的远程地址。</span> 
+           <span>返回的<code>SocketAddress</code>应该被下调为更具体的类型，例如<code>InetSocketAddress</code>以检索详细信息。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../Channel.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#remoteAddress--">remoteAddress</a></code>在界面 
+            <code><a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../UdtChannel.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html#remoteAddress--">remoteAddress</a></code>在界面 
+            <code><a href="../UdtChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html" title="interface in io.netty.channel.udt">UdtChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#remoteAddress--">remoteAddress</a></code>在类 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <span>该频道的远程地址。</span> 
+            <span><code>null</code>如果此通道未连接。</span> 
+            <span>如果此通道未连接，但可以接收来自任意远程地址的消息（例如<a href="../../socket/DatagramChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannel.html" title="io.netty.channel.socket中的接口"><code>DatagramChannel</code></a> ，请使用<a href="../../DefaultAddressedEnvelope.html#recipient--" tppabs="http://netty.io/4.1/api/io/netty/channel/DefaultAddressedEnvelope.html#recipient--"><code>DefaultAddressedEnvelope.recipient()</code></a>来确定接收消息的来源，因为此方法将返回<code>null</code> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remoteAddress0--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remoteAddress0</h4> <pre>protected&nbsp;java.net.SocketAddress&nbsp;remoteAddress0()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../AbstractChannel.html#remoteAddress0--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#remoteAddress0--">AbstractChannel</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回<code>SocketAddress</code>其中<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>被连接到。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../AbstractChannel.html#remoteAddress0--" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html#remoteAddress0--">remoteAddress0</a></code>在课堂上 
+            <code><a href="../../AbstractChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/AbstractChannel.html" title="class in io.netty.channel">AbstractChannel</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="metadata--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>metadata</h4> <pre>public&nbsp;<a href="../../ChannelMetadata.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelMetadata.html" title="class in io.netty.channel">ChannelMetadata</a>&nbsp;metadata()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../Channel.html#metadata--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#metadata--">Channel</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回<a href="../../ChannelMetadata.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelMetadata.html" title="在io.netty.channel中的类"><code>ChannelMetadata</code></a>的的<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a>其描述的性质<a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="io.netty.channel中的接口"><code>Channel</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../Channel.html#metadata--" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html#metadata--">metadata</a></code>在界面 
+            <code><a href="../../Channel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/Channel.html" title="interface in io.netty.channel">Channel</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="doReadMessages-java.util.List-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>doReadMessages</h4> <pre>protected&nbsp;int&nbsp;doReadMessages(java.util.List&lt;java.lang.Object&gt;&nbsp;buf)
+                      throws java.lang.Exception</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="../../nio/AbstractNioMessageChannel.html#doReadMessages-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#doReadMessages-java.util.List-">AbstractNioMessageChannel</a></code></span> 
+          </div> 
+          <div class="block">
+            将消息读入给定数组并返回读取的数量。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="../../nio/AbstractNioMessageChannel.html#doReadMessages-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html#doReadMessages-java.util.List-">doReadMessages</a></code>在课堂上 
+            <code><a href="../../nio/AbstractNioMessageChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/nio/AbstractNioMessageChannel.html" title="class in io.netty.channel.nio">AbstractNioMessageChannel</a></code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.Exception</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newConnectorChannel-com.barchart.udt.nio.SocketChannelUDT-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>newConnectorChannel</h4> <pre>protected abstract&nbsp;<a href="../UdtChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/UdtChannel.html" title="interface in io.netty.channel.udt">UdtChannel</a>&nbsp;newConnectorChannel(com.barchart.udt.nio.SocketChannelUDT&nbsp;channelUDT)</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/NioUdtAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/class-use/NioUdtAcceptorChannel.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>上一个</li> 
+    <li><a href="NioUdtByteAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtByteAcceptorChannel.html" title="class in io.netty.channel.udt.nio"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-channel-udt-nio-NioUdtAcceptorChannel.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/udt/nio/NioUdtAcceptorChannel.html" target="_top">框架</a></li> 
+    <li><a href="NioUdtAcceptorChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/udt/nio/NioUdtAcceptorChannel.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.classes.inherited.from.class.io.netty.channel.nio.AbstractNioChannel">Nested</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/udt/nio/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>io.netty.handler.codec.socks Class Hierarchy (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="io.netty.handler.codec.socks Class Hierarchy (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li>使用</li> 
+    <li class="navBarCell1Rev">树</li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../smtp/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/package-tree.html">Prev</a></li> 
+    <li><a href="../socksx/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/package-tree.html">Next</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-socks-package-tree.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/socks/package-tree.html" target="_top">框架</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/package-tree.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h1 class="title">Hierarchy For Package io.netty.handler.codec.socks</h1> 
+   <span class="packageHierarchyLabel">Package Hierarchies:</span> 
+   <ul class="horizontal"> 
+    <li><a href="../../../../../overview-tree.html" tppabs="http://netty.io/4.1/api/overview-tree.html">All Packages</a></li> 
+   </ul> 
+  </div> 
+  <div class="contentContainer"> 
+   <h2 title="Class Hierarchy">Class Hierarchy</h2> 
+   <ul> 
+    <li type="circle">java.lang.Object 
+     <ul> 
+      <li type="circle">io.netty.channel.<a href="../../../channel/ChannelHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">ChannelHandlerAdapter</span></a> (implements io.netty.channel.<a href="../../../channel/ChannelHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelHandler.html" title="interface in io.netty.channel">ChannelHandler</a>) 
+       <ul> 
+        <li type="circle">io.netty.channel.<a href="../../../channel/ChannelInboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">ChannelInboundHandlerAdapter</span></a> (implements io.netty.channel.<a href="../../../channel/ChannelInboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelInboundHandler.html" title="interface in io.netty.channel">ChannelInboundHandler</a>) 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.<a href="../ByteToMessageDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ByteToMessageDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">ByteToMessageDecoder</span></a> 
+           <ul> 
+            <li type="circle">io.netty.handler.codec.<a href="../ReplayingDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/ReplayingDecoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">ReplayingDecoder</span></a>&lt;S&gt; 
+             <ul> 
+              <li type="circle">io.netty.handler.codec.socks.<a href="SocksAuthRequestDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAuthRequestDecoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAuthRequestDecoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.socks.<a href="SocksAuthResponseDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAuthResponseDecoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAuthResponseDecoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.socks.<a href="SocksCmdRequestDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksCmdRequestDecoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksCmdRequestDecoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.socks.<a href="SocksCmdResponseDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksCmdResponseDecoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksCmdResponseDecoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.socks.<a href="SocksInitRequestDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksInitRequestDecoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksInitRequestDecoder</span></a></li> 
+              <li type="circle">io.netty.handler.codec.socks.<a href="SocksInitResponseDecoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksInitResponseDecoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksInitResponseDecoder</span></a></li> 
+             </ul> </li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li type="circle">io.netty.channel.<a href="../../../channel/ChannelOutboundHandlerAdapter.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandlerAdapter.html" title="class in io.netty.channel"><span class="typeNameLink">ChannelOutboundHandlerAdapter</span></a> (implements io.netty.channel.<a href="../../../channel/ChannelOutboundHandler.html" tppabs="http://netty.io/4.1/api/io/netty/channel/ChannelOutboundHandler.html" title="interface in io.netty.channel">ChannelOutboundHandler</a>) 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.<a href="../MessageToByteEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/MessageToByteEncoder.html" title="class in io.netty.handler.codec"><span class="typeNameLink">MessageToByteEncoder</span></a>&lt;I&gt; 
+           <ul> 
+            <li type="circle">io.netty.handler.codec.socks.<a href="SocksMessageEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksMessageEncoder.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksMessageEncoder</span></a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+      <li type="circle">io.netty.handler.codec.socks.<a href="SocksMessage.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksMessage.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksMessage</span></a> 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksRequest.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksRequest</span></a> 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="SocksAuthRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAuthRequest.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAuthRequest</span></a></li> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="SocksCmdRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksCmdRequest.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksCmdRequest</span></a></li> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="SocksInitRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksInitRequest.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksInitRequest</span></a></li> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="UnknownSocksRequest.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/UnknownSocksRequest.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">UnknownSocksRequest</span></a></li> 
+         </ul> </li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksResponse.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksResponse</span></a> 
+         <ul> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="SocksAuthResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAuthResponse.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAuthResponse</span></a></li> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="SocksCmdResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksCmdResponse.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksCmdResponse</span></a></li> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="SocksInitResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksInitResponse.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">SocksInitResponse</span></a></li> 
+          <li type="circle">io.netty.handler.codec.socks.<a href="UnknownSocksResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/UnknownSocksResponse.html" title="class in io.netty.handler.codec.socks"><span class="typeNameLink">UnknownSocksResponse</span></a></li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <h2 title="Enum Hierarchy">Enum Hierarchy</h2> 
+   <ul> 
+    <li type="circle">java.lang.Object 
+     <ul> 
+      <li type="circle">java.lang.Enum&lt;E&gt; (implements java.lang.Comparable&lt;T&gt;, java.io.Serializable) 
+       <ul> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksSubnegotiationVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksSubnegotiationVersion.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksSubnegotiationVersion</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksResponseType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksResponseType.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksResponseType</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksRequestType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksRequestType.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksRequestType</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksProtocolVersion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksProtocolVersion.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksProtocolVersion</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksMessageType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksMessageType.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksMessageType</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksCmdType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksCmdType.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksCmdType</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksCmdStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksCmdStatus.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksCmdStatus</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksAuthStatus.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAuthStatus.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAuthStatus</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksAuthScheme.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAuthScheme.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAuthScheme</span></a></li> 
+        <li type="circle">io.netty.handler.codec.socks.<a href="SocksAddressType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/SocksAddressType.html" title="enum in io.netty.handler.codec.socks"><span class="typeNameLink">SocksAddressType</span></a></li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/package-summary.html">软件包</a></li> 
+    <li>Class</li> 
+    <li>使用</li> 
+    <li class="navBarCell1Rev">树</li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="../smtp/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/smtp/package-tree.html">Prev</a></li> 
+    <li><a href="../socksx/package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socksx/package-tree.html">Next</a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-socks-package-tree.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/socks/package-tree.html" target="_top">框架</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/socks/package-tree.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/socks/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

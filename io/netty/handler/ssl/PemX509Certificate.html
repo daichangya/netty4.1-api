@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>PemX509Certificate (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.ssl.PemX509Certificate class"> 
+  <meta name="keywords" content="valueOf()"> 
+  <meta name="keywords" content="isSensitive()"> 
+  <meta name="keywords" content="refCnt()"> 
+  <meta name="keywords" content="content()"> 
+  <meta name="keywords" content="copy()"> 
+  <meta name="keywords" content="duplicate()"> 
+  <meta name="keywords" content="retainedDuplicate()"> 
+  <meta name="keywords" content="replace()"> 
+  <meta name="keywords" content="retain()"> 
+  <meta name="keywords" content="touch()"> 
+  <meta name="keywords" content="release()"> 
+  <meta name="keywords" content="getEncoded()"> 
+  <meta name="keywords" content="hasUnsupportedCriticalExtension()"> 
+  <meta name="keywords" content="getCriticalExtensionOIDs()"> 
+  <meta name="keywords" content="getNonCriticalExtensionOIDs()"> 
+  <meta name="keywords" content="getExtensionValue()"> 
+  <meta name="keywords" content="checkValidity()"> 
+  <meta name="keywords" content="getVersion()"> 
+  <meta name="keywords" content="getSerialNumber()"> 
+  <meta name="keywords" content="getIssuerDN()"> 
+  <meta name="keywords" content="getSubjectDN()"> 
+  <meta name="keywords" content="getNotBefore()"> 
+  <meta name="keywords" content="getNotAfter()"> 
+  <meta name="keywords" content="getTBSCertificate()"> 
+  <meta name="keywords" content="getSignature()"> 
+  <meta name="keywords" content="getSigAlgName()"> 
+  <meta name="keywords" content="getSigAlgOID()"> 
+  <meta name="keywords" content="getSigAlgParams()"> 
+  <meta name="keywords" content="getIssuerUniqueID()"> 
+  <meta name="keywords" content="getSubjectUniqueID()"> 
+  <meta name="keywords" content="getKeyUsage()"> 
+  <meta name="keywords" content="getBasicConstraints()"> 
+  <meta name="keywords" content="verify()"> 
+  <meta name="keywords" content="getPublicKey()"> 
+  <meta name="keywords" content="equals()"> 
+  <meta name="keywords" content="hashCode()"> 
+  <meta name="keywords" content="toString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="PemX509Certificate (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":9,"i40":9,"i41":10,"i42":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/PemX509Certificate.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="PemPrivateKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemPrivateKey.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ReferenceCountedOpenSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslClientContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-PemX509Certificate.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/PemX509Certificate.html" target="_top">框架</a></li> 
+    <li><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.classes.inherited.from.class.java.security.cert.Certificate">Nested</a>&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.ssl 
+   </div> 
+   <h2 title="Class PemX509Certificate" class="title">Class PemX509Certificate</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>java.security.cert.Certificate</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>java.security.cert.X509Certificate</li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li>io.netty.handler.ssl.PemX509Certificate</li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd>
+         java.io.Serializable，java.security.cert.X509Extension 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">PemX509Certificate</span>
+extends java.security.cert.X509Certificate</pre> 
+      <div class="block"> 
+       <span>这是<code>X509Certificate</code>一个特殊目的实现，它允许用户直接将PEM / PKCS＃8编码数据传递到<a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中"><code>OpenSslContext</code>，</a>而无需在Java <a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中">域中</a>解析和重新编码字节。</span> 
+       <span>比什么在实施其他所有方法<code>PemEncoded</code>的扔<code>UnsupportedOperationException</code>秒。</span> 
+      </div> 
+      <dl> 
+       <dt> 
+        <span class="seeLabel">另请参见：</span> 
+       </dt> 
+       <dd> 
+        <span><code>PemEncoded</code> ， <a href="OpenSslContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslContext.html" title="class在io.netty.handler.ssl中"><code>OpenSslContext</code></a> ， <a href="PemX509Certificate.html#valueOf-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#valueOf-byte:A-"><code>valueOf(byte[])</code></a> ， <a href="PemX509Certificate.html#valueOf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#valueOf-io.netty.buffer.ByteBuf-"><code>valueOf(ByteBuf)</code></a> ， <a href="../../../../serialized-form.html#io.netty.handler.ssl.PemX509Certificate" tppabs="http://netty.io/4.1/api/serialized-form.html#io.netty.handler.ssl.PemX509Certificate">Serialized Form</a></span> 
+       </dd> 
+      </dl> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="nested.class.summary"> </a> <h3>Nested Class Summary</h3> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="nested.classes.inherited.from.class.java.security.cert.Certificate"> </a> <h3>Nested classes/interfaces inherited from class&nbsp;java.security.cert.Certificate</h3> <code>java.security.cert.Certificate.CertificateRep</code></li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#checkValidity--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#checkValidity--">checkValidity</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#checkValidity-java.util.Date-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#checkValidity-java.util.Date-">checkValidity</a></span>(java.util.Date&nbsp;date)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code><a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#content--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#content--">content</a></span>()</code> 
+            <div class="block"> 
+             <span>返回这个<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>所持有的数据。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#copy--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#copy--">copy</a></span>()</code> 
+            <div class="block"> 
+             <span>创建此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>的深层副本。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#duplicate--">duplicate</a></span>()</code> 
+            <div class="block"> 
+             <span>重复此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;o)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getBasicConstraints--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getBasicConstraints--">getBasicConstraints</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>java.util.Set&lt;java.lang.String&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getCriticalExtensionOIDs--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getCriticalExtensionOIDs--">getCriticalExtensionOIDs</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getEncoded--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getEncoded--">getEncoded</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getExtensionValue-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getExtensionValue-java.lang.String-">getExtensionValue</a></span>(java.lang.String&nbsp;oid)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>java.security.Principal</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getIssuerDN--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getIssuerDN--">getIssuerDN</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>boolean[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getIssuerUniqueID--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getIssuerUniqueID--">getIssuerUniqueID</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>boolean[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getKeyUsage--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getKeyUsage--">getKeyUsage</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>java.util.Set&lt;java.lang.String&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getNonCriticalExtensionOIDs--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getNonCriticalExtensionOIDs--">getNonCriticalExtensionOIDs</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>java.util.Date</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getNotAfter--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getNotAfter--">getNotAfter</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>java.util.Date</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getNotBefore--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getNotBefore--">getNotBefore</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>java.security.PublicKey</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getPublicKey--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getPublicKey--">getPublicKey</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>java.math.BigInteger</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSerialNumber--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSerialNumber--">getSerialNumber</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSigAlgName--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSigAlgName--">getSigAlgName</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSigAlgOID--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSigAlgOID--">getSigAlgOID</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSigAlgParams--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSigAlgParams--">getSigAlgParams</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSignature--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSignature--">getSignature</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>java.security.Principal</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSubjectDN--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSubjectDN--">getSubjectDN</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code>boolean[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getSubjectUniqueID--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getSubjectUniqueID--">getSubjectUniqueID</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code>byte[]</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getTBSCertificate--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getTBSCertificate--">getTBSCertificate</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#getVersion--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#getVersion--">getVersion</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#hasUnsupportedCriticalExtension--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#hasUnsupportedCriticalExtension--">hasUnsupportedCriticalExtension</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#isSensitive--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#isSensitive--">isSensitive</a></span>()</code> 
+            <div class="block">
+              如果PEM编码值被认为是敏感信息（如 
+             <code>true</code>则返回 
+             <code>true</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i29" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#refCnt--">refCnt</a></span>()</code> 
+            <div class="block">
+              返回此对象的引用计数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i30" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#release--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#release--">release</a></span>()</code> 
+            <div class="block">
+              通过减小引用计数 
+             <code>1</code>并且如果所述引用计数达到在将释放该对象 
+             <code>0</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i31" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#release-int-">release</a></span>(int&nbsp;decrement)</code> 
+            <div class="block">
+              减小由指定的引用计数 
+             <code>decrement</code>并且如果所述引用计数达到在将释放该对象 
+             <code>0</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i32" class="altColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#replace-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#replace-io.netty.buffer.ByteBuf-">replace</a></span>(<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;content)</code> 
+            <div class="block"> 
+             <span>返回一个新<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>包含指定<code>content</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i33" class="rowColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#retain--">retain</a></span>()</code> 
+            <div class="block">
+              将引用计数增加 
+             <code>1</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i34" class="altColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#retain-int-">retain</a></span>(int&nbsp;increment)</code> 
+            <div class="block">
+              按指定的 
+             <code>increment</code>增加引用计数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i35" class="rowColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#retainedDuplicate--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#retainedDuplicate--">retainedDuplicate</a></span>()</code> 
+            <div class="block"> 
+             <span>重复此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i36" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i37" class="rowColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#touch--">touch</a></span>()</code> 
+            <div class="block">
+              记录此对象的当前访问位置以进行调试。 
+            </div> </td> 
+          </tr> 
+          <tr id="i38" class="altColor"> 
+           <td class="colFirst"><code><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#touch-java.lang.Object-">touch</a></span>(java.lang.Object&nbsp;hint)</code> 
+            <div class="block">
+              记录此对象的当前访问位置，并附加一些用于调试的任意信息。 
+            </div> </td> 
+          </tr> 
+          <tr id="i39" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#valueOf-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#valueOf-byte:A-">valueOf</a></span>(byte[]&nbsp;key)</code> 
+            <div class="block"> 
+             <span>创建一个<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class在io.netty.handler.ssl中"><code>PemX509Certificate</code></a>从原材料<code>byte[]</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i40" class="altColor"> 
+           <td class="colFirst"><code>static <a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#valueOf-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#valueOf-io.netty.buffer.ByteBuf-">valueOf</a></span>(<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;key)</code> 
+            <div class="block"> 
+             <span>创建一个<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class在io.netty.handler.ssl中"><code>PemX509Certificate</code></a>从原材料<code>ByteBuf</code> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i41" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#verify-java.security.PublicKey-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#verify-java.security.PublicKey-">verify</a></span>(java.security.PublicKey&nbsp;key)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i42" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="PemX509Certificate.html#verify-java.security.PublicKey-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html#verify-java.security.PublicKey-java.lang.String-">verify</a></span>(java.security.PublicKey&nbsp;key, java.lang.String&nbsp;sigProvider)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.security.cert.X509Certificate"> </a> <h3>Methods inherited from class&nbsp;java.security.cert.X509Certificate</h3> <code>getExtendedKeyUsage, getIssuerAlternativeNames, getIssuerX500Principal, getSubjectAlternativeNames, getSubjectX500Principal, verify</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.security.cert.Certificate"> </a> <h3>Methods inherited from class&nbsp;java.security.cert.Certificate</h3> <code>getType, writeReplace</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="valueOf-byte:A-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>valueOf</h4> <pre>public static&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;valueOf(byte[]&nbsp;key)</pre> 
+          <div class="block"> 
+           <span>创建一个<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class在io.netty.handler.ssl中"><code>PemX509Certificate</code></a>从原材料<code>byte[]</code> 。</span> 
+           <span>注意：假定给定的参数是PEM / PKCS＃8编码值。</span> 
+           <span>没有执行输入验证来验证它。</span> 
+          </div> </li> 
+        </ul> <a name="valueOf-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>valueOf</h4> <pre>public static&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;valueOf(<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;key)</pre> 
+          <div class="block"> 
+           <span>创建一个<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class在io.netty.handler.ssl中"><code>PemX509Certificate</code></a>从原材料<code>ByteBuf</code> 。</span> 
+           <span>注意：假定给定的参数是PEM / PKCS＃8编码值。</span> 
+           <span>没有执行输入验证来验证它。</span> 
+          </div> </li> 
+        </ul> <a name="isSensitive--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isSensitive</h4> <pre>public&nbsp;boolean&nbsp;isSensitive()</pre> 
+          <div class="block">
+            如果PEM编码值被认为是敏感信息（如 
+           <code>true</code>则返回 
+           <code>true</code> 。 
+          </div> </li> 
+        </ul> <a name="refCnt--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>refCnt</h4> <pre>public&nbsp;int&nbsp;refCnt()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../util/ReferenceCounted.html#refCnt--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#refCnt--">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此对象的引用计数。</span> 
+           <span>如果<code>0</code> ，则表示该对象已被释放。</span> 
+          </div> </li> 
+        </ul> <a name="content--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>content</h4> <pre>public&nbsp;<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;content()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../buffer/ByteBufHolder.html#content--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#content--">ByteBufHolder</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>所持有的数据。</span> 
+          </div> </li> 
+        </ul> <a name="copy--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>copy</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;copy()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../../buffer/ByteBufHolder.html#copy--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#copy--">ByteBufHolder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>创建此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>的深层副本。</span> 
+          </div> </li> 
+        </ul> <a name="duplicate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>duplicate</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;duplicate()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../buffer/ByteBufHolder.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#duplicate--">ByteBufHolder</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>重复此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a> 。</span> 
+           <span>请注意，这不会自动调用<a href="../../buffer/ByteBufHolder.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#retain--"><code>ByteBufHolder.retain()</code></a> 。</span> 
+          </div> </li> 
+        </ul> <a name="retainedDuplicate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retainedDuplicate</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;retainedDuplicate()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../buffer/ByteBufHolder.html#retainedDuplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#retainedDuplicate--">ByteBufHolder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>重复此<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a> 。</span> 
+           <span>与<a href="../../buffer/ByteBufHolder.html#duplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#duplicate--"><code>ByteBufHolder.duplicate()</code></a>不同，此方法返回保留的副本。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <a href="../../buffer/ByteBuf.html#retainedDuplicate--" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html#retainedDuplicate--"><code>ByteBuf.retainedDuplicate()</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="replace-io.netty.buffer.ByteBuf-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>replace</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;replace(<a href="../../buffer/ByteBuf.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBuf.html" title="class in io.netty.buffer">ByteBuf</a>&nbsp;content)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../buffer/ByteBufHolder.html#replace-io.netty.buffer.ByteBuf-" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html#replace-io.netty.buffer.ByteBuf-">ByteBufHolder</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回一个新<a href="../../buffer/ByteBufHolder.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufHolder.html" title="io.netty.buffer中的接口"><code>ByteBufHolder</code></a>包含指定<code>content</code> 。</span> 
+          </div> </li> 
+        </ul> <a name="retain--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;retain()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../util/ReferenceCounted.html#retain--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain--">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            将引用计数增加 
+           <code>1</code> 。 
+          </div> </li> 
+        </ul> <a name="retain-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>retain</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;retain(int&nbsp;increment)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../util/ReferenceCounted.html#retain-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#retain-int-">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            将参考计数增加指定的 
+           <code>increment</code> 。 
+          </div> </li> 
+        </ul> <a name="touch--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;touch()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../util/ReferenceCounted.html#touch--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch--">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置以进行调试。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+           <span>此方法是<a href="../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-"><code>touch(null)</code></a>的快捷方式。</span> 
+          </div> </li> 
+        </ul> <a name="touch-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>touch</h4> <pre>public&nbsp;<a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" title="class in io.netty.handler.ssl">PemX509Certificate</a>&nbsp;touch(java.lang.Object&nbsp;hint)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="../../util/ReferenceCounted.html#touch-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#touch-java.lang.Object-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>记录此对象的当前访问位置，并附加一些用于调试的任意信息。</span> 
+           <span>如果确定此物体泄漏，则通过此操作记录的信息将通过<a href="../../util/ResourceLeakDetector.html" tppabs="http://netty.io/4.1/api/io/netty/util/ResourceLeakDetector.html" title="在io.netty.util中的类"><code>ResourceLeakDetector</code></a>提供给您。</span> 
+          </div> </li> 
+        </ul> <a name="release--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>release</h4> <pre>public&nbsp;boolean&nbsp;release()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口<code><a href="../../util/ReferenceCounted.html#release--" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release--">ReferenceCounted</a></code>复制的描述</span> 
+          </div> 
+          <div class="block">
+            通过减小引用计数 
+           <code>1</code>并且如果所述引用计数达到在将释放该对象 
+           <code>0</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当引用计数变为 
+            <code>0</code>且此对象已被释放 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="release-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>release</h4> <pre>public&nbsp;boolean&nbsp;release(int&nbsp;decrement)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从接口复制的描述： <code><a href="../../util/ReferenceCounted.html#release-int-" tppabs="http://netty.io/4.1/api/io/netty/util/ReferenceCounted.html#release-int-">ReferenceCounted</a></code></span> 
+          </div> 
+          <div class="block">
+            减小由指定的引用计数 
+           <code>decrement</code>并且如果所述引用计数达到在将释放该对象 
+           <code>0</code> 。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当引用计数变为 
+            <code>0</code>且此对象已被释放 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getEncoded--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getEncoded</h4> <pre>public&nbsp;byte[]&nbsp;getEncoded()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getEncoded</code>在课堂上 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hasUnsupportedCriticalExtension--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hasUnsupportedCriticalExtension</h4> <pre>public&nbsp;boolean&nbsp;hasUnsupportedCriticalExtension()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>hasUnsupportedCriticalExtension</code> ，界面 
+            <code>java.security.cert.X509Extension</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getCriticalExtensionOIDs--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getCriticalExtensionOIDs</h4> <pre>public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getCriticalExtensionOIDs()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getCriticalExtensionOIDs</code>接口 
+            <code>java.security.cert.X509Extension</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getNonCriticalExtensionOIDs--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getNonCriticalExtensionOIDs</h4> <pre>public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getNonCriticalExtensionOIDs()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getNonCriticalExtensionOIDs</code> ，界面 
+            <code>java.security.cert.X509Extension</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getExtensionValue-java.lang.String-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getExtensionValue</h4> <pre>public&nbsp;byte[]&nbsp;getExtensionValue(java.lang.String&nbsp;oid)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getExtensionValue</code>接口 
+            <code>java.security.cert.X509Extension</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="checkValidity--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>checkValidity</h4> <pre>public&nbsp;void&nbsp;checkValidity()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>checkValidity</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="checkValidity-java.util.Date-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>checkValidity</h4> <pre>public&nbsp;void&nbsp;checkValidity(java.util.Date&nbsp;date)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>checkValidity</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getVersion--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getVersion</h4> <pre>public&nbsp;int&nbsp;getVersion()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getVersion</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSerialNumber--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSerialNumber</h4> <pre>public&nbsp;java.math.BigInteger&nbsp;getSerialNumber()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSerialNumber</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getIssuerDN--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getIssuerDN</h4> <pre>public&nbsp;java.security.Principal&nbsp;getIssuerDN()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getIssuerDN</code> 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSubjectDN--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSubjectDN</h4> <pre>public&nbsp;java.security.Principal&nbsp;getSubjectDN()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSubjectDN</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getNotBefore--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getNotBefore</h4> <pre>public&nbsp;java.util.Date&nbsp;getNotBefore()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getNotBefore</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getNotAfter--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getNotAfter</h4> <pre>public&nbsp;java.util.Date&nbsp;getNotAfter()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getNotAfter</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getTBSCertificate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getTBSCertificate</h4> <pre>public&nbsp;byte[]&nbsp;getTBSCertificate()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getTBSCertificate</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSignature--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSignature</h4> <pre>public&nbsp;byte[]&nbsp;getSignature()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSignature</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSigAlgName--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSigAlgName</h4> <pre>public&nbsp;java.lang.String&nbsp;getSigAlgName()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSigAlgName</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSigAlgOID--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSigAlgOID</h4> <pre>public&nbsp;java.lang.String&nbsp;getSigAlgOID()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSigAlgOID</code> 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSigAlgParams--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSigAlgParams</h4> <pre>public&nbsp;byte[]&nbsp;getSigAlgParams()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSigAlgParams</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getIssuerUniqueID--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getIssuerUniqueID</h4> <pre>public&nbsp;boolean[]&nbsp;getIssuerUniqueID()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getIssuerUniqueID</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSubjectUniqueID--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSubjectUniqueID</h4> <pre>public&nbsp;boolean[]&nbsp;getSubjectUniqueID()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getSubjectUniqueID</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getKeyUsage--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getKeyUsage</h4> <pre>public&nbsp;boolean[]&nbsp;getKeyUsage()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getKeyUsage</code>在课堂上 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getBasicConstraints--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getBasicConstraints</h4> <pre>public&nbsp;int&nbsp;getBasicConstraints()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getBasicConstraints</code> 
+            <code>java.security.cert.X509Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="verify-java.security.PublicKey-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>verify</h4> <pre>public&nbsp;void&nbsp;verify(java.security.PublicKey&nbsp;key)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>verify</code> 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="verify-java.security.PublicKey-java.lang.String-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>verify</h4> <pre>public&nbsp;void&nbsp;verify(java.security.PublicKey&nbsp;key,
+                   java.lang.String&nbsp;sigProvider)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>verify</code>在课堂上 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getPublicKey--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getPublicKey</h4> <pre>public&nbsp;java.security.PublicKey&nbsp;getPublicKey()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>getPublicKey</code>在课堂上 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="equals-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>equals</h4> <pre>public&nbsp;boolean&nbsp;equals(java.lang.Object&nbsp;o)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>equals</code>在课堂上 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hashCode--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hashCode</h4> <pre>public&nbsp;int&nbsp;hashCode()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>hashCode</code> 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课堂上 
+            <code>java.security.cert.Certificate</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/PemX509Certificate.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="PemPrivateKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemPrivateKey.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="ReferenceCountedOpenSslClientContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/ReferenceCountedOpenSslClientContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-PemX509Certificate.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/PemX509Certificate.html" target="_top">框架</a></li> 
+    <li><a href="PemX509Certificate.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/PemX509Certificate.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li><a href="#nested.classes.inherited.from.class.java.security.cert.Certificate">Nested</a>&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/ssl/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

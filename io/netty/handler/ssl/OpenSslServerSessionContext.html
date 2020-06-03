@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>OpenSslServerSessionContext (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.ssl.OpenSslServerSessionContext class"> 
+  <meta name="keywords" content="setSessionTimeout()"> 
+  <meta name="keywords" content="getSessionTimeout()"> 
+  <meta name="keywords" content="setSessionCacheSize()"> 
+  <meta name="keywords" content="getSessionCacheSize()"> 
+  <meta name="keywords" content="setSessionCacheEnabled()"> 
+  <meta name="keywords" content="isSessionCacheEnabled()"> 
+  <meta name="keywords" content="setSessionIdContext()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="OpenSslServerSessionContext (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/OpenSslServerSessionContext.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="OpenSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/OpenSslServerSessionContext.html" target="_top">框架</a></li> 
+    <li><a href="OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.ssl 
+   </div> 
+   <h2 title="Class OpenSslServerSessionContext" class="title">Class OpenSslServerSessionContext</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl">io.netty.handler.ssl.OpenSslSessionContext</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.handler.ssl.OpenSslServerSessionContext</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd>
+         javax.net.ssl.SSLSessionContext中 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">OpenSslServerSessionContext</span>
+extends <a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl">OpenSslSessionContext</a></pre> 
+      <div class="block"> 
+       <span><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class在io.netty.handler.ssl中"><code>OpenSslSessionContext</code></a>实现提供了仅用于服务器端的额外方法。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#getSessionCacheSize--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#getSessionCacheSize--">getSessionCacheSize</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#getSessionTimeout--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#getSessionTimeout--">getSessionTimeout</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#isSessionCacheEnabled--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#isSessionCacheEnabled--">isSessionCacheEnabled</a></span>()</code> 
+            <div class="block">
+              返回 
+             <code>true</code>如果SSL会话的缓冲功能， 
+             <code>false</code>其他。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#setSessionCacheEnabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#setSessionCacheEnabled-boolean-">setSessionCacheEnabled</a></span>(boolean&nbsp;enabled)</code> 
+            <div class="block">
+              启用或禁用SSL会话的缓存。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#setSessionCacheSize-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#setSessionCacheSize-int-">setSessionCacheSize</a></span>(int&nbsp;size)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#setSessionIdContext-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#setSessionIdContext-byte:A-">setSessionIdContext</a></span>(byte[]&nbsp;sidCtx)</code> 
+            <div class="block">
+              设置会话重用的上下文（仅服务器端）请参阅 
+             <a href="javascript:if(confirm('http://www.openssl.org/docs/ssl/SSL_CTX_set_session_id_context.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://www.openssl.org/docs/ssl/SSL_CTX_set_session_id_context.html'" tppabs="http://www.openssl.org/docs/ssl/SSL_CTX_set_session_id_context.html">man SSL_CTX_set_session_id_context</a> 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslServerSessionContext.html#setSessionTimeout-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html#setSessionTimeout-int-">setSessionTimeout</a></span>(int&nbsp;seconds)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.handler.ssl.OpenSslSessionContext"> </a> <h3>Methods inherited from class&nbsp;io.netty.handler.ssl.<a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl">OpenSslSessionContext</a></h3> <code><a href="OpenSslSessionContext.html#getIds--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#getIds--">getIds</a>, <a href="OpenSslSessionContext.html#getSession-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#getSession-byte:A-">getSession</a>, <a href="OpenSslSessionContext.html#setTicketKeys-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#setTicketKeys-byte:A-">setTicketKeys</a>, <a href="OpenSslSessionContext.html#setTicketKeys-io.netty.handler.ssl.OpenSslSessionTicketKey...-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#setTicketKeys-io.netty.handler.ssl.OpenSslSessionTicketKey...-">setTicketKeys</a>, <a href="OpenSslSessionContext.html#stats--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#stats--">stats</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="setSessionTimeout-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSessionTimeout</h4> <pre>public&nbsp;void&nbsp;setSessionTimeout(int&nbsp;seconds)</pre> </li> 
+        </ul> <a name="getSessionTimeout--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSessionTimeout</h4> <pre>public&nbsp;int&nbsp;getSessionTimeout()</pre> </li> 
+        </ul> <a name="setSessionCacheSize-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSessionCacheSize</h4> <pre>public&nbsp;void&nbsp;setSessionCacheSize(int&nbsp;size)</pre> </li> 
+        </ul> <a name="getSessionCacheSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSessionCacheSize</h4> <pre>public&nbsp;int&nbsp;getSessionCacheSize()</pre> </li> 
+        </ul> <a name="setSessionCacheEnabled-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSessionCacheEnabled</h4> <pre>public&nbsp;void&nbsp;setSessionCacheEnabled(boolean&nbsp;enabled)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="OpenSslSessionContext.html#setSessionCacheEnabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#setSessionCacheEnabled-boolean-">OpenSslSessionContext</a></code></span> 
+          </div> 
+          <div class="block">
+            启用或禁用SSL会话的缓存。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="OpenSslSessionContext.html#setSessionCacheEnabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#setSessionCacheEnabled-boolean-">setSessionCacheEnabled</a></code>在课堂上 
+            <code><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl">OpenSslSessionContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isSessionCacheEnabled--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isSessionCacheEnabled</h4> <pre>public&nbsp;boolean&nbsp;isSessionCacheEnabled()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从类复制的描述： <code><a href="OpenSslSessionContext.html#isSessionCacheEnabled--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#isSessionCacheEnabled--">OpenSslSessionContext</a></code></span> 
+          </div> 
+          <div class="block">
+            返回 
+           <code>true</code>如果SSL会话的缓冲功能， 
+           <code>false</code>其他。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="OpenSslSessionContext.html#isSessionCacheEnabled--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html#isSessionCacheEnabled--">isSessionCacheEnabled</a></code>在课堂上 
+            <code><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl">OpenSslSessionContext</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setSessionIdContext-byte:A-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>setSessionIdContext</h4> <pre>public&nbsp;boolean&nbsp;setSessionIdContext(byte[]&nbsp;sidCtx)</pre> 
+          <div class="block">
+            设置会话重用的上下文（仅服务器端）请参阅 
+           <a href="javascript:if(confirm('http://www.openssl.org/docs/ssl/SSL_CTX_set_session_id_context.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://www.openssl.org/docs/ssl/SSL_CTX_set_session_id_context.html'" tppabs="http://www.openssl.org/docs/ssl/SSL_CTX_set_session_id_context.html">man SSL_CTX_set_session_id_context</a> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>sidCtx</code> - 可以是任何种类的二进制数据，因此可以使用例如应用程序的名称和/或主机名和/或服务名称 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>如果成功， 
+            <code>false</code>否则。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/OpenSslServerSessionContext.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="OpenSslServerContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/OpenSslServerSessionContext.html" target="_top">框架</a></li> 
+    <li><a href="OpenSslServerSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslServerSessionContext.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/ssl/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

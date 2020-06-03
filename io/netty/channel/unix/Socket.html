@@ -1,0 +1,992 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Socket (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.channel.unix.Socket class"> 
+  <meta name="keywords" content="UDS_SUN_PATH_SIZE"> 
+  <meta name="keywords" content="shutdown()"> 
+  <meta name="keywords" content="isShutdown()"> 
+  <meta name="keywords" content="isInputShutdown()"> 
+  <meta name="keywords" content="isOutputShutdown()"> 
+  <meta name="keywords" content="sendTo()"> 
+  <meta name="keywords" content="sendToAddress()"> 
+  <meta name="keywords" content="sendToAddresses()"> 
+  <meta name="keywords" content="recvFrom()"> 
+  <meta name="keywords" content="recvFromAddress()"> 
+  <meta name="keywords" content="recvFd()"> 
+  <meta name="keywords" content="sendFd()"> 
+  <meta name="keywords" content="connect()"> 
+  <meta name="keywords" content="finishConnect()"> 
+  <meta name="keywords" content="disconnect()"> 
+  <meta name="keywords" content="bind()"> 
+  <meta name="keywords" content="listen()"> 
+  <meta name="keywords" content="accept()"> 
+  <meta name="keywords" content="remoteAddress()"> 
+  <meta name="keywords" content="localAddress()"> 
+  <meta name="keywords" content="getReceiveBufferSize()"> 
+  <meta name="keywords" content="getSendBufferSize()"> 
+  <meta name="keywords" content="isKeepAlive()"> 
+  <meta name="keywords" content="isTcpNoDelay()"> 
+  <meta name="keywords" content="isReuseAddress()"> 
+  <meta name="keywords" content="isReusePort()"> 
+  <meta name="keywords" content="isBroadcast()"> 
+  <meta name="keywords" content="getSoLinger()"> 
+  <meta name="keywords" content="getSoError()"> 
+  <meta name="keywords" content="getTrafficClass()"> 
+  <meta name="keywords" content="setKeepAlive()"> 
+  <meta name="keywords" content="setReceiveBufferSize()"> 
+  <meta name="keywords" content="setSendBufferSize()"> 
+  <meta name="keywords" content="setTcpNoDelay()"> 
+  <meta name="keywords" content="setSoLinger()"> 
+  <meta name="keywords" content="setReuseAddress()"> 
+  <meta name="keywords" content="setReusePort()"> 
+  <meta name="keywords" content="setBroadcast()"> 
+  <meta name="keywords" content="setTrafficClass()"> 
+  <meta name="keywords" content="toString()"> 
+  <meta name="keywords" content="newSocketStream()"> 
+  <meta name="keywords" content="newSocketDgram()"> 
+  <meta name="keywords" content="newSocketDomain()"> 
+  <meta name="keywords" content="initialize()"> 
+  <meta name="keywords" content="newSocketStream0()"> 
+  <meta name="keywords" content="newSocketDgram0()"> 
+  <meta name="keywords" content="newSocketDomain0()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Socket (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":9,"i22":9,"i23":9,"i24":9,"i25":9,"i26":9,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/class-use/Socket.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ServerDomainSocketChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/ServerDomainSocketChannel.html" title="interface in io.netty.channel.unix"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="SocketWritableByteChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/SocketWritableByteChannel.html" title="class in io.netty.channel.unix"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-unix-Socket.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/unix/Socket.html" target="_top">框架</a></li> 
+    <li><a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.channel.unix 
+   </div> 
+   <h2 title="Class Socket" class="title">Class Socket</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li><a href="FileDescriptor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html" title="class in io.netty.channel.unix">io.netty.channel.unix.FileDescriptor</a></li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li>io.netty.channel.unix.Socket</li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public class <span class="typeNameLabel">Socket</span>
+extends <a href="FileDescriptor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html" title="class in io.netty.channel.unix">FileDescriptor</a></pre> 
+      <div class="block"> 
+       <span>为本地套接字操作提供JNI桥接。</span> 
+       <span><strong>仅限内部使用！</strong></span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#UDS_SUN_PATH_SIZE" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#UDS_SUN_PATH_SIZE">UDS_SUN_PATH_SIZE</a></span></code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="Socket.html#Socket-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#Socket-int-">Socket</a></span>(int&nbsp;fd)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#accept-byte:A-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#accept-byte:A-">accept</a></span>(byte[]&nbsp;addr)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#bind-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#bind-java.net.SocketAddress-">bind</a></span>(java.net.SocketAddress&nbsp;socketAddress)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#connect-java.net.SocketAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#connect-java.net.SocketAddress-">connect</a></span>(java.net.SocketAddress&nbsp;socketAddress)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#disconnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#disconnect--">disconnect</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#finishConnect--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#finishConnect--">finishConnect</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#getReceiveBufferSize--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#getReceiveBufferSize--">getReceiveBufferSize</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#getSendBufferSize--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#getSendBufferSize--">getSendBufferSize</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#getSoError--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#getSoError--">getSoError</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#getSoLinger--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#getSoLinger--">getSoLinger</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#getTrafficClass--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#getTrafficClass--">getTrafficClass</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#initialize--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#initialize--">initialize</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isBroadcast--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isBroadcast--">isBroadcast</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isInputShutdown--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isInputShutdown--">isInputShutdown</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isKeepAlive--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isKeepAlive--">isKeepAlive</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isOutputShutdown--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isOutputShutdown--">isOutputShutdown</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isReuseAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isReuseAddress--">isReuseAddress</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isReusePort--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isReusePort--">isReusePort</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isShutdown--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isShutdown--">isShutdown</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#isTcpNoDelay--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#isTcpNoDelay--">isTcpNoDelay</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#listen-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#listen-int-">listen</a></span>(int&nbsp;backlog)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>java.net.InetSocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#localAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#localAddress--">localAddress</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" title="class in io.netty.channel.unix">Socket</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#newSocketDgram--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#newSocketDgram--">newSocketDgram</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>protected static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#newSocketDgram0--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#newSocketDgram0--">newSocketDgram0</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" title="class in io.netty.channel.unix">Socket</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#newSocketDomain--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#newSocketDomain--">newSocketDomain</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code>protected static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#newSocketDomain0--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#newSocketDomain0--">newSocketDomain0</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" title="class in io.netty.channel.unix">Socket</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#newSocketStream--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#newSocketStream--">newSocketStream</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code>protected static int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#newSocketStream0--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#newSocketStream0--">newSocketStream0</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#recvFd--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#recvFd--">recvFd</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code><a href="DatagramSocketAddress.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/DatagramSocketAddress.html" title="class in io.netty.channel.unix">DatagramSocketAddress</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#recvFrom-java.nio.ByteBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#recvFrom-java.nio.ByteBuffer-int-int-">recvFrom</a></span>(java.nio.ByteBuffer&nbsp;buf, int&nbsp;pos, int&nbsp;limit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i29" class="rowColor"> 
+           <td class="colFirst"><code><a href="DatagramSocketAddress.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/DatagramSocketAddress.html" title="class in io.netty.channel.unix">DatagramSocketAddress</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#recvFromAddress-long-int-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#recvFromAddress-long-int-int-">recvFromAddress</a></span>(long&nbsp;memoryAddress, int&nbsp;pos, int&nbsp;limit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i30" class="altColor"> 
+           <td class="colFirst"><code>java.net.InetSocketAddress</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#remoteAddress--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#remoteAddress--">remoteAddress</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i31" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#sendFd-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#sendFd-int-">sendFd</a></span>(int&nbsp;fdToSend)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i32" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#sendTo-java.nio.ByteBuffer-int-int-java.net.InetAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#sendTo-java.nio.ByteBuffer-int-int-java.net.InetAddress-int-">sendTo</a></span>(java.nio.ByteBuffer&nbsp;buf, int&nbsp;pos, int&nbsp;limit, java.net.InetAddress&nbsp;addr, int&nbsp;port)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i33" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#sendToAddress-long-int-int-java.net.InetAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#sendToAddress-long-int-int-java.net.InetAddress-int-">sendToAddress</a></span>(long&nbsp;memoryAddress, int&nbsp;pos, int&nbsp;limit, java.net.InetAddress&nbsp;addr, int&nbsp;port)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i34" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#sendToAddresses-long-int-java.net.InetAddress-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#sendToAddresses-long-int-java.net.InetAddress-int-">sendToAddresses</a></span>(long&nbsp;memoryAddress, int&nbsp;length, java.net.InetAddress&nbsp;addr, int&nbsp;port)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i35" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setBroadcast-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setBroadcast-boolean-">setBroadcast</a></span>(boolean&nbsp;broadcast)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i36" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setKeepAlive-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setKeepAlive-boolean-">setKeepAlive</a></span>(boolean&nbsp;keepAlive)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i37" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setReceiveBufferSize-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setReceiveBufferSize-int-">setReceiveBufferSize</a></span>(int&nbsp;receiveBufferSize)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i38" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setReuseAddress-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setReuseAddress-boolean-">setReuseAddress</a></span>(boolean&nbsp;reuseAddress)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i39" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setReusePort-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setReusePort-boolean-">setReusePort</a></span>(boolean&nbsp;reusePort)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i40" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setSendBufferSize-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setSendBufferSize-int-">setSendBufferSize</a></span>(int&nbsp;sendBufferSize)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i41" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setSoLinger-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setSoLinger-int-">setSoLinger</a></span>(int&nbsp;soLinger)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i42" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setTcpNoDelay-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setTcpNoDelay-boolean-">setTcpNoDelay</a></span>(boolean&nbsp;tcpNoDelay)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i43" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#setTrafficClass-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#setTrafficClass-int-">setTrafficClass</a></span>(int&nbsp;trafficClass)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i44" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#shutdown--">shutdown</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i45" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#shutdown-boolean-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#shutdown-boolean-boolean-">shutdown</a></span>(boolean&nbsp;read, boolean&nbsp;write)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i46" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="Socket.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.channel.unix.FileDescriptor"> </a> <h3>Methods inherited from class&nbsp;io.netty.channel.unix.<a href="FileDescriptor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html" title="class in io.netty.channel.unix">FileDescriptor</a></h3> <code><a href="FileDescriptor.html#close--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#close--">close</a>, <a href="FileDescriptor.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#equals-java.lang.Object-">equals</a>, <a href="FileDescriptor.html#from-java.io.File-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#from-java.io.File-">from</a>, <a href="FileDescriptor.html#from-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#from-java.lang.String-">from</a>, <a href="FileDescriptor.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#hashCode--">hashCode</a>, <a href="FileDescriptor.html#intValue--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#intValue--">intValue</a>, <a href="FileDescriptor.html#isOpen--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#isOpen--">isOpen</a>, <a href="FileDescriptor.html#pipe--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#pipe--">pipe</a>, <a href="FileDescriptor.html#read-java.nio.ByteBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#read-java.nio.ByteBuffer-int-int-">read</a>, <a href="FileDescriptor.html#readAddress-long-int-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#readAddress-long-int-int-">readAddress</a>, <a href="FileDescriptor.html#write-java.nio.ByteBuffer-int-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#write-java.nio.ByteBuffer-int-int-">write</a>, <a href="FileDescriptor.html#writeAddress-long-int-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#writeAddress-long-int-int-">writeAddress</a>, <a href="FileDescriptor.html#writev-java.nio.ByteBuffer:A-int-int-long-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#writev-java.nio.ByteBuffer:A-int-int-long-">writev</a>, <a href="FileDescriptor.html#writevAddresses-long-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#writevAddresses-long-int-">writevAddresses</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="UDS_SUN_PATH_SIZE"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>UDS_SUN_PATH_SIZE</h4> <pre>public static final&nbsp;int UDS_SUN_PATH_SIZE</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="Socket-int-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>Socket</h4> <pre>public&nbsp;Socket(int&nbsp;fd)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="shutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>shutdown</h4> <pre>public final&nbsp;void&nbsp;shutdown()
+                    throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="shutdown-boolean-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>shutdown</h4> <pre>public final&nbsp;void&nbsp;shutdown(boolean&nbsp;read,
+                           boolean&nbsp;write)
+                    throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isShutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isShutdown</h4> <pre>public final&nbsp;boolean&nbsp;isShutdown()</pre> </li> 
+        </ul> <a name="isInputShutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isInputShutdown</h4> <pre>public final&nbsp;boolean&nbsp;isInputShutdown()</pre> </li> 
+        </ul> <a name="isOutputShutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isOutputShutdown</h4> <pre>public final&nbsp;boolean&nbsp;isOutputShutdown()</pre> </li> 
+        </ul> <a name="sendTo-java.nio.ByteBuffer-int-int-java.net.InetAddress-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sendTo</h4> <pre>public final&nbsp;int&nbsp;sendTo(java.nio.ByteBuffer&nbsp;buf,
+                        int&nbsp;pos,
+                        int&nbsp;limit,
+                        java.net.InetAddress&nbsp;addr,
+                        int&nbsp;port)
+                 throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sendToAddress-long-int-int-java.net.InetAddress-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sendToAddress</h4> <pre>public final&nbsp;int&nbsp;sendToAddress(long&nbsp;memoryAddress,
+                               int&nbsp;pos,
+                               int&nbsp;limit,
+                               java.net.InetAddress&nbsp;addr,
+                               int&nbsp;port)
+                        throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sendToAddresses-long-int-java.net.InetAddress-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sendToAddresses</h4> <pre>public final&nbsp;int&nbsp;sendToAddresses(long&nbsp;memoryAddress,
+                                 int&nbsp;length,
+                                 java.net.InetAddress&nbsp;addr,
+                                 int&nbsp;port)
+                          throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="recvFrom-java.nio.ByteBuffer-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>recvFrom</h4> <pre>public final&nbsp;<a href="DatagramSocketAddress.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/DatagramSocketAddress.html" title="class in io.netty.channel.unix">DatagramSocketAddress</a>&nbsp;recvFrom(java.nio.ByteBuffer&nbsp;buf,
+                                            int&nbsp;pos,
+                                            int&nbsp;limit)
+                                     throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="recvFromAddress-long-int-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>recvFromAddress</h4> <pre>public final&nbsp;<a href="DatagramSocketAddress.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/DatagramSocketAddress.html" title="class in io.netty.channel.unix">DatagramSocketAddress</a>&nbsp;recvFromAddress(long&nbsp;memoryAddress,
+                                                   int&nbsp;pos,
+                                                   int&nbsp;limit)
+                                            throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="recvFd--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>recvFd</h4> <pre>public final&nbsp;int&nbsp;recvFd()
+                 throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="sendFd-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>sendFd</h4> <pre>public final&nbsp;int&nbsp;sendFd(int&nbsp;fdToSend)
+                 throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="connect-java.net.SocketAddress-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connect</h4> <pre>public final&nbsp;boolean&nbsp;connect(java.net.SocketAddress&nbsp;socketAddress)
+                      throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="finishConnect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>finishConnect</h4> <pre>public final&nbsp;boolean&nbsp;finishConnect()
+                            throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="disconnect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>disconnect</h4> <pre>public final&nbsp;void&nbsp;disconnect()
+                      throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="bind-java.net.SocketAddress-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>bind</h4> <pre>public final&nbsp;void&nbsp;bind(java.net.SocketAddress&nbsp;socketAddress)
+                throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="listen-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>listen</h4> <pre>public final&nbsp;void&nbsp;listen(int&nbsp;backlog)
+                  throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="accept-byte:A-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>accept</h4> <pre>public final&nbsp;int&nbsp;accept(byte[]&nbsp;addr)
+                 throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="remoteAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>remoteAddress</h4> <pre>public final&nbsp;java.net.InetSocketAddress&nbsp;remoteAddress()</pre> </li> 
+        </ul> <a name="localAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>localAddress</h4> <pre>public final&nbsp;java.net.InetSocketAddress&nbsp;localAddress()</pre> </li> 
+        </ul> <a name="getReceiveBufferSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getReceiveBufferSize</h4> <pre>public final&nbsp;int&nbsp;getReceiveBufferSize()
+                               throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSendBufferSize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSendBufferSize</h4> <pre>public final&nbsp;int&nbsp;getSendBufferSize()
+                            throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isKeepAlive--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isKeepAlive</h4> <pre>public final&nbsp;boolean&nbsp;isKeepAlive()
+                          throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isTcpNoDelay--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isTcpNoDelay</h4> <pre>public final&nbsp;boolean&nbsp;isTcpNoDelay()
+                           throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isReuseAddress--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isReuseAddress</h4> <pre>public final&nbsp;boolean&nbsp;isReuseAddress()
+                             throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isReusePort--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isReusePort</h4> <pre>public final&nbsp;boolean&nbsp;isReusePort()
+                          throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isBroadcast--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isBroadcast</h4> <pre>public final&nbsp;boolean&nbsp;isBroadcast()
+                          throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSoLinger--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSoLinger</h4> <pre>public final&nbsp;int&nbsp;getSoLinger()
+                      throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getSoError--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getSoError</h4> <pre>public final&nbsp;int&nbsp;getSoError()
+                     throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="getTrafficClass--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>getTrafficClass</h4> <pre>public final&nbsp;int&nbsp;getTrafficClass()
+                          throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setKeepAlive-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setKeepAlive</h4> <pre>public final&nbsp;void&nbsp;setKeepAlive(boolean&nbsp;keepAlive)
+                        throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setReceiveBufferSize-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setReceiveBufferSize</h4> <pre>public final&nbsp;void&nbsp;setReceiveBufferSize(int&nbsp;receiveBufferSize)
+                                throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setSendBufferSize-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSendBufferSize</h4> <pre>public final&nbsp;void&nbsp;setSendBufferSize(int&nbsp;sendBufferSize)
+                             throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setTcpNoDelay-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setTcpNoDelay</h4> <pre>public final&nbsp;void&nbsp;setTcpNoDelay(boolean&nbsp;tcpNoDelay)
+                         throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setSoLinger-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setSoLinger</h4> <pre>public final&nbsp;void&nbsp;setSoLinger(int&nbsp;soLinger)
+                       throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setReuseAddress-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setReuseAddress</h4> <pre>public final&nbsp;void&nbsp;setReuseAddress(boolean&nbsp;reuseAddress)
+                           throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setReusePort-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setReusePort</h4> <pre>public final&nbsp;void&nbsp;setReusePort(boolean&nbsp;reusePort)
+                        throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setBroadcast-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setBroadcast</h4> <pre>public final&nbsp;void&nbsp;setBroadcast(boolean&nbsp;broadcast)
+                        throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="setTrafficClass-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>setTrafficClass</h4> <pre>public final&nbsp;void&nbsp;setTrafficClass(int&nbsp;trafficClass)
+                           throws java.io.IOException</pre> 
+          <dl> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.io.IOException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code><a href="FileDescriptor.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html#toString--">toString</a></code>在课程 
+            <code><a href="FileDescriptor.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/FileDescriptor.html" title="class in io.netty.channel.unix">FileDescriptor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="newSocketStream--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newSocketStream</h4> <pre>public static&nbsp;<a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" title="class in io.netty.channel.unix">Socket</a>&nbsp;newSocketStream()</pre> </li> 
+        </ul> <a name="newSocketDgram--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newSocketDgram</h4> <pre>public static&nbsp;<a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" title="class in io.netty.channel.unix">Socket</a>&nbsp;newSocketDgram()</pre> </li> 
+        </ul> <a name="newSocketDomain--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newSocketDomain</h4> <pre>public static&nbsp;<a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" title="class in io.netty.channel.unix">Socket</a>&nbsp;newSocketDomain()</pre> </li> 
+        </ul> <a name="initialize--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>initialize</h4> <pre>public static&nbsp;void&nbsp;initialize()</pre> </li> 
+        </ul> <a name="newSocketStream0--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newSocketStream0</h4> <pre>protected static&nbsp;int&nbsp;newSocketStream0()</pre> </li> 
+        </ul> <a name="newSocketDgram0--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newSocketDgram0</h4> <pre>protected static&nbsp;int&nbsp;newSocketDgram0()</pre> </li> 
+        </ul> <a name="newSocketDomain0--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>newSocketDomain0</h4> <pre>protected static&nbsp;int&nbsp;newSocketDomain0()</pre> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/class-use/Socket.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ServerDomainSocketChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/ServerDomainSocketChannel.html" title="interface in io.netty.channel.unix"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="SocketWritableByteChannel.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/SocketWritableByteChannel.html" title="class in io.netty.channel.unix"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-channel-unix-Socket.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/unix/Socket.html" target="_top">框架</a></li> 
+    <li><a href="Socket.html" tppabs="http://netty.io/4.1/api/io/netty/channel/unix/Socket.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/unix/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

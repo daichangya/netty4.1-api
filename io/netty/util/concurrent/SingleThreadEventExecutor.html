@@ -1,0 +1,1252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>SingleThreadEventExecutor (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.util.concurrent.SingleThreadEventExecutor class"> 
+  <meta name="keywords" content="newTaskQueue()"> 
+  <meta name="keywords" content="interruptThread()"> 
+  <meta name="keywords" content="pollTask()"> 
+  <meta name="keywords" content="pollTaskFrom()"> 
+  <meta name="keywords" content="takeTask()"> 
+  <meta name="keywords" content="peekTask()"> 
+  <meta name="keywords" content="hasTasks()"> 
+  <meta name="keywords" content="pendingTasks()"> 
+  <meta name="keywords" content="addTask()"> 
+  <meta name="keywords" content="removeTask()"> 
+  <meta name="keywords" content="runAllTasks()"> 
+  <meta name="keywords" content="runAllTasksFrom()"> 
+  <meta name="keywords" content="afterRunningAllTasks()"> 
+  <meta name="keywords" content="delayNanos()"> 
+  <meta name="keywords" content="updateLastExecutionTime()"> 
+  <meta name="keywords" content="run()"> 
+  <meta name="keywords" content="cleanup()"> 
+  <meta name="keywords" content="wakeup()"> 
+  <meta name="keywords" content="inEventLoop()"> 
+  <meta name="keywords" content="addShutdownHook()"> 
+  <meta name="keywords" content="removeShutdownHook()"> 
+  <meta name="keywords" content="shutdownGracefully()"> 
+  <meta name="keywords" content="terminationFuture()"> 
+  <meta name="keywords" content="shutdown()"> 
+  <meta name="keywords" content="isShuttingDown()"> 
+  <meta name="keywords" content="isShutdown()"> 
+  <meta name="keywords" content="isTerminated()"> 
+  <meta name="keywords" content="confirmShutdown()"> 
+  <meta name="keywords" content="awaitTermination()"> 
+  <meta name="keywords" content="execute()"> 
+  <meta name="keywords" content="invokeAny()"> 
+  <meta name="keywords" content="invokeAll()"> 
+  <meta name="keywords" content="threadProperties()"> 
+  <meta name="keywords" content="wakesUpForTask()"> 
+  <meta name="keywords" content="reject()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="SingleThreadEventExecutor (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":42,"i19":10,"i20":10,"i21":10,"i22":10,"i23":9,"i24":9,"i25":10,"i26":10,"i27":10,"i28":6,"i29":10,"i30":10,"i31":10,"i32":42,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/SingleThreadEventExecutor.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ScheduledFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ScheduledFuture.html" title="interface in io.netty.util.concurrent"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="SucceededFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SucceededFuture.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/SingleThreadEventExecutor.html" target="_top">框架</a></li> 
+    <li><a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.util.concurrent 
+   </div> 
+   <h2 title="Class SingleThreadEventExecutor" class="title">Class SingleThreadEventExecutor</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>java.util.concurrent.AbstractExecutorService</li> 
+      <li> 
+       <ul class="inheritance"> 
+        <li><a href="AbstractEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.AbstractEventExecutor</a></li> 
+        <li> 
+         <ul class="inheritance"> 
+          <li><a href="AbstractScheduledEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html" title="class in io.netty.util.concurrent">io.netty.util.concurrent.AbstractScheduledEventExecutor</a></li> 
+          <li> 
+           <ul class="inheritance"> 
+            <li>io.netty.util.concurrent.SingleThreadEventExecutor</li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> </li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口">EventExecutor</a> ， <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口">EventExecutorGroup</a> ， <a href="OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="io.netty.util.concurrent中的接口">OrderedEventExecutor</a> ，java.lang.Iterable &lt; <a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口">EventExecutor</a> &gt;，java.util.concurrent.Executor，java.util.concurrent.ExecutorService中，java.util.concurrent.ScheduledExecutorService</span> 
+       </dd> 
+      </dl> 
+      <dl> 
+       <dt>
+        已知直接子类：
+       </dt> 
+       <dd> 
+        <span><a href="DefaultEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/DefaultEventExecutor.html" title="class in io.netty.util.concurrent">DefaultEventExecutor</a> ， <a href="../../channel/SingleThreadEventLoop.html" tppabs="http://netty.io/4.1/api/io/netty/channel/SingleThreadEventLoop.html" title="在io.netty.channel中的类">SingleThreadEventLoop</a></span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>public abstract class <span class="typeNameLabel">SingleThreadEventExecutor</span>
+extends <a href="AbstractScheduledEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html" title="class in io.netty.util.concurrent">AbstractScheduledEventExecutor</a>
+implements <a href="OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="interface in io.netty.util.concurrent">OrderedEventExecutor</a></pre> 
+      <div class="block"> 
+       <span><a href="OrderedEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/OrderedEventExecutor.html" title="io.netty.util.concurrent中的接口"><code>OrderedEventExecutor</code></a>的抽象基类，它在单个线程中执行所有提交的任务。</span> 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier</th> 
+           <th class="colLast" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.Executor-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.Executor-boolean-">SingleThreadEventExecutor</a></span>(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent, java.util.concurrent.Executor&nbsp;executor, boolean&nbsp;addTaskWakesUp)</code> 
+            <div class="block">
+              创建一个新的实例 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.Executor-boolean-int-io.netty.util.concurrent.RejectedExecutionHandler-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.Executor-boolean-int-io.netty.util.concurrent.RejectedExecutionHandler-">SingleThreadEventExecutor</a></span>(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent, java.util.concurrent.Executor&nbsp;executor, boolean&nbsp;addTaskWakesUp, int&nbsp;maxPendingTasks, <a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="interface in io.netty.util.concurrent">RejectedExecutionHandler</a>&nbsp;rejectedHandler)</code> 
+            <div class="block">
+              创建一个新的实例 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.ThreadFactory-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.ThreadFactory-boolean-">SingleThreadEventExecutor</a></span>(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent, java.util.concurrent.ThreadFactory&nbsp;threadFactory, boolean&nbsp;addTaskWakesUp)</code> 
+            <div class="block">
+              创建一个新的实例 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>protected </code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.ThreadFactory-boolean-int-io.netty.util.concurrent.RejectedExecutionHandler-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.ThreadFactory-boolean-int-io.netty.util.concurrent.RejectedExecutionHandler-">SingleThreadEventExecutor</a></span>(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent, java.util.concurrent.ThreadFactory&nbsp;threadFactory, boolean&nbsp;addTaskWakesUp, int&nbsp;maxPendingTasks, <a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="interface in io.netty.util.concurrent">RejectedExecutionHandler</a>&nbsp;rejectedHandler)</code> 
+            <div class="block">
+              创建一个新的实例 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t3" class="tableTab"><span><a href="javascript:show(4);">抽象方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t6" class="tableTab"><span><a href="javascript:show(32);">弃用的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#addShutdownHook-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addShutdownHook-java.lang.Runnable-">addShutdownHook</a></span>(java.lang.Runnable&nbsp;task)</code> 
+            <div class="block">
+              添加一个 
+             <code>Runnable</code>将在关闭此实例时执行 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#addTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-">addTask</a></span>(java.lang.Runnable&nbsp;task)</code> 
+            <div class="block">
+              将任务添加到任务队列，或者在此之前关闭此实例时抛出 
+             <code>RejectedExecutionException</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#afterRunningAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#afterRunningAllTasks--">afterRunningAllTasks</a></span>()</code> 
+            <div class="block">
+              在从 
+             <a href="SingleThreadEventExecutor.html#runAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks--"><code>runAllTasks()</code></a>和 
+             <a href="SingleThreadEventExecutor.html#runAllTasks-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks-long-"><code>runAllTasks(long)</code></a>返回之前调用。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#awaitTermination-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#awaitTermination-long-java.util.concurrent.TimeUnit-">awaitTermination</a></span>(long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#cleanup--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#cleanup--">cleanup</a></span>()</code> 
+            <div class="block">
+              无所作为，子类可能会覆盖 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#confirmShutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#confirmShutdown--">confirmShutdown</a></span>()</code> 
+            <div class="block">
+              确认实例应该立即关闭！ 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>protected long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#delayNanos-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#delayNanos-long-">delayNanos</a></span>(long&nbsp;currentTimeNanos)</code> 
+            <div class="block">
+              返回执行最接近死线的计划任务之前剩余的时间量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#execute-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#execute-java.lang.Runnable-">execute</a></span>(java.lang.Runnable&nbsp;task)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#hasTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#hasTasks--">hasTasks</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#inEventLoop-java.lang.Thread-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#inEventLoop-java.lang.Thread-">inEventLoop</a></span>(java.lang.Thread&nbsp;thread)</code> 
+            <div class="block">
+              返回 
+             <code>true</code>如果给定 
+             <code>Thread</code>在事件循环中执行， 
+             <code>false</code>其他。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#interruptThread--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#interruptThread--">interruptThread</a></span>()</code> 
+            <div class="block">
+              中断当前运行的 
+             <code>Thread</code> 。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;java.util.List&lt;java.util.concurrent.Future&lt;T&gt;&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#invokeAll-java.util.Collection-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAll-java.util.Collection-">invokeAll</a></span>(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;java.util.List&lt;java.util.concurrent.Future&lt;T&gt;&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#invokeAll-java.util.Collection-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAll-java.util.Collection-long-java.util.concurrent.TimeUnit-">invokeAll</a></span>(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks, long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#invokeAny-java.util.Collection-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAny-java.util.Collection-">invokeAny</a></span>(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>&lt;T&gt;&nbsp;T</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#invokeAny-java.util.Collection-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#invokeAny-java.util.Collection-long-java.util.concurrent.TimeUnit-">invokeAny</a></span>(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks, long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#isShutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#isShutdown--">isShutdown</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i16" class="altColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#isShuttingDown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#isShuttingDown--">isShuttingDown</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<code>true</code>当且仅当所有<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>由该被管小号<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>正在<a href="EventExecutorGroup.html#shutdownGracefully--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully--">shut down gracefully</a>或者被关闭。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i17" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#isTerminated--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#isTerminated--">isTerminated</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i18" class="altColor"> 
+           <td class="colFirst"><code>protected java.util.Queue&lt;java.lang.Runnable&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#newTaskQueue--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue--">newTaskQueue</a></span>()</code> 
+            <div class="block"> 
+             <span><span class="deprecatedLabel">已过时。</span></span> 
+             <div class="block"> 
+              <span><span class="deprecationComment">请使用并覆盖<a href="SingleThreadEventExecutor.html#newTaskQueue-int-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-"><code>newTaskQueue(int)</code></a> 。</span></span> 
+             </div> 
+            </div> </td> 
+          </tr> 
+          <tr id="i19" class="rowColor"> 
+           <td class="colFirst"><code>protected java.util.Queue&lt;java.lang.Runnable&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#newTaskQueue-int-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-">newTaskQueue</a></span>(int&nbsp;maxPendingTasks)</code> 
+            <div class="block">
+              创建一个新的 
+             <code>Queue</code> ，它将保存要执行的任务。 
+            </div> </td> 
+          </tr> 
+          <tr id="i20" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.Runnable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#peekTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#peekTask--">peekTask</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i21" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#pendingTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pendingTasks--">pendingTasks</a></span>()</code> 
+            <div class="block">
+              返回待处理任务的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i22" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.Runnable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#pollTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pollTask--">pollTask</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i23" class="rowColor"> 
+           <td class="colFirst"><code>protected static java.lang.Runnable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#pollTaskFrom-java.util.Queue-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pollTaskFrom-java.util.Queue-">pollTaskFrom</a></span>(java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;taskQueue)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i24" class="altColor"> 
+           <td class="colFirst"><code>protected static void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#reject--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#reject--">reject</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i25" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#reject-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#reject-java.lang.Runnable-">reject</a></span>(java.lang.Runnable&nbsp;task)</code> 
+            <div class="block"> 
+             <span>将任务提供给关联的<a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="io.netty.util.concurrent中的接口"><code>RejectedExecutionHandler</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i26" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#removeShutdownHook-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#removeShutdownHook-java.lang.Runnable-">removeShutdownHook</a></span>(java.lang.Runnable&nbsp;task)</code> 
+            <div class="block">
+              删除以前添加的 
+             <code>Runnable</code>作为关机挂钩 
+            </div> </td> 
+          </tr> 
+          <tr id="i27" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#removeTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#removeTask-java.lang.Runnable-">removeTask</a></span>(java.lang.Runnable&nbsp;task)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i28" class="altColor"> 
+           <td class="colFirst"><code>protected abstract void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#run--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#run--">run</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i29" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#runAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks--">runAllTasks</a></span>()</code> 
+            <div class="block">
+              轮询任务队列中的所有任务，并通过 
+             <code>Runnable.run()</code>方法运行它们。 
+            </div> </td> 
+          </tr> 
+          <tr id="i30" class="altColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#runAllTasks-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks-long-">runAllTasks</a></span>(long&nbsp;timeoutNanos)</code> 
+            <div class="block">
+              轮询任务队列中的所有任务，并通过 
+             <code>Runnable.run()</code>方法运行它们。 
+            </div> </td> 
+          </tr> 
+          <tr id="i31" class="rowColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#runAllTasksFrom-java.util.Queue-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasksFrom-java.util.Queue-">runAllTasksFrom</a></span>(java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;taskQueue)</code> 
+            <div class="block">
+              从传递的 
+             <code>taskQueue</code>运行所有任务。 
+            </div> </td> 
+          </tr> 
+          <tr id="i32" class="altColor"> 
+           <td class="colFirst"><code>void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#shutdown--">shutdown</a></span>()</code> 
+            <div class="block"> 
+             <span class="deprecatedLabel">已过时。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i33" class="rowColor"> 
+           <td class="colFirst"><code><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;?&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-">shutdownGracefully</a></span>(long&nbsp;quietPeriod, long&nbsp;timeout, java.util.concurrent.TimeUnit&nbsp;unit)</code> 
+            <div class="block">
+              该执行者表示该调用者希望执行者被关闭。 
+            </div> </td> 
+          </tr> 
+          <tr id="i34" class="altColor"> 
+           <td class="colFirst"><code>protected java.lang.Runnable</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#takeTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#takeTask--">takeTask</a></span>()</code> 
+            <div class="block">
+              从任务队列中取出下一个 
+             <code>Runnable</code> ，如果当前没有任务存在，则会阻塞。 
+            </div> </td> 
+          </tr> 
+          <tr id="i35" class="rowColor"> 
+           <td class="colFirst"><code><a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;?&gt;</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#terminationFuture--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#terminationFuture--">terminationFuture</a></span>()</code> 
+            <div class="block"> 
+             <span>返回<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>当所有被通知<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>由该被管小号<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>已经终止。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i36" class="altColor"> 
+           <td class="colFirst"><code><a href="ThreadProperties.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ThreadProperties.html" title="interface in io.netty.util.concurrent">ThreadProperties</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#threadProperties--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#threadProperties--">threadProperties</a></span>()</code> 
+            <div class="block"> 
+             <span>返回支持<a href="ThreadProperties.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ThreadProperties.html" title="io.netty.util.concurrent中的接口"><code>SingleThreadEventExecutor</code></a>的<code>Thread</code>的<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>ThreadProperties</code></a> 。</span> 
+            </div> </td> 
+          </tr> 
+          <tr id="i37" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#updateLastExecutionTime--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#updateLastExecutionTime--">updateLastExecutionTime</a></span>()</code> 
+            <div class="block">
+              更新内部时间戳，告知最近执行提交的任务的时间。 
+            </div> </td> 
+          </tr> 
+          <tr id="i38" class="altColor"> 
+           <td class="colFirst"><code>protected boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#wakesUpForTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#wakesUpForTask-java.lang.Runnable-">wakesUpForTask</a></span>(java.lang.Runnable&nbsp;task)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i39" class="rowColor"> 
+           <td class="colFirst"><code>protected void</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="SingleThreadEventExecutor.html#wakeup-boolean-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#wakeup-boolean-">wakeup</a></span>(boolean&nbsp;inEventLoop)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.AbstractScheduledEventExecutor"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="AbstractScheduledEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html" title="class in io.netty.util.concurrent">AbstractScheduledEventExecutor</a></h3> <code><a href="AbstractScheduledEventExecutor.html#cancelScheduledTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#cancelScheduledTasks--">cancelScheduledTasks</a>, <a href="AbstractScheduledEventExecutor.html#hasScheduledTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#hasScheduledTasks--">hasScheduledTasks</a>, <a href="AbstractScheduledEventExecutor.html#nanoTime--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#nanoTime--">nanoTime</a>, <a href="AbstractScheduledEventExecutor.html#nextScheduledTaskNano--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#nextScheduledTaskNano--">nextScheduledTaskNano</a>, <a href="AbstractScheduledEventExecutor.html#pollScheduledTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#pollScheduledTask--">pollScheduledTask</a>, <a href="AbstractScheduledEventExecutor.html#pollScheduledTask-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#pollScheduledTask-long-">pollScheduledTask</a>, <a href="AbstractScheduledEventExecutor.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="AbstractScheduledEventExecutor.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="AbstractScheduledEventExecutor.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleAtFixedRate</a>, <a href="AbstractScheduledEventExecutor.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractScheduledEventExecutor.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleWithFixedDelay</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.AbstractEventExecutor"> </a> <h3>Methods inherited from class&nbsp;io.netty.util.concurrent.<a href="AbstractEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html" title="class in io.netty.util.concurrent">AbstractEventExecutor</a></h3> <code><a href="AbstractEventExecutor.html#inEventLoop--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#inEventLoop--">inEventLoop</a>, <a href="AbstractEventExecutor.html#iterator--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#iterator--">iterator</a>, <a href="AbstractEventExecutor.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newFailedFuture-java.lang.Throwable-">newFailedFuture</a>, <a href="AbstractEventExecutor.html#newProgressivePromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newProgressivePromise--">newProgressivePromise</a>, <a href="AbstractEventExecutor.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newPromise--">newPromise</a>, <a href="AbstractEventExecutor.html#newSucceededFuture-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newSucceededFuture-V-">newSucceededFuture</a>, <a href="AbstractEventExecutor.html#newTaskFor-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newTaskFor-java.util.concurrent.Callable-">newTaskFor</a>, <a href="AbstractEventExecutor.html#newTaskFor-java.lang.Runnable-T-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#newTaskFor-java.lang.Runnable-T-">newTaskFor</a>, <a href="AbstractEventExecutor.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#next--">next</a>, <a href="AbstractEventExecutor.html#parent--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#parent--">parent</a>, <a href="AbstractEventExecutor.html#safeExecute-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#safeExecute-java.lang.Runnable-">safeExecute</a>, <a href="AbstractEventExecutor.html#shutdownGracefully--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#shutdownGracefully--">shutdownGracefully</a>, <a href="AbstractEventExecutor.html#shutdownNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#shutdownNow--">shutdownNow</a>, <a href="AbstractEventExecutor.html#submit-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#submit-java.util.concurrent.Callable-">submit</a>, <a href="AbstractEventExecutor.html#submit-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#submit-java.lang.Runnable-">submit</a>, <a href="AbstractEventExecutor.html#submit-java.lang.Runnable-T-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#submit-java.lang.Runnable-T-">submit</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.EventExecutor"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.concurrent.<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a></h3> <code><a href="EventExecutor.html#inEventLoop--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#inEventLoop--">inEventLoop</a>, <a href="EventExecutor.html#newFailedFuture-java.lang.Throwable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newFailedFuture-java.lang.Throwable-">newFailedFuture</a>, <a href="EventExecutor.html#newProgressivePromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newProgressivePromise--">newProgressivePromise</a>, <a href="EventExecutor.html#newPromise--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newPromise--">newPromise</a>, <a href="EventExecutor.html#newSucceededFuture-V-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#newSucceededFuture-V-">newSucceededFuture</a>, <a href="EventExecutor.html#next--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#next--">next</a>, <a href="EventExecutor.html#parent--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#parent--">parent</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.io.netty.util.concurrent.EventExecutorGroup"> </a> <h3>Methods inherited from interface&nbsp;io.netty.util.concurrent.<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a></h3> <code><a href="EventExecutorGroup.html#iterator--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#iterator--">iterator</a>, <a href="EventExecutorGroup.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#schedule-java.util.concurrent.Callable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="EventExecutorGroup.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#schedule-java.lang.Runnable-long-java.util.concurrent.TimeUnit-">schedule</a>, <a href="EventExecutorGroup.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#scheduleAtFixedRate-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleAtFixedRate</a>, <a href="EventExecutorGroup.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#scheduleWithFixedDelay-java.lang.Runnable-long-long-java.util.concurrent.TimeUnit-">scheduleWithFixedDelay</a>, <a href="EventExecutorGroup.html#shutdownGracefully--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully--">shutdownGracefully</a>, <a href="EventExecutorGroup.html#shutdownNow--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownNow--">shutdownNow</a>, <a href="EventExecutorGroup.html#submit-java.util.concurrent.Callable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#submit-java.util.concurrent.Callable-">submit</a>, <a href="EventExecutorGroup.html#submit-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#submit-java.lang.Runnable-">submit</a>, <a href="EventExecutorGroup.html#submit-java.lang.Runnable-T-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#submit-java.lang.Runnable-T-">submit</a></code></li> 
+        </ul> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable"> </a> <h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3> <code>forEach, spliterator</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.ThreadFactory-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SingleThreadEventExecutor</h4> <pre>protected&nbsp;SingleThreadEventExecutor(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent,
+                                    java.util.concurrent.ThreadFactory&nbsp;threadFactory,
+                                    boolean&nbsp;addTaskWakesUp)</pre> 
+          <div class="block">
+            创建一个新的实例 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>parent</code> - <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>这是此实例的父级，并且属于它</span> 
+           </dd> 
+           <dd> 
+            <code>threadFactory</code> -在 
+            <code>ThreadFactory</code>将被用于使用 
+            <code>Thread</code> 
+           </dd> 
+           <dd> 
+            <code>addTaskWakesUp</code> - 
+            <code>true</code>当且仅当调用 
+            <a href="SingleThreadEventExecutor.html#addTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-"><code>addTask(Runnable)</code></a>才会唤醒执行程序线程 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.ThreadFactory-boolean-int-io.netty.util.concurrent.RejectedExecutionHandler-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SingleThreadEventExecutor</h4> <pre>protected&nbsp;SingleThreadEventExecutor(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent,
+                                    java.util.concurrent.ThreadFactory&nbsp;threadFactory,
+                                    boolean&nbsp;addTaskWakesUp,
+                                    int&nbsp;maxPendingTasks,
+                                    <a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="interface in io.netty.util.concurrent">RejectedExecutionHandler</a>&nbsp;rejectedHandler)</pre> 
+          <div class="block">
+            创建一个新的实例 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>parent</code> - <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它是此实例的父代并属于它</span> 
+           </dd> 
+           <dd> 
+            <code>threadFactory</code> -在 
+            <code>ThreadFactory</code>将被用于使用 
+            <code>Thread</code> 
+           </dd> 
+           <dd> 
+            <code>addTaskWakesUp</code> - 
+            <code>true</code>当且仅当调用 
+            <a href="SingleThreadEventExecutor.html#addTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-"><code>addTask(Runnable)</code></a>才会唤醒执行程序线程 
+           </dd> 
+           <dd> 
+            <code>maxPendingTasks</code> - 新任务将被拒绝之前的最大未决任务数。 
+           </dd> 
+           <dd> 
+            <span><code>rejectedHandler</code> - 使用<a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="io.netty.util.concurrent中的接口"><code>RejectedExecutionHandler</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.Executor-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SingleThreadEventExecutor</h4> <pre>protected&nbsp;SingleThreadEventExecutor(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent,
+                                    java.util.concurrent.Executor&nbsp;executor,
+                                    boolean&nbsp;addTaskWakesUp)</pre> 
+          <div class="block">
+            创建一个新的实例 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>parent</code> - <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>这是此实例的父级，并且属于它</span> 
+           </dd> 
+           <dd> 
+            <code>executor</code> - 将用于执行的 
+            <code>Executor</code> 
+           </dd> 
+           <dd> 
+            <code>addTaskWakesUp</code> - 
+            <code>true</code>当且仅当调用 
+            <a href="SingleThreadEventExecutor.html#addTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-"><code>addTask(Runnable)</code></a>才会唤醒执行程序线程 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="SingleThreadEventExecutor-io.netty.util.concurrent.EventExecutorGroup-java.util.concurrent.Executor-boolean-int-io.netty.util.concurrent.RejectedExecutionHandler-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>SingleThreadEventExecutor</h4> <pre>protected&nbsp;SingleThreadEventExecutor(<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a>&nbsp;parent,
+                                    java.util.concurrent.Executor&nbsp;executor,
+                                    boolean&nbsp;addTaskWakesUp,
+                                    int&nbsp;maxPendingTasks,
+                                    <a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="interface in io.netty.util.concurrent">RejectedExecutionHandler</a>&nbsp;rejectedHandler)</pre> 
+          <div class="block">
+            创建一个新的实例 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <span><code>parent</code> - <a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a> ，它是此实例的父级，属于它</span> 
+           </dd> 
+           <dd> 
+            <code>executor</code> - 将用于执行的 
+            <code>Executor</code> 
+           </dd> 
+           <dd> 
+            <code>addTaskWakesUp</code> - 
+            <code>true</code>当且仅当调用 
+            <a href="SingleThreadEventExecutor.html#addTask-java.lang.Runnable-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#addTask-java.lang.Runnable-"><code>addTask(Runnable)</code></a>才会唤醒执行程序线程 
+           </dd> 
+           <dd> 
+            <code>maxPendingTasks</code> - 新任务将被拒绝之前的最大未决任务数。 
+           </dd> 
+           <dd> 
+            <span><code>rejectedHandler</code> - 使用<a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="io.netty.util.concurrent中的接口"><code>RejectedExecutionHandler</code></a> 。</span> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="newTaskQueue--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newTaskQueue</h4> <pre>@Deprecated
+protected&nbsp;java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;newTaskQueue()</pre> 
+          <div class="block"> 
+           <span><span class="deprecatedLabel">已过时。</span></span> 
+           <span><span class="deprecationComment">请使用并覆盖<a href="SingleThreadEventExecutor.html#newTaskQueue-int-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue-int-"><code>newTaskQueue(int)</code></a> 。</span></span> 
+          </div> </li> 
+        </ul> <a name="newTaskQueue-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>newTaskQueue</h4> <pre>protected&nbsp;java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;newTaskQueue(int&nbsp;maxPendingTasks)</pre> 
+          <div class="block"> 
+           <span>创建一个新的<code>Queue</code> ，它将保存要执行的任务。</span> 
+           <span>此默认实现将返回<code>LinkedBlockingQueue</code> ，但如果你的子类<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a>不会做的这所有的阻塞调用<code>Queue</code>它可能是有意义的<code>@Override</code>这一点，并返回一些更高性能的实现，它完全不支持阻塞操作。</span> 
+          </div> </li> 
+        </ul> <a name="interruptThread--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>interruptThread</h4> <pre>protected&nbsp;void&nbsp;interruptThread()</pre> 
+          <div class="block">
+            中断当前运行的 
+           <code>Thread</code> 。 
+          </div> </li> 
+        </ul> <a name="pollTask--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pollTask</h4> <pre>protected&nbsp;java.lang.Runnable&nbsp;pollTask()</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <code>Queue.poll()</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="pollTaskFrom-java.util.Queue-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pollTaskFrom</h4> <pre>protected static&nbsp;java.lang.Runnable&nbsp;pollTaskFrom(java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;taskQueue)</pre> </li> 
+        </ul> <a name="takeTask--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>takeTask</h4> <pre>protected&nbsp;java.lang.Runnable&nbsp;takeTask()</pre> 
+          <div class="block"> 
+           <span>从任务队列中<code>Runnable</code>一个<code>Runnable</code> ，如果当前没有任务存在，将会阻塞。</span> 
+           <p> <span>请注意，此方法将抛出一个<code>UnsupportedOperationException</code>如果任务队列，这是通过创建<a href="SingleThreadEventExecutor.html#newTaskQueue--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#newTaskQueue--"><code>newTaskQueue()</code></a> ，没有实现<code>BlockingQueue</code> 。</span> </p> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>null</code>如果执行程序线程被中断或唤醒。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="peekTask--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>peekTask</h4> <pre>protected&nbsp;java.lang.Runnable&nbsp;peekTask()</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <code>Queue.peek()</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="hasTasks--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hasTasks</h4> <pre>protected&nbsp;boolean&nbsp;hasTasks()</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <code>Collection.isEmpty()</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="pendingTasks--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>pendingTasks</h4> <pre>public&nbsp;int&nbsp;pendingTasks()</pre> 
+          <div class="block"> 
+           <span>返回待处理任务的数量。</span> 
+           <span><strong>请注意，此操作可能很昂贵，因为它取决于SingleThreadEventExecutor的内部实现。</strong></span> 
+           <span><strong>所以使用它很在乎！</strong></span> 
+          </div> </li> 
+        </ul> <a name="addTask-java.lang.Runnable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addTask</h4> <pre>protected&nbsp;void&nbsp;addTask(java.lang.Runnable&nbsp;task)</pre> 
+          <div class="block">
+            将任务添加到任务队列，或者在此之前关闭此实例时抛出 
+           <code>RejectedExecutionException</code> 。 
+          </div> </li> 
+        </ul> <a name="removeTask-java.lang.Runnable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeTask</h4> <pre>protected&nbsp;boolean&nbsp;removeTask(java.lang.Runnable&nbsp;task)</pre> 
+          <dl> 
+           <dt> 
+            <span class="seeLabel">另请参见：</span> 
+           </dt> 
+           <dd> 
+            <code>Collection.remove(Object)</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="runAllTasks--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>runAllTasks</h4> <pre>protected&nbsp;boolean&nbsp;runAllTasks()</pre> 
+          <div class="block">
+            轮询任务队列中的所有任务，并通过 
+           <code>Runnable.run()</code>方法运行它们。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <code>true</code>当且仅当至少有一个任务运行 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="runAllTasksFrom-java.util.Queue-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>runAllTasksFrom</h4> <pre>protected final&nbsp;boolean&nbsp;runAllTasksFrom(java.util.Queue&lt;java.lang.Runnable&gt;&nbsp;taskQueue)</pre> 
+          <div class="block">
+            从传递的 
+           <code>taskQueue</code>运行所有任务。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>taskQueue</code> - 轮询和执行所有任务。 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd>
+             如果至少执行了一项任务， 
+            <code>true</code> 。 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="runAllTasks-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>runAllTasks</h4> <pre>protected&nbsp;boolean&nbsp;runAllTasks(long&nbsp;timeoutNanos)</pre> 
+          <div class="block"> 
+           <span>轮询任务队列中的所有任务，并通过<code>Runnable.run()</code>方法运行它们。</span> 
+           <span>此方法停止运行任务队列中的任务，并在其运行时间超过<code>timeoutNanos</code>返回。</span> 
+          </div> </li> 
+        </ul> <a name="afterRunningAllTasks--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>afterRunningAllTasks</h4> <pre>@UnstableApi
+protected&nbsp;void&nbsp;afterRunningAllTasks()</pre> 
+          <div class="block">
+            在从 
+           <a href="SingleThreadEventExecutor.html#runAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks--"><code>runAllTasks()</code></a>和 
+           <a href="SingleThreadEventExecutor.html#runAllTasks-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks-long-"><code>runAllTasks(long)</code></a>返回之前调用。 
+          </div> </li> 
+        </ul> <a name="delayNanos-long-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>delayNanos</h4> <pre>protected&nbsp;long&nbsp;delayNanos(long&nbsp;currentTimeNanos)</pre> 
+          <div class="block">
+            返回执行最接近死线的计划任务之前剩余的时间量。 
+          </div> </li> 
+        </ul> <a name="updateLastExecutionTime--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>updateLastExecutionTime</h4> <pre>protected&nbsp;void&nbsp;updateLastExecutionTime()</pre> 
+          <div class="block"> 
+           <span>更新内部时间戳，告知最近执行提交的任务的时间。</span> 
+           <span><a href="SingleThreadEventExecutor.html#runAllTasks--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks--"><code>runAllTasks()</code></a>和<a href="SingleThreadEventExecutor.html#runAllTasks-long-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#runAllTasks-long-"><code>runAllTasks(long)</code></a>自动更新此时间戳，因此通常不需要调用此方法。</span> 
+           <span>但是，如果使用<a href="SingleThreadEventExecutor.html#takeTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#takeTask--"><code>takeTask()</code></a>或<a href="SingleThreadEventExecutor.html#pollTask--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html#pollTask--"><code>pollTask()</code></a>手动执行任务，则必须在任务执行循环结束时调用此方法以进行精确的静默期检查。</span> 
+          </div> </li> 
+        </ul> <a name="run--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>run</h4> <pre>protected abstract&nbsp;void&nbsp;run()</pre> </li> 
+        </ul> <a name="cleanup--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cleanup</h4> <pre>protected&nbsp;void&nbsp;cleanup()</pre> 
+          <div class="block">
+            无所作为，子类可能会覆盖 
+          </div> </li> 
+        </ul> <a name="wakeup-boolean-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>wakeup</h4> <pre>protected&nbsp;void&nbsp;wakeup(boolean&nbsp;inEventLoop)</pre> </li> 
+        </ul> <a name="inEventLoop-java.lang.Thread-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>inEventLoop</h4> <pre>public&nbsp;boolean&nbsp;inEventLoop(java.lang.Thread&nbsp;thread)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制的描述： <code><a href="EventExecutor.html#inEventLoop-java.lang.Thread-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#inEventLoop-java.lang.Thread-">EventExecutor</a></code></span> 
+          </div> 
+          <div class="block">
+            返回 
+           <code>true</code>如果给定 
+           <code>Thread</code>在事件循环中执行， 
+           <code>false</code>其他。 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="EventExecutor.html#inEventLoop-java.lang.Thread-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html#inEventLoop-java.lang.Thread-">inEventLoop</a></code> ，界面 
+            <code><a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="interface in io.netty.util.concurrent">EventExecutor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="addShutdownHook-java.lang.Runnable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>addShutdownHook</h4> <pre>public&nbsp;void&nbsp;addShutdownHook(java.lang.Runnable&nbsp;task)</pre> 
+          <div class="block">
+            添加一个 
+           <code>Runnable</code> ，将在关闭此实例时执行 
+          </div> </li> 
+        </ul> <a name="removeShutdownHook-java.lang.Runnable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>removeShutdownHook</h4> <pre>public&nbsp;void&nbsp;removeShutdownHook(java.lang.Runnable&nbsp;task)</pre> 
+          <div class="block">
+            删除以前添加的 
+           <code>Runnable</code>作为关机挂钩 
+          </div> </li> 
+        </ul> <a name="shutdownGracefully-long-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>shutdownGracefully</h4> <pre>public&nbsp;<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;?&gt;&nbsp;shutdownGracefully(long&nbsp;quietPeriod,
+                                    long&nbsp;timeout,
+                                    java.util.concurrent.TimeUnit&nbsp;unit)</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面： <code><a href="EventExecutorGroup.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-">EventExecutorGroup</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>该执行者表示该调用者希望执行者被关闭。</span> 
+           <span>一旦调用此方法， <a href="EventExecutorGroup.html#isShuttingDown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#isShuttingDown--"><code>EventExecutorGroup.isShuttingDown()</code></a>开始返回<code>true</code> ，执行程序准备自行关闭。</span> 
+           <span>与<a href="EventExecutorGroup.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdown--"><code>EventExecutorGroup.shutdown()</code></a>不同，正常关机可确保在关闭之前不会提交<i>“安静期”</i> （通常是几秒钟）的任务。</span> 
+           <span>如果任务在安静期提交，则保证被接受，安静期将重新开始。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="EventExecutorGroup.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully-long-long-java.util.concurrent.TimeUnit-">shutdownGracefully</a></code> ，界面 
+            <code><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a></code> 
+           </dd> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>quietPeriod</code> - 文档中描述的安静期 
+           </dd> 
+           <dd> 
+            <code>timeout</code> - 不管在静默期间是否提交任务，等待执行程序为 
+            <a href="EventExecutorGroup.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdown--">EventExecutorGroup.shutdown()的</a>最长时间 
+           </dd> 
+           <dd> 
+            <code>unit</code> - 
+            <code>quietPeriod</code>和 
+            <code>timeout</code>的单位 
+           </dd> 
+           <dt> 
+            <span class="returnLabel">结果</span> 
+           </dt> 
+           <dd> 
+            <a href="EventExecutorGroup.html#terminationFuture--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#terminationFuture--"><code>EventExecutorGroup.terminationFuture()</code></a> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="terminationFuture--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>terminationFuture</h4> <pre>public&nbsp;<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="interface in io.netty.util.concurrent">Future</a>&lt;?&gt;&nbsp;terminationFuture()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面复制而来的描述： <code><a href="EventExecutorGroup.html#terminationFuture--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#terminationFuture--">EventExecutorGroup</a></code></span> 
+          </div> 
+          <div class="block"> 
+           <span>返回<a href="Future.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/Future.html" title="io.netty.util.concurrent中的接口"><code>Future</code></a>当所有被通知<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>由该被管小号<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>已经终止。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="EventExecutorGroup.html#terminationFuture--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#terminationFuture--">terminationFuture</a></code>在界面 
+            <code><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="shutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>shutdown</h4> <pre>@Deprecated
+public&nbsp;void&nbsp;shutdown()</pre> 
+          <div class="block"> 
+           <span class="deprecatedLabel">已过时。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="EventExecutorGroup.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdown--">shutdown</a></code>接口 
+            <code><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a></code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>shutdown</code>在界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="AbstractEventExecutor.html#shutdown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html#shutdown--">shutdown</a></code>在课堂 
+            <code><a href="AbstractEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/AbstractEventExecutor.html" title="class in io.netty.util.concurrent">AbstractEventExecutor</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isShuttingDown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isShuttingDown</h4> <pre>public&nbsp;boolean&nbsp;isShuttingDown()</pre> 
+          <div class="block"> 
+           <span class="descfrmTypeLabel">从界面： <code><a href="EventExecutorGroup.html#isShuttingDown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#isShuttingDown--">EventExecutorGroup</a></code>复制的描述</span> 
+          </div> 
+          <div class="block"> 
+           <span>返回<code>true</code>当且仅当所有<a href="EventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutor.html" title="io.netty.util.concurrent中的接口"><code>EventExecutor</code></a>由该被管小号<a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="io.netty.util.concurrent中的接口"><code>EventExecutorGroup</code></a>正在<a href="EventExecutorGroup.html#shutdownGracefully--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#shutdownGracefully--">shut down gracefully</a>或者被关闭。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code><a href="EventExecutorGroup.html#isShuttingDown--" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html#isShuttingDown--">isShuttingDown</a></code> ，界面 
+            <code><a href="EventExecutorGroup.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/EventExecutorGroup.html" title="interface in io.netty.util.concurrent">EventExecutorGroup</a></code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isShutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isShutdown</h4> <pre>public&nbsp;boolean&nbsp;isShutdown()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isShutdown</code> ，界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="isTerminated--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>isTerminated</h4> <pre>public&nbsp;boolean&nbsp;isTerminated()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>isTerminated</code> ，界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="confirmShutdown--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>confirmShutdown</h4> <pre>protected&nbsp;boolean&nbsp;confirmShutdown()</pre> 
+          <div class="block">
+            确认实例应该立即关闭！ 
+          </div> </li> 
+        </ul> <a name="awaitTermination-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>awaitTermination</h4> <pre>public&nbsp;boolean&nbsp;awaitTermination(long&nbsp;timeout,
+                                java.util.concurrent.TimeUnit&nbsp;unit)
+                         throws java.lang.InterruptedException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>awaitTermination</code>接口 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="execute-java.lang.Runnable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>execute</h4> <pre>public&nbsp;void&nbsp;execute(java.lang.Runnable&nbsp;task)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>execute</code> ，界面 
+            <code>java.util.concurrent.Executor</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="invokeAny-java.util.Collection-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>invokeAny</h4> <pre>public&nbsp;&lt;T&gt;&nbsp;T&nbsp;invokeAny(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks)
+                throws java.lang.InterruptedException,
+                       java.util.concurrent.ExecutionException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAny</code> ，界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAny</code>在课堂 
+            <code>java.util.concurrent.AbstractExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+           <dd> 
+            <code>java.util.concurrent.ExecutionException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="invokeAny-java.util.Collection-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>invokeAny</h4> <pre>public&nbsp;&lt;T&gt;&nbsp;T&nbsp;invokeAny(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks,
+                       long&nbsp;timeout,
+                       java.util.concurrent.TimeUnit&nbsp;unit)
+                throws java.lang.InterruptedException,
+                       java.util.concurrent.ExecutionException,
+                       java.util.concurrent.TimeoutException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAny</code> ，界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAny</code>在课堂 
+            <code>java.util.concurrent.AbstractExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+           <dd> 
+            <code>java.util.concurrent.ExecutionException</code> 
+           </dd> 
+           <dd> 
+            <code>java.util.concurrent.TimeoutException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="invokeAll-java.util.Collection-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>invokeAll</h4> <pre>public&nbsp;&lt;T&gt;&nbsp;java.util.List&lt;java.util.concurrent.Future&lt;T&gt;&gt;&nbsp;invokeAll(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks)
+                                                             throws java.lang.InterruptedException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAll</code> ，界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAll</code>在课堂 
+            <code>java.util.concurrent.AbstractExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="invokeAll-java.util.Collection-long-java.util.concurrent.TimeUnit-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>invokeAll</h4> <pre>public&nbsp;&lt;T&gt;&nbsp;java.util.List&lt;java.util.concurrent.Future&lt;T&gt;&gt;&nbsp;invokeAll(java.util.Collection&lt;? extends java.util.concurrent.Callable&lt;T&gt;&gt;&nbsp;tasks,
+                                                                    long&nbsp;timeout,
+                                                                    java.util.concurrent.TimeUnit&nbsp;unit)
+                                                             throws java.lang.InterruptedException</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAll</code> ，界面 
+            <code>java.util.concurrent.ExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>invokeAll</code>在课堂 
+            <code>java.util.concurrent.AbstractExecutorService</code> 
+           </dd> 
+           <dt> 
+            <span class="throwsLabel">异常</span> 
+           </dt> 
+           <dd> 
+            <code>java.lang.InterruptedException</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="threadProperties--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>threadProperties</h4> <pre>public final&nbsp;<a href="ThreadProperties.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ThreadProperties.html" title="interface in io.netty.util.concurrent">ThreadProperties</a>&nbsp;threadProperties()</pre> 
+          <div class="block"> 
+           <span>返回支持<a href="ThreadProperties.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ThreadProperties.html" title="io.netty.util.concurrent中的接口"><code>SingleThreadEventExecutor</code></a>的<code>Thread</code>的<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>ThreadProperties</code></a> 。</span> 
+           <span>如果<a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" title="class in io.netty.util.concurrent"><code>SingleThreadEventExecutor</code></a>尚未启动，此操作将启动它并阻塞，直到它完全启动。</span> 
+          </div> </li> 
+        </ul> <a name="wakesUpForTask-java.lang.Runnable-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>wakesUpForTask</h4> <pre>protected&nbsp;boolean&nbsp;wakesUpForTask(java.lang.Runnable&nbsp;task)</pre> </li> 
+        </ul> <a name="reject--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>reject</h4> <pre>protected static&nbsp;void&nbsp;reject()</pre> </li> 
+        </ul> <a name="reject-java.lang.Runnable-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>reject</h4> <pre>protected final&nbsp;void&nbsp;reject(java.lang.Runnable&nbsp;task)</pre> 
+          <div class="block"> 
+           <span>将任务提供给关联的<a href="RejectedExecutionHandler.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/RejectedExecutionHandler.html" title="io.netty.util.concurrent中的接口"><code>RejectedExecutionHandler</code></a> 。</span> 
+          </div> 
+          <dl> 
+           <dt> 
+            <span class="paramLabel">参数</span> 
+           </dt> 
+           <dd> 
+            <code>task</code> - 拒绝。 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/class-use/SingleThreadEventExecutor.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="ScheduledFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/ScheduledFuture.html" title="interface in io.netty.util.concurrent"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="SucceededFuture.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SucceededFuture.html" title="class in io.netty.util.concurrent"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-util-concurrent-SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/util/concurrent/SingleThreadEventExecutor.html" target="_top">框架</a></li> 
+    <li><a href="SingleThreadEventExecutor.html" tppabs="http://netty.io/4.1/api/io/netty/util/concurrent/SingleThreadEventExecutor.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/util/concurrent/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

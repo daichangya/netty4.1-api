@@ -1,0 +1,983 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>DnsRecordType (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.codec.dns.DnsRecordType class"> 
+  <meta name="keywords" content="A"> 
+  <meta name="keywords" content="NS"> 
+  <meta name="keywords" content="CNAME"> 
+  <meta name="keywords" content="SOA"> 
+  <meta name="keywords" content="PTR"> 
+  <meta name="keywords" content="MX"> 
+  <meta name="keywords" content="TXT"> 
+  <meta name="keywords" content="RP"> 
+  <meta name="keywords" content="AFSDB"> 
+  <meta name="keywords" content="SIG"> 
+  <meta name="keywords" content="KEY"> 
+  <meta name="keywords" content="AAAA"> 
+  <meta name="keywords" content="LOC"> 
+  <meta name="keywords" content="SRV"> 
+  <meta name="keywords" content="NAPTR"> 
+  <meta name="keywords" content="KX"> 
+  <meta name="keywords" content="CERT"> 
+  <meta name="keywords" content="DNAME"> 
+  <meta name="keywords" content="OPT"> 
+  <meta name="keywords" content="APL"> 
+  <meta name="keywords" content="DS"> 
+  <meta name="keywords" content="SSHFP"> 
+  <meta name="keywords" content="IPSECKEY"> 
+  <meta name="keywords" content="RRSIG"> 
+  <meta name="keywords" content="NSEC"> 
+  <meta name="keywords" content="DNSKEY"> 
+  <meta name="keywords" content="DHCID"> 
+  <meta name="keywords" content="NSEC3"> 
+  <meta name="keywords" content="NSEC3PARAM"> 
+  <meta name="keywords" content="TLSA"> 
+  <meta name="keywords" content="HIP"> 
+  <meta name="keywords" content="SPF"> 
+  <meta name="keywords" content="TKEY"> 
+  <meta name="keywords" content="TSIG"> 
+  <meta name="keywords" content="IXFR"> 
+  <meta name="keywords" content="AXFR"> 
+  <meta name="keywords" content="ANY"> 
+  <meta name="keywords" content="CAA"> 
+  <meta name="keywords" content="TA"> 
+  <meta name="keywords" content="DLV"> 
+  <meta name="keywords" content="valueOf()"> 
+  <meta name="keywords" content="name()"> 
+  <meta name="keywords" content="intValue()"> 
+  <meta name="keywords" content="hashCode()"> 
+  <meta name="keywords" content="equals()"> 
+  <meta name="keywords" content="compareTo()"> 
+  <meta name="keywords" content="toString()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DnsRecordType (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9};
+var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/class-use/DnsRecordType.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DnsRecordEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordEncoder.html" title="interface in io.netty.handler.codec.dns"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-dns-DnsRecordType.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/dns/DnsRecordType.html" target="_top">框架</a></li> 
+    <li><a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.codec.dns 
+   </div> 
+   <h2 title="Class DnsRecordType" class="title">Class DnsRecordType</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.codec.dns.DnsRecordType</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <dl> 
+       <dt>
+         All Implemented Interfaces: 
+       </dt> 
+       <dd> 
+        <span>java.lang.Comparable &lt; <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> &gt;</span> 
+       </dd> 
+      </dl> 
+      <hr> <br> <pre>@UnstableApi
+public class <span class="typeNameLabel">DnsRecordType</span>
+extends java.lang.Object
+implements java.lang.Comparable&lt;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a>&gt;</pre> 
+      <div class="block">
+        代表DNS记录类型。 
+      </div> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.summary"> </a> <h3>Field Summary</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation"> 
+         <caption> 
+          <span>Fields</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Field and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#A" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#A">A</a></span></code> 
+            <div class="block">
+              地址记录RFC 1035返回32位IPv4地址，最常用于将主机名映射到主机的IP地址，但也用于DNSBL，在RFC 1101中存储子网掩码等。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#AAAA" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#AAAA">AAAA</a></span></code> 
+            <div class="block">
+              IPv6地址记录RFC 3596返回一个128位的IPv6地址，最常用于将主机名映射到主机的IP地址。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#AFSDB" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#AFSDB">AFSDB</a></span></code> 
+            <div class="block">
+              AFS数据库记录RFC 1183 AFS单元的数据库服务器的位置。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#ANY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#ANY">ANY</a></span></code> 
+            <div class="block">
+              所有缓存的记录RFC 1035返回名称服务器已知的所有类型的所有记录。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#APL" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#APL">APL</a></span></code> 
+            <div class="block">
+              地址前缀列表记录RFC 3123指定地址范围列表，例如 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#AXFR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#AXFR">AXFR</a></span></code> 
+            <div class="block">
+              权威性区域传输记录RFC 1035将整个区域文件从主名称服务器传输到辅助名称服务器。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#CAA" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#CAA">CAA</a></span></code> 
+            <div class="block">
+              证书颁发机构授权记录RFC 6844 CA固定，约束主机/域的可接受CA. 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#CERT" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#CERT">CERT</a></span></code> 
+            <div class="block">
+              证书记录RFC 4398存储PKIX，SPKI，PGP等 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#CNAME" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#CNAME">CNAME</a></span></code> 
+            <div class="block">
+              规范名称记录RFC 1035一个名称的别名到另一个名称：DNS查找将继续通过用新名称重试查找。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#DHCID" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#DHCID">DHCID</a></span></code> 
+            <div class="block">
+              DHCP标识符记录RFC 4701与DHCP的FQDN选项一起使用。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#DLV" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#DLV">DLV</a></span></code> 
+            <div class="block">
+              DNSSEC旁视验证记录RFC 4431用于在DNS委派链之外发布DNSSEC信任锚。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#DNAME" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#DNAME">DNAME</a></span></code> 
+            <div class="block">
+              代理名称记录RFC 2672 DNAME为名称及其所有子名称创建别名，与CNAME不同，CNAME只标记其标签中的确切名称。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#DNSKEY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#DNSKEY">DNSKEY</a></span></code> 
+            <div class="block">
+              DNS密钥记录RFC 4034 DNSSEC中使用的密钥记录。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#DS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#DS">DS</a></span></code> 
+            <div class="block">
+              代表签名人记录RFC 4034该记录用于标识委派区域的DNSSEC签名密钥。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#HIP" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#HIP">HIP</a></span></code> 
+            <div class="block">
+              主机标识协议记录RFC 5205分离IP地址的端点标识符和定位器角色的方法。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#IPSECKEY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#IPSECKEY">IPSECKEY</a></span></code> 
+            <div class="block">
+              IPsec密钥记录RFC 4025可用于IPsec的密钥记录。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#IXFR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#IXFR">IXFR</a></span></code> 
+            <div class="block">
+              增量区域转移记录RFC 1996请求区域传输给定区域，但仅与先前的序列号不同。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#KEY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#KEY">KEY</a></span></code> 
+            <div class="block">
+              关键记录RFC 2535和RFC 2930仅用于SIG（0）（RFC 2931）和TKEY（RFC 2930）。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#KX" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#KX">KX</a></span></code> 
+            <div class="block">
+              主要eXchanger记录RFC 2230与某些加密系统（不包括DNSSEC）一起使用，以识别关联的域名的密钥管理代理。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#LOC" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#LOC">LOC</a></span></code> 
+            <div class="block">
+              位置记录RFC 1876指定与域名关联的地理位置。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#MX" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#MX">MX</a></span></code> 
+            <div class="block">
+              邮件交换记录RFC 1035将域名映射到该域的邮件传输代理列表。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#NAPTR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#NAPTR">NAPTR</a></span></code> 
+            <div class="block">
+              命名规范指针记录RFC 3403允许基于正则表达式的域名重写，然后可以将其用作URI，进一步的域名查找等。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#NS" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#NS">NS</a></span></code> 
+            <div class="block">
+              名称服务器记录RFC 1035委托DNS区域使用给定的权威名称服务器 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#NSEC" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#NSEC">NSEC</a></span></code> 
+            <div class="block">
+              Next-Secure记录RFC 4034 DNSSEC的一部分，用于证明名称不存在。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#NSEC3" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#NSEC3">NSEC3</a></span></code> 
+            <div class="block">
+              NSEC记录版本3 RFC 5155 DNSSEC的扩展，允许在不允许区域漫游的情况下证明不存在名称。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#NSEC3PARAM" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#NSEC3PARAM">NSEC3PARAM</a></span></code> 
+            <div class="block">
+              NSEC3参数记录用于NSEC3的RFC 5155参数记录。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#OPT" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#OPT">OPT</a></span></code> 
+            <div class="block">
+              选项记录RFC 2671这是支持EDNS所需的伪DNS记录类型。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#PTR" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#PTR">PTR</a></span></code> 
+            <div class="block">
+              指针记录RFC 1035指向规范名称的指针。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#RP" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#RP">RP</a></span></code> 
+            <div class="block">
+              负责人记录RFC 1183关于域名负责人的信息。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#RRSIG" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#RRSIG">RRSIG</a></span></code> 
+            <div class="block">
+              DNSSEC签名记录用于DNSSEC保护的记录集的RFC 4034签名。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#SIG" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#SIG">SIG</a></span></code> 
+            <div class="block">
+              SIG（0）（RFC 2931）和TKEY（RFC 2930）中使用的签名记录RFC 2535签名记录。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#SOA" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#SOA">SOA</a></span></code> 
+            <div class="block">
+              RFC 1035和RFC 2308的[区域]的开始指定有关DNS区域的权威信息，包括主名称服务器，域管理员的电子邮件，域序列号以及与刷新区域有关的多个定时器。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#SPF" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#SPF">SPF</a></span></code> 
+            <div class="block">
+              发件人策略框架记录RFC 4408作为将SPF数据存储在TXT记录中的替代方案，指定为SPF协议的一部分。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#SRV" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#SRV">SRV</a></span></code> 
+            <div class="block">
+              服务定位器RFC 2782通用服务位置记录，用于较新的协议，而不是创建协议特定的记录（如MX）。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#SSHFP" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#SSHFP">SSHFP</a></span></code> 
+            <div class="block">
+              SSH公钥指纹记录用于在DNS系统中发布SSH公钥主指纹的RFC 4255资源记录，以帮助验证主机的真实性。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#TA" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#TA">TA</a></span></code> 
+            <div class="block">
+              DNSSEC信任机构记录N / A DNSSEC部署提议的一部分，不包含签名的DNS根目录。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#TKEY" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#TKEY">TKEY</a></span></code> 
+            <div class="block">
+              密钥记录RFC 2930一种提供密钥资料的方法，与伴随的KEY RR中的公共密钥一起使用的TSIG使用。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#TLSA" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#TLSA">TLSA</a></span></code> 
+            <div class="block">
+              TLSA证书关联记录RFC 6698用于命名实体（DANE）的基于DNS的身份验证的记录。 
+            </div> </td> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#TSIG" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#TSIG">TSIG</a></span></code> 
+            <div class="block">
+              事务签名记录RFC 2845可用于验证来自已批准客户端的动态更新，或者验证来自类似于DNSSEC的已批准递归名称服务器的响应。 
+            </div> </td> 
+          </tr> 
+          <tr class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#TXT" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#TXT">TXT</a></span></code> 
+            <div class="block">
+              文本记录RFC 1035最初用于DNS记录中的任意人类可读文本。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.summary"> </a> <h3>构造方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation"> 
+         <caption> 
+          <span>构造方法</span> 
+          <span class="tabEnd">&nbsp;</span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colOne" scope="col">Constructor and Description</th> 
+          </tr> 
+          <tr class="altColor"> 
+           <td class="colOne"><code><span class="memberNameLink"><a href="DnsRecordType.html#DnsRecordType-int-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#DnsRecordType-int-java.lang.String-">DnsRecordType</a></span>(int&nbsp;intValue, java.lang.String&nbsp;name)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t1" class="tableTab"><span><a href="javascript:show(1);">静态方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#compareTo-io.netty.handler.codec.dns.DnsRecordType-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#compareTo-io.netty.handler.codec.dns.DnsRecordType-">compareTo</a></span>(<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a>&nbsp;o)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>boolean</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#equals-java.lang.Object-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;o)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#hashCode--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>int</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#intValue--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#intValue--">intValue</a></span>()</code> 
+            <div class="block">
+              返回此DNS类型出现在DNS协议中的值 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#name--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#name--">name</a></span>()</code> 
+            <div class="block">
+              返回此类型的名称，如绑定配置文件中所示 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>java.lang.String</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#toString--" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#toString--">toString</a></span>()</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#valueOf-int-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#valueOf-int-">valueOf</a></span>(int&nbsp;intValue)</code>&nbsp;</td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>static <a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a></code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="DnsRecordType.html#valueOf-java.lang.String-" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html#valueOf-java.lang.String-">valueOf</a></span>(java.lang.String&nbsp;name)</code>&nbsp;</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="field.detail"> </a> <h3>字段详细信息</h3> <a name="A"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>A</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> A</pre> 
+          <div class="block">
+            地址记录RFC 1035返回32位IPv4地址，最常用于将主机名映射到主机的IP地址，但也用于DNSBL，在RFC 1101中存储子网掩码等。 
+          </div> </li> 
+        </ul> <a name="NS"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NS</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> NS</pre> 
+          <div class="block">
+            名称服务器记录RFC 1035委托DNS区域使用给定的权威名称服务器 
+          </div> </li> 
+        </ul> <a name="CNAME"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>CNAME</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> CNAME</pre> 
+          <div class="block">
+            规范名称记录RFC 1035一个名称的别名到另一个名称：DNS查找将继续通过用新名称重试查找。 
+          </div> </li> 
+        </ul> <a name="SOA"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SOA</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> SOA</pre> 
+          <div class="block">
+            RFC 1035和RFC 2308的[区域]的开始指定有关DNS区域的权威信息，包括主名称服务器，域管理员的电子邮件，域序列号以及与刷新区域有关的多个定时器。 
+          </div> </li> 
+        </ul> <a name="PTR"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>PTR</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> PTR</pre> 
+          <div class="block"> 
+           <span>指针记录RFC 1035指向规范名称的指针。</span> 
+           <span>与CNAME不同，DNS处理不会继续，只是返回名称。</span> 
+           <span>最常见的用途是实现反向DNS查找，但其他用途包括DNS-SD等。</span> 
+          </div> </li> 
+        </ul> <a name="MX"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>MX</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> MX</pre> 
+          <div class="block">
+            邮件交换记录RFC 1035将域名映射到该域的邮件传输代理列表。 
+          </div> </li> 
+        </ul> <a name="TXT"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>TXT</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> TXT</pre> 
+          <div class="block"> 
+           <span>文本记录RFC 1035最初用于DNS记录中的任意人类可读文本。</span> 
+           <span>然而，自20世纪90年代初以来，该记录更多地携带机器可读数据，如RFC 1464，机会加密，发送者策略框架，DKIM，DMARC DNS-SD等指定的数据。</span> 
+          </div> </li> 
+        </ul> <a name="RP"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>RP</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> RP</pre> 
+          <div class="block"> 
+           <span>负责人记录RFC 1183关于域名负责人的信息。</span> 
+           <span>通常用@替换为@的电子邮件地址。</span> 
+          </div> </li> 
+        </ul> <a name="AFSDB"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>AFSDB</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> AFSDB</pre> 
+          <div class="block"> 
+           <span>AFS数据库记录RFC 1183 AFS单元的数据库服务器的位置。</span> 
+           <span>此记录通常由AFS客户端用于联系本地域外的AFS单元。</span> 
+           <span>该记录的子类型由过时的DCE / DFS文件系统使用。</span> 
+          </div> </li> 
+        </ul> <a name="SIG"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SIG</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> SIG</pre> 
+          <div class="block"> 
+           <span>SIG（0）（RFC 2931）和TKEY（RFC 2930）中使用的签名记录RFC 2535签名记录。</span> 
+           <span>RFC 3755指定RRSIG作为在DNSSEC中使用的SIG的替代品。</span> 
+          </div> </li> 
+        </ul> <a name="KEY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>KEY</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> KEY</pre> 
+          <div class="block"> 
+           <span>关键记录RFC 2535和RFC 2930仅用于SIG（0）（RFC 2931）和TKEY（RFC 2930）。</span> 
+           <span>RFC 3445取消了应用程序密钥的使用，并将其用于DNSSEC。</span> 
+           <span>RFC 3755指定DNSKEY作为DNSSEC内的替代品。</span> 
+           <span>RFC 4025指定IPSECKEY作为IPsec使用的替代品。</span> 
+          </div> </li> 
+        </ul> <a name="AAAA"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>AAAA</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> AAAA</pre> 
+          <div class="block">
+            IPv6地址记录RFC 3596返回一个128位的IPv6地址，最常用于将主机名映射到主机的IP地址。 
+          </div> </li> 
+        </ul> <a name="LOC"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>LOC</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> LOC</pre> 
+          <div class="block">
+            位置记录RFC 1876指定与域名关联的地理位置。 
+          </div> </li> 
+        </ul> <a name="SRV"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SRV</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> SRV</pre> 
+          <div class="block">
+            服务定位器RFC 2782通用服务位置记录，用于较新的协议，而不是创建协议特定的记录（如MX）。 
+          </div> </li> 
+        </ul> <a name="NAPTR"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NAPTR</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> NAPTR</pre> 
+          <div class="block">
+            命名规范指针记录RFC 3403允许基于正则表达式的域名重写，然后可以将其用作URI，进一步的域名查找等。 
+          </div> </li> 
+        </ul> <a name="KX"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>KX</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> KX</pre> 
+          <div class="block"> 
+           <span>主要eXchanger记录RFC 2230与某些加密系统（不包括DNSSEC）一起使用，以识别关联的域名的密钥管理代理。</span> 
+           <span>请注意，这与DNS安全无关。</span> 
+           <span>它是信息性的地位，而不是IETF的标准轨道。</span> 
+           <span>它一直有限的部署，但仍在使用中。</span> 
+          </div> </li> 
+        </ul> <a name="CERT"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>CERT</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> CERT</pre> 
+          <div class="block">
+            证书记录RFC 4398存储PKIX，SPKI，PGP等 
+          </div> </li> 
+        </ul> <a name="DNAME"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DNAME</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> DNAME</pre> 
+          <div class="block"> 
+           <span>代理名称记录RFC 2672 DNAME为名称及其所有子名称创建别名，与CNAME不同，CNAME只标记其标签中的确切名称。</span> 
+           <span>与CNAME记录一样，DNS查找将继续以新名称重试查找。</span> 
+          </div> </li> 
+        </ul> <a name="OPT"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>OPT</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> OPT</pre> 
+          <div class="block">
+            选项记录RFC 2671这是支持EDNS所需的伪DNS记录类型。 
+          </div> </li> 
+        </ul> <a name="APL"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>APL</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> APL</pre> 
+          <div class="block"> 
+           <span>地址前缀列表记录RFC 3123指定不同地址系列的地址范围列表，例如CIDR格式。</span> 
+           <span>实验。</span> 
+          </div> </li> 
+        </ul> <a name="DS"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DS</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> DS</pre> 
+          <div class="block">
+            代表签名人记录RFC 4034该记录用于标识委派区域的DNSSEC签名密钥。 
+          </div> </li> 
+        </ul> <a name="SSHFP"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SSHFP</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> SSHFP</pre> 
+          <div class="block"> 
+           <span>SSH公钥指纹记录用于在DNS系统中发布SSH公钥主指纹的RFC 4255资源记录，以帮助验证主机的真实性。</span> 
+           <span>RFC 6594定义了ECC SSH密钥和SHA-256哈希。</span> 
+           <span>有关详细信息，请参阅IANA SSHFP RR参数注册表。</span> 
+          </div> </li> 
+        </ul> <a name="IPSECKEY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>IPSECKEY</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> IPSECKEY</pre> 
+          <div class="block">
+            IPsec密钥记录RFC 4025可用于IPsec的密钥记录。 
+          </div> </li> 
+        </ul> <a name="RRSIG"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>RRSIG</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> RRSIG</pre> 
+          <div class="block"> 
+           <span>DNSSEC签名记录用于DNSSEC保护的记录集的RFC 4034签名。</span> 
+           <span>使用与SIG记录相同的格式。</span> 
+          </div> </li> 
+        </ul> <a name="NSEC"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NSEC</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> NSEC</pre> 
+          <div class="block"> 
+           <span>Next-Secure记录RFC 4034 DNSSEC的一部分，用于证明名称不存在。</span> 
+           <span>使用与（过时的）NXT记录相同的格式。</span> 
+          </div> </li> 
+        </ul> <a name="DNSKEY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DNSKEY</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> DNSKEY</pre> 
+          <div class="block"> 
+           <span>DNS密钥记录RFC 4034 DNSSEC中使用的密钥记录。</span> 
+           <span>使用与KEY记录相同的格式。</span> 
+          </div> </li> 
+        </ul> <a name="DHCID"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>DHCID</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> DHCID</pre> 
+          <div class="block">
+            DHCP标识符记录RFC 4701与DHCP的FQDN选项一起使用。 
+          </div> </li> 
+        </ul> <a name="NSEC3"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NSEC3</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> NSEC3</pre> 
+          <div class="block">
+            NSEC记录版本3 RFC 5155 DNSSEC的扩展，允许在不允许区域漫游的情况下证明不存在名称。 
+          </div> </li> 
+        </ul> <a name="NSEC3PARAM"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>NSEC3PARAM</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> NSEC3PARAM</pre> 
+          <div class="block">
+            NSEC3参数记录用于NSEC3的RFC 5155参数记录。 
+          </div> </li> 
+        </ul> <a name="TLSA"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>TLSA</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> TLSA</pre> 
+          <div class="block"> 
+           <span>TLSA证书关联记录RFC 6698用于命名实体（DANE）的基于DNS的身份验证的记录。</span> 
+           <span>RFC 6698定义TLSA DNS资源记录用于将TLS服务器证书或公钥与记录找到的域名相关联，从而形成'TLSA证书关联'。</span> 
+          </div> </li> 
+        </ul> <a name="HIP"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>HIP</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> HIP</pre> 
+          <div class="block">
+            主机标识协议记录RFC 5205分离IP地址的端点标识符和定位器角色的方法。 
+          </div> </li> 
+        </ul> <a name="SPF"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>SPF</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> SPF</pre> 
+          <div class="block"> 
+           <span>发件人策略框架记录RFC 4408作为将SPF数据存储在TXT记录中的替代方案，指定为SPF协议的一部分。</span> 
+           <span>使用与早期TXT记录相同的格式。</span> 
+          </div> </li> 
+        </ul> <a name="TKEY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>TKEY</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> TKEY</pre> 
+          <div class="block">
+            密钥记录RFC 2930一种提供密钥资料的方法，与伴随的KEY RR中的公共密钥一起使用的TSIG使用。 
+          </div> </li> 
+        </ul> <a name="TSIG"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>TSIG</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> TSIG</pre> 
+          <div class="block">
+            事务签名记录RFC 2845可用于验证来自已批准客户端的动态更新，或者验证来自类似于DNSSEC的已批准递归名称服务器的响应。 
+          </div> </li> 
+        </ul> <a name="IXFR"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>IXFR</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> IXFR</pre> 
+          <div class="block"> 
+           <span>增量区域转移记录RFC 1996请求区域传输给定区域，但仅与先前的序列号不同。</span> 
+           <span>如果授权服务器由于配置或缺少必需的增量而无法满足请求，则可能会忽略此请求并发送完整（AXFR）响应。</span> 
+          </div> </li> 
+        </ul> <a name="AXFR"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>AXFR</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> AXFR</pre> 
+          <div class="block">
+            权威性区域传输记录RFC 1035将整个区域文件从主名称服务器传输到辅助名称服务器。 
+          </div> </li> 
+        </ul> <a name="ANY"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ANY</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> ANY</pre> 
+          <div class="block"> 
+           <span>所有缓存的记录RFC 1035返回名称服务器已知的所有类型的所有记录。</span> 
+           <span>如果名称服务器没有关于名称的任何信息，则请求将被转发。</span> 
+           <span>返回的记录可能不完整。</span> 
+           <span>例如，如果名称同时包含A和MX，但名称服务器只缓存了A记录，则只会返回A记录。</span> 
+           <span>有时称为ANY，例如在Windows nslookup和Wireshark中。</span> 
+          </div> </li> 
+        </ul> <a name="CAA"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>CAA</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> CAA</pre> 
+          <div class="block">
+            证书颁发机构授权记录RFC 6844 CA固定，约束主机/域的可接受CA. 
+          </div> </li> 
+        </ul> <a name="TA"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>TA</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> TA</pre> 
+          <div class="block"> 
+           <span>DNSSEC信任机构记录N / A DNSSEC部署提议的一部分，不包含签名的DNS根目录。</span> 
+           <span>有关详细信息，请参阅IANA数据库和Weiler规范。</span> 
+           <span>使用与DS记录相同的格式。</span> 
+          </div> </li> 
+        </ul> <a name="DLV"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DLV</h4> <pre>public static final&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a> DLV</pre> 
+          <div class="block"> 
+           <span>DNSSEC旁视验证记录RFC 4431用于在DNS委派链之外发布DNSSEC信任锚。</span> 
+           <span>使用与DS记录相同的格式。</span> 
+           <span>RFC 5074描述了一种使用这些记录的方法。</span> 
+          </div> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="constructor.detail"> </a> <h3>构造方法详细信息</h3> <a name="DnsRecordType-int-java.lang.String-"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>DnsRecordType</h4> <pre>public&nbsp;DnsRecordType(int&nbsp;intValue,
+                     java.lang.String&nbsp;name)</pre> </li> 
+        </ul> </li> 
+      </ul> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="valueOf-int-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>valueOf</h4> <pre>public static&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a>&nbsp;valueOf(int&nbsp;intValue)</pre> </li> 
+        </ul> <a name="valueOf-java.lang.String-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>valueOf</h4> <pre>public static&nbsp;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a>&nbsp;valueOf(java.lang.String&nbsp;name)</pre> </li> 
+        </ul> <a name="name--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>name</h4> <pre>public&nbsp;java.lang.String&nbsp;name()</pre> 
+          <div class="block">
+            返回此类型的名称，如绑定配置文件中所示 
+          </div> </li> 
+        </ul> <a name="intValue--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>intValue</h4> <pre>public&nbsp;int&nbsp;intValue()</pre> 
+          <div class="block">
+            返回此DNS类型出现在DNS协议中的值 
+          </div> </li> 
+        </ul> <a name="hashCode--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hashCode</h4> <pre>public&nbsp;int&nbsp;hashCode()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>hashCode</code> 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="equals-java.lang.Object-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>equals</h4> <pre>public&nbsp;boolean&nbsp;equals(java.lang.Object&nbsp;o)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>equals</code> 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="compareTo-io.netty.handler.codec.dns.DnsRecordType-"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>compareTo</h4> <pre>public&nbsp;int&nbsp;compareTo(<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a>&nbsp;o)</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">Specified by:</span> 
+           </dt> 
+           <dd> 
+            <code>compareTo</code>在界面 
+            <code>java.lang.Comparable&lt;<a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" title="class in io.netty.handler.codec.dns">DnsRecordType</a>&gt;</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> <a name="toString--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>toString</h4> <pre>public&nbsp;java.lang.String&nbsp;toString()</pre> 
+          <dl> 
+           <dt> 
+            <span class="overrideSpecifyLabel">重写：</span> 
+           </dt> 
+           <dd> 
+            <code>toString</code>在课程 
+            <code>java.lang.Object</code> 
+           </dd> 
+          </dl> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/class-use/DnsRecordType.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="DnsRecordEncoder.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordEncoder.html" title="interface in io.netty.handler.codec.dns"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="DnsResponse.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponse.html" title="interface in io.netty.handler.codec.dns"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-handler-codec-dns-DnsRecordType.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/codec/dns/DnsRecordType.html" target="_top">框架</a></li> 
+    <li><a href="DnsRecordType.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsRecordType.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.summary">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#constructor.detail">构造方法</a>&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/codec/dns/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

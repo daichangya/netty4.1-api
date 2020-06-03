@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Interface io.netty.channel.socket.DatagramChannelConfig (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Interface io.netty.channel.socket.DatagramChannelConfig (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">软件包</a></li> 
+    <li><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-channel-socket-class-use-DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/socket/class-use/DatagramChannelConfig.html" target="_top">框架</a></li> 
+    <li><a href="DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/class-use/DatagramChannelConfig.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h2 title="Uses of Interface io.netty.channel.socket.DatagramChannelConfig" class="title">Uses of Interface<br>io.netty.channel.socket.DatagramChannelConfig</h2> 
+  </div> 
+  <div class="classUseContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.epoll">io.netty.channel.epoll</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           针对linux的优化传输，使用 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/Epoll  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/Epoll'" tppabs="http://en.wikipedia.org/wiki/Epoll">EPOLL Edge-Triggered Mode</a>获得最高性能。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.kqueue">io.netty.channel.kqueue</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           BSD专用运输。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket">io.netty.channel.socket</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           抽象扩展核心通道API的TCP和UDP套接字接口。 
+         </div> </td> 
+       </tr> 
+       <tr class="rowColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket.nio">io.netty.channel.socket.nio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           基于 
+          <a href="javascript:if(confirm('http://en.wikipedia.org/wiki/New_I/O  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='http://en.wikipedia.org/wiki/New_I/O'" tppabs="http://en.wikipedia.org/wiki/New_I/O">NIO</a>的套接字通道API实现 - 建议用于大量连接（&gt; = 1000）。 
+         </div> </td> 
+       </tr> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.channel.socket.oio">io.netty.channel.socket.oio</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           旧阻塞基于I / O的套接字通道API实现 - 建议少量连接（&lt;1000）。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <ul class="blockList"> 
+      <li class="blockList"><a name="io.netty.channel.epoll"> </a> <h3>Uses of <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a> in <a href="../../epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+        <caption> 
+         <span>Classes in <a href="../../epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a> that implement <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../epoll/EpollDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollDatagramChannelConfig.html" title="class in io.netty.channel.epoll">EpollDatagramChannelConfig</a></span></code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../epoll/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/package-summary.html">io.netty.channel.epoll</a> that return <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">EpollDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../epoll/EpollDatagramChannelConfig.html#setLoopbackModeDisabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/epoll/EpollDatagramChannelConfig.html#setLoopbackModeDisabled-boolean-">setLoopbackModeDisabled</a></span>(boolean&nbsp;loopbackModeDisabled)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.kqueue"> </a> <h3>Uses of <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a> in <a href="../../kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+        <caption> 
+         <span>Classes in <a href="../../kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a> that implement <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../../kqueue/KQueueDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueDatagramChannelConfig.html" title="class in io.netty.channel.kqueue">KQueueDatagramChannelConfig</a></span></code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../../kqueue/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/package-summary.html">io.netty.channel.kqueue</a> that return <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">KQueueDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../../kqueue/KQueueDatagramChannelConfig.html#setLoopbackModeDisabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/kqueue/KQueueDatagramChannelConfig.html#setLoopbackModeDisabled-boolean-">setLoopbackModeDisabled</a></span>(boolean&nbsp;loopbackModeDisabled)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.socket"> </a> <h3>Uses of <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a> in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">io.netty.channel.socket</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+        <caption> 
+         <span>Classes in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">io.netty.channel.socket</a> that implement <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html" title="class in io.netty.channel.socket">DefaultDatagramChannelConfig</a></span></code> 
+           <div class="block"> 
+            <span>默认的<a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="io.netty.channel.socket中的接口"><code>DatagramChannelConfig</code></a>实现。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">io.netty.channel.socket</a> that return <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannel.</span><code><span class="memberNameLink"><a href="../DatagramChannel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannel.html#config--">config</a></span>()</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setAllocator-io.netty.buffer.ByteBufAllocator-">setAllocator</a></span>(<a href="../../../buffer/ByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/buffer/ByteBufAllocator.html" title="interface in io.netty.buffer">ByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setAutoClose-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setAutoClose-boolean-">setAutoClose</a></span>(boolean&nbsp;autoClose)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setAutoClose-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setAutoClose-boolean-">setAutoClose</a></span>(boolean&nbsp;autoClose)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setAutoRead-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setAutoRead-boolean-">setAutoRead</a></span>(boolean&nbsp;autoRead)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setAutoRead-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setAutoRead-boolean-">setAutoRead</a></span>(boolean&nbsp;autoRead)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setBroadcast-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setBroadcast-boolean-">setBroadcast</a></span>(boolean&nbsp;broadcast)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setBroadcast-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setBroadcast-boolean-">setBroadcast</a></span>(boolean&nbsp;broadcast)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.SO_BROADCAST</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setConnectTimeoutMillis-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setConnectTimeoutMillis-int-">setConnectTimeoutMillis</a></span>(int&nbsp;connectTimeoutMillis)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setConnectTimeoutMillis-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setConnectTimeoutMillis-int-">setConnectTimeoutMillis</a></span>(int&nbsp;connectTimeoutMillis)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setInterface-java.net.InetAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setInterface-java.net.InetAddress-">setInterface</a></span>(java.net.InetAddress&nbsp;interfaceAddress)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setInterface-java.net.InetAddress-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setInterface-java.net.InetAddress-">setInterface</a></span>(java.net.InetAddress&nbsp;interfaceAddress)</code> 
+           <div class="block">
+             设置用于多播数据包的网络接口的地址。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setLoopbackModeDisabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setLoopbackModeDisabled-boolean-">setLoopbackModeDisabled</a></span>(boolean&nbsp;loopbackModeDisabled)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setLoopbackModeDisabled-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setLoopbackModeDisabled-boolean-">setLoopbackModeDisabled</a></span>(boolean&nbsp;loopbackModeDisabled)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.IP_MULTICAST_LOOP</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setMaxMessagesPerRead-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setMaxMessagesPerRead-int-">setMaxMessagesPerRead</a></span>(int&nbsp;maxMessagesPerRead)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setMaxMessagesPerRead-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setMaxMessagesPerRead-int-">setMaxMessagesPerRead</a></span>(int&nbsp;maxMessagesPerRead)</code> 
+           <div class="block"> 
+            <span class="deprecatedLabel">已过时。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setMessageSizeEstimator-io.netty.channel.MessageSizeEstimator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setMessageSizeEstimator-io.netty.channel.MessageSizeEstimator-">setMessageSizeEstimator</a></span>(<a href="../../MessageSizeEstimator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MessageSizeEstimator.html" title="interface in io.netty.channel">MessageSizeEstimator</a>&nbsp;estimator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setMessageSizeEstimator-io.netty.channel.MessageSizeEstimator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setMessageSizeEstimator-io.netty.channel.MessageSizeEstimator-">setMessageSizeEstimator</a></span>(<a href="../../MessageSizeEstimator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/MessageSizeEstimator.html" title="interface in io.netty.channel">MessageSizeEstimator</a>&nbsp;estimator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setNetworkInterface-java.net.NetworkInterface-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setNetworkInterface-java.net.NetworkInterface-">setNetworkInterface</a></span>(java.net.NetworkInterface&nbsp;networkInterface)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setNetworkInterface-java.net.NetworkInterface-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setNetworkInterface-java.net.NetworkInterface-">setNetworkInterface</a></span>(java.net.NetworkInterface&nbsp;networkInterface)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.IP_MULTICAST_IF</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setReceiveBufferSize-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setReceiveBufferSize-int-">setReceiveBufferSize</a></span>(int&nbsp;receiveBufferSize)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setReceiveBufferSize-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setReceiveBufferSize-int-">setReceiveBufferSize</a></span>(int&nbsp;receiveBufferSize)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.SO_RCVBUF</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setRecvByteBufAllocator-io.netty.channel.RecvByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setRecvByteBufAllocator-io.netty.channel.RecvByteBufAllocator-">setRecvByteBufAllocator</a></span>(<a href="../../RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="interface in io.netty.channel">RecvByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setRecvByteBufAllocator-io.netty.channel.RecvByteBufAllocator-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setRecvByteBufAllocator-io.netty.channel.RecvByteBufAllocator-">setRecvByteBufAllocator</a></span>(<a href="../../RecvByteBufAllocator.html" tppabs="http://netty.io/4.1/api/io/netty/channel/RecvByteBufAllocator.html" title="interface in io.netty.channel">RecvByteBufAllocator</a>&nbsp;allocator)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setReuseAddress-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setReuseAddress-boolean-">setReuseAddress</a></span>(boolean&nbsp;reuseAddress)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setReuseAddress-boolean-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setReuseAddress-boolean-">setReuseAddress</a></span>(boolean&nbsp;reuseAddress)</code> 
+           <div class="block">
+             获取 
+            <code>StandardSocketOptions.SO_REUSEADDR</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setSendBufferSize-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setSendBufferSize-int-">setSendBufferSize</a></span>(int&nbsp;sendBufferSize)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setSendBufferSize-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setSendBufferSize-int-">setSendBufferSize</a></span>(int&nbsp;sendBufferSize)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.SO_SNDBUF</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setTimeToLive-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setTimeToLive-int-">setTimeToLive</a></span>(int&nbsp;ttl)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setTimeToLive-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setTimeToLive-int-">setTimeToLive</a></span>(int&nbsp;ttl)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.IP_MULTICAST_TTL</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setTrafficClass-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setTrafficClass-int-">setTrafficClass</a></span>(int&nbsp;trafficClass)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setTrafficClass-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setTrafficClass-int-">setTrafficClass</a></span>(int&nbsp;trafficClass)</code> 
+           <div class="block">
+             设置 
+            <code>StandardSocketOptions.IP_TOS</code>选项。 
+           </div> </td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setWriteBufferHighWaterMark-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setWriteBufferHighWaterMark-int-">setWriteBufferHighWaterMark</a></span>(int&nbsp;writeBufferHighWaterMark)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setWriteBufferLowWaterMark-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setWriteBufferLowWaterMark-int-">setWriteBufferLowWaterMark</a></span>(int&nbsp;writeBufferLowWaterMark)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setWriteBufferWaterMark-io.netty.channel.WriteBufferWaterMark-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setWriteBufferWaterMark-io.netty.channel.WriteBufferWaterMark-">setWriteBufferWaterMark</a></span>(<a href="../../WriteBufferWaterMark.html" tppabs="http://netty.io/4.1/api/io/netty/channel/WriteBufferWaterMark.html" title="class in io.netty.channel">WriteBufferWaterMark</a>&nbsp;writeBufferWaterMark)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setWriteBufferWaterMark-io.netty.channel.WriteBufferWaterMark-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setWriteBufferWaterMark-io.netty.channel.WriteBufferWaterMark-">setWriteBufferWaterMark</a></span>(<a href="../../WriteBufferWaterMark.html" tppabs="http://netty.io/4.1/api/io/netty/channel/WriteBufferWaterMark.html" title="class in io.netty.channel">WriteBufferWaterMark</a>&nbsp;writeBufferWaterMark)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DefaultDatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DefaultDatagramChannelConfig.html#setWriteSpinCount-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DefaultDatagramChannelConfig.html#setWriteSpinCount-int-">setWriteSpinCount</a></span>(int&nbsp;writeSpinCount)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DatagramChannelConfig.</span><code><span class="memberNameLink"><a href="../DatagramChannelConfig.html#setWriteSpinCount-int-" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html#setWriteSpinCount-int-">setWriteSpinCount</a></span>(int&nbsp;writeSpinCount)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.socket.nio"> </a> <h3>Uses of <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a> in <a href="../nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/nio/package-summary.html">io.netty.channel.socket.nio</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../nio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/nio/package-summary.html">io.netty.channel.socket.nio</a> that return <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">NioDatagramChannel.</span><code><span class="memberNameLink"><a href="../nio/NioDatagramChannel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/nio/NioDatagramChannel.html#config--">config</a></span>()</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+      <li class="blockList"><a name="io.netty.channel.socket.oio"> </a> <h3>Uses of <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a> in <a href="../oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/package-summary.html">io.netty.channel.socket.oio</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing subinterfaces, and an explanation"> 
+        <caption> 
+         <span>Subinterfaces of <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a> in <a href="../oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/package-summary.html">io.netty.channel.socket.oio</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Interface and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>interface&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../oio/OioDatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioDatagramChannelConfig.html" title="interface in io.netty.channel.socket.oio">OioDatagramChannelConfig</a></span></code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../oio/package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/package-summary.html">io.netty.channel.socket.oio</a> that return <a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">DatagramChannelConfig</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">OioDatagramChannel.</span><code><span class="memberNameLink"><a href="../oio/OioDatagramChannel.html#config--" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/oio/OioDatagramChannel.html#config--">config</a></span>()</code> 
+           <div class="block">
+             返回此频道的配置。 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-summary.html">软件包</a></li> 
+    <li><a href="../DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/DatagramChannelConfig.html" title="interface in io.netty.channel.socket">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-channel-socket-class-use-DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/channel/socket/class-use/DatagramChannelConfig.html" target="_top">框架</a></li> 
+    <li><a href="DatagramChannelConfig.html" tppabs="http://netty.io/4.1/api/io/netty/channel/socket/class-use/DatagramChannelConfig.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/channel/socket/class-use/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>Uses of Interface io.netty.resolver.dns.DnsQueryLifecycleObserver (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="Uses of Interface io.netty.resolver.dns.DnsQueryLifecycleObserver (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">软件包</a></li> 
+    <li><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-resolver-dns-class-use-DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/resolver/dns/class-use/DnsQueryLifecycleObserver.html" target="_top">框架</a></li> 
+    <li><a href="DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/class-use/DnsQueryLifecycleObserver.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <h2 title="Uses of Interface io.netty.resolver.dns.DnsQueryLifecycleObserver" class="title">Uses of Interface<br>io.netty.resolver.dns.DnsQueryLifecycleObserver</h2> 
+  </div> 
+  <div class="classUseContainer"> 
+   <ul class="blockList"> 
+    <li class="blockList"> 
+     <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing packages, and an explanation"> 
+      <caption> 
+       <span>Packages that use <a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></span> 
+       <span class="tabEnd">&nbsp;</span> 
+      </caption> 
+      <tbody> 
+       <tr> 
+        <th class="colFirst" scope="col">软件包</th> 
+        <th class="colLast" scope="col">描述</th> 
+       </tr> 
+      </tbody> 
+      <tbody> 
+       <tr class="altColor"> 
+        <td class="colFirst"><a href="#io.netty.resolver.dns">io.netty.resolver.dns</a></td> 
+        <td class="colLast"> 
+         <div class="block">
+           Java的内置域名查找机制的一种替代方法，可以异步解析域名，同样支持任意DNS记录类型的查询。 
+         </div> </td> 
+       </tr> 
+      </tbody> 
+     </table> </li> 
+    <li class="blockList"> 
+     <ul class="blockList"> 
+      <li class="blockList"><a name="io.netty.resolver.dns"> </a> <h3>Uses of <a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a> in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">io.netty.resolver.dns</a></h3> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing classes, and an explanation"> 
+        <caption> 
+         <span>Classes in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">io.netty.resolver.dns</a> that implement <a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Class and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code>class&nbsp;</code></td> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../BiDnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserver.html" title="class in io.netty.resolver.dns">BiDnsQueryLifecycleObserver</a></span></code> 
+           <div class="block"> 
+            <span>将两个<a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserver</code></a>组合成一个<a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserver</code></a> 。</span> 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing methods, and an explanation"> 
+        <caption> 
+         <span>Methods in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">io.netty.resolver.dns</a> that return <a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colFirst" scope="col">Modifier and Type</th> 
+          <th class="colLast" scope="col">Method and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">NoopDnsQueryLifecycleObserverFactory.</span><code><span class="memberNameLink"><a href="../NoopDnsQueryLifecycleObserverFactory.html#newDnsQueryLifecycleObserver-io.netty.handler.codec.dns.DnsQuestion-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/NoopDnsQueryLifecycleObserverFactory.html#newDnsQueryLifecycleObserver-io.netty.handler.codec.dns.DnsQuestion-">newDnsQueryLifecycleObserver</a></span>(<a href="../../../handler/codec/dns/DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="interface in io.netty.handler.codec.dns">DnsQuestion</a>&nbsp;question)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DnsQueryLifecycleObserverFactory.</span><code><span class="memberNameLink"><a href="../DnsQueryLifecycleObserverFactory.html#newDnsQueryLifecycleObserver-io.netty.handler.codec.dns.DnsQuestion-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserverFactory.html#newDnsQueryLifecycleObserver-io.netty.handler.codec.dns.DnsQuestion-">newDnsQueryLifecycleObserver</a></span>(<a href="../../../handler/codec/dns/DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="interface in io.netty.handler.codec.dns">DnsQuestion</a>&nbsp;question)</code> 
+           <div class="block"> 
+            <span>创建一个<a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="io.netty.resolver.dns中的接口"><code>DnsQueryLifecycleObserver</code></a>的新实例。</span> 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">BiDnsQueryLifecycleObserverFactory.</span><code><span class="memberNameLink"><a href="../BiDnsQueryLifecycleObserverFactory.html#newDnsQueryLifecycleObserver-io.netty.handler.codec.dns.DnsQuestion-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserverFactory.html#newDnsQueryLifecycleObserver-io.netty.handler.codec.dns.DnsQuestion-">newDnsQueryLifecycleObserver</a></span>(<a href="../../../handler/codec/dns/DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="interface in io.netty.handler.codec.dns">DnsQuestion</a>&nbsp;question)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DnsQueryLifecycleObserver.</span><code><span class="memberNameLink"><a href="../DnsQueryLifecycleObserver.html#queryCNAMEd-io.netty.handler.codec.dns.DnsQuestion-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html#queryCNAMEd-io.netty.handler.codec.dns.DnsQuestion-">queryCNAMEd</a></span>(<a href="../../../handler/codec/dns/DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="interface in io.netty.handler.codec.dns">DnsQuestion</a>&nbsp;cnameQuestion)</code> 
+           <div class="block">
+             该查询返回了一个CNAME，我们可能会尝试使用新的查询。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">BiDnsQueryLifecycleObserver.</span><code><span class="memberNameLink"><a href="../BiDnsQueryLifecycleObserver.html#queryCNAMEd-io.netty.handler.codec.dns.DnsQuestion-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserver.html#queryCNAMEd-io.netty.handler.codec.dns.DnsQuestion-">queryCNAMEd</a></span>(<a href="../../../handler/codec/dns/DnsQuestion.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsQuestion.html" title="interface in io.netty.handler.codec.dns">DnsQuestion</a>&nbsp;cnameQuestion)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DnsQueryLifecycleObserver.</span><code><span class="memberNameLink"><a href="../DnsQueryLifecycleObserver.html#queryNoAnswer-io.netty.handler.codec.dns.DnsResponseCode-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html#queryNoAnswer-io.netty.handler.codec.dns.DnsResponseCode-">queryNoAnswer</a></span>(<a href="../../../handler/codec/dns/DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code)</code> 
+           <div class="block">
+             对查询的响应没有提供预期的响应代码，但它没有返回 
+            <a href="../../../handler/codec/dns/DnsResponseCode.html#NXDOMAIN" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html#NXDOMAIN"><code>DnsResponseCode.NXDOMAIN</code>，</a>因此我们可能会尝试再次查询。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">BiDnsQueryLifecycleObserver.</span><code><span class="memberNameLink"><a href="../BiDnsQueryLifecycleObserver.html#queryNoAnswer-io.netty.handler.codec.dns.DnsResponseCode-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserver.html#queryNoAnswer-io.netty.handler.codec.dns.DnsResponseCode-">queryNoAnswer</a></span>(<a href="../../../handler/codec/dns/DnsResponseCode.html" tppabs="http://netty.io/4.1/api/io/netty/handler/codec/dns/DnsResponseCode.html" title="class in io.netty.handler.codec.dns">DnsResponseCode</a>&nbsp;code)</code>&nbsp;</td> 
+         </tr> 
+         <tr class="rowColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">DnsQueryLifecycleObserver.</span><code><span class="memberNameLink"><a href="../DnsQueryLifecycleObserver.html#queryRedirected-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html#queryRedirected-java.util.List-">queryRedirected</a></span>(java.util.List&lt;java.net.InetSocketAddress&gt;&nbsp;nameServers)</code> 
+           <div class="block">
+             该查询已被重定向到另一个DNS服务器列表。 
+           </div> </td> 
+         </tr> 
+         <tr class="altColor"> 
+          <td class="colFirst"><code><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></code></td> 
+          <td class="colLast"><span class="typeNameLabel">BiDnsQueryLifecycleObserver.</span><code><span class="memberNameLink"><a href="../BiDnsQueryLifecycleObserver.html#queryRedirected-java.util.List-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserver.html#queryRedirected-java.util.List-">queryRedirected</a></span>(java.util.List&lt;java.net.InetSocketAddress&gt;&nbsp;nameServers)</code>&nbsp;</td> 
+         </tr> 
+        </tbody> 
+       </table> 
+       <table class="useSummary" border="0" cellpadding="3" cellspacing="0" summary="Use table, listing constructors, and an explanation"> 
+        <caption> 
+         <span>Constructors in <a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">io.netty.resolver.dns</a> with parameters of type <a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a></span> 
+         <span class="tabEnd">&nbsp;</span> 
+        </caption> 
+        <tbody> 
+         <tr> 
+          <th class="colOne" scope="col">Constructor and Description</th> 
+         </tr> 
+        </tbody> 
+        <tbody> 
+         <tr class="altColor"> 
+          <td class="colLast"><code><span class="memberNameLink"><a href="../BiDnsQueryLifecycleObserver.html#BiDnsQueryLifecycleObserver-io.netty.resolver.dns.DnsQueryLifecycleObserver-io.netty.resolver.dns.DnsQueryLifecycleObserver-" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/BiDnsQueryLifecycleObserver.html#BiDnsQueryLifecycleObserver-io.netty.resolver.dns.DnsQueryLifecycleObserver-io.netty.resolver.dns.DnsQueryLifecycleObserver-">BiDnsQueryLifecycleObserver</a></span>(<a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a>&nbsp;a, <a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">DnsQueryLifecycleObserver</a>&nbsp;b)</code> 
+           <div class="block">
+             Create a new instance. 
+           </div> </td> 
+         </tr> 
+        </tbody> 
+       </table> </li> 
+     </ul> </li> 
+   </ul> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="../package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-summary.html">软件包</a></li> 
+    <li><a href="../DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/DnsQueryLifecycleObserver.html" title="interface in io.netty.resolver.dns">Class</a></li> 
+    <li class="navBarCell1Rev">使用</li> 
+    <li><a href="../package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/package-tree.html">树</a></li> 
+    <li><a href="../../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li>Prev</li> 
+    <li>Next</li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../../index.html-io-netty-resolver-dns-class-use-DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/resolver/dns/class-use/DnsQueryLifecycleObserver.html" target="_top">框架</a></li> 
+    <li><a href="DnsQueryLifecycleObserver.html" tppabs="http://netty.io/4.1/api/io/netty/resolver/dns/class-use/DnsQueryLifecycleObserver.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/resolver/dns/class-use/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>

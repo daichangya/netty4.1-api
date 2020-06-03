@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>OpenSslSessionStats (Netty API Reference (4.1.22.Final))</title> 
+  <meta name="date" content="2018-02-21"> 
+  <meta name="keywords" content="io.netty.handler.ssl.OpenSslSessionStats class"> 
+  <meta name="keywords" content="number()"> 
+  <meta name="keywords" content="connect()"> 
+  <meta name="keywords" content="connectGood()"> 
+  <meta name="keywords" content="connectRenegotiate()"> 
+  <meta name="keywords" content="accept()"> 
+  <meta name="keywords" content="acceptGood()"> 
+  <meta name="keywords" content="acceptRenegotiate()"> 
+  <meta name="keywords" content="hits()"> 
+  <meta name="keywords" content="cbHits()"> 
+  <meta name="keywords" content="misses()"> 
+  <meta name="keywords" content="timeouts()"> 
+  <meta name="keywords" content="cacheFull()"> 
+  <meta name="keywords" content="ticketKeyFail()"> 
+  <meta name="keywords" content="ticketKeyNew()"> 
+  <meta name="keywords" content="ticketKeyRenew()"> 
+  <meta name="keywords" content="ticketKeyResume()"> 
+  <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" tppabs="http://netty.io/4.1/api/stylesheet.css" title="Style"> 
+  <script type="text/javascript" src="../../../../script.js" tppabs="http://netty.io/4.1/api/script.js"></script> 
+ </head> 
+ <body> 
+  <script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="OpenSslSessionStats (Netty API Reference (4.1.22.Final))";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+</script> 
+  <noscript> 
+   <div>
+     JavaScript is disabled on your browser. 
+   </div> 
+  </noscript> 
+  <div class="topNav"> 
+   <a name="navbar.top"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.top.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/OpenSslSessionStats.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="OpenSslSessionTicketKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionTicketKey.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/OpenSslSessionStats.html" target="_top">框架</a></li> 
+    <li><a href="OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_top"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.top"> </a> 
+  </div> 
+  <div class="header"> 
+   <div class="subTitle">
+     io.netty.handler.ssl 
+   </div> 
+   <h2 title="Class OpenSslSessionStats" class="title">Class OpenSslSessionStats</h2> 
+  </div> 
+  <div class="contentContainer"> 
+   <ul class="inheritance"> 
+    <li>java.lang.Object</li> 
+    <li> 
+     <ul class="inheritance"> 
+      <li>io.netty.handler.ssl.OpenSslSessionStats</li> 
+     </ul> </li> 
+   </ul> 
+   <div class="description"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <hr> <br> <pre>public final class <span class="typeNameLabel">OpenSslSessionStats</span>
+extends java.lang.Object</pre> 
+      <div class="block">
+        由OpenSSL会话上下文公开的统计信息。 
+      </div> 
+      <dl> 
+       <dt> 
+        <span class="seeLabel">另请参见：</span> 
+       </dt> 
+       <dd> 
+        <a href="javascript:if(confirm('https://www.openssl.org/docs/manmaster/man3/SSL_CTX_sess_number.html  \n\nï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ Teleport Ultra ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Îª ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½â²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ö·ï¿½Äµï¿½Ö·ï¿½ï¿½  \n\nï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï＇ï¿½ï¿½ï¿½?'))window.location='https://www.openssl.org/docs/manmaster/man3/SSL_CTX_sess_number.html'" tppabs="https://www.openssl.org/docs/manmaster/man3/SSL_CTX_sess_number.html">SSL_CTX_sess_number</a> 
+       </dd> 
+      </dl> </li> 
+    </ul> 
+   </div> 
+   <div class="summary"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.summary"> </a> <h3>方法摘要</h3> 
+        <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation"> 
+         <caption> 
+          <span id="t0" class="activeTableTab"><span>所有方法</span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t2" class="tableTab"><span><a href="javascript:show(2);">接口方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+          <span id="t4" class="tableTab"><span><a href="javascript:show(8);">具体的方法</a></span><span class="tabEnd">&nbsp;</span></span> 
+         </caption> 
+         <tbody> 
+          <tr> 
+           <th class="colFirst" scope="col">Modifier and Type</th> 
+           <th class="colLast" scope="col">Method and Description</th> 
+          </tr> 
+          <tr id="i0" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#accept--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#accept--">accept</a></span>()</code> 
+            <div class="block">
+              返回服务器模式下启动的SSL / TLS握手的次数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i1" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#acceptGood--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#acceptGood--">acceptGood</a></span>()</code> 
+            <div class="block">
+              返回在服务器模式下成功建立的SSL / TLS会话的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i2" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#acceptRenegotiate--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#acceptRenegotiate--">acceptRenegotiate</a></span>()</code> 
+            <div class="block">
+              返回服务器模式下的开始重新协商的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i3" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#cacheFull--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#cacheFull--">cacheFull</a></span>()</code> 
+            <div class="block">
+              返回由于超过最大会话缓存大小而被删除的会话数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i4" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#cbHits--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#cbHits--">cbHits</a></span>()</code> 
+            <div class="block">
+              在服务器模式下，返回外部会话缓存中成功检索到的会话的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i5" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#connect--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#connect--">connect</a></span>()</code> 
+            <div class="block">
+              返回客户端模式下启动的SSL / TLS握手的次数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i6" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#connectGood--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#connectGood--">connectGood</a></span>()</code> 
+            <div class="block">
+              返回客户端模式下成功建立的SSL / TLS会话的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i7" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#connectRenegotiate--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#connectRenegotiate--">connectRenegotiate</a></span>()</code> 
+            <div class="block">
+              返回客户端模式下的开始重新协商的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i8" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#hits--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#hits--">hits</a></span>()</code> 
+            <div class="block">
+              返回成功重用会话的数量。 
+            </div> </td> 
+          </tr> 
+          <tr id="i9" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#misses--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#misses--">misses</a></span>()</code> 
+            <div class="block">
+              返回客户端在服务器模式下未在内部会话缓存中找到的会话数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i10" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#number--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#number--">number</a></span>()</code> 
+            <div class="block">
+              返回内部会话高速缓存中的当前会话数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i11" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#ticketKeyFail--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#ticketKeyFail--">ticketKeyFail</a></span>()</code> 
+            <div class="block">
+              返回客户提交的票单与列表中任何键不匹配的次数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i12" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#ticketKeyNew--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#ticketKeyNew--">ticketKeyNew</a></span>()</code> 
+            <div class="block">
+              返回客户没有出示票的次数，然后我们发出新票 
+            </div> </td> 
+          </tr> 
+          <tr id="i13" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#ticketKeyRenew--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#ticketKeyRenew--">ticketKeyRenew</a></span>()</code> 
+            <div class="block">
+              返回客户端提供从旧密钥导出的票证的次数，然后我们升级到主键。 
+            </div> </td> 
+          </tr> 
+          <tr id="i14" class="altColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#ticketKeyResume--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#ticketKeyResume--">ticketKeyResume</a></span>()</code> 
+            <div class="block">
+              返回客户端提供从主键派生的故障单的次数。 
+            </div> </td> 
+          </tr> 
+          <tr id="i15" class="rowColor"> 
+           <td class="colFirst"><code>long</code></td> 
+           <td class="colLast"><code><span class="memberNameLink"><a href="OpenSslSessionStats.html#timeouts--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#timeouts--">timeouts</a></span>()</code> 
+            <div class="block">
+              返回客户端建议的会话数量，可以在服务器模式的内部或外部会话缓存中找到，但由于超时而无效。 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <ul class="blockList"> 
+         <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object"> </a> <h3>Methods inherited from class&nbsp;java.lang.Object</h3> <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+   <div class="details"> 
+    <ul class="blockList"> 
+     <li class="blockList"> 
+      <ul class="blockList"> 
+       <li class="blockList"><a name="method.detail"> </a> <h3>方法详细信息</h3> <a name="number--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>number</h4> <pre>public&nbsp;long&nbsp;number()</pre> 
+          <div class="block">
+            返回内部会话高速缓存中的当前会话数。 
+          </div> </li> 
+        </ul> <a name="connect--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connect</h4> <pre>public&nbsp;long&nbsp;connect()</pre> 
+          <div class="block">
+            返回客户端模式下启动的SSL / TLS握手的次数。 
+          </div> </li> 
+        </ul> <a name="connectGood--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connectGood</h4> <pre>public&nbsp;long&nbsp;connectGood()</pre> 
+          <div class="block">
+            返回客户端模式下成功建立的SSL / TLS会话的数量。 
+          </div> </li> 
+        </ul> <a name="connectRenegotiate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>connectRenegotiate</h4> <pre>public&nbsp;long&nbsp;connectRenegotiate()</pre> 
+          <div class="block">
+            返回客户端模式下的开始重新协商的数量。 
+          </div> </li> 
+        </ul> <a name="accept--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>accept</h4> <pre>public&nbsp;long&nbsp;accept()</pre> 
+          <div class="block">
+            返回服务器模式下启动的SSL / TLS握手的次数。 
+          </div> </li> 
+        </ul> <a name="acceptGood--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>acceptGood</h4> <pre>public&nbsp;long&nbsp;acceptGood()</pre> 
+          <div class="block">
+            返回在服务器模式下成功建立的SSL / TLS会话的数量。 
+          </div> </li> 
+        </ul> <a name="acceptRenegotiate--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>acceptRenegotiate</h4> <pre>public&nbsp;long&nbsp;acceptRenegotiate()</pre> 
+          <div class="block">
+            返回服务器模式下的开始重新协商的数量。 
+          </div> </li> 
+        </ul> <a name="hits--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>hits</h4> <pre>public&nbsp;long&nbsp;hits()</pre> 
+          <div class="block"> 
+           <span>返回成功重用会话的数量。</span> 
+           <span>在客户端模式下，用<code>SSL_set_session</code>成功重新使用的会话被视为点击。</span> 
+           <span>在服务器模式下，从内部或外部高速缓存成功检索的会话被计为点击。</span> 
+          </div> </li> 
+        </ul> <a name="cbHits--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cbHits</h4> <pre>public&nbsp;long&nbsp;cbHits()</pre> 
+          <div class="block">
+            在服务器模式下，返回外部会话缓存中成功检索到的会话的数量。 
+          </div> </li> 
+        </ul> <a name="misses--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>misses</h4> <pre>public&nbsp;long&nbsp;misses()</pre> 
+          <div class="block">
+            返回客户端在服务器模式下未在内部会话缓存中找到的会话数。 
+          </div> </li> 
+        </ul> <a name="timeouts--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>timeouts</h4> <pre>public&nbsp;long&nbsp;timeouts()</pre> 
+          <div class="block"> 
+           <span>返回客户端建议的会话数量，可以在服务器模式的内部或外部会话缓存中找到，但由于超时而无效。</span> 
+           <span>这些会话不包括在<a href="OpenSslSessionStats.html#hits--" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html#hits--"><code>hits()</code></a>计数中。</span> 
+          </div> </li> 
+        </ul> <a name="cacheFull--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>cacheFull</h4> <pre>public&nbsp;long&nbsp;cacheFull()</pre> 
+          <div class="block">
+            返回由于超过最大会话缓存大小而被删除的会话数。 
+          </div> </li> 
+        </ul> <a name="ticketKeyFail--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ticketKeyFail</h4> <pre>public&nbsp;long&nbsp;ticketKeyFail()</pre> 
+          <div class="block">
+            返回客户提交的票单与列表中任何键不匹配的次数。 
+          </div> </li> 
+        </ul> <a name="ticketKeyNew--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ticketKeyNew</h4> <pre>public&nbsp;long&nbsp;ticketKeyNew()</pre> 
+          <div class="block">
+            返回客户没有出示票的次数，然后我们发出新票 
+          </div> </li> 
+        </ul> <a name="ticketKeyRenew--"> </a> 
+        <ul class="blockList"> 
+         <li class="blockList"> <h4>ticketKeyRenew</h4> <pre>public&nbsp;long&nbsp;ticketKeyRenew()</pre> 
+          <div class="block">
+            返回客户端提供从旧密钥导出的票证的次数，然后我们升级到主键。 
+          </div> </li> 
+        </ul> <a name="ticketKeyResume--"> </a> 
+        <ul class="blockListLast"> 
+         <li class="blockList"> <h4>ticketKeyResume</h4> <pre>public&nbsp;long&nbsp;ticketKeyResume()</pre> 
+          <div class="block">
+            返回客户端提供从主键派生的故障单的次数。 
+          </div> </li> 
+        </ul> </li> 
+      </ul> </li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div class="bottomNav"> 
+   <a name="navbar.bottom"> </a> 
+   <div class="skipNav"> 
+    <a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a> 
+   </div> 
+   <a name="navbar.bottom.firstrow"> </a> 
+   <ul class="navList" title="Navigation"> 
+    <li><a href="../../../../overview-summary.html" tppabs="http://netty.io/4.1/api/overview-summary.html">概述</a></li> 
+    <li><a href="package-summary.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-summary.html">软件包</a></li> 
+    <li class="navBarCell1Rev">Class</li> 
+    <li><a href="class-use/OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/class-use/OpenSslSessionStats.html">使用</a></li> 
+    <li><a href="package-tree.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/package-tree.html">树</a></li> 
+    <li><a href="../../../../deprecated-list.html" tppabs="http://netty.io/4.1/api/deprecated-list.html">已过时的</a></li> 
+    <li><a href="../../../../index-all.html" tppabs="http://netty.io/4.1/api/index-all.html">索引</a></li> 
+    <li><a href="../../../../help-doc.html" tppabs="http://netty.io/4.1/api/help-doc.html">帮助</a></li> 
+   </ul> 
+  </div> 
+  <div class="subNav"> 
+   <ul class="navList"> 
+    <li><a href="OpenSslSessionContext.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionContext.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">上一个</span></a></li> 
+    <li><a href="OpenSslSessionTicketKey.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionTicketKey.html" title="class in io.netty.handler.ssl"><span class="typeNameLink">下一个</span></a></li> 
+   </ul> 
+   <ul class="navList"> 
+    <li><a href="../../../../index.html-io-netty-handler-ssl-OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/index.html?io/netty/handler/ssl/OpenSslSessionStats.html" target="_top">框架</a></li> 
+    <li><a href="OpenSslSessionStats.html" tppabs="http://netty.io/4.1/api/io/netty/handler/ssl/OpenSslSessionStats.html" target="_top">无框架</a></li> 
+   </ul> 
+   <ul class="navList" id="allclasses_navbar_bottom"> 
+    <li><a href="../../../../allclasses-noframe.html" tppabs="http://netty.io/4.1/api/allclasses-noframe.html">所有类</a></li> 
+   </ul> 
+   <div> 
+    <script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script> 
+   </div> 
+   <div> 
+    <ul class="subNavList"> 
+     <li>概要：&nbsp;</li> 
+     <li>嵌套&nbsp;|&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.summary">方法</a></li> 
+    </ul> 
+    <ul class="subNavList"> 
+     <li>详细信息：&nbsp;</li> 
+     <li>字段&nbsp;|&nbsp;</li> 
+     <li>构造方法&nbsp;|&nbsp;</li> 
+     <li><a href="#method.detail">方法</a></li> 
+    </ul> 
+   </div> 
+   <a name="skip.navbar.bottom"> </a> 
+  </div> 
+  <p class="legalCopy"><small>Copyright © 2008–2018 <a href="javascript:if(confirm('http://netty.io/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://netty.io/'" tppabs="http://netty.io/">The Netty Project</a>. All rights reserved.</small> 
+   <div id="juede_adDiv" data-type="netty" data-docversion="4.1" data-translate="google" data-version="1.0.0"> 
+    <script type="text/javascript" src="http://zthinker.com/scriptAPI/fanyigonggao.js"></script>
+    <div id="adDivContent">
+     <a href="http://zthinker.com/" target="_blank">公众号(分布式编程)</a>
+     <div>
+      <div></div>
+     </div>
+    </div>
+   </div></p> 
+  <script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../../../../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+ga('create', 'UA-166614124-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js'/*tpa=http://netty.io/4.1/api/io/netty/handler/ssl/linkid.js*/);
+ga('send', 'pageview');
+</script>  
+ </body>
+</html>
